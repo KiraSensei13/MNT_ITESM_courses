@@ -1,1 +1,1 @@
-MNT_ITESM_courses
+MNT_courses

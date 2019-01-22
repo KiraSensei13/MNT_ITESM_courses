@@ -1,0 +1,979 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  22 JAN 2019 12:59
+entering extended mode
+**./HWork02_Echelon_and_linear_sys.tex
+(HWork02_Echelon_and_linear_sys.tex
+LaTeX2e <2018-04-01> patch level 5
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
+y"
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2018/11/13 3.27 The Babel package
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.def
+"
+File: switch.def 2018/11/13 3.27 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-german\ngerm
+an.ldf"
+Language: ngerman 2018/03/29 v2.10 German support for babel (post-1996 orthogra
+phy)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-german\ngerm
+anb.ldf"
+Language: ngermanb 2018/03/29 v2.10 German support for babel (post-1996 orthogr
+aphy)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2018/11/13 3.27 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel.d
+ef")
+\bbl@dirlevel=\count89
+)
+Package babel Info: Making " an active character on input line 121.
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-english\engl
+ish.ldf"
+Language: english 2017/06/06 v3.3r English support from the babel system
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\csquotes\csquotes.
+sty"
+Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.
+sty"
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count90
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
+y"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\csq@reset=\count91
+\csq@gtype=\count92
+\csq@glevel=\count93
+\csq@qlevel=\count94
+\csq@maxlvl=\count95
+\csq@tshold=\count96
+\csq@ltx@everypar=\toks17
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\csquotes\csquotes.
+def"
+File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\csquotes\csquotes.
+cfg"
+File: csquotes.cfg 
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
+y"
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.st
+y"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
+"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen104
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
+"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen105
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
+"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count97
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count98
+\leftroot@=\count99
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count100
+\DOTSCASE@=\count101
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count102
+\c@MaxMatrixCols=\count103
+\dotsspace@=\muskip10
+\c@parentequation=\count104
+\dspbrk@lvl=\count105
+\tag@help=\toks19
+\row@=\count106
+\column@=\count107
+\maxfields@=\count108
+\andhelp@=\toks20
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks21
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.s
+ty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.
+sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
+sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
+sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdfte
+x.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.st
+y"
+\wrapoverhang=\dimen115
+\WF@size=\dimen116
+\c@WF@wrappedlines=\count109
+\WF@box=\box28
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
+sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
+ty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.
+sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.
+sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count110
+\Gm@cntv=\count111
+\c@Gm@tempcnt=\count112
+\Gm@bindingoffset=\dimen117
+\Gm@wd@mp=\dimen118
+\Gm@odd@mp=\dimen119
+\Gm@even@mp=\dimen120
+\Gm@layoutwidth=\dimen121
+\Gm@layoutheight=\dimen122
+\Gm@layouthoffset=\dimen123
+\Gm@layoutvoffset=\dimen124
+\Gm@dimlist=\toks24
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
+cfg"))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.
+sty"
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count113
+\calc@Bcount=\count114
+\calc@Adimen=\dimen125
+\calc@Bdimen=\dimen126
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count115
+\calc@Cskip=\skip48
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.st
+y"
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\atbegsh
+i.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infware
+rr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds
+.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\color
+.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+\AM@pagewidth=\dimen127
+\AM@pageheight=\dimen128
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.
+def"
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box29
+\AM@global@opts=\toks25
+\AM@toc@title=\toks26
+\c@AM@survey=\count116
+\AM@templatesizebox=\box30
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.
+sty"
+\lst@mode=\count117
+\lst@gtempboxa=\box31
+\lst@token=\toks27
+\lst@length=\count118
+\lst@currlwidth=\dimen129
+\lst@column=\count119
+\lst@pos=\count120
+\lst@lostspace=\dimen130
+\lst@width=\dimen131
+\lst@newlines=\count121
+\lst@lineno=\count122
+\lst@maxwidth=\dimen132
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.s
+ty"
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+\c@lstnumber=\count123
+\lst@skipnumbers=\count124
+\lst@framebox=\box32
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.
+cfg"
+File: listings.cfg 2018/09/02 1.7 listings configuration
+))
+Package: listings 2018/09/02 1.7 (Carsten Heinz)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\setspace\setspace.
+sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
+sty"
+Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexc
+mds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluate
+x.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
+.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetke
+ys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmd
+s.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+)))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty"
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count125
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def"
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count126
+\c@listtotal=\count127
+\c@listcount=\count128
+\c@liststart=\count129
+\c@liststop=\count130
+\c@citecount=\count131
+\c@citetotal=\count132
+\c@multicitecount=\count133
+\c@multicitetotal=\count134
+\c@instcount=\count135
+\c@maxnames=\count136
+\c@minnames=\count137
+\c@maxitems=\count138
+\c@minitems=\count139
+\c@citecounter=\count140
+\c@maxcitecounter=\count141
+\c@savedcitecounter=\count142
+\c@uniquelist=\count143
+\c@uniquename=\count144
+\c@refsection=\count145
+\c@refsegment=\count146
+\c@maxextratitle=\count147
+\c@maxextratitleyear=\count148
+\c@maxextraname=\count149
+\c@maxextradate=\count150
+\c@maxextraalpha=\count151
+\c@abbrvpenalty=\count152
+\c@highnamepenalty=\count153
+\c@lownamepenalty=\count154
+\c@maxparens=\count155
+\c@parenlevel=\count156
+\blx@tempcnta=\count157
+\blx@tempcntb=\count158
+\blx@tempcntc=\count159
+\blx@maxsection=\count160
+\blx@maxsegment@0=\count161
+\blx@notetype=\count162
+\blx@parenlevel@text=\count163
+\blx@parenlevel@foot=\count164
+\blx@sectionciteorder@0=\count165
+\blx@entrysetcounter=\count166
+\labelnumberwidth=\skip49
+\labelalphawidth=\skip50
+\biblabelsep=\skip51
+\bibitemsep=\skip52
+\bibnamesep=\skip53
+\bibinitsep=\skip54
+\bibparsep=\skip55
+\bibhang=\skip56
+\blx@bcfin=\read1
+\blx@bcfout=\write3
+\c@mincomprange=\count167
+\c@maxcomprange=\count168
+\c@mincompwidth=\count169
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-dm.de
+f"
+File: blx-dm.def 2018/11/02 v3.12 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'apa.dbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\apa.d
+bx"
+File: apa.dbx 2018/04/02 v7.7 APA biblatex style data model
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count170
+\c@savedafterword=\count171
+\c@annotator=\count172
+\c@savedannotator=\count173
+\c@author=\count174
+\c@savedauthor=\count175
+\c@bookauthor=\count176
+\c@savedbookauthor=\count177
+\c@commentator=\count178
+\c@savedcommentator=\count179
+\c@editor=\count180
+\c@savededitor=\count181
+\c@editora=\count182
+\c@savededitora=\count183
+\c@editorb=\count184
+\c@savededitorb=\count185
+\c@editorc=\count186
+\c@savededitorc=\count187
+\c@foreword=\count188
+\c@savedforeword=\count189
+\c@holder=\count190
+\c@savedholder=\count191
+\c@introduction=\count192
+\c@savedintroduction=\count193
+\c@namea=\count194
+\c@savednamea=\count195
+\c@nameb=\count196
+\c@savednameb=\count197
+\c@namec=\count198
+\c@savednamec=\count199
+\c@translator=\count266
+\c@savedtranslator=\count267
+\c@shortauthor=\count268
+\c@savedshortauthor=\count269
+\c@shorteditor=\count270
+\c@savedshorteditor=\count271
+\c@with=\count272
+\c@savedwith=\count273
+\c@writer=\count274
+\c@savedwriter=\count275
+\c@producer=\count276
+\c@savedproducer=\count277
+\c@execproducer=\count278
+\c@savedexecproducer=\count279
+\c@director=\count280
+\c@saveddirector=\count281
+\c@labelname=\count282
+\c@savedlabelname=\count283
+\c@institution=\count284
+\c@savedinstitution=\count285
+\c@lista=\count286
+\c@savedlista=\count287
+\c@listb=\count288
+\c@savedlistb=\count289
+\c@listc=\count290
+\c@savedlistc=\count291
+\c@listd=\count292
+\c@savedlistd=\count293
+\c@liste=\count294
+\c@savedliste=\count295
+\c@listf=\count296
+\c@savedlistf=\count297
+\c@location=\count298
+\c@savedlocation=\count299
+\c@organization=\count300
+\c@savedorganization=\count301
+\c@origlocation=\count302
+\c@savedoriglocation=\count303
+\c@origpublisher=\count304
+\c@savedorigpublisher=\count305
+\c@publisher=\count306
+\c@savedpublisher=\count307
+\c@language=\count308
+\c@savedlanguage=\count309
+\c@origlanguage=\count310
+\c@savedoriglanguage=\count311
+\c@pageref=\count312
+\c@savedpageref=\count313
+\shorthandwidth=\skip57
+\shortjournalwidth=\skip58
+\shortserieswidth=\skip59
+\shorttitlewidth=\skip60
+\shortauthorwidth=\skip61
+\shorteditorwidth=\skip62
+\locallabelnumberwidth=\skip63
+\locallabelalphawidth=\skip64
+\localshorthandwidth=\skip65
+\localshortjournalwidth=\skip66
+\localshortserieswidth=\skip67
+\localshorttitlewidth=\skip68
+\localshortauthorwidth=\skip69
+\localshorteditorwidth=\skip70
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-compa
+t.def"
+File: blx-compat.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
+def"
+File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+\c@textcitecount=\count314
+\c@textcitetotal=\count315
+\c@textcitemaxnames=\count316
+\c@biburlnumpenalty=\count317
+\c@biburlucpenalty=\count318
+\c@biburllcpenalty=\count319
+\c@smartand=\count320
+)
+Package biblatex Info: Trying to load bibliography style 'apa'...
+Package biblatex Info: ... file 'apa.bbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\apa.b
+bx"
+File: apa.bbx 2018/04/02 v7.7 APA biblatex references style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\stand
+ard.bbx"
+File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count321
+\c@bbx:relatedtotal=\count322
+))
+Package biblatex Info: Trying to load citation style 'apa'...
+Package biblatex Info: ... file 'apa.cbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\apa.c
+bx"
+File: apa.cbx 2018/04/02 v7.7 APA biblatex citation style
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
+ overwriting.
+Package biblatex Info: Delimiter 'nameyeardelim' in context 'textcite' already 
+defined, overwriting.
+Package biblatex Info: Delimiter 'andothersdelim' in context '' already defined
+, overwriting.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\fullcite'.
+Package biblatex Info: Redefining '\citeyear'.
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\citeauthor'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
+cfg"
+File: biblatex.cfg 
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+Package biblatex Info: Trying to load language 'english' -> 'english-apa'...
+Package biblatex Info: ... file 'english-apa.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\engli
+sh-apa.lbx"
+File: english-apa.lbx 2018/04/02 v7.7 APA biblatex localisation
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\engli
+sh.lbx"
+File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'american' -> 'american-apa'...
+Package biblatex Info: ... file 'american-apa.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\ameri
+can-apa.lbx"
+File: american-apa.lbx 2018/04/02 v7.7 APA biblatex localisation
+Package biblatex Info: Trying to load language 'american'...
+Package biblatex Info: ... file 'american.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\ameri
+can.lbx"
+File: american.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\engli
+sh.lbx"
+File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+))))
+Package biblatex Info: Trying to load language 'ngerman' -> 'ngerman-apa'...
+Package biblatex Info: ... file 'ngerman-apa.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\ngerm
+an-apa.lbx"
+File: ngerman-apa.lbx 2018/04/02 v7.7 APA biblatex localisation
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\ngerm
+an.lbx"
+File: ngerman.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german' -> 'german-apa'...
+Package biblatex Info: ... file 'german-apa.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\germa
+n-apa.lbx"
+File: german-apa.lbx 2018/04/02 v7.7 APA biblatex localisation
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\germa
+n.lbx"
+File: german.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+)))
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\ngerm
+an.lbx"
+File: ngerman.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german' -> 'german-apa'...
+Package biblatex Info: ... file 'german-apa.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\germa
+n-apa.lbx"
+File: german-apa.lbx 2018/04/02 v7.7 APA biblatex localisation
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\germa
+n.lbx"
+File: german.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+)))) (HWork02_Echelon_and_linear_sys.aux)
+\openout1 = `HWork02_Echelon_and_linear_sys.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
+ii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count323
+\scratchdimen=\dimen133
+\scratchbox=\box33
+\nofMPsegments=\count324
+\nofMParguments=\count325
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count326
+\MPscratchDim=\dimen134
+\MPnumerator=\count327
+\makeMPintoPDFobject=\count328
+\everyMPtoPDFconversion=\toks29
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
+base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
+y"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefin
+ekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(90.3375pt, 416.83289pt, 90.3375pt)
+* v-part:(T,H,B)=(90.3375pt, 664.37186pt, 90.3375pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=416.83289pt
+* \textheight=664.37186pt
+* \oddsidemargin=18.0675pt
+* \evensidemargin=18.0675pt
+* \topmargin=-18.9325pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box34
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\pdflscape
+.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\lscape.st
+y"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+\c@lstlisting=\count329
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `HWork02_Echelon_and_linear_sys.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'HWork02_Echelon_and_linear_sys.bbl' not found.
+
+
+No file HWork02_Echelon_and_linear_sys.bbl.
+Package biblatex Info: Reference section=0 on input line 65.
+Package biblatex Info: Reference segment=0 on input line 65.
+LaTeX Font Info:    Try loading font information for U+msa on input line 71.
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 71.
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{C:/Users/oskat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+Package pdfpages Warning: Option `page' is unknow to \includepdf.
+(pdfpages)                Did you mean `pages'? (Note the `s'!)
+(pdfpages)                OK, I'll proceed as if it were `pages'.
+
+<HW2.pdf, id=8, 614.295pt x 794.97pt>
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf>
+Package pdftex.def Info: HW2.pdf  used on input line 102.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf>
+Package pdftex.def Info: HW2.pdf  used on input line 102.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<HW2.pdf, id=11, page=1, 614.295pt x 794.97pt>
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf, page 1>
+Package pdftex.def Info: HW2.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf, page 1>
+Package pdftex.def Info: HW2.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf, page 1>
+Package pdftex.def Info: HW2.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf, page 1>
+Package pdftex.def Info: HW2.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf, page 1>
+Package pdftex.def Info: HW2.pdf , page1 used on input line 102.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[2
+
+ <./HW2.pdf>]
+<HW2.pdf, id=66, page=2, 614.295pt x 794.97pt>
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf, page 2>
+Package pdftex.def Info: HW2.pdf , page2 used on input line 102.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf, page 2>
+Package pdftex.def Info: HW2.pdf , page2 used on input line 102.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: HW2.pdf Graphic file (type pdf)
+<use HW2.pdf, page 2>
+Package pdftex.def Info: HW2.pdf , page2 used on input line 102.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [3 <./HW2.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+
+ []
+
+[4]
+Overfull \hbox (17.27623pt too wide) in paragraph at lines 132--173
+[][] 
+ []
+
+<img/ii_7.png, id=81, 361.35pt x 353.32pt>
+File: img/ii_7.png Graphic file (type png)
+<use img/ii_7.png>
+Package pdftex.def Info: img/ii_7.png  used on input line 175.
+(pdftex.def)             Requested size: 250.10226pt x 244.54584pt.
+[5
+
+ <./img/ii_7.png (PNG copy)>]
+Overfull \hbox (59.25133pt too wide) in paragraph at lines 184--225
+[][] 
+ []
+
+<img/ii_8.png, id=85, 361.35pt x 353.32pt>
+File: img/ii_8.png Graphic file (type png)
+<use img/ii_8.png>
+Package pdftex.def Info: img/ii_8.png  used on input line 227.
+(pdftex.def)             Requested size: 250.10226pt x 244.54584pt.
+[6
+
+ <./img/ii_8.png (PNG copy)>]
+Overfull \hbox (54.95137pt too wide) in paragraph at lines 236--273
+[][] 
+ []
+
+<img/ii_9.png, id=89, 361.35pt x 353.32pt>
+File: img/ii_9.png Graphic file (type png)
+<use img/ii_9.png>
+Package pdftex.def Info: img/ii_9.png  used on input line 275.
+(pdftex.def)             Requested size: 250.10226pt x 244.54584pt.
+[7
+
+ <./img/ii_9.png (PNG copy)>] [8
+
+] [9
+
+] [10
+
+] [11
+
+] [12
+
+] [13
+
+] [14
+
+] [15
+
+] [16
+
+]
+
+LaTeX Warning: Empty bibliography on input line 340.
+
+(HWork02_Echelon_and_linear_sys.aux)
+Package logreq Info: Writing requests to 'HWork02_Echelon_and_linear_sys.run.xm
+l'.
+\openout1 = `HWork02_Echelon_and_linear_sys.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 13514 strings out of 492969
+ 228430 string characters out of 3126585
+ 785580 words of memory out of 3000000
+ 17169 multiletter control sequences out of 15000+200000
+ 11382 words of font info for 44 fonts, out of 3000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 58i,18n,63p,841b,5337s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/oskat/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/osk
+at/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/oskat/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/oskat/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/o
+skat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/oskat/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on HWork02_Echelon_and_linear_sys.pdf (16 pages, 235262 bytes).
+PDF statistics:
+ 159 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+
