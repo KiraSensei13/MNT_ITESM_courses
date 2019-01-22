@@ -1,0 +1,23 @@
+% set up LaTeX parameters for  British A4 paper with very little space left
+% in the margins.  Enough left margin to fit in note folders.  Meant to save
+% paper.
+% \makeatletter % removed by img 25-June-92
+
+\newdimen\mainfontsize  \mainfontsize=1\@ptsize pt
+\setlength{\oddsidemargin}{0 true in}   
+\setlength{\textwidth}{17.5 true cm}    % 21.2 cm - 2.5*(2.54 cm) DR 18.7
+
+\topskip=\mainfontsize  % plain has 10pt, so this is the equivalent
+\maxdepth=.4\mainfontsize       % plain has 4pt
+   \@maxdepth=\maxdepth         % this has to be set as well (cf. latex.tex)
+
+\setlength{\headheight}{\mainfontsize}
+\dimen0=2\mainfontsize
+\setlength{\headsep}{.1in}      % headline gets depth shaved off
+\setlength{\topmargin}{-.55in}  % DR -.5
+%\setlength{\footheight}{\mainfontsize}
+\setlength{\footskip}{\dimen0}
+
+\setlength{\textheight}{25 true cm}     
+
+% \makeatother % removed img 25-June-92

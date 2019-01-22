@@ -1,0 +1,5 @@
+[0] Config.pm:304> INFO - This is Biber 2.12
+[0] Config.pm:307> INFO - Logfile is 'LaTeX_BB_HOMEWORK_Ray_Anderson.tex.blg'
+[27] biber-MSWIN64:315> INFO - === 
+[393] Utils.pm:209> ERROR - Cannot find control file 'LaTeX_BB_HOMEWORK_Ray_Anderson.tex.bcf'! - Did latex run successfully on your .tex file before you ran biber?
+[395] Biber.pm:114> INFO - ERRORS: 1
