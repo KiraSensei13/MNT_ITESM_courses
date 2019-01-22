@@ -1,0 +1,160 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Ellyatt2018}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=6405d407784cd5101ee87c370c6b0a62}{%
+           family={Ellyatt},
+           familyi={E\bibinitperiod},
+           given={Holly},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6405d407784cd5101ee87c370c6b0a62}
+      \strng{fullhash}{6405d407784cd5101ee87c370c6b0a62}
+      \strng{bibnamehash}{6405d407784cd5101ee87c370c6b0a62}
+      \strng{authorbibnamehash}{6405d407784cd5101ee87c370c6b0a62}
+      \strng{authornamehash}{6405d407784cd5101ee87c370c6b0a62}
+      \strng{authorfullhash}{6405d407784cd5101ee87c370c6b0a62}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Is Davos nothing more than an overpriced, ineffective ˜talking shop'?}}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2019}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.cnbc.com/2018/01/18/is-davos-nothing-more-than-an-overpriced-ineffective-talking-shop.html
+      \endverb
+      \verb{url}
+      \verb https://www.cnbc.com/2018/01/18/is-davos-nothing-more-than-an-overpriced-ineffective-talking-shop.html
+      \endverb
+    \endentry
+    \entry{Schulze2018}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=0f95f1d94dbb9c446b799bdba13b1d92}{%
+           family={Schulze},
+           familyi={S\bibinitperiod},
+           given={Elizabeth},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {CNBC LLC}%
+      }
+      \strng{namehash}{0f95f1d94dbb9c446b799bdba13b1d92}
+      \strng{fullhash}{0f95f1d94dbb9c446b799bdba13b1d92}
+      \strng{bibnamehash}{0f95f1d94dbb9c446b799bdba13b1d92}
+      \strng{authorbibnamehash}{0f95f1d94dbb9c446b799bdba13b1d92}
+      \strng{authornamehash}{0f95f1d94dbb9c446b799bdba13b1d92}
+      \strng{authorfullhash}{0f95f1d94dbb9c446b799bdba13b1d92}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{What is Davos?}}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.cnbc.com/video/2018/01/22/what-is-davos-cnbc-explains.html
+      \endverb
+      \verb{url}
+      \verb https://www.cnbc.com/video/2018/01/22/what-is-davos-cnbc-explains.html
+      \endverb
+    \endentry
+    \entry{WEF2019}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=b243f1a20f55d986c07b7406ea2bc4fa}{%
+           family={WEF},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{fullhash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{bibnamehash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{authorbibnamehash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{authornamehash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{authorfullhash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{World Economic Forum - About page}}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.weforum.org/about/world-economic-forum
+      \endverb
+      \verb{url}
+      \verb https://www.weforum.org/about/world-economic-forum
+      \endverb
+    \endentry
+    \entry{WEF2019a}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=b243f1a20f55d986c07b7406ea2bc4fa}{%
+           family={WEF},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{fullhash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{bibnamehash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{authorbibnamehash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{authornamehash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \strng{authorfullhash}{b243f1a20f55d986c07b7406ea2bc4fa}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{World Economic Forum's 2019 Annual Meeting in Davos to Focus on Shaping a New Architecture for the Next Wave of Globalization {>} Press releases | World Economic Forum}}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.weforum.org/press/2018/11/world-economic-forum-s-2019-annual-meeting-in-davos-to-focus-on-shaping-a-new-architecture-for-the-next-wave-of-globalization/
+      \endverb
+      \verb{url}
+      \verb https://www.weforum.org/press/2018/11/world-economic-forum-s-2019-annual-meeting-in-davos-to-focus-on-shaping-a-new-architecture-for-the-next-wave-of-globalization/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

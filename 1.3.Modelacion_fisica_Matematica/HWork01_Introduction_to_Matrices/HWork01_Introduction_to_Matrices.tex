@@ -1,0 +1,1222 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block of commands.  If you're proficient at LaTeX, you may include additional packages, create macros, etc. immediately below this block of commands, but make sure to NOT alter the header, margin, and comment settings here. 
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ, graphics, setspace, xspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+\newcommand{\latex}{\LaTeX\xspace}
+
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{{\bfseries Homework 1: Introduction to matrices} \\ Professor: Ph.D Daniel L{\' o}pez Aguayo}  %replace with Homework number
+\rhead{Katya Michelle Aguilar P{\' e}rez (A01750272) \\ Antonio Osamu Katagiri Tanaka (A01212611) \\ Jes{\' u}s Alberto Mart{\' i}nez Espinosa (A01750270) \\ Jos{\' e} Ivan Aviles Castrillo (A01749804)\\ Bruno Gonz{\' a}lez Soria (A01169284)} %replace with team members' names
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\ {\bfseries Instructions:} Please write neatly on each page of your homework and send it in pdf format to dlopez.aguayo@tec.mx. Typed solutions in \latex (only) will be given extra credit; no late homework will be accepted. Each team should consist (of at most) 5 students.
+
+
+%Solutions to problems go below.  Please follow the guidelines from https://www.overleaf.com/read/sfbcjxcgsnsk/
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{I} 
+In each of Problems 1 to 2, calculate the indicated matrix combination, with ${\emph A}$ the first matrix listed and ${\emph B}$ the second. \\ \\
+$1. \left(
+\begin{array}{ccc}
+ 1 & -1 & 3 \\
+ 2 & -4 & 6 \\
+ -1 & 1 & 2 \\
+\end{array}\right) and \left(
+\begin{array}{ccc}
+ -4 & 0 & 0 \\
+ -2 & -1 & 6 \\
+ 8 & 15 & 4 \\
+\end{array}\right); 2A-3B \\ \\ \\
+2.\left(
+\begin{array}{ccccc}
+ -22 & 1 & 6 & 4 & 5 \\
+ -3 & -2 & 14 & 2 & 25 \\
+ 18 & 1 & 16 & -4 & -6 \\
+\end{array}\right) and \left(
+\begin{array}{ccccc}
+ 0 & 1 & 3 & 1 & 14 \\
+ -8 & 6 & -10 & 4 & 10 \\
+ 21 & 6 & 17 & 3 & 2 \\
+\end{array}\right); -2A+6B$ \\
+\end{problem}
+\begin{sol} \\ \\
+1. 
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[\{\{2*1,2*-1,2*3\},\{2*2,2*-4,2*6\},\{2*-1,2*1,2*2\}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccc}
+ 2 & -2 & 6 \\
+ 4 & -8 & 12 \\
+ -2 & 2 & 4 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[\{\{3*-4,3*0,3*0\},\{3*-2,3*-1,3*6\},\{3*8,3*15,3*4\}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccc}
+ -12 & 0 & 0 \\
+ -6 & -3 & 18 \\
+ 24 & 45 & 12 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[\{\{2+12,-2-0,6-0\},\{4+6,-8+3,12-18\},\{-2-24,2-45,4-12\}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccc}
+ 14 & -2 & 6 \\
+ 10 & -5 & -6 \\
+ -26 & -43 & -8 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+2. \begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[\{\{-22,1,6,4,5\},\{-3,-2,14,2,25\},\{18,1,16,-4,-6\}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccccc}
+ -22 & 1 & 6 & 4 & 5 \\
+ -3 & -2 & 14 & 2 & 25 \\
+ 18 & 1 & 16 & -4 & -6 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[\{\{0,1,3,1,14\},\{-8,6,-10,4,10\},\{21,6,17,3,2\}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccccc}
+ 0 & 1 & 3 & 1 & 14 \\
+ -8 & 6 & -10 & 4 & 10 \\
+ 21 & 6 & 17 & 3 & 2 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[\{\{-2*-22,-2*1,-2*6,-2*4,-2*5\},}\\
+\pmb{\{-2*-3,-2*-2,-2*14,-2*2,-2*25\},}\\
+\pmb{\{-2*18,-2*1,-2*16,-2*-4,-2*-6\}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccccc}
+ 44 & -2 & -12 & -8 & -10 \\
+ 6 & 4 & -28 & -4 & -50 \\
+ -36 & -2 & -32 & 8 & 12 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[\{\{6*0,6*1,6*3,6*1,6*14\},\{6*-8,6*6,6*-10,6*4,6*10\},}\\
+\pmb{\{6*21,6*6,6*17,6*3,6*2\}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccccc}
+ 0 & 6 & 18 & 6 & 84 \\
+ -48 & 36 & -60 & 24 & 60 \\
+ 126 & 36 & 102 & 18 & 12 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[\{\{44+0,-2+6,-12+18,-8+6,-10+84\},}\\
+\pmb{\{6-48,4+36,-28-60,-4+24,-50+60\},}\\
+\pmb{\{-36+126,-2+36,-32+102,8+18,12+12\}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccccc}
+ 44 & 4 & 6 & -2 & 74 \\
+ -42 & 40 & -88 & 20 & 10 \\
+ 90 & 34 & 70 & 26 & 24 \\
+\end{array}
+\right)\)
+\end{doublespace}
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{II}
+Verify the above answers using Mathematica; please attach your input and output.
+\end{problem}
+\begin{sol}\\ \\
+For problem number 1, we define the variables a and b:
+
+\begin{doublespace}
+\noindent\(\pmb{a=\{\{1,-1,3\},\{2,-4,6\},\{-1,1,2\}\};}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{b=\{\{-4,0,0\},\{-2,-1,6\},\{8,15,4\}\};}\)
+\end{doublespace}
+
+Our input is the following equation:
+
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[2*a-3*b]}\)
+\end{doublespace}
+
+The final solution is the matrix:
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccc}
+ 14 & -2 & 6 \\
+ 10 & -5 & -6 \\
+ -26 & -43 & -8 \\
+\end{array}
+\right)\)
+\end{doublespace}
+For problem number 2, we define the variables a and b:
+\begin{doublespace}
+\noindent\(\pmb{a=\{\{-22,1,6,4,5\},\{-3,-2,14,2,25\},\{18,1,16,-4,-6\}\};}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{b=\{\{0,1,3,1,14\},\{-8,6,-10,4,10\},\{21,6,17,3,2\}\};}\)
+\end{doublespace}
+
+Our input is the following equation:
+
+\begin{doublespace}
+\noindent\(\pmb{\text{MatrixForm}[-2*a+6*b]}\)
+\end{doublespace}
+
+The final solution is the matrix:
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccccc}
+ 44 & 4 & 6 & -2 & 74 \\
+ -42 & 40 & -88 & 20 & 10 \\
+ 90 & 34 & 70 & 26 & 24 \\
+\end{array}
+\right)\)
+\end{doublespace}
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{III}
+In each of Problems 3 to 6, compute the products AB and BA where possible. Specify any products that are not defined and justify why. Finally, use Mathematica to verify your answers. \\ \\
+$1. A = \left(
+\begin{array}{ccc}
+ -4 & 6 & 2 \\
+ -2 & -2 & 3 \\
+ 1 & 1 & 8 \\
+\end{array}
+\right); B = \left(
+\begin{array}{ccccc}
+ -2 & 4 & 6 & 12 & 5 \\
+ -3 & -3 & 1 & 1 & 4 \\
+ 0 & 0 & 1 & 6 & -9 \\
+\end{array}
+\right)\\ \\ \\
+2. A=\left(
+\begin{array}{c}
+ -1 \\
+ 6 \\
+ 2 \\
+ 14 \\
+ -22 \\
+\end{array}
+\right)\text{; } B=\left(
+\begin{array}{c}
+ -3 \\
+ 2 \\
+ 6 \\
+ 0 \\
+ -4 \\
+\end{array}
+\right)\\ \\ \\
+3. A= \left(
+\begin{array}{ccc}
+ 1 & 1 & -5 \\
+ 0 & 4 & 2 \\
+\end{array}
+\right) \text{; B = }\left(
+\begin{array}{cc}
+ -2 & 1 \\
+ 2 & 0 \\
+ 0 & 9 \\
+ 6 & -5 \\
+\end{array}
+\right)$
+\end{problem}
+\begin{sol}\\
+Solving the product of matrixes (a.b) for exercise 1.A:
+\vfill
+$a = \left(
+\begin{array}{ccc}
+ -4 & 6 & 2 \\
+ -2 & -2 & 3 \\
+ 1 & 1 & 8 \\
+\end{array}
+\right) \text{; } b = \left(
+\begin{array}{ccccc}
+ -2 & 4 & 6 & 12 & 5 \\
+ -3 & -3 & 1 & 1 & 4 \\
+ 0 & 0 & 1 & 6 & -9 \\
+\end{array}
+\right)$
+\vfill
+$(a.b) =\left(
+\begin{array}
+{ccccc}
+ -10 & -34 & -16 & -30 & -14 \\
+ 10 & -2 & -11 & -8 & -45 \\
+ -5 & 1 & 15 & 61 & -63 \\
+\end{array}
+\right) 
+$\end{sol} \vfill
+
+In order to obtain this result analytically, we proceed to perform the product of rows by columns : 
+\vfill
+(8-10+0)= -10 \thinspace (4+6+0) = 10 \thinspace   (-2-3+0) = -5 
+\\ \vfill
+(-16-18+0)= -34 \thinspace (-8+6+0) = -2  \thinspace   (4-3+0) = 1
+\\ \vfill
+(-24+6+2)= -16 \thinspace (-12-2+3) = -11  \thinspace   (6+1+8) = 15
+\\ \vfill
+(-48+6+12)= -30 \thinspace (-24-2+18) = -8 \thinspace (12+1+48) = 61
+\\ \vfill
+(-20+24-18)= -14 \thinspace (-10-8-27) = -45\thinspace(5+4-72) = -63
+ \\ \vfill
+The product (b.a) is not possible due to the number of columns in B is different to the number of rows in A 
+\vfill
+Solving the product of matrixes (a.b) for exercise 2.A
+\vfill
+$a= \left(
+\begin{array}{ccccc}
+ -1 & 6 & 2 & 14 & -22 \\
+\end{array}
+\right) \text{; } b =\left(
+\begin{array}{c}
+ -3 \\
+ 2 \\
+ 6 \\
+ 0 \\
+ 4 \\
+\end{array}
+\right)$ \\
+
+$(a.b) = \left(
+\begin{array}{c}
+ -61 \\
+\end{array}
+\right)$ \\
+
+In order to obtain this result analytically, we proceed to perform the product of rows by columns:
+\\
+(3 + 12 + 12 + 0 - 88 ) = -61  \\
+\\
+The product of matrixes (b.a) is possible due to the number of columns in b is equal to the number of rows in a : \\
+\\
+$(b.a)= \left(
+\begin{array}{ccccc}
+ 3 & -18 & -6 & -42 & 66 \\
+ -2 & 12 & 4 & 28 & -44 \\
+ -6 & 36 & 12 & 84 & -132 \\
+ 0 & 0 & 0 & 0 & 0 \\
+ -4 & 24 & 8 & 56 & -88 \\
+\end{array}
+\right)$
+\\
+
+In order to obtain this result analytically, we proceed to perform the product of rows by columns : \\
+
+(-3)(-1) = 3 \thinspace(-3)(6) = 18\thinspace (-3)(2) = -6 \thinspace (-3)(14) = -42 \thinspace (-3)(-22) = 66
+\\ \vfill
+(2)(-1) = -2 \thinspace (2)(6) \thinspace (2)(2) = 4 \thinspace (2)(14) = 28 \thinspace (2)(-22) = -44
+\\ \vfill
+(6)(-1) = -6 \thinspace (6)(6) = 36 \thinspace (6)(2) = 12 \thinspace (6)(14) = 84 \thinspace (6)(-22) = -132
+\\ \vfill
+(0)(-1) = 0 \thinspace (0)(6) = 0 \thinspace (0)(2) = 0 \thinspace (0)(14) = 0 \thinspace (0)(-22) = 0
+\\ \vfill
+(4)(-1) = -4 \thinspace (4)(6) = 24 \thinspace (4)(2) = 8 \thinspace (4)(14) = 56 \thinspace (4)(-22) = -88 \vfill
+Solving the product of matrixes (a.b) for excercise 3.A \vfill
+
+$a = \left(
+\begin{array}{cc}
+ -2 & 1 \\
+ 2 & 0 \\
+ 0 & 9 \\
+ 6 & -5 \\
+\end{array}
+\right) \text{; } b= \left(
+\begin{array}{ccc}
+ 0 & 1 & -5 \\
+ 0 & 4 & 2 \\
+\end{array}
+\right)$ \vfill
+$(a.b) = \left(
+\begin{array}{ccc}
+ 0 & 2 & 12 \\
+ 0 & 2 & -10 \\
+ 0 & 36 & 18 \\
+ 0 & -14 & -40 \\
+\end{array}
+\right)$ \vfill
+In order to obtain this result analytically, we proceed to perform the product of rows by columns : \vfill
+((-2)(0) + (1)(0)) = 0 \thinspace ((-2)(1) + (1)(4)) = 2 \thinspace ((-2)(-5) +(1)(2)) = 12 \vfill
+((2)(0) + (0)(0)) = 0 \thinspace ((0)(1) + (9)(4)) = 36 \thinspace ((0)(-5) + (9)(2)) = 18 \vfill((6)(0) + (-5)(0) = 0 \thinspace ((6)(1) + (-5)(4)) = -14 \thinspace ((6)(-5) + (-5)(2)) = -40 \vfill
+The product of matrixes [b.a] is not possible due to the number of columns in b is different to the number of rows in a. 
+
+
+
+%Copy the following block of text for each problem in the assignment. 
+\begin{problem}{IV}
+Use Mathematica to determine the dimension (size) of the matrix AB where A and B are as in problem 3 of III.
+\end{problem}
+\begin{sol}\\ \\
+$a = \left(
+\begin{array}{ccc}
+ -4 & 6 & 2 \\
+ -2 & -2 & 3 \\
+ 1 & 1 & 8 \\
+\end{array}
+\right) \text{; } b =\left(
+\begin{array}{ccccc}
+ -2 & 4 & 6 & 12 & 5 \\
+ -3 & -3 & 1 & 1 & 4 \\
+ 0 & 0 & 1 & 6 & -9 \\
+\end{array}
+\right)$ \\ \\
+The product of matrixes (a.b) is: \\ \\
+$\left(
+\begin{array}{ccccc}
+ -10 & -34 & -16 & -30 & -14 \\
+ 10 & -2 & -11 & -8 & -45 \\
+ -5 & 1 & 15 & 61 & -63 \\
+\end{array}
+\right)$ \\ \\
+To determine the size of a matrix using the software Mathematica, we have to type the expression: Dimensions [a.b] \\ \\
+Dimensions [a.b] = {3, 5}
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{V}
+In each of the following problems, determine whether AB and BA are defined and determine how many rows and columns each product has if it is defined.\\
+1. A is 14 x 21, B is 21 x 14.\\
+2. A is 18 x 4, B is 18 x 4.
+\end{problem}
+\begin{sol}\\ \\
+{\bfseries 1.} A is 14x21, B is 21x14.
+\\AB it's possible because of the numbers of columns of A(21) equals of the number of rows of B(21) the size of AB is 14x14.
+\\BA It's possible because of the numbers of columns of B(14) equals of the number of rows of A(14) the size of AB is 21x21 \\
+\\{\bfseries 2.} A is 18x4, B is 18x4.
+\\AB It's not possible due to numbers of columns of A(4) is not equal to the numbers of rows of B(18) 
+\\AB It's not possible due to numbers of columns of B(4) is not equal to the numbers of rows of A(18) 
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{VI}
+Optional problem (for those familiar with mathematical induction). Let A =
+$\left(
+\begin{array}{cc}
+ 1 & 1 \\
+ 1 & 1 \\
+\end{array}
+\right).$
+Compute $A^{2}$; $A^{3}$ and $A^{4}$. Once done this, conjecture a formula and prove by induction that
+$$A^n=\left(
+\begin{array}{cc}
+ 2^{n-1} & 2^{n-1} \\
+ 2^{n-1} & 2^{n-1} \\
+\end{array}
+\right)\text{for all n} \geq 1.$$
+\end{problem}
+\begin{sol}\\
+\begin{lstlisting}
+VI.1
+Res= MatrixPower[A,2];
+Print["A^2=" MatrixForm[Res]];
+\end{lstlisting}
+\begin{equation}
+A^2= \left(
+\begin{array}{cc}
+ 2 & 2 \\
+ 2 & 2 \\
+\end{array}
+\right)
+\end{equation}
+
+\begin{lstlisting}
+VI.2
+Res= MatrixPower[A,3];
+Print["A^3=" MatrixForm[Res]];
+\end{lstlisting}
+\begin{equation}
+A^3= \left(
+\begin{array}{cc}
+ 4 & 4 \\
+ 4 & 4 \\
+\end{array}
+\right)
+\end{equation}
+
+\begin{lstlisting}
+VI.3
+Res= MatrixPower[A,4];
+Print["A^4="MatrixForm[Res]];
+\end{lstlisting}
+\begin{equation}
+A^4= \left(
+\begin{array}{cc}
+ 8 & 8 \\
+ 8 & 8 \\
+\end{array}
+\right)
+\end{equation}
+
+\begin{lstlisting}
+VI.4
+\end{lstlisting}
+\begin{equation}
+\text{Prove for n = 2}
+\end{equation}
+
+\begin{equation}
+A^2=\left(
+\begin{array}{cc}
+ 1+1 & 1+1 \\
+ 1+1 & 1+1 \\
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+ 2^{2-1} & 2^{2-1} \\
+ 2^{2-1} & 2^{2-1} \\
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+ 2 & 2 \\
+ 2 & 2 \\
+\end{array}
+\right)
+\end{equation}
+
+\begin{equation}
+A^n=\left(
+\begin{array}{cc}
+ 2^{n-1} & 2^{n-1} \\
+ 2^{n-1} & 2^{n-1} \\
+\end{array}
+\right) \text{is true for } n=2 \text{ so,}
+\end{equation}
+
+\begin{equation}
+\text{let's assume } A^k = \left(
+\begin{array}{cc}
+ 2^{k-1} & 2^{k-1} \\
+ 2^{k-1} & 2^{k-1} \\
+\end{array}
+\right) \text{ is true, to prove } A^{k+1}
+\end{equation}
+
+\begin{equation}
+A^{k+1}=\text{AA}^k=\left(
+\begin{array}{cc}
+ 1 & 1 \\
+ 1 & 1 \\
+\end{array}
+\right) \left(
+\begin{array}{cc}
+ 2^{k-1} & 2^{k-1} \\
+ 2^{k-1} & 2^{k-1} \\
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+ 2^k & 2^k \\
+ 2^k & 2^k \\
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+ 2^{(k+1)-1} & 2^{(k+1)-1} \\
+ 2^{(k+1)-1} & 2^{(k+1)-1} \\
+\end{array}
+\right)
+\end{equation}
+
+\begin{equation}
+\text{Therefore, } A^n=\left(
+\begin{array}{cc}
+ 2^{n-1} & 2^{n-1} \\
+ 2^{n-1} & 2^{n-1} \\
+\end{array}
+\right) \text{ is true for } n \geq 1
+\end{equation}
+
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{VII}
+A factory manufactures three products (doohickies, gizmos and widgets) and ships them to two warehouses for storage. The number of units of each product shipped to each warehouse is given by the matrix
+\\
+$$\text{A=} \left(
+\begin{array}{cc}
+ 200 & 75 \\
+ 150 & 100 \\
+ 100 & 125 \\
+\end{array}
+\right)$$
+\\
+where $a_{ij}$ is the number of units of product i sent to warehouse j and the products are taken in alphabetical order. The cost of shipping one unit of each product by truck is 1.50 per doohickey, 1.00 per gizmo, and 2.00 per widget. The corresponding unit costs to ship by train are 1.75, 1.50 and 1.00.
+(a) Organize these costs into a matrix B and then use matrix multiplication to show how the factory can compare the cost of shipping its product to each of the two warehouses by truck and train.
+(b) Let C be the product matrix obtained above. Find $c_{22}$ and explain what does $c_{22}$ means in this context.
+\end{problem}
+\begin{sol}
+Write your solution here.
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{VIII}
+$\text{Let A=} \left(
+\begin{array}{cc}
+ 0 & 1 \\
+ -1 & 1 \\
+\end{array}
+\right).$ \\ \\
+(a) Compute, by hand, $A^{2}$, $A^{3}$, ... , $A^{7}$. Verify your answer with Mathematica (please include your input/output).
+(b) Compute, by hand, $A^{2001}$. Verify your answer with Mathematica (please include your input/output).
+\end{problem}
+\begin{sol}
+$A^{n}$=A A . . . n times
+\\  \\
+$A^{2}=\left(
+\begin{array}{cc}
+0 & 1 \\
+ -1 & 1 \\
+\end{array}
+\right).\left(
+\begin{array}{cc}
+0 & 1 \\
+ -1 & 1 \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+(0)(0)+(1)(-1) & (0)(1)+(1)(1) \\
+ (-1)(0)+(1)(-1) & (-1)(1)+(1)(1) \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+-1 & 1 \\
+ -1 & 0 \\
+\end{array}
+\right)$
+\\
+\\  
+$A^{3}= A^{2A}= \left(
+\begin{array}{cc}
+-1 & 1 \\
+ -1 & 0 \\
+\end{array}
+\right).\left(
+\begin{array}{cc}
+0 & 1 \\
+ -1 & 1 \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+(-1)(0)+(1)(-1) & (-1)(1)+(1)(1) \\
+ (-1)(0)+(0)(-1) & (-1)(1)+(0)(1) \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+-1 & 0 \\
+ 0 & -1 \\
+\end{array}
+\right)$
+\\ 
+\\  
+\\$A^{4}= A^{3A}= \left(
+\begin{array}{cc}
+-1 & 0 \\
+ 0 & -1 \\
+\end{array}
+\right).\left(
+\begin{array}{cc}
+0 & 1 \\
+ -1 & 1 \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+(-1)(0)+(0)(-1) & (-1)(1)+(0)(1) \\
+ (0)(0)+(-1)(-1) & (0)(1)+(-1)(1) \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+0 & -1 \\
+ 1 & -1 \\
+\end{array}
+\right)$
+\\
+\\$A^{5}= A^{4A}= \left(
+\begin{array}{cc}
+0 & -1 \\
+ 1 & -1 \\
+\end{array}
+\right).\left(
+\begin{array}{cc}
+0 & 1 \\
+ -1 & 1 \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+(0)(0)+(-1)(-1) & (0)(1)+(-1)(1) \\
+ (1)(0)+(-1)(-1) & (1)(1)+(-1)(1) \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+1 & -1 \\
+ 1 & 0 \\
+\end{array}
+\right)$
+\\  
+\\  
+\\$A^{6}= A^{5A}= \left(
+\begin{array}{cc}
+1 & -1 \\
+ 1 & 0 \\
+\end{array}
+\right).\left(
+\begin{array}{cc}
+1 & -1 \\
+ 1 & 0 \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+(1)(0)+(-1)(-1) & (1)(1)+(-1)(1) \\
+ (1)(0)+(0)(-1) & (1)(1)+(0)(1) \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+1 & 0 \\
+ 0 & 1 \\
+\end{array}
+\right)$ = I
+\\  
+\\$A^{7}= A^{6A}= \left(
+\begin{array}{cc}
+1 & 0 \\
+ 0 & 1 \\
+\end{array}
+\right).\left(
+\begin{array}{cc}
+1 & -1 \\
+ 1 & 0 \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+(1)(0)+(0)(-1) & (1)(1)+(0)(1) \\
+ (0)(0)+(1)(-1) & (0)(1)+(1)(1) \\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+0 & 1 \\
+ -1 & 1 \\
+\end{array}
+\right)$ = IA = A
+\\ \\ 
+The division of 2001 is made between 6, due to until the power 6. It  was obtained the Identity Matrix, it gives us 333 with residue of 3, also the formula of exact division says \\ $$Dividend= (divisor)(Quotient)+ remainder$$ \\
+\begin{doublespace}
+Therefore 
+\\$A^{2001} = A^{6*333+3} = (A^{6})^{333}*A^{3}$
+\\as $A^{6}=I$, therefore
+\\$A^{2001}=I^{333}A^{3}$
+\\The Identity Matrix raised to any "n" is equal to I, therefore
+\\$A^{2001}=A^{3}=\left(
+\begin{array}{cc}
+-1 & 0 \\
+ 0 & -1 \\
+\end{array}
+\right)$
+\end{doublespace}
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{IX}
+We say that a matrix A is {\emph {nilpotent}} if there exists a natural number ${\emph{N}}$ such that $A^{\emph{N}}$ is the zero matrix. The smallest such ${\emph{N}}$ is called the index of A. Let\\
+$$\text{A=} \left(
+\begin{array}{cccc}
+ 0 & 2 & 1 & 6 \\
+ 0 & 0 & 1 & 2 \\
+ 0 & 0 & 0 & 3 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)$$
+Prove that A is ${\emph {nilpotent}}$. What is the index of A?
+\end{problem}
+\begin{sol}
+We say that a matrix A is nilpotent if there exist a natural Number N such that $A^{N}$ is the zero matrix.  The smallest such N is called the index of A. \\ \\
+Let\\ \\
+$A=\left(\begin{array}{cccc}
+ 0 & 2 & 1 & 6 \\
+ 0 & 0 & 1 & 2 \\
+ 0 & 0 & 0 & 3 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)$ \\ \\
+Prove that A is nilpotent. What is the index of A? \\ \\
+$A^{2} = \left(
+\begin{array}{cccc}
+ 0 & 2 & 1 & 6 \\
+ 0 & 0 & 1 & 2 \\
+ 0 & 0 & 0 & 3 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right). \left(
+\begin{array}{cccc}
+ 0 & 2 & 1 & 6 \\
+ 0 & 0 & 1 & 2 \\
+ 0 & 0 & 0 & 3 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)$\\
+
+$\left(
+\begin{array}{cccccccccccccccc}
+ 0\ 0 & 2\ 0 & 1\ 0 & 6\ 0 & 0\ 2 & 2\ 0 & 1\ 0 & 6\ 0 & 0\ 1 & 2\ 1 & 1\ 0 & 6\ 0 & 0\ 6 & 2\ 2 & 1\ 3 & 6\ 0 \\
+ 0\ 0 & 0\ 0 & 1\ 0 & 2\ 0 & 0\ 2 & 0\ 0 & 1\ 0 & 2\ 0 & 0\ 1 & 0\ 1 & 1\ 0 & 2\ 0 & 0\ 6 & 0\ 2 & 1\ 3 & 2\ 0 \\
+ 0\ 0 & 0\ 0 & 0\ 0 & 3\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 3\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 3\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 3\ 0 \\
+ 0\ 0 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 0\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 0\ 0 \\
+\end{array}
+\right)$\\
+
+
+$A^{2}= \left(
+\begin{array}{cccc}
+ 0 & 0 & 2 & 7 \\
+ 0 & 0 & 0 & 3 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)$ \\
+
+Again \\
+
+$A^{3}= \left(
+\begin{array}{cccc}
+ 0 & 0 & 2 & 7 \\
+ 0 & 0 & 0 & 3 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)*\left(
+\begin{array}{cccc}
+ 0 & 2 & 1 & 6 \\
+ 0 & 0 & 1 & 2 \\
+ 0 & 0 & 0 & 3 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)$ \\
+
+$\left(
+\begin{array}{cccccccccccccccc}
+ 0\ 0 & 0\ 0 & 2\ 0 & 7\ 0 & 0\ 2 & 0\ 0 & 2\ 0 & 7\ 0 & 0\ 1 & 0\ 1 & 2\ 0 & 7\ 0 & 0\ 6 & 0\ 2 & 2\ 3 & 7\ 0 \\
+ 0\ 0 & 0\ 0 & 0\ 0 & 3\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 3\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 3\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 3\ 0 \\
+ 0\ 0 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 0\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 0\ 0 \\
+ 0\ 0 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 0\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 0\ 0 \\
+\end{array}
+\right)$ \\
+
+
+$A^{3}=\left(
+\begin{array}{cccc}
+ 0 & 0 & 0 & 6 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)$ \\
+
+$A^{4}=\left(
+\begin{array}{cccc}
+ 0 & 0 & 0 & 6 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)*\left(
+\begin{array}{cccc}
+ 0 & 2 & 1 & 6 \\
+ 0 & 0 & 1 & 2 \\
+ 0 & 0 & 0 & 3 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)$ \\
+
+$\left(
+\begin{array}{cccccccccccccccc}
+ 0\ 0 & 0\ 0 & 0\ 0 & 6\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 6\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 6\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 6\ 0 \\
+ 0\ 0 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 0\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 0\ 0 \\
+ 0\ 0 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 0\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 0\ 0 \\
+ 0\ 0 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 2 & 0\ 0 & 0\ 0 & 0\ 0 & 0\ 1 & 0\ 1 & 0\ 0 & 0\ 0 & 0\ 6 & 0\ 2 & 0\ 3 & 0\ 0 \\
+\end{array}
+\right)$ \\
+
+$A^{4}=\left(
+\begin{array}{cccc}
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+\end{array}
+\right)$\\ \\
+Therefore Index=4\\
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{X}
+In each of the following, find the explicit form of the 4 x 4 matrix A = $[a_{ij}]$ that satisfies the given condition:\\
+1. $[a_{ij}] = (-1)^{i+j}$ for all ${\emph{i,j}}$ =1,...4.\\
+2. $[a_{ij}] = j-i$ for all ${\emph{i,j}}$ =1,...4.\\
+3. $[a_{ij}] = \left\{
+\begin{array}{cc}
+ 1 & \text{if }6\leq i+j\leq 8 \\
+ 0 & \text{otherwise} \\
+\end{array}
+\right.$\\
+\end{problem}
+\begin{sol}
+\begin{lstlisting}
+row = Dimensions[Res][[1]]; (*i*)
+col = Dimensions[Res][[2]]; (*j*)
+\end{lstlisting}
+
+\begin{lstlisting}
+X.1
+For[i=1,i<= row,i++,
+  For[j=1,j<= col,j++,
+    Res[[i,j]]=(-1)^(i+j);
+  ];
+];
+Print["A=" MatrixForm[Res]];
+\end{lstlisting}
+\begin{equation}
+\text{A=} \left(
+\begin{array}{cccc}
+ 1 & -1 & 1 & -1 \\
+ -1 & 1 & -1 & 1 \\
+ 1 & -1 & 1 & -1 \\
+ -1 & 1 & -1 & 1 \\
+\end{array}
+\right)
+\end{equation}
+
+\begin{lstlisting}
+X.2
+For[i=1,i<= row,i++,
+  For[j=1,j<= col,j++,
+    Res[[i,j]]=j-i;
+  ];
+];
+Print["A=" MatrixForm[Res]];
+\end{lstlisting}
+\begin{equation}
+\text{A=} \left(
+\begin{array}{cccc}
+ 0 & 1 & 2 & 3 \\
+ -1 & 0 & 1 & 2 \\
+ -2 & -1 & 0 & 1 \\
+ -3 & -2 & -1 & 0 \\
+\end{array}
+\right)
+\end{equation}
+
+\begin{lstlisting}
+X.3
+For[i = 1, i <= row, i++,
+  For[j = 1, j <= col, j++,
+    If[(6 <= i + j) && (i + j <= 8),
+      Res[[i, j]] = 1,
+      Res[[i, j]] = 0];
+  ];
+];
+Print["A=" MatrixForm[Res]];
+\end{lstlisting}
+\begin{equation}
+\text{A=} \left(
+\begin{array}{cccc}
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 1 \\
+ 0 & 0 & 1 & 1 \\
+ 0 & 1 & 1 & 1 \\
+\end{array}
+\right)
+\end{equation}
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{XI}
+Optional problem (for those familiar with mathematical induction). Let A = $\left(
+\begin{array}{cc}
+ \text{cos $\theta $} & -\sin \theta  \\
+ \text{sin $\theta $} & \text{cos $\theta $} \\
+\end{array}
+\right)$. Prove, by mathematical induction, that \\
+$$A^{n}=\left(
+\begin{array}{cc}
+ \cos \left( \text{n$\theta $}\right) & - \sin \left(\text{n$\theta $}\right)  \\
+  \sin \left(\text{n$\theta $}\right)  & \cos  \left(\text{n$\theta $}\right) \\
+\end{array}
+\right)\text{for all n}\geq 1.$$\\
+Finally, use Mathematica to compute $A^{5}$ and compare the output with the above formula. Do the values match? Now use the {\emph TrigReduce} command!
+\end{problem}
+\begin{sol}
+Let A= $\left(
+\begin{array}{cc}
+ cos \theta  & -sin \theta  \\
+ sin \theta  & cos \theta  \\
+\end{array}
+\right)$\\
+\\
+
+$A^{n}=\left(
+\begin{array}{cc}
+ cos(n\theta)  & -sin(n\theta)  \\
+ sin(n\theta)  & cos(n\theta)  \\
+\end{array}
+\right) for  all  n\geq1 $\\
+\\
+
+$A^{2}=\left(
+\begin{array}{cc}
+ cos \theta  & -sin \theta  \\
+ sin \theta  & cos \theta  \\
+\end{array}
+\right)*\left(
+\begin{array}{cc}
+ cos \theta  & -sin \theta  \\
+ sin \theta  & cos \theta  \\
+\end{array}
+\right)$\\
+\\
+
+$\left(
+\begin{array}{cccc}
+ \text{cos $\theta$} \text{cos $\theta$} & -\text{sin $\theta$} \text{sin $\theta$} & -\text{cos $\theta$} \text{sin $\theta$} & -\text{sin $\theta$} \text{cos $\theta$} \\
+ \text{sin $\theta$} \text{cos $\theta$} & \text{cos $\theta$} \text{sin $\theta$} & -\text{sin $\theta$} \text{sin $\theta$} & \text{cos $\theta$} \text{cos $\theta$} \\
+\end{array}
+\right)$\\
+\\
+\\
+$\left(
+\begin{array}{cc}
+ \cos ^2 \theta-\sin ^2\theta & -2 \text{sin $\theta$} \text{cos $\theta$} \\
+ 2 \text{sin $\theta$} \text{cos $\theta$} & \cos ^2 \theta-\sin ^2 \theta \\
+\end{array}
+\right)$\\
+\\
+ Therefore\\
+ \\
+$A^{2}=\left(
+\begin{array}{cc}
+ \text{cos 2x} & -\text{sin 2x} \\
+ \text{sin x} & \text{cos 2x} \\
+\end{array}
+\right)$\\
+\\
+\\
+$A^{3}=\left(
+\begin{array}{cc}
+ \text{cos 2x} & -\text{sin 2x} \\
+ \text{sin x} & \text{cos 2x} \\
+\end{array}
+\right)*\left(
+\begin{array}{cc}
+ cos \theta  & -sin \theta  \\
+ sin \theta  & cos \theta  \\
+\end{array}
+\right)$
+\\
+\\
+$\left(
+\begin{array}{cccc}
+ \text{cos 2$\theta$} \text{cos $\theta$} & -\text{sin 2$\theta$} \text{sin $\theta$} & -\text{cos 2$\theta$} \text{sin $\theta$} & -\text{sin 2$\theta$} \text{cos $\theta$} \\
+ \text{sin 2$\theta$} \text{cos $\theta$} & \text{cos 2$\theta$} \text{sin $\theta$} & -\text{sin 2$\theta$} \text{sin $\theta$} & \text{cos 2$\theta$} \text{cos $\theta$} \\
+\end{array}
+\right)$\\
+\\
+\\
+$\left(
+\begin{array}{cc}
+ \cos 2\theta \cos \theta-\sin 2\theta \sin \theta & -\cos \theta \sin 2\theta - \cos 2\theta \sin \theta \\
+ \cos \theta \sin 2\theta+\cos 2\theta \sin \theta & \cos 2\theta \cos \theta - \sin 2\theta \sin \theta \\
+\end{array}
+\right)$\\
+\\
+
+Now we can use this trigonometric identities, for example:\\
+cos(x+y) = cos(x) cos(y) - sin(x) sin(y) to solve $cos2\theta*cos\theta-sin2\theta*sin\theta$ \\
+\\
+
+We obtain $cos (2\theta +\theta) = cos 2\theta*cos\theta - sin 2\theta*sin \theta$ \\ 
+\\
+
+equals to $cos 3\theta$ and so on and so forth we obtain 
+\\
+\\
+
+$A^{3}=\left(
+\begin{array}{cc}
+ \cos 3\theta & -\sin 3\theta \\
+ \sin 3\theta & \cos 3\theta \\
+\end{array}
+\right)$
+\end{sol}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}
