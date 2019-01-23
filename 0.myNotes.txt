@@ -1,3 +1,6 @@
+
+/****************************************************************************/
+
 CLAUSTRO DE PROFESORES: Micro y Nanosistemas
 
 Ciro Angel Rodríguez González <ciro.rodriguez@tec.mx>; C. Monterrey
@@ -7,3 +10,33 @@ Israel De León Arizpe         <ideleon@tec.mx>;        C. Monterrey
 Roberto Parra Saldivar        <r.parra@tec.mx>;        C. Monterrey
 Víctor Hugo Pérez González    <vhpg@tec.mx>;           C. Monterrey
 
+/****************************************************************************/
+
+https://www.forbes.com/sites/worldeconomicforum/2019/01/16/how-davos-talk-brings-action-to-mobility-and-transportation-issues/#423852004e29
+
+/****************************************************************************/
+
+ScienceDirect
+IEEE (Innovation Plus)
+Scopus
+Sci Finder
+EBSCO
+Knovel
+
+/****************************************************************************/
+
+MATH team
+Bruno Gonzalez Soria            (A01169284)
+Antonio Osamu Katagiri Tanaka   (A01212611)
+Jose Ivan Aviles Castrillo      (A01749804)
+Jesus Alberto Martınez Espinosa (A01750270)
+Katya Michelle Aguilar Perez    (A01750272)
+
+/****************************************************************************/
+
+SUSTAINABILITY team
+Antonio Osamu Katagiri Tanaka (A01212611)
+Bruno Gonzalez Soria          (A01169284)
+Carlos Cardoso Isidoro        (A01750267)
+
+/****************************************************************************/
