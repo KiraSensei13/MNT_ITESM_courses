@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  22 JAN 2019 15:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  23 JAN 2019 16:34
 entering extended mode
 **./review.tex
 (review.tex
@@ -24,19 +24,162 @@ y"
 Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
- ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\utf8x.def"
-File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
-)) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\ucs.sty"
-Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
-
-("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-global.def
-"
-File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count88
-\uc@combtoks=\toks16
-\uc@combtoksb=\toks17
-\uc@temptokena=\toks18
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
 y"
@@ -52,7 +195,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
+\@emptytoks=\toks16
 \ex@=\dimen103
 ))
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
@@ -64,13 +207,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 "
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count89
+\inf@bad=\count88
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count90
-\leftroot@=\count91
+\uproot@=\count89
+\leftroot@=\count90
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count92
-\DOTSCASE@=\count93
+\classnum@=\count91
+\DOTSCASE@=\count92
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
@@ -79,26 +222,26 @@ LaTeX Info: Redefining \cdots on input line 596.
 \big@size=\dimen105
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count94
-\c@MaxMatrixCols=\count95
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
-\c@parentequation=\count96
-\dspbrk@lvl=\count97
-\tag@help=\toks20
-\row@=\count98
-\column@=\count99
-\maxfields@=\count100
-\andhelp@=\toks21
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
 \eqnshift@=\dimen106
 \alignsep@=\dimen107
 \tagshift@=\dimen108
 \tagwidth@=\dimen109
 \totwidth@=\dimen110
 \lineht@=\dimen111
-\@envbody=\toks22
+\@envbody=\toks19
 \multlinegap=\skip44
 \multlinetaggap=\skip45
-\mathdisplay@stack=\toks23
+\mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
@@ -113,79 +256,605 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (review.aux)
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.
+sty"
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count100
+\calc@Bcount=\count101
+\calc@Adimen=\dimen112
+\calc@Bdimen=\dimen113
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count102
+\calc@Cskip=\skip48
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.st
+y"
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\atbegsh
+i.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infware
+rr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds
+.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
+ty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
+y"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\color
+.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdfte
+x.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
+sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
+sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+\AM@pagewidth=\dimen116
+\AM@pageheight=\dimen117
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.
+def"
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box28
+\AM@global@opts=\toks22
+\AM@toc@title=\toks23
+\c@AM@survey=\count103
+\AM@templatesizebox=\box29
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
+sty"
+Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexc
+mds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluate
+x.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.
+sty"
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count104
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
+.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetke
+ys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmd
+s.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+)))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty"
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count105
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def"
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count106
+\c@listtotal=\count107
+\c@listcount=\count108
+\c@liststart=\count109
+\c@liststop=\count110
+\c@citecount=\count111
+\c@citetotal=\count112
+\c@multicitecount=\count113
+\c@multicitetotal=\count114
+\c@instcount=\count115
+\c@maxnames=\count116
+\c@minnames=\count117
+\c@maxitems=\count118
+\c@minitems=\count119
+\c@citecounter=\count120
+\c@maxcitecounter=\count121
+\c@savedcitecounter=\count122
+\c@uniquelist=\count123
+\c@uniquename=\count124
+\c@refsection=\count125
+\c@refsegment=\count126
+\c@maxextratitle=\count127
+\c@maxextratitleyear=\count128
+\c@maxextraname=\count129
+\c@maxextradate=\count130
+\c@maxextraalpha=\count131
+\c@abbrvpenalty=\count132
+\c@highnamepenalty=\count133
+\c@lownamepenalty=\count134
+\c@maxparens=\count135
+\c@parenlevel=\count136
+\blx@tempcnta=\count137
+\blx@tempcntb=\count138
+\blx@tempcntc=\count139
+\blx@maxsection=\count140
+\blx@maxsegment@0=\count141
+\blx@notetype=\count142
+\blx@parenlevel@text=\count143
+\blx@parenlevel@foot=\count144
+\blx@sectionciteorder@0=\count145
+\blx@entrysetcounter=\count146
+\labelnumberwidth=\skip49
+\labelalphawidth=\skip50
+\biblabelsep=\skip51
+\bibitemsep=\skip52
+\bibnamesep=\skip53
+\bibinitsep=\skip54
+\bibparsep=\skip55
+\bibhang=\skip56
+\blx@bcfin=\read1
+\blx@bcfout=\write3
+\c@mincomprange=\count147
+\c@maxcomprange=\count148
+\c@mincompwidth=\count149
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-dm.de
+f"
+File: blx-dm.def 2018/11/02 v3.12 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'apa.dbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\apa.d
+bx"
+File: apa.dbx 2018/04/02 v7.7 APA biblatex style data model
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count150
+\c@savedafterword=\count151
+\c@annotator=\count152
+\c@savedannotator=\count153
+\c@author=\count154
+\c@savedauthor=\count155
+\c@bookauthor=\count156
+\c@savedbookauthor=\count157
+\c@commentator=\count158
+\c@savedcommentator=\count159
+\c@editor=\count160
+\c@savededitor=\count161
+\c@editora=\count162
+\c@savededitora=\count163
+\c@editorb=\count164
+\c@savededitorb=\count165
+\c@editorc=\count166
+\c@savededitorc=\count167
+\c@foreword=\count168
+\c@savedforeword=\count169
+\c@holder=\count170
+\c@savedholder=\count171
+\c@introduction=\count172
+\c@savedintroduction=\count173
+\c@namea=\count174
+\c@savednamea=\count175
+\c@nameb=\count176
+\c@savednameb=\count177
+\c@namec=\count178
+\c@savednamec=\count179
+\c@translator=\count180
+\c@savedtranslator=\count181
+\c@shortauthor=\count182
+\c@savedshortauthor=\count183
+\c@shorteditor=\count184
+\c@savedshorteditor=\count185
+\c@with=\count186
+\c@savedwith=\count187
+\c@writer=\count188
+\c@savedwriter=\count189
+\c@producer=\count190
+\c@savedproducer=\count191
+\c@execproducer=\count192
+\c@savedexecproducer=\count193
+\c@director=\count194
+\c@saveddirector=\count195
+\c@labelname=\count196
+\c@savedlabelname=\count197
+\c@institution=\count198
+\c@savedinstitution=\count199
+\c@lista=\count266
+\c@savedlista=\count267
+\c@listb=\count268
+\c@savedlistb=\count269
+\c@listc=\count270
+\c@savedlistc=\count271
+\c@listd=\count272
+\c@savedlistd=\count273
+\c@liste=\count274
+\c@savedliste=\count275
+\c@listf=\count276
+\c@savedlistf=\count277
+\c@location=\count278
+\c@savedlocation=\count279
+\c@organization=\count280
+\c@savedorganization=\count281
+\c@origlocation=\count282
+\c@savedoriglocation=\count283
+\c@origpublisher=\count284
+\c@savedorigpublisher=\count285
+\c@publisher=\count286
+\c@savedpublisher=\count287
+\c@language=\count288
+\c@savedlanguage=\count289
+\c@origlanguage=\count290
+\c@savedoriglanguage=\count291
+\c@pageref=\count292
+\c@savedpageref=\count293
+\shorthandwidth=\skip57
+\shortjournalwidth=\skip58
+\shortserieswidth=\skip59
+\shorttitlewidth=\skip60
+\shortauthorwidth=\skip61
+\shorteditorwidth=\skip62
+\locallabelnumberwidth=\skip63
+\locallabelalphawidth=\skip64
+\localshorthandwidth=\skip65
+\localshortjournalwidth=\skip66
+\localshortserieswidth=\skip67
+\localshorttitlewidth=\skip68
+\localshortauthorwidth=\skip69
+\localshorteditorwidth=\skip70
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-compa
+t.def"
+File: blx-compat.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
+def"
+File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+\c@textcitecount=\count294
+\c@textcitetotal=\count295
+\c@textcitemaxnames=\count296
+\c@biburlnumpenalty=\count297
+\c@biburlucpenalty=\count298
+\c@biburllcpenalty=\count299
+\c@smartand=\count300
+)
+Package biblatex Info: Trying to load bibliography style 'apa'...
+Package biblatex Info: ... file 'apa.bbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\apa.b
+bx"
+File: apa.bbx 2018/04/02 v7.7 APA biblatex references style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\stand
+ard.bbx"
+File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count301
+\c@bbx:relatedtotal=\count302
+))
+Package biblatex Info: Trying to load citation style 'apa'...
+Package biblatex Info: ... file 'apa.cbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\apa.c
+bx"
+File: apa.cbx 2018/04/02 v7.7 APA biblatex citation style
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
+ overwriting.
+Package biblatex Info: Delimiter 'nameyeardelim' in context 'textcite' already 
+defined, overwriting.
+Package biblatex Info: Delimiter 'andothersdelim' in context '' already defined
+, overwriting.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\fullcite'.
+Package biblatex Info: Redefining '\citeyear'.
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\citeauthor'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
+cfg"
+File: biblatex.cfg 
+))
+Package biblatex Info: Trying to load language 'english' -> 'english-apa'...
+Package biblatex Info: ... file 'english-apa.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\engli
+sh-apa.lbx"
+File: english-apa.lbx 2018/04/02 v7.7 APA biblatex localisation
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\engli
+sh.lbx"
+File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'american' -> 'american-apa'...
+Package biblatex Info: ... file 'american-apa.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex-apa\ameri
+can-apa.lbx"
+File: american-apa.lbx 2018/04/02 v7.7 APA biblatex localisation
+Package biblatex Info: Trying to load language 'american'...
+Package biblatex Info: ... file 'american.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\ameri
+can.lbx"
+File: american.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\engli
+sh.lbx"
+File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+))))
+\@quotelevel=\count303
+\@quotereset=\count304
+ (review.aux)
 \openout1 = `review.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 26.
 
-("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
-File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+LaTeX Font Info:    ... okay on input line 26.
+\AtBeginShipoutBox=\box30
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
+ii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count305
+\scratchdimen=\dimen118
+\scratchbox=\box31
+\nofMPsegments=\count306
+\nofMParguments=\count307
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count308
+\MPscratchDim=\dimen119
+\MPnumerator=\count309
+\makeMPintoPDFobject=\count310
+\everyMPtoPDFconversion=\toks25
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
+base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
+y"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefin
+ekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\pdflscape
+.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\lscape.st
+y"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.
+sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `review.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'review.bbl' found.
+ (review.bbl)
+Package biblatex Info: Reference section=0 on input line 26.
+Package biblatex Info: Reference segment=0 on input line 26.
+LaTeX Font Info:    Try loading font information for U+msa on input line 27.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 21.
+LaTeX Font Info:    Try loading font information for U+msb on input line 27.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
-("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
-
-Overfull \hbox (41.59991pt too wide) in paragraph at lines 25--26
+Overfull \hbox (41.59991pt too wide) in paragraph at lines 31--32
 []\OT1/cmr/m/n/10 Nombre: []   Matrcula: [] 
  []
 
 
-Overfull \hbox (38.82776pt too wide) in paragraph at lines 26--27
+Overfull \hbox (38.82776pt too wide) in paragraph at lines 32--33
 []\OT1/cmr/m/n/10 Materia: []   Clave: [] 
+ []
+
+
+Overfull \hbox (94.15297pt too wide) in paragraph at lines 33--34
+[]\OT1/cmr/m/n/10 Artculo: []
  []
 
 [1
 
 {C:/Users/oskat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-(review.aux) ) 
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=19, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf  used on input line 146.
+
+(pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
+
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf  used on input line 146.
+
+(pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
+
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=22, page=1, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 1>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
+ne 146.
+(pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 1>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
+ne 146.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[3
+
+]
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 1>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
+ne 146.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 1>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
+ne 146.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 1>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
+ne 146.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+ [4 <./Nanoelectric_field_sensor.pdf>] (review.aux)
+Package logreq Info: Writing requests to 'review.run.xml'.
+\openout1 = `review.run.xml'.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1428 strings out of 492969
- 19462 string characters out of 3126585
- 88494 words of memory out of 3000000
- 5318 multiletter control sequences out of 15000+200000
- 13088 words of font info for 51 fonts, out of 3000000 for 9000
+ 11154 strings out of 492969
+ 193293 string characters out of 3126585
+ 654975 words of memory out of 3000000
+ 14879 multiletter control sequences out of 15000+200000
+ 13765 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,6n,27p,328b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oskat/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
-Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r9.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsy6.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/oskat/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on review.pdf (2 pages, 122476 bytes).
+ 47i,18n,60p,1387b,3866s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\oskat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+tcrm0600.pk> <C:\Users\oskat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\tcrm1200.pk><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oskat/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Use
+rs/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr9.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/oskat/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on review.pdf (4 pages, 773418 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,8 +1,14 @@
 \documentclass{article}
 
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{pdfpages}
+
+% MLA, APA, or IEEE? - https://www.overleaf.com/learn/latex/Biblatex_citation_styles
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
 
 \newcommand{\dbx}[2]{\rule[-#2]{0cm}{#2}{\hspace{#1}}}
 \newcommand{\bx}[1]{\fbox{\rule{0cm}{0.08in}{\hspace{#1}}}}
@@ -24,7 +30,7 @@ Format shamelessly stolen from Alan Bundy.}}
 \begin{description}
 \item Nombre: \boxed{Antonio\ Osamu\ Katagiri\ Tanaka} \hspace{1in} Matr\'{\i}cula: \boxed{A01212611}
 \item Materia: \boxed{M\acute{e}todos\ de\ investigaci\acute{o}n\ e\ innovaci\acute{o}n} \hspace{1in} Clave: \boxed{GI5000.1}
-\item Art\'{\i}culo: \boxed{Article\ Title}
+\item Art\'{\i}culo: \boxed{Nano-electric\ field\ sensor\ based\ on\ Two\ Dimensional\ Photonic\ Crystal\ resonator} \parencite{Rajasekar2018}
 \end{description}
 
 \section*{Instructions} 
@@ -46,7 +52,7 @@ comments section for extended discussion.}
 %UNCHECKED
 %$\square$
 
-$\square$
+\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
 1. Describes a new technique.  \\
 $\square$
 2. Extends or improves an existing technique.  \\
@@ -133,6 +139,11 @@ following questions. Justify your answers.
 Describe the message of the paper in your own words. Use 100-200
 words. \\
 \boxed{}
+
+\clearpage
+\printbibliography
+
+\includepdf{Nanoelectric_field_sensor}
 
 \end{document}
 
