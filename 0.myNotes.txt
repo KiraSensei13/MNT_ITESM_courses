@@ -66,6 +66,7 @@ Robótica                                      : Dr. José Luis Gordillo Moscoso
 Optimización y Ciencia de Datos               : Dr. Neale Ricardo Smith Cornejo
 Nanomateriales                                : Dr. Joaquín Esteban Oseguera Peña
 Nano-sensores y Dispositivos                  : Dr. Sergio Omar Martínez Chapa
+http://www.itesm.mx/wps/wcm/connect/itesm/tecnologico+de+monterrey/investigacion/grupos+de+investigacion+con+enfoque+estrategico/por+escuelas/escuela+de+ingenieria+y+ciencias/sensores+y+dispositivos
 
 /****************************************************************************/
 

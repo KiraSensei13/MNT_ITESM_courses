@@ -1,0 +1,125 @@
+
+%----------------------------------------------------------------------------------------%
+% START LaTeX preamble
+
+% define document type, font and paper size
+\documentclass[11pt,a4paper]{article}
+
+%----------------------------------------------------------------------------------------%
+% IMPORT LaTeX packages
+
+\usepackage{inputenc}
+\usepackage[ngerman, english]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[margin=1.25in]{geometry}
+
+%----------------------------------------------------------------------------------------%
+% IMPORT LaTeX packages to manange bibliography
+
+% MLA, APA, or IEEE? - https://www.overleaf.com/learn/latex/Biblatex_citation_styles
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%----------------------------------------------------------------------------------------%
+% DEFINE header values
+
+% define the cover page values
+\title
+{
+    Weekley News \\
+    World Economic Forum 2019
+}
+\author
+{
+    Antonio Osamu Katagiri Tanaka \\
+    A01212611
+}
+\date{\today}
+
+%----------------------------------------------------------------------------------------%
+% USER-DEFINED commands
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+    \\
+    \\
+    \small
+    \textbf{\textit{Keywords:}} #1
+}
+
+%----------------------------------------------------------------------------------------%
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------%
+% CREATE the 1st page (cover page)
+
+\maketitle
+
+%----------------------------------------------------------------------------------------%
+% DEFINE the abstract text & keywords
+
+%\begin{abstract}
+%    \emph
+%    {
+%        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+%    }
+%    \keywords{Lorem, ipsum, dolor, sit, amet}
+%\end{abstract}
+%\clearpage
+
+%----------------------------------------------------------------------------------------%
+% CREATE a table of contents in a new page
+
+%\tableofcontents
+%\clearpage
+
+%----------------------------------------------------------------------------------------%
+% CREATE a list of figures and a list of tables in a new page
+
+%\listoffigures
+%\listoftables
+%\clearpage
+
+%----------------------------------------------------------------------------------------%
+% DOCUMENT body starts here
+
+\section*{The World Economic Forum 2019 is kicking off in Davos, Switzerland.}\label{sec:intro}
+
+The World Economic Forum (WEF) annual meeting is a four-day event that is expected to attract several leaders around the globe in politics, industry and miscellaneous society. The event will take place between January 22th and 25th. The name ``Davos" refers to a ski resort in Switzerland where forum takes place every January; however, the forum has become synonymous with the Swiss town Davos. The World Economic Forum is a Swiss non-profit organization that was founded by Klaus Schwab in 1971. \parencite{Schulze2018}
+
+The forum's purpose is to bring together people from musicians, celebrities and artist to economist, politicians and scientists; and provide a space to talk about common interests. The World Economic Forum believes ``[...] that progress happens by bringing together people from all walks of life who have the drive and the influence to make positive change." \parencite{WEF2019} Discussions are intended to tackle the world's problems, such as climate change.
+
+Next week, the Forum will focus on ``Globalization 4.0: Shaping a Global Architecture in the Age of the Fourth Industrial Revolution" \parencite{WEF2019a}, with four main themes:
+\begin{itemize}
+\item Global economic leadership,
+\item The balance of global power,
+\item Ecological challenges,
+\item and The Fourth Industrial Revolution
+\end{itemize}
+
+The Forum comprises several sessions, panels, and seminars, where participants can listen, collaborate and debate on multiple subjects. Note that key sessions will be broadcast on the Forum's website at: https://www.weforum.org/events/world-economic-forum-annual-meeting.
+
+Even though the forum's intentions are to improve the "state of the world", Davos has been criticized for bringing the rich and powerful to have a "fun time". Being the focus point the shared interest of the world's problem solving environment is great news, but it's not sufficient. A shared vision of the future and an action plan are also required. \parencite{Ellyatt2018}
+
+%\parencite{WBCSD2019}
+%\parencite{WEF2019a}
+%\parencite{WEF2019}
+
+%----------------------------------------------------------------------------------------%
+% PRINT bibliography/references in a new page
+
+\clearpage
+\printbibliography
+
+%----------------------------------------------------------------------------------------%
+
+\end{document}
+
+%----------------------------------------------------------------------------------------%
