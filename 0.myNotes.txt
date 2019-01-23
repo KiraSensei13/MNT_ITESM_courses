@@ -40,3 +40,32 @@ Bruno Gonzalez Soria          (A01169284)
 Carlos Cardoso Isidoro        (A01750267)
 
 /****************************************************************************/
+
+49 CIDTEC - sesiones paralelas
+
+TECNOLOGÍAS DE INFORMACIÓN, ELECTRÓNICA Y COMUNICACIONES
+Sistemas Inteligentes                             : Dr. Hugo Terashima Marín
+Modelos de Aprendizaje Computacional              : Dr. Raúl Monroy Borja
+Fototónica y Sistemas Cuánticos                   : Dr. Julio César Gutiérrez Vega
+Telecomunicaciones para la Transformación Digital : Dr. César Vargas Rosales
+
+MEDICINA
+Bioinformática para el Diagnóstico Clínico : Dr. Víctor Manuel Treviño Alvarado
+Bioingeniería y Medicina Regenerativa      : Dr. Marco Antonio Rito Palomares
+Enfermedades Metabólicas                   : Dr. Arturo Santos García
+Genética Humana                            : Dr. Augusto Rojas Martínez
+Investigación en Cáncer                    : Dra. Rocío Ortiz López
+Medicina Cardiovascular y Metabolómica     : Dr. Gerardo de Jesús García Riva
+Terapias Innovadoras en Ciencias Visuales  : Dr. Jorge Eugenio Valdez García
+
+MECATRÓNICA
+Manufactura Avanzada                          : Dr. Ciro Ángel Rodríguez González
+Nanotecnología para el Diseño de Dispositivos : Dr. Alex Elías Zúñiga
+Innovación de Productos                       : Dr. Arturo Molina Gutiérrez
+Robótica                                      : Dr. José Luis Gordillo Moscoso
+Optimización y Ciencia de Datos               : Dr. Neale Ricardo Smith Cornejo
+Nanomateriales                                : Dr. Joaquín Esteban Oseguera Peña
+Nano-sensores y Dispositivos                  : Dr. Sergio Omar Martínez Chapa
+
+/****************************************************************************/
+
