@@ -17,11 +17,14 @@ filteredDataset = filteredDataset[interestIndex,]
 interestIndex = filteredDataset$Measure == "Number of total deaths"
 filteredDataset = filteredDataset[interestIndex,]
 
+#create a Box-plot with all the years
+boxplot(Value ~ Year, data = filteredDataset, outline=F) #boxplot w/no outliners
+
 #3rd filter to fetch data of 2010 & 2012 only
 interestIndex = filteredDataset$Year == 2010 | filteredDataset$Year == 2012
 filteredDataset = filteredDataset[interestIndex,]
 
-#create a Box-plot
-# Value & Year are columns in Dataset.csv
+#create a Box-plot for 2010 and 2012 only
+#Value & Year are columns in Dataset.csv
 boxplot(Value ~ Year, data = filteredDataset) #standard boxplot
 boxplot(Value ~ Year, data = filteredDataset, outline=F) #boxplot w/no outliners
