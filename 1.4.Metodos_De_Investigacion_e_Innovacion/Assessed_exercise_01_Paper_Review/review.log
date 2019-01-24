@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  23 JAN 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  23 JAN 2019 21:11
 entering extended mode
 **./review.tex
 (review.tex
@@ -753,31 +753,16 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Try loading font information for U+msb on input line 27.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (41.59991pt too wide) in paragraph at lines 31--32
-[]\OT1/cmr/m/n/10 Nombre: []   Matrcula: [] 
- []
-
-
-Overfull \hbox (38.82776pt too wide) in paragraph at lines 32--33
-[]\OT1/cmr/m/n/10 Materia: []   Clave: [] 
- []
-
-
-Overfull \hbox (94.15297pt too wide) in paragraph at lines 33--34
-[]\OT1/cmr/m/n/10 Artculo: []
- []
-
-[1
+) [1
 
 {C:/Users/oskat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
 
 pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<Nanoelectric_field_sensor.pdf, id=19, 597.50786pt x 845.04686pt>
+<Nanoelectric_field_sensor.pdf, id=20, 597.50786pt x 845.04686pt>
 File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
 <use Nanoelectric_field_sensor.pdf>
-Package pdftex.def Info: Nanoelectric_field_sensor.pdf  used on input line 151.
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf  used on input line 156.
 
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
@@ -786,7 +771,7 @@ pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
 File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
 <use Nanoelectric_field_sensor.pdf>
-Package pdftex.def Info: Nanoelectric_field_sensor.pdf  used on input line 151.
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf  used on input line 156.
 
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
@@ -797,16 +782,16 @@ pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
 
 pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<Nanoelectric_field_sensor.pdf, id=22, page=1, 597.50786pt x 845.04686pt>
+<Nanoelectric_field_sensor.pdf, id=23, page=1, 597.50786pt x 845.04686pt>
 File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
 <use Nanoelectric_field_sensor.pdf, page 1>
 Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
-ne 151.
+ne 156.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
 <use Nanoelectric_field_sensor.pdf, page 1>
 Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
-ne 151.
+ne 156.
 (pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
 [3
 
@@ -814,28 +799,188 @@ ne 151.
 File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
 <use Nanoelectric_field_sensor.pdf, page 1>
 Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
-ne 151.
+ne 156.
 (pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
 File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
 <use Nanoelectric_field_sensor.pdf, page 1>
 Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
-ne 151.
+ne 156.
 (pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
 File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
 <use Nanoelectric_field_sensor.pdf, page 1>
 Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page1 used on input li
-ne 151.
+ne 156.
 (pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
- [4 <./Nanoelectric_field_sensor.pdf>] (review.aux)
+ [4 <./Nanoelectric_field_sensor.pdf>]
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=38, page=2, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 2>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page2 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 2>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page2 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 2>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page2 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[5 <./Nanoelectric_field_sensor.pdf>]
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=43, page=3, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 3>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page3 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 3>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page3 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 3>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page3 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[6 <./Nanoelectric_field_sensor.pdf>]
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=50, page=4, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 4>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page4 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 4>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page4 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 4>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page4 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[7 <./Nanoelectric_field_sensor.pdf>]
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=58, page=5, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 5>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page5 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 5>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page5 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 5>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page5 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[8 <./Nanoelectric_field_sensor.pdf>]
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=66, page=6, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 6>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page6 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 6>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page6 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 6>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page6 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[9 <./Nanoelectric_field_sensor.pdf>]
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=72, page=7, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 7>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page7 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 7>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page7 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 7>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page7 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[10 <./Nanoelectric_field_sensor.pdf>]
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=78, page=8, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 8>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page8 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 8>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page8 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 8>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page8 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[11 <./Nanoelectric_field_sensor.pdf>]
+
+pdfTeX warning: pdflatex (file ./Nanoelectric_field_sensor.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<Nanoelectric_field_sensor.pdf, id=82, page=9, 597.50786pt x 845.04686pt>
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 9>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page9 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 9>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page9 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+File: Nanoelectric_field_sensor.pdf Graphic file (type pdf)
+<use Nanoelectric_field_sensor.pdf, page 9>
+Package pdftex.def Info: Nanoelectric_field_sensor.pdf , page9 used on input li
+ne 156.
+(pdftex.def)             Requested size: 562.12244pt x 795.00179pt.
+[12 <./Nanoelectric_field_sensor.pdf>] (review.aux)
 Package logreq Info: Writing requests to 'review.run.xml'.
 \openout1 = `review.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 11154 strings out of 492969
- 193293 string characters out of 3126585
+ 11178 strings out of 492969
+ 194405 string characters out of 3126585
  654975 words of memory out of 3000000
- 14879 multiletter control sequences out of 15000+200000
+ 14903 multiletter control sequences out of 15000+200000
  13765 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,18n,60p,1387b,3866s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -850,11 +995,12 @@ rs/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.
 pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmr9.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/oskat/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on review.pdf (4 pages, 774897 bytes).
+onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/oskat/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/oskat/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on review.pdf (12 pages, 5348247 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
