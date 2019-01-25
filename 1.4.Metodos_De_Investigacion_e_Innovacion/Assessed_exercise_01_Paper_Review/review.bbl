@@ -19,60 +19,85 @@
 
 \refsection{0}
   \datalist[entry]{apa/global//global/global}
-    \entry{Rajasekar2018}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,uniquepart=base,hash=fe4c90b29063fb990eb585e28e1c3005}{%
-           family={Rajasekar},
-           familyi={R\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod},
+    \entry{Barkas2019}{article}{}
+      \name{author}{6}{}{%
+        {{uniquename=0,uniquepart=base,hash=323ae4d7056ae6823f1b03359f06822e}{%
+           family={Barkas},
+           familyi={B\bibinitperiod},
+           given={D.A.},
+           giveni={D\bibinitperiod},
            givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=296d3590d40e152d36fcf6f8625dbd00}{%
-           family={Robinson},
-           familyi={R\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod},
+        {{uniquename=0,uniquepart=base,hash=89890671eba156b500b9004f89c990c4}{%
+           family={Psomopoulos},
+           familyi={P\bibinitperiod},
+           given={C.S.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a31b1cc8a084b5f92217b861b632be26}{%
+           family={Papageorgas},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a2466c4ad5ef4f109cec6daa81ff077f}{%
+           family={Kalkanis},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a1a02b03715c80cc86dc61db844fdc0b}{%
+           family={Piromalis},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4cb76f38073b3f5d85b42c773ae7e496}{%
+           family={Mouratidis},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
            givenun=0}}%
       }
       \list{publisher}{1}{%
-        {North-Holland}%
+        {Elsevier}%
       }
-      \strng{namehash}{68321c99edd49e7d8e752e2f54e96c38}
-      \strng{fullhash}{68321c99edd49e7d8e752e2f54e96c38}
-      \strng{bibnamehash}{68321c99edd49e7d8e752e2f54e96c38}
-      \strng{authorbibnamehash}{68321c99edd49e7d8e752e2f54e96c38}
-      \strng{authornamehash}{68321c99edd49e7d8e752e2f54e96c38}
-      \strng{authorfullhash}{68321c99edd49e7d8e752e2f54e96c38}
-      \field{sortinit}{R}
-      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \strng{namehash}{f0e380db099c7936fc557c00f13d56c6}
+      \strng{fullhash}{14872e10476ee4fc0e802d2f84e63e40}
+      \strng{bibnamehash}{14872e10476ee4fc0e802d2f84e63e40}
+      \strng{authorbibnamehash}{14872e10476ee4fc0e802d2f84e63e40}
+      \strng{authornamehash}{f0e380db099c7936fc557c00f13d56c6}
+      \strng{authorfullhash}{14872e10476ee4fc0e802d2f84e63e40}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In this paper, hybrid Silicon-Barium Titanate (Si-BTO) based Two Dimensional Photonic Crystal (2DPC) platform is proposed for electric field sensing based on the effective refractive index modulation of electro-optic material. The nano-sensing platform is composed of the PC based resonator and inline quasi-waveguides in a 2D triangular lattice with circular rods that are arranged in the air medium. The BTO based nano-cavity resonator is playing a very important role in sensing the different electric field over a wide wavelength range. The operating wavelength range of the proposed sensor is investigated via Photonic Band Gap (PBG) which is obtained by the Plane Wave Expansion (PWE) method. The transmission efficiency, quality factor, electric field sensitivity and change in refractive index are analyzed by using Finite Difference Time Domain method (FDTD). The simulation results reveal that the resonant wavelength of the electric field sensor is linearly shifted to the higher wavelength region while increasing the electric field from 0 kV/mm to 25 kV/mm. The proposed sensing platform provides high transmission efficiency and very high refractive index sensitivity with an ultra-compact size. Hence, it is highly suitable for nano-chip based sensing applications.}
-      \field{issn}{0925-3467}
-      \field{journaltitle}{Optical Materials}
-      \field{month}{11}
-      \field{title}{{Nano-electric field sensor based on Two Dimensional Photonic Crystal resonator}}
-      \field{volume}{85}
-      \field{year}{2018}
-      \field{pages}{474\bibrangedash 482}
-      \range{pages}{9}
+      \field{abstract}{Triboelectric nano-generators constitute a promising technology for energy harvesting that can be applied at a large scale and be integrated into the road infrastructure aiming at Energy sustainability and reduction of GHG emissions for road infrastructure operation. This technology can be also applied in small scale for the Internet of Things (IoT) applications, in human monitoring for healthcare applications, in precision agriculture as well as in industry, where the massive networking of sensors and actuators is mandatory and the requirements for energy supply are strict and critical. The usage of triboelectric nano-generators is a promising solution to supply all the above sensors and actuators, due to the autonomous characteristic for power supply that these application sectors will obtain and the minimization of battery usage, decreasing the overall Green House Gas emissions. In this article, a review and the current status of the triboelectric nano-generators (TENGs) is performed together with a number of application examples that are already demonstrated by the scientific community.}
+      \field{issn}{1876-6102}
+      \field{journaltitle}{Energy Procedia}
+      \field{month}{1}
+      \field{title}{{Sustainable Energy Harvesting through Triboelectric Nano – Generators: A Review of current status and applications}}
+      \field{volume}{157}
+      \field{year}{2019}
+      \field{pages}{999\bibrangedash 1010}
+      \range{pages}{12}
       \verb{doi}
-      \verb 10.1016/J.OPTMAT.2018.09.016
+      \verb 10.1016/J.EGYPRO.2018.11.267
       \endverb
       \verb{file}
-      \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}IT{\~{}}1/14F6D7{\~{}}1.MET/ASSESS{\~{}}1/NANOEL{\~{}}1.PDF:PDF
+      \verb :C$\backslash$:/Users/oskat/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Barkas et al. - 2019 - Sustainable Energy Harvesting through Triboelectric Nano – Generators A Review of current status and applications.pdf:pdf
       \endverb
       \verb{urlraw}
-      \verb https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0925346718306372
+      \verb https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S1876610218312402
       \endverb
       \verb{url}
-      \verb https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0925346718306372
+      \verb https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S1876610218312402
       \endverb
     \endentry
   \enddatalist
+  \missing{Solomon2009}
 \endrefsection
 \endinput
 

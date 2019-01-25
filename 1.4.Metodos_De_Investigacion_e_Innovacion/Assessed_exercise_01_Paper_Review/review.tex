@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{pdfpages}
+\usepackage{mdframed}
 
 % MLA, APA, or IEEE? - https://www.overleaf.com/learn/latex/Biblatex_citation_styles
 \usepackage[style=apa, backend=biber]{biblatex}
@@ -27,18 +28,19 @@ Format shamelessly stolen from Alan Bundy.}}
 \maketitle
 \vspace{-2cm}
 
+
 \begin{description}
 \item Nombre: \boxed{Antonio\ Osamu\ Katagiri\ Tanaka} \hspace{0.30in}
 Matr\'{\i}cula: \boxed{A01212611}
-\item Materia: \boxed{M\acute{e}todos\ de\ investigaci\acute{o}n\ e\ innovaci\acute{o}n} \hspace{0.30in}
+\item Materia: \boxed{M\acute{e}todos\ de\ investigaci\acute{o}n\ e\ innovaci  \acute{o}n} \hspace{0.30in}
 Clave: \boxed{GI5000.1}
-\item Art\'{\i}culo: \boxed{
-  \!\begin{aligned}
-  Nano-electric\ field\ sensor\ based\ on\ Two\ Dimensional \\
-  Photonic\ Crystal\ resonator
-  \end{aligned}
-} \\ \parencite{Rajasekar2018}
+\item Art\'{\i}culo:
+\begin{mdframed}
+\citefield{Barkas2019}{title}\\
+\parencite{Barkas2019}
+\end{mdframed}
 \end{description}
+
 
 \section*{Instructions} 
 
@@ -59,7 +61,7 @@ comments section for extended discussion.}
 %UNCHECKED
 %$\square$
 
-\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
+$\square$
 1. Describes a new technique.  \\
 $\square$
 2. Extends or improves an existing technique.  \\
@@ -76,15 +78,13 @@ $\square$
 7. Identifies and motivates a new problem.  \\
 $\square$
 8. Serves a tutorial role, {\em e.g.}~a survey.  \\
-$\square$
+\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
 9. Other (please specify).  \\
 \end{verse}
-Comments: \\
-\boxed{
-  \!\begin{aligned}
-  Rajasekar's paper 
-  \end{aligned}
-}
+Comments:
+\begin{mdframed}
+Barkas' paper is a review of the of the existing TENGs (triboelectric nano-generators) with application examples and a brief description of their working mechanisms.
+\end{mdframed}
 
 \section{Correctness and Completeness of Paper}
 {\small Assess the correctness and completeness of the paper by
@@ -108,11 +108,13 @@ $\square$
 4. The reported research is not in a completed state.  \\
 $\square$
 5. Related research is not adequately compared.  \\
-$\square$
+\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
 6. The paper is deficient in some other way (please specify).  \\
 \end{verse}
-Comments: \\
-\boxed{}
+Comments:
+\begin{mdframed}
+The reviewed paper is very descriptive collection of descriptions of the current TENGs (triboelectric nano-generators). However it does not propose a new design, describes a new application or improves a TENG. 
+\end{mdframed}
 
 \section{Significance of Research}
 Assess the significance of the reported research by answering the
@@ -122,15 +124,21 @@ following questions. Justify your answers.
 % the author or by someone else? \\
 % \framebox[4.4in][l]{\raisebox{0.15in}[0in][0.3in]{}}
 
-\item   What hypotheses are tested by the reported research? \\
-\boxed{}
+\item   What hypotheses are tested by the reported research?
+\begin{mdframed}
+None - the paper is just a collection of descriptions of several TENG designs.
+\end{mdframed}
 
-\item   What are the outcomes of this hypothesis testing? \\
-\boxed{}
+\item   What are the outcomes of this hypothesis testing?
+\begin{mdframed}
+None - as per answer 3.1
+\end{mdframed}
 
 \item   Assess the importance of the reported research on a scale of 1
-(trivial) to 5 (major breakthrough).  \\
-\boxed{}
+(trivial) to 5 (major breakthrough).
+\begin{mdframed}
+1(trivial) - Barkas' paper does not provides new knowledge through research. However, its well organized and synthesized information of several sources can be helpful to gain an overall perspective of the existing technologies. 
+\end{mdframed}
 \end{enumerate}
 
 % \section{Presentation of Paper}
@@ -146,15 +154,18 @@ following questions. Justify your answers.
 % Comments: \\
 % \framebox[5.5in][l]{\raisebox{0.15in}[0in][1.5in]{}}
 
+\clearpage
 \section{Precis}
 Describe the message of the paper in your own words. Use 100-200
-words. \\
-\boxed{}
+words.
+\begin{mdframed}
+The paper incentives the use of TENGs for several applications that require some kind of energy harvesting. Barkas implies that the use TENGs contribute to the reduction of green-house-gas emissions, since friction and vibrations (which are converted to electric energy through TENGs) are present in various every-day activities. TENGs can become the next clean-energy source, Barkas states: ``The TENGs have the potential and the capacity to become one of the solutions for a greener and more sustainable future in the energy generation sector and specially for wearable devices and IoT applications."
+\end{mdframed}
 
 \clearpage
 \printbibliography
 
-\includepdf[pages=-]{Nanoelectric_field_sensor}
+\includepdf[pages=-]{TENGs}
 
 \end{document}
 
