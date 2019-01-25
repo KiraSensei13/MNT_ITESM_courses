@@ -28,3 +28,19 @@ filteredDataset = filteredDataset[interestIndex,]
 #Value & Year are columns in Dataset.csv
 boxplot(Value ~ Year, data = filteredDataset) #standard boxplot
 boxplot(Value ~ Year, data = filteredDataset, outline=F) #boxplot w/no outliners
+
+
+########################################################
+
+library(faraway)
+data(gala)
+
+# t(X) #transpose
+# solve(X) #inverse of matrix X
+# X %*% t(X) #X * X^T
+
+# rep(1,10) #10 1s
+
+X = cbind(1,gala[,2:7]) #combine columns
+X = as.matrix(X) #convert data.frame to matrix
+class(X) #verify the matrix data type
