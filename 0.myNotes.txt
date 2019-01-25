@@ -1,3 +1,6 @@
+
+/****************************************************************************/
+
 CLAUSTRO DE PROFESORES: Micro y Nanosistemas
 
 Ciro Angel Rodríguez González <ciro.rodriguez@tec.mx>; C. Monterrey
@@ -6,4 +9,64 @@ Hyundoo Hwang                 <hwang@itesm.mx>;        ENCIT
 Israel De León Arizpe         <ideleon@tec.mx>;        C. Monterrey
 Roberto Parra Saldivar        <r.parra@tec.mx>;        C. Monterrey
 Víctor Hugo Pérez González    <vhpg@tec.mx>;           C. Monterrey
+
+/****************************************************************************/
+
+https://www.forbes.com/sites/worldeconomicforum/2019/01/16/how-davos-talk-brings-action-to-mobility-and-transportation-issues/#423852004e29
+
+/****************************************************************************/
+
+ScienceDirect
+IEEE (Innovation Plus)
+Scopus
+Sci Finder
+EBSCO
+Knovel
+
+/****************************************************************************/
+
+MATH team
+Bruno Gonzalez Soria            (A01169284)
+Antonio Osamu Katagiri Tanaka   (A01212611)
+Jose Ivan Aviles Castrillo      (A01749804)
+Jesus Alberto Martınez Espinosa (A01750270)
+Katya Michelle Aguilar Perez    (A01750272)
+
+/****************************************************************************/
+
+SUSTAINABILITY team
+Antonio Osamu Katagiri Tanaka (A01212611)
+Bruno Gonzalez Soria          (A01169284)
+Carlos Cardoso Isidoro        (A01750267)
+
+/****************************************************************************/
+
+49 CIDTEC - sesiones paralelas
+
+TECNOLOGÍAS DE INFORMACIÓN, ELECTRÓNICA Y COMUNICACIONES
+Sistemas Inteligentes                             : Dr. Hugo Terashima Marín
+Modelos de Aprendizaje Computacional              : Dr. Raúl Monroy Borja
+Fototónica y Sistemas Cuánticos                   : Dr. Julio César Gutiérrez Vega
+Telecomunicaciones para la Transformación Digital : Dr. César Vargas Rosales
+
+MEDICINA
+Bioinformática para el Diagnóstico Clínico : Dr. Víctor Manuel Treviño Alvarado
+Bioingeniería y Medicina Regenerativa      : Dr. Marco Antonio Rito Palomares
+Enfermedades Metabólicas                   : Dr. Arturo Santos García
+Genética Humana                            : Dr. Augusto Rojas Martínez
+Investigación en Cáncer                    : Dra. Rocío Ortiz López
+Medicina Cardiovascular y Metabolómica     : Dr. Gerardo de Jesús García Riva
+Terapias Innovadoras en Ciencias Visuales  : Dr. Jorge Eugenio Valdez García
+
+MECATRÓNICA
+Manufactura Avanzada                          : Dr. Ciro Ángel Rodríguez González
+Nanotecnología para el Diseño de Dispositivos : Dr. Alex Elías Zúñiga
+Innovación de Productos                       : Dr. Arturo Molina Gutiérrez
+Robótica                                      : Dr. José Luis Gordillo Moscoso
+Optimización y Ciencia de Datos               : Dr. Neale Ricardo Smith Cornejo
+Nanomateriales                                : Dr. Joaquín Esteban Oseguera Peña
+Nano-sensores y Dispositivos                  : Dr. Sergio Omar Martínez Chapa
+http://www.itesm.mx/wps/wcm/connect/itesm/tecnologico+de+monterrey/investigacion/grupos+de+investigacion+con+enfoque+estrategico/por+escuelas/escuela+de+ingenieria+y+ciencias/sensores+y+dispositivos
+
+/****************************************************************************/
 

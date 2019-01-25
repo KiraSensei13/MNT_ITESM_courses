@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  22 JAN 2019 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  22 JAN 2019 15:22
 entering extended mode
 **./HWork02_Echelon_and_linear_sys.tex
 (HWork02_Echelon_and_linear_sys.tex
@@ -945,7 +945,7 @@ l'.
  ) 
 Here is how much of TeX's memory you used:
  13514 strings out of 492969
- 228430 string characters out of 3126585
+ 228454 string characters out of 3126585
  785580 words of memory out of 3000000
  17169 multiletter control sequences out of 15000+200000
  11382 words of font info for 44 fonts, out of 3000000 for 9000
@@ -971,7 +971,7 @@ m/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmsy7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/oskat/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on HWork02_Echelon_and_linear_sys.pdf (16 pages, 235262 bytes).
+Output written on HWork02_Echelon_and_linear_sys.pdf (16 pages, 235264 bytes).
 PDF statistics:
  159 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
