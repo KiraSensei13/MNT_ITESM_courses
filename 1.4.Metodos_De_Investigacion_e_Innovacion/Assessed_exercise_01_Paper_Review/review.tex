@@ -11,6 +11,21 @@
 \usepackage[style=apa, backend=biber]{biblatex}
 \addbibresource{bibliography.bib}
 
+% define the cover page values
+\title
+{
+    Tecnol\'ogico de Monterrey\\
+    Paper Review Form
+    \thanks{Format shamelessly stolen from Alan Bundy.}
+}
+\author
+{    
+    Antonio Osamu Katagiri Tanaka (A01212611) \\
+    \\
+    Instructor(s): Dr. Raúl Monroy B. / Dr. Francisco J. Cantú O.
+}
+\date{\today}
+
 \newcommand{\dbx}[2]{\rule[-#2]{0cm}{#2}{\hspace{#1}}}
 \newcommand{\bx}[1]{\fbox{\rule{0cm}{0.08in}{\hspace{#1}}}}
 \newcommand{\option}[1]{#1\bx{.2in}}
@@ -18,14 +33,16 @@
 \newcommand{\YESNO}[0]{YES \five NO}
 \newcommand{\degree}[2]{#1\five #2}
 
-\title{Tecnol\'ogico de Monterrey\\
-Paper Review Form\thanks{
-Format shamelessly stolen from Alan Bundy.}}
-\author{}
-\date{}
+%\title{Tecnol\'ogico de Monterrey\\
+%Paper Review Form\thanks{
+%Format shamelessly stolen from Alan Bundy.}}
+%\author{}
+%\date{}
 
 \begin{document}
 \maketitle
+\clearpage
+
 \vspace{-2cm}
 
 
@@ -86,6 +103,7 @@ Comments:
 Barkas' paper is a review of the of the existing TENGs (triboelectric nano-generators) with application examples and a brief description of their working mechanisms.
 \end{mdframed}
 
+\clearpage
 \section{Correctness and Completeness of Paper}
 {\small Assess the correctness and completeness of the paper by
 ticking which of the following apply. Justify your answers in
@@ -165,7 +183,7 @@ The paper incentives the use of TENGs for several applications that require some
 \clearpage
 \printbibliography
 
-\includepdf[pages=-]{TENGs}
+%\includepdf[pages=-]{TENGs}
 
 \end{document}
 
