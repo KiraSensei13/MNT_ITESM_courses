@@ -1,0 +1,13 @@
+1. Compare three variables and print the variable with the biggest value. 
+
+2. Receive a vector variable and print how many elements are in the vector. (Do not use the length function)
+
+3. Receive a character vector with unitary letter. eg. c("a", "b", "c"). Print TRUE if at least 1 of the characters is a vocal.
+
+4. Receive a vector and a logical variable, if the logical variable is TRUE print the sum of all the elements inside the vector. If the logical value is FALSE return the product of all the elements inside the vector
+
+5. Receive a vector and print it from the last element to the first one. E.g. c(1,2,3,4) will print:
+4
+3
+2
+1
