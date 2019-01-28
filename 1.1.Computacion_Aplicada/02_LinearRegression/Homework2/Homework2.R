@@ -35,10 +35,18 @@ completeData = complete.cases(pima)
 mydata = pima[completeData, ]
 
 # * Use the R function to fit a model.
-#head(mydata) #returns: pregnant, glucose, diastolic, triceps, insulin,
-#bmi, diabetes, age, test
+# * Dependent variable : Test -> test is a categorical variable ...
 
-# * Dependent variable : Test
+#ANCOVA Analysis
+#Model with interaction between categorical variable and predictor variable
+# Get the dataset.
+input <- mydata
+
+# Create the regression model.
+head(mydata)
+result <- aov(test~pregnant+glucose+diastolic+triceps+insulin+bmi+diabetes+age+test,data = input)
+print(summary(result))
+
 # * How many correct predictions did the fitted model get? How many wrong?
 # * Confusion matrix
 # Which regression did you use?
