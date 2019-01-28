@@ -47,9 +47,15 @@ Katya Michelle Aguilar Perez    (A01750272)
 
 /****************************************************************************/
 
-SUSTAINABILITY team
-Antonio Osamu Katagiri Tanaka (A01212611)
+APPLIED COMP team
 Bruno Gonzalez Soria          (A01169284)
+Antonio Osamu Katagiri Tanaka (A01212611)
+
+/****************************************************************************/
+
+SUSTAINABILITY team
+Bruno Gonzalez Soria          (A01169284)
+Antonio Osamu Katagiri Tanaka (A01212611)
 Carlos Cardoso Isidoro        (A01750267)
 
 /****************************************************************************/
