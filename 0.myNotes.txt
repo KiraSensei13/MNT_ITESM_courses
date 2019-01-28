@@ -25,6 +25,19 @@ Knovel
 
 /****************************************************************************/
 
+MNT - EDMEX
+Antonio Osamu Katagiri Tanaka    <A01212611@itesm.mx>;
+Carlos Cardoso Isidoro           <A01750267@itesm.mx>; +52 1 443 106 8485
+Diego Sebastián Ceciliano Franco <A01373414@itesm.mx>; +52 1 55 5349 8537
+Jesús Alberto Martínez Espinosa  <A01750270@itesm.mx>; +52 1 55 5050 0968
+Jonathan Rafael Núñez Gálvez     <A01750271@itesm.mx>; +52 1 443 141 0674
+Jose Ivan Aviles Castrillo       <A01749804@itesm.mx>; +52 1 222 492 1880
+Katya Michelle Aguilar Pérez     <A01750272@itesm.mx>; +52 1 55 2023 3561
+Bruno Gonzalez Soria             <A01169284@itesm.mx>; +52 1 55 1296 3247
+Diego López Bernal               <A01332642@itesm.mx>; +52 1 55 4188 2263
+
+/****************************************************************************/
+
 MATH team
 Bruno Gonzalez Soria            (A01169284)
 Antonio Osamu Katagiri Tanaka   (A01212611)
