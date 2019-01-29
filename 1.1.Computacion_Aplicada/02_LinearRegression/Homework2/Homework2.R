@@ -104,7 +104,7 @@ confusionMatrix(as.factor(lm_predictions), as.factor(mydata$test), positive = NU
 #get test predictions using the POLYNOMIAL ANALYSIS
 #We assume that: all values less than 0.5 correspond to the first category,
 #0.5 or bigger correspond to the second category
-gp6_predictions = ifelse(predict(gp6, mydata) > 0.5, "1", "0" )
+gp6_predictions = ifelse(predict(gp6Model, mydata) > 0.5, "1", "0" )
 #compare the actual data agains the predictions
 correct_gp6_predictions = mydata$test == gp6_predictions
 #count how many of the predictions are right vs wrong
