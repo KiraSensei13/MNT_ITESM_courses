@@ -129,7 +129,7 @@ confusionMatrix(as.factor(aov_predictions), as.factor(mydata$test), positive = N
 # * ANCOVA, ANOVA, simple regression, logistic regression
 # * Justify your answer
 
-
+#TODO: explain ...
 
 #*** PART 2 *************************************************************
 
