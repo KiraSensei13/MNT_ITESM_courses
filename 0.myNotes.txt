@@ -256,7 +256,7 @@ sometines culture is used as an excuse to avoid change.
 
 /****************************************************************************/
 
-home gardening
+DIY/HOME gardening
 
 Journal your garden's progress with notes and photos, and setup reminders for essential tasks
 
@@ -271,3 +271,7 @@ Choose from thousands of varieties from many of the most popular seed suppliers 
 Easily see how many crops can fit into an area without overcrowding, plus view which plants can be sown each month so when one crop is harvested, you're ready to fill the space with another
 
 Over 500,000 active members across the most popular social media channels. Browse plans from gardeners in your area and exchange advice
+
+/****************************************************************************/
+
+
