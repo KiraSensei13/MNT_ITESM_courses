@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     48270,       1154]
-NotebookOptionsPosition[     44594,       1089]
-NotebookOutlinePosition[     44935,       1104]
-CellTagsIndexPosition[     44892,       1101]
+NotebookDataLength[     58863,       1429]
+NotebookOptionsPosition[     54542,       1354]
+NotebookOutlinePosition[     54883,       1369]
+CellTagsIndexPosition[     54840,       1366]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1080,14 +1080,279 @@ QKBy1ewdHOC/akWMO3z8A0BY6s4RDw7gv33nTfL//wNADGLINgAA4L96K37D
 Cell["\<\
 
 6.c
-\
+The system has infinitely many solutions.\
 \>", "Text",
  CellChangeTimes->{{3.7579410565088844`*^9, 3.7579410598923206`*^9}, {
-  3.7579417991348095`*^9, 
-  3.7579418015886087`*^9}},ExpressionUUID->"6114ad7f-5a87-4596-8ec9-\
-a808c5b9fcaf"]
+  3.7579417991348095`*^9, 3.7579418015886087`*^9}, {3.757951117313222*^9, 
+  3.7579511596061974`*^9}},ExpressionUUID->"6114ad7f-5a87-4596-8ec9-\
+a808c5b9fcaf"],
+
+Cell["\<\
+
+6.d\
+\>", "Text",
+ CellChangeTimes->{{3.757951230373171*^9, 
+  3.7579512320221605`*^9}},ExpressionUUID->"b48764ec-9f5d-49a2-9838-\
+bcd0bd4ea897"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"matrixA", "=", 
+   RowBox[{"(", GridBox[{
+      {"1", 
+       RowBox[{"-", "1"}]},
+      {"\[Pi]", 
+       RowBox[{"-", "\[Pi]"}]}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"matrixB", "=", 
+    RowBox[{"(", GridBox[{
+       {"3"},
+       {
+        RowBox[{"3", "*", "\[Pi]"}]}
+      }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"rows", "=", 
+    RowBox[{"m", "=", "i"}]}], " ", "*)"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"cols", "=", 
+    RowBox[{"n", "=", "j"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"getNumOfSolutions", "[", 
+    RowBox[{"varA_", ",", "varB_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"vA", "=", "varA"}], ",", 
+       RowBox[{"vB", "=", "varB"}], ",", "vAB", ",", "Arank", ",", "ABrank", 
+       ",", " ", "n"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"vAB", "=", 
+       RowBox[{"ArrayFlatten", "[", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"vA", ",", "vB"}], "}"}], "}"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Arank", "=", 
+       RowBox[{"MatrixRank", "[", "vA", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"ABrank", "=", 
+       RowBox[{"MatrixRank", "[", "vAB", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"n", "=", 
+       RowBox[{
+        RowBox[{"Dimensions", "[", "vA", "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"Arank", "<", "ABrank"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Print", "[", "\"\<The system has no solution\>\"", "]"}], 
+         ";"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Arank", "\[Equal]", "ABrank"}], "&&", 
+            RowBox[{"Arank", "<", "n"}], "&&", 
+            RowBox[{"ABrank", "<", "n"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+            "Print", "[", "\"\<The system has infinitely many solutions\>\"", 
+             "]"}], ";"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Arank", "\[Equal]", "ABrank"}], "&&", 
+               RowBox[{"Arank", "\[Equal]", "n"}]}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{
+               "Print", "[", "\"\<The system has a unique solution\>\"", 
+                "]"}], ";"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{
+               "Print", "[", 
+                "\"\<[ERROR] The system has ? solution(s)\\n\nBeware, if the \
+system is homogeneous (varB is a zero vector and n>m (more variables than \
+equations), then the system has infinitely many solutions)\>\"", "]"}], 
+               ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}],
+       ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"getNumOfSolutions", "[", 
+  RowBox[{"matrixA", ",", "matrixB"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7579512356587005`*^9, 3.7579513374674625`*^9}, {
+  3.75795143166057*^9, 3.7579514628490453`*^9}, {3.7579515087076273`*^9, 
+  3.757951623270161*^9}, {3.7579517023024635`*^9, 3.7579517590704145`*^9}, {
+  3.7579517929091077`*^9, 3.7579523240051966`*^9}, {3.757952368083435*^9, 
+  3.7579525904355135`*^9}, {3.7579529695010777`*^9, 
+  3.7579530633775454`*^9}},ExpressionUUID->"be440e75-4efc-4beb-bd50-\
+6a6e8325e2ba"],
+
+Cell[BoxData["\<\"The system has infinitely many solutions\"\>"], "Print",
+ CellChangeTimes->{
+  3.7579523258844166`*^9, {3.7579524372178698`*^9, 3.757952472626711*^9}, 
+   3.757952522984917*^9, {3.757952578865816*^9, 3.7579525913896294`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[355]:=",ExpressionUUID->"544fec68-1ce2-4cf0-b0cf-d9ece5bb5995"]
+}, Open  ]],
+
+Cell["\<\
+
+7.a\
+\>", "Text",
+ CellChangeTimes->{{3.7579526544459577`*^9, 
+  3.75795266875787*^9}},ExpressionUUID->"4a40d3ad-3675-456c-9c7b-\
+7fae787d4a29"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"contourLimits", "=", "25"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{"ContourPlot3D", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "+", "y", "+", "z"}], "\[Equal]", "10"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          FractionBox["2", "3"], "*", "x"}], "+", 
+         RowBox[{
+          FractionBox["2", "3"], "*", "y"}], "+", 
+         RowBox[{
+          FractionBox["2", "3"], "*", "z"}]}], "\[Equal]", "11"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          FractionBox["5", "9"], "*", "x"}], "+", 
+         RowBox[{
+          FractionBox["5", "9"], "*", "y"}], "+", 
+         RowBox[{
+          FractionBox["5", "9"], "*", "z"}]}], "\[Equal]", "12"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+     RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", "\"\<Expressions\>\""}]}], "]"}], 
+   "\[IndentingNewLine]", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Plot3D", "[", 
+      RowBox[{
+       RowBox[{"x", "+", "y", "+", "z", "-", "10"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", "Blue"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Plot3D", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         FractionBox["2", "3"], "*", "x"}], "+", 
+        RowBox[{
+         FractionBox["2", "3"], "*", "y"}], "+", 
+        RowBox[{
+         FractionBox["2", "3"], "*", "z"}], "-", "11"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", "Orange"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Plot3D", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         FractionBox["5", "9"], "*", "x"}], "+", 
+        RowBox[{
+         FractionBox["5", "9"], "*", "y"}], "+", 
+        RowBox[{
+         FractionBox["5", "9"], "*", "z"}], "-", "12"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"-", "contourLimits"}], ",", "contourLimits"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", "Green"}]}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"AxesOrigin", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.757953524461919*^9, 3.7579536989501*^9}, {
+  3.757954590767723*^9, 3.7579546448680134`*^9}, {3.757954679726793*^9, 
+  3.7579546827227807`*^9}, {3.757954763471154*^9, 3.7579548510209436`*^9}, {
+  3.7579565752598624`*^9, 3.7579567340347457`*^9}, {3.757956775521496*^9, 
+  3.7579567937084703`*^9}, {3.7579568457023306`*^9, 3.757956872541091*^9}, {
+  3.757956919165001*^9, 3.757957047116787*^9}, {3.7579583352834845`*^9, 
+  3.7579583771564684`*^9}},
+ CellLabel->
+  "In[447]:=",ExpressionUUID->"86dc250c-bd3d-489f-a511-1d083732c74d"],
+
+Cell[BoxData[
+ Graphics3DBox[{{}, {}, {}},
+  Axes->True,
+  AxesLabel->{None, None, None},
+  AxesOrigin->{0, 0},
+  BoxRatios->{1, 1, 0.4},
+  DisplayFunction->Identity,
+  FaceGrids->None,
+  FaceGridsStyle->Automatic,
+  ImageSize->{423.2610724933306, 399.00016189862527`},
+  ImageSizeRaw->Automatic,
+  Method->{"DefaultBoundaryStyle" -> Directive[
+      GrayLevel[0.3]], "RotationControl" -> "Globe"},
+  PlotRange->All,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02], 
+    Scaled[0.02]},
+  Ticks->{Automatic, Automatic, Automatic},
+  ViewPoint->{1.6809470295248152`, 0.6230228153911552, -2.869888439544954},
+  ViewVertical->{0., 0., 1.}]], "Output",
+ CellChangeTimes->{{3.7579535279499636`*^9, 3.7579535347789927`*^9}, {
+   3.757953644291855*^9, 3.757953699675768*^9}, 3.7579546156611586`*^9, 
+   3.7579546457277484`*^9, 3.7579546831875734`*^9, {3.757954771970832*^9, 
+   3.7579548513875484`*^9}, {3.7579566820751376`*^9, 
+   3.7579566957196245`*^9}, {3.75795678590639*^9, 3.757956795631374*^9}, {
+   3.757956846293889*^9, 3.75795687342912*^9}, {3.7579569925849247`*^9, 
+   3.757957051456718*^9}, {3.7579583397192216`*^9, 3.7579583512683663`*^9}, 
+   3.757958394513752*^9},
+ CellLabel->
+  "Out[448]=",ExpressionUUID->"5e861469-8f73-42f6-b129-251d4a6e9faf"]
+}, Open  ]]
 },
-WindowSize->{759, 833},
+WindowSize->{981, 988},
 WindowMargins->{{-8, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
@@ -1155,7 +1420,17 @@ Cell[CellGroupData[{
 Cell[36743, 907, 2173, 56, 219, InheritFromParent,ExpressionUUID->"168ac1bd-df6e-4c08-8a90-016f950dce8a"],
 Cell[38919, 965, 5444, 111, 240, "Output",ExpressionUUID->"007da348-f695-47cf-8faf-bb3c20a56aa2"]
 }, Open  ]],
-Cell[44378, 1079, 212, 8, 78, "Text",ExpressionUUID->"6114ad7f-5a87-4596-8ec9-a808c5b9fcaf"]
+Cell[44378, 1079, 301, 8, 78, "Text",ExpressionUUID->"6114ad7f-5a87-4596-8ec9-a808c5b9fcaf"],
+Cell[44682, 1089, 156, 6, 56, "Text",ExpressionUUID->"b48764ec-9f5d-49a2-9838-bcd0bd4ea897"],
+Cell[CellGroupData[{
+Cell[44863, 1099, 3766, 94, 463, "Input",ExpressionUUID->"be440e75-4efc-4beb-bd50-6a6e8325e2ba"],
+Cell[48632, 1195, 349, 6, 22, "Print",ExpressionUUID->"544fec68-1ce2-4cf0-b0cf-d9ece5bb5995"]
+}, Open  ]],
+Cell[48996, 1204, 155, 6, 56, "Text",ExpressionUUID->"4a40d3ad-3675-456c-9c7b-7fae787d4a29"],
+Cell[CellGroupData[{
+Cell[49176, 1214, 4083, 105, 436, "Input",ExpressionUUID->"86dc250c-bd3d-489f-a511-1d083732c74d"],
+Cell[53262, 1321, 1264, 30, 416, "Output",ExpressionUUID->"5e861469-8f73-42f6-b129-251d4a6e9faf"]
+}, Open  ]]
 }
 ]
 *)
