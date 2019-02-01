@@ -2145,6 +2145,9 @@
     <bcf:datasource type="file" datatype="bibtex">bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">Kuttler</bcf:citekey>
+    <bcf:citekey order="2">Kuttler</bcf:citekey>
+    <bcf:citekey order="3">Kuttler</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

@@ -518,21 +518,28 @@ Show[\{
 \includegraphics{MathematicaP1_gr2.eps}
 
 7.b\\
-7.b.1 \pmb{ normal vector:} A nonzero vector that is perpendicular to the plane is called a normal vector to the plane.\\
-7.b.2 The system is inconsistent because the three normal vectors point to the same direction. 
+7.b.1 \pmb{ normal vector:} A non-zero vector that is perpendicular to the plane is called a normal vector to the plane, as shown in Figure \ref{img:01}. \parencite{Kuttler}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.60\textwidth]{normalv.png}
+\caption{Given a non-zero vector n in R3 and a point P, there exists a unique plane that contains P and has n as a normal vector. \parencite{Kuttler} Q is an arbitrary point on the plane, and is irrelevant for this exercise. \label{img:01}}
+\end{figure}
+
+7.b.2 The system is inconsistent because the three normal vectors point to the same direction.\\
 
 7.c\\
-\begin{doublespace}
-\noindent\(\pmb{\text{Solve}[\{}\\
-\pmb{x+y+z==10,}\\
-\pmb{\frac{2}{3}*x+\frac{2}{3}*y+\frac{2}{3}*z==11,}\\
-\pmb{\frac{5}{9}*x+\frac{5}{9}*y+\frac{5}{9}*z==12}\\
-\pmb{\},\{x,y,z\}]}\)
-\end{doublespace}
+\begin{mmaCell}[addtoindex=1,morefunctionlocal={x, y, z}]{Input}
+Solve[\{
+x+y+z==10,
+\mmaFrac{2}{3}*x+\mmaFrac{2}{3}*y+\mmaFrac{2}{3}*z==11,
+\mmaFrac{5}{9}*x+\mmaFrac{5}{9}*y+\mmaFrac{5}{9}*z==12
+\},\{x,y,z\}]
+\end{mmaCell}
 
-\begin{doublespace}
-\noindent\(\{\}\)
-\end{doublespace}
+\begin{mmaCell}{Output}
+\{\}
+\end{mmaCell}
 
 7.d $\&$ 7.e\\
 The reduced row echelon of A will be \(\left(
