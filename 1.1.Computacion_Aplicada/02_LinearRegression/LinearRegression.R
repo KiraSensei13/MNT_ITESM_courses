@@ -12,10 +12,14 @@ summary(pima)
 # Test -> categoric data
 plot(diabetes ~ as.factor(test), pima)
 
+############################################################ Lecture03 follows below
+
+# R = R
 
 # Load library
 library(faraway)
 data(gala)
+
 #Exploration
 head(gala)
 dim(gala)
@@ -40,6 +44,11 @@ error = y - yhat
 
 # Residual Sum of Squares
 RSS = t(error) %*% error
+
+# R-squared
+numerator = sum((yhat-y)^2)
+denominator = sum((y - mean(yhat))^2)
+R.squared = 1 - (numerator/denominator)
 
 # Compute the linear model using R functions
 mdl = lm( Species ~ Endemics + Area + Elevation + Nearest + Scruz + Adjacent , data=gala)
@@ -114,6 +123,11 @@ plot(loss ~ Fe, data = corrosion, ylim=c(60, 130))
 points(corrosion$Fe, fitted(gp6), pch = 18, col = "chocolate")
 lines(grid, predict(gp6, data.frame(Fe=grid)) , col = "chocolate")
 
+#####################################################################
+
+# R = R + N
+
+#R:numerical  N:categorical
 
 ## ANCOVA
 data(sexab)
@@ -136,6 +150,10 @@ plot(ptsd~cpa, pch=as.character(csa), sexab)
 abline(10.2480, 0.5506, col = "red")
 abline(10.2480-6.2728, 0.5506, col = "magenta")
 
+#####################################################################
+
+# R = N
+
 ## ANOVA
 data("coagulation")
 head(coagulation)
@@ -147,10 +165,14 @@ g2 = lm(coag ~ diet - 1, coagulation)
 summary(g2)
 model.matrix(g2)
 
-# Assumption alpha 1 = 0
+# Assumption alpha 1 = 0, where alpha 1 is the diet1 beta value
 g = lm(coag ~ diet, coagulation)
 summary(g)
 model.matrix(g)
+
+#####################################################################
+
+# N = R
 
 # If I set alpha1 to zero, I cannot use the R-squared value
 ## Logistic Regression
@@ -167,8 +189,10 @@ hist(prediction)
 newPrediction = ifelse(prediction > 0.5, "NotAbused", "Abused" )
 
 # Confussion matrix to see the model performance
-table(newPrediction , as.character(sexab$csa))
+variableTable = table(newPrediction , as.character(sexab$csa))
 
+# get the percentage of prediction ...
+sum(diag(variableTable))/sum(variableTable)
 
 
 
