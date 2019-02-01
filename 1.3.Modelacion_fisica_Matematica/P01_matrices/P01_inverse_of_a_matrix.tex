@@ -22,6 +22,7 @@
 \usepackage{setspace}
 \usepackage{systeme}
 \usepackage{mdframed}
+\usepackage{mmacells}
 
 \newcommand{\mathsym}[1]{{}}
 \newcommand{\unicode}[1]{{}}
@@ -39,7 +40,7 @@
 % define the cover page values
 \title
 {
-    Homework 03 - Matrix Inversion
+    Mathematica Problem Sheet 01
 }
 \author
 {    
@@ -106,13 +107,20 @@
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem I}\label{sec:P01}
 
-\begin{doublespace}
-\noindent\(\pmb{\text{SQRmatrixSize}=10;}\\
-\pmb{\text{matrixAentries} =\text{Range}[1,\text{SQRmatrixSize}*\text{SQRmatrixSize}];}\\
-\pmb{\text{matrixAentries}=\text{ArrayReshape}[\text{matrixAentries},\{\text{SQRmatrixSize},\text{SQRmatrixSize}\}];}\\
-\pmb{\text{matrixA}=\text{Table}[\text{matrixAentries}[[i,j]],\{i,1,\text{SQRmatrixSize}\},\{j,1,\text{SQRmatrixSize}\}];}\\
-\pmb{\text{MatrixForm}[\text{matrixA}]}\)
-\end{doublespace}
+\begin{mmaCell}[morefunctionlocal={i, j}]{Input}
+SQRmatrixSize = 10;
+matrixAentries = Range[1, SQRmatrixSize*SQRmatrixSize];
+matrixAentries = 
+  ArrayReshape[matrixAentries, {SQRmatrixSize, SQRmatrixSize}];
+matrixA = 
+  Table[matrixAentries[[i, j]], {i, 1, SQRmatrixSize}, {j, 1, 
+    SQRmatrixSize}];
+MatrixForm[matrixA]
+\end{mmaCell}
+
+\begin{mmaCell}{Output}
+
+\end{mmaCell}
 
 \begin{doublespace}
 \noindent\(\left(
@@ -131,7 +139,6 @@
 \right)\)
 \end{doublespace}
 
-\clearpage
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem II}\label{sec:P02}
 
@@ -141,11 +148,15 @@ matrixA is singular, therefore Inverse[matrixA] does not exist.
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem III}\label{sec:P03}
 
-\begin{doublespace}
-\noindent\(\pmb{\text{SQRmatrixSize}=30;}\\
-\pmb{\text{matrixB}=\pi *\text{IdentityMatrix}[\text{SQRmatrixSize}];}\\
-\pmb{\text{MatrixForm}[\text{matrixB}]}\)
-\end{doublespace}
+\begin{mmaCell}[moredefined={SQRmatrixSize, matrixB}]{Input}
+SQRmatrixSize = 30;
+matrixB = \mmaDef{\(\pmb{\pi}\)}*IdentityMatrix[SQRmatrixSize];
+MatrixForm[matrixB]
+\end{mmaCell}
+
+\begin{mmaCell}{Output}
+
+\end{mmaCell}
 
 \begin{doublespace}
 \noindent\(\left(
@@ -192,10 +203,14 @@ Since, Inverse[A] equals diag($\frac{1}{a_1},\frac{1}{a_2},\ldots ,\frac{1}{a_n}
 
 Verification with Mathematica is shown below ...
 
-\begin{doublespace}
-\noindent\(\pmb{\text{Inverse}[\text{matrixB}];}\\
-\pmb{\text{MatrixForm}[\%]}\)
-\end{doublespace}
+\begin{mmaCell}[moredefined={matrixB}]{Input}
+Inverse[matrixB];
+MatrixForm[%]
+\end{mmaCell}
+
+\begin{mmaCell}{Output}
+
+\end{mmaCell}
 
 \begin{doublespace}
 \noindent\(\left(
@@ -236,32 +251,37 @@ Verification with Mathematica is shown below ...
 
 3.c
 
-\begin{doublespace}
-\noindent\(\pmb{\text{MatrixRank}[\text{matrixB}]}\)
-\end{doublespace}
+\begin{mmaCell}[moredefined={matrixB}]{Input}
+MatrixRank[matrixB]
+\end{mmaCell}
 
-\begin{doublespace}
-\noindent\(30\)
-\end{doublespace}
+\begin{mmaCell}{Output}
+30
+\end{mmaCell}
 
 \clearpage
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem IV}\label{sec:P04}
 
-\begin{doublespace}
-\noindent\(\pmb{\text{SQRmatrixSize}=16;}\\
-\pmb{\text{matrixC}=\text{Table}[0,\{i,1,\text{SQRmatrixSize}\},\{j,1,\text{SQRmatrixSize}\}];}\\
-\pmb{\text{rows}=\text{Dimensions}[\text{matrixC}][[1]];}\\
-\pmb{\text{cols}=\text{Dimensions}[\text{matrixC}][[2]];}\\
-\pmb{\text{For}[i=1,i\leq  \text{rows},i\text{++},}\\
-\pmb{\text{For}[j=1,j\leq  \text{cols},j\text{++},}\\
-\pmb{\text{If}[i==j,}\\
-\pmb{\text{matrixC}[[i,j]]=(\pi +i)-1,}\\
-\pmb{\text{matrixC}[[i,j]]=0];}\\
-\pmb{];}\\
-\pmb{];}\\
-\pmb{\text{MatrixForm}[\text{matrixC}]}\)
-\end{doublespace}
+\begin{mmaCell}[moredefined={SQRmatrixSize, matrixC, i, j, rows, cols}]{Input}
+SQRmatrixSize=16;
+matrixC=Table[0,\{i,1,SQRmatrixSize\},\{j,1,\
+SQRmatrixSize\}];
+rows=Dimensions[matrixC][[1]];
+cols=Dimensions[matrixC][[2]];
+For[i=1,i\(\pmb{\leq}\)rows,i++,
+  For[j=1,j\(\pmb{\leq}\)cols,j++,
+    If[i==j,
+      matrixC[[i,j]]=(\mmaDef{\(\pmb{\pi}\)}+i)-1,
+      matrixC[[i,j]]=0];
+  ];
+];
+MatrixForm[matrixC]
+\end{mmaCell}
+
+\begin{mmaCell}{Output}
+
+\end{mmaCell}
 
 \begin{doublespace}
 \noindent\(\left(
@@ -285,6 +305,8 @@ Verification with Mathematica is shown below ...
 \end{array}
 \right)\)
 \end{doublespace}
+
+\clearpage
 
 4.a $\&$ 4.b\\
 Yes, {``}A triangular matrix (upper, lower or diagonal) is invertible if and only if no element on its main diagonal is 0.{''}\\
@@ -585,6 +607,12 @@ Verification with Mathematica is shown below ...
 \end{doublespace}
 
 \noindent\(\text{The system has no solution}\)
+
+\clearpage
+%----------------------------------------------------------------------------------------%
+\section{Mathematica LaTeX tests}\label{sec:P08}
+
+
 
 \clearpage
 %----------------------------------------------------------------------------------------%

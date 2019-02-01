@@ -274,4 +274,19 @@ Over 500,000 active members across the most popular social media channels. Brows
 
 /****************************************************************************/
 
+(*
+Import@"https://raw.githubusercontent.com/jkuczm/\
+MathematicaCellsToTeX/master/NoInstall.m"
+PacletInstall@"http://github.com/jkuczm/MathematicaCellsToTeX/\
+releases/download/v0.2.2/CellsToTeX-0.2.2.paclet"
+*)
+Needs@"CellsToTeX`";
+
+testCell = Cell[BoxData[MakeBoxes[
+     << content >>
+     ]], "Input"];
+CellToTeX[testCell]
+
+/****************************************************************************/
+
 
