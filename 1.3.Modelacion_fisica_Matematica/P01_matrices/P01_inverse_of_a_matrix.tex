@@ -425,97 +425,95 @@ Solve[\{
 \},\{x,y\}]
 \end{mmaCell}
 
-\begin{mmaCell}{Output}
-Solve}: Equations may not give solutions for all {``}solve{''} variables.
+Solve: Equations may not give solutions for all "solve" variables.
 
+\begin{mmaCell}{Output}
 \{\{y\(\to\)-3+x\}\}
-\end{mmaCell}}
+\end{mmaCell}
 
 6.b\\
-\begin{doublespace}
-\noindent\(\pmb{\text{contourLimits}=2.5;}\\
-\pmb{\text{(*}}\\
-\pmb{\text{ContourPlot}[\{}\\
-\pmb{x-y==3,}\\
-\pmb{x*\pi -y*\pi ==3*\pi }\\
-\pmb{\},\{x,0.5,1.0\},\{y,-2.0,-2.5\},\text{ContourStyle}\to \{\text{Blue},\text{Orange}\}]}\\
-\pmb{\text{*)}}\\
-\pmb{\text{Show}[\{}\\
-\pmb{\text{Plot}[x-3,\{x,-\text{contourLimits},\text{contourLimits}\},\text{PlotStyle}\to \text{Blue}],}\\
-\pmb{\text{Plot}[x-3,\{x,-\text{contourLimits},\text{contourLimits}\},\text{PlotStyle}\to \text{Green}]}\\
-\pmb{\},\text{PlotRange}\to \text{All},\text{AxesOrigin}\to \{0,0\}]}\)
-\end{doublespace}
+\begin{mmaCell}[moredefined={contourLimits},morefunctionlocal={x}]{Input}
+contourLimits=2.5;
+(*
+ContourPlot[\{
+  x-y==3,
+  x*\(\pmb{\pi}\)-y*\(\pmb{\pi}\)==3*\(\pmb{\pi}\)
+\},\{x,0.5,1.0\},\{y,-2.0,-2.5\},ContourStyle\(\pmb{\to}\)\{Blue,Orange\}]
+*)
+Show[\{
+  Plot[x-3,\{x,-contourLimits,contourLimits\},PlotStyle\(\pmb{\to}\)Blue],
+  Plot[x-3,\{x,-contourLimits,contourLimits\},PlotStyle\(\pmb{\to}\)Green]
+\},PlotRange\(\pmb{\to}\)All,AxesOrigin \(\pmb{\to}\)\{0,0\}]
+\end{mmaCell}
 
 \includegraphics{MathematicaP1_gr1.eps}
 
 6.c\\
 The system has infinitely many solutions.
 
+\clearpage
 6.d\\
-\begin{doublespace}
-\noindent\(\pmb{\text{matrixA}=\left(
-\begin{array}{cc}
- 1 & -1 \\
- \pi  & -\pi  \\
-\end{array}
-\right);}\\
-\pmb{\text{matrixB}=\left(
-\begin{array}{c}
- 3 \\
- 3*\pi  \\
-\end{array}
-\right);}\\
-\pmb{\text{(*} \text{rows}=m=i \text{*)} \text{(*} \text{cols}=n=j \text{*)}}\\
-\pmb{\text{getNumOfSolutions}[\text{varA$\_$},\text{varB$\_$}]\text{:=}\text{Module}[\{\text{vA}=\text{varA},\text{vB}=\text{varB},\text{vAB},\text{Arank},\text{ABrank},
-n\},}\\
-\pmb{\text{vAB}=\text{ArrayFlatten}[\{\{\text{vA},\text{vB}\}\}];}\\
-\pmb{\text{Arank}=\text{MatrixRank}[\text{vA}];}\\
-\pmb{\text{ABrank}=\text{MatrixRank}[\text{vAB}];}\\
-\pmb{n=\text{Dimensions}[\text{vA}][[2]];}\\
-\pmb{\text{If}[\text{Arank}<\text{ABrank},}\\
-\pmb{\text{Print}[\text{{``}The system has no solution{''}}];,}\\
-\pmb{\text{If}[\text{Arank}==\text{ABrank}\&\&\text{Arank}<n\&\&\text{ABrank}<n,}\\
-\pmb{\text{Print}[\text{{``}The system has infinitely many solutions{''}}];,}\\
-\pmb{\text{If}[\text{Arank}==\text{ABrank}\&\&\text{Arank}==n,}\\
-\pmb{\text{Print}[\text{{``}The system has a unique solution{''}}];,}\\
-\pmb{\text{Print}[\text{$\texttt{"}$[ERROR] The system has ? solution(s)$\backslash $n
-}}\\
-\pmb{\text{Beware, if the system is homogeneous (varB is a zero vector and n$>$m (more variables than }}\\
-\pmb{\text{equations), then the system has infinitely many solutions)$\texttt{"}$}];}\\
-\pmb{];}\\
-\pmb{];}\\
-\pmb{];}\\
-\pmb{];}\\
-\pmb{\text{getNumOfSolutions}[\text{matrixA},\text{matrixB}]}\)
-\end{doublespace}
+\begin{mmaCell}[addtoindex=1,moredefined={matrixA, matrixB, getNumOfSolutions},morepattern={varA_, varB_, varA, varB},morelocal={vA, vB, vAB, Arank, ABrank, n}]{Input}
+matrixA=\{\{1,-1\},\{\mmaDef{\(\pmb{\pi}\)},-\mmaDef{\(\pmb{\pi}\)}\}\};
+matrixB=\{\{3\},\{3*\mmaDef{\(\pmb{\pi}\)}\}\};
 
-\noindent\(\text{The system has infinitely many solutions}\)
+(* rows=m=i *) (* cols=n=j *)
+getNumOfSolutions[varA_,varB_]:=Module[\{vA=varA,vB=varB,vAB,Arank,ABrank,n\},
+  vAB=ArrayFlatten[\{\{vA,vB\}\}];
+  Arank=MatrixRank[vA];
+  ABrank=MatrixRank[vAB];
+  n=Dimensions[vA][[2]];
+  If[Arank<ABrank,
+    Print["The system has no solution"];,
+    If[Arank==ABrank&&Arank<n&&ABrank<n,
+      Print["The system has infinitely many solutions"];,
+      If[Arank==ABrank&&Arank==n,
+        Print["The system has a unique solution"];,
+        Print["[ERROR] The system has ? solution(s)\textbackslash{}n
+          Beware, if the system is homogeneous (varB is a zero vector
+          and n>m (more variables than equations), then the system has
+          infinitely many solutions)"];
+      ];
+    ];
+  ];
+];
+
+getNumOfSolutions[matrixA,matrixB]
+\end{mmaCell}
+
+\begin{mmaCell}{Print}
+The system has infinitely many solutions
+\end{mmaCell}
 
 \clearpage
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem VII}\label{sec:P07}
 
 7.a\\
-\begin{doublespace}
-\noindent\(\pmb{\text{contourLimits}=5;}\\
-\pmb{\text{(*}}\\
-\pmb{\text{ContourPlot3D}[\{}\\
-\pmb{x+y+z==10,}\\
-\pmb{\frac{2}{3}*x+\frac{2}{3}*y+\frac{2}{3}*z==11,}\\
-\pmb{\frac{5}{9}*x+\frac{5}{9}*y+\frac{5}{9}*z==12}\\
-\pmb{\},}\\
-\pmb{\{x,-\text{contourLimits},\text{contourLimits}\},}\\
-\pmb{\{y,-\text{contourLimits},\text{contourLimits}\},}\\
-\pmb{\{z,-\text{contourLimits},\text{contourLimits}\},\text{Axes}\to \text{True},\text{PlotLegends}\to \text{{``}Expressions{''}}]}\\
-\pmb{\text{*)}}\\
-\pmb{\text{Show}[\{}\\
-\pmb{\text{Plot3D}[10-x-y,\{x,-\text{contourLimits},\text{contourLimits}\},\{y,-\text{contourLimits},\text{contourLimits}\},\text{PlotStyle}\to \text{Blue}],}\\
-\pmb{\text{Plot3D}\left[\frac{1}{2} (33-2 x-2 y),\{x,-\text{contourLimits},\text{contourLimits}\},\{y,-\text{contourLimits},\text{contourLimits}\},\text{PlotStyle}\to
-\text{Orange}\right],}\\
-\pmb{\text{Plot3D}\left[\frac{1}{5} (108-5 x-5 y),\{x,-\text{contourLimits},\text{contourLimits}\},\{y,-\text{contourLimits},\text{contourLimits}\},\text{PlotStyle}\to
-\text{Green}\right]}\\
-\pmb{\},\text{PlotRange}\to \text{All},\text{AxesOrigin}\to \{0,0\}]}\)
-\end{doublespace}
+\begin{mmaCell}[addtoindex=3,moredefined={contourLimits},morefunctionlocal={x, y}]{Input}
+contourLimits=5;
+(*
+ContourPlot3D[\{
+  x+y+z==10,
+  \mmaFrac{2}{3}*x+\mmaFrac{2}{3}*y+\mmaFrac{2}{3}*z==11,
+  \mmaFrac{5}{9}*x+\mmaFrac{5}{9}*y+\mmaFrac{5}{9}*z==12
+\},
+\{x,-contourLimits,contourLimits\},
+\{y,-contourLimits,contourLimits\},
+\{z,-contourLimits,contourLimits\},Axes\(\pmb{\to}\)True,PlotLegends\(\pmb{\to}\)"Expressions"]
+*)
+Show[\{
+  Plot3D[10-x-y,
+    \{x,-contourLimits,contourLimits\},\{y,-contourLimits,contourLimits\},
+    PlotStyle\(\pmb{\to}\)Blue],
+  Plot3D[\mmaFrac{1}{2} (33-2 x-2 y),
+    \{x,-contourLimits,contourLimits\},\{y,-contourLimits,contourLimits\},
+    PlotStyle\(\pmb{\to}\)Orange],
+  Plot3D[\mmaFrac{1}{5} (108-5 x-5 y),
+    \{x,-contourLimits,contourLimits\},\{y,-contourLimits,contourLimits\},
+    PlotStyle\(\pmb{\to}\)Green]
+\},PlotRange\(\pmb{\to}\)All,AxesOrigin \(\pmb{\to}\)\{0,0\}]
+\end{mmaCell}
 
 \includegraphics{MathematicaP1_gr2.eps}
 
