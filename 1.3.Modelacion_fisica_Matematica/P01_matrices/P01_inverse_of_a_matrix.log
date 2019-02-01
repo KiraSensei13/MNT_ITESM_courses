@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  1 FEB 2019 13:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  1 FEB 2019 14:54
 entering extended mode
 **./P01_inverse_of_a_matrix.tex
 (P01_inverse_of_a_matrix.tex
@@ -1325,210 +1325,83 @@ Package pdftex.def Info: MathematicaP1.pdf , page2 used on input line 105.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [3 <./MathematicaP1.pdf>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 110.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 111.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 114
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 114.
 
-Overfull \hbox (78.37622pt too wide) in paragraph at lines 117--117
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][] 
+
+LaTeX Font Warning: Font shape `OMS/cmtt/bx/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 114.
+
+
+Overfull \hbox (60.5828pt too wide) in paragraph at lines 114--114
+[][][][][][][][][][][][]\OMS/cmtt/bx/n/10.95 f[][][][][][][]g[] 
+ []
+
+
+Overfull \hbox (77.2815pt too wide) in paragraph at lines 115--115
+[][][][][][][][][][][][][][][][][][][][]\OMS/cmtt/bx/n/10.95 f[][][][][][][]g[]
+f[][][][][][][]g[] 
  []
 
 [4]
-Overfull \hbox (101.36942pt too wide) in paragraph at lines 162--196
+Overfull \hbox (101.36942pt too wide) in paragraph at lines 160--194
 $[]$ 
  []
 
 [5
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 198--200
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
 
  []
 
 [6]
-Overfull \hbox (20.43686pt too wide) in paragraph at lines 201--203
+Overfull \hbox (20.43686pt too wide) in paragraph at lines 199--201
 \OT1/cmr/m/n/10.95 Since, In-verse[A] equals diag($[]\OML/cmm/m/it/10.95 ; []; 
 [] ; []$\OT1/cmr/m/n/10.95 ), In-verse[matrixB] is equal to $[]$IdentityMatrix[
 30] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
 
  []
 
 
-Overfull \hbox (129.37311pt too wide) in paragraph at lines 216--250
+Overfull \hbox (129.37311pt too wide) in paragraph at lines 214--248
 $[]$ 
  []
 
 [7] [8] [9]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 269
-.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 269.
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/bx/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 269.
-
-
-Overfull \hbox (184.20837pt too wide) in paragraph at lines 287--307
+Overfull \hbox (184.20837pt too wide) in paragraph at lines 285--305
 $[]$ 
  []
 
 [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 311--318
+Underfull \hbox (badness 10000) in paragraph at lines 309--316
 
  []
 
 
-Overfull \hbox (47.41449pt too wide) in paragraph at lines 311--318
+Overfull \hbox (47.41449pt too wide) in paragraph at lines 309--316
 \OT1/cmr/m/n/10.95 Since, In-verse[A] equals diag($[]\OML/cmm/m/it/10.95 ; []; 
 [] ; []$\OT1/cmr/m/n/10.95 ), In-verse[matrixB] is equal to $[]$IdentityMatrix[
 16] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--318
+Underfull \hbox (badness 10000) in paragraph at lines 309--316
 
  []
 
 
-Overfull \hbox (71.83887pt too wide) in paragraph at lines 325--345
+Overfull \hbox (71.83887pt too wide) in paragraph at lines 327--347
 $[]$ 
  []
 
-[11
-
-] [12] [13
-
-]
-Package epstopdf Info: Source file: <MathematicaP1_gr1.eps>
-(epstopdf)                    date: 2019-02-01 10:38:34
-(epstopdf)                    size: 43838 bytes
-(epstopdf)             Output file: <MathematicaP1_gr1-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-02-01 10:49:54
-(epstopdf)                    size: 16788 bytes
-(epstopdf)             Command: <epstopdf --outfile=MathematicaP1_gr1-eps-conve
-rted-to.pdf MathematicaP1_gr1.eps>
-(epstopdf)             \includegraphics on input line 442.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./MathematicaP1_gr1-eps-converted-to.pdf): PDF i
-nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<MathematicaP1_gr1-eps-converted-to.pdf, id=157, 286.06876pt x 161.60374pt>
-File: MathematicaP1_gr1-eps-converted-to.pdf Graphic file (type pdf)
-<use MathematicaP1_gr1-eps-converted-to.pdf>
-Package pdftex.def Info: MathematicaP1_gr1-eps-converted-to.pdf  used on input 
-line 442.
-(pdftex.def)             Requested size: 286.06805pt x 161.60335pt.
-
-Overfull \hbox (28.71948pt too wide) in paragraph at lines 447--483
-[][] 
- []
-
-
-Overfull \hbox (25.9734pt too wide) in paragraph at lines 447--483
-[][] 
- []
-
-[14
-
- <./MathematicaP1_gr1-eps-converted-to.pdf>] [15]
-Overfull \hbox (111.27165pt too wide) in paragraph at lines 491--511
-[][] 
- []
-
-
-Overfull \hbox (157.03755pt too wide) in paragraph at lines 491--511
-[][] 
- []
-
-
-Overfull \hbox (151.63861pt too wide) in paragraph at lines 491--511
-[][] 
- []
-
-Package epstopdf Info: Source file: <MathematicaP1_gr2.eps>
-(epstopdf)                    date: 2019-02-01 10:38:35
-(epstopdf)                    size: 36195 bytes
-(epstopdf)             Output file: <MathematicaP1_gr2-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-02-01 10:51:07
-(epstopdf)                    size: 28623 bytes
-(epstopdf)             Command: <epstopdf --outfile=MathematicaP1_gr2-eps-conve
-rted-to.pdf MathematicaP1_gr2.eps>
-(epstopdf)             \includegraphics on input line 513.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./MathematicaP1_gr2-eps-converted-to.pdf): PDF i
-nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<MathematicaP1_gr2-eps-converted-to.pdf, id=179, 278.03876pt x 104.39pt>
-File: MathematicaP1_gr2-eps-converted-to.pdf Graphic file (type pdf)
-<use MathematicaP1_gr2-eps-converted-to.pdf>
-Package pdftex.def Info: MathematicaP1_gr2-eps-converted-to.pdf  used on input 
-line 513.
-(pdftex.def)             Requested size: 278.03807pt x 104.38972pt.
-[16
-
- <./MathematicaP1_gr2-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 532--542
-
- []
-
-[17] [18] [19
-
-]
-
-LaTeX Warning: Empty bibliography on input line 622.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 626.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 626.
-(P01_inverse_of_a_matrix.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 626.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 626.
-Package rerunfilecheck Info: File `P01_inverse_of_a_matrix.out' has not changed
-.
-(rerunfilecheck)             Checksum: 09D6E9CD98F0627C2D9A2E0374630159;451.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package logreq Info: Writing requests to 'P01_inverse_of_a_matrix.run.xml'.
-\openout1 = `P01_inverse_of_a_matrix.run.xml'.
-
- ) 
-Here is how much of TeX's memory you used:
- 30681 strings out of 492946
- 543624 string characters out of 3126267
- 1124781 words of memory out of 3000000
- 34221 multiletter control sequences out of 15000+200000
- 541357 words of font info for 60 fonts, out of 3000000 for 9000
- 1143 hyphenation exceptions out of 8191
- 58i,18n,69p,834b,5337s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmex10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/oskat/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/oska
-t/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
-:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/oskat/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/oskat/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/
-oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
-b><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmtt10.pfb>
-Output written on P01_inverse_of_a_matrix.pdf (19 pages, 320396 bytes).
-PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
- 100 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+[

@@ -107,18 +107,16 @@
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem I}\label{sec:P01}
 
-\begin{mmaCell}[morefunctionlocal={i, j}]{Input}
-SQRmatrixSize = 10;
-matrixAentries = Range[1, SQRmatrixSize*SQRmatrixSize];
-matrixAentries = 
-  ArrayReshape[matrixAentries, {SQRmatrixSize, SQRmatrixSize}];
-matrixA = 
-  Table[matrixAentries[[i, j]], {i, 1, SQRmatrixSize}, {j, 1, 
-    SQRmatrixSize}];
+\begin{mmaCell}[moredefined={SQRmatrixSize, matrixAentries, matrixA, \
+i, j}]{Input}
+SQRmatrixSize=10;
+matrixAentries =Range[1,SQRmatrixSize*SQRmatrixSize];
+matrixAentries=ArrayReshape[matrixAentries,\{SQRmatrixSize,SQRmatrixSize\}];
+matrixA=Table[matrixAentries[[i,j]],\{i,1,SQRmatrixSize\},\{j,1,SQRmatrixSize\}];
 MatrixForm[matrixA]
 \end{mmaCell}
 
-\begin{mmaCell}{Output}
+\begin{mmaCell}[form=MatrixForm]{Output}
 
 \end{mmaCell}
 
@@ -149,12 +147,12 @@ matrixA is singular, therefore Inverse[matrixA] does not exist.
 \section{Answer to Problem III}\label{sec:P03}
 
 \begin{mmaCell}[moredefined={SQRmatrixSize, matrixB}]{Input}
-SQRmatrixSize = 30;
-matrixB = \mmaDef{\(\pmb{\pi}\)}*IdentityMatrix[SQRmatrixSize];
+SQRmatrixSize=30;
+matrixB=\mmaDef{\(\pmb{\pi}\)}*IdentityMatrix[SQRmatrixSize];
 MatrixForm[matrixB]
 \end{mmaCell}
 
-\begin{mmaCell}{Output}
+\begin{mmaCell}[form=MatrixForm]{Output}
 
 \end{mmaCell}
 
@@ -208,7 +206,7 @@ Inverse[matrixB];
 MatrixForm[%]
 \end{mmaCell}
 
-\begin{mmaCell}{Output}
+\begin{mmaCell}[form=MatrixForm]{Output}
 
 \end{mmaCell}
 
@@ -279,7 +277,7 @@ For[i=1,i\(\pmb{\leq}\)rows,i++,
 MatrixForm[matrixC]
 \end{mmaCell}
 
-\begin{mmaCell}{Output}
+\begin{mmaCell}[form=MatrixForm]{Output}
 
 \end{mmaCell}
 
@@ -316,10 +314,14 @@ Since, Inverse[A] equals diag($\frac{1}{a_1},\frac{1}{a_2},\ldots ,\frac{1}{a_n}
 \\
 Verification with Mathematica is shown below ...
 
-\begin{doublespace}
-\noindent\(\pmb{\text{Inverse}[\text{matrixC}];}\\
-\pmb{\text{MatrixForm}[\%]}\)
-\end{doublespace}
+\begin{mmaCell}[moredefined={matrixC}]{Input}
+Inverse[matrixC];
+MatrixForm[%]
+\end{mmaCell}
+
+\begin{mmaCell}{Output}
+
+\end{mmaCell}
 
 \begin{doublespace}
 \noindent\(\left(
@@ -344,15 +346,21 @@ Verification with Mathematica is shown below ...
 \right)\)
 \end{doublespace}
 
+\clearpage
+
 4.c\\
 Multiplying matrixC times the inverse of matrixC. However, since we know that Inverse[matrixC] exists, the reduced echelon form is the identity matrix
 (of size 16x16).
 
-\begin{doublespace}
-\noindent\(\pmb{\text{MatrixRank}[\text{matrixC}];}\\
-\pmb{\text{RowReduce}[\text{matrixC}];}\\
-\pmb{\text{MatrixForm}[\%]}\)
-\end{doublespace}
+\begin{mmaCell}[moredefined={matrixC}]{Input}
+MatrixRank[matrixC];
+RowReduce[matrixC];
+MatrixForm[%]
+\end{mmaCell}
+
+\begin{mmaCell}[form=MatrixForm]{Output}
+
+\end{mmaCell}
 
 \begin{doublespace}
 \noindent\(\left(
@@ -382,16 +390,15 @@ Multiplying matrixC times the inverse of matrixC. However, since we know that In
 \section{Answer to Problem V}\label{sec:P05}
 
 5.a\\
-\begin{doublespace}
-\noindent\(\pmb{\text{matrixD}=\left(
-\begin{array}{cc}
- a & b \\
- c & d \\
-\end{array}
-\right);}\\
-\pmb{\text{Inverse}[\text{matrixD}];}\\
-\pmb{\text{MatrixForm}[\%]}\)
-\end{doublespace}
+\begin{mmaCell}[moredefined={matrixD}]{Input}
+matrixD=\{\{a,b\},\{c,d\}\};
+Inverse[matrixD];
+MatrixForm[%]
+\end{mmaCell}
+
+\begin{mmaCell}[form=MatrixForm]{Output}
+
+\end{mmaCell}
 
 \begin{doublespace}
 \noindent\(\left(
@@ -411,18 +418,18 @@ $\cdots $ Inverse: Matrix $\{\{$2,1$\}$,$\{$4,2$\}\}$ is singular
 \section{Answer to Problem VI}\label{sec:P06}
 
 6.a\\
-\begin{doublespace}
-\noindent\(\pmb{\text{Solve}[\{}\\
-\pmb{x-y==3,}\\
-\pmb{x*\pi -y*\pi ==3*\pi }\\
-\pmb{\},\{x,y\}]}\)
-\end{doublespace}
+\begin{mmaCell}[morefunctionlocal={x, y}]{Input}
+Solve[\{
+  x-y==3,
+  x*\mmaDef{\(\pmb{\pi}\)}-y*\mmaDef{\(\pmb{\pi}\)}==3*\mmaDef{\(\pmb{\pi}\)}
+\},\{x,y\}]
+\end{mmaCell}
 
-\noindent\(\text{Solve}: \text{Equations may not give solutions for all {``}solve{''} variables.}\)
+\begin{mmaCell}{Output}
+Solve}: Equations may not give solutions for all {``}solve{''} variables.
 
-\begin{doublespace}
-\noindent\(\{\{y\to -3+x\}\}\)
-\end{doublespace}
+\{\{y\(\to\)-3+x\}\}
+\end{mmaCell}}
 
 6.b\\
 \begin{doublespace}

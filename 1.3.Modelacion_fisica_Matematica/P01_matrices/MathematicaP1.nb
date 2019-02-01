@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    197558,       3795]
-NotebookOptionsPosition[    191367,       3694]
-NotebookOutlinePosition[    191708,       3709]
-CellTagsIndexPosition[    191665,       3706]
+NotebookDataLength[    228678,       4317]
+NotebookOptionsPosition[    221824,       4207]
+NotebookOutlinePosition[    222193,       4223]
+CellTagsIndexPosition[    222150,       4220]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3690,10 +3690,524 @@ Cell[BoxData["\<\"The system has no solution\"\>"], "Print",
    3.758033975755456*^9, 
    3.7580339766256123`*^9}},ExpressionUUID->"572880d2-9bc2-4e95-b08a-\
 3218a8f3dd4b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{"GET", " ", "LaTeX", " ", "CODE"}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"nbObj", "=", 
+     RowBox[{
+      RowBox[{"Notebooks", "[", "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "Swich", " ", "off", " ", "auto", " ", "deleting", " ", "of", " ", 
+      "labels"}], ",", 
+     RowBox[{
+     "so", " ", "that", " ", "we", " ", "can", " ", "extract", " ", "some", 
+      " ", "data", " ", "from", " ", 
+      RowBox[{"them", "."}]}]}], "*)"}], 
+   RowBox[{
+    RowBox[{
+     RowBox[{"CurrentValue", "[", 
+      RowBox[{"nbObj", ",", "CellLabelAutoDelete"}], "]"}], "=", "False"}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"SelectionMove", "[", 
+     RowBox[{"nbObj", ",", "All", ",", "Notebook"}], "]"}], ";"}], "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"SelectionEvaluate", "[", 
+      RowBox[{"nbObj", ",", "Before"}], "]"}], ";"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SetOptions", "[", 
+     RowBox[{"CellToTeX", ",", 
+      RowBox[{"\"\<CurrentCellIndex\>\"", "\[Rule]", "Automatic"}]}], "]"}], 
+    ";"}], "\n", 
+   RowBox[{"ExportString", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NotebookGet", "[", "nbObj", "]"}], "/.", 
+      RowBox[{
+       RowBox[{"cell", ":", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"_", ",", "__"}], "]"}]}], "\[RuleDelayed]", 
+       RowBox[{"Cell", "[", 
+        RowBox[{
+         RowBox[{"CellToTeX", "[", "cell", "]"}], ",", "\"\<Final\>\""}], 
+        "]"}]}]}], ",", "\"\<TeX\>\"", ",", 
+     RowBox[{"\"\<FullDocument\>\"", "\[Rule]", "False"}], ",", 
+     RowBox[{"\"\<ConversionRules\>\"", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Final\>\"", "\[Rule]", "Identity"}], "}"}]}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.7580392893262005`*^9, 3.7580393098582*^9}, {
+  3.7580393484001637`*^9, 3.758039707929897*^9}, {3.758039799885947*^9, 
+  3.7580398289088*^9}, {3.7580400333633285`*^9, 3.758040055472211*^9}, {
+  3.75804008838625*^9, 3.7580401028080645`*^9}, {3.7580401416796494`*^9, 
+  3.758040171260497*^9}, {3.7580424982499676`*^9, 3.758042528622819*^9}, {
+  3.7580426250761003`*^9, 3.7580426479916244`*^9}},
+ CellLabel->
+  "In[3517]:=",ExpressionUUID->"8c98f58d-d21a-4d23-b277-cbbb5af67cb5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CellsToTeXException","unsupported",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"CellStyle\\\\\\\"\\\"}]\\): \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Text\\\\\\\"\\\"}]\\) is not one of supported: \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Code\\\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Input\\\
+\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Output\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Print\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Message\\\\\\\"\\\"}]\\). Exception occurred in \\!\\(\\*RowBox[{\
+\\\"CellToTeX\\\", \\\"[\\\", RowBox[{\\\"Cell\\\", \\\"[\\\", RowBox[{\\\"\\\
+\\\\\"\\\\\\\\n1\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"Text\\\\\\\"\\\", \
+\\\",\\\", RowBox[{\\\"CellChangeTimes\\\", \\\"\[Rule]\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"3.757935256479052`*^9\\\", \\\",\\\", \
+\\\"3.7579352581249113`*^9\\\"}], \\\"}\\\"}], \\\",\\\", \
+\\\"3.7579386927131367`*^9\\\"}], \\\"}\\\"}]}]}], \\\"]\\\"}], \
+\\\"]\\\"}]\\).\"",2,3521,287,22345975115947254896,"Local",
+   "CellsToTeX`CellsToTeXException"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.75804253402635*^9},
+ CellLabel->
+  "During evaluation of \
+In[3517]:=",ExpressionUUID->"92be5354-19dd-4d6a-a8d3-a8525d2c1132"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CellsToTeXException","unsupported",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"CellStyle\\\\\\\"\\\"}]\\): \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Text\\\\\\\"\\\"}]\\) is not one of supported: \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Code\\\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Input\\\
+\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Output\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Print\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Message\\\\\\\"\\\"}]\\). Exception occurred in \\!\\(\\*RowBox[{\
+\\\"CellToTeX\\\", \\\"[\\\", RowBox[{\\\"Cell\\\", \\\"[\\\", RowBox[{\\\"\\\
+\\\\\"\\\\\\\\n2\\\\\\\\nmatrixA is singular, therefore Inverse[matrixA] does \
+not exist.\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"Text\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"CellChangeTimes\\\", \\\"\[Rule]\\\", RowBox[{\\\"{\\\", RowBox[{\
+\\\"3.757936719128831`*^9\\\", \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"3.757936794115131`*^9\\\", \\\",\\\", \\\"3.757936831318057`*^9\\\
+\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"3.7579386829030733`*^9\\\", \\\",\\\", \\\"3.7579386949980536`*^9\
+\\\"}], \\\"}\\\"}]}], \\\"}\\\"}]}]}], \\\"]\\\"}], \\\"]\\\"}]\\).\"",2,
+   3521,288,22345975115947254896,"Local","CellsToTeX`CellsToTeXException"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.75804253406627*^9},
+ CellLabel->
+  "During evaluation of \
+In[3517]:=",ExpressionUUID->"729cd6a9-0b63-46d3-b755-f41d64866971"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CellsToTeXException","unsupported",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"CellStyle\\\\\\\"\\\"}]\\): \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Text\\\\\\\"\\\"}]\\) is not one of supported: \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Code\\\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Input\\\
+\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Output\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Print\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Message\\\\\\\"\\\"}]\\). Exception occurred in \\!\\(\\*RowBox[{\
+\\\"CellToTeX\\\", \\\"[\\\", RowBox[{\\\"Cell\\\", \\\"[\\\", RowBox[{\\\"\\\
+\\\\\"\\\\\\\\n3\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"Text\\\\\\\"\\\", \
+\\\",\\\", RowBox[{\\\"CellChangeTimes\\\", \\\"\[Rule]\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"3.757937088353706`*^9\\\", \\\",\\\", \
+\\\"3.757938697350915`*^9\\\"}], \\\"}\\\"}]}]}], \\\"]\\\"}], \
+\\\"]\\\"}]\\).\"",2,3521,289,22345975115947254896,"Local",
+   "CellsToTeX`CellsToTeXException"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.7580425341078424`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3517]:=",ExpressionUUID->"88b2b2fe-c273-45de-882c-a101b8ae4247"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \
+\\!\\(\\*StyleBox[RowBox[{\\\"CellsToTeXException\\\", \\\"::\\\", \
+\\\"unsupported\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,3521,290,22345975115947254896,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.758042534183708*^9},
+ CellLabel->
+  "During evaluation of \
+In[3517]:=",ExpressionUUID->"e46da35b-3893-4a31-80e3-d5fe635c2519"],
+
+Cell[BoxData["\<\"\\\\begin{mmaCell}{Input}\\r\\n  (*\\r\\n  \
+Import@\\\"https://raw.githubusercontent.com/jkuczm/MathematicaCellsToTeX/\
+master/NoInstall.m\\\"\\r\\n  \
+PacletInstall@\\\"http://github.com/jkuczm/MathematicaCellsToTeX/releases/\
+download/v0.2.2/CellsToTeX-0.2.2.paclet\\\"\\r\\n  *)\\r\\n  \
+Needs@\\\"CellsToTeX`\\\";\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}\
+[moredefined={SQRmatrixSize, matrixAentries, matrixA, i, j}]{Input}\\r\\n  \
+SQRmatrixSize=10;\\r\\n  matrixAentries \
+=Range[1,SQRmatrixSize*SQRmatrixSize];\\r\\n  \
+matrixAentries=ArrayReshape[matrixAentries,\\\\{SQRmatrixSize,SQRmatrixSize\\\
+\\}];\\r\\n  matrixA=Table[matrixAentries[[i,j]],\\\\{i,1,SQRmatrixSize\\\\},\
+\\\\{j,1,SQRmatrixSize\\\\}];\\r\\n  MatrixForm[matrixA]\\r\\n  \
+\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[addtoindex=4,form=\
+MatrixForm]{Output}\\r\\n  (1\\t2\\t3\\t4\\t5\\t6\\t7\\t8\\t9\\t10\\r\\n  \
+11\\t12\\t13\\t14\\t15\\t16\\t17\\t18\\t19\\t20\\r\\n  21\\t22\\t23\\t24\\t25\
+\\t26\\t27\\t28\\t29\\t30\\r\\n  \
+31\\t32\\t33\\t34\\t35\\t36\\t37\\t38\\t39\\t40\\r\\n  41\\t42\\t43\\t44\\t45\
+\\t46\\t47\\t48\\t49\\t50\\r\\n  \
+51\\t52\\t53\\t54\\t55\\t56\\t57\\t58\\t59\\t60\\r\\n  61\\t62\\t63\\t64\\t65\
+\\t66\\t67\\t68\\t69\\t70\\r\\n  \
+71\\t72\\t73\\t74\\t75\\t76\\t77\\t78\\t79\\t80\\r\\n  81\\t82\\t83\\t84\\t85\
+\\t86\\t87\\t88\\t89\\t90\\r\\n  \
+91\\t92\\t93\\t94\\t95\\t96\\t97\\t98\\t99\\t100)\\r\\n\\\\end{mmaCell}\\r\\n\
+\\r\\n\\\\begin{mmaCell}[moredefined={SQRmatrixSize, matrixB}]{Input}\\r\\n  \
+SQRmatrixSize=30;\\r\\n  \
+matrixB=\\\\mmaDef{\\\\(\\\\pmb{\\\\pi}\\\\)}*IdentityMatrix[SQRmatrixSize];\\\
+r\\n  MatrixForm[matrixB]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+addtoindex=2,form=MatrixForm]{Output}\\r\\n  \
+(\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  0\\t0\\t\\\\(\\\
+\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\
+\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\\
+pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\
+\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\
+\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\)\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\(\\\\pi\\\\))\\r\\n\\\\end{mmaCell}\
+\\r\\n\\r\\n\\\\begin{mmaCell}[moredefined={matrixB}]{Input}\\r\\n  \
+Inverse[matrixB];\\r\\n  \
+MatrixForm[%]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[addtoindex=\
+1,form=MatrixForm]{Output}\\r\\n  \
+(\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\
+\\n  0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+r\\n  0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\\
+)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\\
+pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\\
+(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\
+\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\\
+mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\\
+mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+r\\n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\r\\n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n \
+ 0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\r\\\
+n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)})\\r\
+\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[moredefined={matrixB}]{\
+Input}\\r\\n  \
+MatrixRank[matrixB]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}{\
+Output}\\r\\n  \
+30\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[moredefined={\
+SQRmatrixSize, matrixC, i, j, rows, cols}]{Input}\\r\\n  SQRmatrixSize=16;\\r\
+\\n  matrixC=Table[0,\\\\{i,1,SQRmatrixSize\\\\},\\\\{j,1,SQRmatrixSize\\\\}];\
+\\r\\n  rows=Dimensions[matrixC][[1]];\\r\\n  \
+cols=Dimensions[matrixC][[2]];\\r\\n  For[i=1,i\\\\(\\\\pmb{\\\\leq}\\\\) \
+rows,i++,\\r\\n  For[j=1,j\\\\(\\\\pmb{\\\\leq}\\\\) cols,j++,\\r\\n  \
+If[i==j,\\r\\n  \
+matrixC[[i,j]]=(\\\\mmaDef{\\\\(\\\\pmb{\\\\pi}\\\\)}+i)-1,\\r\\n  \
+matrixC[[i,j]]=0];\\r\\n  ];\\r\\n  ];\\r\\n  \
+MatrixForm[matrixC]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+addtoindex=5,form=MatrixForm]{Output}\\r\\n  \
+(\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\r\\n  0\\t1+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\r\\n  \
+0\\t0\\t2+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t3+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t4+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t5+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t6+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t7+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t8+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t9+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\t0\\t0\\\
+t0\\r\\n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t10+\\\\(\\\\pi\\\\)\\t0\\t0\
+\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t11+\\\\(\\\\pi\\\\)\\t0\\t0\\t0\\\
+t0\\r\\n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t12+\\\\(\\\\pi\\\\)\
+\\t0\\t0\\t0\\r\\n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t13+\\\
+\\(\\\\pi\\\\)\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t14+\\\\(\\\\pi\\\\)\\\
+t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t15+\\\\(\\\\pi\\\\\
+))\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[moredefined={matrixC}]{\
+Input}\\r\\n  Inverse[matrixC];\\r\\n  MatrixForm[%]\\r\\n\\\\end{mmaCell}\\r\
+\\n\\r\\n\\\\begin{mmaCell}[addtoindex=1,form=MatrixForm]{Output}\\r\\n  \
+(\\\\mmaFrac{1}{\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\
+\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t\\\\mmaFrac{1}{1+\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t\\\\mmaFrac{1}{2+\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t\\\\mmaFrac{1}{3+\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{4+\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{5+\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{6+\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{7+\\\\(\\\\pi\\\\)}\\t0\\t0\\t0\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{8+\\\
+\\(\\\\pi\\\\)}\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{9+\\\\(\\\\pi\\\\)}\\t0\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{10+\\\\(\\\\pi\\\\)}\\\
+t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{11+\\\\(\\\\pi\\\\)\
+}\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{12+\\\\(\\\\pi\
+\\\\)}\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{13+\\\\(\\\
+\\pi\\\\)}\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{14+\\\\\
+(\\\\pi\\\\)}\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t\\\\mmaFrac{1}{15+\
+\\\\(\\\\pi\\\\)})\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+moredefined={matrixC}]{Input}\\r\\n  MatrixRank[matrixC];\\r\\n  \
+RowReduce[matrixC];\\r\\n  \
+MatrixForm[%]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[addtoindex=\
+2,form=MatrixForm]{Output}\\r\\n  \
+(1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t1\\t0\\r\\n  \
+0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t0\\t1)\\r\\n\\\\end{\
+mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[moredefined={matrixD}]{Input}\\r\\n  \
+matrixD=(a\\tb\\r\\n  c\\td);\\r\\n  Inverse[matrixD];\\r\\n  \
+MatrixForm[%]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[addtoindex=\
+2,form=MatrixForm]{Output}\\r\\n  (\\\\mmaFrac{d}{-b c+a \
+d}\\t-\\\\mmaFrac{b}{-b c+a d}\\r\\n  -\\\\mmaFrac{c}{-b c+a \
+d}\\t\\\\mmaFrac{a}{-b c+a \
+d})\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[morefunctionlocal={x, \
+y}]{Input}\\r\\n  Solve[\\\\{\\r\\n  x-y==3,\\r\\n  \
+x*\\\\mmaDef{\\\\(\\\\pmb{\\\\pi}\\\\)}-y*\\\\mmaDef{\\\\(\\\\pmb{\\\\pi}\\\\)\
+}==3*\\\\mmaDef{\\\\(\\\\pmb{\\\\pi}\\\\)}\\r\\n  \
+\\\\},\\\\{x,y\\\\}]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}{\
+Output}\\r\\n  \
+\\\\{\\\\{y\\\\(\\\\to\\\\)-3+x\\\\}\\\\}\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\
+\\begin{mmaCell}[moredefined={contourLimits},morefunctionlocal={x}]{Input}\\r\
+\\n  contourLimits=2.5;\\r\\n  (*\\r\\n  ContourPlot[\\\\{\\r\\n  \
+x-y==3,\\r\\n  \
+x*\\\\(\\\\pmb{\\\\pi}\\\\)-y*\\\\(\\\\pmb{\\\\pi}\\\\)==3*\\\\(\\\\pmb{\\\\\
+pi}\\\\)\\r\\n  \
+\\\\},\\\\{x,0.5,1.0\\\\},\\\\{y,-2.0,-2.5\\\\},ContourStyle\\\\(\\\\pmb{\\\\\
+to}\\\\)\\\\{Blue,Orange\\\\}]\\r\\n  *)\\r\\n  Show[\\\\{\\r\\n  Plot[x-3,\\\
+\\{x,-contourLimits,contourLimits\\\\},PlotStyle\\\\(\\\\pmb{\\\\to}\\\\)Blue]\
+,\\r\\n  Plot[x-3,\\\\{x,-contourLimits,contourLimits\\\\},PlotStyle\\\\(\\\\\
+pmb{\\\\to}\\\\)Green]\\r\\n  \
+\\\\},PlotRange\\\\(\\\\pmb{\\\\to}\\\\)All,AxesOrigin\\\\(\\\\pmb{\\\\to}\\\\\
+)\\\\{0,0\\\\}]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+addtoindex=1,moredefined={matrixA, matrixB, \
+getNumOfSolutions},morepattern={varA_, varB_, varA, varB},morelocal={vA, vB, \
+vAB, Arank,\\r\\nABrank, n}]{Input}\\r\\n  matrixA=(1\\t-1\\r\\n  \\\\mmaDef{\
+\\\\(\\\\pmb{\\\\pi}\\\\)}\\t-\\\\mmaDef{\\\\(\\\\pmb{\\\\pi}\\\\)});\\r\\n  \
+matrixB=(3\\r\\n  3*\\\\mmaDef{\\\\(\\\\pmb{\\\\pi}\\\\)});\\r\\n  (* \
+rows=m=i *) (* cols=n=j *)\\r\\n  \
+getNumOfSolutions[varA_,varB_]:=Module[\\\\{vA=varA,vB=varB,vAB,Arank,ABrank, \
+n\\\\},\\r\\n  vAB=ArrayFlatten[\\\\{\\\\{vA,vB\\\\}\\\\}];\\r\\n  \
+Arank=MatrixRank[vA];\\r\\n  ABrank=MatrixRank[vAB];\\r\\n  \
+n=Dimensions[vA][[2]];\\r\\n  If[Arank<ABrank,\\r\\n  Print[\\\"The system \
+has no solution\\\"];,\\r\\n  If[Arank==ABrank&&Arank<n&&ABrank<n,\\r\\n  \
+Print[\\\"The system has infinitely many solutions\\\"];,\\r\\n  \
+If[Arank==ABrank&&Arank==n,\\r\\n  Print[\\\"The system has a unique solution\
+\\\"];,\\r\\n  Print[\\\"[ERROR] The system has ? \
+solution(s)\\\\textbackslash{}n\\r\\n  Beware, if the system is homogeneous \
+(varB is a zero vector and n>m (more variables than equations), then the \
+system has infinitely many solutions)\\\"];\\r\\n  ];\\r\\n  ];\\r\\n  \
+];\\r\\n  ];\\r\\n  \
+getNumOfSolutions[matrixA,matrixB]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{\
+mmaCell}{Print}\\r\\n  The system has infinitely many \
+solutions\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[addtoindex=3,\
+moredefined={contourLimits},morefunctionlocal={x, y}]{Input}\\r\\n  \
+contourLimits=5;\\r\\n  (*\\r\\n  ContourPlot3D[\\\\{\\r\\n  x+y+z==10,\\r\\n \
+ \\\\mmaFrac{2}{3}*x+\\\\mmaFrac{2}{3}*y+\\\\mmaFrac{2}{3}*z==11,\\r\\n  \
+\\\\mmaFrac{5}{9}*x+\\\\mmaFrac{5}{9}*y+\\\\mmaFrac{5}{9}*z==12\\r\\n  \\\\},\
+\\r\\n  \\\\{x,-contourLimits,contourLimits\\\\},\\r\\n  \
+\\\\{y,-contourLimits,contourLimits\\\\},\\r\\n  \
+\\\\{z,-contourLimits,contourLimits\\\\},Axes\\\\(\\\\pmb{\\\\to}\\\\)True,\
+PlotLegends\\\\(\\\\pmb{\\\\to}\\\\)\\\"Expressions\\\"]\\r\\n  *)\\r\\n  \
+Show[\\\\{\\r\\n  \
+Plot3D[10-x-y,\\\\{x,-contourLimits,contourLimits\\\\},\\\\{y,-contourLimits,\
+contourLimits\\\\},PlotStyle\\\\(\\\\pmb{\\\\to}\\\\)Blue],\\r\\n  \
+Plot3D[\\\\mmaFrac{1}{2} (33-2 x-2 \
+y),\\\\{x,-contourLimits,contourLimits\\\\},\\\\{y,-contourLimits,\
+contourLimits\\\\},PlotStyle\\\\(\\\\pmb{\\\\to}\\\\)Orange],\\r\\n  \
+Plot3D[\\\\mmaFrac{1}{5} (108-5 x-5 \
+y),\\\\{x,-contourLimits,contourLimits\\\\},\\\\{y,-contourLimits,\
+contourLimits\\\\},PlotStyle\\\\(\\\\pmb{\\\\to}\\\\)Green]\\r\\n  \
+\\\\},PlotRange\\\\(\\\\pmb{\\\\to}\\\\)All,AxesOrigin\\\\(\\\\pmb{\\\\to}\\\\\
+)\\\\{0,0\\\\}]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+addtoindex=1,morefunctionlocal={x, y, z}]{Input}\\r\\n  Solve[\\\\{\\r\\n  \
+x+y+z==10,\\r\\n  \
+\\\\mmaFrac{2}{3}*x+\\\\mmaFrac{2}{3}*y+\\\\mmaFrac{2}{3}*z==11,\\r\\n  \
+\\\\mmaFrac{5}{9}*x+\\\\mmaFrac{5}{9}*y+\\\\mmaFrac{5}{9}*z==12\\r\\n  \\\\},\
+\\\\{x,y,z\\\\}]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}{Output}\\\
+r\\n  \\\\{\\\\}\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+moredefined={matrixA, matrixB, matrixAB}]{Input}\\r\\n  matrixA=(1\\t1\\t1\\r\
+\\n  \\\\mmaFrac{2}{3}\\t\\\\mmaFrac{2}{3}\\t\\\\mmaFrac{2}{3}\\r\\n  \
+\\\\mmaFrac{5}{9}\\t\\\\mmaFrac{5}{9}\\t\\\\mmaFrac{5}{9});\\r\\n  \
+matrixB=(10\\r\\n  11\\r\\n  12);\\r\\n  \
+matrixAB=ArrayFlatten[\\\\{\\\\{matrixA,matrixB\\\\}\\\\}];\\r\\n  \
+RowReduce[matrixA]\\r\\n  MatrixForm[%]\\r\\n  \
+MatrixRank[matrixA]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+addtoindex=3]{Output}\\r\\n  \
+\\\\{\\\\{1,1,1\\\\},\\\\{0,0,0\\\\},\\\\{0,0,0\\\\}\\\\}\\r\\n\\\\end{\
+mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[form=MatrixForm]{Output}\\r\\n  (1\\t1\
+\\t1\\r\\n  0\\t0\\t0\\r\\n  \
+0\\t0\\t0)\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}{Output}\\r\\n  \
+1\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[moredefined={matrixAB}]{\
+Input}\\r\\n  RowReduce[matrixAB];\\r\\n  MatrixForm[%]\\r\\n  \
+MatrixRank[matrixAB]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+addtoindex=1,form=MatrixForm]{Output}\\r\\n  (1\\t1\\t1\\t0\\r\\n  \
+0\\t0\\t0\\t1\\r\\n  \
+0\\t0\\t0\\t0)\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}{Output}\\r\
+\\n  2\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[addtoindex=-161,\
+moredefined={getNumOfSolutions, matrixA, matrixB}]{Input}\\r\\n  \
+getNumOfSolutions[matrixA,matrixB];\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\\
+begin{mmaCell}{Print}\\r\\n  The system has no solution\\r\\n\\\\end{mmaCell}\
+\\r\\n\\r\\n\\\\begin{mmaCell}[addtoindex=3496,moredefined={nbObj, \
+CellToTeX},morepattern={cell}]{Input}\\r\\n  \\r\\n  \\r\\n  \\r\\n  \\r\\n  \
+nbObj=Notebooks[][[1]];\\r\\n  (*Swich off auto deleting of labels,so that we \
+can extract some data from \
+them.*)CurrentValue[nbObj,CellLabelAutoDelete]=False;\\r\\n  \
+SelectionMove[nbObj,All,Notebook];\\r\\n  \
+(*SelectionEvaluate[nbObj,Before];*)\\r\\n  \
+SetOptions[CellToTeX,\\\"CurrentCellIndex\\\"\\\\(\\\\pmb{\\\\to}\\\\)\
+Automatic];\\r\\n  \
+ExportString[NotebookGet[nbObj]/.cell:Cell[_,__]\\\\(\\\\pmb{:\\\\to}\\\\)\
+Cell[CellToTeX[cell],\\\"Final\\\"],\\\"TeX\\\",\\\"FullDocument\\\"\\\\(\\\\\
+pmb{\\\\to}\\\\)False,\\\"ConversionRules\\\"\\\\(\\\\pmb{\\\\to}\\\\)\\\\{\\\
+\"Final\\\"\\\\(\\\\pmb{\\\\to}\\\\)Identity\\\\}]\\r\\n\\\\end{mmaCell}\\r\\\
+n\\r\\n\"\>"], "Output",
+ CellChangeTimes->{3.758042534798877*^9},
+ CellLabel->
+  "Out[3521]=",ExpressionUUID->"dbfe673e-9b59-4e99-9099-01bd5465e3c7"]
 }, Open  ]]
 },
-WindowSize->{958, 988},
-WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+WindowSize->{955, 988},
+WindowMargins->{{Automatic, -4}, {Automatic, 0}},
+CellLabelAutoDelete->False,
 FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
@@ -3796,6 +4310,14 @@ Cell[190428, 3665, 156, 6, 56, "Text",ExpressionUUID->"7d9357e4-6795-462e-8f84-d
 Cell[CellGroupData[{
 Cell[190609, 3675, 423, 7, 28, "Input",ExpressionUUID->"ca0c3d31-16ae-4fcc-b2f9-8f8674dc15f1"],
 Cell[191035, 3684, 316, 7, 22, "Print",ExpressionUUID->"572880d2-9bc2-4e95-b08a-3218a8f3dd4b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[191388, 3696, 2419, 62, 219, "Input",ExpressionUUID->"8c98f58d-d21a-4d23-b277-cbbb5af67cb5"],
+Cell[193810, 3760, 1209, 22, 55, "Message",ExpressionUUID->"92be5354-19dd-4d6a-a8d3-a8525d2c1132"],
+Cell[195022, 3784, 1409, 23, 91, "Message",ExpressionUUID->"729cd6a9-0b63-46d3-b755-f41d64866971"],
+Cell[196434, 3809, 1122, 20, 55, "Message",ExpressionUUID->"88b2b2fe-c273-45de-882c-a101b8ae4247"],
+Cell[197559, 3831, 471, 11, 21, "Message",ExpressionUUID->"e46da35b-3893-4a31-80e3-d5fe635c2519"],
+Cell[198033, 3844, 23775, 360, 15024, "Output",ExpressionUUID->"dbfe673e-9b59-4e99-9099-01bd5465e3c7"]
 }, Open  ]]
 }
 ]
