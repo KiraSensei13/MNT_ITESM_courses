@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  1 FEB 2019 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  1 FEB 2019 17:22
 entering extended mode
 **./P01_inverse_of_a_matrix.tex
 (P01_inverse_of_a_matrix.tex
@@ -1278,7 +1278,7 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
 (pdfpages)                OK, I'll proceed as if it were `pages'.
 
-<MathematicaP1.pdf, id=43, 614.295pt x 794.97pt>
+<MathematicaP1.pdf, id=39, 614.295pt x 794.97pt>
 File: MathematicaP1.pdf Graphic file (type pdf)
 <use MathematicaP1.pdf>
 Package pdftex.def Info: MathematicaP1.pdf  used on input line 105.
@@ -1287,7 +1287,7 @@ File: MathematicaP1.pdf Graphic file (type pdf)
 <use MathematicaP1.pdf>
 Package pdftex.def Info: MathematicaP1.pdf  used on input line 105.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-<MathematicaP1.pdf, id=46, page=1, 614.295pt x 794.97pt>
+<MathematicaP1.pdf, id=42, page=1, 614.295pt x 794.97pt>
 File: MathematicaP1.pdf Graphic file (type pdf)
 <use MathematicaP1.pdf, page 1>
 Package pdftex.def Info: MathematicaP1.pdf , page1 used on input line 105.
@@ -1311,7 +1311,7 @@ Package pdftex.def Info: MathematicaP1.pdf , page1 used on input line 105.
 [2
 
  <./MathematicaP1.pdf>]
-<MathematicaP1.pdf, id=99, page=2, 614.295pt x 794.97pt>
+<MathematicaP1.pdf, id=95, page=2, 614.295pt x 794.97pt>
 File: MathematicaP1.pdf Graphic file (type pdf)
 <use MathematicaP1.pdf, page 2>
 Package pdftex.def Info: MathematicaP1.pdf , page2 used on input line 105.
@@ -1347,61 +1347,86 @@ Overfull \hbox (77.2815pt too wide) in paragraph at lines 115--115
 f[][][][][][][]g[] 
  []
 
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 157.
+
+
+Overfull \hbox (374.84485pt too wide) in paragraph at lines 157--157
+[][]\OMS/cmtt/m/n/10.95 ff[]g[]f[]g []f[]g[]f[]g[]
+ []
+
+
+Overfull \hbox (8.02356pt too wide) in paragraph at lines 157--157
+\OMS/cmtt/m/n/10.95 f[]g[]f[]g[]f
+ []
+
+
+Overfull \hbox (2.54855pt too wide) in paragraph at lines 157--157
+[]\OMS/cmtt/m/n/10.95 g[]f[]g[]f
+ []
+
+
+Overfull \hbox (8.29724pt too wide) in paragraph at lines 157--157
+[]\OMS/cmtt/m/n/10.95 g[]f[]gg[] 
+ []
+
 [4]
-Overfull \hbox (101.36942pt too wide) in paragraph at lines 160--194
+Overfull \hbox (101.36942pt too wide) in paragraph at lines 177--211
 $[]$ 
  []
 
 [5
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
+] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
-[6]
-Overfull \hbox (20.43686pt too wide) in paragraph at lines 199--201
+
+Overfull \hbox (20.43686pt too wide) in paragraph at lines 217--219
 \OT1/cmr/m/n/10.95 Since, In-verse[A] equals diag($[]\OML/cmm/m/it/10.95 ; []; 
 [] ; []$\OT1/cmr/m/n/10.95 ), In-verse[matrixB] is equal to $[]$IdentityMatrix[
 30] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--201
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
 
  []
 
 
-Overfull \hbox (129.37311pt too wide) in paragraph at lines 214--248
+Overfull \hbox (129.37311pt too wide) in paragraph at lines 232--266
 $[]$ 
  []
 
 [7] [8] [9]
-Overfull \hbox (184.20837pt too wide) in paragraph at lines 285--305
+Overfull \hbox (184.20837pt too wide) in paragraph at lines 303--323
 $[]$ 
  []
 
 [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
+Underfull \hbox (badness 10000) in paragraph at lines 329--335
 
  []
 
 
-Overfull \hbox (47.41449pt too wide) in paragraph at lines 309--316
+Overfull \hbox (47.41449pt too wide) in paragraph at lines 329--335
 \OT1/cmr/m/n/10.95 Since, In-verse[A] equals diag($[]\OML/cmm/m/it/10.95 ; []; 
 [] ; []$\OT1/cmr/m/n/10.95 ), In-verse[matrixB] is equal to $[]$IdentityMatrix[
 16] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
+Underfull \hbox (badness 10000) in paragraph at lines 329--335
 
  []
 
 
-Overfull \hbox (71.83887pt too wide) in paragraph at lines 327--347
+Overfull \hbox (71.83887pt too wide) in paragraph at lines 346--366
 $[]$ 
  []
 
@@ -1409,28 +1434,9 @@ $[]$
 
 ] [12
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 392--393
-
- []
-
-[13
+] [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
-
- []
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 431.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 434--435
-
- []
-
 Package epstopdf Info: Source file: <MathematicaP1_gr1.eps>
 (epstopdf)                    date: 2019-02-01 10:38:34
 (epstopdf)                    size: 43838 bytes
@@ -1439,46 +1445,42 @@ Package epstopdf Info: Source file: <MathematicaP1_gr1.eps>
 (epstopdf)                    size: 16788 bytes
 (epstopdf)             Command: <epstopdf --outfile=MathematicaP1_gr1-eps-conve
 rted-to.pdf MathematicaP1_gr1.eps>
-(epstopdf)             \includegraphics on input line 449.
+(epstopdf)             \includegraphics on input line 487.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./MathematicaP1_gr1-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<MathematicaP1_gr1-eps-converted-to.pdf, id=157, 286.06876pt x 161.60374pt>
+<MathematicaP1_gr1-eps-converted-to.pdf, id=159, 286.06876pt x 161.60374pt>
 File: MathematicaP1_gr1-eps-converted-to.pdf Graphic file (type pdf)
 <use MathematicaP1_gr1-eps-converted-to.pdf>
 Package pdftex.def Info: MathematicaP1_gr1-eps-converted-to.pdf  used on input 
-line 449.
+line 487.
 (pdftex.def)             Requested size: 286.06805pt x 161.60335pt.
 [14
 
  <./MathematicaP1_gr1-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
-
- []
-
 
 LaTeX Font Warning: Font shape `OT1/cmtt/bx/sl' undefined
-(Font)              using `OT1/cmtt/bx/n' instead on input line 461.
+(Font)              using `OT1/cmtt/bx/n' instead on input line 501.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/sl' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 461.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 501.
 
-Overfull \hbox (72.08017pt too wide) in paragraph at lines 461--461
+Overfull \hbox (72.08017pt too wide) in paragraph at lines 501--501
 [][][][][][][][][][][][][][][][]\OMS/cmtt/m/n/10.95 f[][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][]g[] 
  []
 
 
-Overfull \hbox (32.38672pt too wide) in paragraph at lines 473--473
+Overfull \hbox (32.38672pt too wide) in paragraph at lines 513--513
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.1354pt too wide) in paragraph at lines 474--474
+Overfull \hbox (38.1354pt too wide) in paragraph at lines 514--514
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][] 
@@ -1487,34 +1489,30 @@ Overfull \hbox (38.1354pt too wide) in paragraph at lines 474--474
 [15
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
-
- []
-
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 498.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 539.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <6> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 498.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 539.
 
-Overfull \hbox (42.242pt too wide) in paragraph at lines 503--503
+Overfull \hbox (42.242pt too wide) in paragraph at lines 544--544
 \OMS/cmtt/m/n/10.95 f[][][][][][][][][][][][][][][]g[][][][][][]$[]$[][][][][][
 ][][][]$[]$[][][][][][][][][] 
  []
 
 
-Overfull \hbox (37.04068pt too wide) in paragraph at lines 507--507
+Overfull \hbox (37.04068pt too wide) in paragraph at lines 548--548
 [][][][]\OMS/cmtt/m/n/10.95 f[][][][][][][][][][][]g[]f[][][][][][][][][][][]g[
 ] 
  []
 
 
-Overfull \hbox (37.04068pt too wide) in paragraph at lines 510--510
+Overfull \hbox (37.04068pt too wide) in paragraph at lines 551--551
 [][][][]\OMS/cmtt/m/n/10.95 f[][][][][][][][][][][]g[]f[][][][][][][][][][][]g[
 ] 
  []
 
 
-Overfull \hbox (37.04068pt too wide) in paragraph at lines 513--513
+Overfull \hbox (37.04068pt too wide) in paragraph at lines 554--554
 [][][][]\OMS/cmtt/m/n/10.95 f[][][][][][][][][][][]g[]f[][][][][][][][][][][]g[
 ] 
  []
@@ -1527,59 +1525,47 @@ Package epstopdf Info: Source file: <MathematicaP1_gr2.eps>
 (epstopdf)                    size: 28623 bytes
 (epstopdf)             Command: <epstopdf --outfile=MathematicaP1_gr2-eps-conve
 rted-to.pdf MathematicaP1_gr2.eps>
-(epstopdf)             \includegraphics on input line 518.
+(epstopdf)             \includegraphics on input line 559.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./MathematicaP1_gr2-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<MathematicaP1_gr2-eps-converted-to.pdf, id=179, 278.03876pt x 104.39pt>
+<MathematicaP1_gr2-eps-converted-to.pdf, id=185, 278.03876pt x 104.39pt>
 File: MathematicaP1_gr2-eps-converted-to.pdf Graphic file (type pdf)
 <use MathematicaP1_gr2-eps-converted-to.pdf>
 Package pdftex.def Info: MathematicaP1_gr2-eps-converted-to.pdf  used on input 
-line 518.
+line 559.
 (pdftex.def)             Requested size: 278.03807pt x 104.38972pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 520--521
-
- []
-
-<normalv.png, id=180, 398.23781pt x 176.91093pt>
+<normalv.png, id=188, 398.23781pt x 176.91093pt>
 File: normalv.png Graphic file (type png)
 <use normalv.png>
-Package pdftex.def Info: normalv.png  used on input line 524.
+Package pdftex.def Info: normalv.png  used on input line 568.
 (pdftex.def)             Requested size: 250.10226pt x 111.10355pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--531
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
 
  []
 
 [16
 
  <./MathematicaP1_gr2-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 545--555
+Underfull \hbox (badness 10000) in paragraph at lines 591--600
 
  []
 
-[17 <./normalv.png>] [18] [19
+[17 <./normalv.png>] [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 677.
+ [19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 639.
- [20
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 639.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 677.
  (P01_inverse_of_a_matrix.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 639.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 639.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 677.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 677.
 Package rerunfilecheck Info: File `P01_inverse_of_a_matrix.out' has not changed
 .
-(rerunfilecheck)             Checksum: 09D6E9CD98F0627C2D9A2E0374630159;451.
+(rerunfilecheck)             Checksum: 14EAB7350C08416936243C9B8A8FC00F;392.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1589,34 +1575,35 @@ Package logreq Info: Writing requests to 'P01_inverse_of_a_matrix.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30980 strings out of 492946
- 548950 string characters out of 3126267
- 1125096 words of memory out of 3000000
- 34513 multiletter control sequences out of 15000+200000
- 541058 words of font info for 58 fonts, out of 3000000 for 9000
+ 31004 strings out of 492946
+ 549220 string characters out of 3126267
+ 1125081 words of memory out of 3000000
+ 34520 multiletter control sequences out of 15000+200000
+ 541673 words of font info for 60 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  58i,18n,69p,834b,5337s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmex10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/oskat/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/oska
-t/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
-:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/oskat/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/oskat/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/
-oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
-b><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmti10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmtt10.pfb>
-Output written on P01_inverse_of_a_matrix.pdf (20 pages, 349413 bytes).
+/cm/cmbx10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/oskat/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/osk
+at/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/oskat/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/oskat/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/
+oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmti10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on P01_inverse_of_a_matrix.pdf (19 pages, 361120 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
