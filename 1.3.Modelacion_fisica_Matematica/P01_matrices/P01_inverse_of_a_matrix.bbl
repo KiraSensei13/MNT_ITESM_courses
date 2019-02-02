@@ -1,0 +1,148 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Kuttler}{report}{}
+      \name{author}{16}{}{%
+        {{uniquename=0,uniquepart=base,hash=3caed26e22d832199531f6a5f842e741}{%
+           family={Kuttler},
+           familyi={K\bibinitperiod},
+           given={Ken},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7c9af84b209ba4b83d5f31e14646906a}{%
+           family={Langlois},
+           familyi={L\bibinitperiod},
+           given={Marie-Andr{é}e\bibnamedelima B},
+           giveni={M\bibinithyphendelim A\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0d665e53102b24b5d852725ad829d803}{%
+           family={Selinger},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=f559b04be4b9f43a9ec12ec8ff9b4c89}{%
+           family={Learning},
+           familyi={L\bibinitperiod},
+           given={Lyryx},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=8d86c53d45108d5d90aa8f7c63c5051c}{%
+           family={Bauslaugh},
+           familyi={B\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=891e70125f0818e9973ab5d91a2bedd8}{%
+           family={Chow},
+           familyi={C\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=384236622b7e66035472a7d54e96f0fc}{%
+           family={Friess},
+           familyi={F\bibinitperiod},
+           given={Nathan},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=310058b936e1e95429aa6e1e3c69fc2a}{%
+           family={Keyowski},
+           familyi={K\bibinitperiod},
+           given={Stephanie},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=2f5a97c38414c1d0b9b74f3e339f759a}{%
+           family={Laflamme},
+           familyi={L\bibinitperiod},
+           given={Claude},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e394110263d1fa38c05cbc48aa011138}{%
+           family={Laflamme},
+           familyi={L\bibinitperiod},
+           given={Martha},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=79cb9be8290bfefe4380386eabc36a48}{%
+           family={Mackenzie},
+           familyi={M\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c40de2bfdf59e03aeb35af650fab1c65}{%
+           family={Murnaghan},
+           familyi={M\bibinitperiod},
+           given={Tamsyn},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c5f6fb64f42f00ac0ebb7405a3279081}{%
+           family={Sava},
+           familyi={S\bibinitperiod},
+           given={Bogdan},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e20ba65f2e88aa8ffb8ce3552d97a6ef}{%
+           family={Stone},
+           familyi={S\bibinitperiod},
+           given={Larissa},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=5f2dc4c399aee929943baec4a63b7503}{%
+           family={Yee},
+           familyi={Y\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=67dc0439f222cace55ff09bdaabd187a}{%
+           family={Zahedi},
+           familyi={Z\bibinitperiod},
+           given={Ehsun},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{412b8b1d905349fd2606009d7ba19126}
+      \strng{fullhash}{72dc857083fb2799d5c0f119ea3dd425}
+      \strng{bibnamehash}{2117e84b445f2be4a05afaef02dce17c}
+      \strng{authorbibnamehash}{2117e84b445f2be4a05afaef02dce17c}
+      \strng{authornamehash}{412b8b1d905349fd2606009d7ba19126}
+      \strng{authorfullhash}{72dc857083fb2799d5c0f119ea3dd425}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Matrix Theory and Linear Algebra An open text by Peter Selinger Based on the original text by Lyryx Learning and Ken Kuttler First edition CONTRIBUTIONS}}
+      \field{type}{techreport}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Kuttler et al. - Unknown - Matrix Theory and Linear Algebra An open text by Peter Selinger Based on the original text by Lyryx Learning.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mathstat.dal.ca/{~}selinger/linear-algebra/downloads/LinearAlgebra.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.mathstat.dal.ca/%7B~%7Dselinger/linear-algebra/downloads/LinearAlgebra.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

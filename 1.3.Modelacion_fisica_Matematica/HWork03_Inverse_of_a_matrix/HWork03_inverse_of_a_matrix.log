@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  28 JAN 2019 11:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.15)  30 JAN 2019 22:12
 entering extended mode
 **./HWork03_inverse_of_a_matrix.tex
 (HWork03_inverse_of_a_matrix.tex
@@ -1160,21 +1160,33 @@ Package pdftex.def Info: HW3.pdf , page2 used on input line 110.
 
 ] [7
 
-] [8
+]
+Overfull \hbox (32.50044pt too wide) in paragraph at lines 262--284
+\OML/cmm/m/it/10.95 D[] \OT1/cmr/m/n/10.95 = [] [] = [] [] =
+ []
+
+[8
 
 ] [9
 
-] [10
+]
+Overfull \hbox (28.75752pt too wide) in paragraph at lines 405--411
+$[] [] []$ 
+ []
 
-] [11
+[10] [11
 
 ] [12
 
 ] [13
 
+] [14
+
+] [15
+
 ]
 
-LaTeX Warning: Empty bibliography on input line 176.
+LaTeX Warning: Empty bibliography on input line 458.
 
 (HWork03_inverse_of_a_matrix.aux)
 Package logreq Info: Writing requests to 'HWork03_inverse_of_a_matrix.run.xml'.
@@ -1183,11 +1195,11 @@ Package logreq Info: Writing requests to 'HWork03_inverse_of_a_matrix.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23829 strings out of 492969
- 431030 string characters out of 3126585
- 948105 words of memory out of 3000000
- 27439 multiletter control sequences out of 15000+200000
- 538187 words of font info for 46 fonts, out of 3000000 for 9000
+ 23839 strings out of 492969
+ 431169 string characters out of 3126585
+ 998096 words of memory out of 3000000
+ 27447 multiletter control sequences out of 15000+200000
+ 540080 words of font info for 54 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  58i,18n,65p,838b,5337s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
@@ -1196,17 +1208,22 @@ blic/amsfonts/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/oskat/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/oskat/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/osk
-at/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+at/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
 C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/oskat/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on HWork03_inverse_of_a_matrix.pdf (13 pages, 165546 bytes).
+/cmr10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/oskat/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/oskat/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/o
+skat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on HWork03_inverse_of_a_matrix.pdf (15 pages, 216903 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
+ 147 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
