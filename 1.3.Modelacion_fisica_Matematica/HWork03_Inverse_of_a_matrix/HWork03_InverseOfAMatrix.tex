@@ -1,0 +1,286 @@
+%% AMS-LaTeX Created with the Wolfram Language for Students - Personal Use Only : www.wolfram.com
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+\begin{document}
+
+III.a
+
+\begin{doublespace}
+\noindent\(\pmb{\text{varA}=\left(
+\begin{array}{ccc}
+ 1 & 0 & 0 \\
+ 2 & 1 & 3 \\
+ 0 & 0 & 1 \\
+\end{array}
+\right);}\\
+\pmb{\text{Inverse}[\text{varA}];}\\
+\pmb{\text{MatrixForm}[\%]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccc}
+ 1 & 0 & 0 \\
+ -2 & 1 & -3 \\
+ 0 & 0 & 1 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+III.b\\
+Matrix is singular.
+
+\begin{doublespace}
+\noindent\(\pmb{\text{varB}=\left(
+\begin{array}{ccc}
+ 1 & 1 & 1 \\
+ 1 & 2 & 2 \\
+ 1 & 3 & 3 \\
+\end{array}
+\right);}\\
+\pmb{\text{Inverse}[\text{varB}];}\)
+\end{doublespace}
+
+III.c
+
+\begin{doublespace}
+\noindent\(\pmb{\text{varC}=\left(
+\begin{array}{ccc}
+ -\frac{4}{\sqrt{3}} & 0 & 0 \\
+ 0 & -\frac{2}{3} & 0 \\
+ 0 & 0 & e^2 \\
+\end{array}
+\right);}\\
+\pmb{\text{Inverse}[\text{varC}];}\\
+\pmb{\text{MatrixForm}[\%]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccc}
+ -\frac{\sqrt{3}}{4} & 0 & 0 \\
+ 0 & -\frac{3}{2} & 0 \\
+ 0 & 0 & \frac{1}{e^2} \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+III.d\\
+Matrix is singular.
+
+\begin{doublespace}
+\noindent\(\pmb{\text{varD}=\left(
+\begin{array}{ccc}
+ \pi  & \pi  & \pi  \\
+ 2 & 2 & 2 \\
+ 1 & 1 & 1 \\
+\end{array}
+\right);}\\
+\pmb{\text{Inverse}[\text{varD}];}\)
+\end{doublespace}
+
+IV.a\\
+\(\(A^{-1}=\)\) \(\(\frac{1}{1(8)-2(2)}\left(
+\begin{array}{cc}
+ 8 & -2 \\
+ -2 & 1 \\
+\end{array}
+\right)=\)\) \(\(\frac{1}{4}\left(
+\begin{array}{cc}
+ 8 & -2 \\
+ -2 & 1 \\
+\end{array}
+\right)=\)\) \(\(\left(
+\begin{array}{cc}
+ 2 & -\frac{1}{2} \\
+ -\frac{1}{2} & \frac{1}{4} \\
+\end{array}
+\right)\)\)
+
+IV.b\\
+\(\(B^{-1}=\)\) \(\(\frac{1}{0(0)-2(3)}\left(
+\begin{array}{cc}
+ 0 & -2 \\
+ -3 & 0 \\
+\end{array}
+\right)=\)\) \(\(-\frac{1}{6}\left(
+\begin{array}{cc}
+ 0 & -2 \\
+ -3 & 0 \\
+\end{array}
+\right)=\)\) \(\(\left(
+\begin{array}{cc}
+ 0 & \frac{1}{3} \\
+ \frac{1}{2} & 0 \\
+\end{array}
+\right)\)\)
+
+IV.c\\
+\(\(C^{-1}=\)\) \(\(\frac{1}{2(0)-0(4)}\left(
+\begin{array}{cc}
+ 0 & 0 \\
+ -4 & 2 \\
+\end{array}
+\right)\Rightarrow\)\) ad-bc$\neq $0, therefore \(\(C^{-1}\)\) does not exist.
+
+IV.d\\
+\(\(D^{-1}=\)\) \(\(\frac{1}{\text{Cos}[\theta ](\text{Cos}[\theta ])-(-\text{Sin}[\theta ])(\text{Sin}[\theta ])}\left(
+\begin{array}{cc}
+ \text{Cos}[\theta ] & \text{Sin}[\theta ] \\
+ -\text{Sin}[\theta ] & \text{Cos}[\theta ] \\
+\end{array}
+\right)=\)\) \(\(\frac{1}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2}\left(
+\begin{array}{cc}
+ \text{Cos}[\theta ] & \text{Sin}[\theta ] \\
+ -\text{Sin}[\theta ] & \text{Cos}[\theta ] \\
+\end{array}
+\right)=\)\) \(\(\left(
+\begin{array}{cc}
+ \frac{\text{Cos}[\theta ]}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2} & \frac{\text{Sin}[\theta ]}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2}
+\\
+ -\frac{\text{Sin}[\theta ]}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2} & \frac{\text{Cos}[\theta ]}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2}
+\\
+\end{array}
+\right)\)\)
+
+V.a
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Custom2by2Inverse}[\text{varM$\_$}]\text{:=}\text{Module}[\{\text{vM}=\text{varM}, a,b,c,d,\text{Res}\},}\\
+\pmb{\text{(*}\text{Let}'s \text{check} \text{if} \text{the} \text{matrix} \text{is} \text{of} \text{size} 2\text{x2}\text{*)}}\\
+\pmb{\text{If}[\text{Dimensions}[\text{vM}][[1]]==2 \&\& \text{Dimensions}[\text{vM}][[2]]==2,}\\
+\pmb{a=\text{vM}[[1,1]];}\\
+\pmb{b=\text{vM}[[1,2]];}\\
+\pmb{c=\text{vM}[[2,1]];}\\
+\pmb{d=\text{vM}[[2,2]];}\\
+\pmb{\text{(*}\text{The} \text{matrix} \text{is} \text{invertible} \text{if} \text{and} \text{only} \text{if} \text{ad}-\text{bc}\neq 0 \text{...}\text{*)}}\\
+\pmb{\text{If}[a*d-b*c==0,}\\
+\pmb{\text{Print}[\text{{``}[ERROR] The matrix is not invertible.{''}}]}\\
+\pmb{];}\\
+\pmb{\text{(*Use the provided equation to calculate the inverse of the 2x2 matrix*)}}\\
+\pmb{\text{Res}=\frac{1}{a*d-b*c}\left(
+\begin{array}{cc}
+ d & -b \\
+ -c & a \\
+\end{array}
+\right);}\\
+\pmb{\text{(*}\text{Use} \text{Mathematica}'s \text{function} \text{Inverse}[] \text{to} \text{verify} \text{the} \text{calculation}\text{*)}}\\
+\pmb{\text{If}[\text{Res}==\text{Inverse}[\text{varM}],}\\
+\pmb{\text{Print}[\text{{``}[PASS] The calculation is EQUAL to Mathematica's function Inverse[{''}},}\\
+\pmb{\text{MatrixForm}[\text{varM}],\text{{``}].{''}}],}\\
+\pmb{\text{Print}[\text{{``}[FAIL] The calculation is NOT EQUAL to Mathematica's function Inverse[{''}},}\\
+\pmb{\text{MatrixForm}[\text{varM}],\text{{``}].{''}}]}\\
+\pmb{];}\\
+\pmb{\text{(*Return the calculated inverse of vM*)}}\\
+\pmb{\text{Res},}\\
+\pmb{\text{(*Display an error message if the matrix size is not 2x2*)}}\\
+\pmb{\text{Print}(\text{{``}[ERROR] Unfortunately, this function only works with 2x2 matrices.{''}})}\\
+\pmb{];}\\
+\pmb{];}\\
+\pmb{\text{Custom2by2Inverse}\left[\left(
+\begin{array}{cc}
+ 1 & 2 \\
+ 2 & 8 \\
+\end{array}
+\right)\right];}\\
+\pmb{\text{MatrixForm}[\%]}\)
+\end{doublespace}
+
+\noindent\(\text{[PASS] The calculation is EQUAL to Mathematica's function Inverse[}\left(
+\begin{array}{cc}
+ 1 & 2 \\
+ 2 & 8 \\
+\end{array}
+\right)\text{].}\)
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{cc}
+ 2 & -\frac{1}{2} \\
+ -\frac{1}{2} & \frac{1}{4} \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+V.b
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Custom2by2Inverse}\left[\left(
+\begin{array}{cc}
+ 0 & 2 \\
+ 3 & 0 \\
+\end{array}
+\right)\right];}\\
+\pmb{\text{MatrixForm}[\%]}\)
+\end{doublespace}
+
+\noindent\(\text{[PASS] The calculation is EQUAL to Mathematica's function Inverse[}\left(
+\begin{array}{cc}
+ 0 & 2 \\
+ 3 & 0 \\
+\end{array}
+\right)\text{].}\)
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{cc}
+ 0 & \frac{1}{3} \\
+ \frac{1}{2} & 0 \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+V.c\\
+Infinite expression encountered.\\
+Matrix is singular.
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Custom2by2Inverse}\left[\left(
+\begin{array}{cc}
+ 2 & 0 \\
+ 4 & 0 \\
+\end{array}
+\right)\right];}\\
+\pmb{\text{MatrixForm}[\%]}\\
+\pmb{\pmb{\text{(*}\text{$\texttt{"}$Infinite expression }\frac{1}{0}\text{ encountered.$\texttt{"}$}\text{*)}}}\)
+\end{doublespace}
+
+\noindent\(\text{[ERROR] The matrix is not invertible.}\)
+
+V.d
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Custom2by2Inverse}\left[\left(
+\begin{array}{cc}
+ \text{Cos}[\theta ] & -\text{Sin}[\theta ] \\
+ \text{Sin}[\theta ] & \text{Cos}[\theta ] \\
+\end{array}
+\right)\right];}\\
+\pmb{\text{MatrixForm}[\%]}\)
+\end{doublespace}
+
+\noindent\(\text{[PASS] The calculation is EQUAL to Mathematica's function Inverse[}\left(
+\begin{array}{cc}
+ \text{Cos}[\theta ] & -\text{Sin}[\theta ] \\
+ \text{Sin}[\theta ] & \text{Cos}[\theta ] \\
+\end{array}
+\right)\text{].}\)
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{cc}
+ \frac{\text{Cos}[\theta ]}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2} & \frac{\text{Sin}[\theta ]}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2}
+\\
+ -\frac{\text{Sin}[\theta ]}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2} & \frac{\text{Cos}[\theta ]}{\text{Cos}[\theta ]^2+\text{Sin}[\theta ]^2}
+\\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\end{document}

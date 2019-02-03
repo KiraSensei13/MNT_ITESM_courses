@@ -14,7 +14,7 @@
 #*     - https://www.zoology.ubc.ca/~schluter/R/fit-model/
 #*
 #* START DATE :
-#*     XX Feb 2019
+#*     23 Jan 2019
 #************************************************************************
 
 #install.packages('e1071', dependencies=TRUE)
@@ -44,7 +44,6 @@ summary(mydata)
 
 # * Use the R function to fit a model.
 # * Dependent variable : Test -> test is a categorical variable ...
-
 # Create the regression model.
 #names(mydata)
 
