@@ -22,16 +22,14 @@
 
 #*** PART 1 *************************************************************
 
-# Do a regression analysis to the “pima” dataset from the “faraway”
-# library
+# Do a regression analysis to the “pima” dataset from the “faraway” library
 library(faraway)
 library(caret)
 data(pima)
 
 # * Analyze the database and select only the observations with no missing
 #   data
-# complete.cases() returns a logical vector with the value TRUE for rows
-# that are complete, and FALSE for rows that have some NA values
+# complete.cases() returns a logical vector with the value TRUE for rows that are complete, and FALSE for rows that have some NA values
 completeData = complete.cases(pima)
 # remove rows with incomplete data
 mydata = pima[completeData, ]
@@ -47,88 +45,38 @@ summary(mydata)
 # Create the regression model.
 #names(mydata)
 
-#------------------------------------------------------------------------
-
-#LINEAR ANALYSIS
-# lmFitModel <- lm(test ~ pregnant + glucose + diastolic + triceps + insulin + bmi + diabetes + age, data = mydata)
-# summary(lmFitModel)
-# lmFitModel
+#LOGISTIC REGRESSION
+glmFitModel <- glm(test ~ pregnant + glucose + diastolic + triceps + insulin + bmi + diabetes + age, data = mydata)
+summary(glmFitModel)
 #Let's remove triceps, insulin, and age as they do not have a significant impact on the model
-lmFitModel <- lm(test ~ pregnant + glucose + diastolic + bmi + diabetes, data = mydata)
-summary(lmFitModel)
-lmFitModel
+glmFitModel <- glm(test ~ pregnant + glucose + diastolic + bmi + diabetes, data = mydata)
+summary(glmFitModel)
+glmFitModel
 
-#------------------------------------------------------------------------
+#get test predictions using the LOGISTIC REGRESSION
+glm_predictions = predict(glmFitModel, mydata)
+#hist(glm_predictions)
 
-#POLYNOMIAL ANALYSIS
-gp6Model = lm(
-  test ~
-      (pregnant + glucose + diastolic + bmi + diabetes)    +
-    I((pregnant + glucose + diastolic + bmi + diabetes)^2) +
-    I((pregnant + glucose + diastolic + bmi + diabetes)^3) +
-    I((pregnant + glucose + diastolic + bmi + diabetes)^4) +
-    I((pregnant + glucose + diastolic + bmi + diabetes)^5) +
-    I((pregnant + glucose + diastolic + bmi + diabetes)^6),
-  data = mydata)
-summary(gp6Model)
-gp6Model
+#We assume that: all values less than 0.5 correspond to the first category, 0.5 or bigger correspond to the second category
+glm_predictions = ifelse(glm_predictions > 0.5, 1, 0)
 
-#------------------------------------------------------------------------
+# get the percentage of prediction ...
+variableTable = table(glm_predictions , as.character(mydata$test))
+sum(diag(variableTable))/sum(variableTable)
 
-#ANOVA ANALYSIS
-# aovFitModel <- aov(test ~ pregnant + glucose + diastolic + triceps + insulin + bmi + diabetes + age, data = mydata)
-# summary(aovFitModel)
-# aovFitModel
-#Let's remove diastolic, triceps, and insulin as they do not have a significant impact on the model
-aovFitModel <- aov(test ~ pregnant + glucose + bmi + diabetes + age, data = mydata)
-summary(aovFitModel)
-aovFitModel
-
-#------------------------------------------------------------------------
-
-# * How many correct predictions did the fitted model get? How many wrong?
-
-#get test predictions using the LINEAR ANALYSIS
-#We assume that: all values less than 0.5 correspond to the first category,
-#0.5 or bigger correspond to the second category
-lm_predictions = ifelse(predict(lmFitModel, mydata) > 0.5, "1", "0" )
-#compare the actual data agains the predictions
-correct_lm_predictions = mydata$test == lm_predictions
 #count how many of the predictions are right vs wrong
+correct_lm_predictions = mydata$test == glm_predictions
 #FALSE:WRONG TRUE:RIGHT
 summary(correct_lm_predictions)
-# * Confusion matrix
-confusionMatrix(as.factor(lm_predictions), as.factor(mydata$test), positive = NULL, dnn = c("Prediction", "Reference"))
 
-#get test predictions using the POLYNOMIAL ANALYSIS
-#We assume that: all values less than 0.5 correspond to the first category,
-#0.5 or bigger correspond to the second category
-gp6_predictions = ifelse(predict(gp6Model, mydata) > 0.5, "1", "0" )
-#compare the actual data agains the predictions
-correct_gp6_predictions = mydata$test == gp6_predictions
-#count how many of the predictions are right vs wrong
-#FALSE:WRONG TRUE:RIGHT
-summary(correct_gp6_predictions)
-# * Confusion matrix
-confusionMatrix(as.factor(gp6_predictions), as.factor(mydata$test), positive = NULL, dnn = c("Prediction", "Reference"))
-
-#get test predictions using the ANOVA ANALYSIS
-#We assume that: all values less than 0.5 correspond to the first category,
-#0.5 or bigger correspond to the second category
-aov_predictions = ifelse(predict(aovFitModel, mydata) > 0.5, "1", "0" )
-#compare the actual data agains the predictions
-correct_aov_predictions = mydata$test == aov_predictions
-#count how many of the predictions are right vs wrong
-#FALSE:WRONG TRUE:RIGHT
-summary(correct_aov_predictions)
-# * Confusion matrix
-confusionMatrix(as.factor(aov_predictions), as.factor(mydata$test), positive = NULL, dnn = c("Prediction", "Reference"))
+# * Confusion matrix to see the model performance
+confusionMatrix(as.factor(glm_predictions), as.factor(mydata$test), positive = NULL, dnn = c("Prediction", "Reference"))
 
 # Which regression did you use?
 # * ANCOVA, ANOVA, simple regression, logistic regression
 # * Justify your answer
+sprintf("Logistic regression, since logistic regression is better used when the dependent variable is categorical.")
 
-#TODO: explain ...
 
 #*** PART 2 *************************************************************
 
@@ -141,12 +89,56 @@ completeData = complete.cases(teengamb)
 # remove rows with incomplete data
 mydata = teengamb[completeData, ]
 
+#Let's take a look to the data ...
+str(mydata)
+pairs(mydata)
+cor(mydata)
+summary(mydata)
+
 # * Use the normal equations to fit the 𝛽 parameters
 # * Dependent variable: gamble
-# * Get the RSS and 𝑅2
+# * Get the RSS and R^2
+
+# Independent variables
+X = model.matrix( ~ sex + status + income + verbal : sex, data=mydata )
+# Response or dependent variable
+y = mydata$gamble
+
+# Lets apply the least squares formula
+# ( (X' X)^-1 * x  X'  * y
+# ?solve -> is is used to solve the inverse of a matrix
+beta = solve(t(X) %*% X) %*% t(X) %*% y
+
+# Estimated output
+yhat = X %*% beta
+
+# Estimation Error
+error = y - yhat
+
+# Residual Sum of Squares
+RSS = t(error) %*% error
+sprintf("RSS = %f", as.double(RSS))
+
+# R-squared
+numerator = sum((yhat-y)^2)
+denominator = sum((y - mean(yhat))^2)
+R.squared = 1 - (numerator/denominator)
+sprintf("R^2 = %f", as.double(R.squared))
+
 # * Use the R function to compare your answers
+# Compute the linear model using R functions
+lmFitModel = lm(formula = gamble ~ sex + status + income + verbal : sex, data = mydata)
+#print the model's summary to verify the R-squared calculation
+summary(lmFitModel)
+# Analysis of Variance Model to verify the RSS calculation
+aov(lmFitModel)
+#Let's remove sex, status, verbal and sex as they do not have a significant impact on the model
+lmFitModel = lm(formula = gamble ~ income, data = mydata)
+
 # Which regression did you use?
 # * ANCOVA, ANOVA, simple regression, logistic regression
 # * Justify your answer
+sprintf("ANCOVA, since the predictors are a mixture of quantitative and qualitative.")
+
 
 
