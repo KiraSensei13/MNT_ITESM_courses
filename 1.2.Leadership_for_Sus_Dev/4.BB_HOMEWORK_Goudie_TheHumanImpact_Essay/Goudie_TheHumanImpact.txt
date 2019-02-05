@@ -34,7 +34,7 @@
 [Fires]
 
 
-[Domestic Stocks]
+[Grazing & Domestic Stocks]
 
 
 [Deforestation]
