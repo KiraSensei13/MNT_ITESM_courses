@@ -11,8 +11,65 @@
 /*                                                                            */
 /******************************************************************************/
 
+/* - 1 INTRODUCTION --------------------------------------------------------- */
+
+[The Main Stages of Cultural development]
 
 
-/******************************************************************************/
+[Human Population Growth]
+
+
+[Early Human Impact]
+
+
+[Main Changes in the Environment]
+
+
+[Earth System Science]
+
+
+
+/* - 2 THE HUMAN IMPACT ON VEGETATION --------------------------------------- */
+
+[Fire]
+
+
+[Domestic Stocks]
+
+
+[Deforestation]
+
+
+[Desertification]
+
+
+[Savannas and Mid-latitude Grasslands]
+
+
+[Ecological Explosions]
+
+
+[Pollution]
+
+
+
+/* - 13 CONCLUSION ---------------------------------------------------------- */
+
+[The Screeching Acceleration]
+
+
+[Adverse Environmental Changes]
+
+
+[Ecosystems - stability, resilience, elasticity, & inertia]
+
+
+[Causes of Environmental Changes]
+
+
+
+/* - REFERENCES ------------------------------------------------------------- */
 
 Goudie, A. (2011). The Human Impact on the Natual Environment. (Blackwell Publishing Ltd, Ed.) (sixth). Hong Kong: Blackwell Publishing Ltd.
+
+/******************************************************************************/
