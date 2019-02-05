@@ -31,7 +31,7 @@
 
 /* - 2 THE HUMAN IMPACT ON VEGETATION --------------------------------------- */
 
-[Fire]
+[Fires]
 
 
 [Domestic Stocks]
