@@ -297,4 +297,14 @@ CellToTeX[testCell]
 
 /****************************************************************************/
 
+get 1st page & request header
+https://trefle.io/api/plants/?token=SWVENEduMFMxellqNHFIM3RmL0c4Zz09
+
+browse all plants by page
+https://trefle.io/api/plants/?page=4906&token=SWVENEduMFMxellqNHFIM3RmL0c4Zz09
+
+browse a specific plant
+http://trefle.io/api/plants/138738/?token=SWVENEduMFMxellqNHFIM3RmL0c4Zz09
+
+/****************************************************************************/
 
