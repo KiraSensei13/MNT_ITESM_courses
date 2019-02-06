@@ -82,6 +82,7 @@ sprintf("Logistic regression, since logistic regression is better used when the 
 
 # Do a regression analysis to the “teengamb” dataset from the “faraway”
 # library
+library(faraway)
 data(teengamb)
 # complete.cases() returns a logical vector with the value TRUE for rows
 # that are complete, and FALSE for rows that have some NA values
@@ -95,12 +96,16 @@ pairs(mydata)
 cor(mydata)
 summary(mydata)
 
+#There is data from 2 sex, labeled 0, 1
+#Let's convert the sex data into a factor
+mydata$sex = factor(as.numeric(mydata$sex))
+
 # * Use the normal equations to fit the 𝛽 parameters
 # * Dependent variable: gamble
 # * Get the RSS and R^2
 
 # Independent variables
-X = model.matrix( ~ sex + status + income + verbal : sex, data=mydata )
+X = model.matrix( ~ sex + status + income + verbal + income:sex, mydata)
 # Response or dependent variable
 y = mydata$gamble
 
@@ -127,13 +132,13 @@ sprintf("R^2 = %f", as.double(R.squared))
 
 # * Use the R function to compare your answers
 # Compute the linear model using R functions
-lmFitModel = lm(formula = gamble ~ sex + status + income + verbal : sex, data = mydata)
+lmFitModel = lm(formula = gamble ~ sex + status + income + verbal + income:sex, data = mydata)
 #print the model's summary to verify the R-squared calculation
 summary(lmFitModel)
 # Analysis of Variance Model to verify the RSS calculation
 aov(lmFitModel)
 #Let's remove sex, status, verbal and sex as they do not have a significant impact on the model
-lmFitModel = lm(formula = gamble ~ income, data = mydata)
+lmFitModel = lm(formula = gamble ~ income + income:sex, data = mydata)
 
 # Which regression did you use?
 # * ANCOVA, ANOVA, simple regression, logistic regression
