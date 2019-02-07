@@ -37,6 +37,7 @@ dataset = read.csv("Dataset.csv")
 #      6 | Country
 #      8 | Year
 #      9 | Value
+
 columnsOfInterest = c(2,4,6,8,9)
 mydataset         = dataset[, columnsOfInterest]
 
