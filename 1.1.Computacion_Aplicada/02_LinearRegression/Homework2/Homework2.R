@@ -1,13 +1,13 @@
 #************************************************************************
 #* AUTHOR(S) :
-#*     Bruno González Soria          (A01169284)
+#*     Bruno Gonz�lez Soria          (A01169284)
 #*     Antonio Osamu Katagiri Tanaka (A01212611)
 #*
 #* FILENAME :
 #*     Homework2.R
 #*
 #* DESCRIPTION :
-#*     Computación aplicada (Ene 19 Gpo 1)
+#*     Computaci�n Aplicada (Ene 19 Gpo 1)
 #*     Homework 2
 #*
 #* NOTES :
@@ -22,7 +22,8 @@
 
 #*** PART 1 *************************************************************
 
-# Do a regression analysis to the “pima” dataset from the “faraway” library
+# Do a regression analysis to the "pima" dataset from the "faraway"
+# library
 library(faraway)
 library(caret)
 data(pima)
@@ -43,7 +44,7 @@ summary(mydata)
 # * Use the R function to fit a model.
 # * Dependent variable : Test -> test is a categorical variable ...
 # Create the regression model.
-#names(mydata)
+# names(mydata)
 
 #LOGISTIC REGRESSION
 glmFitModel <- glm(test ~ pregnant + glucose + diastolic + triceps + insulin + bmi + diabetes + age, data = mydata)
@@ -80,7 +81,7 @@ sprintf("Logistic regression, since logistic regression is better used when the 
 
 #*** PART 2 *************************************************************
 
-# Do a regression analysis to the “teengamb” dataset from the “faraway”
+# Do a regression analysis to the "teengamb" dataset from the "faraway"
 # library
 library(faraway)
 data(teengamb)
@@ -89,6 +90,7 @@ data(teengamb)
 completeData = complete.cases(teengamb)
 # remove rows with incomplete data
 mydata = teengamb[completeData, ]
+str(mydata)
 
 #Let's take a look to the data ...
 str(mydata)
@@ -100,7 +102,7 @@ summary(mydata)
 #Let's convert the sex data into a factor
 mydata$sex = factor(as.numeric(mydata$sex))
 
-# * Use the normal equations to fit the 𝛽 parameters
+# * Use the normal equations to fit the "beta" parameters
 # * Dependent variable: gamble
 # * Get the RSS and R^2
 
@@ -144,6 +146,3 @@ lmFitModel = lm(formula = gamble ~ income + income:sex, data = mydata)
 # * ANCOVA, ANOVA, simple regression, logistic regression
 # * Justify your answer
 sprintf("ANCOVA, since the predictors are a mixture of quantitative and qualitative.")
-
-
-
