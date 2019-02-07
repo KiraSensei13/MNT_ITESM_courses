@@ -11,60 +11,33 @@
 /*                                                                            */
 /******************************************************************************/
 
-/* - 1 INTRODUCTION --------------------------------------------------------- */
-
-[The Main Stages of Cultural development]
-
-
-[Human Population Growth]
-
-
-[Early Human Impact]
-
-
-[Main Changes in the Environment]
-
-
-[Earth System Science]
-
-
-
 /* - 2 THE HUMAN IMPACT ON VEGETATION --------------------------------------- */
 
-[Fires]
+[Fires] - Osamu
+Chapter 2 discusses the problems with degraded (subnatural) and ruderal (semi-natural) hebitats due to human processes, such as fire, grazing and physical methods for forest removal. Human civilizations have used fire for several purposes, such as: a) forest clearance for agricultural needs, b) grazing for animal domestication processes, c) drive away pests, d) cooking and lightning, and e) signaling; besides other reasons.
+
+One of the most useful implementation of fire is in regards to agricultural processes. The burned land is temporarely rich in nutrients, whereas frequent land cultivation results in rapid deterioration in fertility. Land burning is benefitial for agriculture, however (for instance) forest coverage was been reduced from 79% to 53% in central and eastern New Zealand. The reduction of tall trees and the expansion of subnatual areas were followed by the introduction of fire.
+
+Is imperative that the use of fire by humans has a significant impact on the environment. However, some natural fires may be caused by natural processes. (e.g. heavy dense vegetation, lightning, or sparks produced by falling boulders) The effects of fire depend on the fire size, intensity and duration. Some fires are quick and cool (grassland fires) that only destroy ground vegetation, on the other hand crown fires (forest fires) affect entire forests with high temperatures.
+
+Humans do not only affect the environment by creating fires, but also by fire suppresion. fire suppression policies have undesirable consecuences. One of the best ways to prevent large fires is to allow the small fires to burn. In some locations, fire protection services have an impact on the environment, as the vegetation has become more dense, the amount of combustible fuels has increased, more amount of fire-intolerant species has risen, and vegetation diversity has decreased.
+
+[Grazing & Domestic Stocks] - Osamu
 
 
-[Grazing & Domestic Stocks]
+[Deforestation] - Osamu
 
 
-[Deforestation]
+[Desertification] - Bruno
 
 
-[Desertification]
+[Savannas and Mid-latitude Grasslands] - Bruno
 
 
-[Savannas and Mid-latitude Grasslands]
+[Ecological Explosions] - Carlos
 
 
-[Ecological Explosions]
-
-
-[Pollution]
-
-
-
-/* - 13 CONCLUSION ---------------------------------------------------------- */
-
-[The Screeching Acceleration]
-
-
-[Adverse Environmental Changes]
-
-
-[Ecosystems - stability, resilience, elasticity, & inertia]
-
-
-[Causes of Environmental Changes]
+[Pollution] - Carlos
 
 
 
