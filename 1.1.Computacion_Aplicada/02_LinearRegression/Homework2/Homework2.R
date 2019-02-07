@@ -1,13 +1,13 @@
 #************************************************************************
 #* AUTHOR(S) :
-#*     Bruno Gonz·lez Soria          (A01169284)
+#*     Bruno Gonz√°lez Soria          (A01169284)
 #*     Antonio Osamu Katagiri Tanaka (A01212611)
 #*
 #* FILENAME :
 #*     Homework2.R
 #*
 #* DESCRIPTION :
-#*     ComputaciÛn Aplicada (Ene 19 Gpo 1)
+#*     Computaci√≥n Aplicada (Ene 19 Gpo 1)
 #*     Homework 2
 #*
 #* NOTES :
