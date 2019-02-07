@@ -189,7 +189,6 @@ hist(prediction)
 newPrediction = ifelse(prediction > 0.5, "NotAbused", "Abused" )
 
 # Confussion matrix to see the model performance
-<<<<<<< Updated upstream
 variableTable = table(newPrediction , as.character(sexab$csa))
 
 # get the percentage of prediction ...
@@ -198,13 +197,4 @@ sum(diag(variableTable))/sum(variableTable)
 
 
 
-
-
-
-
-
-
-
-=======
 table(newPrediction , as.character(sexab$csa))
->>>>>>> Stashed changes
