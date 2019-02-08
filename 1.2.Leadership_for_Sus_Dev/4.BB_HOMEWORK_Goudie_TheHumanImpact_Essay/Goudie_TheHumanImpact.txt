@@ -27,7 +27,9 @@ Light grazing may increse the productivity of wild pastures and the land tend to
 
 /* : [Deforestation] - pp.32-39. Osamu :::::::::::::::::::::::::::::::::::::: */
 In most cases, forests are cleared to provide fuel and allow agriculture and mining. However, some environmental consecuences are inevitable, such as fooding, sedimentation and accelerated landsliding. The current rates of deforestation are not very well estimated, since some issues araise while measuring and defining loss of forest area. Forests provide potential foods, drinks, medicine, gums, resins, besides other things. Their removal may fuel major environmental concers as climate change and loss of biodiversity. Deforestation causes regional and local issues.
-    To prevent 
+    To prevent furder forest loss, some communities have develop a sustainable form of agriculture known as swidden (shifting agriculture). Swidden has common proporties with rain forests, as swidden: a) do not plant food plants in an open field, b) it involves a wide range of spicies having a high diversity index, c) it has high quantities of nutrients locked up within the flora, instead of within the soil. However, swidden fails with population increase as the rain forest can not recuperate from long periods of "high demand".
+    Deforestation is ot an unstoppable or irreversible process. Strategies need to be developed to reduce the rate at which forests are disappearing, such as: research, education, conservation, restoration, sustainable development, and reducing demand.
+    When a forests starts to regenerate (secondary forest) the type of forest is different from the first one. Secondary forests are lower with trees with smaller average dimensions and uniform in structure and poorer in species. On the other hand, most trees within secondary foresrs are light-demanding and intolerant of shade. However, secondary foresrs are better than no-forest; they are effective at preventing soil erosion and maintaining water quality. They also provide shelter to some flora and fauna.
 
 /* : [Desertification] - pp.42-48. Bruno :::::::::::::::::::::::::::::::::::: */
 
