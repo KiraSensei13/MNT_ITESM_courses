@@ -203,3 +203,4 @@ print(beta)
 print(RSS)
 
 print(R.squared)
+
