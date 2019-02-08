@@ -1,0 +1,38 @@
+/******************************************************************************/
+/*                                                                            */
+/* Climate change: 'Future proofing' forests to protect orangutans            */
+/*                                                                            */
+/* Bruno Gonzalez Soria          (A01169284)                                  */
+/* Antonio Osamu Katagiri Tanaka (A01212611)                                  */
+/* Carlos Cardoso Isidoro        (A01750267)                                  */
+/*                                                                            */
+/* Campus EdMex [CEM]                                                         */
+/*                                                                            */
+/******************************************************************************/
+
+Deforestation and lack of uban planning and regulations are well known causes for
+biodiversity decrease and species endangerment. Apes are one of the most affected
+species by the damage humans have inflicted upon their environment. Orangutans
+used to be found across South East Asia, but today they are confined in two islands,
+Borneo and Sumatra. In an effort to increase their population numbers and to protect
+the forests, planned reforestation is taking place. Key tree species that have proven
+to be reliable food sources for orangutans, as well as other tree species that have
+shown resilience to climate change and fires.
+Reforestations are now being planned by selecting which species to plant as well as where
+to plant them to provide a practical and functional environment for apes. Vines for moving
+through the forestare and trees they use for nesting are also to be planted. Building these
+ecosystems far away from areas accessed by people is also important to maintain the habitat
+free from human contact.
+The International Union for Conservation of Nature (IUCN) is decided to start preparing
+the different ecosystems to the conditions they are very propably going to face in a near
+future due to climate change. (IUCN, 2019) These measures are a first step towards buffering
+the disturbances to the normal conditions of the ecosystem. Nevertheless, these actions must
+be complemented by legal regulations and enforced environmental protection policies since
+this is the reason the situation has reached this point in the first place.
+
+/* - RESOURCES -------------------------------------------------------------- */
+
+Briggs, H. (2019). 'Future proofing' forests for orangutans. Retrieved from 
+https://www.bbc.com/news/science-environment-47150008
+
+IUCN study identifies tree species for climate-resilient reforestation. (2019). Retrieved from https://www.iucn.org/news/species/201902/iucn-study-identifies-tree-species-climate-resilient-reforestation
