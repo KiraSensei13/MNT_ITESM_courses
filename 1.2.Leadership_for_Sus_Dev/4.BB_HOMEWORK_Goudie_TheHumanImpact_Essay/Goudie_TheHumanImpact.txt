@@ -1,7 +1,7 @@
 /******************************************************************************/
 /*                                                                            */
 /* Goudie - The Human Impact on the Natural Environment                       */
-/* The Human Impact on Vegetation - Chapter 2                                 */
+/* The Human Impact on Vegetation - Chapter 2 [SUMMARY]                       */
 /*                                                                            */
 /* Bruno Gonzalez Soria          (A01169284)                                  */
 /* Antonio Osamu Katagiri Tanaka (A01212611)                                  */
@@ -13,31 +13,103 @@
 
 /* - 2 THE HUMAN IMPACT ON VEGETATION --------------------------------------- */
 
-[Fires] - Osamu
-Chapter 2 discusses the problems with degraded (subnatural) and ruderal (semi-natural) hebitats due to human processes, such as fire, grazing and physical methods for forest removal. Human civilizations have used fire for several purposes, such as: a) forest clearance for agricultural needs, b) grazing for animal domestication processes, c) drive away pests, d) cooking and lightning, and e) signaling; besides other reasons.
+/* : [Fires] - pp.23–29. Osamu :::::::::::::::::::::::::::::::::::::::::::::: */
+Chapter 2 discusses the problems with degraded (sub natural) and ruderal
+(semi-natural) habitats due to human processes, such as fire, grazing and
+physical methods for forest removal. Human civilizations have used fire for
+several purposes, such as: a) forest clearance for agricultural needs, b)
+grazing for animal domestication processes, c) drive away pests, d) cooking and
+lightning, and e) signalling; besides other reasons.
+    One of the most useful implementations of fire regarding agricultural
+processes. The burned land is temporarily rich in nutrients, whereas frequent
+land cultivation results in rapid deterioration in fertility. Land burning is
+beneficial for agriculture, however (for instance) forest coverage was been
+reduced from 79% to 53% in central and eastern New Zealand. The reduction of
+tall trees and the expansion of sub natural areas were followed by the
+introduction of fire.
+    Is imperative that the use of fire by humans has a significant impact on the
+environment. However, some natural fires may be caused by natural processes.
+(e.g. heavy dense vegetation, lightning, or sparks produced by falling boulders)
+The effects of fire depend on the fire size, intensity and duration. Some fires
+are quick and cool (grassland fires) that only destroy ground vegetation, on the
+other hand crown fires (forest fires) affect entire forests with high
+temperatures.
+    Humans do not only affect the environment by creating fires, but also by
+fire suppression. fire suppression policies have undesirable consequences. One
+of the best ways to prevent large fires is to allow the small fires to burn. In
+some locations, fire protection services have an impact on the environment, as
+the vegetation has become denser, the amount of combustible fuels has increased,
+more amount of fire-intolerant species has risen, and vegetation diversity has
+decreased. In other words, the intention to protect and preserve the forest led
+to the generation of abnormal amounts of combustible fuel in form of
+fire-intolerant vegetation.
+    Natural fires are a good thing to the environment. Fire can sometimes
+trigger the release of seeds, control insects, parasites and fungi, and mineral
+elements are released.
 
-One of the most useful implementation of fire is in regards to agricultural processes. The burned land is temporarely rich in nutrients, whereas frequent land cultivation results in rapid deterioration in fertility. Land burning is benefitial for agriculture, however (for instance) forest coverage was been reduced from 79% to 53% in central and eastern New Zealand. The reduction of tall trees and the expansion of subnatual areas were followed by the introduction of fire.
 
-Is imperative that the use of fire by humans has a significant impact on the environment. However, some natural fires may be caused by natural processes. (e.g. heavy dense vegetation, lightning, or sparks produced by falling boulders) The effects of fire depend on the fire size, intensity and duration. Some fires are quick and cool (grassland fires) that only destroy ground vegetation, on the other hand crown fires (forest fires) affect entire forests with high temperatures.
-
-Humans do not only affect the environment by creating fires, but also by fire suppresion. fire suppression policies have undesirable consecuences. One of the best ways to prevent large fires is to allow the small fires to burn. In some locations, fire protection services have an impact on the environment, as the vegetation has become more dense, the amount of combustible fuels has increased, more amount of fire-intolerant species has risen, and vegetation diversity has decreased.
-
-[Grazing & Domestic Stocks] - Osamu
-
-
-[Deforestation] - Osamu
-
-
-[Desertification] - Bruno
-
-
-[Savannas and Mid-latitude Grasslands] - Bruno
+/* : [Grazing & Domestic Stocks] - pp.30-32. Osamu :::::::::::::::::::::::::: */
+Light grazing may increase the productivity of wild pastures and the land tend
+to b rich in nitrogen. However, heavy grazing is (in some cases) detrimental, as
+it kills plants by reducing their level of photosynthesis. Excessive grazing can
+lead to shrub dominance and to the alteration of native habitats, as they seem
+to lack control predators and pathogens. Trees bring up nutrients from the soil
+and keep them in circulation; grazing "means the export of calcium phosphate and
+nitrogenous organic matter." (Goudie, 2011)
+    On the other hand (as Goudie cites) mineral inputs from precipitation are
+greater than the nutrients losses due to grazing. The concern is the deliberate
+forest removal for pastures and agriculture, as this is the most significant way
+in which humans have modified the environment.
 
 
-[Ecological Explosions] - Carlos
+/* : [Deforestation] - pp.32-39. Osamu :::::::::::::::::::::::::::::::::::::: */
+In most cases, forests are cleared to provide fuel and allow agriculture and
+mining. However, some environmental consequences are inevitable, such as
+flooding, sedimentation and accelerated land sliding. The current rates of
+deforestation are not very well estimated, since some issues arise while
+measuring and defining loss of forest area. Forests provide potential foods,
+drinks, medicine, gums, resins, besides other things. Their removal may fuel
+major environmental concerns as climate change and loss of biodiversity.
+Deforestation causes regional and local issues.
+    To prevent further forest loss, some communities have developed a
+sustainable form of agriculture known as swidden (shifting agriculture). Swidden
+has common properties with rain forests, as swidden: a) do not plant food plants
+in an open field, b) it involves a wide range of species having a high diversity
+index, c) it has high quantities of nutrients locked up within the flora,
+instead of within the soil. However, swidden fails with population increase as
+the rain forest cannot recuperate from long periods of "high demand".
+    Deforestation is ot an unstoppable or irreversible process. Strategies need
+to be developed to reduce the rate at which forests are disappearing, such as:
+research, education, conservation, restoration, sustainable development, and
+reducing demand.
+    When a forest starts to regenerate (secondary forest) the type of forest is
+different from the first one. Secondary forests are lower with trees with
+smaller average dimensions and uniform in structure and poorer in species. On
+the other hand, most trees within secondary forests are light-demanding and
+intolerant of shade. However, secondary forests are better than no-forest; they
+are effective at preventing soil erosion and maintaining water quality. They
+also provide shelter to some flora and fauna.
 
 
-[Pollution] - Carlos
+/* : [Desertification] - pp.42-48. Bruno :::::::::::::::::::::::::::::::::::: */
+
+
+/* : [Savannas and Mid-latitude Grasslands] - pp.39-42,48-53. Bruno ::::::::: */
+
+
+/* : [Ecological Explosions] - pp.53-56. Carlos ::::::::::::::::::::::::::::: */
+Introduction and spreading of plants and other organisms is in part due to the human action. Plants are introduced for many reasons such as crops, ornamental and miscellaneous landscapes modifiers. One of the most important issues about plants spreading by humans (whether deliberately or accidentally) is the fact that some kind of domesticated plants have lost their capability to reproduces by themselves. So even though some sort of plants have learnt to adaptate to new ecosystems and to grow in their no native lands, there are some important problems to watch out, because it can imply serious ecological consequences. For instance, the introduction of new species to ecosystems can cause the death of some other species in that ecosystem.
+
+The introduction of new animals also has a bad impact on plant species. Chapter 2 shows some cases where the introduction of animals to some lands has fallen plant species. In general, invasive species may be one of the principal biodiversity loss causes due to their rol in competition, predation and hybridization.
+
+Some other examples of ecological explosions due to human action by creating new habitats are those associated with the creation of artificial lakes or the spreading of seed along the roads. Roadsides are characterized by numerous ecological modification including: treading, soil compaction, confined drainage, increased runoff, removal of organic matter and sometimes additions of litter or waste material of frequently high nitrogen content among others.
+
+
+/* : [Pollution] - pp.56-59. Carlos ::::::::::::::::::::::::::::::::::::::::: */
+
+
+
+/* : [Plant Decline] - pp.59-64. Carlos ::::::::::::::::::::::::::::::::::::: */
 
 
 
