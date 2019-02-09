@@ -93,10 +93,13 @@ also provide shelter to some flora and fauna.
 
 /* : [Desertification] - pp.42-48. Bruno :::::::::::::::::::::::::::::::::::: */
 The term of desertification simply refers to the development of desertic landscapes in areas that were
-once green. Their is already evidence that sustains that desert spreading
-is related to human routes and settlements. Woodcutting is the leading cause of desertification. Desertization
-is mostly irreversible. There are some special cases, where ecological conditions are favorable, it is possible
-to observe vegetation recovery once excess pressures are eliminated. The process of desertification is also
+once green. Their is already evidence that sustains that desert spreading is related to human routes and 
+settlements. Woodcutting is the leading cause of desertification. Desertization is mostly irreversible.
+There are some special cases, where ecological conditions are favorable, it is possible to observe
+vegetation recovery once excess pressures are eliminated. The process of desertification depends in a variety
+of factors, but many theories sustain that deserts themselves are created by human activity. Drought is also
+an important factor to consider for desertification, but even this events have foung a relationship with
+human activity.
 
 /* : [Savannas and Mid-latitude Grasslands] - pp.39-42,48-53. Bruno ::::::::: */
 Natural occurring savannas are an important part of the ecosystem, and there is proof that human invasion
@@ -107,7 +110,15 @@ climate, geomorphology, hydrology, etc. Some species of trees have evolved to su
 The inability of grass cover to maintain itself due to long periods of heavy grazing, this in return 
 reduces the frequency of fires which used to maintain the savanna. As a result, tree and bush invasion
 take place. Although it seems like a positive outcome, the grasses are no longer able to adequatly hold of
-cover the soil, resulting in runoff and erosion. 
+cover the soil, resulting in runoff and erosion.
+There are plenty of examples for the formation of grasslands in different parts of the world due to human
+intervention. The maquis have become an invader in the Mediterranean lands representing a degeneration of
+the forests. In North America the prairies are a serious problem which, as with savanna, are probably created
+and maintained by fires. The Pampa in Argentina, is another example of extended grasslands that may have been
+consequence of pre-Spanish aboriginal hunting and pastoral population. Europe is no exception with the formation
+of heathlands.
+Nevertheless, natuarl oaccuring grasslands are also home for numerous species. The continuos human activity
+on the areas has already reduced about 20% from their preagricutltural extent.
 
 /* : [Ecological Explosions] - pp.53-56. Carlos ::::::::::::::::::::::::::::: */
 Introduction and spreading of plants and other organisms is in part due to the human action. Plants are introduced for many reasons such as crops, ornamental and miscellaneous landscapes modifiers. One of the most important issues about plants spreading by humans (whether deliberately or accidentally) is the fact that some kind of domesticated plants have lost their capability to reproduces by themselves. So even though some sort of plants have learnt to adaptate to new ecosystems and to grow in their no native lands, there are some important problems to watch out, because it can imply serious ecological consequences. For instance, the introduction of new species to ecosystems can cause the death of some other species in that ecosystem.
