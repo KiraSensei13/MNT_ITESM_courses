@@ -92,24 +92,113 @@ also provide shelter to some flora and fauna.
 
 
 /* : [Desertification] - pp.42-48. Bruno :::::::::::::::::::::::::::::::::::: */
-
+The term of desertification simply refers to the development of desertic landscapes
+in areas that were once green. Their is already evidence that sustains that desert 
+spreading is related to human routes and settlements. Woodcutting is the leading 
+cause of desertification. Desertization is mostly irreversible. There are some special
+cases, where ecological conditions are favorable, it is possible to observe vegetation
+recovery once excess pressures are eliminated. The process of desertification depends 
+in a variety of factors, but many theories sustain that deserts themselves are created
+by human activity. Drought is also an important factor to consider for desertification,
+but even this events have foung a relationship with human activity.
 
 /* : [Savannas and Mid-latitude Grasslands] - pp.39-42,48-53. Bruno ::::::::: */
-
+Natural occurring savannas are an important part of the ecosystem, and there is proof 
+that human invasion changes their characterisics. This ecosystem is mainly, or even 
+entirely, composed by grasses and sedges. They cover an area of 18 million km2. The 
+element that seems to maintain them in this state is intentional or inadvertent burning.
+Nevertheless their origin is consequence of a multifactorial combination of soil, climate,
+geomorphology, hydrology, etc. Some species of trees have evolved to survive repeated burning.
+The inability of grass cover to maintain itself due to long periods of heavy grazing, this
+in return reduces the frequency of fires which used to maintain the savanna. As a result,
+tree and bush invasion take place. Although it seems like a positive outcome, the grasses
+are no longer able to adequatly hold of cover the soil, resulting in runoff and erosion.
+There are plenty of examples for the formation of grasslands in different parts of the world
+due to human intervention. The maquis have become an invader in the Mediterranean lands 
+representing a degeneration of the forests. In North America the prairies are a serious problem
+which, as with savanna, are probably created and maintained by fires. The Pampa in Argentina,
+is another example of extended grasslands that may have been consequence of pre-Spanish
+aboriginal hunting and pastoral population. Europe is no exception with the formation of heathlands.
+Nevertheless, natuarl oaccuring grasslands are also home for numerous species. The continuos
+human activity on the areas has already reduced about 20% from their preagricutltural extent.
 
 /* : [Ecological Explosions] - pp.53-56. Carlos ::::::::::::::::::::::::::::: */
-Introduction and spreading of plants and other organisms is in part due to the human action. Plants are introduced for many reasons such as crops, ornamental and miscellaneous landscapes modifiers. One of the most important issues about plants spreading by humans (whether deliberately or accidentally) is the fact that some kind of domesticated plants have lost their capability to reproduces by themselves. So even though some sort of plants have learnt to adaptate to new ecosystems and to grow in their no native lands, there are some important problems to watch out, because it can imply serious ecological consequences. For instance, the introduction of new species to ecosystems can cause the death of some other species in that ecosystem.
+Introduction and spreading of plants and other organisms is in part due to the 
+human action. Plants are introduced for many reasons such as crops, ornamental 
+and miscellaneous landscapes modifiers. One of the most important issues about 
+plants spreading by humans (whether deliberately or accidentally) is the fact 
+that some kind of domesticated plants have lost their capability to reproduces 
+by themselves. So even though some sort of plants have learnt to adaptate to new 
+ecosystems and to grow in their no native lands, there are some important 
+problems to watch out, because it can imply serious ecological consequences. 
+For instance, the introduction of new species to ecosystems can cause the death 
+of some other species in that ecosystem.
 
-The introduction of new animals also has a bad impact on plant species. Chapter 2 shows some cases where the introduction of animals to some lands has fallen plant species. In general, invasive species may be one of the principal biodiversity loss causes due to their rol in competition, predation and hybridization.
+The introduction of new animals also has a bad impact on plant species. Chapter 
+2 shows some cases where the introduction of animals to some lands has fallen 
+plant species. In general, invasive species may be one of the principal 
+biodiversity loss causes due to their rol in competition, predation and 
+hybridization.
 
-Some other examples of ecological explosions due to human action by creating new habitats are those associated with the creation of artificial lakes or the spreading of seed along the roads. Roadsides are characterized by numerous ecological modification including: treading, soil compaction, confined drainage, increased runoff, removal of organic matter and sometimes additions of litter or waste material of frequently high nitrogen content among others.
+Some other examples of ecological explosions due to human action by creating 
+new habitats are those associated with the creation of artificial lakes or the 
+spreading of seed along the roads. Roadsides are characterized by numerous 
+ecological modification including: treading, soil compaction, confined drainage, 
+increased runoff, removal of organic matter and sometimes additions of litter or 
+waste material of frequently high nitrogen content among others.
 
 
 /* : [Pollution] - pp.56-59. Carlos ::::::::::::::::::::::::::::::::::::::::: */
+Some of the air pollution released by humans affect plants. Gaseous pollutants 
+are divided into primary and secondary forms, being the primary those directly 
+emitted into the air from while the secondaries are a consequence of chemical 
+processes in the atmosphere. Sulfur dioxide seems to be the main cause of this 
+detriment to plants.
 
+Lichens sensitivity have made them to be rare in some areas of the city where 
+the pollution is high. Indeed, it has been shown (Gilbert, 1970) that if a 
+lichen is transplanted from the country to the city, eventually it dies. But 
+sulfur dioxide is not necessarily always the cause of impoverishment, there are 
+so many factors, for instance fluoride or photochemical smog, which is also 
+known to have adverse effects on plants both within cities and on their outskirts.
 
+Vegetation will always be affected by air pollution, even though the adverse 
+effects of pollution in plants are not only restricted to air pollution, but also 
+water and soil pollution due to the excessive amounts of heavy metals on them 
+which are toxic to plants..
 
 /* : [Plant Decline] - pp.59-64. Carlos ::::::::::::::::::::::::::::::::::::: */
+Talking about forest decline is the same as forest death, which has been an 
+environmental issue treated since 1980s and can be identified symptoms  for this 
+phenomenon divided into three groups (World Resources Institute, 1986, 
+table 12.9): growth-decreasing, abnormal growth and water-stress. Most cases of 
+forest decline are the result of the cumulative effects of a number of stresses, 
+such as predisposing, inciting, and contributing stresses (Innes, 1987): p
+redisposing stresses are those that operate over long time scales, such as 
+climatic change and changes in soil properties. Inciting stresses are those such
+ as drought, frost and short-term pollution episodes, that operate over short 
+ time scales. Contributing stresses appear in weakened plants and are frequently
+ classed as secondary factors.
+
+ There are many records of plant species that are being affected by human actions
+ in addition to deforestation, grazing, fire and pollution. For instance, there
+ are some records of plant collectors that have caused the eradication of rare 
+ plants in an are because they want to seek rare, local and unusual species. Even
+ agriculture has an important role in habitat disappearing when trying to make
+ improvements. The introduction of pests, either deliberately or accidentally, 
+ can also lead to a decrease in the range and numbers of a particular species.
+
+ But the human impact on plants could be not always negative. It is likely that 
+ in some ecosystems humans encourage a high diversity of plant growth by acting 
+ as a ‘keystone predator’, a species which prevents competitive exclusion by a 
+ few dominant species.
+
+ There is a new technique in genetic engineering field that involves manipulation 
+of DNA, which allows to modify some kind of species by taking some genes from one 
+specie to another specie.  For example, a bacterial gene can be inserted into 
+maize to give it resistance to certain insect pests. It has also been feared that 
+genetic modification could make a plant more invasive, leading to a new threat 
+from superweeds
 
 
 
