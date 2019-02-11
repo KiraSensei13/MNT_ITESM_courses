@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  11 FEB 2019 10:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  11 FEB 2019 12:14
 entering extended mode
 **./Assessed_exercise_02_49th_CIDTEC.tex
 (Assessed_exercise_02_49th_CIDTEC.tex
@@ -1120,48 +1120,45 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [2
 
 ]
-(Assessed_exercise_02_49th_CIDTEC.lof)
-\tf@lof=\write5
-\openout5 = `Assessed_exercise_02_49th_CIDTEC.lof'.
+(Assessed_exercise_02_49th_CIDTEC.lot)
+\tf@lot=\write5
+\openout5 = `Assessed_exercise_02_49th_CIDTEC.lot'.
 
- (Assessed_exercise_02_49th_CIDTEC.lot)
-\tf@lot=\write6
-\openout6 = `Assessed_exercise_02_49th_CIDTEC.lot'.
-
-
-[3
+ [3
 
 ]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 113.
 
- ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
- [4
+
+[4
 
 ] [5
 
-]
-Overfull \hbox (2.19214pt too wide) in paragraph at lines 224--224
+] [6]
+Overfull \hbox (2.19214pt too wide) in paragraph at lines 198--198
 []\OT1/cmr/bx/n/12 Conferencia magis-tral: El pa-pel de la ed-u-cacion su-pe-r
 ior en Mexico
  []
 
-[6
+[7
 
-] [7
+] [8
 
 ]
-Overfull \hbox (0.96083pt too wide) in paragraph at lines 366--368
+Overfull \hbox (0.96083pt too wide) in paragraph at lines 278--280
 \OT1/cmr/m/n/10.95 refers to the free con-sump-tion of aca-demic, sci-en-tific 
 and cul-tural con-tent. Vladimir
  []
 
-[8
+[9
 
-] [9
+] [10
 
 ]
 
@@ -1169,64 +1166,64 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
 (pdfpages)                OK, I'll proceed as if it were `pages'.
 
-<pdf/MII-AssessedExercise02-201911.pdf, id=40, 614.295pt x 794.97pt>
+<pdf/MII-AssessedExercise02-201911.pdf, id=43, 614.295pt x 794.97pt>
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf  used on input l
-ine 403.
+ine 316.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf  used on input l
-ine 403.
+ine 316.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-<pdf/MII-AssessedExercise02-201911.pdf, id=43, page=1, 614.295pt x 794.97pt>
+<pdf/MII-AssessedExercise02-201911.pdf, id=46, page=1, 614.295pt x 794.97pt>
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 403.
+input line 316.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 403.
+input line 316.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[10
+[11
 
 ]
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 403.
+input line 316.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 403.
+input line 316.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 403.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [11 <./pdf/MII-AssessedExercise02-201911.pdf>]
-<pdf/MII-AssessedExercise02-201911.pdf, id=86, page=2, 614.295pt x 794.97pt>
-File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
-<use pdf/MII-AssessedExercise02-201911.pdf, page 2>
-Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
-input line 403.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
-<use pdf/MII-AssessedExercise02-201911.pdf, page 2>
-Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
-input line 403.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
-<use pdf/MII-AssessedExercise02-201911.pdf, page 2>
-Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
-input line 403.
+input line 316.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [12 <./pdf/MII-AssessedExercise02-201911.pdf>]
+<pdf/MII-AssessedExercise02-201911.pdf, id=89, page=2, 614.295pt x 794.97pt>
+File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
+<use pdf/MII-AssessedExercise02-201911.pdf, page 2>
+Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
+input line 316.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
+<use pdf/MII-AssessedExercise02-201911.pdf, page 2>
+Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
+input line 316.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
+<use pdf/MII-AssessedExercise02-201911.pdf, page 2>
+Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
+input line 316.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [13 <./pdf/MII-AssessedExercise02-201911.pdf>]
 
 Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
@@ -1236,10 +1233,10 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex (file ./pdf/49CIDTEC_preregistro.pdf): PDF inclusion: 
 found PDF version <1.7>, but at most version <1.5> allowed
-<pdf/49CIDTEC_preregistro.pdf, id=98, 597.50786pt x 845.04686pt>
+<pdf/49CIDTEC_preregistro.pdf, id=102, 597.50786pt x 845.04686pt>
 File: pdf/49CIDTEC_preregistro.pdf Graphic file (type pdf)
 <use pdf/49CIDTEC_preregistro.pdf>
-Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf  used on input line 409.
+Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf  used on input line 325.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
 
@@ -1247,7 +1244,7 @@ pdfTeX warning: pdflatex (file ./pdf/49CIDTEC_preregistro.pdf): PDF inclusion:
 found PDF version <1.7>, but at most version <1.5> allowed
 File: pdf/49CIDTEC_preregistro.pdf Graphic file (type pdf)
 <use pdf/49CIDTEC_preregistro.pdf>
-Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf  used on input line 409.
+Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf  used on input line 325.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
 
@@ -1257,34 +1254,34 @@ found PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex (file ./pdf/49CIDTEC_preregistro.pdf): PDF inclusion: 
 found PDF version <1.7>, but at most version <1.5> allowed
-<pdf/49CIDTEC_preregistro.pdf, id=101, page=1, 597.50786pt x 845.04686pt>
+<pdf/49CIDTEC_preregistro.pdf, id=105, page=1, 597.50786pt x 845.04686pt>
 File: pdf/49CIDTEC_preregistro.pdf Graphic file (type pdf)
 <use pdf/49CIDTEC_preregistro.pdf, page 1>
 Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf , page1 used on input lin
-e 409.
+e 325.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 File: pdf/49CIDTEC_preregistro.pdf Graphic file (type pdf)
 <use pdf/49CIDTEC_preregistro.pdf, page 1>
 Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf , page1 used on input lin
-e 409.
+e 325.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
-[13]
+[14]
 File: pdf/49CIDTEC_preregistro.pdf Graphic file (type pdf)
 <use pdf/49CIDTEC_preregistro.pdf, page 1>
 Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf , page1 used on input lin
-e 409.
-(pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
-File: pdf/49CIDTEC_preregistro.pdf Graphic file (type pdf)
-<use pdf/49CIDTEC_preregistro.pdf, page 1>
-Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf , page1 used on input lin
-e 409.
+e 325.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: pdf/49CIDTEC_preregistro.pdf Graphic file (type pdf)
 <use pdf/49CIDTEC_preregistro.pdf, page 1>
 Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf , page1 used on input lin
-e 409.
+e 325.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
- [14 <./pdf/49CIDTEC_preregistro.pdf>]
+File: pdf/49CIDTEC_preregistro.pdf Graphic file (type pdf)
+<use pdf/49CIDTEC_preregistro.pdf, page 1>
+Package pdftex.def Info: pdf/49CIDTEC_preregistro.pdf , page1 used on input lin
+e 325.
+(pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
+ [15 <./pdf/49CIDTEC_preregistro.pdf>]
 (Assessed_exercise_02_49th_CIDTEC.aux)
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1295,10 +1292,10 @@ xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24351 strings out of 492946
- 442932 string characters out of 3126267
- 954882 words of memory out of 3000000
- 27960 multiletter control sequences out of 15000+200000
+ 24349 strings out of 492946
+ 442682 string characters out of 3126267
+ 955917 words of memory out of 3000000
+ 27961 multiletter control sequences out of 15000+200000
  542586 words of font info for 63 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  58i,18n,65p,843b,5337s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1314,10 +1311,10 @@ r8.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr9.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Assessed_exercise_02_49th_CIDTEC.pdf (14 pages, 614552 bytes)
+Output written on Assessed_exercise_02_49th_CIDTEC.pdf (15 pages, 622927 bytes)
 .
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
+ 188 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
