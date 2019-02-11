@@ -16,3 +16,5 @@
 \contentsline {section}{\numberline {4}Final Thoughts}{9}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A}Assessment Instructions}{10}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B}49CIDTEC registration}{13}% 
