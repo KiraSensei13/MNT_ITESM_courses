@@ -2147,8 +2147,10 @@
   <bcf:section number="0">
     <bcf:citekey order="1">49CID2019</bcf:citekey>
     <bcf:citekey order="2">Carsrud2019</bcf:citekey>
-    <bcf:citekey order="3">Graue2019</bcf:citekey>
-    <bcf:citekey order="4">Andersson2019</bcf:citekey>
+    <bcf:citekey order="3">Carsrud2019</bcf:citekey>
+    <bcf:citekey order="4">Carsrud2019</bcf:citekey>
+    <bcf:citekey order="5">Graue2019</bcf:citekey>
+    <bcf:citekey order="6">Andersson2019</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
