@@ -13,4 +13,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Key Takeaways}{8}% 
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Final Thoughts}{9}% 
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A}Assessment Instructions}{10}% 

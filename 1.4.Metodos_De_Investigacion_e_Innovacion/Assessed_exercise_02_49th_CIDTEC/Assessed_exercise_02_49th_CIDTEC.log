@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  10 FEB 2019 21:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  11 FEB 2019 07:47
 entering extended mode
 **./Assessed_exercise_02_49th_CIDTEC.tex
 (Assessed_exercise_02_49th_CIDTEC.tex
@@ -999,6 +999,9 @@ LaTeX Warning: Label `tab:table' multiply defined.
 
 LaTeX Warning: Label `tab:table' multiply defined.
 
+
+LaTeX Warning: Label `sec:app' multiply defined.
+
 )
 \openout1 = `Assessed_exercise_02_49th_CIDTEC.aux'.
 
@@ -1161,7 +1164,9 @@ and cul-tural con-tent. Vladimir
 
 [8
 
-] [9]
+] [9
+
+]
 
 Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
@@ -1171,23 +1176,23 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf  used on input l
-ine 429.
+ine 401.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf  used on input l
-ine 429.
+ine 401.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 <pdf/MII-AssessedExercise02-201911.pdf, id=43, page=1, 614.295pt x 794.97pt>
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 429.
+input line 401.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 429.
+input line 401.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 [10
 
@@ -1195,34 +1200,34 @@ input line 429.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 429.
+input line 401.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 429.
+input line 401.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 1>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page1 used on 
-input line 429.
+input line 401.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [11 <./pdf/MII-AssessedExercise02-201911.pdf>]
 <pdf/MII-AssessedExercise02-201911.pdf, id=86, page=2, 614.295pt x 794.97pt>
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 2>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
-input line 429.
+input line 401.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 2>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
-input line 429.
+input line 401.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: pdf/MII-AssessedExercise02-201911.pdf Graphic file (type pdf)
 <use pdf/MII-AssessedExercise02-201911.pdf, page 2>
 Package pdftex.def Info: pdf/MII-AssessedExercise02-201911.pdf , page2 used on 
-input line 429.
+input line 401.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [12 <./pdf/MII-AssessedExercise02-201911.pdf>] (Assessed_exercise_02_49th_CIDT
 EC.aux)
@@ -1235,10 +1240,10 @@ xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24343 strings out of 492946
- 442599 string characters out of 3126267
- 955865 words of memory out of 3000000
- 27953 multiletter control sequences out of 15000+200000
+ 24341 strings out of 492946
+ 442582 string characters out of 3126267
+ 954865 words of memory out of 3000000
+ 27951 multiletter control sequences out of 15000+200000
  542586 words of font info for 63 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  58i,18n,65p,843b,5337s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1254,7 +1259,7 @@ r8.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr9.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Assessed_exercise_02_49th_CIDTEC.pdf (12 pages, 500201 bytes)
+Output written on Assessed_exercise_02_49th_CIDTEC.pdf (12 pages, 501842 bytes)
 .
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
