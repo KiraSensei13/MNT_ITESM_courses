@@ -1,0 +1,20 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Overview}{4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Collection summaries}{5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Panel: The Future of Entrepreneurship}{5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Conferencia magistral: El papel de la educaci\IeC {\'o}n superior en M\IeC {\'e}xico de cara al futuro que se avecina}{7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Conferencia magistral: Creating Top Research-Intensive Universities}{8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Key Takeaways}{9}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Final Thoughts}{10}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}Assessment Instructions}{11}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B}49CIDTEC registration}{14}% 

@@ -1,0 +1,172 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{49CID2019}{misc}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Tec de Monterrey - Campus Monterrey}
+      \field{title}{{49{º} CONGRESO DE INVESTIGACI{Ó}N Y DESARROLLO}}
+      \field{urlday}{10}
+      \field{urlmonth}{2}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://congresodeinvestigacion.tec.mx/index.html
+      \endverb
+      \verb{url}
+      \verb http://congresodeinvestigacion.tec.mx/index.html
+      \endverb
+    \endentry
+    \entry{Andersson2019}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=2c52de97cbbb7b6554d2a1a28001eab3}{%
+           family={Andersson},
+           familyi={A\bibinitperiod},
+           given={Bertil},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Monterrey}%
+      }
+      \list{publisher}{1}{%
+        {Tecnol{ó}gico de Monterrey}%
+      }
+      \strng{namehash}{2c52de97cbbb7b6554d2a1a28001eab3}
+      \strng{fullhash}{2c52de97cbbb7b6554d2a1a28001eab3}
+      \strng{bibnamehash}{2c52de97cbbb7b6554d2a1a28001eab3}
+      \strng{authorbibnamehash}{2c52de97cbbb7b6554d2a1a28001eab3}
+      \strng{authornamehash}{2c52de97cbbb7b6554d2a1a28001eab3}
+      \strng{authorfullhash}{2c52de97cbbb7b6554d2a1a28001eab3}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Tecnol{ó}gico de Monterrey}
+      \field{title}{{Creating Top Research-Intensive Universities}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://livestream.com/tecdemonterrey/cidtec/videos/186886026
+      \endverb
+      \verb{url}
+      \verb https://livestream.com/tecdemonterrey/cidtec/videos/186886026
+      \endverb
+    \endentry
+    \entry{Carsrud2019}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=46da6290f975b6d68c95243ee59b6b99}{%
+           family={Carsrud},
+           familyi={C\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=d9185006bf0b52cf45a0ed9b46271ad9}{%
+           family={Austin},
+           familyi={A\bibinitperiod},
+           given={James\bibnamedelima Eliot},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=74faa6d7802105d01896017ed7f032af}{%
+           family={Pichardo},
+           familyi={P\bibinitperiod},
+           given={Alexei},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Monterrey}%
+      }
+      \list{publisher}{1}{%
+        {Tecnol{ó}gico de Monterrey}%
+      }
+      \strng{namehash}{a4471f18a8f2538331cd54741d4ea2b4}
+      \strng{fullhash}{b5587e6752e9d26f53d95a50dc827b38}
+      \strng{bibnamehash}{b5587e6752e9d26f53d95a50dc827b38}
+      \strng{authorbibnamehash}{b5587e6752e9d26f53d95a50dc827b38}
+      \strng{authornamehash}{a4471f18a8f2538331cd54741d4ea2b4}
+      \strng{authorfullhash}{b5587e6752e9d26f53d95a50dc827b38}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Entrepreneurship plays a vital role in many economies creating new opportunities. Although the entrepreneurship activity is on the rise, there are forces that shape its future changing how it is conceived and applied. Forces like automation, artificial intelligence, digital transformation, demographics and shifts in labor are defining the future of entrepreneurship. This panel of experts of so diverse backgrounds like technology, social, and cognitive disciplines will explore and discuss how these forces will change the future of entrepreneurship.}
+      \field{booktitle}{Tecnol{ó}gico de Monterrey}
+      \field{title}{{The Future of Entrepreneurship}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://livestream.com/tecdemonterrey/cidtec/videos/186579668
+      \endverb
+      \verb{url}
+      \verb https://livestream.com/tecdemonterrey/cidtec/videos/186579668
+      \endverb
+    \endentry
+    \entry{Graue2019}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=c373c4faafa224907eeb5460f88b4096}{%
+           family={Graue},
+           familyi={G\bibinitperiod},
+           given={Enrique},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Monterrey}%
+      }
+      \list{publisher}{1}{%
+        {Tecnol{ó}gico de Monterrey}%
+      }
+      \strng{namehash}{c373c4faafa224907eeb5460f88b4096}
+      \strng{fullhash}{c373c4faafa224907eeb5460f88b4096}
+      \strng{bibnamehash}{c373c4faafa224907eeb5460f88b4096}
+      \strng{authorbibnamehash}{c373c4faafa224907eeb5460f88b4096}
+      \strng{authornamehash}{c373c4faafa224907eeb5460f88b4096}
+      \strng{authorfullhash}{c373c4faafa224907eeb5460f88b4096}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Tecnol{ó}gico de Monterrey}
+      \field{title}{{El papel de la educaci{ó}n superior en M{é}xico de cara al futuro que se avecina}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://livestream.com/tecdemonterrey/cidtec/videos/186885924
+      \endverb
+      \verb{url}
+      \verb https://livestream.com/tecdemonterrey/cidtec/videos/186885924
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

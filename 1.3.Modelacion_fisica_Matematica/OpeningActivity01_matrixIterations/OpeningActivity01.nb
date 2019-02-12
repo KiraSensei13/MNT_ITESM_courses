@@ -1,0 +1,1702 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     71969,       1694]
+NotebookOptionsPosition[     65398,       1612]
+NotebookOutlinePosition[     65741,       1627]
+CellTagsIndexPosition[     65698,       1624]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Open Activity 1
+\
+\>", "Text",
+ CellChangeTimes->{{3.7588854682120304`*^9, 3.7588854858262477`*^9}, {
+  3.758888121680462*^9, 
+  3.758888124659774*^9}},ExpressionUUID->"d33c3b0f-3df0-4af7-99ad-\
+f25d53a44814"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CalculateUsers", "[", 
+     RowBox[{"peopleInA_", ",", " ", "peopleinB_", ",", " ", "monthNumber_"}],
+      "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"pA", "=", "peopleInA"}], ",", " ", 
+        RowBox[{"pB", "=", "peopleinB"}], ",", 
+        RowBox[{"monthNo", "=", "monthNumber"}], ",", "newX", ",", "newY"}], 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<\\nCalculate with no matrices\>\"", "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "initial", " ", "values", " ", "newX", " ", "and", " ", "newY", " ", 
+         "for", " ", "month", " ", "0"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"newX", "=", "peopleUsingA"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"newY", "=", "peopleUsingB"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "1"}], ",", 
+         RowBox[{"i", "\[LessEqual]", "monthNo"}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"newX", "=", 
+           RowBox[{
+            RowBox[{"0.7", "*", "x"}], "+", 
+            RowBox[{"0.2", "*", "y"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"newY", "=", 
+           RowBox[{
+            RowBox[{"0.3", "*", "x"}], "+", 
+            RowBox[{"0.8", "*", "y"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Month: \>\"", ",", "i"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Number of people using BrandA: \>\"", ",", "newX"}], 
+           "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Number of people using BrandB: \>\"", ",", "newY"}], 
+           "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"x", "=", "newX"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"y", "=", "newY"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CalculateUsersUsingMatrices", "[", 
+     RowBox[{
+     "peopleInA_", ",", " ", "peopleinB_", ",", " ", "min_", ",", 
+      "monthNumber_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"pA", "=", "peopleInA"}], ",", " ", 
+        RowBox[{"pB", "=", "peopleinB"}], ",", 
+        RowBox[{"monthNo", "=", "monthNumber"}], ",", "newX", ",", "newY"}], 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<\\nCalculate with matrices\>\"", "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "initial", " ", "values", " ", "newX", " ", "and", " ", "newY", " ", 
+         "for", " ", "month", " ", "0"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"newX", "=", "peopleUsingA"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"newY", "=", "peopleUsingB"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "1"}], ",", 
+         RowBox[{"i", "\[LessEqual]", "monthNo"}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"MatrixP", "=", 
+           RowBox[{"(", GridBox[{
+              {"0.7", "0.2"},
+              {"0.3", "0.8"}
+             }], ")"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"MatrixR", "=", 
+           RowBox[{"(", GridBox[{
+              {"newX"},
+              {"newY"}
+             }], ")"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"MatrixResult", "=", 
+           RowBox[{"MatrixP", ".", "MatrixR"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"newX", "=", 
+           RowBox[{"MatrixResult", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"newY", "=", 
+           RowBox[{"MatrixResult", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"i", "\[LessEqual]", "monthNo"}], "&&", 
+             RowBox[{"i", "\[GreaterEqual]", " ", "min"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Print", "[", 
+              RowBox[{"\"\<Month: \>\"", ",", "i"}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Print", "[", 
+              RowBox[{
+              "\"\<Number of people using BrandA: \>\"", ",", "newX"}], "]"}],
+              ";", "\[IndentingNewLine]", 
+             RowBox[{"Print", "[", 
+              RowBox[{
+              "\"\<Number of people using BrandB: \>\"", ",", "newY"}], "]"}],
+              ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}],
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"CalculateUsers", "[", 
+    RowBox[{"120", ",", " ", "80", ",", " ", "5"}], "]"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"CalculateUsersUsingMatrices", "[", 
+  RowBox[{"120", ",", " ", "80", ",", " ", "0", ",", "21"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.758887235410268*^9, 3.7588872376160965`*^9}, {
+  3.7588872839418716`*^9, 3.7588876859773874`*^9}, {3.758887791941599*^9, 
+  3.758887795231166*^9}, {3.7588881317733154`*^9, 3.7588882394137497`*^9}, {
+  3.758888331831081*^9, 3.7588883729197206`*^9}, {3.7588884101277204`*^9, 
+  3.758888496649546*^9}, {3.758889878413559*^9, 3.758889897760716*^9}},
+ CellLabel->
+  "In[403]:=",ExpressionUUID->"5e6c6fe2-0a8c-492a-b543-b289ea16b5ad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"\\nCalculate with matrices\"\>"], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899764106*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"9955e4f4-7f33-4925-bfaf-a4f5296851c0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Month: ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898997695227`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"bde34180-f857-438b-8ed3-d6e1e5096e81"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", "100.`", "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {100.}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898997720027`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"a9716249-efc7-48fa-a6bc-d87c3f349d1e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", "100.`", "}"}]}],
+  SequenceForm["Number of people using BrandB: ", {100.}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898997740216`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"3f0a09e3-a715-4b51-85ac-63a175fecaa2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "2"}],
+  SequenceForm["Month: ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898997760086`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"59a3da0b-b2f6-4704-8898-b7720ba7b006"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "90.`", "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {{90.}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899778981*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"04215041-d9ca-42c8-a91c-9fe1b0c70e3d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "110.`", "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandB: ", {{110.}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898997824545`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"a095c562-17c7-418f-82ec-72571731ee3f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "3"}],
+  SequenceForm["Month: ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898997844377`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"d94b9c3f-70c5-493d-988c-afcaa89557dc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", "85.`", "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {{{85.}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899786917*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"2c3268c3-89df-46df-94b3-27208f318ea8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", "115.`", "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandB: ", {{{115.}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898997894287`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"b95a05c3-5308-4ac8-af23-6de2efb6c383"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "4"}],
+  SequenceForm["Month: ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899792835*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"13ef4df0-036a-4273-9e38-465f8d0b7202"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", "82.5`", "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {{{{82.5}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898997968307`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"8d76ffa9-3498-467c-b569-a140bcd7001f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", "117.5`", "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandB: ", {{{{117.5}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899799319*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"b278faec-8c2c-49e6-bd07-9e5da0246301"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "5"}],
+  SequenceForm["Month: ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998018017`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"a7749ce6-5a7c-4b99-897c-b94e5716928b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", "81.25`", "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {{{{{81.25}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899804284*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"ca4216f6-5c98-41d0-9c4b-16b76fe2247d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", "118.75`", "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandB: ", {{{{{118.75}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899806758*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"f2bb35d1-8284-4b7a-9b73-3effea6a84d5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "6"}],
+  SequenceForm["Month: ", 6],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899811719*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"dc106e63-50c5-4283-9af4-f80ddf3682cb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", "80.625`", "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {{{{{{80.625}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998142037`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"cea342b4-2de6-4fd2-97bf-b4fafa5147fd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", "119.375`", "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandB: ", {{{{{{119.375}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899815689*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"98f38a2b-dd70-4927-8cd4-a5a7df3a2e68"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "7"}],
+  SequenceForm["Month: ", 7],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899817182*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"374b10f1-3490-4204-8ee7-698783431280"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", "80.3125`", "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+    "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {{{{{{{80.3125}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998191233`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"e4b6b6b0-8c78-45eb-9af2-0096942cc3ea"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", "119.6875`", "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+    "}"}]}],
+  SequenceForm["Number of people using BrandB: ", {{{{{{{119.6875}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899821107*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"07a1ea67-3a76-45a4-b268-7c2c91a99dfa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "8"}],
+  SequenceForm["Month: ", 8],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998241177`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"53523363-7e54-4a63-aa63-0b686a7c9c5c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", "80.15625`", "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+     "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {{{{{{{{80.15625}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998261023`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"71df9349-077a-496b-b440-10e22322cc9f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", "119.84375`", "}"}], "}"}], "}"}], "}"}], "}"}], "}"}],
+      "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandB: ", {{{{{{{{119.84375}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998280916`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"9ccb5f5a-f937-4e7e-a924-2ce48f631ea5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "9"}],
+  SequenceForm["Month: ", 9],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998300705`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"5f4fe6f9-09fc-478f-bc77-a0287d7bbcec"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", "80.078125`", "}"}], "}"}], "}"}], "}"}], "}"}], 
+       "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm["Number of people using BrandA: ", {{{{{{{{{80.078125}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998320847`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"917efda9-67cd-4642-897b-2a49c339af7d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", "119.921875`", "}"}], "}"}], "}"}], "}"}], "}"}], 
+       "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{119.921875}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998340707`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"326e0c02-8806-49a6-a509-d9e871b6d1b4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "10"}],
+  SequenceForm["Month: ", 10],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998355584`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"ce33bb25-3df9-4831-b85e-d77f76cbc401"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", "80.0390625`", "}"}], "}"}], "}"}], "}"}], "}"}], 
+        "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{80.0390625}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998375406`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"95b6f9f6-d6f0-4094-b07b-40e38c294852"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", "119.9609375`", "}"}], "}"}], "}"}], "}"}], "}"}], 
+        "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{119.9609375}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998419394`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"076ff91e-d7d7-42cb-9b6f-d9cedb32b1d5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "11"}],
+  SequenceForm["Month: ", 11],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899843923*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"cfa7f0a4-ac50-4c24-b9d2-34188551e958"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", "80.01953125`", "}"}], "}"}], "}"}], "}"}], "}"}], 
+         "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{80.01953125}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899845975*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"22572ff4-0140-4359-8350-3f38bbc7db52"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", "119.98046875`", "}"}], "}"}], "}"}], "}"}], "}"}], 
+         "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{119.98046875}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899847957*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"76733635-3358-4eee-9167-36b011091cb9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "12"}],
+  SequenceForm["Month: ", 12],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998494453`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"a28aabf2-aa70-4666-9db6-689539cbe20d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", "80.009765625`", "}"}], "}"}], "}"}], "}"}], "}"}],
+           "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{80.009765625}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899851429*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"43a556ac-efd0-48c3-a073-9e74bf4425ce"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", "119.990234375`", "}"}], "}"}], "}"}], "}"}], 
+           "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{119.990234375}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998539104`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"02c483df-18c0-4f43-b2c6-2f93e98cf56a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "13"}],
+  SequenceForm["Month: ", 13],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899855398*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"f68a807a-4ceb-4c75-8db5-608053ff71e7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", "80.0048828125`", "}"}], "}"}], "}"}], "}"}], 
+            "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{80.0048828125}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899859338*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"2fa166de-bb83-4931-92fb-d46be0327d6c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", "119.9951171875`", "}"}], "}"}], "}"}], "}"}], 
+            "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{119.9951171875}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899862341*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"9d1c1113-4811-4d4f-a02c-f981a9ef648e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "14"}],
+  SequenceForm["Month: ", 14],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899864326*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"baea7381-0b47-4ccf-8796-1155429040aa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", "80.00244140625`", "}"}], "}"}], "}"}], "}"}], 
+             "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+    "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{{
+   80.00244140625}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899866316*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"d88b3dd3-9f3e-45e3-b923-bdc91353c013"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", "119.99755859375`", "}"}], "}"}], "}"}], "}"}], 
+             "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+    "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{{
+   119.99755859375}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899868294*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"13521e29-4e52-453f-851f-25588aa4d397"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "15"}],
+  SequenceForm["Month: ", 15],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998702765`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"1a1fe3b6-375f-4096-b630-f9c031348947"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", "80.001220703125`", "}"}], "}"}], "}"}], "}"}], 
+              "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+     "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{{{
+   80.001220703125}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998747063`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"cf739561-7840-4070-86d9-313436757621"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", "119.998779296875`", "}"}], "}"}], "}"}], "}"}],
+               "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+     "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{{{
+   119.998779296875}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998772135`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"dcf1a0bd-fbf3-4fe8-af44-c6c333653132"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "16"}],
+  SequenceForm["Month: ", 16],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899879201*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"d0868c70-3ed4-497b-9b5f-6bf1fe6b5ebe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", "80.0006103515625`", "}"}], "}"}], "}"}], 
+                "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}],
+        "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{{{{
+   80.0006103515625}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998811893`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"01408b16-41a9-48e9-ad6a-85a25cdbf655"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", "119.9993896484375`", "}"}], "}"}], "}"}], 
+                "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}],
+        "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{{{{
+   119.9993896484375}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998836684`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"c7c45096-0d02-4d4c-a8f1-8758ba6634a4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "17"}],
+  SequenceForm["Month: ", 17],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998851566`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"3b4723ae-5b80-4658-9611-6811e272b934"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", "80.00030517578125`", "}"}], "}"}], "}"}], 
+                 "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+         "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{{{{{
+   80.00030517578125}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899887637*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"e75f8384-f298-4d28-8f16-873296c31174"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", "119.99969482421875`", "}"}], "}"}], "}"}], 
+                 "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+         "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{{{{{
+   119.99969482421875`}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998920355`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"f999f001-0d22-4cea-bb33-03f2efdd9058"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "18"}],
+  SequenceForm["Month: ", 18],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899894574*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"2625b0c6-a653-4ff9-bc45-c0718ba2f8fa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"{", "80.00015258789062`", "}"}], "}"}], "}"}], 
+                  "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+          "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{{{{{{
+   80.00015258789062}}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898998970604`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"3988eb19-35d8-4da3-9f01-8737ae06b5e6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"{", "119.99984741210938`", "}"}], "}"}], "}"}], 
+                  "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+          "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{{{{{{
+   119.99984741210938`}}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899899045*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"b5127329-3865-4b53-ada9-c96698a4dc82"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "19"}],
+  SequenceForm["Month: ", 19],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899901029*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"342a9790-b586-4b52-a3b6-d72b20572960"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", "80.00007629394531`", "}"}], "}"}], "}"}], 
+                   "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+           "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{{{{{{{
+   80.00007629394531}}}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898999034433`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"e21f879e-19ad-4345-ad05-85c6d3bec94a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", "119.99992370605469`", "}"}], "}"}], "}"}], 
+                   "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+           "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{{{{{{{
+   119.99992370605469`}}}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898999054275`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"e58f3c12-1279-42c6-8ac9-20f945b57bf3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "20"}],
+  SequenceForm["Month: ", 20],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.758889899909396*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"dd58db66-703d-4fb1-a97d-e3b11db17114"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", "80.00003814697266`", "}"}], "}"}], "}"}], 
+                    "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+            "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{{{{{{{{
+   80.00003814697266}}}}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898999118757`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"8f26f6e3-4eda-45d7-8f44-80b3775c16cb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", "119.99996185302734`", "}"}], "}"}], "}"}], 
+                    "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+            "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{{{{{{{{
+   119.99996185302734`}}}}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898999148517`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"cd0171b4-8fe3-426d-b13b-7d7059802450"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Month: \"\>", "\[InvisibleSpace]", "21"}],
+  SequenceForm["Month: ", 21],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898999178276`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"6d842094-5277-4df4-b4cd-7d5f90bc849c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandA: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", "80.00001907348633`", "}"}], "}"}], "}"}], 
+                    "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+             "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+    "}"}]}],
+  SequenceForm[
+  "Number of people using BrandA: ", {{{{{{{{{{{{{{{{{{{{{
+   80.00001907348633}}}}}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898999198112`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"cf21f462-67bf-4fb1-97f4-2b08ac7df432"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of people using BrandB: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"{", "119.99998092651367`", "}"}], "}"}], "}"}], 
+                    "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+             "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], "}"}], 
+    "}"}]}],
+  SequenceForm[
+  "Number of people using BrandB: ", {{{{{{{{{{{{{{{{{{{{{
+   119.99998092651367`}}}}}}}}}}}}}}}}}}}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7588874691815023`*^9, 3.758887482352269*^9}, {
+   3.758887522240592*^9, 3.7588875319167676`*^9}, 3.758887616337225*^9, {
+   3.7588876697037373`*^9, 3.7588876864880095`*^9}, 3.7588878009260473`*^9, {
+   3.758888158811368*^9, 3.758888240378033*^9}, 3.7588883340692854`*^9, 
+   3.758888388254306*^9, 3.7588884980998893`*^9, 3.7588898999227867`*^9},
+ CellLabel->
+  "During evaluation of \
+In[403]:=",ExpressionUUID->"91ea62f0-3406-4590-a5c1-fdcd98af6552"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{759, 833},
+WindowMargins->{{Automatic, 572}, {64, Automatic}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 219, 7, 56, "Text",ExpressionUUID->"d33c3b0f-3df0-4af7-99ad-f25d53a44814"],
+Cell[CellGroupData[{
+Cell[802, 31, 5825, 132, 845, "Input",ExpressionUUID->"5e6c6fe2-0a8c-492a-b543-b289ea16b5ad"],
+Cell[CellGroupData[{
+Cell[6652, 167, 532, 8, 41, "Print",ExpressionUUID->"9955e4f4-7f33-4925-bfaf-a4f5296851c0"],
+Cell[7187, 177, 624, 12, 22, "Print",ExpressionUUID->"bde34180-f857-438b-8ed3-d6e1e5096e81"],
+Cell[7814, 191, 705, 13, 22, "Print",ExpressionUUID->"a9716249-efc7-48fa-a6bc-d87c3f349d1e"],
+Cell[8522, 206, 705, 13, 22, "Print",ExpressionUUID->"3f0a09e3-a715-4b51-85ac-63a175fecaa2"],
+Cell[9230, 221, 624, 12, 22, "Print",ExpressionUUID->"59a3da0b-b2f6-4704-8898-b7720ba7b006"],
+Cell[9857, 235, 728, 14, 22, "Print",ExpressionUUID->"04215041-d9ca-42c8-a91c-9fe1b0c70e3d"],
+Cell[10588, 251, 732, 14, 22, "Print",ExpressionUUID->"a095c562-17c7-418f-82ec-72571731ee3f"],
+Cell[11323, 267, 624, 12, 22, "Print",ExpressionUUID->"d94b9c3f-70c5-493d-988c-afcaa89557dc"],
+Cell[11950, 281, 756, 15, 22, "Print",ExpressionUUID->"2c3268c3-89df-46df-94b3-27208f318ea8"],
+Cell[12709, 298, 760, 15, 22, "Print",ExpressionUUID->"b95a05c3-5308-4ac8-af23-6de2efb6c383"],
+Cell[13472, 315, 622, 12, 22, "Print",ExpressionUUID->"13ef4df0-036a-4273-9e38-465f8d0b7202"],
+Cell[14097, 329, 789, 16, 22, "Print",ExpressionUUID->"8d76ffa9-3498-467c-b569-a140bcd7001f"],
+Cell[14889, 347, 789, 16, 22, "Print",ExpressionUUID->"b278faec-8c2c-49e6-bd07-9e5da0246301"],
+Cell[15681, 365, 624, 12, 22, "Print",ExpressionUUID->"a7749ce6-5a7c-4b99-897c-b94e5716928b"],
+Cell[16308, 379, 819, 17, 22, "Print",ExpressionUUID->"ca4216f6-5c98-41d0-9c4b-16b76fe2247d"],
+Cell[17130, 398, 821, 17, 22, "Print",ExpressionUUID->"f2bb35d1-8284-4b7a-9b73-3effea6a84d5"],
+Cell[17954, 417, 622, 12, 22, "Print",ExpressionUUID->"dc106e63-50c5-4283-9af4-f80ddf3682cb"],
+Cell[18579, 431, 854, 18, 22, "Print",ExpressionUUID->"cea342b4-2de6-4fd2-97bf-b4fafa5147fd"],
+Cell[19436, 451, 854, 18, 22, "Print",ExpressionUUID->"98f38a2b-dd70-4927-8cd4-a5a7df3a2e68"],
+Cell[20293, 471, 622, 12, 22, "Print",ExpressionUUID->"374b10f1-3490-4204-8ee7-698783431280"],
+Cell[20918, 485, 893, 20, 22, "Print",ExpressionUUID->"e4b6b6b0-8c78-45eb-9af2-0096942cc3ea"],
+Cell[21814, 507, 893, 20, 22, "Print",ExpressionUUID->"07a1ea67-3a76-45a4-b268-7c2c91a99dfa"],
+Cell[22710, 529, 624, 12, 22, "Print",ExpressionUUID->"53523363-7e54-4a63-aa63-0b686a7c9c5c"],
+Cell[23337, 543, 929, 21, 22, "Print",ExpressionUUID->"71df9349-077a-496b-b440-10e22322cc9f"],
+Cell[24269, 566, 931, 21, 22, "Print",ExpressionUUID->"9ccb5f5a-f937-4e7e-a924-2ce48f631ea5"],
+Cell[25203, 589, 624, 12, 22, "Print",ExpressionUUID->"5f4fe6f9-09fc-478f-bc77-a0287d7bbcec"],
+Cell[25830, 603, 967, 22, 22, "Print",ExpressionUUID->"917efda9-67cd-4642-897b-2a49c339af7d"],
+Cell[26800, 627, 972, 23, 22, "Print",ExpressionUUID->"326e0c02-8806-49a6-a509-d9e871b6d1b4"],
+Cell[27775, 652, 626, 12, 22, "Print",ExpressionUUID->"ce33bb25-3df9-4831-b85e-d77f76cbc401"],
+Cell[28404, 666, 1008, 24, 22, "Print",ExpressionUUID->"95b6f9f6-d6f0-4094-b07b-40e38c294852"],
+Cell[29415, 692, 1010, 24, 22, "Print",ExpressionUUID->"076ff91e-d7d7-42cb-9b6f-d9cedb32b1d5"],
+Cell[30428, 718, 624, 12, 22, "Print",ExpressionUUID->"cfa7f0a4-ac50-4c24-b9d2-34188551e958"],
+Cell[31055, 732, 1045, 25, 22, "Print",ExpressionUUID->"22572ff4-0140-4359-8350-3f38bbc7db52"],
+Cell[32103, 759, 1047, 25, 22, "Print",ExpressionUUID->"76733635-3358-4eee-9167-36b011091cb9"],
+Cell[33153, 786, 626, 12, 22, "Print",ExpressionUUID->"a28aabf2-aa70-4666-9db6-689539cbe20d"],
+Cell[33782, 800, 1085, 26, 22, "Print",ExpressionUUID->"43a556ac-efd0-48c3-a073-9e74bf4425ce"],
+Cell[34870, 828, 1090, 26, 22, "Print",ExpressionUUID->"02c483df-18c0-4f43-b2c6-2f93e98cf56a"],
+Cell[35963, 856, 624, 12, 22, "Print",ExpressionUUID->"f68a807a-4ceb-4c75-8db5-608053ff71e7"],
+Cell[36590, 870, 1127, 27, 22, "Print",ExpressionUUID->"2fa166de-bb83-4931-92fb-d46be0327d6c"],
+Cell[37720, 899, 1129, 27, 22, "Print",ExpressionUUID->"9d1c1113-4811-4d4f-a02c-f981a9ef648e"],
+Cell[38852, 928, 624, 12, 22, "Print",ExpressionUUID->"baea7381-0b47-4ccf-8796-1155429040aa"],
+Cell[39479, 942, 1178, 30, 22, "Print",ExpressionUUID->"d88b3dd3-9f3e-45e3-b923-bdc91353c013"],
+Cell[40660, 974, 1180, 30, 22, "Print",ExpressionUUID->"13521e29-4e52-453f-851f-25588aa4d397"],
+Cell[41843, 1006, 626, 12, 22, "Print",ExpressionUUID->"1a1fe3b6-375f-4096-b630-f9c031348947"],
+Cell[42472, 1020, 1224, 31, 22, "Print",ExpressionUUID->"cf739561-7840-4070-86d9-313436757621"],
+Cell[43699, 1053, 1226, 31, 22, "Print",ExpressionUUID->"dcf1a0bd-fbf3-4fe8-af44-c6c333653132"],
+Cell[44928, 1086, 624, 12, 22, "Print",ExpressionUUID->"d0868c70-3ed4-497b-9b5f-6bf1fe6b5ebe"],
+Cell[45555, 1100, 1271, 32, 22, "Print",ExpressionUUID->"01408b16-41a9-48e9-ad6a-85a25cdbf655"],
+Cell[46829, 1134, 1273, 32, 22, "Print",ExpressionUUID->"c7c45096-0d02-4d4c-a8f1-8758ba6634a4"],
+Cell[48105, 1168, 626, 12, 22, "Print",ExpressionUUID->"3b4723ae-5b80-4658-9611-6811e272b934"],
+Cell[48734, 1182, 1316, 33, 22, "Print",ExpressionUUID->"e75f8384-f298-4d28-8f16-873296c31174"],
+Cell[50053, 1217, 1321, 33, 22, "Print",ExpressionUUID->"f999f001-0d22-4cea-bb33-03f2efdd9058"],
+Cell[51377, 1252, 624, 12, 22, "Print",ExpressionUUID->"2625b0c6-a653-4ff9-bc45-c0718ba2f8fa"],
+Cell[52004, 1266, 1363, 34, 22, "Print",ExpressionUUID->"3988eb19-35d8-4da3-9f01-8737ae06b5e6"],
+Cell[53370, 1302, 1364, 34, 22, "Print",ExpressionUUID->"b5127329-3865-4b53-ada9-c96698a4dc82"],
+Cell[54737, 1338, 624, 12, 22, "Print",ExpressionUUID->"342a9790-b586-4b52-a3b6-d72b20572960"],
+Cell[55364, 1352, 1408, 35, 22, "Print",ExpressionUUID->"e21f879e-19ad-4345-ad05-85c6d3bec94a"],
+Cell[56775, 1389, 1411, 35, 22, "Print",ExpressionUUID->"e58f3c12-1279-42c6-8ac9-20f945b57bf3"],
+Cell[58189, 1426, 624, 12, 22, "Print",ExpressionUUID->"dd58db66-703d-4fb1-a97d-e3b11db17114"],
+Cell[58816, 1440, 1453, 36, 22, "Print",ExpressionUUID->"8f26f6e3-4eda-45d7-8f44-80b3775c16cb"],
+Cell[60272, 1478, 1456, 36, 22, "Print",ExpressionUUID->"cd0171b4-8fe3-426d-b13b-7d7059802450"],
+Cell[61731, 1516, 626, 12, 22, "Print",ExpressionUUID->"6d842094-5277-4df4-b4cd-7d5f90bc849c"],
+Cell[62360, 1530, 1502, 38, 22, "Print",ExpressionUUID->"cf21f462-67bf-4fb1-97f4-2b08ac7df432"],
+Cell[63865, 1570, 1505, 38, 22, "Print",ExpressionUUID->"91ea62f0-3406-4590-a5c1-fdcd98af6552"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
