@@ -112,3 +112,9 @@ http://trefle.io/api/plants/138738/?token=SWVENEduMFMxellqNHFIM3RmL0c4Zz09
 
 /******************************************************************************/
 
+LaTeX packages directory:
+C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex
+
+/******************************************************************************/
+
+
