@@ -132,42 +132,42 @@
 %\caption{Lorem ipsum dolor sit amet\label{figure_1}}
 %\end{figure}
 
-\begin{mmaCell}[moredefined={T, contourLimits, membershipConditions, \
-domain}]{Input}
-
-  T=\mmaFrac{1}{(x-2)^2+(z-12)^2+(y-2)^2};
-
-  
-
-  contourLimits=100;
-
-  membershipConditions=FunctionDomain[T,\{x,y,z\}];
-
-  domain=ImplicitRegion[membershipConditions,\{x,y,z\}];
-
-  Print["Domain:"];
-
-  RegionMember[domain,\{x,y,z\}]
-
-  Print["Domain Plot:"];
-
-  RegionPlot3D[
-
-\pmb{
-  -4 \mmaFnc{x}+\mmaSup{\mmaFnc{x}}{2}-4
-\mmaFnc{y}+\mmaSup{\mmaFnc{y}}{2}-24
-\mmaFnc{z}+\mmaSup{\mmaFnc{z}}{2}\neq-152,
-}
-
-  \{\mmaFnc{x},-contourLimits,contourLimits\},
-
-  \{\mmaFnc{y},-contourLimits,contourLimits\},
-
-  \{\mmaFnc{z},-contourLimits,contourLimits\},Axes\pmb{\to}True]
-
-  
-
-\end{mmaCell}
+%\begin{mmaCell}[moredefined={T, contourLimits, membershipConditions, \
+%domain}]{Input}
+%
+%  T=\mmaFrac{1}{(x-2)^2+(z-12)^2+(y-2)^2};
+%
+%  
+%
+%  contourLimits=100;
+%
+%  membershipConditions=FunctionDomain[T,\{x,y,z\}];
+%
+%  domain=ImplicitRegion[membershipConditions,\{x,y,z\}];
+%
+%  Print["Domain:"];
+%
+%  RegionMember[domain,\{x,y,z\}]
+%
+%  Print["Domain Plot:"];
+%
+%  RegionPlot3D[
+%
+%\pmb{
+%  -4 \mmaFnc{x}+\mmaSup{\mmaFnc{x}}{2}-4
+%\mmaFnc{y}+\mmaSup{\mmaFnc{y}}{2}-24
+%\mmaFnc{z}+\mmaSup{\mmaFnc{z}}{2}\neq-152,
+%}
+%
+%  \{\mmaFnc{x},-contourLimits,contourLimits\},
+%
+%  \{\mmaFnc{y},-contourLimits,contourLimits\},
+%
+%  \{\mmaFnc{z},-contourLimits,contourLimits\},Axes\pmb{\to}True]
+%
+%  
+%
+%\end{mmaCell}
 
 
 
@@ -181,8 +181,7 @@ domain}]{Input}
 
 \begin{mmaCell}[addtoindex=5]{Output}
 
-  (x|y|z)\in\mathbb{R}&&-4 x+\mmaSup{x}{2}-4 y+\mmaSup{y}{2}-24 \
-z+\mmaSup{z}{2}\(\n eq\)-152
+  (x|y|z)$\in$\mathbb{R}&&-4 x+\mmaSup{x}{2}-4 y+\mmaSup{y}{2}-24 z+\mmaSup{z}{2}$\neq$-152
 
 \end{mmaCell}
 

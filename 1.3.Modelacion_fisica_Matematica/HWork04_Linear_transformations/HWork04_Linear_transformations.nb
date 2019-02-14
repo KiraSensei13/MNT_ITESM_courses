@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    135736,       2330]
-NotebookOptionsPosition[    134234,       2301]
-NotebookOutlinePosition[    134576,       2316]
-CellTagsIndexPosition[    134533,       2313]
+NotebookDataLength[    153567,       2633]
+NotebookOptionsPosition[    151303,       2594]
+NotebookOutlinePosition[    151673,       2610]
+CellTagsIndexPosition[    151630,       2607]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,7 +21,7 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell[BoxData[
- RowBox[{
+ RowBox[{"\[IndentingNewLine]", 
   RowBox[{"(*", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
@@ -34,6 +34,9 @@ master/NoInstall.m\>\""}], "\[IndentingNewLine]",
 2.2/CellsToTeX-0.2.2.paclet\>\""}]}], "\[IndentingNewLine]", "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
+   RowBox[{
+    RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Needs", "@", "\"\<CellsToTeX`\>\""}], ";"}], 
    "\[IndentingNewLine]", 
@@ -62,25 +65,29 @@ master/NoInstall.m\>\""}], "\[IndentingNewLine]",
       RowBox[{"\"\<./media/movie0.swf\>\"", ",", "myPlot"}], "]"}], ";"}], 
     "*)"}]}]}]], "Input",
  CellChangeTimes->{{3.759068893551744*^9, 3.759068916645616*^9}, {
-  3.759080834025629*^9, 3.7590808666859303`*^9}, {3.7590809797491627`*^9, 
-  3.759080979974559*^9}},
+   3.759080834025629*^9, 3.7590808666859303`*^9}, {3.7590809797491627`*^9, 
+   3.759080979974559*^9}, {3.759081784201972*^9, 3.7590817866065454`*^9}, {
+   3.759081868455515*^9, 3.75908187231819*^9}, 3.759081903580155*^9},
  CellLabel->
-  "In[749]:=",ExpressionUUID->"8bdaee72-9c94-42c9-8557-620eb66de38f"],
+  "In[800]:=",ExpressionUUID->"8bdaee72-9c94-42c9-8557-620eb66de38f"],
 
 Cell[BoxData["\<\"Print current directory:\"\>"], "Print",
- CellChangeTimes->{3.7590808706234045`*^9, 3.759080982652402*^9},
+ CellChangeTimes->{3.7590808706234045`*^9, 3.759080982652402*^9, 
+  3.7590817367268677`*^9, 3.7590817930196605`*^9, 3.7590818560905657`*^9, 
+  3.759081906341773*^9},
  CellLabel->
   "During evaluation of \
-In[749]:=",ExpressionUUID->"eb966c1a-671e-4315-a398-1d37e69e941d"],
+In[800]:=",ExpressionUUID->"9eb8d73d-f405-48cf-a51c-d2aa3486bf8b"],
 
 Cell[BoxData["\<\"C:\\\\Users\\\\oskat\\\\OneDrive - Instituto Tecnologico y \
 de Estudios Superiores de \
 Monterrey\\\\Documents\\\\MNT_ITESM_courses\\\\1.3.Modelacion_fisica_\
 Matematica\\\\HWork04_Linear_transformations\"\>"], "Output",
  CellChangeTimes->{3.7590689178938975`*^9, 3.759080870626396*^9, 
-  3.759080982657645*^9},
+  3.759080982657645*^9, 3.7590817367308564`*^9, 3.759081793001452*^9, 
+  3.7590818560756044`*^9, 3.7590819063457637`*^9},
  CellLabel->
-  "Out[752]=",ExpressionUUID->"5052e383-812a-49b3-89a7-b54296d10405"]
+  "Out[804]=",ExpressionUUID->"ff02eafd-2d1a-421e-9ba1-f937445bb453"]
 }, Open  ]],
 
 Cell["\<\
@@ -143,9 +150,6 @@ Cell[TextData[{
 Cell[CellGroupData[{
 
 Cell[BoxData[{
- RowBox[{
-  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], 
-  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"T", "=", 
@@ -235,16 +239,17 @@ Cell[BoxData[{
    3.7590802811385126`*^9, 3.7590803879400473`*^9}, {3.7590804896749067`*^9, 
    3.7590805558736067`*^9}, {3.7590806407916327`*^9, 
    3.7590806905047555`*^9}, {3.759080751835313*^9, 3.759080766742468*^9}, {
-   3.7590808225293574`*^9, 3.7590808233012943`*^9}},
+   3.7590808225293574`*^9, 3.7590808233012943`*^9}, {3.7590818942425895`*^9, 
+   3.7590818994990635`*^9}},
  CellLabel->
-  "In[740]:=",ExpressionUUID->"90735765-de31-4e65-aee4-2f57c5ed43cc"],
+  "In[805]:=",ExpressionUUID->"90735765-de31-4e65-aee4-2f57c5ed43cc"],
 
 Cell[BoxData["\<\"Domain:\"\>"], "Print",
  CellChangeTimes->{3.759080769906245*^9, 3.7590808242048783`*^9, 
-  3.7590808773763556`*^9},
+  3.7590808773763556`*^9, 3.7590819086775312`*^9},
  CellLabel->
   "During evaluation of \
-In[740]:=",ExpressionUUID->"16cefa2a-c2a2-4c34-af68-76ae29e7ac0a"],
+In[805]:=",ExpressionUUID->"8669cd1e-8c4c-4bb6-a39c-1a85a4ca8aa0"],
 
 Cell[BoxData[
  RowBox[{
@@ -264,16 +269,16 @@ Cell[BoxData[
     SuperscriptBox["z", "2"]}], "\[NotEqual]", 
    RowBox[{"-", "152"}]}]}]], "Output",
  CellChangeTimes->{3.759080655391835*^9, 3.7590807699130335`*^9, 
-  3.7590808242078705`*^9, 3.759080877381342*^9},
+  3.7590808242078705`*^9, 3.759080877381342*^9, 3.759081908682517*^9},
  CellLabel->
-  "Out[746]=",ExpressionUUID->"b41f777f-a48e-4235-9cee-c287195098d4"],
+  "Out[810]=",ExpressionUUID->"b2998d1f-84b3-4bf0-a1a0-e83aaf159e56"],
 
 Cell[BoxData["\<\"Domain Plot:\"\>"], "Print",
  CellChangeTimes->{3.759080769906245*^9, 3.7590808242048783`*^9, 
-  3.759080877384334*^9},
+  3.7590808773763556`*^9, 3.759081908689499*^9},
  CellLabel->
   "During evaluation of \
-In[740]:=",ExpressionUUID->"71ceaad3-8757-489a-8f78-e6d82ea5c96f"],
+In[805]:=",ExpressionUUID->"4f5e68a9-6d64-4623-9830-6670073835fe"],
 
 Cell[BoxData[
  Graphics3DBox[GraphicsComplex3DBox[CompressedData["
@@ -2096,9 +2101,9 @@ l8vl8gr/C4bhRgY=
     Scaled[0.02]},
   Ticks->{Automatic, Automatic, Automatic}]], "Output",
  CellChangeTimes->{3.759080655391835*^9, 3.7590807699130335`*^9, 
-  3.7590808242078705`*^9, 3.7590808774850645`*^9},
+  3.7590808242078705`*^9, 3.759080877381342*^9, 3.7590819087802553`*^9},
  CellLabel->
-  "Out[748]=",ExpressionUUID->"271d93da-1f32-4759-95e8-f5f3eb6e7739"]
+  "Out[812]=",ExpressionUUID->"9d397001-1c09-4df9-97c2-0898bc026666"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -2242,22 +2247,24 @@ Cell["\<\
   3.759067548512844*^9},ExpressionUUID->"8f15eef1-3567-4a2e-b14e-\
 d81e5c18c447"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", "\[IndentingNewLine]", 
    RowBox[{"GET", " ", "LaTeX", " ", "CODE"}], "\[IndentingNewLine]", "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{
-    RowBox[{"nbObj", "=", 
-     RowBox[{
-      RowBox[{"Notebooks", "[", "]"}], "[", 
-      RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Notebooks", "[", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"nbObj", "=", 
+    RowBox[{
+     RowBox[{"Notebooks", "[", "]"}], "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
      "Swich", " ", "off", " ", "auto", " ", "deleting", " ", "of", " ", 
-      "labels"}], ",", 
+      "labels"}], ",", " ", 
      RowBox[{
      "so", " ", "that", " ", "we", " ", "can", " ", "extract", " ", "some", 
       " ", "data", " ", "from", " ", 
@@ -2296,11 +2303,298 @@ Cell[BoxData[
      RowBox[{"\"\<ConversionRules\>\"", "\[Rule]", 
       RowBox[{"{", 
        RowBox[{"\"\<Final\>\"", "\[Rule]", "Identity"}], "}"}]}]}], 
-    "]"}]}]}]], "Input",ExpressionUUID->"b087c309-6af8-456e-ae75-\
-2667311fcc69"]
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.7590822004681787`*^9, {3.7590823073389635`*^9, 3.7590823207730904`*^9}, {
+   3.759082468485595*^9, 3.7590824702708254`*^9}, {3.759082530944629*^9, 
+   3.759082533406048*^9}},
+ CellLabel->
+  "In[855]:=",ExpressionUUID->"b087c309-6af8-456e-ae75-2667311fcc69"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{FrontEndObject[
+      LinkObject["mme4j_shm", 3, 1]],15,
+     "FrontEndObject[LinkObject[\"mme4j_shm\", 3, 1]]","15",
+     "\"Basic Math Assistant\"",
+     "\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Mathematica\\\\11.3\\\\SystemFiles\\\\FrontEnd\\\\Palettes\\\\\
+BasicMathAssistant.nb\""},
+    "NotebookObject"], ",", 
+   TemplateBox[{FrontEndObject[
+      LinkObject["mme4j_shm", 3, 1]],32,
+     "FrontEndObject[LinkObject[\"mme4j_shm\", 3, 1]]","32",
+     "\"HWork04_Linear_transformations.nb\"",
+     "\"C:\\\\Users\\\\oskat\\\\OneDrive - Instituto Tecnologico y de \
+Estudios Superiores de \
+Monterrey\\\\Documents\\\\MNT_ITESM_courses\\\\1.3.Modelacion_fisica_\
+Matematica\\\\HWork04_Linear_transformations\\\\HWork04_Linear_\
+transformations.nb\""},
+    "NotebookObject"], ",", 
+   TemplateBox[{FrontEndObject[
+      LinkObject["mme4j_shm", 3, 1]],1,
+     "FrontEndObject[LinkObject[\"mme4j_shm\", 3, 1]]","1","\"Messages\""},
+    "NotebookObjectUnsaved"]}], "}"}]], "Output",
+ CellChangeTimes->{3.759082322833548*^9, 3.759082472335306*^9, 
+  3.759082534376457*^9},
+ CellLabel->
+  "Out[855]=",ExpressionUUID->"280f931a-d08b-4a61-8778-e95d8015c74d"],
+
+Cell[BoxData[
+ TemplateBox[{FrontEndObject[
+    LinkObject["mme4j_shm", 3, 1]],32,
+   "FrontEndObject[LinkObject[\"mme4j_shm\", 3, 1]]","32",
+   "\"HWork04_Linear_transformations.nb\"",
+   "\"C:\\\\Users\\\\oskat\\\\OneDrive - Instituto Tecnologico y de Estudios \
+Superiores de \
+Monterrey\\\\Documents\\\\MNT_ITESM_courses\\\\1.3.Modelacion_fisica_\
+Matematica\\\\HWork04_Linear_transformations\\\\HWork04_Linear_\
+transformations.nb\""},
+  "NotebookObject"]], "Output",
+ CellChangeTimes->{3.759082322833548*^9, 3.759082472335306*^9, 
+  3.7590825344176035`*^9},
+ CellLabel->
+  "Out[856]=",ExpressionUUID->"5384b853-7e45-4069-bdaf-891eb7ad553f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CellsToTeXException","unsupported",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"CellStyle\\\\\\\"\\\"}]\\): \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Text\\\\\\\"\\\"}]\\) is not one of supported: \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Code\\\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Input\\\
+\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Output\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Print\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Message\\\\\\\"\\\"}]\\). Exception occurred in \\!\\(\\*RowBox[{\
+\\\"CellToTeX\\\", \\\"[\\\", RowBox[{\\\"Cell\\\", \\\"[\\\", RowBox[{\\\"\\\
+\\\\\"(***********************************************************************\
+************************************)\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"Text\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"CellChangeTimes\\\", \
+\\\"\[Rule]\\\", RowBox[{\\\"{\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"3.7590675285189`*^9\\\", \\\",\\\", \
+\\\"3.759067536585492`*^9\\\"}], \\\"}\\\"}], \\\"}\\\"}]}]}], \\\"]\\\"}], \
+\\\"]\\\"}]\\).\"",2,860,159,22352738077751209474,"Local",
+   "CellsToTeX`CellsToTeXException"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.7590823239485693`*^9, 3.759082473548068*^9, 
+  3.7590825349748564`*^9},
+ CellLabel->
+  "During evaluation of \
+In[855]:=",ExpressionUUID->"cbcc912a-588b-4a2e-bbe9-907ab3cffac7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CellsToTeXException","unsupported",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"CellStyle\\\\\\\"\\\"}]\\): \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Text\\\\\\\"\\\"}]\\) is not one of supported: \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Code\\\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Input\\\
+\\\\\"\\\", \\\"|\\\", \\\"\\\\\\\"Output\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Print\\\\\\\"\\\", \\\"|\\\", \
+\\\"\\\\\\\"Message\\\\\\\"\\\"}]\\). Exception occurred in \\!\\(\\*RowBox[{\
+\\\"CellToTeX\\\", \\\"[\\\", RowBox[{\\\"Cell\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"TextData\\\", \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"StyleBox\\\", \\\"[\\\", \
+RowBox[{\\\"\\\\\\\"1.a\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"FontWeight\\\", \
+\\\"\[Rule]\\\", \\\"\\\\\\\"Bold\\\\\\\"\\\"}]}], \\\"]\\\"}], \\\",\\\", \\\
+\"\\\\\\\"\\\\\\\\nT:\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"Cell\\\", \
+\\\"[\\\", RowBox[{\\\"BoxData\\\", \\\"[\\\", RowBox[{\\\"FormBox\\\", \\\"[\
+\\\", RowBox[{RowBox[{\\\"SuperscriptBox\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\",\\\", \\\"TraditionalForm\\\"}], \\\"]\\\"}], \\\"]\\\"}], \\\"]\\\"}], \
+\\\",\\\", \\\"\\\\\\\"\[RightArrow]\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"Cell\
+\\\", \\\"[\\\", RowBox[{\\\"BoxData\\\", \\\"[\\\", RowBox[{\\\"FormBox\\\", \
+\\\"[\\\", RowBox[{\\\"\\\\\\\"\[DoubleStruckCapitalR]\\\\\\\"\\\", \
+\\\",\\\", \\\"TraditionalForm\\\"}], \\\"]\\\"}], \\\"]\\\"}], \\\"]\\\"}], \
+\\\",\\\", \\\"\\\\\\\" given by \\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"Cell\\\", \\\"[\\\", RowBox[{RowBox[{\\\"BoxData\\\", \\\"[\\\", \
+RowBox[{\\\"FormBox\\\", \\\"[\\\", RowBox[{RowBox[{\\\"RowBox\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\",\\\", \\\"TraditionalForm\\\"}], \\\"]\\\"}], \\\"]\\\
+\"}], \\\",\\\", RowBox[{\\\"FormatType\\\", \\\"\[Rule]\\\", \
+\\\"\\\\\\\"TraditionalForm\\\\\\\"\\\"}]}], \\\"]\\\"}], \\\",\\\", \\\"\\\\\
+\\\"\\\\\\\\n \\\\\\\"\\\", \\\",\\\", RowBox[{\\\"Cell\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"BoxData\\\", \\\"[\\\", RowBox[{\\\"FormBox\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"RowBox\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\",\\\", \\\"TraditionalForm\\\"}], \\\"]\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"FormatType\\\", \\\"\[Rule]\\\", \
+\\\"\\\\\\\"TraditionalForm\\\\\\\"\\\"}]}], \\\"]\\\"}]}], \\\"}\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"\\\\\\\"Text\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"CellChangeTimes\\\", \\\"\[Rule]\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"3.759074171375535`*^9\\\", \\\",\\\", \
+\\\"3.759074175172387`*^9\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"\[LeftSkeleton]\\\", \\\"22\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"22\\\", \\\"\[RightSkeleton]\\\"}]}], \\\"}\\\"}]}], \\\"}\\\"}]}]}], \
+\\\"]\\\"}], \\\"]\\\"}]\\).\"",2,860,160,22352738077751209474,"Local",
+   "CellsToTeX`CellsToTeXException"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.7590823239485693`*^9, 3.759082473548068*^9, 
+  3.759082535022729*^9},
+ CellLabel->
+  "During evaluation of \
+In[855]:=",ExpressionUUID->"f56ccf30-0c08-4a80-a616-a9905854b8ac"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CellsToTeXException","unsupported",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"Box\\\\\\\"\\\"}]\\): \
+\\!\\(\\*RowBox[{\\\"Graphics3DBox\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}]\\) is not one of supported: \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"RowBox\\\", \\\"[\\\", \\\"_List\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"StyleBox\\\", \\\"|\\\", \\\
+\"ButtonBox\\\", \\\"|\\\", \\\"InterpretationBox\\\", \\\"|\\\", \\\"FormBox\
+\\\", \\\"|\\\", \\\"TagBox\\\", \\\"|\\\", \\\"TooltipBox\\\"}], \
+\\\")\\\"}], \\\"[\\\", RowBox[{\\\"_\\\", \\\",\\\", \\\"___\\\"}], \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"TemplateBox\\\", \\\"[\\\", RowBox[{\\\"_\
+\\\", \\\",\\\", \\\"_\\\", \\\",\\\", \\\"___\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"GridBox\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+\\\"___List\\\", \\\"}\\\"}], \\\",\\\", \\\"___\\\"}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"10\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"HoldPattern\\\", \
+\\\"[\\\", RowBox[{\\\"FractionBox\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Repeated\\\", \\\"[\\\", RowBox[{\\\"_\\\", \\\",\\\", \
+RowBox[{\\\"{\\\", \\\"2\\\", \\\"}\\\"}]}], \\\"]\\\"}], \\\",\\\", RowBox[{\
+\\\"OptionsPattern\\\", \\\"[\\\", \\\"]\\\"}]}], \\\"]\\\"}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"HoldPattern\\\", \\\"[\\\", RowBox[{\\\"SqrtBox\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"Repeated\\\", \\\"[\\\", RowBox[{\\\"_\\\", \\\
+\",\\\", RowBox[{\\\"{\\\", \\\"1\\\", \\\"}\\\"}]}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"OptionsPattern\\\", \\\"[\\\", \\\"]\\\"}]}], \\\"]\\\"}], \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"HoldPattern\\\", \\\"[\\\", \
+RowBox[{\\\"RadicalBox\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Repeated\\\", \
+\\\"[\\\", RowBox[{\\\"_\\\", \\\",\\\", RowBox[{\\\"{\\\", \\\"2\\\", \
+\\\"}\\\"}]}], \\\"]\\\"}], \\\",\\\", RowBox[{\\\"OptionsPattern\\\", \
+\\\"[\\\", \\\"]\\\"}]}], \\\"]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"_String\\\"}], \\\"}\\\"}]\\). Exception occurred in \
+\\!\\(\\*RowBox[{\\\"CellsToTeX`Configuration`boxesToTeXProcessor\\\", \
+\\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"BoxRules\\\\\\\"\\\", \\\"\[Rule]\\\", RowBox[{\\\
+\"{\\\", RowBox[{RowBox[{RowBox[{\\\"RowBox\\\", \\\"[\\\", \
+RowBox[{\\\"CellsToTeX`Private`l\\\", \\\":\\\", RowBox[{\\\"Blank\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}], \\\"]\\\"}], \\\"\[RuleDelayed]\\\", \
+RowBox[{\\\"CellsToTeX`Configuration`makeString\\\", \\\"[\\\", \
+\\\"CellsToTeX`Private`l\\\", \\\"]\\\"}]}], \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"16\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \
+RowBox[{\\\"CellsToTeX`Private`str$_String\\\", \\\"\[RuleDelayed]\\\", \
+RowBox[{\\\"StringReplace\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"CellsToTeX`Configuration`makeStringDefault\\\", \
+\\\"[\\\", \\\"CellsToTeX`Private`str$\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Rule\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"Rule\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"Rule\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{\\\"Rule\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\",\\\", RowBox[{\\\"Rule\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"Rule\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"Rule\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{\\\"RuleDelayed\\\
+\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]}]}], \
+\\\"}\\\"}]}], \\\",\\\", RowBox[{RowBox[{\\\"\\\\\\\"\\\\\\\"\\\", \\\"\
+\[Ellipsis]\\\", \\\"\\\\\\\"\\\\\\\"\\\"}], \\\"\[Rule]\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"\\\\\\\"TeXOptions\\\\\\\"\\\", \\\"\
+\[Rule]\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"addtoindex\\\\\\\"\\\", \
+\\\"\[Rule]\\\", \\\"1\\\"}], \\\"}\\\"}]}], \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\
+\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"CellChangeTimes\\\", \\\"\[Rule]\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"\[LeftSkeleton]\\\", \\\"21\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\
+\\\", \\\"\[RightSkeleton]\\\"}]}], \\\"}\\\"}]}], \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}], \\\"}\\\"}]}], \
+\\\"}\\\"}]}], \\\"}\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]\\).\"",2,860,161,
+   22352738077751209474,"Local","CellsToTeX`CellsToTeXException"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.7590823239485693`*^9, 3.759082473548068*^9, 
+  3.759082535408696*^9},
+ CellLabel->
+  "During evaluation of \
+In[855]:=",ExpressionUUID->"b7a06bd5-b1ff-4a78-bf33-aa21325d8f43"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \
+\\!\\(\\*StyleBox[RowBox[{\\\"CellsToTeXException\\\", \\\"::\\\", \
+\\\"unsupported\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,860,162,22352738077751209474,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7590823239485693`*^9, 3.759082473548068*^9, 
+  3.7590825356869516`*^9},
+ CellLabel->
+  "During evaluation of \
+In[855]:=",ExpressionUUID->"7ed713c9-f74c-4407-bc9d-fe429cf65582"],
+
+Cell[BoxData["\<\"\\\\begin{mmaCell}{Input}\\r\\n  \\r\\n  (*\\r\\n  \
+Import@\\\"https://raw.githubusercontent.com/jkuczm/MathematicaCellsToTeX/\
+master/NoInstall.m\\\"\\r\\n  \
+PacletInstall@\\\"http://github.com/jkuczm/MathematicaCellsToTeX/releases/\
+download/v0.2.2/CellsToTeX-0.2.2.paclet\\\"\\r\\n  *)\\r\\n  \
+ClearAll[\\\"Global`*\\\"];\\r\\n  Needs@\\\"CellsToTeX`\\\";\\r\\n  \
+SetDirectory[NotebookDirectory[]];\\r\\n  Print[\\\"Print current \
+directory:\\\"];\\r\\n  Directory[]\\r\\n  \
+(*myPlot=Animate[Plot[Sin[x+a],\\\\{x,0,10\\\\}],\\\\{a,0,5\\\\}];\\r\\n  \
+Export[\\\"./media/movie0.swf\\\",myPlot];*)\\r\\n\\\\end{mmaCell}\\r\\n\\r\\\
+n\\\\begin{mmaCell}{Print}\\r\\n  Print current \
+directory:\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[addtoindex=4]{\
+Output}\\r\\n  \
+C:\\\\textbackslash{}Users\\\\textbackslash{}oskat\\\\textbackslash{}OneDrive \
+- Instituto Tecnologico y de Estudios Superiores de \
+Monterrey\\\\textbackslash{}Documents\\\\textbackslash{}MNT_ITESM_courses\\\\\
+textbackslash{}1.3.Modelacion_fisica_Matematica\\\\textbackslash{}HWork04_\
+Linear_transformations\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+moredefined={T, contourLimits, membershipConditions, domain}]{Input}\\r\\n  \
+T=\\\\mmaFrac{1}{(x-2)^2+(z-12)^2+(y-2)^2};\\r\\n  \\r\\n  contourLimits=100;\
+\\r\\n  membershipConditions=FunctionDomain[T,\\\\{x,y,z\\\\}];\\r\\n  \
+domain=ImplicitRegion[membershipConditions,\\\\{x,y,z\\\\}];\\r\\n  \
+Print[\\\"Domain:\\\"];\\r\\n  RegionMember[domain,\\\\{x,y,z\\\\}]\\r\\n  \
+Print[\\\"Domain Plot:\\\"];\\r\\n  RegionPlot3D[\\r\\n  -4 \
+\\\\mmaFnc{x}+\\\\mmaSup{\\\\mmaFnc{x}}{2}-4 \
+\\\\mmaFnc{y}+\\\\mmaSup{\\\\mmaFnc{y}}{2}-24 \
+\\\\mmaFnc{z}+\\\\mmaSup{\\\\mmaFnc{z}}{2}\\\\(\\\\pmb{\\\\neq}\\\\)-152,\\r\\\
+n  \\\\{\\\\mmaFnc{x},-contourLimits,contourLimits\\\\},\\r\\n  \
+\\\\{\\\\mmaFnc{y},-contourLimits,contourLimits\\\\},\\r\\n  \
+\\\\{\\\\mmaFnc{z},-contourLimits,contourLimits\\\\},Axes\\\\(\\\\pmb{\\\\to}\
+\\\\)True]\\r\\n  \\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}{Print}\
+\\r\\n  Domain:\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\begin{mmaCell}[\
+addtoindex=5]{Output}\\r\\n  (x|y|z)\\\\(\\\\in\\\\mathbb{R}\\\\)&&-4 \
+x+\\\\mmaSup{x}{2}-4 y+\\\\mmaSup{y}{2}-24 \
+z+\\\\mmaSup{z}{2}\\\\(\\\\neq\\\\)-152\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\\\
+begin{mmaCell}{Print}\\r\\n  Domain Plot:\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\\\
+\\begin{mmaCell}[addtoindex=44,moredefined={nbObj, \
+CellToTeX},morepattern={cell}]{Input}\\r\\n  (*\\r\\n  GET LaTeX CODE\\r\\n  \
+*)\\r\\n  Notebooks[]\\r\\n  nbObj=Notebooks[][[2]]\\r\\n  (*Swich off auto \
+deleting of labels, so that we can extract some data from \
+them.*)CurrentValue[nbObj,CellLabelAutoDelete]=False;\\r\\n  \
+SelectionMove[nbObj,All,Notebook];\\r\\n  \
+(*SelectionEvaluate[nbObj,Before];*)\\r\\n  \
+SetOptions[CellToTeX,\\\"CurrentCellIndex\\\"\\\\(\\\\pmb{\\\\to}\\\\)\
+Automatic];\\r\\n  \
+ExportString[NotebookGet[nbObj]/.cell:Cell[_,__]\\\\(\\\\pmb{:\\\\to}\\\\)\
+Cell[CellToTeX[cell],\\\"Final\\\"],\\\"TeX\\\",\\\"FullDocument\\\"\\\\(\\\\\
+pmb{\\\\to}\\\\)False,\\\"ConversionRules\\\"\\\\(\\\\pmb{\\\\to}\\\\)\\\\{\\\
+\"Final\\\"\\\\(\\\\pmb{\\\\to}\\\\)Identity\\\\}]\\r\\n\\\\end{mmaCell}\\r\\\
+n\\r\\n\\\\begin{mmaCell}[addtoindex=-2]{Input}\\r\\n  \
+Notebooks[]\\r\\n\\\\end{mmaCell}\\r\\n\\r\\n\"\>"], "Output",
+ CellChangeTimes->{3.759082322833548*^9, 3.759082472335306*^9, 
+  3.7590825359083605`*^9},
+ CellLabel->
+  "Out[860]=",ExpressionUUID->"aab51708-3d6a-4298-a015-c406de1e3ef3"]
+}, Open  ]]
 },
 WindowSize->{955, 988},
 WindowMargins->{{Automatic, 275}, {Automatic, 0}},
+CellLabelAutoDelete->False,
 FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2316,22 +2610,31 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 1675, 45, 200, "Input",ExpressionUUID->"8bdaee72-9c94-42c9-8557-620eb66de38f"],
-Cell[2258, 69, 230, 4, 22, "Print",ExpressionUUID->"eb966c1a-671e-4315-a398-1d37e69e941d"],
-Cell[2491, 75, 413, 7, 52, "Output",ExpressionUUID->"5052e383-812a-49b3-89a7-b54296d10405"]
+Cell[580, 22, 1922, 49, 238, "Input",ExpressionUUID->"8bdaee72-9c94-42c9-8557-620eb66de38f"],
+Cell[2505, 73, 330, 6, 22, "Print",ExpressionUUID->"9eb8d73d-f405-48cf-a51c-d2aa3486bf8b"],
+Cell[2838, 81, 510, 8, 52, "Output",ExpressionUUID->"ff02eafd-2d1a-421e-9ba1-f937445bb453"]
 }, Open  ]],
-Cell[2919, 85, 259, 6, 34, "Text",ExpressionUUID->"b48e6af5-4c4a-4643-9e76-968c4478b6cc"],
-Cell[3181, 93, 1550, 47, 89, "Text",ExpressionUUID->"9d4c8ec4-9a35-4cc3-8b08-76dd991390fe"],
+Cell[3363, 92, 259, 6, 34, "Text",ExpressionUUID->"b48e6af5-4c4a-4643-9e76-968c4478b6cc"],
+Cell[3625, 100, 1550, 47, 89, "Text",ExpressionUUID->"9d4c8ec4-9a35-4cc3-8b08-76dd991390fe"],
 Cell[CellGroupData[{
-Cell[4756, 144, 4117, 95, 335, "Input",ExpressionUUID->"90735765-de31-4e65-aee4-2f57c5ed43cc"],
-Cell[8876, 241, 240, 5, 22, "Print",ExpressionUUID->"16cefa2a-c2a2-4c34-af68-76ae29e7ac0a"],
-Cell[9119, 248, 662, 20, 34, "Output",ExpressionUUID->"b41f777f-a48e-4235-9cee-c287195098d4"],
-Cell[9784, 270, 243, 5, 22, "Print",ExpressionUUID->"71ceaad3-8757-489a-8f78-e6d82ea5c96f"],
-Cell[10030, 277, 114591, 1823, 415, "Output",ExpressionUUID->"271d93da-1f32-4759-95e8-f5f3eb6e7739"]
+Cell[5200, 151, 4073, 93, 315, "Input",ExpressionUUID->"90735765-de31-4e65-aee4-2f57c5ed43cc"],
+Cell[9276, 246, 264, 5, 22, "Print",ExpressionUUID->"8669cd1e-8c4c-4bb6-a39c-1a85a4ca8aa0"],
+Cell[9543, 253, 684, 20, 34, "Output",ExpressionUUID->"b2998d1f-84b3-4bf0-a1a0-e83aaf159e56"],
+Cell[10230, 275, 267, 5, 22, "Print",ExpressionUUID->"4f5e68a9-6d64-4623-9830-6670073835fe"],
+Cell[10500, 282, 114613, 1823, 415, "Output",ExpressionUUID->"9d397001-1c09-4df9-97c2-0898bc026666"]
 }, Open  ]],
-Cell[124636, 2103, 7373, 131, 366, "Text",ExpressionUUID->"d2a30d39-5650-49b5-b609-3bbfacb30609"],
-Cell[132012, 2236, 237, 6, 34, "Text",ExpressionUUID->"8f15eef1-3567-4a2e-b14e-d81e5c18c447"],
-Cell[132252, 2244, 1978, 55, 219, "Input",ExpressionUUID->"b087c309-6af8-456e-ae75-2667311fcc69"]
+Cell[125128, 2108, 7373, 131, 366, "Text",ExpressionUUID->"d2a30d39-5650-49b5-b609-3bbfacb30609"],
+Cell[132504, 2241, 237, 6, 34, "Text",ExpressionUUID->"8f15eef1-3567-4a2e-b14e-d81e5c18c447"],
+Cell[CellGroupData[{
+Cell[132766, 2251, 2245, 60, 238, "Input",ExpressionUUID->"b087c309-6af8-456e-ae75-2667311fcc69"],
+Cell[135014, 2313, 1215, 28, 91, "Output",ExpressionUUID->"280f931a-d08b-4a61-8778-e95d8015c74d"],
+Cell[136232, 2343, 646, 14, 51, "Output",ExpressionUUID->"5384b853-7e45-4069-bdaf-891eb7ad553f"],
+Cell[136881, 2359, 1302, 23, 74, "Message",ExpressionUUID->"cbcc912a-588b-4a2e-bbe9-907ab3cffac7"],
+Cell[138186, 2384, 3428, 52, 128, "Message",ExpressionUUID->"f56ccf30-0c08-4a80-a616-a9905854b8ac"],
+Cell[141617, 2438, 5607, 83, 150, "Message",ExpressionUUID->"b7a06bd5-b1ff-4a78-bf33-aa21325d8f43"],
+Cell[147227, 2523, 520, 12, 21, "Message",ExpressionUUID->"7ed713c9-f74c-4407-bc9d-fe429cf65582"],
+Cell[147750, 2537, 3537, 54, 2821, "Output",ExpressionUUID->"aab51708-3d6a-4298-a015-c406de1e3ef3"]
+}, Open  ]]
 }
 ]
 *)
