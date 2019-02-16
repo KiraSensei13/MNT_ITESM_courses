@@ -25,6 +25,7 @@ setwd("~/MNT_ITESM_courses/1.1.Computacion_Aplicada/04_StadisticsAndStochasticPr
 #install.packages('caret', dependencies=TRUE);
 #install.packages('mixtools', dependencies=TRUE);
 #install.packages('mclust', dependencies=TRUE);
+#install.packages('BSDA', dependencies=TRUE);
 
 # Load required libraries
 library(caret);
