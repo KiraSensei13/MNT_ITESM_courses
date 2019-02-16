@@ -1,0 +1,286 @@
+
+%----------------------------------------------------------------------------------------%
+% START LaTeX preamble
+
+% define document type, font and paper size
+\documentclass[11pt,a4paper]{article}
+
+%----------------------------------------------------------------------------------------%
+% IMPORT LaTeX packages
+
+\usepackage{inputenc}
+\usepackage[ngerman, english]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{movie15}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{systeme}
+\usepackage{mdframed}
+\usepackage{mmacells}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+%----------------------------------------------------------------------------------------%
+% IMPORT LaTeX packages to manange bibliography
+
+% MLA, APA, or IEEE? - https://www.overleaf.com/learn/latex/Biblatex_citation_styles
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%----------------------------------------------------------------------------------------%
+% DEFINE header values
+
+% define the cover page values
+\title
+{
+    Mathematica Problem Sheet 01
+}
+\author
+{    
+    Antonio Osamu Katagiri Tanaka (A01212611) \\
+    \\
+    Instructor: Ph.D Daniel L{\' o}pez Aguayo
+}
+\date{\today}
+
+%----------------------------------------------------------------------------------------%
+% USER-DEFINED commands
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+    \\
+    \\
+    \small
+    \textbf{\textit{Keywords:}} #1
+}
+
+%----------------------------------------------------------------------------------------%
+
+\begin{document}
+\setlength\parindent{0pt} % Set noindent for entire file
+
+%----------------------------------------------------------------------------------------%
+% CREATE the 1st page (cover page)
+
+\maketitle
+
+%----------------------------------------------------------------------------------------%
+% DEFINE the abstract text & keywords
+
+%\begin{abstract}
+%    \emph
+%    {
+%        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+%    }
+%    \keywords{Lorem, ipsum, dolor, sit, amet}
+%\end{abstract}
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+% CREATE a table of contents in a new page
+
+%\tableofcontents
+%\clearpage
+
+%----------------------------------------------------------------------------------------%
+% CREATE a list of figures and a list of tables in a new page
+
+%\listoffigures
+%\listoftables
+%\clearpage
+
+%----------------------------------------------------------------------------------------%
+% DOCUMENT body starts here
+
+%----------------------------------------------------------------------------------------%
+%Append the HW's exercises
+\includepdf[page=-]{HW4}
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem I}\label{sec:P01}
+
+%\begin{mmaCell}[moredefined={SQRmatrixSize, matrixAentries, matrixA, \
+%i, j}]{Input}
+%SQRmatrixSize=10;
+%matrixAentries =Range[1,SQRmatrixSize*SQRmatrixSize];
+%matrixAentries=ArrayReshape[matrixAentries,\{SQRmatrixSize,SQRmatrixSize\}];
+%matrixA=Table[matrixAentries[[i,j]],\{i,1,SQRmatrixSize\},\{j,1,SQRmatrixSize\}];
+%MatrixForm[matrixA]
+%matrixA[[4, 9]]
+%\end{mmaCell}
+%
+%\begin{figure}[h!]
+%\centering
+%\frame{
+%	\includemovie[
+%		autoplay,
+%		poster,
+%		text={\phantom{}},
+%		text=(\emph{media/movie0.swf}),
+%		repeat
+%	]{0.75\textwidth}{0.45\linewidth}{media/movie0.swf}
+%}
+%\caption{Lorem ipsum dolor sit amet\label{figure_1}}
+%\end{figure}
+
+%\begin{mmaCell}[moredefined={T, contourLimits, membershipConditions, \
+%domain}]{Input}
+%
+%  T=\mmaFrac{1}{(x-2)^2+(z-12)^2+(y-2)^2};
+%
+%  
+%
+%  contourLimits=100;
+%
+%  membershipConditions=FunctionDomain[T,\{x,y,z\}];
+%
+%  domain=ImplicitRegion[membershipConditions,\{x,y,z\}];
+%
+%  Print["Domain:"];
+%
+%  RegionMember[domain,\{x,y,z\}]
+%
+%  Print["Domain Plot:"];
+%
+%  RegionPlot3D[
+%
+%\pmb{
+%  -4 \mmaFnc{x}+\mmaSup{\mmaFnc{x}}{2}-4
+%\mmaFnc{y}+\mmaSup{\mmaFnc{y}}{2}-24
+%\mmaFnc{z}+\mmaSup{\mmaFnc{z}}{2}\neq-152,
+%}
+%
+%  \{\mmaFnc{x},-contourLimits,contourLimits\},
+%
+%  \{\mmaFnc{y},-contourLimits,contourLimits\},
+%
+%  \{\mmaFnc{z},-contourLimits,contourLimits\},Axes\pmb{\to}True]
+%
+%  
+%
+%\end{mmaCell}
+
+
+
+\begin{mmaCell}{Print}
+
+  Domain:
+
+\end{mmaCell}
+
+
+
+\begin{mmaCell}[addtoindex=5]{Output}
+
+  (x|y|z)$\in$\mathbb{R}&&-4 x+\mmaSup{x}{2}-4 y+\mmaSup{y}{2}-24 z+\mmaSup{z}{2}$\neq$-152
+
+\end{mmaCell}
+
+
+
+\begin{mmaCell}{Print}
+
+  Domain Plot:
+
+\end{mmaCell}
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem II}\label{sec:P02}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem III}\label{sec:P03}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem IV}\label{sec:P04}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem V}\label{sec:P05}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem VI}\label{sec:P06}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem VII}\label{sec:P07}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem VIII}\label{sec:P08}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem IX}\label{sec:P09}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem X}\label{sec:P10}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem XI}\label{sec:P11}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+\section{Answer to Problem XII}\label{sec:P12}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------%
+% PRINT bibliography/references in a new page
+
+%\clearpage
+\printbibliography
+
+%----------------------------------------------------------------------------------------%
+
+\end{document}
+
+%----------------------------------------------------------------------------------------%
