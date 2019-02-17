@@ -108,90 +108,42 @@
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem I}\label{sec:P01}
 
-%\begin{mmaCell}[moredefined={SQRmatrixSize, matrixAentries, matrixA, \
-%i, j}]{Input}
-%SQRmatrixSize=10;
-%matrixAentries =Range[1,SQRmatrixSize*SQRmatrixSize];
-%matrixAentries=ArrayReshape[matrixAentries,\{SQRmatrixSize,SQRmatrixSize\}];
-%matrixA=Table[matrixAentries[[i,j]],\{i,1,SQRmatrixSize\},\{j,1,SQRmatrixSize\}];
-%MatrixForm[matrixA]
-%matrixA[[4, 9]]
-%\end{mmaCell}
-%
-%\begin{figure}[h!]
-%\centering
-%\frame{
-%	\includemovie[
-%		autoplay,
-%		poster,
-%		text={\phantom{}},
-%		text=(\emph{media/movie0.swf}),
-%		repeat
-%	]{0.75\textwidth}{0.45\linewidth}{media/movie0.swf}
-%}
-%\caption{Lorem ipsum dolor sit amet\label{figure_1}}
-%\end{figure}
+\subsection{}
+\begin{mmaCell}{Message}
+T:\mmaSup{R}{3}\(\pmb{\rightarrow}\)R given by T(x,y,z)=\mmaFrac{1}{\mmaSup{(x-2)}{2}+\mmaSup{(z-12)}{2}+\mmaSup{(x-2)}{2}}
+\mmaSub{D}{(T)}=\mmaSup{R}{3}
+\end{mmaCell}
 
-%\begin{mmaCell}[moredefined={T, contourLimits, membershipConditions, \
-%domain}]{Input}
-%
-%  T=\mmaFrac{1}{(x-2)^2+(z-12)^2+(y-2)^2};
-%
-%  
-%
-%  contourLimits=100;
-%
-%  membershipConditions=FunctionDomain[T,\{x,y,z\}];
-%
-%  domain=ImplicitRegion[membershipConditions,\{x,y,z\}];
-%
-%  Print["Domain:"];
-%
-%  RegionMember[domain,\{x,y,z\}]
-%
-%  Print["Domain Plot:"];
-%
-%  RegionPlot3D[
-%
-%\pmb{
-%  -4 \mmaFnc{x}+\mmaSup{\mmaFnc{x}}{2}-4
-%\mmaFnc{y}+\mmaSup{\mmaFnc{y}}{2}-24
-%\mmaFnc{z}+\mmaSup{\mmaFnc{z}}{2}\neq-152,
-%}
-%
-%  \{\mmaFnc{x},-contourLimits,contourLimits\},
-%
-%  \{\mmaFnc{y},-contourLimits,contourLimits\},
-%
-%  \{\mmaFnc{z},-contourLimits,contourLimits\},Axes\pmb{\to}True]
-%
-%  
-%
-%\end{mmaCell}
+\begin{mmaCell}[]{Input}
+T=\mmaFrac{1}{(x-2)^2+(z-12)^2+(y-2)^2};
 
+contourLimits=100;
+membershipConditions=FunctionDomain[T,\{x,y,z\}];
+domain=ImplicitRegion[membershipConditions,\{x,y,z\}];
 
+Print["Domain:"];
+RegionMember[domain,\{x,y,z\}]
+
+Print["Domain Plot:"];
+RegionPlot3D[
+-4 \mmaFnc{x}+\mmaSup{\mmaFnc{x}}{2}-4\mmaFnc{y}+\mmaSup{\mmaFnc{y}}{2}-24\mmaFnc{z}+\mmaSup{\mmaFnc{z}}{2}\(\pmb{\neq}\)-152,
+\{\mmaFnc{x},-contourLimits,contourLimits\},
+\{\mmaFnc{y},-contourLimits,contourLimits\},
+\{\mmaFnc{z},-contourLimits,contourLimits\},Axes\(\pmb{\to}\)True]
+\end{mmaCell}
 
 \begin{mmaCell}{Print}
-
-  Domain:
-
+Domain:
 \end{mmaCell}
 
-
-
-\begin{mmaCell}[addtoindex=5]{Output}
-
-  (x|y|z)$\in$\mathbb{R}&&-4 x+\mmaSup{x}{2}-4 y+\mmaSup{y}{2}-24 z+\mmaSup{z}{2}$\neq$-152
-
+\begin{mmaCell}[]{Output}
+(x|y|z)\(\in\mmaSup{R}\)&&-4 x+\mmaSup{x}{2}-4y+\mmaSup{y}{2}-24z+\mmaSup{z}{2}\(\neq\)-152
 \end{mmaCell}
-
-
 
 \begin{mmaCell}{Print}
-
-  Domain Plot:
-
+Domain Plot:
 \end{mmaCell}
+
 
 
 \clearpage
