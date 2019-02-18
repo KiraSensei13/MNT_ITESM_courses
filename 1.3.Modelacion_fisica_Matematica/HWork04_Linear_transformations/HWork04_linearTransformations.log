@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  17 FEB 2019 04:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  17 FEB 2019 18:30
 entering extended mode
 **./HWork04_linearTransformations.tex
 (HWork04_linearTransformations.tex
@@ -1748,13 +1748,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 401.
+LaTeX Warning: Empty bibliography on input line 435.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 439.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 439.
 (HWork04_linearTransformations.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 439.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 439.
 Package rerunfilecheck Info: File `HWork04_linearTransformations.out' has not c
 hanged.
 (rerunfilecheck)             Checksum: 6A4B45BC6618F0108B16443DAB38C232;1037.
@@ -1771,10 +1771,10 @@ Package logreq Info: Writing requests to 'HWork04_linearTransformations.run.xml
 
  ) 
 Here is how much of TeX's memory you used:
- 41450 strings out of 492946
- 783049 string characters out of 3126267
- 1283074 words of memory out of 3000000
- 44750 multiletter control sequences out of 15000+200000
+ 41454 strings out of 492946
+ 783073 string characters out of 3126267
+ 1283075 words of memory out of 3000000
+ 44754 multiletter control sequences out of 15000+200000
  543054 words of font info for 68 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  58i,23n,71p,840b,5337s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1801,7 +1801,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/oskat/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/oska
 t/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb>
-Output written on HWork04_linearTransformations.pdf (18 pages, 355080 bytes).
+Output written on HWork04_linearTransformations.pdf (18 pages, 356693 bytes).
 PDF statistics:
  313 PDF objects out of 1000 (max. 8388607)
  42 named destinations out of 1000 (max. 500000)
