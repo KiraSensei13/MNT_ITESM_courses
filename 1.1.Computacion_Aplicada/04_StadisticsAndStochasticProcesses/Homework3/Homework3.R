@@ -28,6 +28,7 @@ setwd("~/MNT_ITESM_courses/1.1.Computacion_Aplicada/04_StadisticsAndStochasticPr
 #install.packages('mclust', dependencies=TRUE);
 #install.packages('BSDA', dependencies=TRUE);
 #install.packages('VGAM', dependencies=TRUE);
+#install.packages('psych', dependencies=TRUE);
 
 # Load required libraries
 library(caret);
@@ -39,6 +40,7 @@ library(dplyr);
 library(VGAM);
 library(ellipse);
 library(gridExtra);
+library(psych);
 
 #*******************************************************************************
 #* PART 1 **********************************************************************
@@ -204,13 +206,8 @@ completeData = complete.cases(iris);
 # remove rows with incomplete data
 mydata = iris[completeData,];
 
-# Let's take a look to the data ...
-str(mydata);
-summary(mydata);
-pairs(mydata);
-#cor(mydata);
 
-head(mydata)
+# Let's take a look to the data ...
 
 species_labels <- mydata[,5]
 species_col <- c("#7DB0DD","#86B875","#E495A5")
@@ -224,3 +221,43 @@ legend(
   inset=0.02,
   legend = as.character(levels(species_labels)),
   fill = species_col)
+
+# create scatterplots, histograms & correlation coefficients
+pairs.panels(mydata[,-5],
+             gap=0,
+             bg=species_col[mydata$Species],
+             pch=21)
+
+summary(mydata)
+
+# #Data normalization and distance matrix
+# # variables that have larger values, they contribute more, and the entire clustering will be dominated by them. So to avoid that, what we do is we normalize all the variables so that the average is 0 and standard deviation is 1, so let's do that
+# z = mydata[,-5]
+# m = apply(z,2,mean)
+# s = apply(z,2,sd)
+# 
+# z = scale(z,center=m, scale=s)
+# mydata = cbind(data.frame(z), mydata[5]) # now all values are between -3 and 3
+# 
+# pairs.panels(mydata[,-5],
+#              gap=0,
+#              bg=species_col[mydata$Species],
+#              pch=21)
+# 
+# summary(mydata)
+
+#Gaussian clustering for iris data#
+
+# ...
+
+
+
+
+
+
+
+
+
+
+
+
