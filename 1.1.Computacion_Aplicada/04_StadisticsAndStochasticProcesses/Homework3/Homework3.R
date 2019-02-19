@@ -155,7 +155,6 @@ t.test(my2003data$Value,my2014data$Value,paired = TRUE);
 # If the p-value is inferior or equal to 0.05, we can conclude that the difference between the two paired samples are significantly different.
 
 Difference = my2014data$Value - my2003data$Value
-
 plot(Difference,
      pch = 16,
      ylab="Difference (my2014data$Value - my2003data$Value)")
