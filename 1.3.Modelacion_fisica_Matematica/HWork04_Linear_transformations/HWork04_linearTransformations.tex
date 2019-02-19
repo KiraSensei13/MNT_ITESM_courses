@@ -355,14 +355,48 @@ Range:
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem VII}\label{sec:P07}
 
+\begin{mmaCell}{Print}
+M:\mmaSup{R}{2}\(\pmb{\rightarrow}\)R given by M(x,y)=x+y+2
+a) Check M preserves sums
+let u=(a,b), v=(d,e) be elements of \mmaSup{\(\pmb{\mathbb{R}}\)}{2}
 
+M(u+v)=M((a,b)+(d,e))
+      =M(a+d,b+e)
+      =a+d+b+e+2
+
+M(u)+M(v)=M(a,b)+M(d,e)
+         =a+b+2+d+e+2
+         =a+b+d+e+4
+
+\boxed{ M is NOT a linear transformation since it does not preserve sums.}
+
+b) Check M preserves scalars
+no need to check ...
+\end{mmaCell}
 
 \clearpage
 
 %----------------------------------------------------------------------------------------%
 \section{Answer to Problem VIII}\label{sec:P08}
 
+\begin{mmaCell}{Print}
+Q:\mmaSup{R}{2}\(\pmb{\rightarrow}\)\mmaSup{R}{3} given by Q(x,y)=(x,y,\mmaSqrt{2}+\mmaSqrt{31})
+a) Check Q preserves sums
+let u=(a,b), v=(d,e) be elements of \mmaSup{\(\pmb{\mathbb{R}}\)}{2}
 
+Q(u+v)=Q((a,b)+(d,e))
+=Q(a+d,b+e)
+=(a+d,b+e,\mmaSqrt{2}+\mmaSqrt{31})
+
+Q(u)+Q(v)=Q(a,b)+Q(d,e)
+=(a,b,\mmaSqrt{2}+\mmaSqrt{31})+(d,e,\mmaSqrt{2}+\mmaSqrt{31})
+=(a+d,b+e,2 \mmaSqrt{2}+2 \mmaSqrt{31})
+
+\boxed{Q is NOT a linear transformation since it does not preserve sums.}
+
+b) Check Q preserves scalars
+no need to check ...
+\end{mmaCell}
 
 \clearpage
 

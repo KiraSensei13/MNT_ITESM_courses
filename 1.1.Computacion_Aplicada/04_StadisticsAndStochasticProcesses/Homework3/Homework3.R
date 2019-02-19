@@ -11,7 +11,8 @@
 #*     Homework 3
 #*
 #* NOTES :
-#*     - 
+#*     - http://sia.webpopix.org/mixtureModels.html#the-iris-data
+#*     - https://cran.r-project.org/web/packages/mclust/vignettes/mclust.html
 #*
 #* START DATE :
 #*     12 Feb 2019
@@ -26,6 +27,8 @@ setwd("~/MNT_ITESM_courses/1.1.Computacion_Aplicada/04_StadisticsAndStochasticPr
 #install.packages('mixtools', dependencies=TRUE);
 #install.packages('mclust', dependencies=TRUE);
 #install.packages('BSDA', dependencies=TRUE);
+#install.packages('VGAM', dependencies=TRUE);
+#install.packages('psych', dependencies=TRUE);
 
 # Load required libraries
 library(caret);
@@ -34,6 +37,10 @@ library(mixtools);
 library(mclust);
 library(ggplot2);
 library(dplyr);
+library(VGAM);
+library(ellipse);
+library(gridExtra);
+library(psych);
 
 #*******************************************************************************
 #* PART 1 **********************************************************************
@@ -91,12 +98,35 @@ summary(mydata);
 # Get only relevant variables
 # column | meaning
 # -------+--------
-#      4 | Year
+#      3 | Country
 #      5 | Value
-columnsOfInterest = c(4,5);
+columnsOfInterest = c(3,5);
 # remove columns with repeated data
 my2003data = my2003data[,columnsOfInterest];
 my2014data = my2014data[,columnsOfInterest];
+
+# When implementing a dependent t-test, both arguments shall have the same length, so let's remove the countries that dont appear in both datasets. (As we are dealing with paired samples)
+
+Countries2Keep   = my2003data$Country[my2003data$Country %in% my2014data$Country]
+Countries2Remove = my2003data$Country[!(my2003data$Country %in% my2014data$Country)]
+# let's remove from my2003data: Canada France Italy Korea New Zealand Switzerland United Kingdom Slovenia Colombia 
+interestIndex = my2003data$Country != "Canada" &
+                my2003data$Country != "France" &
+                my2003data$Country != "Italy" &
+                my2003data$Country != "Korea" &
+                my2003data$Country != "New Zealand" &
+                my2003data$Country != "Switzerland" &
+                my2003data$Country != "United Kingdom" &
+                my2003data$Country != "Slovenia" &
+                my2003data$Country != "Colombia";
+my2003data    = my2003data[interestIndex,];
+
+Countries2Keep   = my2014data$Country[my2014data$Country %in% my2003data$Country]
+Countries2Remove = my2014data$Country[!(my2014data$Country %in% my2003data$Country)]
+# let's remove from my2014data: Slovak Republic Estonia
+interestIndex = my2014data$Country != "Slovak Republic" &
+                my2014data$Country != "Estonia";
+my2014data    = my2014data[interestIndex,];
 
 # Let's take a look to the data ...
 str(my2003data);
@@ -106,39 +136,52 @@ str(my2014data);
 summary(my2014data);
 
 ## Statistical tests
+
+# Dependent t-test is to be implemented ...
+# AKA. paired samples t-test - the reasons are the following:
+#   * the data set contains the same subjects (countries) measured on the same variable twice (in 2003 and 2014).
+#   * if we have the same country measured twice, then we calcualte a difference score for each country,
+#   * and then the mean of the difference scores.
+#   * Notice that the t-value is the observed mean of the difference scores relative to a standard error, which is the difference we expect by chance due to sampling error.
+
 # Performs one and two sample t-tests on vectors of data.
-t.test(my2003data$Value,my2014data$Value);
-cat(sprintf("
-mean of my2003data$Value: 0.4727273 deaths
-mean of my2014data$Value: 0.2769231 deaths
-    per 100,000 population (standardised rates) due to Drug use disorders.
-\n"));
+t.test(my2003data$Value,my2014data$Value,paired = TRUE);
 
-# Calculate the percentage decrease
-decrease = 0.4727273 - 0.2769231;
-decrease = decrease*100 / 0.4727273;
+# Where t = (Observed - Expected) / StdError
+# Observed = Mean of difference values
+# Expected = Zero "no effect", to assume the null hypotesis is true
+# StdError = Standard error of the mean of the difference scores
 
-# Conclusion
-cat(sprintf("
-The deaths in 2014 are NOT significantly different than in 2003 as they only
-decreased by 41.42 percent - (less than 50 percent).
+# If the p-value is inferior or equal to 0.05, we can conclude that the difference between the two paired samples are significantly different.
 
-The statistical test implemented was \"T-test (with 2 Samples)\" as it
-contrasts the mean of two populations.
-\n"));
+Difference = my2014data$Value - my2003data$Value
+plot(Difference,
+     pch = 16,
+     ylab="Difference (my2014data$Value - my2003data$Value)")
+abline(0,0, col="#7DB0DD", lwd=2)
+# A simple plot of differences between one sample and the other.  Points below the blue line indicate observations where my2003data$Value is greater than my2014data$Value, that is where (my2014data$Value - my2003data$Value) is negative.
 
-# Performs one- and two-sample Wilcoxon tests on vectors of data; the latter is
-# also known as 'Mann-Whitney' test.
-#wilcox.test(my2003data$Value,my2014data$Value)
-# [WARNING] message:
-#   In wilcox.test.default(my2003data$Value, my2014data$Value) :
-#   cannot compute exact p-value with ties
+plot(my2003data$Value, my2014data$Value,
+     pch = 16,
+     xlab="my2003data$Value",
+     ylab="my2014data$Value")
+abline(0,1, col="#7DB0DD", lwd=2)
+# Plot of paired samples from a paired t-test.  Circles below or to the right of the blue one-to-one line indicate observations with a higher value for my2003data$Value than for my2014data$Value.
 
-# Test for association between paired samples, using one of Pearson's product
-# moment correlation coefficient, Kendall's tau or Spearman's rho.
-#cor.test(my2003data$Value,my2014data$Value)
-# [ERROR] in cor.test.default(my2003data$Value, my2014data$Value) : 
-#   'x' and 'y' must have the same length
+# On the other hand, t-test can be biased by sample size ...
+#   when the sample size is very large, the standard error is very small - So even a small observed difference may be stadistically significant
+
+# Since our sample size is 24, the magnitude of the effect is not significant - and therefore the t-test is not biased by the sample size
+
+x <- Difference
+h<-hist(x, breaks=50, col="#7DB0DD", xlab="Difference", 
+        main="Histogram of differences") 
+xfit<-seq(min(x),max(x),length=40) 
+yfit<-dnorm(xfit,mean=mean(x),sd=sd(x)) 
+yfit <- yfit*diff(h$mids[1:2])*length(x) 
+lines(xfit, yfit, col="#86B875", lwd=2)
+# Histogram of differences of two populations from a paired t-test.  Distribution of differences should be approximately normal.  Bins with negative values indicate observations with a higher value for my2003data$Value than for my2014data$Value.
+
 
 #*******************************************************************************
 #* PART 2 **********************************************************************
@@ -162,80 +205,58 @@ completeData = complete.cases(iris);
 # remove rows with incomplete data
 mydata = iris[completeData,];
 
+
 # Let's take a look to the data ...
-str(mydata);
-summary(mydata);
-pairs(mydata);
-#cor(mydata);
 
-###########################
+species_labels <- mydata[,5]
+species_col <- c("#7DB0DD","#86B875","#E495A5")
 
-mb = Mclust(mydata[,-5])
+pairs(mydata[,-5], col = species_col[species_labels],
+      lower.panel = NULL, cex.labels=2, pch=19, cex = 1)
+# "setosa"BLUE "versicolor"GREEN "virginica"RED
+par(xpd = TRUE)
+legend(
+  "bottomleft",
+  inset=0.02,
+  legend = as.character(levels(species_labels)),
+  fill = species_col)
 
-#or specify number of clusters
-mb3 = Mclust(mydata[,-5], 3)
+# create scatterplots, histograms & correlation coefficients
+pairs.panels(mydata[,-5],
+             gap=0,
+             bg=species_col[mydata$Species],
+             pch=21)
 
-# optimal selected model
-mb3$modelName
+summary(mydata)
 
-# optimal number of cluster
-mb3$G
-
-# probality for an observation to be in a given cluster
-head(mb3$z)
-
-# get probabilities, means, variances
-summary(mb3, parameters = TRUE)
-
-# Compare amount of the data within each cluster
-table(iris$Species, mb$classification)
-# vs
-table(iris$Species, mb3$classification)
-
-# After the data is fit into the model, we plot the model based on clustering results.
-plot(mb3, "classification")
-# The types of what argument are: "BIC", "classification", "uncertainty", "density". By default, all the above graphs are produced.
-
-# Let's plot estimated density. Contour plot
-plot(mb3, "density")
-plot(mb3, "uncertainty")
-
-# You can also use the summary() function to obtain the most likely model and the most possible number of clusters.
-summary(mb3)
-
-###########################
-
-# #There is data from 3 Species
-# #Let's convert the Species data into a factor
-# # 1:setosa
-# # 2:versicolor
-# # 3:virginica
-# mydata$Species = factor(as.numeric(mydata$Species))
+# #Data normalization and distance matrix
+# # variables that have larger values, they contribute more, and the entire clustering will be dominated by them. So to avoid that, what we do is we normalize all the variables so that the average is 0 and standard deviation is 1, so let's do that
+# z = mydata[,-5]
+# m = apply(z,2,mean)
+# s = apply(z,2,sd)
 # 
-# measurements =
-#   mydata$Sepal.Length +
-#   mydata$Sepal.Width +
-#   mydata$Petal.Length +
-#   mydata$Petal.Width;
-# hist(measurements)
+# z = scale(z,center=m, scale=s)
+# mydata = cbind(data.frame(z), mydata[5]) # now all values are between -3 and 3
 # 
-# # Gaussian Mixture Model (GMM)
-# # normalmixEM() K indica la cantidad de estados ocultos que queremos usar
-# # EM indica el uso del algoritmo de esperanza maximización
-# mixmdl <- normalmixEM(measurements,k=3);
-# summary(mixmdl); # lambda significa la proporción que hay en cada grupo
+# pairs.panels(mydata[,-5],
+#              gap=0,
+#              bg=species_col[mydata$Species],
+#              pch=21)
 # 
-# # mixtools sobreescribe la función plot
-# # Con el valor 2 indicamos que queremos imprimir las curvas de densidad
-# plot(mixmdl,whichplots=2) 
-# lines(density(measurements), lty=2, lwd=2)
-# 
-# # Análisis bidimensional
-# colBind = as.data.frame(cbind(measurements,mydata$Species))
-# names(colBind) <- c("measurements","Species")
-# 
-# plot(colBind)
-# mixmv <- mvnormalmixEM(colBind,k=3)
-# summary(mixmv)
-# plot(mixmv,which=2)
+# summary(mydata)
+
+#Gaussian clustering for iris data#
+
+# ...
+
+
+
+
+
+
+
+
+
+
+
 
