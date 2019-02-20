@@ -117,4 +117,20 @@ C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 
 /******************************************************************************/
 
+# #Data normalization
+# # variables that have larger values, they contribute more, and the entire clustering will be dominated by them. So to avoid that, what we do is we normalize all the variables so that the average is 0 and standard deviation is 1, so let's do that
+# z = mydata[,-5]
+# m = apply(z,2,mean)
+# s = apply(z,2,sd)
+# 
+# z = scale(z,center=m, scale=s)
+# mydata = cbind(data.frame(z), mydata[5]) # now all values are between -3 and 3
+# 
+# pairs.panels(mydata[,-5],
+#              gap=0,
+#              bg=species_col[mydata$Species],
+#              pch=21)
+# 
+# summary(mydata)
 
+/******************************************************************************/

@@ -15,7 +15,7 @@
 #*     - https://cran.r-project.org/web/packages/mclust/vignettes/mclust.html
 #*
 #* START DATE :
-#*     12 Feb 2019
+#*     18 Feb 2019
 #*******************************************************************************
 
 # Set worging directory to source file location
@@ -204,30 +204,9 @@ completeData = complete.cases(iris);
 # remove rows with incomplete data
 mydata = iris[completeData,];
 
-
-# Let's take a look to the data ...
-
 species_labels <- mydata[,5]
 species_data <- mydata[,-5]
 species_col <- c("#7DB0DD","#86B875","#E495A5")
-
-pairs(species_data, col = species_col[species_labels],
-      lower.panel = NULL, cex.labels=2, pch=19, cex = 1)
-# "setosa"BLUE "versicolor"GREEN "virginica"RED
-par(xpd = TRUE)
-legend(
-  "bottomleft",
-  inset=0.02,
-  legend = as.character(levels(species_labels)),
-  fill = species_col)
-
-# create scatterplots, histograms & correlation coefficients
-pairs.panels(species_data,
-             gap=0,
-             bg=species_col[mydata$Species],
-             pch=21)
-
-summary(mydata)
 
 # let's use "EM ALGORITHM FOR MIXURES OF MULTIVARIATE NORMALS" to cluster values into 3 classes
 
@@ -239,10 +218,12 @@ mean(r.km$cluster!=as.numeric(mydata$Species))*100
 # Let us know fit a mixture of three multidimensional Gaussian distributions. The model assumes the same variance covariance matrix for the three distributions (arbvar=FALSE). Initial centers are those given by the kmeans procedure.
 library(mixtools)
 c0 <- list(r.km$centers[1,], r.km$centers[2,], r.km$centers[3,])
-mixmdl <- mvnormalmixEM(mydata[,1:4], mu=c0, arbvar=FALSE)
+mixmdl <- mvnormalmixEM(species_data, mu=c0, arbvar=FALSE)
 summary(mixmdl) # lambda is the proportion of each cluster
 
 # Let's plot
+
+#CLUSTER PLOTS#
 detach(package:mixtools)
 plotClusters <- function(j1,j2){
   Species <- levels(mydata$Species)
@@ -252,33 +233,36 @@ plotClusters <- function(j1,j2){
     c=mixmdl$mu[[g]][c(j1,j2)]
     df_ell <- rbind(df_ell, cbind(as.data.frame(ellipse(M,centre=c, level=0.68)), group=Species[g]))
   }
-  pl1 <- ggplot(data=mydata) + geom_point(aes_string(x=mydata[,j1],y=mydata[,j2], colour=species_labels)) + 
+  pl0 <- ggplot(data=mydata) +
+    geom_point(aes_string(x=mydata[,j1],y=mydata[,j2], colour=species_labels)) + 
     theme(legend.position="bottom") +xlab(names(mydata)[j1])+ylab(names(mydata)[j2]) +
     geom_path(data=df_ell, aes(x=x, y=y,color=group), size=1, linetype=1)
-  return(pl1)
+  return(pl0)
 }
-plotClusters(1,2) # Sepal.Length vs Sepal.Width
-plotClusters(1,3) # Sepal.Length vs Petal.Length
-plotClusters(1,4) # Sepal.Length vs Petal.Width
-plotClusters(2,3) # Sepal.Width vs Petal.Length
-plotClusters(2,4) # Sepal.Width vs Petal.Width
-plotClusters(3,4) # Petal.Length vs Petal.Width
+pl1 <- plotClusters(2,1) # Sepal.Width vs Sepal.Length
+pl2 <- plotClusters(3,1) # Petal.Length vs Sepal.Length
+pl3 <- plotClusters(4,1) # Petal.Width vs Sepal.Length
+pl4 <- plotClusters(3,2) # Petal.Length vs Sepal.Width
+pl5 <- plotClusters(4,2) # Petal.Width vs Sepal.Width
+pl6 <- plotClusters(4,3) # Petal.Width vs Petal.Length
+grid.arrange(pl1,pl2,pl3,pl4,pl5,pl6, layout_matrix = rbind(c(1,2,3),c(4,5,6)))
 
-# #Data normalization
-# # variables that have larger values, they contribute more, and the entire clustering will be dominated by them. So to avoid that, what we do is we normalize all the variables so that the average is 0 and standard deviation is 1, so let's do that
-# z = mydata[,-5]
-# m = apply(z,2,mean)
-# s = apply(z,2,sd)
-# 
-# z = scale(z,center=m, scale=s)
-# mydata = cbind(data.frame(z), mydata[5]) # now all values are between -3 and 3
-# 
-# pairs.panels(mydata[,-5],
-#              gap=0,
-#              bg=species_col[mydata$Species],
-#              pch=21)
-# 
-# summary(mydata)
+#DENSITY PLOTS#
+plotDensities <- function(n){
+  pl0 <- ggplot(mydata, aes(x=mydata[,n], color=Species, fill=Species)) +
+    geom_histogram(aes(y=..density..), alpha=0.5, position="identity")+
+    geom_density(alpha=.2)+
+    labs(title=names(mydata)[n],x="Value", y = "Density")
+  return(pl0)
+}
+pl1 <- plotDensities(1)
+pl2 <- plotDensities(2)
+pl3 <- plotDensities(3)
+pl4 <- plotDensities(4)
+grid.arrange(pl1,pl2,pl3,pl4, layout_matrix = rbind(c(1,2),c(3,4)))
+
+ggplot(data = mydata, aes(x = Species, y = Petal.Length)) + geom_boxplot()
+
 
 
 
