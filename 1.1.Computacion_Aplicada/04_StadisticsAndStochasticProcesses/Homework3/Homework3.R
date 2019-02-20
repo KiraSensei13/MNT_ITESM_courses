@@ -33,7 +33,6 @@ setwd("~/MNT_ITESM_courses/1.1.Computacion_Aplicada/04_StadisticsAndStochasticPr
 # Load required libraries
 library(caret);
 library(datasets);
-library(mixtools);
 library(mclust);
 library(ggplot2);
 library(dplyr);
@@ -209,9 +208,10 @@ mydata = iris[completeData,];
 # Let's take a look to the data ...
 
 species_labels <- mydata[,5]
+species_data <- mydata[,-5]
 species_col <- c("#7DB0DD","#86B875","#E495A5")
 
-pairs(mydata[,-5], col = species_col[species_labels],
+pairs(species_data, col = species_col[species_labels],
       lower.panel = NULL, cex.labels=2, pch=19, cex = 1)
 # "setosa"BLUE "versicolor"GREEN "virginica"RED
 par(xpd = TRUE)
@@ -222,7 +222,7 @@ legend(
   fill = species_col)
 
 # create scatterplots, histograms & correlation coefficients
-pairs.panels(mydata[,-5],
+pairs.panels(species_data,
              gap=0,
              bg=species_col[mydata$Species],
              pch=21)
@@ -233,30 +233,36 @@ summary(mydata)
 
 # Ignoring the known labels (species) of theFisher Iris data, let us identify three clusters with the k-means method and compute the missclassification rate:
 set.seed(1234) # labels are the original ones with this seed (avoid permutation)
-r.km <- kmeans(mydata[,1:4], centers=3)
+r.km <- kmeans(species_data, centers=3)
 mean(r.km$cluster!=as.numeric(mydata$Species))*100
 
 # Let us know fit a mixture of three multidimensional Gaussian distributions. The model assumes the same variance covariance matrix for the three distributions (arbvar=FALSE). Initial centers are those given by the kmeans procedure.
+library(mixtools)
 c0 <- list(r.km$centers[1,], r.km$centers[2,], r.km$centers[3,])
 mixmdl <- mvnormalmixEM(mydata[,1:4], mu=c0, arbvar=FALSE)
 summary(mixmdl) # lambda is the proportion of each cluster
 
-
 # Let's plot
 detach(package:mixtools)
-Species <- levels(mydata$Species)
-j1=1;  j2=2
-df_ell <- data.frame()
-for(g in (1:3)){
-  M=mixmdl$sigma[c(j1,j2),c(j1,j2)]
-  c=mixmdl$mu[[g]][c(j1,j2)]
-  df_ell <- rbind(df_ell, cbind(as.data.frame(ellipse(M,centre=c, level=0.68)), group=Species[g]))
+plotClusters <- function(j1,j2){
+  Species <- levels(mydata$Species)
+  df_ell <- data.frame()
+  for(g in (1:3)){
+    M=mixmdl$sigma[c(j1,j2),c(j1,j2)]
+    c=mixmdl$mu[[g]][c(j1,j2)]
+    df_ell <- rbind(df_ell, cbind(as.data.frame(ellipse(M,centre=c, level=0.68)), group=Species[g]))
+  }
+  pl1 <- ggplot(data=mydata) + geom_point(aes_string(x=mydata[,j1],y=mydata[,j2], colour=species_labels)) + 
+    theme(legend.position="bottom") +xlab(names(mydata)[j1])+ylab(names(mydata)[j2]) +
+    geom_path(data=df_ell, aes(x=x, y=y,color=group), size=1, linetype=1)
+  return(pl1)
 }
-pl1 <- ggplot(data=mydata) + geom_point(aes_string(x=mydata[,j1],y=mydata[,j2], colour=mydata[,5])) + 
-  theme(legend.position="bottom") +xlab(names(mydata)[j1])+ylab(names(mydata)[j2]) +
-  geom_path(data=df_ell, aes(x=x, y=y,color=group), size=1, linetype=1) 
-pl1
-
+plotClusters(1,2) # Sepal.Length vs Sepal.Width
+plotClusters(1,3) # Sepal.Length vs Petal.Length
+plotClusters(1,4) # Sepal.Length vs Petal.Width
+plotClusters(2,3) # Sepal.Width vs Petal.Length
+plotClusters(2,4) # Sepal.Width vs Petal.Width
+plotClusters(3,4) # Petal.Length vs Petal.Width
 
 # #Data normalization
 # # variables that have larger values, they contribute more, and the entire clustering will be dominated by them. So to avoid that, what we do is we normalize all the variables so that the average is 0 and standard deviation is 1, so let's do that
