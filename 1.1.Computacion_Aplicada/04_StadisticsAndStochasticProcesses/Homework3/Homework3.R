@@ -229,7 +229,36 @@ pairs.panels(mydata[,-5],
 
 summary(mydata)
 
-# #Data normalization and distance matrix
+# let's use "EM ALGORITHM FOR MIXURES OF MULTIVARIATE NORMALS" to cluster values into 3 classes
+
+# Ignoring the known labels (species) of theFisher Iris data, let us identify three clusters with the k-means method and compute the missclassification rate:
+set.seed(1234) # labels are the original ones with this seed (avoid permutation)
+r.km <- kmeans(mydata[,1:4], centers=3)
+mean(r.km$cluster!=as.numeric(mydata$Species))*100
+
+# Let us know fit a mixture of three multidimensional Gaussian distributions. The model assumes the same variance covariance matrix for the three distributions (arbvar=FALSE). Initial centers are those given by the kmeans procedure.
+c0 <- list(r.km$centers[1,], r.km$centers[2,], r.km$centers[3,])
+mixmdl <- mvnormalmixEM(mydata[,1:4], mu=c0, arbvar=FALSE)
+summary(mixmdl) # lambda is the proportion of each cluster
+
+
+# Let's plot
+detach(package:mixtools)
+Species <- levels(mydata$Species)
+j1=1;  j2=2
+df_ell <- data.frame()
+for(g in (1:3)){
+  M=mixmdl$sigma[c(j1,j2),c(j1,j2)]
+  c=mixmdl$mu[[g]][c(j1,j2)]
+  df_ell <- rbind(df_ell, cbind(as.data.frame(ellipse(M,centre=c, level=0.68)), group=Species[g]))
+}
+pl1 <- ggplot(data=mydata) + geom_point(aes_string(x=mydata[,j1],y=mydata[,j2], colour=mydata[,5])) + 
+  theme(legend.position="bottom") +xlab(names(mydata)[j1])+ylab(names(mydata)[j2]) +
+  geom_path(data=df_ell, aes(x=x, y=y,color=group), size=1, linetype=1) 
+pl1
+
+
+# #Data normalization
 # # variables that have larger values, they contribute more, and the entire clustering will be dominated by them. So to avoid that, what we do is we normalize all the variables so that the average is 0 and standard deviation is 1, so let's do that
 # z = mydata[,-5]
 # m = apply(z,2,mean)
@@ -245,9 +274,7 @@ summary(mydata)
 # 
 # summary(mydata)
 
-#Gaussian clustering for iris data#
 
-# ...
 
 
 
