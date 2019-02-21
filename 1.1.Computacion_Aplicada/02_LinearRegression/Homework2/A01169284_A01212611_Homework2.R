@@ -1,13 +1,13 @@
 #************************************************************************
 #* AUTHOR(S) :
-#*     Bruno Gonz√°lez Soria          (A01169284)
+#*     Bruno Gonz·lez Soria          (A01169284)
 #*     Antonio Osamu Katagiri Tanaka (A01212611)
 #*
 #* FILENAME :
 #*     Homework2.R
 #*
 #* DESCRIPTION :
-#*     Computaci√≥n Aplicada (Ene 19 Gpo 1)
+#*     ComputaciÛnn Aplicada (Ene 19 Gpo 1)
 #*     Homework 2
 #*
 #* NOTES :
@@ -34,6 +34,15 @@ data(pima)
 completeData = complete.cases(pima)
 # remove rows with incomplete data
 mydata = pima[completeData, ]
+
+# remove rows containing zeros
+filter <- with(mydata,
+               glucose   > 0 &
+               diastolic > 0 &
+               triceps   > 0 &
+               insulin   > 0 &
+               bmi       > 0)
+mydata <- mydata[filter,]
 
 #Let's take a look to the data ...
 str(mydata)
@@ -146,3 +155,4 @@ lmFitModel = lm(formula = gamble ~ income + income:sex, data = mydata)
 # * ANCOVA, ANOVA, simple regression, logistic regression
 # * Justify your answer
 sprintf("ANCOVA, since the predictors are a mixture of quantitative and qualitative.")
+
