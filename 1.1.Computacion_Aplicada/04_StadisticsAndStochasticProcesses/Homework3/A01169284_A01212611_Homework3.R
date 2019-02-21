@@ -21,16 +21,16 @@
 #*******************************************************************************
 
 # Set worging directory to source file location
-setwd("~/MNT_ITESM_courses/1.1.Computacion_Aplicada/04_StadisticsAndStochasticProcesses/Homework3");
+setwd("C:/Git/MNT_ITESM_courses/1.1.Computacion_Aplicada/04_StadisticsAndStochasticProcesses/Homework3");
 
 # Install required libraries
-#install.packages('e1071', dependencies=TRUE);
-#install.packages('caret', dependencies=TRUE);
-#install.packages('mixtools', dependencies=TRUE);
-#install.packages('mclust', dependencies=TRUE);
-#install.packages('BSDA', dependencies=TRUE);
-#install.packages('VGAM', dependencies=TRUE);
-#install.packages('psych', dependencies=TRUE);
+# install.packages('e1071', dependencies=TRUE);
+# install.packages('caret', dependencies=TRUE);
+# install.packages('mixtools', dependencies=TRUE);
+# install.packages('mclust', dependencies=TRUE);
+# install.packages('BSDA', dependencies=TRUE);
+# install.packages('VGAM', dependencies=TRUE);
+# install.packages('psych', dependencies=TRUE);
 
 # Load required libraries
 library(caret);
@@ -50,6 +50,10 @@ library(psych);
 # the deaths in 2014 are significantly different than in 2003. (50%)
 # * Justify the answer and the use of the statistical test
 
+# From the problem we establish the Null hypothesis to be statistically the same
+# in 2003 and 2004. The altern hypothesis is that the deaths in 2014 are
+# significantly different than in 2003.
+
 # Load the Dataset.csv
 mydata = read.csv("Dataset.csv");
 
@@ -58,7 +62,7 @@ mydata = read.csv("Dataset.csv");
 completeData = complete.cases(mydata);
 # remove rows with incomplete data
 mydata = mydata[completeData,];
-
+head(mydata)
 # Get only relevant variables (Not repeated data accross columns)
 # column | meaning
 # -------+--------
@@ -70,18 +74,21 @@ mydata = mydata[completeData,];
 columnsOfInterest = c(2,4,6,8,9);
 # remove columns with repeated data
 mydata = mydata[,columnsOfInterest];
-
+head(mydata)
 # Only the counts related to "Drug use disorders"
 # levels(mydata$Variable) #print the available values in column "Variable"
 interestIndex = mydata$Variable == "Drug use disorders";
 mydata        = mydata[interestIndex,];
-
+head(mydata)
 # Only the counts related to "Deaths per 100 000 population (standardised
 # rates)"
 # levels(mydata$Measure) #print the available values in column "Measure"
-interestIndex =
-  mydata$Measure == "Deaths per 100 000 population (standardised rates)";
-mydata        = mydata[interestIndex,];
+interestIndex = mydata$Measure == "Deaths per 100 000 population (standardised rates)";
+mydata = mydata[interestIndex,];
+
+# Let's take a look to the data ...
+str(mydata);
+summary(mydata);
 
 # Only the counts related to "2003"
 # levels(mydata$Year) #print the available values in column "Year"
@@ -93,15 +100,12 @@ my2003data    = mydata[interestIndex,];
 interestIndex = mydata$Year == 2014;
 my2014data    = mydata[interestIndex,];
 
-# Let's take a look to the data ...
-str(mydata);
-summary(mydata);
-
 # Get only relevant variables
 # column | meaning
 # -------+--------
 #      3 | Country
 #      5 | Value
+
 columnsOfInterest = c(3,5);
 # remove columns with repeated data
 my2003data = my2003data[,columnsOfInterest];
@@ -111,12 +115,23 @@ my2014data = my2014data[,columnsOfInterest];
 # length, so let's remove the countries that dont appear in both datasets. (As
 # we are dealing with paired samples)
 
-Countries2Keep   =
-  my2003data$Country[my2003data$Country %in% my2014data$Country]
-Countries2Remove =
-  my2003data$Country[!(my2003data$Country %in% my2014data$Country)]
+Countries2Keep   =  my2003data$Country[my2003data$Country %in% my2014data$Country]
+Countries2Remove =  my2003data$Country[!(my2003data$Country %in% my2014data$Country)]
 # let's remove from my2003data: Canada France Italy Korea New Zealand
 # Switzerland United Kingdom Slovenia Colombia 
+
+summary(my2003data)
+summary(my2014data)
+
+# When implementing a dependent t-test, both arguments shall have the same length, so let's remove the countries that dont appear in both datasets. (As we are dealing with paired samples)
+# Finding countries to remove from the 2003 set:
+Countries2Keep   = my2003data$Country[my2003data$Country %in% my2014data$Country]
+Countries2Keep
+Countries2Remove = my2003data$Country[!(my2003data$Country %in% my2014data$Country)]
+Countries2Remove
+
+# let's remove from my2003data: Canada France Italy Korea New Zealand Switzerland United Kingdom Slovenia Colombia 
+
 interestIndex = my2003data$Country != "Canada" &
                 my2003data$Country != "France" &
                 my2003data$Country != "Italy" &
@@ -128,10 +143,11 @@ interestIndex = my2003data$Country != "Canada" &
                 my2003data$Country != "Colombia";
 my2003data    = my2003data[interestIndex,];
 
-Countries2Keep   =
-  my2014data$Country[my2014data$Country %in% my2003data$Country]
-Countries2Remove =
-  my2014data$Country[!(my2014data$Country %in% my2003data$Country)]
+# Finding countries to remove from the 2014 set:
+Countries2Keep   = my2014data$Country[my2014data$Country %in% my2003data$Country]
+Countries2Remove = my2014data$Country[!(my2014data$Country %in% my2003data$Country)]
+Countries2Remove
+
 # let's remove from my2014data: Slovak Republic Estonia
 interestIndex = my2014data$Country != "Slovak Republic" &
                 my2014data$Country != "Estonia";
@@ -188,23 +204,26 @@ abline(0,1, col="#7DB0DD", lwd=2)
 # my2003data$Value than for my2014data$Value.
 
 # On the other hand, t-test can be biased by sample size ...
-#   when the sample size is very large, the standard error is very small - So
-#   even a small observed difference may be stadistically significant
+# When the sample size is very large, the standard error is very small - So
+# even a small observed difference may be stadistically significant.
 
 # Since our sample size is 24, the magnitude of the effect is not significant
-# Therefore the t-test is not biased by the sample size
+# Therefore the t-test is not biased by the sample size.
 
 x <- Difference
-h<-hist(x, breaks=50, col="#7DB0DD", xlab="Difference", 
+h <- hist(x, breaks=50, col="#7DB0DD", xlab="Difference", 
         main="Histogram of differences") 
-xfit<-seq(min(x),max(x),length=40) 
-yfit<-dnorm(xfit,mean=mean(x),sd=sd(x)) 
+xfit <- seq(min(x),max(x),length=24) 
+yfit <- dnorm(xfit,mean=mean(x),sd=sd(x)) 
 yfit <- yfit*diff(h$mids[1:2])*length(x) 
 lines(xfit, yfit, col="#86B875", lwd=2)
-# Histogram of differences of two populations from a paired t-test.Distribution
+
+# Histogram of differences of two populations from a paired t-test.  Distribution
 # of differences should be approximately normal.  Bins with negative values
-# indicate observations with a higher value for my2003data$Value than for
-# my2014data$Value.
+#indicate observations with a higher value for my2003data$Value than for my2014da
+# a$Value.
+# There is enough evidence to reject the Null Hypothesis, thus the deaths in 2014
+# are significantly different than in 2003.
 
 
 #*******************************************************************************
@@ -229,6 +248,7 @@ completeData = complete.cases(iris);
 # remove rows with incomplete data
 mydata = iris[completeData,];
 
+# Let's take a look to the data ...
 species_labels <- mydata[,5]
 species_data <- mydata[,-5]
 species_col <- c("#7DB0DD","#86B875","#E495A5")
@@ -236,9 +256,11 @@ species_col <- c("#7DB0DD","#86B875","#E495A5")
 # let's use "EM ALGORITHM FOR MIXURES OF MULTIVARIATE NORMALS" to cluster values
 # into 3 classes
 
-# Ignoring the known labels (species) of theFisher Iris data, let us identify
+# Ignoring the known labels (species) of the Fisher Iris data, let us identify
 # three clusters with the k-means method and compute the missclassification rate
-set.seed(1234) # labels are the original ones with this seed (avoid permutation)
+set.seed(1234)
+
+# labels are the original ones with this seed (avoid permutation)
 r.km <- kmeans(species_data, centers=3)
 mean(r.km$cluster!=as.numeric(mydata$Species))*100
 
@@ -257,7 +279,6 @@ pred <- mapvalues(pred,
                   from = c("1", "2", "3"),
                   to   = c("setosa", "versicolor", "virginica"))
 table(species_labels, pred)
-
 
 # Let's plot
 
