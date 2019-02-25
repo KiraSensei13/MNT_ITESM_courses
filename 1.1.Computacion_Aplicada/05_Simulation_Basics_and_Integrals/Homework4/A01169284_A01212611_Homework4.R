@@ -12,6 +12,9 @@
 #*
 #* NOTES :
 #*     - https://www.math.ubc.ca/~pwalls/math-python/integration/riemann-sums/
+#*     - https://activecalculus.org/multi/S-11-1-Double-Integrals-Rectangles.html
+#*     - http://math.colgate.edu/faculty/valente/math113/supplements/section151handout.pdf
+#*     - http://hplgit.github.io/Programming-for-Computations/pub/p4c/p4c-sphinx-Python/._pylight004.html
 #*
 #* START DATE :
 #*     21 Feb 2019
@@ -42,10 +45,12 @@ integralPlot <- function(f, a, b, from = a, to = b, title = NULL) {
           col = adjustcolor("#7DB0DD", alpha.f = 0.3))
   }
 
+
 # PART 2 #######################################################################
 # RIEMANN SUMS FUNCTION
 
 riemann_sum <- function(f,a,b,n) {
+  
   # initialize values
   lower.sum <- 0;
   upper.sum <- 0;
@@ -116,3 +121,44 @@ integralPlot(f=f3, a=-2, b=2, title=expression(exp(x+x^2)))
 # f.x = expression (exp(x + x^2))
 # x = 1.01+step
 # eval(f.x)*step
+
+
+# PART 4 #######################################################################
+# RIEMANN SUMS 2D FUNCTION
+
+riemann_sum_2d <- function(f,a,b,c,d,nx,ny) {
+  
+  # initialize values
+  dx = (b-a)/nx
+  s = 0.0
+  x = a
+  
+  dy = (d-c)/ny
+  y = c
+  
+  # riemann 2D sum
+  for (i in 1:nx) {
+    for (j in 1:ny) {
+      x = a + dx/2 + i*dx
+      y = c + dy/2 + j*dy
+      f_i = f(x,y)
+      s = s + f_i*dx*dy
+    }
+  }
+  
+  # print/get riemann sum
+  cat(sprintf("The true value is around %f.\n",
+              as.double(s)));
+  return(s);
+}
+
+# -----
+
+f4 <- function(x,y) {
+  res = exp((x+y)^2);
+  return(res);
+}
+
+# -----
+
+riemann_sum_2d(f4,0,1,0,1,1000,1000)
