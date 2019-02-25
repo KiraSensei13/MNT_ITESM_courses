@@ -15,106 +15,254 @@
 #*     - https://activecalculus.org/multi/S-11-1-Double-Integrals-Rectangles.html
 #*     - http://math.colgate.edu/faculty/valente/math113/supplements/section151handout.pdf
 #*     - http://hplgit.github.io/Programming-for-Computations/pub/p4c/p4c-sphinx-Python/._pylight004.html
+#*     - https://rstudio-pubs-static.s3.amazonaws.com/131664_1858eec97df54c9b8d5edcd8b22e5818.html
 #*
 #* START DATE :
 #*     21 Feb 2019
 #*******************************************************************************
 
+# Install required libraries
+#install.packages('pracma', dependencies=TRUE);
+
 # Plotting the Areas under Curves ##############################################
-integralPlot <- function(f, a, b, from = a, to = b, title = NULL) {
+integralPlot <- function(f,
+                         a,
+                         b,
+                         from = a,
+                         to = b,
+                         title = NULL) {
+  # Plot the area under a function over the interval [a,b] between [from,to].
+  #
+  # Parameters
+  # ----------
+  # f : function
+  # funtion to be ploted
+  # a , b : numeric
+  # Endpoints of the integral interval [a, b]
+  # from , to : numeric
+  # Endpoints of the plot in the x-axis [x min, x max]
+  # title : expression
+  # title of the plot
+  #
+  # Returns
+  # -------
+  # void
+  
   x <- seq(from, to, length.out = 100) # input continuum
   y <- f(x) # output
   
   # plot the curve
-  plot(x, y,
-       xlim = c(from, to),
-       ylim = c(ifelse(min(y) < 0, min(y), 0), max(y)),
-       xlab = "x",
-       ylab = "f(x)",
-       main = title,
-       col.main = "#86B875",
-       type = "l",
-       lwd = 3,
-       col = "#86B875")
+  plot(
+    x,
+    y,
+    xlim = c(from, to),
+    ylim = c(ifelse(min(y) < 0, min(y), 0), max(y)),
+    xlab = "x",
+    ylab = "f(x)",
+    main = title,
+    col.main = "#86B875",
+    type = "l",
+    lwd = 3,
+    col = "#86B875"
+  )
   
   # area under the curve
   x <- seq(a, b, length.out = 100)
   y <- f(x)
-  polygon(c(x, b, a, a), c(y, 0, 0, f(a)),
-          border = adjustcolor("#7DB0DD", alpha.f = 0.3),
-          col = adjustcolor("#7DB0DD", alpha.f = 0.3))
-  }
+  polygon(
+    c(x, b, a, a),
+    c(y, 0, 0, f(a)),
+    border = adjustcolor("#7DB0DD", alpha.f = 0.3),
+    col = adjustcolor("#7DB0DD", alpha.f = 0.3)
+  )
+}
+
+# PART 1 #######################################################################
+# TAYLOR SERIES
+
+library(pracma)
+
+taylorPlot <- function(f, c, from, to) {
+  # Plot the Taylor approximations up to the 2nd, 4th, 6th and 8th terms
+  #
+  # Parameters
+  # ----------
+  # f : function
+  # Vectorized function of one variable
+  # c : numeric
+  # point where the series expansion will take place
+  # from, to : numeric
+  # Interval of points to be ploted
+  #
+  # Returns
+  # -------
+  # void
+  
+  x <- seq(from, to, length.out = 100)
+  yf <- f(x)
+  
+  yp2 <- polyval(taylor(f, c, 2), x)
+  yp4 <- polyval(taylor(f, c, 4), x)
+  yp6 <- polyval(taylor(f, c, 6), x)
+  yp8 <- polyval(taylor(f, c, 8), x)
+  
+  plot(
+    x,
+    yf,
+    xlab = "x",
+    ylab = "f(x)",
+    type = "l",
+    main = ' Taylor Series Approximation of f(x) ',
+    col = "black",
+    lwd = 2
+  )
+  
+  lines(x, yp2, col = "#c8e6c9")
+  lines(x, yp4, col = "#81c784")
+  lines(x, yp6, col = "#4caf50")
+  lines(x, yp8, col = "#388e3c")
+  
+  legend(
+    'topleft',
+    inset = .05,
+    legend = c("TS 8 terms", "TS 6 terms", "TS 4 terms", "TS 2 terms", "f(x)"),
+    col = c('#388e3c', '#4caf50', '#81c784', '#c8e6c9', 'black'),
+    lwd = c(1),
+    bty = 'n',
+    cex = .75
+  )
+}
+
+# -----
+
+f0 <- function(x) {
+  res = sin(x)
+
+  return(res)
+
+}
+
+f1 <- function(x) {
+  res = exp(complex(real = 0, imaginary = 1)*x)
+  
+  return(res)
+  
+}
+
+# -----
+
+taylorPlot(f0, 0, -6.6, 6.6)
+taylorPlot(f1, 1, -2*pi, 2*pi)
 
 
 # PART 2 #######################################################################
 # RIEMANN SUMS FUNCTION
 
-riemann_sum <- function(f,a,b,n) {
+riemann_sum <- function(f, a, b, n) {
+  # Compute the Riemann sum of f(x) over the interval [a,b].
+  #
+  # Parameters
+  # ----------
+  # f : function
+  # Vectorized function of one variable
+  # a , b : numeric
+  # Endpoints of the interval [a,b]
+  # n : numeric
+  # Number of subintervals of equal length in the partition of [a,b]
+  #
+  # Returns
+  # -------
+  # numeric
+  # Underestimate and overestimate approximations of the integral given by the
+  # Riemann sum.
   
   # initialize values
-  lower.sum <- 0;
-  upper.sum <- 0;
-  h <- (b - a)/n;
+  lower.sum <- 0
+  
+  upper.sum <- 0
+  
+  h <- (b - a) / n
+  
   
   # riemann right sum
   for (i in n:1) {
-    x <- a + i*h;
-    lower.sum <- lower.sum + f(x);
+    x <- a + i * h
+    
+    lower.sum <- lower.sum + f(x)
+    
   }
-  lower.sum <- h*lower.sum;
+  lower.sum <- h * lower.sum
+  
   
   # riemann left sum
   for (i in 1:n) {
-    x <- b - i*h;
-    upper.sum <- upper.sum + f(x);
+    x <- b - i * h
+    
+    upper.sum <- upper.sum + f(x)
+    
   }
-  upper.sum <- h*upper.sum;
+  upper.sum <- h * upper.sum
+  
+  
+  # let's plot the curve
+  integralPlot(
+    f = f,
+    a = a,
+    b = b,
+    title = expression(f(x))
+  )
   
   # print/get riemann sum
-  cat(sprintf("The true value is between %f and %f.\n",
-          as.double(lower.sum),
-          as.double(upper.sum)));
-  return(c(lower.sum,upper.sum));
+  cat(sprintf(
+    "The true value is between %f and %f.\n",
+    as.double(lower.sum),
+    as.double(upper.sum)
+  ))
+  
+  return(c(lower.sum, upper.sum))
+  
 }
 
 # -----
 
 # let's generate some functions to test our algorithm
-f0 <- function(x) {
-  res = sin(x);
-  return(res);
-}
-
-f1 <- function(x) {
-  res = x;
-  return(res);
-}
-
 f2 <- function(x) {
-  res = 4/(1+x^2);
-  return(res);
+  res = x
+  
+  return(res)
+  
+}
+
+f3 <- function(x) {
+  res = 4 / (1 + x ^ 2)
+  
+  return(res)
+  
 }
 
 # -----
 
-riemann_sum(f0,0,pi/2,10)
-riemann_sum(f1,0,1,10000)
-riemann_sum(f2,0,1,10000)
+riemann_sum(f0, 0, pi / 2, 10)
+riemann_sum(f2, 0, 1, 10000) # should be 0.5
+riemann_sum(f3, 0, 1, 10000) # should be PI
 
 
 # PART 3 #######################################################################
 # Integrate the function f(x)=exp(x+x^2) from -2 to 2, using Rieman sums.
-f3 <- function(x) {
-  res = exp(x+x^2);
-  return(res);
+f4 <- function(x) {
+  res = exp(x + x ^ 2)
+  
+  return(res)
+  
 }
 
-# compute riemann_sum for f3
-riemann_sum(f3,-2,2,100000)
+# plot Taylor approximations
+taylorPlot(f4, 0, -2.3, 1.3)
+
+# compute riemann_sum for f4
+riemann_sum(f4, -2, 2, 100000)
 # let's verify our calualtion using R's function
-integrate(function(x){exp(x + x^2)}, lower=-2, upper=2)
-# let's plot the curve
-integralPlot(f=f3, a=-2, b=2, title=expression(exp(x+x^2)))
+integrate(f4, lower = -2, upper = 2)
 
 # plot(labx=(-2,2), function(x){exp(x+x^2)}, type="h")
 # step = 0.001
@@ -126,39 +274,62 @@ integralPlot(f=f3, a=-2, b=2, title=expression(exp(x+x^2)))
 # PART 4 #######################################################################
 # RIEMANN SUMS 2D FUNCTION
 
-riemann_sum_2d <- function(f,a,b,c,d,nx,ny) {
+riemann_sum_2d <- function(f, a, b, c, d, nx, ny) {
+  # Compute the Riemann sum of f(x) over the interval [a,b].
+  #
+  # Parameters
+  # ----------
+  # f : function
+  # Vectorized function of one variable
+  # a , b : numeric
+  # Endpoints of the interval [a,b] (inner integral)
+  # c , d : numeric
+  # Endpoints of the interval [c,d] (outer integral)
+  # nx : numeric
+  # Number of subintervals of equal length in the partition of [a,b]
+  # ny : numeric
+  # Number of subintervals of equal length in the partition of [c,d]
+  #
+  # Returns
+  # -------
+  # numeric
+  # Approximations of the integral given by the Riemann 2D sum.
   
   # initialize values
-  dx = (b-a)/nx
+  dx = (b - a) / nx
   s = 0.0
   x = a
   
-  dy = (d-c)/ny
+  dy = (d - c) / ny
   y = c
   
   # riemann 2D sum
   for (i in 1:nx) {
     for (j in 1:ny) {
-      x = a + dx/2 + i*dx
-      y = c + dy/2 + j*dy
-      f_i = f(x,y)
-      s = s + f_i*dx*dy
+      x = a + dx / 2 + i * dx
+      y = c + dy / 2 + j * dy
+      f_i = f(x, y)
+      s = s + f_i * dx * dy
     }
   }
   
   # print/get riemann sum
   cat(sprintf("The true value is around %f.\n",
-              as.double(s)));
-  return(s);
+              as.double(s)))
+  
+  return(s)
+  
 }
 
 # -----
 
-f4 <- function(x,y) {
-  res = exp((x+y)^2);
-  return(res);
+f5 <- function(x, y) {
+  res = exp((x + y) ^ 2)
+  
+  return(res)
+  
 }
 
 # -----
 
-riemann_sum_2d(f4,0,1,0,1,1000,1000)
+riemann_sum_2d(f5, 0, 1, 0, 1, 1000, 1000)
