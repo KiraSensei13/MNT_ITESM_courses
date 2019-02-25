@@ -134,3 +134,14 @@ C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 # summary(mydata)
 
 /******************************************************************************/
+
+PDF as image
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
+\includegraphics[page=32,width=\textwidth]{../Clase5_Simulation_Basics_and_Integrals.pdf}
+\end{tabular}
+\caption{Problem I instructions}
+\label{fig:Test}
+\end{figure}

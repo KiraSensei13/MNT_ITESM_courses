@@ -39,7 +39,7 @@ integralPlot <- function(f,
   # funtion to be ploted
   # a , b : numeric
   # Endpoints of the integral interval [a, b]
-  # from , to : numeric
+  # from , to : numeric (optional)
   # Endpoints of the plot in the x-axis [x min, x max]
   # title : expression
   # title of the plot
@@ -77,6 +77,8 @@ integralPlot <- function(f,
   )
 }
 
+
+################################################################################
 # PART 1 #######################################################################
 # TAYLOR SERIES
 
@@ -155,6 +157,7 @@ taylorPlot(f0, 0, -6.6, 6.6)
 taylorPlot(f1, 1, -2*pi, 2*pi)
 
 
+################################################################################
 # PART 2 #######################################################################
 # RIEMANN SUMS FUNCTION
 
@@ -247,6 +250,7 @@ riemann_sum(f2, 0, 1, 10000) # should be 0.5
 riemann_sum(f3, 0, 1, 10000) # should be PI
 
 
+################################################################################
 # PART 3 #######################################################################
 # Integrate the function f(x)=exp(x+x^2) from -2 to 2, using Rieman sums.
 f4 <- function(x) {
@@ -264,18 +268,13 @@ riemann_sum(f4, -2, 2, 100000)
 # let's verify our calualtion using R's function
 integrate(f4, lower = -2, upper = 2)
 
-# plot(labx=(-2,2), function(x){exp(x+x^2)}, type="h")
-# step = 0.001
-# f.x = expression (exp(x + x^2))
-# x = 1.01+step
-# eval(f.x)*step
 
-
+################################################################################
 # PART 4 #######################################################################
 # RIEMANN SUMS 2D FUNCTION
 
 riemann_sum_2d <- function(f, a, b, c, d, nx, ny) {
-  # Compute the Riemann sum of f(x) over the interval [a,b].
+  # Compute the Riemann sum of f(x,y) over the intervals [a,b] and [c,d].
   #
   # Parameters
   # ----------
@@ -332,4 +331,13 @@ f5 <- function(x, y) {
 
 # -----
 
+# compute riemann_sum_2d for f5
 riemann_sum_2d(f5, 0, 1, 0, 1, 1000, 1000)
+# let's verify our calualtion using R's function
+integral2(f5, 0,1, 0,1)
+
+
+################################################################################
+# PART 5 #######################################################################
+# 2ND DERIVATIVE APPROXIMATION
+
