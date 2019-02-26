@@ -15,8 +15,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Problem IV}{14}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}\emph {integralPlot} function}{15}% 
+\contentsline {section}{\numberline {A}\emph {integralPlot} function}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Full R Script}{16}% 
+\contentsline {section}{\numberline {B}Full R Script}{18}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Full Output Log}{22}% 
+\contentsline {section}{\numberline {C}Full Output Log}{25}% 
