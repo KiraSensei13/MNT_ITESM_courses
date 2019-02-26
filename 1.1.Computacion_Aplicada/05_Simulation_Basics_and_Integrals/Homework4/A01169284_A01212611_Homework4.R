@@ -341,3 +341,43 @@ integral2(f5, 0,1, 0,1)
 # PART 5 #######################################################################
 # 2ND DERIVATIVE APPROXIMATION
 
+derivative <- function(f, h) {
+  # Compute the derivative of a function.
+  #
+  # Parameters
+  # ----------
+  # f : function f(x)
+  # Vectorized function of one variable
+  # h : numeric
+  # Let x now change by an amount h. h is the variable that approaches 0
+  # 
+  # Returns
+  # -------
+  # function
+  # Approximations of the derivative of f, given a step h.
+  
+  return(function(x) {
+    (f(x + h) - f(x)) / (h)
+  })
+}
+
+f6 <- function(x) {
+  res = x^4*sin(x)
+  
+  return(res)
+  
+}
+
+# df1 = d/dx(x^4 sin(x))
+#     = x^3 (4 sin(x) + x cos(x))
+df1 <- derivative(f6, 0.0001)
+
+# df2 = d/dx(x^3 (4 sin(x) + x cos(x)))
+#     = x^2 (8 x cos(x) - (x^2 - 12) sin(x))
+df2 <- derivative(df1, 0.0001)
+
+# Let's evaluate x=pi in the second derivative df2
+df2(pi)
+
+# Let's use the eval() funtion to verify our solution. The value should be around df2(pi)
+eval({ x <- pi; x^2*(8*x*cos(x) - (x^2 - 12)*sin(x))})

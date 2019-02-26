@@ -468,6 +468,73 @@ $error
 \caption{Problem 4 instructions.\label{fig:P4inst}}
 \end{figure}
 
+In Listing \ref{lst:derivativeFunct}, function \emph{derivative} is implemented to compute the derivative of a function.. With the following properties:\\
+  
+\textbf{Parameters}:
+\begin{itemize}
+  \item {\textbf{f} : function $ f(x) $\\
+Vectorized function of one variable}
+  \item {\textbf{h} : numeric\\
+Let x now change by an amount h. h is the variable that approaches 0}
+\end{itemize}
+
+\textbf{Returns}:
+\begin{itemize}
+  \item {function\\
+Approximation of the derivative of f, given a step h.}
+\end{itemize}
+
+\clearpage
+
+\begin{lstlisting}[frame=trBL, language=R, caption="The \emph{Riemann 2D} function"
+\label{lst:derivativeFunct}]
+derivative <- function(f, h) {
+  return(function(x) {
+    (f(x + h) - f(x)) / (h)
+  })
+}
+\end{lstlisting}
+
+Let's solve the following double derivative to test our function using \emph{derivative}. Listing \ref{lst:derivative} shows the required commands.
+$$ \frac{d^2}{d y^2} x^4 Sin(x) $$
+
+\begin{lstlisting}[frame=trBL, language=R, caption="Define the function and implement \emph{derivative}"
+\label{lst:derivative}]
+f6 <- function(x) {
+  res = x^4*sin(x)
+  
+  return(res)
+  
+}
+
+# df1 = d/dx(x^4 sin(x))
+#     = x^3 (4 sin(x) + x cos(x))
+df1 <- derivative(f6, 0.0001)
+
+# df2 = d/dx(x^3 (4 sin(x) + x cos(x)))
+#     = x^2 (8 x cos(x) - (x^2 - 12) sin(x))
+df2 <- derivative(df1, 0.0001)
+
+# Let's evaluate x=pi in the second derivative df2
+df2(pi)
+
+# Let's use the eval() funtion to verify our solution. The value should be around df2(pi)
+eval({ x <- pi; x^2*(8*x*cos(x) - (x^2 - 12)*sin(x))})
+\end{lstlisting}
+
+\clearpage
+
+\begin{lstlisting}[frame=trBL, language=R, caption="Listing \ref{lst:derivative} output"
+\label{lst:derivative_out}]
+> # Let's evaluate x=pi in the second derivative df2
+> df2(pi)
+[1] -248.076
+> 
+> # Let's use the eval() funtion to verify our solution. The value should be around df2(pi)
+> eval({ x <- pi; x^2*(8*x*cos(x) - (x^2 - 12)*sin(x))})
+[1] -248.0502
+\end{lstlisting}
+
 %----------------------------------------------------------------------------------------%
 % PRINT bibliography/references in a new page
 
@@ -881,6 +948,52 @@ riemann_sum_2d(f5, 0, 1, 0, 1, 1000, 1000)
 # let's verify our calualtion using R's function
 integral2(f5, 0,1, 0,1)
 
+
+#########################################################################
+# PART 5 ################################################################
+# 2ND DERIVATIVE APPROXIMATION
+
+derivative <- function(f, h) {
+  # Compute the Riemann sum of f(x,y) over the intervals [a,b] and [c,d].
+  #
+  # Parameters
+  # ----------
+  # f : function f(x)
+  # Vectorized function of one variable
+  # h : numeric
+  # Let x now change by an amount h. h is the variable that approaches 0
+  # 
+  # Returns
+  # -------
+  # function
+  # Approximations of the derivative of f, given a step h.
+  
+  return(function(x) {
+    (f(x + h) - f(x)) / (h)
+  })
+}
+
+f6 <- function(x) {
+  res = x^4*sin(x)
+  
+  return(res)
+  
+}
+
+# df1 = d/dx(x^4 sin(x))
+#     = x^3 (4 sin(x) + x cos(x))
+df1 <- derivative(f6, 0.0001)
+
+# df2 = d/dx(x^3 (4 sin(x) + x cos(x)))
+#     = x^2 (8 x cos(x) - (x^2 - 12) sin(x))
+df2 <- derivative(df1, 0.0001)
+
+# Let's evaluate x=pi in the second derivative df2
+df2(pi)
+
+# Let's use the eval() funtion to verify our solution. The value should be around df2(pi)
+eval({ x <- pi; x^2*(8*x*cos(x) - (x^2 - 12)*sin(x))})
+
 \end{lstlisting}
 
 \clearpage
@@ -1181,7 +1294,7 @@ The true value is between 93.170674 and 93.154833.
 > # RIEMANN SUMS 2D FUNCTION
 > 
 > riemann_sum_2d <- function(f, a, b, c, d, nx, ny) {
-+   # Compute the Riemann sum of f(x,y) over the intervals [a,b] and [c,d].
++   # Compute the derivative of a function.
 +   #
 +   # Parameters
 +   # ----------
@@ -1250,6 +1363,59 @@ $Q
 $error
 [1] 9.974762e-16
 
+> 
+> 
+> #######################################################################
+> # PART 5 ##############################################################
+> # 2ND DERIVATIVE APPROXIMATION
+> 
+> derivative <- function(f, h) {
++   # Compute the derivative of a function.
++   #
++   # Parameters
++   # ----------
++   # f : function f(x)
++   # Vectorized function of one variable
++   # h : numeric
++   # Let x now change by an amount h. h is the variable that approaches 0
++   # 
++   #
++   # Returns
++   # -------
++   # function
++   # Approximations of the derivative of f, given a step h.
++   
++   # return(function(x) {
++   #   (f(x + h) - f(x - h)) / (2 * h)
++   # })
++   
++   return(function(x) {
++     (f(x + h) - f(x)) / (h)
++   })
++ }
+> 
+> f6 <- function(x) {
++   res = x^4*sin(x)
++   
++   return(res)
++   
++ }
+> 
+> # df1 = d/dx(x^4 sin(x))
+> #     = x^3 (4 sin(x) + x cos(x))
+> df1 <- derivative(f6, 0.0001)
+> 
+> # df2 = d/dx(x^3 (4 sin(x) + x cos(x)))
+> #     = x^2 (8 x cos(x) - (x^2 - 12) sin(x))
+> df2 <- derivative(df1, 0.0001)
+> 
+> # Let's evaluate x=pi in the second derivative df2
+> df2(pi)
+[1] -248.076
+> 
+> # Let's use the eval() funtion to verify our solution. The value should be around df2(pi)
+> eval({ x <- pi; x^2*(8*x*cos(x) - (x^2 - 12)*sin(x))})
+[1] -248.0502
 > 
 \end{lstlisting}
 
