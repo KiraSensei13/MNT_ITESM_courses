@@ -17,7 +17,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {9}"Listing \ref {lst:rriemann2DFunct5} output" }{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {10}"The \emph {Riemann 2D} function" }{15}% 
+\contentsline {lstlisting}{\numberline {10}"The \emph {derivative} function" }{15}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {11}"Define the function and implement \emph {derivative}" }{15}% 
 \defcounter {refsection}{0}\relax 
