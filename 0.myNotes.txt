@@ -145,3 +145,17 @@ PDF as image
 \caption{Problem I instructions}
 \label{fig:Test}
 \end{figure}
+
+/******************************************************************************/
+
+personal information:
+graduate program:
+supervisor:
+context of the research:
+particular problem to be solved:
+relevance and justification:
+related background:
+proposed solution model:
+objectives:
+hypothesis:
+research questions:
