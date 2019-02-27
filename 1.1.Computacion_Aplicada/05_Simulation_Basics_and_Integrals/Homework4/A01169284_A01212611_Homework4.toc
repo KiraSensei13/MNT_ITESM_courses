@@ -17,6 +17,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A}\emph {integralPlot} function}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Full R Script}{18}% 
+\contentsline {section}{\numberline {B}\emph {derivativePlot} function}{18}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Full Output Log}{26}% 
+\contentsline {section}{\numberline {C}Full R Script}{19}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D}Full Output Log}{27}% 

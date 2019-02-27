@@ -1,0 +1,96 @@
+/******************************************************************************/
+/* THESIS OUTLINE *************************************************************/
+/******************************************************************************/
+
+/* PERSONAL INFORMATION *******************************************************/
+/------------------------------------------------------------------------------/
+
+name  : Antonio Osamu Katagiri Tanaka
+ID    : A01212611
+email : A01212611@itesm.mx
+
+
+/* GRADUATE PROGRAM ***********************************************************/
+For which academic program is the proposal?
+/------------------------------------------------------------------------------/
+
+Maestría en Nanotecnología (MNT)
+
+
+/* SUPERVISOR *****************************************************************/
+/------------------------------------------------------------------------------/
+
+name  : Héctor Alán Aguirre Soto
+email : alan.aguirre@tec.mx
+
+
+/* CONTEXT OF THE RESEARCH ****************************************************/
+Study of related techniques, analysis and awareness of previous works and study of fundamental aspects that can help carry on the research. (e.g., origins, previous attempts, ...)
+What is the context and problematic situation?
+/------------------------------------------------------------------------------/
+
+
+
+
+/* PARTICULAR PROBLEM TO BE SOLVED ********************************************/
+Describe the current situation of this problem, identifying the obstacles and the possible applications of your research.
+State/Describe the problem in detail mentioning all relative aspects, variables, relationships, ...
+/------------------------------------------------------------------------------/
+
+Carbon nanowires have been frabicated with a photoresist, but little is known about polymers that can produce more conductive carbon nanowires after pyrolysis
+
+
+/* RELEVANCE AND JUSTIFICATION ************************************************/
+Persuade that problem is urgent
+Specify who benefits from project results / What is the benefit?
+Why do you want to solve it?
+/------------------------------------------------------------------------------/
+
+
+
+
+/* RELATED BACKGROUND *********************************************************/
+Put in context the proposed research work.
+Demonstrate the limitations of existing techniques
+What has been done before?
+/------------------------------------------------------------------------------/
+
+
+
+
+/* PROPOSED SOLUTION MODEL ****************************************************/
+Propose how the problem can be solved.
+Specify the fundamental aspects of the proposed solution.
+How do you plan to solve it?
+/------------------------------------------------------------------------------/
+
+Analyze the rheology of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nanowires with them.
+
+
+/* OBJECTIVES *****************************************************************/
+What you want to achieve regarding the target problem? (Specify the goals, objectives and contribution(s))
+Include the scope of your proposed research
+Describes expected results (What do you expect to obtain?)
+Explains what counts as evidence to approve/disapprove the hypothesis (a program, a theorem, a theory, ...)
+Explains what counts as a solution to the problem
+/------------------------------------------------------------------------------/
+
+The particular goal to achieve, as this research is conducted, is to design polymer solutions that can:
+* be electrospun by NFES or nechano-spinning
+* photopolymerized, and
+* pyrolyzed into conducting carbon nanowires for biosensors
+
+
+/* HYPOTHESIS *****************************************************************/
+Express what we are doing or what we are trying to do.
+The aim is to provide the answers to the research questions
+/------------------------------------------------------------------------------/
+
+
+
+/* RESEARCH QUESTIONS *********************************************************/
+Shows that problem posed is still a problem ...
+/------------------------------------------------------------------------------/
+
+
+

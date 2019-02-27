@@ -87,7 +87,7 @@ derivativePlot <- function(f,
                            tr_df2,
                            from,
                            to) {
-  # Plot the area under a function over the interval [a,b] between [from,to].
+  # Plot the f and its 1st and 2nd derivatives between [from,to].
   #
   # Parameters
   # ----------
