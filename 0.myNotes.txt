@@ -179,5 +179,9 @@ late2015-late2018 : Trabajé en desarrollo y verificación de software para dos 
 
 
 Osamu Katagiri Tanaka
-MS student at ITESM
-BS 
+MS student at ITESM - CEM
+BS Digital Systems and Robotics Engineering at ITESM - QRO
+A01212611@itesm
+
+My research is focused on the development of rheology analises of different polymer solutions to determine if they can be easily electrospun at low voltages with the purpose to synthesize nanowires.
+
