@@ -159,3 +159,25 @@ proposed solution model:
 objectives:
 hypothesis:
 research questions:
+
+/******************************************************************************/
+
+[brief bio - Osamu Katagiri]
+
+2012-2016 : Cursé la carrera de ingeniería en sistemas digitales (ISD) en el Tec campus Querétaro
+
+mid2016-mid2018 : Participé en el programa Edison (https://www.ge.com/careers/working-at-ge/edison-engineering-development-program) en General Electric.
+
+late2015-late2018 : Trabajé en desarrollo y verificación de software para dos proyectos
+    1) APMS (Advanced Power Management System) para la aeronave G500 de Gulfstream (http://www.gulfstream.com/aircraft/gulfstream-g500)
+    2) ELMS3 (Electrical Load Management System) para el Boeing 777X (https://www.boeing.com/commercial/777x/)
+<Si algún día vuelas en uno se esos te agarras fuerte 😊>
+
+2019-present : Estoy cursando la maestría en nanotecnología en el campus EdMex. Mi investigación se va a centrar en soluciones poliméricas para la síntesis de nano-cables de carbono mediante NFES (Near-Field Electrospinning).
+
+/******************************************************************************/
+
+
+Osamu Katagiri Tanaka
+MS student at ITESM
+BS 

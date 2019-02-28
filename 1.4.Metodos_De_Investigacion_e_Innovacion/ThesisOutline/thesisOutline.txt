@@ -76,7 +76,7 @@ Explains what counts as a solution to the problem
 /------------------------------------------------------------------------------/
 
 The particular goal to achieve, as this research is conducted, is to design polymer solutions that can:
-* be electrospun by NFES or nechano-spinning
+* be electrospun by NFES or mechano-spinning
 * photopolymerized, and
 * pyrolyzed into conducting carbon nanowires for biosensors
 
