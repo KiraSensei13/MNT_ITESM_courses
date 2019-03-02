@@ -1,0 +1,184 @@
+%% AMS-LaTeX Created with the Wolfram Language for Students - Personal Use Only : www.wolfram.com
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+\begin{document}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*}}\\
+\pmb{\text{Import}@\text{{``}https://raw.githubusercontent.com/jkuczm/MathematicaCellsToTeX/master/NoInstall.m{''}}}\\
+\pmb{\text{PacletInstall}@\text{{``}http://github.com/jkuczm/MathematicaCellsToTeX/releases/download/v0.2.2/CellsToTeX-0.2.2.paclet{''}}}\\
+\pmb{\text{*)}}\\
+\pmb{\text{ClearAll}[\text{{``}Global$\grave{ }$*{''}}];}\\
+\pmb{\text{Needs}@\text{{``}CellsToTeX$\grave{ }${''}};}\\
+\pmb{\text{SetDirectory}[\text{NotebookDirectory}[]];}\\
+\pmb{\text{Print}[\text{{``}Print current directory:{''}}];}\\
+\pmb{\text{Directory}[]}\\
+\pmb{\text{(*}\text{myPlot}=\text{Animate}[\text{Plot}[\text{Sin}[x+a],\{x,0,10\}],\{a,0,5\}];}\\
+\pmb{\text{Export}[\text{{``}./media/movie0.swf{''}},\text{myPlot}];\text{*)}}\)
+\end{doublespace}
+
+\noindent\(\text{Print current directory:}\)
+
+\begin{doublespace}
+\noindent\(\text{C:$\backslash \backslash $Users$\backslash \backslash $oskat$\backslash \backslash $OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey$\backslash \backslash $Documents$\backslash \backslash $MNT$\_$ITESM$\_$courses$\backslash \backslash $1.3.Modelacion$\_$fisica$\_$Matematica$\backslash \backslash $HW03$\_$Eigenvalues}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{******************)}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*} \text{Eigen}-\text{values} \text{and} \text{Eigen}-\text{vectors} \text{*)}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*} 1 \text{*)}}\\
+\pmb{\text{(*}}\\
+\pmb{\text{Eigen}-\text{values}:}\\
+\pmb{A=\left(
+\begin{array}{cc}
+ 1 & 2 \\
+ 0 & 3 \\
+\end{array}
+\right)}\\
+\pmb{\det (\text{$\lambda $I}-A)=0}\\
+\pmb{=\det \left(\left(
+\begin{array}{cc}
+ \lambda  & 0 \\
+ 0 & \lambda  \\
+\end{array}
+\right)-\left(
+\begin{array}{cc}
+ 1 & 2 \\
+ 0 & 3 \\
+\end{array}
+\right)\right)}\\
+\pmb{=\det \left(
+\begin{array}{cc}
+ \lambda -1 & -2 \\
+ 0 & \lambda -3 \\
+\end{array}
+\right)}\\
+\pmb{=(\lambda -1)(\lambda -3)-(-2(0))}\\
+\pmb{=\lambda ^2-3\lambda -\lambda +3}\\
+\pmb{=\lambda ^2-4\lambda +3=0}\\
+\pmb{\lambda _1=3}\\
+\pmb{\lambda _2=1}\\
+\pmb{}\\
+\pmb{\text{Eigen}-\text{vectors}:}\\
+\pmb{\text{for} \lambda =3}\\
+\pmb{\left(
+\begin{array}{cc}
+ 3-1 & -2 \\
+ 0 & 3-3 \\
+\end{array}
+\right)\left(
+\begin{array}{c}
+ x_1 \\
+ x_2 \\
+\end{array}
+\right)\Rightarrow 
+\begin{array}{c}
+ (3-1)x_1-2x_2=0 \\
+ 0+(3-3)x_2=0 \\
+\end{array}
+\Rightarrow 
+\begin{array}{c}
+ 2x_1-2x_2=0 \\
+ 0=0 \\
+\end{array}
+\Rightarrow x_1=x_2}\\
+\pmb{x=t\left(
+\begin{array}{c}
+ 1 \\
+ 1 \\
+\end{array}
+\right)}\\
+\pmb{\text{for} \lambda =1}\\
+\pmb{\left(
+\begin{array}{cc}
+ 1-1 & -2 \\
+ 0 & 1-3 \\
+\end{array}
+\right)\left(
+\begin{array}{c}
+ x_1 \\
+ x_2 \\
+\end{array}
+\right)\Rightarrow 
+\begin{array}{c}
+ (1-1)x_1-2x_2=0 \\
+ 0+(1-3)x_2=0 \\
+\end{array}
+\Rightarrow 
+\begin{array}{c}
+ -2x_2=0 \\
+ -2x_2=0 \\
+\end{array}
+\Rightarrow x_2=0}\\
+\pmb{x=t\left(
+\begin{array}{c}
+ 1 \\
+ 0 \\
+\end{array}
+\right)}\\
+\pmb{\text{*)}}\\
+\pmb{\text{(*} \text{Verification} \text{using} \text{Mathematica}'s \text{functions} \text{*)}}\\
+\pmb{\text{Eigensystem}[\{\{1,2\},\{0,3\}\}];}\\
+\pmb{\text{MatrixForm}[\%]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{cc}
+ 3 & 1 \\
+ \{1,1\} & \{1,0\} \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*} 2 \text{*)}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*} 3 \text{*)}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*} 4 \text{*)}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{**}\text{******************)}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*}}\\
+\pmb{\text{GET} \text{LaTeX} \text{CODE}}\\
+\pmb{\text{*)}}\\
+\pmb{\text{Notebooks}[]}\\
+\pmb{\text{nbObj}=\text{Notebooks}[][[2]]}\\
+\pmb{\text{(*}\text{Swich} \text{off} \text{auto} \text{deleting} \text{of} \text{labels}, \text{so} \text{that} \text{we} \text{can} \text{extract} \text{some} \text{data} \text{from} \text{them}.\text{*)}}\\
+\pmb{\text{CurrentValue}[\text{nbObj},\text{CellLabelAutoDelete}]=\text{False};}\\
+\pmb{\text{SelectionMove}[\text{nbObj},\text{All},\text{Notebook}];}\\
+\pmb{\text{(*}\text{SelectionEvaluate}[\text{nbObj},\text{Before}];\text{*)}}\\
+\pmb{\text{SetOptions}[\text{CellToTeX},\text{{``}CurrentCellIndex{''}}\to \text{Automatic}];}\\
+\pmb{\text{ExportString}[\text{NotebookGet}[\text{nbObj}]\text{/.}\text{cell}:\text{Cell}[\_,\_\_]:\to \text{Cell}[\text{CellToTeX}[\text{cell}],\text{{``}Final{''}}],\text{{``}TeX{''}},}\\
+\pmb{\text{{``}FullDocument{''}}\to \text{False},\text{{``}ConversionRules{''}}\to \{\text{{``}Final{''}}\to \text{Identity}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{\text{NotebookObject}\left[\right],\text{NotebookObject}\left[\right],\text{NotebookObject}\left[\right]\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\text{NotebookObject}\left[\right]\)
+\end{doublespace}
+
