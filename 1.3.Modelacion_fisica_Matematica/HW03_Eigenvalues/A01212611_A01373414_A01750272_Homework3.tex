@@ -23,6 +23,7 @@
 \usepackage{systeme}
 \usepackage{mdframed}
 \usepackage{mmacells}
+\usepackage{titling}
 
 %----------------------------------------------------------------------------------------%
 % SET user defined commands
@@ -53,6 +54,12 @@
     Katya Michelle Aguilar Pérez     (A01750272)\\
 }
 \date{\today}
+\predate{\centering}
+\postdate{\vfill\hfill\emph
+{
+    Paper trail and process evidence are at the end of this document.
+}
+\hfill}
 
 %----------------------------------------------------------------------------------------%
 % USER-DEFINED commands
@@ -112,109 +119,75 @@
 %----------------------------------------------------------------------------------------%
 % DOCUMENT body starts here
 
-\section{Problemas de Eigenvalores}
-
-\includegraphics[width=1\textwidth]{./img/Capture1.png}
-
-\begin{mmaCell}[]{Print}
-Eigen-values:
-
-A=(1  2
-   0  3)
-   
-det(\(\pmb{\lambda}\)I-A)=0
-         =det((\(\pmb{\lambda}\)  0    (1  2
-               0  \(\pmb{\lambda}\)) -  0  3))
-         =det(\(\pmb{\lambda}\)-1  -2
-              0    \(\pmb{\lambda}\)-3)
-         =(\(\pmb{\lambda}\)-1)(\(\pmb{\lambda}\)-3)-(-2(0))
-         =\mmaSup{\(\pmb{\lambda}\)}{2}-3\(\pmb{\lambda}\)-\(\pmb{\lambda}\)+3
-         =\mmaSup{\(\pmb{\lambda}\)}{2}-4\(\pmb{\lambda}\)+3=0
-  
-\mmaSub{\(\pmb{\lambda}\)}{1}=3
-\mmaSub{\(\pmb{\lambda}\)}{2}=1
-
-  
-
-  Eigen-vectors:
-
-  for \(\pmb{\lambda}\)=3
-
-  (3-1	-2
-
-  0	3-3)(\mmaSub{x}{1}
-
-  \mmaSub{x}{2})\(\pmb{\Rightarrow}\)(3-1)\mmaSub{x}{1}-2\mmaSub{x}{2}\
-=0
-
-  0+(3-3)\mmaSub{x}{2}=0\(\pmb{\Rightarrow}\)2\mmaSub{x}{1}-2\mmaSub{\
-x}{2}=0
-
-  0=0\(\pmb{\Rightarrow}\)\mmaSub{x}{1}=\mmaSub{x}{2}
-
-  x=t(1
-
-  1)
-
-  for \(\pmb{\lambda}\)=1
-
-  (1-1	-2
-
-  0	1-3)(\mmaSub{x}{1}
-
-  \mmaSub{x}{2})\(\pmb{\Rightarrow}\)(1-1)\mmaSub{x}{1}-2\mmaSub{x}{2}\
-=0
-
-  0+(1-3)\mmaSub{x}{2}=0\(\pmb{\Rightarrow}\)-2\mmaSub{x}{2}=0
-
-  -2\mmaSub{x}{2}=0\(\pmb{\Rightarrow}\)\mmaSub{x}{2}=0
-
-  x=t(1
-
-  0)
-
-  *)
-
-  (* Verification using Mathematica's functions *)
-
-  Eigensystem[\{\{1,2\},\{0,3\}\}];
-
-  MatrixForm[%]
-
-\end{mmaCell}
-
-
-
-\begin{mmaCell}[addtoindex=1,form=MatrixForm]{Output}
-
-  (3	1
-
-  \{1,1\}	\{1,0\})
-
-\end{mmaCell}
-
-\clearpage
-
-%----------------------------------------------------------------------------------------%
-\section{Transformaciones Lineales y Eigenvalores}
-
-\includegraphics[width=1\textwidth]{./img/Capture2.png}
-
-\clearpage
-
-%----------------------------------------------------------------------------------------%
-\section{Aplicaciones: Deformaciones Elásticas}
-
-\includegraphics[width=1\textwidth]{./img/Capture3.png}
-
-\clearpage
-
-%----------------------------------------------------------------------------------------%
-\section{Aplicaciones: Modelos de Población}
-
-\includegraphics[width=1\textwidth]{./img/Capture4.png}
-
-\clearpage
+%\section{Problemas de Eigenvalores}
+%
+%\includegraphics[width=1\textwidth]{./img/Capture1.png}
+%
+%\begin{mmaCell}[]{Print}
+%{\normalsize Eigen-values for (a)}:
+%
+%\mmaSub{\(\pmb{\lambda}\)}{1}=3
+%\mmaSub{\(\pmb{\lambda}\)}{2}=1
+%\end{mmaCell}
+%
+%\begin{mmaCell}[]{Print}
+%{\normalsize Eigen-vectors for (a)}:
+%
+%for \(\pmb{\lambda}\)=3
+%\end{mmaCell}
+%
+%\begin{mmaCell}[verbatimenv]{Print}
+%x=t\(\begin{bmatrix}
+%1 \\
+%1
+%\end{bmatrix}\)
+%\end{mmaCell}
+%
+%\begin{mmaCell}[]{Print}
+%for \(\pmb{\lambda}\)=1
+%\end{mmaCell}
+%
+%\begin{mmaCell}[verbatimenv]{Print}
+%x=t\(\begin{bmatrix}
+%1 \\
+%0
+%\end{bmatrix}\)
+%\end{mmaCell}
+%
+%\begin{mmaCell}[]{Input}
+%(* Verification of (a) using Mathematica's functions *)
+%Eigensystem[\{\{1,2\},\{0,3\}\}];
+%MatrixForm[%]
+%\end{mmaCell}
+%
+%\begin{mmaCell}[form=MatrixForm]{Output}
+%(3     1
+%\{1,1\} \{1,0\})
+%
+%\end{mmaCell}
+%
+%\clearpage
+%
+%%----------------------------------------------------------------------------------------%
+%\section{Transformaciones Lineales y Eigenvalores}
+%
+%\includegraphics[width=1\textwidth]{./img/Capture2.png}
+%
+%\clearpage
+%
+%%----------------------------------------------------------------------------------------%
+%\section{Aplicaciones: Deformaciones Elásticas}
+%
+%\includegraphics[width=1\textwidth]{./img/Capture3.png}
+%
+%\clearpage
+%
+%%----------------------------------------------------------------------------------------%
+%\section{Aplicaciones: Modelos de Población}
+%
+%\includegraphics[width=1\textwidth]{./img/Capture4.png}
+%
+%\clearpage
 
 %----------------------------------------------------------------------------------------%
 %Append the HW's exercises
@@ -222,7 +195,10 @@ x}{2}=0
 
 %----------------------------------------------------------------------------------------%
 %Append the HW's answers
-\includepdf[page=-]{./pdf/HW03_1}
+\includepdf[page=1]{./pdf/HW03_1}
+\includepdf[page=-]{./pdf/HW03_1_b}
+\includepdf[page=3]{./pdf/HW03_1}
+\includepdf[page=-]{./pdf/HW03_1_c3}
 \includepdf[page=-]{./pdf/HW03_2}
 \includepdf[page=-]{./pdf/HW03_3_and_4}
 

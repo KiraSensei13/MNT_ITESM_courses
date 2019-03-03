@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  2 MAR 2019 17:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  3 MAR 2019 01:33
 entering extended mode
 **./A01212611_A01373414_A01750272_Homework3.tex
 (A01212611_A01373414_A01750272_Homework3.tex
@@ -822,6 +822,13 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 ))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titling\titling.st
+y"
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip123
+\thanksmargin=\skip124
+\droptitle=\skip125
+)
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.
 sty"
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
@@ -873,14 +880,14 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@parenlevel@foot=\count346
 \blx@sectionciteorder@0=\count347
 \blx@entrysetcounter=\count348
-\labelnumberwidth=\skip123
-\labelalphawidth=\skip124
-\biblabelsep=\skip125
-\bibitemsep=\skip126
-\bibnamesep=\skip127
-\bibinitsep=\skip128
-\bibparsep=\skip129
-\bibhang=\skip130
+\labelnumberwidth=\skip126
+\labelalphawidth=\skip127
+\biblabelsep=\skip128
+\bibitemsep=\skip129
+\bibnamesep=\skip130
+\bibinitsep=\skip131
+\bibparsep=\skip132
+\bibhang=\skip133
 \blx@bcfin=\read3
 \blx@bcfout=\write4
 \c@mincomprange=\count349
@@ -980,20 +987,20 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@savedoriglanguage=\count427
 \c@pageref=\count428
 \c@savedpageref=\count429
-\shorthandwidth=\skip131
-\shortjournalwidth=\skip132
-\shortserieswidth=\skip133
-\shorttitlewidth=\skip134
-\shortauthorwidth=\skip135
-\shorteditorwidth=\skip136
-\locallabelnumberwidth=\skip137
-\locallabelalphawidth=\skip138
-\localshorthandwidth=\skip139
-\localshortjournalwidth=\skip140
-\localshortserieswidth=\skip141
-\localshorttitlewidth=\skip142
-\localshortauthorwidth=\skip143
-\localshorteditorwidth=\skip144
+\shorthandwidth=\skip134
+\shortjournalwidth=\skip135
+\shortserieswidth=\skip136
+\shorttitlewidth=\skip137
+\shortauthorwidth=\skip138
+\shorteditorwidth=\skip139
+\locallabelnumberwidth=\skip140
+\locallabelalphawidth=\skip141
+\localshorthandwidth=\skip142
+\localshortjournalwidth=\skip143
+\localshortserieswidth=\skip144
+\localshorttitlewidth=\skip145
+\localshortauthorwidth=\skip146
+\localshorteditorwidth=\skip147
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -1140,20 +1147,20 @@ File: german.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 )))) (A01212611_A01373414_A01750272_Homework3.aux)
 \openout1 = `A01212611_A01373414_A01750272_Homework3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mk
 ii"
@@ -1232,7 +1239,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 \c@lstlisting=\count445
-Package hyperref Info: Link coloring OFF on input line 71.
+Package hyperref Info: Link coloring OFF on input line 78.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -1244,9 +1251,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count446
 )
-LaTeX Info: Redefining \ref on input line 71.
-LaTeX Info: Redefining \pageref on input line 71.
-LaTeX Info: Redefining \nameref on input line 71.
+LaTeX Info: Redefining \ref on input line 78.
+LaTeX Info: Redefining \pageref on input line 78.
+LaTeX Info: Redefining \nameref on input line 78.
  (A01212611_A01373414_A01750272_Homework3.out)
 (A01212611_A01373414_A01750272_Homework3.out)
 \@outlinefile=\write5
@@ -1262,60 +1269,18 @@ Package biblatex Info: ... file 'A01212611_A01373414_A01750272_Homework3.bbl' n
 ot found.
 
 No file A01212611_A01373414_A01750272_Homework3.bbl.
-Package biblatex Info: Reference section=0 on input line 71.
-Package biblatex Info: Reference segment=0 on input line 71.
-LaTeX Font Info:    Try loading font information for U+msa on input line 83.
+Package biblatex Info: Reference section=0 on input line 78.
+Package biblatex Info: Reference segment=0 on input line 78.
+LaTeX Font Info:    Try loading font information for U+msa on input line 89.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 83.
+LaTeX Font Info:    Try loading font information for U+msb on input line 89.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/oskat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<./img/Capture1.png, id=27, 557.83406pt x 81.30376pt>
-File: ./img/Capture1.png Graphic file (type png)
-<use ./img/Capture1.png>
-Package pdftex.def Info: ./img/Capture1.png  used on input line 117.
-(pdftex.def)             Requested size: 416.83289pt x 60.75435pt.
- [2
-
- <./img/Capture1.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 180
-.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 180.
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 180.
-
-[3]
-<./img/Capture2.png, id=44, 558.58687pt x 92.59593pt>
-File: ./img/Capture2.png Graphic file (type png)
-<use ./img/Capture2.png>
-Package pdftex.def Info: ./img/Capture2.png  used on input line 201.
-(pdftex.def)             Requested size: 416.83289pt x 69.09918pt.
- [4
-
- <./img/Capture2.png>]
-<./img/Capture3.png, id=50, 551.05875pt x 82.05656pt>
-File: ./img/Capture3.png Graphic file (type png)
-<use ./img/Capture3.png>
-Package pdftex.def Info: ./img/Capture3.png  used on input line 208.
-(pdftex.def)             Requested size: 416.83289pt x 62.07188pt.
- [5
-
- <./img/Capture3.png>]
-<./img/Capture4.png, id=56, 546.54187pt x 112.16907pt>
-File: ./img/Capture4.png Graphic file (type png)
-<use ./img/Capture4.png>
-Package pdftex.def Info: ./img/Capture4.png  used on input line 215.
-(pdftex.def)             Requested size: 416.83289pt x 85.54889pt.
- [6
-
- <./img/Capture4.png>]
 
 Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
@@ -1325,10 +1290,10 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_instructions.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_instructions.pdf, id=62, 597.55246pt x 845.07724pt>
+<./pdf/HW03_instructions.pdf, id=12, 597.55246pt x 845.07724pt>
 File: ./pdf/HW03_instructions.pdf Graphic file (type pdf)
 <use ./pdf/HW03_instructions.pdf>
-Package pdftex.def Info: ./pdf/HW03_instructions.pdf  used on input line 221.
+Package pdftex.def Info: ./pdf/HW03_instructions.pdf  used on input line 194.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 
 
@@ -1336,7 +1301,7 @@ pdfTeX warning: pdflatex (file ./pdf/HW03_instructions.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
 File: ./pdf/HW03_instructions.pdf Graphic file (type pdf)
 <use ./pdf/HW03_instructions.pdf>
-Package pdftex.def Info: ./pdf/HW03_instructions.pdf  used on input line 221.
+Package pdftex.def Info: ./pdf/HW03_instructions.pdf  used on input line 194.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 
 
@@ -1346,33 +1311,33 @@ nd PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_instructions.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_instructions.pdf, id=65, page=1, 597.55246pt x 845.07724pt>
+<./pdf/HW03_instructions.pdf, id=15, page=1, 597.55246pt x 845.07724pt>
 File: ./pdf/HW03_instructions.pdf Graphic file (type pdf)
 <use ./pdf/HW03_instructions.pdf, page 1>
 Package pdftex.def Info: ./pdf/HW03_instructions.pdf , page1 used on input line
- 221.
+ 194.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 File: ./pdf/HW03_instructions.pdf Graphic file (type pdf)
 <use ./pdf/HW03_instructions.pdf, page 1>
 Package pdftex.def Info: ./pdf/HW03_instructions.pdf , page1 used on input line
- 221.
+ 194.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: ./pdf/HW03_instructions.pdf Graphic file (type pdf)
 <use ./pdf/HW03_instructions.pdf, page 1>
 Package pdftex.def Info: ./pdf/HW03_instructions.pdf , page1 used on input line
- 221.
+ 194.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: ./pdf/HW03_instructions.pdf Graphic file (type pdf)
 <use ./pdf/HW03_instructions.pdf, page 1>
 Package pdftex.def Info: ./pdf/HW03_instructions.pdf , page1 used on input line
- 221.
+ 194.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: ./pdf/HW03_instructions.pdf Graphic file (type pdf)
 <use ./pdf/HW03_instructions.pdf, page 1>
 Package pdftex.def Info: ./pdf/HW03_instructions.pdf , page1 used on input line
- 221.
+ 194.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
-[7
+[2
 
  <./pdf/HW03_instructions.pdf>]
 
@@ -1384,10 +1349,10 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_1.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_1.pdf, id=88, 614.295pt x 794.97pt>
+<./pdf/HW03_1.pdf, id=37, 614.295pt x 794.97pt>
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
 <use ./pdf/HW03_1.pdf>
-Package pdftex.def Info: ./pdf/HW03_1.pdf  used on input line 225.
+Package pdftex.def Info: ./pdf/HW03_1.pdf  used on input line 198.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -1395,7 +1360,7 @@ pdfTeX warning: pdflatex (file ./pdf/HW03_1.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
 <use ./pdf/HW03_1.pdf>
-Package pdftex.def Info: ./pdf/HW03_1.pdf  used on input line 225.
+Package pdftex.def Info: ./pdf/HW03_1.pdf  used on input line 198.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -1405,79 +1370,147 @@ ion <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_1.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_1.pdf, id=91, page=1, 614.295pt x 794.97pt>
+<./pdf/HW03_1.pdf, id=40, page=1, 614.295pt x 794.97pt>
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
 <use ./pdf/HW03_1.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 225.
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 198.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
 <use ./pdf/HW03_1.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 225.
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 198.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
 <use ./pdf/HW03_1.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 225.
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 198.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
 <use ./pdf/HW03_1.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 225.
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 198.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
 <use ./pdf/HW03_1.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 225.
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page1 used on input line 198.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[8 <./pdf/HW03_1.pdf>]
+[3 <./pdf/HW03_1.pdf>]
+
+Package pdfpages Warning: Option `page' is unknow to \includepdf.
+(pdfpages)                Did you mean `pages'? (Note the `s'!)
+(pdfpages)                OK, I'll proceed as if it were `pages'.
+
+<./pdf/HW03_1_b.pdf, id=54, 518.09349pt x 722.7pt>
+File: ./pdf/HW03_1_b.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_b.pdf>
+Package pdftex.def Info: ./pdf/HW03_1_b.pdf  used on input line 199.
+(pdftex.def)             Requested size: 518.09222pt x 722.69823pt.
+File: ./pdf/HW03_1_b.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_b.pdf>
+Package pdftex.def Info: ./pdf/HW03_1_b.pdf  used on input line 199.
+(pdftex.def)             Requested size: 518.09222pt x 722.69823pt.
+<./pdf/HW03_1_b.pdf, id=57, page=1, 518.09349pt x 722.7pt>
+File: ./pdf/HW03_1_b.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_b.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_b.pdf , page1 used on input line 199.
+(pdftex.def)             Requested size: 518.09222pt x 722.69823pt.
+File: ./pdf/HW03_1_b.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_b.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_b.pdf , page1 used on input line 199.
+(pdftex.def)             Requested size: 597.61324pt x 833.62384pt.
+File: ./pdf/HW03_1_b.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_b.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_b.pdf , page1 used on input line 199.
+(pdftex.def)             Requested size: 597.61324pt x 833.62384pt.
+File: ./pdf/HW03_1_b.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_b.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_b.pdf , page1 used on input line 199.
+(pdftex.def)             Requested size: 597.61324pt x 833.62384pt.
+File: ./pdf/HW03_1_b.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_b.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_b.pdf , page1 used on input line 199.
+(pdftex.def)             Requested size: 597.61324pt x 833.62384pt.
+[4 <./pdf/HW03_1_b.pdf>]
+
+Package pdfpages Warning: Option `page' is unknow to \includepdf.
+(pdfpages)                Did you mean `pages'? (Note the `s'!)
+(pdfpages)                OK, I'll proceed as if it were `pages'.
+
+File: ./pdf/HW03_1.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1.pdf>
+Package pdftex.def Info: ./pdf/HW03_1.pdf  used on input line 200.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_1.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_1.pdf, id=105, page=2, 614.295pt x 794.97pt>
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page2 used on input line 225.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page2 used on input line 225.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page2 used on input line 225.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[9 <./pdf/HW03_1.pdf>]
+<use ./pdf/HW03_1.pdf>
+Package pdftex.def Info: ./pdf/HW03_1.pdf  used on input line 200.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_1.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_1.pdf, id=112, page=3, 614.295pt x 794.97pt>
-File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page3 used on input line 225.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page3 used on input line 225.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page3 used on input line 225.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[10 <./pdf/HW03_1.pdf>]
+
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_1.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_1.pdf, id=119, page=4, 614.295pt x 794.97pt>
+<./pdf/HW03_1.pdf, id=72, page=3, 614.295pt x 794.97pt>
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page4 used on input line 225.
+<use ./pdf/HW03_1.pdf, page 3>
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page3 used on input line 200.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: ./pdf/HW03_1.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1.pdf, page 3>
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page3 used on input line 200.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page4 used on input line 225.
+<use ./pdf/HW03_1.pdf, page 3>
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page3 used on input line 200.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ./pdf/HW03_1.pdf Graphic file (type pdf)
-<use ./pdf/HW03_1.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_1.pdf , page4 used on input line 225.
+<use ./pdf/HW03_1.pdf, page 3>
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page3 used on input line 200.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[11 <./pdf/HW03_1.pdf>]
+File: ./pdf/HW03_1.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1.pdf, page 3>
+Package pdftex.def Info: ./pdf/HW03_1.pdf , page3 used on input line 200.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[5 <./pdf/HW03_1.pdf>]
+
+Package pdfpages Warning: Option `page' is unknow to \includepdf.
+(pdfpages)                Did you mean `pages'? (Note the `s'!)
+(pdfpages)                OK, I'll proceed as if it were `pages'.
+
+<./pdf/HW03_1_c3.pdf, id=79, 722.7pt x 316.27458pt>
+File: ./pdf/HW03_1_c3.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_c3.pdf>
+Package pdftex.def Info: ./pdf/HW03_1_c3.pdf  used on input line 201.
+(pdftex.def)             Requested size: 722.69823pt x 316.2738pt.
+File: ./pdf/HW03_1_c3.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_c3.pdf>
+Package pdftex.def Info: ./pdf/HW03_1_c3.pdf  used on input line 201.
+(pdftex.def)             Requested size: 722.69823pt x 316.2738pt.
+<./pdf/HW03_1_c3.pdf, id=82, page=1, 722.7pt x 316.27458pt>
+File: ./pdf/HW03_1_c3.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_c3.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_c3.pdf , page1 used on input line 201.
+(pdftex.def)             Requested size: 722.69823pt x 316.2738pt.
+File: ./pdf/HW03_1_c3.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_c3.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_c3.pdf , page1 used on input line 201.
+(pdftex.def)             Requested size: 598.07645pt x 261.73567pt.
+File: ./pdf/HW03_1_c3.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_c3.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_c3.pdf , page1 used on input line 201.
+(pdftex.def)             Requested size: 598.07645pt x 261.73567pt.
+File: ./pdf/HW03_1_c3.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_c3.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_c3.pdf , page1 used on input line 201.
+(pdftex.def)             Requested size: 598.07645pt x 261.73567pt.
+File: ./pdf/HW03_1_c3.pdf Graphic file (type pdf)
+<use ./pdf/HW03_1_c3.pdf, page 1>
+Package pdftex.def Info: ./pdf/HW03_1_c3.pdf , page1 used on input line 201.
+(pdftex.def)             Requested size: 598.07645pt x 261.73567pt.
+[6 <./pdf/HW03_1_c3.pdf>]
 
 Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
@@ -1487,10 +1520,10 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_2.pdf, id=126, 614.295pt x 794.97pt>
+<./pdf/HW03_2.pdf, id=95, 614.295pt x 794.97pt>
 File: ./pdf/HW03_2.pdf Graphic file (type pdf)
 <use ./pdf/HW03_2.pdf>
-Package pdftex.def Info: ./pdf/HW03_2.pdf  used on input line 226.
+Package pdftex.def Info: ./pdf/HW03_2.pdf  used on input line 202.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -1498,7 +1531,7 @@ pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
 File: ./pdf/HW03_2.pdf Graphic file (type pdf)
 <use ./pdf/HW03_2.pdf>
-Package pdftex.def Info: ./pdf/HW03_2.pdf  used on input line 226.
+Package pdftex.def Info: ./pdf/HW03_2.pdf  used on input line 202.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -1508,263 +1541,253 @@ ion <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
 ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_2.pdf, id=129, page=1, 614.295pt x 794.97pt>
+<./pdf/HW03_2.pdf, id=98, page=1, 614.295pt x 794.97pt>
 File: ./pdf/HW03_2.pdf Graphic file (type pdf)
 <use ./pdf/HW03_2.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 226.
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 202.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: ./pdf/HW03_2.pdf Graphic file (type pdf)
 <use ./pdf/HW03_2.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 226.
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 202.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ./pdf/HW03_2.pdf Graphic file (type pdf)
 <use ./pdf/HW03_2.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 226.
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 202.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ./pdf/HW03_2.pdf Graphic file (type pdf)
 <use ./pdf/HW03_2.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 226.
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 202.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ./pdf/HW03_2.pdf Graphic file (type pdf)
 <use ./pdf/HW03_2.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 226.
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page1 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[7 <./pdf/HW03_2.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<./pdf/HW03_2.pdf, id=113, page=2, 614.295pt x 794.97pt>
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 2>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page2 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 2>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page2 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 2>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page2 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[8 <./pdf/HW03_2.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<./pdf/HW03_2.pdf, id=120, page=3, 614.295pt x 794.97pt>
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 3>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page3 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 3>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page3 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 3>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page3 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[9 <./pdf/HW03_2.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<./pdf/HW03_2.pdf, id=127, page=4, 614.295pt x 794.97pt>
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 4>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page4 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 4>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page4 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 4>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page4 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[10 <./pdf/HW03_2.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<./pdf/HW03_2.pdf, id=134, page=5, 614.295pt x 794.97pt>
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 5>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page5 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 5>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page5 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 5>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page5 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[11 <./pdf/HW03_2.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<./pdf/HW03_2.pdf, id=141, page=6, 614.295pt x 794.97pt>
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 6>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page6 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 6>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page6 used on input line 202.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ./pdf/HW03_2.pdf Graphic file (type pdf)
+<use ./pdf/HW03_2.pdf, page 6>
+Package pdftex.def Info: ./pdf/HW03_2.pdf , page6 used on input line 202.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 [12 <./pdf/HW03_2.pdf>]
 
-pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
-ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_2.pdf, id=143, page=2, 614.295pt x 794.97pt>
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page2 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page2 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page2 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[13 <./pdf/HW03_2.pdf>]
-
-pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
-ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_2.pdf, id=151, page=3, 614.295pt x 794.97pt>
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page3 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page3 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page3 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[14 <./pdf/HW03_2.pdf>]
-
-pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
-ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_2.pdf, id=158, page=4, 614.295pt x 794.97pt>
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page4 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page4 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page4 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[15 <./pdf/HW03_2.pdf>]
-
-pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
-ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_2.pdf, id=165, page=5, 614.295pt x 794.97pt>
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 5>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page5 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 5>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page5 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 5>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page5 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[16 <./pdf/HW03_2.pdf>]
-
-pdfTeX warning: pdflatex (file ./pdf/HW03_2.pdf): PDF inclusion: found PDF vers
-ion <1.7>, but at most version <1.5> allowed
-<./pdf/HW03_2.pdf, id=172, page=6, 614.295pt x 794.97pt>
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 6>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page6 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 6>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page6 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ./pdf/HW03_2.pdf Graphic file (type pdf)
-<use ./pdf/HW03_2.pdf, page 6>
-Package pdftex.def Info: ./pdf/HW03_2.pdf , page6 used on input line 226.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[17 <./pdf/HW03_2.pdf>]
-
 Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
 (pdfpages)                OK, I'll proceed as if it were `pages'.
 
-<./pdf/HW03_3_and_4.pdf, id=179, 521.8146pt x 722.7pt>
+<./pdf/HW03_3_and_4.pdf, id=148, 521.8146pt x 722.7pt>
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf  used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf  used on input line 203.
 (pdftex.def)             Requested size: 521.81332pt x 722.69823pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf  used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf  used on input line 203.
 (pdftex.def)             Requested size: 521.81332pt x 722.69823pt.
-<./pdf/HW03_3_and_4.pdf, id=182, page=1, 521.8146pt x 722.7pt>
+<./pdf/HW03_3_and_4.pdf, id=151, page=1, 521.8146pt x 722.7pt>
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 203.
 
 (pdftex.def)             Requested size: 521.81332pt x 722.69823pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 203.
 
 (pdftex.def)             Requested size: 598.43394pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 203.
 
 (pdftex.def)             Requested size: 598.43394pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 203.
 
 (pdftex.def)             Requested size: 598.43394pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 1>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page1 used on input line 203.
 
 (pdftex.def)             Requested size: 598.43394pt x 828.81586pt.
-[18 <./pdf/HW03_3_and_4.pdf>]
-<./pdf/HW03_3_and_4.pdf, id=195, page=2, 524.08897pt x 722.7pt>
+[13 <./pdf/HW03_3_and_4.pdf>]
+<./pdf/HW03_3_and_4.pdf, id=165, page=2, 524.08897pt x 722.7pt>
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page2 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page2 used on input line 203.
 
 (pdftex.def)             Requested size: 601.04227pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page2 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page2 used on input line 203.
 
 (pdftex.def)             Requested size: 601.04227pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 2>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page2 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page2 used on input line 203.
 
 (pdftex.def)             Requested size: 601.04227pt x 828.81586pt.
- [19 <./pdf/HW03_3_and_4.pdf>]
-<./pdf/HW03_3_and_4.pdf, id=203, page=3, 528.73929pt x 722.7pt>
+ [14 <./pdf/HW03_3_and_4.pdf>]
+<./pdf/HW03_3_and_4.pdf, id=172, page=3, 528.73929pt x 722.7pt>
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page3 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page3 used on input line 203.
 
 (pdftex.def)             Requested size: 606.3754pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page3 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page3 used on input line 203.
 
 (pdftex.def)             Requested size: 606.3754pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 3>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page3 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page3 used on input line 203.
 
 (pdftex.def)             Requested size: 606.3754pt x 828.81586pt.
- [20 <./pdf/HW03_3_and_4.pdf>]
-<./pdf/HW03_3_and_4.pdf, id=210, page=4, 523.9575pt x 722.7pt>
+ [15 <./pdf/HW03_3_and_4.pdf>]
+<./pdf/HW03_3_and_4.pdf, id=179, page=4, 523.9575pt x 722.7pt>
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page4 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page4 used on input line 203.
 
 (pdftex.def)             Requested size: 600.8915pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page4 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page4 used on input line 203.
 
 (pdftex.def)             Requested size: 600.8915pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 4>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page4 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page4 used on input line 203.
 
 (pdftex.def)             Requested size: 600.8915pt x 828.81586pt.
- [21 <./pdf/HW03_3_and_4.pdf>]
-<./pdf/HW03_3_and_4.pdf, id=217, page=5, 531.90718pt x 722.7pt>
+ [16 <./pdf/HW03_3_and_4.pdf>]
+<./pdf/HW03_3_and_4.pdf, id=186, page=5, 531.90718pt x 722.7pt>
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 5>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page5 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page5 used on input line 203.
 
 (pdftex.def)             Requested size: 610.00844pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 5>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page5 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page5 used on input line 203.
 
 (pdftex.def)             Requested size: 610.00844pt x 828.81586pt.
 File: ./pdf/HW03_3_and_4.pdf Graphic file (type pdf)
 <use ./pdf/HW03_3_and_4.pdf, page 5>
-Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page5 used on input line 227.
+Package pdftex.def Info: ./pdf/HW03_3_and_4.pdf , page5 used on input line 203.
 
 (pdftex.def)             Requested size: 610.00844pt x 828.81586pt.
- [22 <./pdf/HW03_3_and_4.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 233.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 233.
+ [17 <./pdf/HW03_3_and_4.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
 
 (A01212611_A01373414_A01750272_Homework3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 233.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 233.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
 Package rerunfilecheck Info: File `A01212611_A01373414_A01750272_Homework3.out'
  has not changed.
-(rerunfilecheck)             Checksum: E84704D287215539FD395179B5B084BB;286.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'A01212611_A01373414_A01750272_Homewor
 k3.run.xml'.
 \openout1 = `A01212611_A01373414_A01750272_Homework3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30710 strings out of 492946
- 545197 string characters out of 3126267
- 1142580 words of memory out of 3000000
- 34239 multiletter control sequences out of 15000+200000
- 541821 words of font info for 62 fonts, out of 3000000 for 9000
+ 28419 strings out of 492946
+ 509996 string characters out of 3126267
+ 1075659 words of memory out of 3000000
+ 31970 multiletter control sequences out of 15000+200000
+ 537928 words of font info for 45 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  58i,18n,69p,850b,5337s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi9.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oskat/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/
-Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy9.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmtt8.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmtt9.pfb>
-Output written on A01212611_A01373414_A01750272_Homework3.pdf (22 pages, 103923
-97 bytes).
+/cm/cmr10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on A01212611_A01373414_A01750272_Homework3.pdf (17 pages, 119916
+48 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 212 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 
