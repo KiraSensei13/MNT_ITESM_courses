@@ -27,6 +27,7 @@ email : alan.aguirre@tec.mx
 /* CONTEXT OF THE RESEARCH ****************************************************/
 Study of related techniques, analysis and awareness of previous works and study of fundamental aspects that can help carry on the research. (e.g., origins, previous attempts, ...)
 What is the context and problematic situation?
+Overview of the field of study; that is, the perspective from which problem is to be dealt with
 /------------------------------------------------------------------------------/
 
 
@@ -53,6 +54,7 @@ Why do you want to solve it?
 Put in context the proposed research work.
 Demonstrate the limitations of existing techniques
 What has been done before?
+Emphasising what makes your research unique or different
 /------------------------------------------------------------------------------/
 
 
@@ -76,7 +78,7 @@ Explains what counts as a solution to the problem
 /------------------------------------------------------------------------------/
 
 The particular goal to achieve, as this research is conducted, is to design polymer solutions that can:
-* be electrospun by NFES or nechano-spinning
+* be electrospun by NFES or mechano-spinning
 * photopolymerized, and
 * pyrolyzed into conducting carbon nanowires for biosensors
 
