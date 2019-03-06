@@ -91,7 +91,7 @@ Import@"https://raw.githubusercontent.com/jkuczm/\
 MathematicaCellsToTeX/master/NoInstall.m"
 PacletInstall@"http://github.com/jkuczm/MathematicaCellsToTeX/\
 releases/download/v0.2.2/CellsToTeX-0.2.2.paclet"
-*)
+*) 
 Needs@"CellsToTeX`";
 
 testCell = Cell[BoxData[MakeBoxes[
@@ -184,4 +184,31 @@ BS Digital Systems and Robotics Engineering at ITESM - QRO
 A01212611@itesm
 
 My research is focused on the development of rheology analises of different polymer solutions to determine if they can be easily electrospun at low voltages with the purpose to synthesize nanowires.
+
+/******************************************************************************/
+
+Removing a file added in the most recent unpushed commit
+
+If the file was added with your most recent commit, and you have not pushed to GitHub, you can delete the file and amend the commit:
+
+Open Git Bash.
+
+Change the current working directory to your local repository.
+
+To remove the file, enter git rm --cached:
+
+$ git rm --cached giant_file
+# Stage our giant file for removal, but leave it on disk
+Commit this change using --amend -CHEAD:
+
+$ git commit --amend -CHEAD
+# Amend the previous commit with your change
+# Simply making a new commit won't work, as you need
+# to remove the file from the unpushed history as well
+Push your commits to GitHub:
+
+$ git push
+# Push our rewritten, smaller commit
+
+/******************************************************************************/
 
