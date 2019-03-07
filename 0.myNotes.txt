@@ -187,7 +187,7 @@ My research is focused on the development of rheology analises of different poly
 
 /******************************************************************************/
 
-Removing a file added in the most recent unpushed commit
+//-- Removing a file added in the most recent unpushed commit --//
 
 If the file was added with your most recent commit, and you have not pushed to GitHub, you can delete the file and amend the commit:
 
@@ -211,4 +211,40 @@ $ git push
 # Push our rewritten, smaller commit
 
 /******************************************************************************/
+
+Dora Iliana Medina Medina <dora.medina@tec.mx>
+Héctor Alán Aguirre Soto <alan.aguirre@tec.mx>
+
+/******************************************************************************/
+
+THESIS MESSAGE
+
+Introduction :
+Carbon fibers are versatile materials composed of carbon chains with a wide range of applications.
+
+Problem statement :
+Carbon nanowires have been fabricated with a photoresist, but little is known about polymers that can produce more conductive carbon nanowires after pyrolysis.
+
+Background :
+FFES or Far field electrospinning is a inexpensive process to produce polymer fibers, but with low accuracy due to electric instabilities.
+
+Near field electrospinning (NFES) is similar to FFES, but with a reduced distance between the fiber source and the collector and higher precision.
+
+Related Work :
+Various polymer solutions have being tested and measured through NFSE and photopolymerization processes; it was found that it is not possible to predict the behaviour of the electrospinning process, so additional properties are to be considered to achieve a stable process.
+
+Hypothesis :
+The properties of the polymer solution can be amended to obtain a electrospun-able, photopolymerizable and pyrolyzable/graphitizable fibers.
+
+Methodology :
+Analyse the rheology of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nanowires with them.
+
+Expected Results :
+Design polymer solutions that can be electrospun by NFES, photopolymerized, and then pyrolyzed into conducting carbon nanowires.
+
+Further Work :
+The use of the newly designed polymer solution within the NFES-Photopolymerization-Pyrolysis process can be amended to achieve mass scale manufacturing of carbon nanowires in a cheap, continuous, simple and reproducible manner.
+
+Conclusion :
+The new/tailored polymer solution can be used to synthesize carbon nanowires with high conductive properties and reduced thickness.
 
