@@ -248,6 +248,61 @@ The use of the newly designed polymer solution within the NFES-Photopolymerizati
 Conclusion :
 The new/tailored polymer solution can be used to synthesize carbon nanowires with high conductive properties and reduced thickness.
 
+/* video **********************************************************************/
+
+•	Introduce yourself, the programme you are enrolled in, name of advisor, and the area of research you are interested in.
+
+
+•	Content and Motivation (Problem definition)
+Carbon nanowires have been fabricated with a photoresist, but little is known about polymers that can produce more conductive carbon nanowires after pyrolysis.
+
+•	Why should the problem be tackled differently? (What has been done wrong or been ignored?)
+Various polymer solutions have being tested and measured through NFSE and photopolymerization processes; it was found that it is not possible to predict the behaviour of the electrospinning process, so additional properties are to be considered to achieve a stable process.
+
+•	Objectives
+Design polymer solutions that can be electrospun by NFES, photopolymerized, and then pyrolyzed into conducting carbon nanowires.
+
+•	Hypothesis
+The properties of the polymer solution can be amended to obtain a electrospun-able, photopolymerizable and pyrolyzable/graphitizable fibers.
+
+•	A few words on how you will tackle the problem at hand
+Analyse the rheology of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nanowires with them.
+
+•	References (if any)
+Madou, M. J., Dunn-Rankin, D., Kulinsky, L., Mirsepassi, A.,
+Bisht, G. S., Oh, S., & Canton, G. (2011). Controlled
+Continuous Patterning of Polymeric Nanofibers on
+Three-Dimensional Substrates Using Low-Voltage Near-Field
+Electrospinning. Nano Letters, 11(4), 1831–1837.
+https://doi.org/10.1021/nl2006164
+
+Chang, C., Limkrailassiri, K., & Lin, L. (2008). Continuous
+near-field electrospinning for large area deposition of
+orderly nanofiber patterns. Applied Physics Letters, 93(12),
+1–4. https://doi.org/10.1063/1.2975834
+
+Gommes, C. J., Blacher, S., Dunsmuir, J. H., & Tsou, A. H.
+(2012). Practical Methods for Measuring the Tortuosity of
+Porous Materials from Binary or Gray-Tone Tomographic
+Reconstructions. AIChE Journal, 55(8), 2000–2012.
+https://doi.org/10.1002/aic
+
+Chen, J. (2007). Thermal and Mechanical Cracking in
+TIPS-Pentacene Thin Films. Journal of Polymer Science Part B:
+Polymer Physics, 45(April), 1390–1398.
+https://doi.org/10.1002/polb
+
+Sharma, C. S., Sharma, A., & Madou, M. (2010). Multiscale
+carbon structures fabricated by direct micropatterning of
+electrospun mats of SU-8 photoresist nanofibers. Langmuir,
+26(4), 2218–2222. https://doi.org/10.1021/la904078r
+
+Cheong, Y. K., Lim, W. H., Lee, S. H., Pua, C. H., Chong, W. Y.,
+& Ahmad, H. (2016). 405 nm laser processing of thin SU-8 polymer
+film. Optik, 127(4), 1651–1655.
+https://doi.org/10.1016/j.ijleo.2015.11.057
+
+
 /******************************************************************************/
 
 Vector Differential Calculus - VIDEO
