@@ -248,3 +248,17 @@ The use of the newly designed polymer solution within the NFES-Photopolymerizati
 Conclusion :
 The new/tailored polymer solution can be used to synthesize carbon nanowires with high conductive properties and reduced thickness.
 
+/******************************************************************************/
+
+Vector Differential Calculus - VIDEO
+
+paper trail:
+https://goo.gl/Ws46kE
+https://www.dropbox.com/s/7uruqmv9v2a0r4k/Notes_VectorDiffCalculus_.pdf?dl=0
+
+video:
+https://youtu.be/xdl2BX5FLZg
+
+/******************************************************************************/
+
+
