@@ -91,7 +91,7 @@ Import@"https://raw.githubusercontent.com/jkuczm/\
 MathematicaCellsToTeX/master/NoInstall.m"
 PacletInstall@"http://github.com/jkuczm/MathematicaCellsToTeX/\
 releases/download/v0.2.2/CellsToTeX-0.2.2.paclet"
-*)
+*) 
 Needs@"CellsToTeX`";
 
 testCell = Cell[BoxData[MakeBoxes[
@@ -185,3 +185,139 @@ A01212611@itesm
 
 My research is focused on the development of rheology analises of different polymer solutions to determine if they can be easily electrospun at low voltages with the purpose to synthesize nanowires.
 
+/******************************************************************************/
+
+//-- Removing a file added in the most recent unpushed commit --//
+
+If the file was added with your most recent commit, and you have not pushed to GitHub, you can delete the file and amend the commit:
+
+Open Git Bash.
+
+Change the current working directory to your local repository.
+
+To remove the file, enter git rm --cached:
+
+$ git rm --cached giant_file
+# Stage our giant file for removal, but leave it on disk
+Commit this change using --amend -CHEAD:
+
+$ git commit --amend -CHEAD
+# Amend the previous commit with your change
+# Simply making a new commit won't work, as you need
+# to remove the file from the unpushed history as well
+Push your commits to GitHub:
+
+$ git push
+# Push our rewritten, smaller commit
+
+/******************************************************************************/
+
+Dora Iliana Medina Medina <dora.medina@tec.mx>
+Héctor Alán Aguirre Soto <alan.aguirre@tec.mx>
+
+/******************************************************************************/
+
+THESIS MESSAGE
+
+Introduction :
+Carbon fibers are versatile materials composed of carbon chains with a wide range of applications.
+
+Problem statement :
+Carbon nanowires have been fabricated with a photoresist, but little is known about polymers that can produce more conductive carbon nanowires after pyrolysis.
+
+Background :
+FFES or Far field electrospinning is a inexpensive process to produce polymer fibers, but with low accuracy due to electric instabilities.
+
+Near field electrospinning (NFES) is similar to FFES, but with a reduced distance between the fiber source and the collector and higher precision.
+
+Related Work :
+Various polymer solutions have being tested and measured through NFSE and photopolymerization processes; it was found that it is not possible to predict the behaviour of the electrospinning process, so additional properties are to be considered to achieve a stable process.
+
+Hypothesis :
+The properties of the polymer solution can be amended to obtain a electrospun-able, photopolymerizable and pyrolyzable/graphitizable fibers.
+
+Methodology :
+Analyse the rheology of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nanowires with them.
+
+Expected Results :
+Design polymer solutions that can be electrospun by NFES, photopolymerized, and then pyrolyzed into conducting carbon nanowires.
+
+Further Work :
+The use of the newly designed polymer solution within the NFES-Photopolymerization-Pyrolysis process can be amended to achieve mass scale manufacturing of carbon nanowires in a cheap, continuous, simple and reproducible manner.
+
+Conclusion :
+The new/tailored polymer solution can be used to synthesize carbon nanowires with high conductive properties and reduced thickness.
+
+/* video **********************************************************************/
+
+•	Introduce yourself, the programme you are enrolled in, name of advisor, and the area of research you are interested in.
+
+
+•	Content and Motivation (Problem definition)
+Carbon nanowires have been fabricated with a photoresist, but little is known about polymers that can produce more conductive carbon nanowires after pyrolysis.
+
+•	Why should the problem be tackled differently? (What has been done wrong or been ignored?)
+Various polymer solutions have being tested and measured through NFSE and photopolymerization processes; it was found that it is not possible to predict the behaviour of the electrospinning process, so additional properties are to be considered to achieve a stable process.
+
+•	Objectives
+Design polymer solutions that can be electrospun by NFES, photopolymerized, and then pyrolyzed into conducting carbon nanowires.
+
+•	Hypothesis
+The properties of the polymer solution can be amended to obtain a electrospun-able, photopolymerizable and pyrolyzable/graphitizable fibers.
+
+•	A few words on how you will tackle the problem at hand
+Analyse the rheology of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nanowires with them.
+
+•	References (if any)
+Madou, M. J., Dunn-Rankin, D., Kulinsky, L., Mirsepassi, A.,
+Bisht, G. S., Oh, S., & Canton, G. (2011). Controlled
+Continuous Patterning of Polymeric Nanofibers on
+Three-Dimensional Substrates Using Low-Voltage Near-Field
+Electrospinning. Nano Letters, 11(4), 1831–1837.
+https://doi.org/10.1021/nl2006164
+
+Chang, C., Limkrailassiri, K., & Lin, L. (2008). Continuous
+near-field electrospinning for large area deposition of
+orderly nanofiber patterns. Applied Physics Letters, 93(12),
+1–4. https://doi.org/10.1063/1.2975834
+
+Gommes, C. J., Blacher, S., Dunsmuir, J. H., & Tsou, A. H.
+(2012). Practical Methods for Measuring the Tortuosity of
+Porous Materials from Binary or Gray-Tone Tomographic
+Reconstructions. AIChE Journal, 55(8), 2000–2012.
+https://doi.org/10.1002/aic
+
+Chen, J. (2007). Thermal and Mechanical Cracking in
+TIPS-Pentacene Thin Films. Journal of Polymer Science Part B:
+Polymer Physics, 45(April), 1390–1398.
+https://doi.org/10.1002/polb
+
+Sharma, C. S., Sharma, A., & Madou, M. (2010). Multiscale
+carbon structures fabricated by direct micropatterning of
+electrospun mats of SU-8 photoresist nanofibers. Langmuir,
+26(4), 2218–2222. https://doi.org/10.1021/la904078r
+
+Cheong, Y. K., Lim, W. H., Lee, S. H., Pua, C. H., Chong, W. Y.,
+& Ahmad, H. (2016). 405 nm laser processing of thin SU-8 polymer
+film. Optik, 127(4), 1651–1655.
+https://doi.org/10.1016/j.ijleo.2015.11.057
+
+
+/******************************************************************************/
+
+Vector Differential Calculus - VIDEO
+
+paper trail:
+https://goo.gl/Ws46kE
+https://www.dropbox.com/s/7uruqmv9v2a0r4k/Notes_VectorDiffCalculus_.pdf?dl=0
+
+video:
+https://youtu.be/xdl2BX5FLZg
+
+/******************************************************************************/
+
+a01166117
+
+/******************************************************************************/
+
+https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows
