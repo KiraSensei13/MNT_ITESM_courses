@@ -43,9 +43,18 @@ summary(mdl)
 mdl <- glm(chocolate ~ fruity + caramel +  peanutyalmondy + nougat + crispedricewafer + hard + bar + pluribus + sugarpercent + pricepercent + winpercent, data = choco_data, family = "binomial")
 summary(mdl) # Visualizing the model to determine the most significant variables.
 
+# Takng away all the not significative parameters we obtain the following model:
+
+mdl <- glm(chocolate ~ fruity + winpercent, data = choco_data, family = "binomial")
+summary(mdl) # Visualizing the model to determine the most significant variables.
+
 # Lets see the performance of our beta coefficients:
 predicted <- predict(mdl, choco_data[,], type = "response")
 hist(predicted)
+
+#We assume that: all values less than 0.5 correspond to the first category, 0.5 or bigger correspond to the second category
+glm_predicted = ifelse(predicted > 0.5, 1, 0)
+hist(glm_predicted)
 
 #################################################################################
 # SECOND SECTION
