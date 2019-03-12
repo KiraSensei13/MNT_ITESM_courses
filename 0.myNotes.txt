@@ -319,3 +319,5 @@ https://youtu.be/xdl2BX5FLZg
 a01166117
 
 /******************************************************************************/
+
+https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows
