@@ -30,7 +30,7 @@ summary(choco_data) # Exploring the data.
 # There is no need to filter our data since all variables are categorical, with the exceptions of "sugarpercent", "pricepercent" and "winpercent" but none of them have any row with a value of 0. The only information that causes irregularities is the competitors name.
 
 chocolate_labels <- choco_data[,1] # First column contains the names of candy and we define it as the label for each row.
-choco_data <- choco_data[,-1] # Taking away the first column that contains the names of candy.
+choco_data <- choco_data[,-1] # Taking away the first column that contains the candy names.
 
 # Setting numeric values to categoric value:
 choco_data$chocolate <- as.factor(choco_data$chocolate)
