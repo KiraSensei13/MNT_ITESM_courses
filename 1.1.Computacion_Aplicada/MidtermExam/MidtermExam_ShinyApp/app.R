@@ -37,17 +37,17 @@
 # Defining the user interface:
 ui <- fluidPage(
   
-  ########### STYLE ############################################################## 
+########### STYLE ############################################################## 
   
   # Defining style:
   theme = shinytheme("sandstone"),
   
-  ########### HEADER OF THE APPLICATION ##########################################
+########### HEADER OF THE APPLICATION ##########################################
   
   titlePanel(h1("Midterm Exam", align = "center")),
   titlePanel(h5("by: Antonio Osamu Katagiri Tanaka (A01212611) and Bruno Gonzalez Soria (A01169284)", align = "center")),
   
-  ########### THIS IS THE SIDE PANEL FOR THE USER TO ENTER INPUT #################  
+########### THIS IS THE SIDE PANEL FOR THE USER TO ENTER INPUT #################  
   
   sidebarPanel(
     selectInput("ExamProblems", "Please Select the problem to be evaluated:",
@@ -73,7 +73,7 @@ ui <- fluidPage(
     
   ),
   
-  ########### THIS IS WHERE THE INFORMATION WILL BE SHOWN ########################
+########### THIS IS WHERE THE INFORMATION WILL BE SHOWN ########################
   mainPanel(
     
     # Displaying the information in tabs:
@@ -100,7 +100,7 @@ ui <- fluidPage(
 
 server <- function (input,output,session){
   
-  ########### THIS SECTION IS JUST FOR THE INSTRUCTIONS OF EACH PROBLEM ##########
+########### THIS SECTION IS JUST FOR THE INSTRUCTIONS OF EACH PROBLEM ##########
   
   output$`Problem Instructions` <- renderText({
     
@@ -152,13 +152,13 @@ server <- function (input,output,session){
   })
   
   
-  ########### THIS SECTION IS TO ADD THE CODE (PROCEDURE) ########################
+########### THIS SECTION IS TO ADD THE CODE (PROCEDURE) ########################
   
   output$`Code` <- renderPrint({
     
     problemId <- input$`ExamProblems`
     
-    ######## Procedure for problem 1 ########################
+    ################## Procedure for problem 1 ########################
     
     if (problemId == "First Section - Problem 1 a)") {
       
@@ -170,7 +170,7 @@ server <- function (input,output,session){
     
     
     
-    ######## Procedure for problem 2 ##############################################
+    ################## Procedure for problem 2 ########################
     
     if (problemId == "Second Section - Problem a)") {
       
@@ -180,7 +180,7 @@ server <- function (input,output,session){
       
     }
     
-    ######## Procedure for problem 3 ##############################################    
+    ################## Procedure for problem 3 ########################    
     
     if (problemId == "Second Section - Problem b)") {
       
@@ -257,7 +257,7 @@ server <- function (input,output,session){
       
     }
     
-    ######## Procedure for Problem 4 ############################################
+    ################## Procedure for Problem 4 ########################
     
     if (problemId == "Second Section - Problem c)"){
       
@@ -272,13 +272,13 @@ server <- function (input,output,session){
   })
   
   
-  ########### THIS SECTION IS FOR THE PLOTS CREATED BY THE PROGRAM ###############
+  ########### THIS SECTION IS FOR THE PLOTS CREATED BY THE PROGRAM ####
   
   output$`Graphical Representation` <- renderPlot({
     
     problemId <- input$`ExamProblems`
     
-    ############## Plot for Problem 1 ##############################################
+    ############## Plot for Problem 1 #################################
     
     if (problemId == "First Section - Problem 1 a)") {
       
@@ -297,7 +297,7 @@ server <- function (input,output,session){
     
     else{
       
-      ############## Plot for Problem 2 ##############################################
+      ############## Plot for Problem 2 ###############################
       
       if (problemId == "Second Section - Problem a)") {
         
@@ -305,7 +305,7 @@ server <- function (input,output,session){
       
       else{
         
-        ############## Plot for problem 3 ##############################################
+        ############## Plot for problem 3 #############################
         
         if (problemId == "Second Section - Problem b)") {
           
@@ -313,7 +313,7 @@ server <- function (input,output,session){
         
         else{
           
-          ############## Plot for problem 4 ##############################################
+          ############## Plot for problem 4 ###########################
           
           if (problemId == "Second Section - Problem c)") {
             
