@@ -28,6 +28,8 @@
 # install.packages("shinythemes")
 # Load Library:
 # library(shinythemes)
+# Adding the codes:
+# library(markdown)
 
 
 #*******************************************************************************
@@ -40,7 +42,7 @@ ui <- fluidPage(
 ########### STYLE ############################################################## 
   
   # Defining style:
-  theme = shinytheme("sandstone"),
+  theme = shinytheme("cerulean"),
   
 ########### HEADER OF THE APPLICATION ##########################################
   
@@ -61,15 +63,16 @@ ui <- fluidPage(
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem b)'",
-      numericInput("p", "Please enter the point x to which you want to approximate: ", 0),
+      textInput("fctn","Please enter your function:", "sin(x^2)"),
+      numericInput("pnt", "Please enter the point x to which you want to approximate: ", 0),
       numericInput("xmin", "Please enter lower value of x: ", -6),
       numericInput("xmax", "Please enter upper value of x:", 6),
-      sliderInput("factors", "Please select number of factors:",
-                  min = 1, max = 5000, value = 1, step = 1)),
+      sliderInput("order", "Please select order of approximation:",
+                  min = 1, max = 10, value = 1, step = 1),
+      checkboxInput("show", "Show all approximations?", TRUE)),
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem c)'")
-    
     
   ),
   
@@ -82,7 +85,8 @@ ui <- fluidPage(
                          tags$b(paste("Instructions:")),
                          textOutput("Problem Instructions"),
                          plotOutput("Graphical Representation")),
-                tabPanel("Code", verbatimTextOutput("Code")),
+                tabPanel("Code",
+                         uiOutput("Procedure")),
                 tabPanel("Chocolate",
                          tableOutput("Chocolate"))
     )
@@ -154,7 +158,7 @@ server <- function (input,output,session){
   
 ########### THIS SECTION IS TO ADD THE CODE (PROCEDURE) ########################
   
-  output$`Code` <- renderPrint({
+  output$`Procedure` <- renderText({
     
     problemId <- input$`ExamProblems`
     
@@ -162,117 +166,55 @@ server <- function (input,output,session){
     
     if (problemId == "First Section - Problem 1 a)") {
       
-    }
-    
-    else{
+      proc <- includeMarkdown("Problem1.Rmd")
       
     }
     
-    
+    else{
     
     ################## Procedure for problem 2 ########################
     
-    if (problemId == "Second Section - Problem a)") {
+      if (problemId == "Second Section - Problem a)") {
+        
+        proc <- includeMarkdown("Problem2.Rmd")
       
-    }
+      }
     
-    else{
+      else{
       
-    }
-    
     ################## Procedure for problem 3 ########################    
     
-    if (problemId == "Second Section - Problem b)") {
+        if (problemId == "Second Section - Problem b)") {
+          
+          proc <- includeMarkdown("Problem3.Rmd")
       
-      library(pracma)
-      taylorPlot <- function(f, c, from, to) {
-        # Plot the Taylor approximations up to the 2nd, 4th, 6th and 8th terms
-        #
-        # Parameters
-        # ----------
-        # f : function
-        # Vectorized function of one variable
-        # c : numeric
-        # point where the series expansion will take place
-        # from, to : numeric
-        # Interval of points to be ploted
-        #
-        # Returns
-        # -------
-        # void
-        
-        x <- seq(from, to, length.out = 100)
-        yf <- f(x)
-        
-        yp2 <- polyval(taylor(f, c, 2), x)
-        yp4 <- polyval(taylor(f, c, 4), x)
-        yp6 <- polyval(taylor(f, c, 6), x)
-        yp8 <- polyval(taylor(f, c, 8), x)
-        
-        plot(
-          x,
-          yf,
-          xlab = "x",
-          ylab = "f(x)",
-          type = "l",
-          main = ' Taylor Series Approximation of f(x) ',
-          col = "black",
-          lwd = 2
-        )
-        
-        lines(x, yp2, col = "#c8e6c9")
-        lines(x, yp4, col = "#81c784")
-        lines(x, yp6, col = "#4caf50")
-        lines(x, yp8, col = "#388e3c")
-        
-        legend(
-          'topleft',
-          inset = .05,
-          legend = c("TS 8 terms", "TS 6 terms", "TS 4 terms", "TS 2 terms", "f(x)"),
-          col = c('#388e3c', '#4caf50', '#81c784', '#c8e6c9', 'black'),
-          lwd = c(1),
-          bty = 'n',
-          cex = .75
-        )
-      }
-      
-      
-      f0 <- function(x) {
-        res = sin(x)
-        
-        return(res)
-        
-      }
-      
-      f1 <- function(x) {
-        res = exp(complex(real = 0, imaginary = 1)*x)
-        
-        return(res)
-        
-      }
-      
-    }
+        }
     
-    else{
-      
-    }
+        else{
     
     ################## Procedure for Problem 4 ########################
     
-    if (problemId == "Second Section - Problem c)"){
+          if (problemId == "Second Section - Problem c)"){
+            
+            proc <- includeMarkdown("Problem4.Rmd")
       
+          }
+    
+          else{
+            
+            proc <- "Sorry for the inconvenience, we are still working hard to make this application evenn better."
+      
+          }
+        }
+      }
     }
     
-    else{
-      
-    }
-    
-    
+    paste(proc)
     
   })
   
   
-  ########### THIS SECTION IS FOR THE PLOTS CREATED BY THE PROGRAM ####
+########### THIS SECTION IS FOR THE PLOTS CREATED BY THE PROGRAM ###############
   
   output$`Graphical Representation` <- renderPlot({
     
@@ -301,6 +243,8 @@ server <- function (input,output,session){
       
       if (problemId == "Second Section - Problem a)") {
         
+        
+        
       }
       
       else{
@@ -308,6 +252,58 @@ server <- function (input,output,session){
         ############## Plot for problem 3 #############################
         
         if (problemId == "Second Section - Problem b)") {
+          
+          library(pracma)
+          pnt <- input$`pnt`
+          xmin <- input$`xmin`
+          xmax <- input$`xmax`
+          order <- input$`order`
+          
+          taylorPlot <- function(f, c, from, to) {
+            
+            x <- seq(from, to, length.out = 100)
+            yf <- f(x)
+            
+            ypn <- polyval(taylor(f, c, order), x)
+            
+            plot(
+              x,
+              yf,
+              xlab = "x",
+              ylab = "f(x)",
+              type = "l",
+              main = ' Taylor Series Approximation of f(x) ',
+              col = "black",
+              lwd = 2
+            )
+            
+            if (input$`show` == TRUE){
+              lines(x, 0:ypn, col = c("#c8e6c",n))
+            }
+            else{
+              lines(x, ypn, col = "#c8e6c9")
+            }
+            
+            
+            legend(
+              'topleft',
+              inset = .05,
+              legend = c("TS 8 terms", "TS 6 terms", "TS 4 terms", "TS 2 terms", "f(x)"),
+              col = c('#388e3c', '#4caf50', '#81c784', '#c8e6c9', 'black'),
+              lwd = c(1),
+              bty = 'n',
+              cex = .75
+            )
+          }
+          
+          f0 <- function(x) {
+            res = as.function(input$`fctn`)
+            
+            return(res)
+            
+          }
+          
+          graph <- taylorPlot(f0, pnt, xmin, xmax)
           
         }
         

@@ -4,54 +4,70 @@ runtime: shiny
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Commented Code for Problem 2
+
+First we define a variable to call for the database to be analized:
+```{r}
+choco_data = read.csv("Chocolate.csv")
 ```
 
-This R Markdown document is made interactive using Shiny. Unlike the more traditional workflow of creating static reports, you can now create documents that allow your readers to change the assumptions underlying your analysis and see the results immediately. 
-
-To learn more, see [Interactive Documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
-
-## Inputs and Outputs
-
-You can embed Shiny inputs and outputs in your document. Outputs are automatically updated whenever inputs change.  This demonstrates how a standard R plot can be made interactive by wrapping it in the Shiny `renderPlot` function. The `selectInput` and `sliderInput` functions create the input widgets used to drive the plot.
-
-```{r eruptions, echo=FALSE}
-inputPanel(
-  selectInput("n_breaks", label = "Number of bins:",
-              choices = c(10, 20, 35, 50), selected = 20),
-  
-  sliderInput("bw_adjust", label = "Bandwidth adjustment:",
-              min = 0.2, max = 2, value = 1, step = 0.2)
-)
-
-renderPlot({
-  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
-       xlab = "Duration (minutes)", main = "Geyser eruption duration")
-  
-  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
-  lines(dens, col = "blue")
-})
+Verifying there is no repeated information and exploring the data.
+```{r}
+str(choco_data) 
+summary(choco_data)
 ```
 
-## Embedded Application
+There is no need to filter our data since all variables are categorical, with the exceptions of "sugarpercent", "pricepercent" and "winpercent" but none of them have any row with a value of 0. The only information that causes irregularities is the competitors name.
 
-It's also possible to embed an entire Shiny application within an R Markdown document using the `shinyAppDir` function. This example embeds a Shiny application located in another directory:
-
-```{r tabsets, echo=FALSE}
-shinyAppDir(
-  system.file("examples/06_tabsets", package = "shiny"),
-  options = list(
-    width = "100%", height = 550
-  )
-)
+First column contains the names of candy and we define it as the label for each row.
+```{r}
+chocolate_labels <- choco_data[,1]
 ```
 
-Note the use of the `height` parameter to determine how much vertical space the embedded application should occupy.
+Taking away the first column that contains the candy names.
+```{r}
+choco_data <- choco_data[,-1] 
+```
 
-You can also use the `shinyApp` function to define an application inline rather then in an external directory.
+Setting numeric values to categoric value:
+```{r}
+choco_data$chocolate <- as.factor(choco_data$chocolate)
+summary(choco_data)
+```
 
-In all of R code chunks above the `echo = FALSE` attribute is used. This is to prevent the R code within the chunk from rendering in the document alongside the Shiny components.
+Since the dependent variable "Chocolate" is a categorical variable, we have decided to use Logistic Regression:
+```{r}
+mdl <- glm(chocolate ~ ., data = choco_data, family = "binomial")
+summary(mdl)
 
+mdl <- glm(chocolate ~ fruity + caramel +  peanutyalmondy + nougat + crispedricewafer + hard + bar + pluribus + sugarpercent + pricepercent + winpercent, data = choco_data, family = "binomial")
+```
+
+Visualizing the model to determine the most significant variables.
+```{r}
+summary(mdl) 
+```
+
+Takng away all the not significative parameters we obtain the following model:
+```{r}
+mdl <- glm(chocolate ~ fruity + winpercent, data = choco_data, family = "binomial")
+```
+
+Visualizing the model to determine the most significant variables.
+```{r}
+summary(mdl) 
+```
+
+Lets see the performance of our beta coefficients:
+```{r}
+predicted <- predict(mdl, choco_data[,], type = "response")
+hist(predicted)
+```
+
+We assume that: all values less than 0.5 correspond to the first category, 0.5 or bigger correspond to the second category.
+```{r}
+glm_predicted = ifelse(predicted > 0.5, 1, 0)
+hist(glm_predicted)
+```
 
 
