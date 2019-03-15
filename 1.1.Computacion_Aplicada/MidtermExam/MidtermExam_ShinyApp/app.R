@@ -77,8 +77,8 @@ ui <- fluidPage(
       condition = "input.ExamProblems == 'Second Section - Problem b)'",
       textInput("funT","Please enter your function:", "sin(x^2)"),
       numericInput("pnt", "Please enter the 'x' value to which you want to approximate: ", 0),
-      numericInput("xmin", "Please enter lower value of x: ", -6),
-      numericInput("xmax", "Please enter upper value of x:", 6),
+      numericInput("xmin", "Please enter lower value of 'x': ", -6),
+      numericInput("xmax", "Please enter upper value of 'x':", 6),
       numericInput("trms", "Please enter the desired ammount of terms:", 2),
       checkboxInput("show", "Show all approximations?", TRUE)
       ),
@@ -116,63 +116,6 @@ ui <- fluidPage(
 
 #*******************************************************************************
 
-########### EXTRACTION OF SPECIFIED FUNCTION BY NAME ###########################
-            ## Credit to Dr. Wolfgang Rolke ##
-
-chfun <- function (a) 
-{
-  a <- gsub("sqrt","&radic;",a)
-  a <- gsub("pi","&pi;",a)
-  a <- gsub("^x","<sup>x</sup>",a,fixed=TRUE)
-  a <- gsub("^sin(x)","<sup>sin(x)</sup>",a,fixed=TRUE)
-  a <- gsub("^cos(x)","<sup>cos(x)</sup>",a,fixed=TRUE)
-  a <- gsub("^tan(x)","<sup>tan(x)</sup>",a,fixed=TRUE)
-  a <- gsub("^asin(x)","<sup>asin(x)</sup>",a,fixed=TRUE)
-  a <- gsub("^acos(x)","<sup>acos(x)</sup>",a,fixed=TRUE)
-  a <- gsub("^atan(x)","<sup>atan(x)</sup>",a,fixed=TRUE) 
-  a <- gsub("^log(x)","<sup>log(x)</sup>",a,fixed=TRUE)
-  a <- gsub("^(-1)","<sup>-1</sup>",a,fixed=TRUE)
-  a <- gsub("^(-2)","<sup>-2</sup>",a,fixed=TRUE)
-  a <- gsub("^(-3)","<sup>-3</sup>",a,fixed=TRUE)
-  
-  m <- nchar(a)
-  i <- 0 
-  repeat {
-    i <- i+1
-    if(i>100) break
-    if(substring(a,i,i)=="^") {
-      if(substring(a,i+1,i+1)=="(") {
-        k <- i+1
-        np <- 0
-        txt <- ""
-        repeat {
-          k <- k+1
-          txt <- c(txt,substring(a,k,k))
-          if(substring(a,k,k)=="(") np <- np+1
-          if(substring(a,k,k)==")" & np==0) break
-          if(k>100) break
-        }
-        txt <- paste(txt,collapse="")
-        txt <- substring(txt,1,nchar(txt)-1)
-        a <- paste(substring(a,1,i-1),"<sup>",txt,"</sup>",substring(a,k+1,m),sep="")
-      }
-      else {
-        k <- i
-        repeat {
-          k <- k+1 
-          if(is.na(as.numeric(substring(a,k,k)))) break 
-          if(k>100) break
-        }   
-        k <- k-1
-        a <- paste(substring(a,1,i-1),"<sup>",substring(a,i+1,k),"</sup>",substring(a,k+1,m),collapse="")
-      }              
-      i <- i+8
-      m <- m+8
-    }
-    if(i==m) break
-  }
-  a            
-}
 
 #*******************************************************************************
 
@@ -358,7 +301,7 @@ server <- function (input,output,session){
             else i <- nmult*pnt
             p <- x[i]
             h <- x[2]-x[1]
-            f<-function(x) {
+            f <- function(x) {
               eval(parse(text=fctn))
             }
             y <- f(x)
@@ -376,26 +319,30 @@ server <- function (input,output,session){
           x <- data()[[1]][,1]
           y <- data()[[1]][,2]
           yr <- data()[[4]]
-          if(pnt==0) i <- nmult*25
-          else i <- nmult*pnt
-          points(x[i],y[i],pch=20,cex=2)
-          a <- data()[[2]]
-          p <- data()[[3]]
           
-          y <- a[1]+a[2]*(x-p)
-          lines(x,y,lwd=1,col="blue")
-          
-          y <- y+a[3]/2*(x-p)^2
-          lines(x,y,lwd=1,col="green")
-          
-          y <- y+a[4]/6*(x-p)^3
-          lines(x,y,lwd=1,col="red")
-          
-          y <- y+a[5]/24*(x-p)^4
-          lines(x,y,lwd=1,col="gray")
-          
-          graph <-  plot(x,y,ylim=yr,xlab="x",ylab="",type="l",lwd=3)
-          
+          graph <-  plot(x,y,ylim=yr, xlim = c(xmin,xmax), xlab="x",ylab="",type="l",lwd=3)
+                    if(pnt==0){
+                      i <- nmult*25
+                    } 
+                    else{
+                      i <- nmult*pnt
+                    } 
+                    points(x[i],y[i],pch=20,cex=2)
+                    a <- data()[[2]]
+                    p <- data()[[3]]
+                    
+                    y <- a[1]+a[2]*(x-p)
+                    lines(x,y,lwd=1,col="blue")
+                     
+                    y <- y+a[3]/2*(x-p)^2
+                    lines(x,y,lwd=1,col="green")
+                     
+                    y <- y+a[4]/6*(x-p)^3
+                    lines(x,y,lwd=1,col="red")
+                     
+                    y <- y+a[5]/24*(x-p)^4
+                    lines(x,y,lwd=1,col="gray")
+                    
         }
         
         else{
@@ -411,7 +358,7 @@ server <- function (input,output,session){
             upbnd <- input$`upbound`
             RKn <- input$`RK`
             
-            as.factor(ODE)
+            
             
           }
           
