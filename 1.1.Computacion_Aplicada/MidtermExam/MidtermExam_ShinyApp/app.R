@@ -52,28 +52,38 @@ ui <- fluidPage(
 ########### THIS IS THE SIDE PANEL FOR THE USER TO ENTER INPUT #################  
   
   sidebarPanel(
+    
+    ######### Selection of Problem #############################################
+    
     selectInput("ExamProblems", "Please Select the problem to be evaluated:",
                 choices = c("First Section - Problem 1 a)", "Second Section - Problem a)", "Second Section - Problem b)", "Second Section - Problem c)")),
+    
+    ######### Input Panel for Problem 1 ########################################
     
     conditionalPanel(
       condition = "input.ExamProblems == 'First Section - Problem 1 a)'"),
     
+    ######### Input Panel for Problem 2 ########################################
+    
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem a)'",
-      textInput("valsm1", "Enter the values for the 'x' column separated by a space:", "1 2 3 4"),
-      textInput("valsm2", "Enter the values for the 'y' column separated by a space:", "4 3 2 1")
+      textInput("valsX", "Enter the values for the 'x' column separated by a space:", "1 2 3 4"),
+      textInput("valsY", "Enter the values for the 'y' column separated by a space:", "4 3 2 1")
       ),
+    
+    ######### Input Panel for Problem 3 ########################################
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem b)'",
-      textInput("fctn","Please enter your function:", "sin(x^2)"),
+      textInput("funT","Please enter your function:", "sin(x^2)"),
       numericInput("pnt", "Please enter the 'x' value to which you want to approximate: ", 0),
       numericInput("xmin", "Please enter lower value of x: ", -6),
       numericInput("xmax", "Please enter upper value of x:", 6),
-      sliderInput("order", "Please select order of approximation:",
-                  min = 1, max = 10, value = 1, step = 1),
+      numericInput("trms", "Please enter the desired ammount of terms:", 2),
       checkboxInput("show", "Show all approximations?", TRUE)
       ),
+    
+    ######### Input Panel for Problem 4 ########################################
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem c)'",
@@ -106,6 +116,63 @@ ui <- fluidPage(
 
 #*******************************************************************************
 
+########### EXTRACTION OF SPECIFIED FUNCTION BY NAME ###########################
+            ## Credit to Dr. Wolfgang Rolke ##
+
+chfun <- function (a) 
+{
+  a <- gsub("sqrt","&radic;",a)
+  a <- gsub("pi","&pi;",a)
+  a <- gsub("^x","<sup>x</sup>",a,fixed=TRUE)
+  a <- gsub("^sin(x)","<sup>sin(x)</sup>",a,fixed=TRUE)
+  a <- gsub("^cos(x)","<sup>cos(x)</sup>",a,fixed=TRUE)
+  a <- gsub("^tan(x)","<sup>tan(x)</sup>",a,fixed=TRUE)
+  a <- gsub("^asin(x)","<sup>asin(x)</sup>",a,fixed=TRUE)
+  a <- gsub("^acos(x)","<sup>acos(x)</sup>",a,fixed=TRUE)
+  a <- gsub("^atan(x)","<sup>atan(x)</sup>",a,fixed=TRUE) 
+  a <- gsub("^log(x)","<sup>log(x)</sup>",a,fixed=TRUE)
+  a <- gsub("^(-1)","<sup>-1</sup>",a,fixed=TRUE)
+  a <- gsub("^(-2)","<sup>-2</sup>",a,fixed=TRUE)
+  a <- gsub("^(-3)","<sup>-3</sup>",a,fixed=TRUE)
+  
+  m <- nchar(a)
+  i <- 0 
+  repeat {
+    i <- i+1
+    if(i>100) break
+    if(substring(a,i,i)=="^") {
+      if(substring(a,i+1,i+1)=="(") {
+        k <- i+1
+        np <- 0
+        txt <- ""
+        repeat {
+          k <- k+1
+          txt <- c(txt,substring(a,k,k))
+          if(substring(a,k,k)=="(") np <- np+1
+          if(substring(a,k,k)==")" & np==0) break
+          if(k>100) break
+        }
+        txt <- paste(txt,collapse="")
+        txt <- substring(txt,1,nchar(txt)-1)
+        a <- paste(substring(a,1,i-1),"<sup>",txt,"</sup>",substring(a,k+1,m),sep="")
+      }
+      else {
+        k <- i
+        repeat {
+          k <- k+1 
+          if(is.na(as.numeric(substring(a,k,k)))) break 
+          if(k>100) break
+        }   
+        k <- k-1
+        a <- paste(substring(a,1,i-1),"<sup>",substring(a,i+1,k),"</sup>",substring(a,k+1,m),collapse="")
+      }              
+      i <- i+8
+      m <- m+8
+    }
+    if(i==m) break
+  }
+  a            
+}
 
 #*******************************************************************************
 
@@ -268,55 +335,66 @@ server <- function (input,output,session){
           pnt <- input$`pnt`
           xmin <- input$`xmin`
           xmax <- input$`xmax`
-          order <- input$`order`
+          trms <- seq(1,input$`trms`,1)
+          fctn <- input$`funT`
+          npoints <- 250
+          nmult <- 5
           
-          taylorPlot <- function(f, c, from, to) {
+          #####
+          
+          poly <- function(a,p) {
             
-            x <- seq(from, to, length.out = 100)
-            yf <- f(x)
-            
-            ypn <- polyval(taylor(f, c, order), x)
-            
-            
-            plot(
-              x,
-              yf,
-              xlab = "x",
-              ylab = "f(x)",
-              type = "l",
-              main = ' Taylor Series Approximation of f(x) ',
-              col = "black",
-              lwd = 2
-            )
-            
-            if (input$`show` == TRUE){
-              colo <- as.character("#c8e6c")
-              lines(x, 0:ypn, col = paste(colo,n))
-            }
-            else{
-              lines(x, ypn, col = "#c8e6c9")
-            }
-            
-            
-            legend(
-              'topleft',
-              inset = .05,
-              legend = c("TS 8 terms", "TS 6 terms", "TS 4 terms", "TS 2 terms", "f(x)"),
-              col = c('#388e3c', '#4caf50', '#81c784', '#c8e6c9', 'black'),
-              lwd = c(1),
-              bty = 'n',
-              cex = .75
-            )
+            A <- matrix(0,4,5)
+            A[1,1:2] <- c(a[1]-a[2]*p,a[2])
+            A[2,1:3] <- A[1,1:3]+a[3]*c(p^2,-2*p,1)
+            A[3,1:4] <- A[2,1:4]+a[4]*c(p^3,-3*p^2,3*p^2,1)   
+            A[4,] <- A[3,]+a[5]*c(p^4,-4*p^3,6*p^2,-4*p,1)
+            A
           }
           
-          f0 <- function(x) {
-            res = as.factor(input$`fctn`)
+          data <- reactive({
+            x <- seq(xmin,xmax,length=npoints)
+            if(pnt==0) i <- nmult*25
+            else i <- nmult*pnt
+            p <- x[i]
+            h <- x[2]-x[1]
+            f<-function(x) {
+              eval(parse(text=fctn))
+            }
+            y <- f(x)
+            p0 <- y[i]
+            p1 <- (y[i+1]-y[i])/h
+            p2 <- (y[i-1]-2*y[i]+y[i+1])/h^2
+            p3 <- (y[i+2]-3*y[i+1]+3*y[i]-y[i-1])/h^3
+            p4 <- (y[i+2]-4*y[i+1]+6*y[i]-4*y[i-1]+y[i-2])/h^4
             
-            return(res)
+            yr <- c(min(y)-(max(y)-min(y)/3),max(y)+(max(y)-min(y)/3))
             
-          }
+            list(cbind(x,y),c(p0,p1,p2,p3,p4),p,yr)
+          })
           
-          graph <- taylorPlot(f0, pnt, xmin, xmax)
+          x <- data()[[1]][,1]
+          y <- data()[[1]][,2]
+          yr <- data()[[4]]
+          if(pnt==0) i <- nmult*25
+          else i <- nmult*pnt
+          points(x[i],y[i],pch=20,cex=2)
+          a <- data()[[2]]
+          p <- data()[[3]]
+          
+          y <- a[1]+a[2]*(x-p)
+          lines(x,y,lwd=1,col="blue")
+          
+          y <- y+a[3]/2*(x-p)^2
+          lines(x,y,lwd=1,col="green")
+          
+          y <- y+a[4]/6*(x-p)^3
+          lines(x,y,lwd=1,col="red")
+          
+          y <- y+a[5]/24*(x-p)^4
+          lines(x,y,lwd=1,col="gray")
+          
+          graph <-  plot(x,y,ylim=yr,xlab="x",ylab="",type="l",lwd=3)
           
         }
         
@@ -325,6 +403,15 @@ server <- function (input,output,session){
           ############## Plot for problem 4 ###########################
           
           if (problemId == "Second Section - Problem c)") {
+            
+            ODE <- input$`ODE`
+            xi <- input$`xi`
+            yi <- input$`yi`
+            stp <- input$`step`
+            upbnd <- input$`upbound`
+            RKn <- input$`RK`
+            
+            as.factor(ODE)
             
           }
           
@@ -343,7 +430,7 @@ server <- function (input,output,session){
     
   })
   
-  ########### THIS SECTION CORRESPONDS ONLY TO THE CHOCOLATE DATA ################  
+  ########### THIS SECTION CORRESPONDS ONLY TO THE CHOCOLATE DATA ##############  
   
   output$`Chocolate` <- renderTable({
     
@@ -353,7 +440,7 @@ server <- function (input,output,session){
     
   })
   
-  }
+}
 
 #*******************************************************************************
 

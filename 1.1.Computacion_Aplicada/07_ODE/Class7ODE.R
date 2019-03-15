@@ -208,4 +208,3 @@ d2.f.x.y <- deriv(f.x.y, c("x", "y"), hessian = T)
 
 
 
-
