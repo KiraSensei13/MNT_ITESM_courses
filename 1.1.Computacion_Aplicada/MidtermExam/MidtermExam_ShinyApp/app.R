@@ -23,13 +23,13 @@
 # Install the shiny package:
 # install.packages("shiny")
 # Load Library:
-# library(shiny)
+library(shiny)
 # Giving some style:
 # install.packages("shinythemes")
 # Load Library:
-# library(shinythemes)
+library(shinythemes)
 # Adding the codes:
-# library(markdown)
+library(markdown)
 
 
 #*******************************************************************************
@@ -81,7 +81,8 @@ ui <- fluidPage(
       numericInput("xi","Enter x initial value:",0),
       numericInput("yi", "Enter y initial value:",0),
       numericInput("step","Enter the desired step size:",1),
-      numericInput("ubound","Enter the upper bound:",2)
+      numericInput("upbound","Enter the upper bound:",2),
+      selectInput("RK", "Select which RK order you want to plot:", choices = c("RK1","RK2","RK3","RK4","All together"))
       )
     
   ),
