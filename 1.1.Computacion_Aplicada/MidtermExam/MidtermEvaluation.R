@@ -56,7 +56,7 @@ hist(predicted)
 glm_predicted = ifelse(predicted > 0.5, 1, 0)
 hist(glm_predicted)
 
-#################################################################################
+################################################################################
 # SECOND SECTION
 # a) Lagrange polynomials. This algorithm receives a nx2 matrix, where the first column represents the x coordinate while the second column represents the y coordinate. The code must provide as output the Lagrange polynomial interpolation expression in terms of "x". (30 points) *TIP: Use the functions: expression, D, parse and paste within a loop to get the desired output.
 
@@ -140,3 +140,5 @@ taylorPlot(f1, 1, -2*pi, 2*pi)
 
 ################################################################################
 # c) Runge-Kutta. The algorithm will receive an ODE, initial values for x and y, the step size and the upper bound. The output will be the plot of the second, third and fourth order RK approximations. To demonstrate the functionality of your code, use the analytical answer of the ODE to compare all the approximations (30 points)
+
+

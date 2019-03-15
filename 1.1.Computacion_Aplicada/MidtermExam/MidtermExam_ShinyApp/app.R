@@ -59,20 +59,30 @@ ui <- fluidPage(
       condition = "input.ExamProblems == 'First Section - Problem 1 a)'"),
     
     conditionalPanel(
-      condition = "input.ExamProblems == 'Second Section - Problem a)'"),
+      condition = "input.ExamProblems == 'Second Section - Problem a)'",
+      textInput("valsm1", "Enter the values for the 'x' column separated by a space:", "1 2 3 4"),
+      textInput("valsm2", "Enter the values for the 'y' column separated by a space:", "4 3 2 1")
+      ),
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem b)'",
       textInput("fctn","Please enter your function:", "sin(x^2)"),
-      numericInput("pnt", "Please enter the point x to which you want to approximate: ", 0),
+      numericInput("pnt", "Please enter the 'x' value to which you want to approximate: ", 0),
       numericInput("xmin", "Please enter lower value of x: ", -6),
       numericInput("xmax", "Please enter upper value of x:", 6),
       sliderInput("order", "Please select order of approximation:",
                   min = 1, max = 10, value = 1, step = 1),
-      checkboxInput("show", "Show all approximations?", TRUE)),
+      checkboxInput("show", "Show all approximations?", TRUE)
+      ),
     
     conditionalPanel(
-      condition = "input.ExamProblems == 'Second Section - Problem c)'")
+      condition = "input.ExamProblems == 'Second Section - Problem c)'",
+      textInput("ODE", "Please enter the ODE", "x+y"),
+      numericInput("xi","Enter x initial value:",0),
+      numericInput("yi", "Enter y initial value:",0),
+      numericInput("step","Enter the desired step size:",1),
+      numericInput("ubound","Enter the upper bound:",2)
+      )
     
   ),
   
@@ -266,6 +276,7 @@ server <- function (input,output,session){
             
             ypn <- polyval(taylor(f, c, order), x)
             
+            
             plot(
               x,
               yf,
@@ -278,7 +289,8 @@ server <- function (input,output,session){
             )
             
             if (input$`show` == TRUE){
-              lines(x, 0:ypn, col = c("#c8e6c",n))
+              colo <- as.character("#c8e6c")
+              lines(x, 0:ypn, col = paste(colo,n))
             }
             else{
               lines(x, ypn, col = "#c8e6c9")
@@ -297,7 +309,7 @@ server <- function (input,output,session){
           }
           
           f0 <- function(x) {
-            res = as.function(input$`fctn`)
+            res = as.factor(input$`fctn`)
             
             return(res)
             
