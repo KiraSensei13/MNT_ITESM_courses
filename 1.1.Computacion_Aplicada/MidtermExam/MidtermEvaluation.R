@@ -60,35 +60,45 @@ hist(glm_predicted)
 # SECOND SECTION
 # a) Lagrange polynomials. This algorithm receives a nx2 matrix, where the first column represents the x coordinate while the second column represents the y coordinate. The code must provide as output the Lagrange polynomial interpolation expression in terms of "x". (30 points) *TIP: Use the functions: expression, D, parse and paste within a loop to get the desired output.
 
+library(rSymPy)
+lagrange.poly <- function(x, y) {
+}
 
+x <- c(0, 2, 3, 4)
+y <- c(7, 11, 28, 63)
+lagrange.poly(x, y)
 
 ################################################################################
 # b) Taylor series: The algorithm receives an expression or a string with the function to do and the number of terms to get. The output will be an expression containing all the Taylor series about 0. (30 points) *TIP: Use the functions: expression, D, parse and paste within a loop to get the desired output.
 
 library(pracma)
-taylorPlot <- function(f, c, from, to) {
+taylorPlot <- function(funct, taylorOrder) {
   # Plot the Taylor approximations up to the 2nd, 4th, 6th and 8th terms
   #
   # Parameters
   # ----------
   # f : function
   # Vectorized function of one variable
-  # c : numeric
-  # point where the series expansion will take place
-  # from, to : numeric
-  # Interval of points to be ploted
+  # taylorOrder : numeric
+  # the number of terms to get
   #
   # Returns
   # -------
-  # void
+  # The Taylor Series
   
+  f <- function(n) {
+    return(eval(parse(text=funct), envir=list(x=n)))
+  }
+  
+  # Interval of points to be ploted
+  from = -2*pi
+  to = 2*pi
   x <- seq(from, to, length.out = 100)
   yf <- f(x)
+  c <- 0 # The Taylor Series shall be centered in zero
   
-  yp2 <- polyval(taylor(f, c, 2), x)
-  yp4 <- polyval(taylor(f, c, 4), x)
-  yp6 <- polyval(taylor(f, c, 6), x)
-  yp8 <- polyval(taylor(f, c, 8), x)
+  taylorOut <- taylor(f, c, taylorOrder)
+  yp <- polyval(taylorOut, x)
   
   plot(
     x,
@@ -101,42 +111,26 @@ taylorPlot <- function(f, c, from, to) {
     lwd = 2
   )
   
-  lines(x, yp2, col = "#c8e6c9")
-  lines(x, yp4, col = "#81c784")
-  lines(x, yp6, col = "#4caf50")
-  lines(x, yp8, col = "#388e3c")
+  lines(x, yp, col = "#4caf50")
   
   legend(
     'topleft',
     inset = .05,
-    legend = c("TS 8 terms", "TS 6 terms", "TS 4 terms", "TS 2 terms", "f(x)"),
-    col = c('#388e3c', '#4caf50', '#81c784', '#c8e6c9', 'black'),
+    legend = c("Taylor Approximation", "f(x)"),
+    col = c('#4caf50', 'black'),
     lwd = c(1),
     bty = 'n',
     cex = .75
   )
+  
+  return(taylorOut)
 }
 
 # -----
 
-f0 <- function(x) {
-  res = sin(x)
-  
-  return(res)
-  
-}
-
-f1 <- function(x) {
-  res = exp(complex(real = 0, imaginary = 1)*x)
-  
-  return(res)
-  
-}
-
-# -----
-
-taylorPlot(f0, 0, -6.6, 6.6)
-taylorPlot(f1, 1, -2*pi, 2*pi)
+taylorPlot("sin(x)", 5)
+taylorPlot("cos(x)", 2)
+taylorPlot("tan(x)", 3)
 
 ################################################################################
 # c) Runge-Kutta. The algorithm will receive an ODE, initial values for x and y, the step size and the upper bound. The output will be the plot of the second, third and fourth order RK approximations. To demonstrate the functionality of your code, use the analytical answer of the ODE to compare all the approximations (30 points)
