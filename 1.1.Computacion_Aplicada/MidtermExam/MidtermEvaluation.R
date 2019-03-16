@@ -83,7 +83,7 @@ lagrange <- function(coordinates) {
   xx = x
   yy = lagrangeInterp(x,y,xx)
   
-  plot(xx, yy, xlab="x", ylab="f(x)")
+  plot(xx, yy, xlab="x", ylab="f(x)", main = ' Lagrange polynomials ')
   lines(interPoly, col = "#4caf50")
   
   legend(
@@ -98,6 +98,8 @@ lagrange <- function(coordinates) {
   
   return(interPoly)
 }
+
+# -----
 
 x = seq(-5,5,0.5)
 y = x^3 + 5*x^2 + 1
@@ -169,3 +171,152 @@ taylorPlot("tan(x)", 3)
 
 ################################################################################
 # c) Runge-Kutta. The algorithm will receive an ODE, initial values for x and y, the step size and the upper bound. The output will be the plot of the second, third and fourth order RK approximations. To demonstrate the functionality of your code, use the analytical answer of the ODE to compare all the approximations (30 points)
+
+# Runge-Kutta - 2nd order
+rungeKutta2 <- function(funct, x0, y0, x1, n) {
+  f <- function(xx,yy) {
+    return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+  }
+  
+  vx <- double(n + 1)
+  vy <- double(n + 1)
+  vx[1] <- x <- x0
+  vy[1] <- y <- y0
+  h <- (x1 - x0)/n
+  for(i in 1:n) {
+    k1 <- h*f(x, y)
+    k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+    vx[i + 1] <- x <- x0 + i*h
+    vy[i + 1] <- y <- y + (k1 + k2)/2
+  }
+  return(cbind(vx, vy))
+}
+
+# -----
+
+# Runge-Kutta - 3rd order
+rungeKutta3 <- function(funct, x0, y0, x1, n) {
+  f <- function(xx,yy) {
+    return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+  }
+  
+  vx <- double(n + 1)
+  vy <- double(n + 1)
+  vx[1] <- x <- x0
+  vy[1] <- y <- y0
+  h <- (x1 - x0)/n
+  for(i in 1:n) {
+    k1 <- h*f(x, y)
+    k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+    k3 <- h*f(x + 0.5*h, y + 0.5*k2)
+    vx[i + 1] <- x <- x0 + i*h
+    vy[i + 1] <- y <- y + (k1 + 4*k2 + k3)/6
+  }
+  return(cbind(vx, vy))
+}
+
+# -----
+
+# Runge-Kutta - 4th order
+rungeKutta4 <- function(funct, x0, y0, x1, n) {
+  f <- function(xx,yy) {
+    return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+  }
+  
+  vx <- double(n + 1)
+  vy <- double(n + 1)
+  vx[1] <- x <- x0
+  vy[1] <- y <- y0
+  h <- (x1 - x0)/n
+  for(i in 1:n) {
+    k1 <- h*f(x, y)
+    k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+    k3 <- h*f(x + 0.5*h, y + 0.5*k2)
+    k4 <- h*f(x + h, y + k3)
+    vx[i + 1] <- x <- x0 + i*h
+    vy[i + 1] <- y <- y + (k1 + 2*k2 + 2*k3 + k4)/6
+  }
+  return(cbind(vx, vy))
+}
+
+# -----
+
+RKPlot <- function(func, x0, y0, x1, n) {
+  # Plot of the second, third and fourth order RK approximations
+  #
+  # Parameters
+  # ----------
+  # func : string
+  # function of two variable
+  # x0, y0 : numeric
+  # initial values
+  # x1 : numeric
+  # upper bound
+  # n : numeric
+  # number of steps
+  #
+  # Returns
+  # -------
+  # void
+  
+  # Calculate aproxminations
+  rk2 = rungeKutta2(func, x0, y0, x1, n)
+  rk3 = rungeKutta3(func, x0, y0, x1, n)
+  rk4 = rungeKutta4(func, x0, y0, x1, n)
+  
+  x2 <- rk2[,1]
+  y2 <- rk2[,2]
+  
+  x3 <- rk3[,1]
+  y3 <- rk3[,2]
+  
+  x4 <- rk4[,1]
+  y4 <- rk4[,2]
+  
+  # Computeanalytical answer of the ODE to compare all the approximations
+  model <- function(x, y, parms){
+    with(as.list(c(y,parms)), {
+      dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y
+      list(dy)
+    })
+  }
+  y <- c(y = init_y)
+  parms <- c()
+  x <- seq(init_x,upper_bound,length(init_x:upper_bound)/number_of_steps)
+  out <- ode( y, times = x, model, parms )
+  
+  # Plot
+  plot(
+    out,
+    xlab = "x",
+    ylab = "f'(x)",
+    type = "l",
+    main = ' Runge-Kutta ',
+    col = "black",
+    lwd = 2
+    )
+
+  lines(x2, y2, col = "#f44336")
+  lines(x3, y3, col = "#4caf50")
+  lines(x4, y4, col = "#2196f3")
+  
+  legend(
+    'topleft',
+    inset = .05,
+    legend = c("RK 4th order", "RK 3rd order", "RK 2nd order", "f'(x)"),
+    col = c('#2196f3', '#4caf50', '#f44336', 'black'),
+    lwd = c(1),
+    bty = 'n',
+    cex = .75
+  )
+}
+
+# -----
+
+funct           = "x^2 - 0.05*y"
+init_y          = 1
+init_x          = -10
+upper_bound     = 10
+number_of_steps = length(init_x:upper_bound)*2
+
+RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
