@@ -273,7 +273,7 @@ RKPlot <- function(func, x0, y0, x1, n) {
   x4 <- rk4[,1]
   y4 <- rk4[,2]
   
-  # Computeanalytical answer of the ODE to compare all the approximations
+  # Compute analytical answer of the ODE to compare all the approximations
   model <- function(x, y, parms){
     with(as.list(c(y,parms)), {
       dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y

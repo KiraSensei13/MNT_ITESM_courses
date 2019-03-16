@@ -87,12 +87,12 @@ ui <- fluidPage(
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem c)'",
-      textInput("ODE", "Please enter the ODE", "x+y"),
+      textInput("ODE", "Please enter the ODE", "2*x^3 + y"),
       numericInput("xi","Enter x initial value:",0),
       numericInput("yi", "Enter y initial value:",0),
       numericInput("step","Enter the desired step size:",1),
       numericInput("upbound","Enter the upper bound:",2),
-      selectInput("RK", "Select which RK order you want to plot:", choices = c("RK1","RK2","RK3","RK4","All together"))
+      selectInput("RK", "Select which RK order you want to plot:", choices = c("RK2","RK3","RK4","All together"))
       )
     
   ),
@@ -241,7 +241,7 @@ server <- function (input,output,session){
     
     problemId <- input$`ExamProblems`
     
-    ############## Plot for Problem 1 #################################
+    ############## Plot for Problem 1 Chocolate ################################
     
     if (problemId == "First Section - Problem 1 a)") {
       
@@ -260,11 +260,11 @@ server <- function (input,output,session){
     
     else{
       
-      ############## Plot for Problem 2 ###############################
+      ############## Plot for Problem 2 Lagrange ###############################
       
       if (problemId == "Second Section - Problem a)") {
         
-        # install.packages("polynom")
+        library(rSymPy)
         library(polynom)
         library(pracma)
         lagrange <- function(coordinates) {
@@ -304,15 +304,15 @@ server <- function (input,output,session){
           return(interPoly)
         }
         
-        x = seq(-5,5,0.5)
-        y = x^3 + 5*x^2 + 1
+        x = as.numeric(unlist(strapply(strsplit(input$`valsX`,","), "\\d+", as.numeric)))
+        y = as.numeric(unlist(strapply(strsplit(input$`valsY`,","), "\\d+", as.numeric)))
         graph <- lagrange(cbind(x,y))
         
       }
       
       else{
         
-        ############## Plot for problem 3 #############################
+        ############## Plot for problem 3 Taylor ###############################
         
         if (problemId == "Second Section - Problem b)") {
           
@@ -320,9 +320,6 @@ server <- function (input,output,session){
           xmin <- input$`xmin`
           xmax <- input$`xmax`
           trms <- seq(1:input$`trms`)
-          # fctn <- input$`funT`
-          # npoints <- 250
-          # nmult <- 5
           
           library(pracma)
           taylorPlot <- function(funct, taylorOrder) {
@@ -344,9 +341,7 @@ server <- function (input,output,session){
             }
             
             # Interval of points to be ploted
-            from = -2*pi
-            to = 2*pi
-            x <- seq(from, to, length.out = 100)
+            x <- seq(xmin, xmax, length.out = 250)
             yf <- f(x)
             c <- pnt # The Taylor Series shall be centered in zero
             
@@ -382,91 +377,180 @@ server <- function (input,output,session){
           
           # -----
           
-          graph <- if (input$`show` == TRUE){
-            for (num in trms) {
-              taylorPlot(input$`funT`, num)
+          if (input$`show` == TRUE){
+            for (i in trms) {
+              graph <- taylorPlot(input$`funT`, i)
             }
           }
           else{
-            taylorPlot(input$`funT`, input$`trms`)
+            graph <- taylorPlot(input$`funT`, input$`trms`)
           }
           
-          #####
-          
-          # poly <- function(a,p) {
-          #   
-          #   A <- matrix(0,4,5)
-          #   A[1,1:2] <- c(a[1]-a[2]*p,a[2])
-          #   A[2,1:3] <- A[1,1:3]+a[3]*c(p^2,-2*p,1)
-          #   A[3,1:4] <- A[2,1:4]+a[4]*c(p^3,-3*p^2,3*p^2,1)   
-          #   A[4,] <- A[3,]+a[5]*c(p^4,-4*p^3,6*p^2,-4*p,1)
-          #   A
-          # }
-          # 
-          # data <- reactive({
-          #   x <- seq(xmin,xmax,length=npoints)
-          #   if(pnt==0) i <- nmult*25
-          #   else i <- nmult*pnt
-          #   p <- x[i]
-          #   h <- x[2]-x[1]
-          #   f <- function(x) {
-          #     eval(parse(text=fctn))
-          #   }
-          #   y <- f(x)
-          #   p0 <- y[i]
-          #   p1 <- (y[i+1]-y[i])/h
-          #   p2 <- (y[i-1]-2*y[i]+y[i+1])/h^2
-          #   p3 <- (y[i+2]-3*y[i+1]+3*y[i]-y[i-1])/h^3
-          #   p4 <- (y[i+2]-4*y[i+1]+6*y[i]-4*y[i-1]+y[i-2])/h^4
-          #   
-          #   yr <- c(min(y)-(max(y)-min(y)/3),max(y)+(max(y)-min(y)/3))
-          #   
-          #   list(cbind(x,y),c(p0,p1,p2,p3,p4),p,yr)
-          # })
-          # 
-          # x <- data()[[1]][,1]
-          # y <- data()[[1]][,2]
-          # yr <- data()[[4]]
-          # 
-          # graph <-  plot(x,y,ylim=yr, xlim = c(xmin,xmax), xlab="x",ylab="",type="l",lwd=3)
-          #           if(pnt==0){
-          #             i <- nmult*25
-          #           } 
-          #           else{
-          #             i <- nmult*pnt
-          #           } 
-          #           points(x[i],y[i],pch=20,cex=2)
-          #           a <- data()[[2]]
-          #           p <- data()[[3]]
-          #           
-          #           y <- a[1]+a[2]*(x-p)
-          #           lines(x,y,lwd=1,col="blue")
-          #            
-          #           y <- y+a[3]/2*(x-p)^2
-          #           lines(x,y,lwd=1,col="green")
-          #            
-          #           y <- y+a[4]/6*(x-p)^3
-          #           lines(x,y,lwd=1,col="red")
-          #            
-          #           y <- y+a[5]/24*(x-p)^4
-          #           lines(x,y,lwd=1,col="gray")
-                    
         }
         
         else{
           
-          ############## Plot for problem 4 ###########################
+          ############## Plot for problem 4 Runge Kutta ########################
           
           if (problemId == "Second Section - Problem c)") {
             
-            ODE <- input$`ODE`
-            xi <- input$`xi`
-            yi <- input$`yi`
-            stp <- input$`step`
-            upbnd <- input$`upbound`
-            RKn <- input$`RK`
+            if (input$`RK` == "RK2" | input$`RK` == "All together"){
+              
+              # Runge-Kutta - 2nd order
+              rungeKutta2 <- function(funct, x0, y0, x1, n) {
+                f <- function(xx,yy) {
+                  return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+                }
+                
+                vx <- double(n + 1)
+                vy <- double(n + 1)
+                vx[1] <- x <- x0
+                vy[1] <- y <- y0
+                h <- (x1 - x0)/n
+                for(i in 1:n) {
+                  k1 <- h*f(x, y)
+                  k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+                  vx[i + 1] <- x <- x0 + i*h
+                  vy[i + 1] <- y <- y + (k1 + k2)/2
+                }
+                return(cbind(vx, vy))
+              }
+              
+            }
+            else{
+              
+              if(input$`RK` == "RK3" | input$`RK` == "All together"){
+                
+                # Runge-Kutta - 3rd order
+                rungeKutta3 <- function(funct, x0, y0, x1, n) {
+                  f <- function(xx,yy) {
+                    return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+                  }
+                  
+                  vx <- double(n + 1)
+                  vy <- double(n + 1)
+                  vx[1] <- x <- x0
+                  vy[1] <- y <- y0
+                  h <- (x1 - x0)/n
+                  for(i in 1:n) {
+                    k1 <- h*f(x, y)
+                    k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+                    k3 <- h*f(x + 0.5*h, y + 0.5*k2)
+                    vx[i + 1] <- x <- x0 + i*h
+                    vy[i + 1] <- y <- y + (k1 + 4*k2 + k3)/6
+                  }
+                  return(cbind(vx, vy))
+                }
+              }
+              else{
+                if(input$`RK` == "RK4" | input$`RK` == "All together"){
+                  
+                  # Runge-Kutta - 4th order
+                  rungeKutta4 <- function(funct, x0, y0, x1, n) {
+                    f <- function(xx,yy) {
+                      return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+                    }
+                    
+                    vx <- double(n + 1)
+                    vy <- double(n + 1)
+                    vx[1] <- x <- x0
+                    vy[1] <- y <- y0
+                    h <- (x1 - x0)/n
+                    for(i in 1:n) {
+                      k1 <- h*f(x, y)
+                      k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+                      k3 <- h*f(x + 0.5*h, y + 0.5*k2)
+                      k4 <- h*f(x + h, y + k3)
+                      vx[i + 1] <- x <- x0 + i*h
+                      vy[i + 1] <- y <- y + (k1 + 2*k2 + 2*k3 + k4)/6
+                    }
+                    return(cbind(vx, vy))
+                  }
+                  
+                }
+                else{
+                  paste("Sorry for the inconvenience, we are still working hard to make this application evenn better.")
+                }
+              }
+            }
             
+            RKPlot <- function(func, x0, y0, x1, n) {
+              # Plot of the second, third and fourth order RK approximations
+              #
+              # Parameters
+              # ----------
+              # func : string
+              # function of two variable
+              # x0, y0 : numeric
+              # initial values
+              # x1 : numeric
+              # upper bound
+              # n : numeric
+              # number of steps
+              #
+              # Returns
+              # -------
+              # void
+              
+              # Calculate aproxminations
+              rk2 = rungeKutta2(func, x0, y0, x1, n)
+              rk3 = rungeKutta3(func, x0, y0, x1, n)
+              rk4 = rungeKutta4(func, x0, y0, x1, n)
+              
+              x2 <- rk2[,1]
+              y2 <- rk2[,2]
+              
+              x3 <- rk3[,1]
+              y3 <- rk3[,2]
+              
+              x4 <- rk4[,1]
+              y4 <- rk4[,2]
+              
+              # Computeanalytical answer of the ODE to compare all the approximations
+              model <- function(x, y, parms){
+                with(as.list(c(y,parms)), {
+                  dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y
+                  list(dy)
+                })
+              }
+              y <- c(y = init_y)
+              parms <- c()
+              x <- seq(init_x,upper_bound,length(init_x:upper_bound)/number_of_steps)
+              out <- ode( y, times = x, model, parms )
+              
+              # Plot
+              plot(
+                out,
+                xlab = "x",
+                ylab = "f'(x)",
+                type = "l",
+                main = ' Runge-Kutta ',
+                col = "black",
+                lwd = 2
+              )
+              
+              lines(x2, y2, col = "#f44336")
+              lines(x3, y3, col = "#4caf50")
+              lines(x4, y4, col = "#2196f3")
+              
+              legend(
+                'topleft',
+                inset = .05,
+                legend = c("RK 4th order", "RK 3rd order", "RK 2nd order", "f'(x)"),
+                col = c('#2196f3', '#4caf50', '#f44336', 'black'),
+                lwd = c(1),
+                bty = 'n',
+                cex = .75
+              )
+            }
             
+            # -----
+            
+            funct           = input$`ODE`
+            init_y          = input$`yi`
+            init_x          = input$`xi`
+            upper_bound     = input$`upbound`
+            number_of_steps = input$`step`
             
           }
           
@@ -480,6 +564,8 @@ server <- function (input,output,session){
         }
       }
     }
+    
+    graph <- RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
     
     paste(graph)
     

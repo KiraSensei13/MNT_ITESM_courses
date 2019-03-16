@@ -6,68 +6,58 @@ output: html_document
 
 # The Lagrange Polynomial
 
-First we define a variable to call for the database to be analized:
+First we define a function that is going to be taking the coordinates given by the user:
 ```{r}
-choco_data = read.csv("Chocolate.csv")
+library(polynom)
+library(pracma)
+lagrange <- function(coordinates) {
 ```
 
-Verifying there is no repeated information and exploring the data.
+Plot the Lagrange polynomial, evaluated within the x coordinates (from parameter coordinates)
+
+# Parameters
+  
+coordinates : nx2 matrix 
+
+, where the first column represents the x coordinate while the second column represents the y coordinate.
+  
+# Returns
+
+The Lagrange polynomial
+
 ```{r}
-str(choco_data) 
-summary(choco_data)
+  x = coordinates[,1]
+  y = coordinates[,2]
+  
+  interPoly = poly.calc(x,y)
+  xx = x
+  yy = lagrangeInterp(x,y,xx)
+  
+  plot(xx, yy, xlab="x", ylab="f(x)", main = ' Lagrange polynomials ')
+  lines(interPoly, col = "#4caf50")
+  
+  legend(
+    'topleft',
+    inset = .05,
+    legend = c("Coordinates", "Lagrange polynomial"),
+    col = c('black', '#4caf50'),
+    lwd = c(1),
+    bty = 'n',
+    cex = .75
+  )
+  
+  return(interPoly)
+}
 ```
 
-There is no need to filter our data since all variables are categorical, with the exceptions of "sugarpercent", "pricepercent" and "winpercent" but none of them have any row with a value of 0. The only information that causes irregularities is the competitors name.
+Calling the function:
 
-First column contains the names of candy and we define it as the label for each row.
 ```{r}
-chocolate_labels <- choco_data[,1]
+
+x = seq(-5,5,0.5)
+y = x^3 + 5*x^2 + 1
+lagrange(cbind(x,y))
 ```
 
-Taking away the first column that contains the candy names.
-```{r}
-choco_data <- choco_data[,-1] 
-```
-
-Setting numeric values to categoric value:
-```{r}
-choco_data$chocolate <- as.factor(choco_data$chocolate)
-summary(choco_data)
-```
-
-Since the dependent variable "Chocolate" is a categorical variable, we have decided to use Logistic Regression:
-```{r}
-mdl <- glm(chocolate ~ ., data = choco_data, family = "binomial")
-summary(mdl)
-
-mdl <- glm(chocolate ~ fruity + caramel +  peanutyalmondy + nougat + crispedricewafer + hard + bar + pluribus + sugarpercent + pricepercent + winpercent, data = choco_data, family = "binomial")
-```
-
-Visualizing the model to determine the most significant variables.
-```{r}
-summary(mdl) 
-```
-
-Takng away all the not significative parameters we obtain the following model:
-```{r}
-mdl <- glm(chocolate ~ fruity + winpercent, data = choco_data, family = "binomial")
-```
-
-Visualizing the model to determine the most significant variables.
-```{r}
-summary(mdl) 
-```
-
-Lets see the performance of our beta coefficients:
-```{r}
-predicted <- predict(mdl, choco_data[,], type = "response")
-hist(predicted)
-```
-
-We assume that: all values less than 0.5 correspond to the first category, 0.5 or bigger correspond to the second category.
-```{r}
-glm_predicted = ifelse(predicted > 0.5, 1, 0)
-hist(glm_predicted)
-```
 
 
