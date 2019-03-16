@@ -4,69 +4,168 @@ runtime: shiny
 output: html_document
 ---
 
-# Commented Code for Problem 4
+# Runge - Kutta Approximation Method
 
-First we define a variable to call for the database to be analized:
+We will first define a specific function for each RK order:
+
+# Runge-Kutta - 2nd order
 ```{r}
-choco_data = read.csv("Chocolate.csv")
+rungeKutta2 <- function(funct, x0, y0, x1, n) {
+  f <- function(xx,yy) {
+    return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+  }
+  
+  vx <- double(n + 1)
+  vy <- double(n + 1)
+  vx[1] <- x <- x0
+  vy[1] <- y <- y0
+  h <- (x1 - x0)/n
+  for(i in 1:n) {
+    k1 <- h*f(x, y)
+    k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+    vx[i + 1] <- x <- x0 + i*h
+    vy[i + 1] <- y <- y + (k1 + k2)/2
+  }
+  return(cbind(vx, vy))
+}
 ```
 
-Verifying there is no repeated information and exploring the data.
+# Runge-Kutta - 3rd order
 ```{r}
-str(choco_data) 
-summary(choco_data)
+rungeKutta3 <- function(funct, x0, y0, x1, n) {
+  f <- function(xx,yy) {
+    return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+  }
+  
+  vx <- double(n + 1)
+  vy <- double(n + 1)
+  vx[1] <- x <- x0
+  vy[1] <- y <- y0
+  h <- (x1 - x0)/n
+  for(i in 1:n) {
+    k1 <- h*f(x, y)
+    k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+    k3 <- h*f(x + 0.5*h, y + 0.5*k2)
+    vx[i + 1] <- x <- x0 + i*h
+    vy[i + 1] <- y <- y + (k1 + 4*k2 + k3)/6
+  }
+  return(cbind(vx, vy))
+}
 ```
 
-There is no need to filter our data since all variables are categorical, with the exceptions of "sugarpercent", "pricepercent" and "winpercent" but none of them have any row with a value of 0. The only information that causes irregularities is the competitors name.
-
-First column contains the names of candy and we define it as the label for each row.
+# Runge-Kutta - 4th order
 ```{r}
-chocolate_labels <- choco_data[,1]
+rungeKutta4 <- function(funct, x0, y0, x1, n) {
+  f <- function(xx,yy) {
+    return(eval(parse(text=funct), envir=list(x=xx,y=yy)))
+  }
+  
+  vx <- double(n + 1)
+  vy <- double(n + 1)
+  vx[1] <- x <- x0
+  vy[1] <- y <- y0
+  h <- (x1 - x0)/n
+  for(i in 1:n) {
+    k1 <- h*f(x, y)
+    k2 <- h*f(x + 0.5*h, y + 0.5*k1)
+    k3 <- h*f(x + 0.5*h, y + 0.5*k2)
+    k4 <- h*f(x + h, y + k3)
+    vx[i + 1] <- x <- x0 + i*h
+    vy[i + 1] <- y <- y + (k1 + 2*k2 + 2*k3 + k4)/6
+  }
+  return(cbind(vx, vy))
+}
 ```
 
-Taking away the first column that contains the candy names.
 ```{r}
-choco_data <- choco_data[,-1] 
+RKPlot <- function(func, x0, y0, x1, n) {
+```
+  
+Plot of the second, third and fourth order RK approximations
+
+# Parameters
+
+  func : string        <-   function of two variable
+  x0, y0 : numeric     <-   initial values
+  x1 : numeric         <-   upper bound
+  n : numeric          <-   number of steps
+  
+# Returns
+
+  # void
+  
+# Calculate aproxminations
+
+```{r}
+  rk2 = rungeKutta2(func, x0, y0, x1, n)
+  rk3 = rungeKutta3(func, x0, y0, x1, n)
+  rk4 = rungeKutta4(func, x0, y0, x1, n)
+  
+  x2 <- rk2[,1]
+  y2 <- rk2[,2]
+  
+  x3 <- rk3[,1]
+  y3 <- rk3[,2]
+  
+  x4 <- rk4[,1]
+  y4 <- rk4[,2]
 ```
 
-Setting numeric values to categoric value:
+Compute analytical answer of the ODE to compare all the approximations
 ```{r}
-choco_data$chocolate <- as.factor(choco_data$chocolate)
-summary(choco_data)
+  model <- function(x, y, parms){
+    with(as.list(c(y,parms)), {
+      dy = eval(parse(text=funct), envir=list(x,y))  #2*x^3 + y
+      list(dy)
+    })
+  }
+  y <- c(y = init_y)
+  parms <- c()
+  x <- seq(init_x,upper_bound,length(init_x:upper_bound)/number_of_steps)
+  out <- ode( y, times = x, model, parms )
 ```
 
-Since the dependent variable "Chocolate" is a categorical variable, we have decided to use Logistic Regression:
+# Plot
 ```{r}
-mdl <- glm(chocolate ~ ., data = choco_data, family = "binomial")
-summary(mdl)
+  plot(
+    out,
+    xlab = "x",
+    ylab = "f'(x)",
+    type = "l",
+    main = ' Runge-Kutta ',
+    col = "black",
+    lwd = 2
+    )
 
-mdl <- glm(chocolate ~ fruity + caramel +  peanutyalmondy + nougat + crispedricewafer + hard + bar + pluribus + sugarpercent + pricepercent + winpercent, data = choco_data, family = "binomial")
+  lines(x2, y2, col = "#f44336")
+  lines(x3, y3, col = "#4caf50")
+  lines(x4, y4, col = "#2196f3")
+  
+  legend(
+    'topleft',
+    inset = .05,
+    legend = c("RK 4th order", "RK 3rd order", "RK 2nd order", "f'(x)"),
+    col = c('#2196f3', '#4caf50', '#f44336', 'black'),
+    lwd = c(1),
+    bty = 'n',
+    cex = .75
+  )
+}
 ```
 
-Visualizing the model to determine the most significant variables.
+Defining the variables according to the input:
 ```{r}
-summary(mdl) 
+funct           = "x^2 - 0.05*y"
+init_y          = 1
+init_x          = -10
+upper_bound     = 10
+number_of_steps = length(init_x:upper_bound)*2
 ```
 
-Takng away all the not significative parameters we obtain the following model:
+Call the function:
 ```{r}
-mdl <- glm(chocolate ~ fruity + winpercent, data = choco_data, family = "binomial")
+RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
 ```
 
-Visualizing the model to determine the most significant variables.
-```{r}
-summary(mdl) 
-```
 
-Lets see the performance of our beta coefficients:
-```{r}
-predicted <- predict(mdl, choco_data[,], type = "response")
-hist(predicted)
-```
-
-We assume that: all values less than 0.5 correspond to the first category, 0.5 or bigger correspond to the second category.
-```{r}
-glm_predicted = ifelse(predicted > 0.5, 1, 0)
-hist(glm_predicted)
-```
 

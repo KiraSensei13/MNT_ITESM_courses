@@ -60,6 +60,7 @@ hist(glm_predicted)
 # SECOND SECTION
 # a) Lagrange polynomials. This algorithm receives a nx2 matrix, where the first column represents the x coordinate while the second column represents the y coordinate. The code must provide as output the Lagrange polynomial interpolation expression in terms of "x". (30 points) *TIP: Use the functions: expression, D, parse and paste within a loop to get the desired output.
 
+library(deSolve)
 library(polynom)
 library(pracma)
 lagrange <- function(coordinates) {
@@ -165,7 +166,7 @@ taylorPlot <- function(funct, taylorOrder) {
 
 # -----
 
-taylorPlot("sin(x)", 5)
+taylorPlot("sin(x)", 8)
 taylorPlot("cos(x)", 2)
 taylorPlot("tan(x)", 3)
 
@@ -274,7 +275,7 @@ RKPlot <- function(func, x0, y0, x1, n) {
   x4 <- rk4[,1]
   y4 <- rk4[,2]
   
-  # Computeanalytical answer of the ODE to compare all the approximations
+  # Compute analytical answer of the ODE to compare all the approximations
   model <- function(x, y, parms){
     with(as.list(c(y,parms)), {
       dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y
@@ -314,7 +315,7 @@ RKPlot <- function(func, x0, y0, x1, n) {
 
 # -----
 
-funct           = "x^2 - 0.05*y"
+funct           = "x - 0.05*y"
 init_y          = 1
 init_x          = -10
 upper_bound     = 10
