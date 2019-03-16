@@ -1,6 +1,6 @@
 #*******************************************************************************
 #* AUTHOR(S) :
-#*     Bruno González Soria          (A01169284)
+#*     Bruno GonzÃ¡lez Soria          (A01169284)
 #*     Antonio Osamu Katagiri Tanaka (A01212611)
 #*
 #* FILENAME :
@@ -56,7 +56,7 @@ hist(predicted)
 glm_predicted = ifelse(predicted > 0.5, 1, 0)
 hist(glm_predicted)
 
-#################################################################################
+################################################################################
 # SECOND SECTION
 # a) Lagrange polynomials. This algorithm receives a nx2 matrix, where the first column represents the x coordinate while the second column represents the y coordinate. The code must provide as output the Lagrange polynomial interpolation expression in terms of "x". (30 points) *TIP: Use the functions: expression, D, parse and paste within a loop to get the desired output.
 
@@ -320,3 +320,4 @@ upper_bound     = 10
 number_of_steps = length(init_x:upper_bound)*2
 
 RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
+

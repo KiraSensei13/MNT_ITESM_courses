@@ -4,54 +4,84 @@ runtime: shiny
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Commented Code for Problem 3
 
-This R Markdown document is made interactive using Shiny. Unlike the more traditional workflow of creating static reports, you can now create documents that allow your readers to change the assumptions underlying your analysis and see the results immediately. 
-
-To learn more, see [Interactive Documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
-
-## Inputs and Outputs
-
-You can embed Shiny inputs and outputs in your document. Outputs are automatically updated whenever inputs change.  This demonstrates how a standard R plot can be made interactive by wrapping it in the Shiny `renderPlot` function. The `selectInput` and `sliderInput` functions create the input widgets used to drive the plot.
-
-```{r eruptions, echo=FALSE}
-inputPanel(
-  selectInput("n_breaks", label = "Number of bins:",
-              choices = c(10, 20, 35, 50), selected = 20),
+```{r}
+library(pracma)
+taylorPlot <- function(f, c, from, to) {
+  # Plot the Taylor approximations up to the 2nd, 4th, 6th and 8th terms
+  #
+  # Parameters
+  # ----------
+  # f : function
+  # Vectorized function of one variable
+  # c : numeric
+  # point where the series expansion will take place
+  # from, to : numeric
+  # Interval of points to be ploted
+  #
+  # Returns
+  # -------
+  # void
   
-  sliderInput("bw_adjust", label = "Bandwidth adjustment:",
-              min = 0.2, max = 2, value = 1, step = 0.2)
-)
-
-renderPlot({
-  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
-       xlab = "Duration (minutes)", main = "Geyser eruption duration")
+  x <- seq(from, to, length.out = 100)
+  yf <- f(x)
   
-  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
-  lines(dens, col = "blue")
-})
-```
-
-## Embedded Application
-
-It's also possible to embed an entire Shiny application within an R Markdown document using the `shinyAppDir` function. This example embeds a Shiny application located in another directory:
-
-```{r tabsets, echo=FALSE}
-shinyAppDir(
-  system.file("examples/06_tabsets", package = "shiny"),
-  options = list(
-    width = "100%", height = 550
+  yp2 <- polyval(taylor(f, c, 2), x)
+  yp4 <- polyval(taylor(f, c, 4), x)
+  yp6 <- polyval(taylor(f, c, 6), x)
+  yp8 <- polyval(taylor(f, c, 8), x)
+  
+  plot(
+    x,
+    yf,
+    xlab = "x",
+    ylab = "f(x)",
+    type = "l",
+    main = ' Taylor Series Approximation of f(x) ',
+    col = "black",
+    lwd = 2
   )
-)
+  
+  lines(x, yp2, col = "#c8e6c9")
+  lines(x, yp4, col = "#81c784")
+  lines(x, yp6, col = "#4caf50")
+  lines(x, yp8, col = "#388e3c")
+  
+  legend(
+    'topleft',
+    inset = .05,
+    legend = c("TS 8 terms", "TS 6 terms", "TS 4 terms", "TS 2 terms", "f(x)"),
+    col = c('#388e3c', '#4caf50', '#81c784', '#c8e6c9', 'black'),
+    lwd = c(1),
+    bty = 'n',
+    cex = .75
+  )
+}
 ```
 
-Note the use of the `height` parameter to determine how much vertical space the embedded application should occupy.
+```{r}
+f0 <- function(x) {
+  res = sin(x)
+  
+  return(res)
+  
+}
+```
 
-You can also use the `shinyApp` function to define an application inline rather then in an external directory.
 
-In all of R code chunks above the `echo = FALSE` attribute is used. This is to prevent the R code within the chunk from rendering in the document alongside the Shiny components.
+```{r}
+f1 <- function(x) {
+  res = exp(complex(real = 0, imaginary = 1)*x)
+  
+  return(res)
+  
+}
+```
 
+```{r}
+taylorPlot(f0, 0, -6.6, 6.6)
+taylorPlot(f1, 1, -2*pi, 2*pi)
+```
 
 

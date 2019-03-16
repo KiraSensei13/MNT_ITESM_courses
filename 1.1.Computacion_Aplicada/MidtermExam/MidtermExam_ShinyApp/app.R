@@ -23,11 +23,13 @@
 # Install the shiny package:
 # install.packages("shiny")
 # Load Library:
-# library(shiny)
+library(shiny)
 # Giving some style:
 # install.packages("shinythemes")
 # Load Library:
-# library(shinythemes)
+library(shinythemes)
+# Adding the codes:
+library(markdown)
 
 
 #*******************************************************************************
@@ -40,7 +42,7 @@ ui <- fluidPage(
 ########### STYLE ############################################################## 
   
   # Defining style:
-  theme = shinytheme("sandstone"),
+  theme = shinytheme("cerulean"),
   
 ########### HEADER OF THE APPLICATION ##########################################
   
@@ -50,26 +52,48 @@ ui <- fluidPage(
 ########### THIS IS THE SIDE PANEL FOR THE USER TO ENTER INPUT #################  
   
   sidebarPanel(
+    
+    ######### Selection of Problem #############################################
+    
     selectInput("ExamProblems", "Please Select the problem to be evaluated:",
                 choices = c("First Section - Problem 1 a)", "Second Section - Problem a)", "Second Section - Problem b)", "Second Section - Problem c)")),
+    
+    ######### Input Panel for Problem 1 ########################################
     
     conditionalPanel(
       condition = "input.ExamProblems == 'First Section - Problem 1 a)'"),
     
+    ######### Input Panel for Problem 2 ########################################
+    
     conditionalPanel(
-      condition = "input.ExamProblems == 'Second Section - Problem a)'"),
+      condition = "input.ExamProblems == 'Second Section - Problem a)'",
+      textInput("valsX", "Enter the values for the 'x' column separated by a space:", "1 2 3 4"),
+      textInput("valsY", "Enter the values for the 'y' column separated by a space:", "4 3 2 1")
+      ),
+    
+    ######### Input Panel for Problem 3 ########################################
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem b)'",
-      numericInput("p", "Please enter the point x to which you want to approximate: ", 0),
-      numericInput("xmin", "Please enter lower value of x: ", -6),
-      numericInput("xmax", "Please enter upper value of x:", 6),
-      sliderInput("factors", "Please select number of factors:",
-                  min = 1, max = 5000, value = 1, step = 1)),
+      textInput("funT","Please enter your function:", "sin(x^2)"),
+      numericInput("pnt", "Please enter the 'x' value to which you want to approximate: ", 0),
+      numericInput("xmin", "Please enter lower value of 'x': ", -6),
+      numericInput("xmax", "Please enter upper value of 'x':", 6),
+      numericInput("trms", "Please enter the desired ammount of terms:", 2),
+      checkboxInput("show", "Show all approximations?", TRUE)
+      ),
+    
+    ######### Input Panel for Problem 4 ########################################
     
     conditionalPanel(
-      condition = "input.ExamProblems == 'Second Section - Problem c)'")
-    
+      condition = "input.ExamProblems == 'Second Section - Problem c)'",
+      textInput("ODE", "Please enter the ODE", "x+y"),
+      numericInput("xi","Enter x initial value:",0),
+      numericInput("yi", "Enter y initial value:",0),
+      numericInput("step","Enter the desired step size:",1),
+      numericInput("upbound","Enter the upper bound:",2),
+      selectInput("RK", "Select which RK order you want to plot:", choices = c("RK1","RK2","RK3","RK4","All together"))
+      )
     
   ),
   
@@ -82,7 +106,8 @@ ui <- fluidPage(
                          tags$b(paste("Instructions:")),
                          textOutput("Problem Instructions"),
                          plotOutput("Graphical Representation")),
-                tabPanel("Code", verbatimTextOutput("Code")),
+                tabPanel("Code",
+                         uiOutput("Procedure")),
                 tabPanel("Chocolate",
                          tableOutput("Chocolate"))
     )
@@ -154,7 +179,7 @@ server <- function (input,output,session){
   
 ########### THIS SECTION IS TO ADD THE CODE (PROCEDURE) ########################
   
-  output$`Code` <- renderPrint({
+  output$`Procedure` <- renderText({
     
     problemId <- input$`ExamProblems`
     
@@ -162,117 +187,55 @@ server <- function (input,output,session){
     
     if (problemId == "First Section - Problem 1 a)") {
       
-    }
-    
-    else{
+      proc <- includeMarkdown("Problem1.Rmd")
       
     }
     
-    
+    else{
     
     ################## Procedure for problem 2 ########################
     
-    if (problemId == "Second Section - Problem a)") {
+      if (problemId == "Second Section - Problem a)") {
+        
+        proc <- includeMarkdown("Problem2.Rmd")
       
-    }
+      }
     
-    else{
+      else{
       
-    }
-    
     ################## Procedure for problem 3 ########################    
     
-    if (problemId == "Second Section - Problem b)") {
+        if (problemId == "Second Section - Problem b)") {
+          
+          proc <- includeMarkdown("Problem3.Rmd")
       
-      library(pracma)
-      taylorPlot <- function(f, c, from, to) {
-        # Plot the Taylor approximations up to the 2nd, 4th, 6th and 8th terms
-        #
-        # Parameters
-        # ----------
-        # f : function
-        # Vectorized function of one variable
-        # c : numeric
-        # point where the series expansion will take place
-        # from, to : numeric
-        # Interval of points to be ploted
-        #
-        # Returns
-        # -------
-        # void
-        
-        x <- seq(from, to, length.out = 100)
-        yf <- f(x)
-        
-        yp2 <- polyval(taylor(f, c, 2), x)
-        yp4 <- polyval(taylor(f, c, 4), x)
-        yp6 <- polyval(taylor(f, c, 6), x)
-        yp8 <- polyval(taylor(f, c, 8), x)
-        
-        plot(
-          x,
-          yf,
-          xlab = "x",
-          ylab = "f(x)",
-          type = "l",
-          main = ' Taylor Series Approximation of f(x) ',
-          col = "black",
-          lwd = 2
-        )
-        
-        lines(x, yp2, col = "#c8e6c9")
-        lines(x, yp4, col = "#81c784")
-        lines(x, yp6, col = "#4caf50")
-        lines(x, yp8, col = "#388e3c")
-        
-        legend(
-          'topleft',
-          inset = .05,
-          legend = c("TS 8 terms", "TS 6 terms", "TS 4 terms", "TS 2 terms", "f(x)"),
-          col = c('#388e3c', '#4caf50', '#81c784', '#c8e6c9', 'black'),
-          lwd = c(1),
-          bty = 'n',
-          cex = .75
-        )
-      }
-      
-      
-      f0 <- function(x) {
-        res = sin(x)
-        
-        return(res)
-        
-      }
-      
-      f1 <- function(x) {
-        res = exp(complex(real = 0, imaginary = 1)*x)
-        
-        return(res)
-        
-      }
-      
-    }
+        }
     
-    else{
-      
-    }
+        else{
     
     ################## Procedure for Problem 4 ########################
     
-    if (problemId == "Second Section - Problem c)"){
+          if (problemId == "Second Section - Problem c)"){
+            
+            proc <- includeMarkdown("Problem4.Rmd")
       
+          }
+    
+          else{
+            
+            proc <- "Sorry for the inconvenience, we are still working hard to make this application evenn better."
+      
+          }
+        }
+      }
     }
     
-    else{
-      
-    }
-    
-    
+    paste(proc)
     
   })
   
   
-  ########### THIS SECTION IS FOR THE PLOTS CREATED BY THE PROGRAM ####
+########### THIS SECTION IS FOR THE PLOTS CREATED BY THE PROGRAM ###############
   
   output$`Graphical Representation` <- renderPlot({
     
@@ -301,6 +264,8 @@ server <- function (input,output,session){
       
       if (problemId == "Second Section - Problem a)") {
         
+        
+        
       }
       
       else{
@@ -309,6 +274,75 @@ server <- function (input,output,session){
         
         if (problemId == "Second Section - Problem b)") {
           
+          library(pracma)
+          pnt <- input$`pnt`
+          xmin <- input$`xmin`
+          xmax <- input$`xmax`
+          trms <- seq(1,input$`trms`,1)
+          fctn <- input$`funT`
+          npoints <- 250
+          nmult <- 5
+          
+          #####
+          
+          poly <- function(a,p) {
+            
+            A <- matrix(0,4,5)
+            A[1,1:2] <- c(a[1]-a[2]*p,a[2])
+            A[2,1:3] <- A[1,1:3]+a[3]*c(p^2,-2*p,1)
+            A[3,1:4] <- A[2,1:4]+a[4]*c(p^3,-3*p^2,3*p^2,1)   
+            A[4,] <- A[3,]+a[5]*c(p^4,-4*p^3,6*p^2,-4*p,1)
+            A
+          }
+          
+          data <- reactive({
+            x <- seq(xmin,xmax,length=npoints)
+            if(pnt==0) i <- nmult*25
+            else i <- nmult*pnt
+            p <- x[i]
+            h <- x[2]-x[1]
+            f <- function(x) {
+              eval(parse(text=fctn))
+            }
+            y <- f(x)
+            p0 <- y[i]
+            p1 <- (y[i+1]-y[i])/h
+            p2 <- (y[i-1]-2*y[i]+y[i+1])/h^2
+            p3 <- (y[i+2]-3*y[i+1]+3*y[i]-y[i-1])/h^3
+            p4 <- (y[i+2]-4*y[i+1]+6*y[i]-4*y[i-1]+y[i-2])/h^4
+            
+            yr <- c(min(y)-(max(y)-min(y)/3),max(y)+(max(y)-min(y)/3))
+            
+            list(cbind(x,y),c(p0,p1,p2,p3,p4),p,yr)
+          })
+          
+          x <- data()[[1]][,1]
+          y <- data()[[1]][,2]
+          yr <- data()[[4]]
+          
+          graph <-  plot(x,y,ylim=yr, xlim = c(xmin,xmax), xlab="x",ylab="",type="l",lwd=3)
+                    if(pnt==0){
+                      i <- nmult*25
+                    } 
+                    else{
+                      i <- nmult*pnt
+                    } 
+                    points(x[i],y[i],pch=20,cex=2)
+                    a <- data()[[2]]
+                    p <- data()[[3]]
+                    
+                    y <- a[1]+a[2]*(x-p)
+                    lines(x,y,lwd=1,col="blue")
+                     
+                    y <- y+a[3]/2*(x-p)^2
+                    lines(x,y,lwd=1,col="green")
+                     
+                    y <- y+a[4]/6*(x-p)^3
+                    lines(x,y,lwd=1,col="red")
+                     
+                    y <- y+a[5]/24*(x-p)^4
+                    lines(x,y,lwd=1,col="gray")
+                    
         }
         
         else{
@@ -316,6 +350,15 @@ server <- function (input,output,session){
           ############## Plot for problem 4 ###########################
           
           if (problemId == "Second Section - Problem c)") {
+            
+            ODE <- input$`ODE`
+            xi <- input$`xi`
+            yi <- input$`yi`
+            stp <- input$`step`
+            upbnd <- input$`upbound`
+            RKn <- input$`RK`
+            
+            
             
           }
           
@@ -334,7 +377,7 @@ server <- function (input,output,session){
     
   })
   
-  ########### THIS SECTION CORRESPONDS ONLY TO THE CHOCOLATE DATA ################  
+  ########### THIS SECTION CORRESPONDS ONLY TO THE CHOCOLATE DATA ##############  
   
   output$`Chocolate` <- renderTable({
     
@@ -344,7 +387,7 @@ server <- function (input,output,session){
     
   })
   
-  }
+}
 
 #*******************************************************************************
 
