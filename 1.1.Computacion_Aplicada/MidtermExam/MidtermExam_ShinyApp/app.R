@@ -81,7 +81,6 @@ ui <- fluidPage(
       textInput("funT","Please enter your function:", "sin(x^2)"),
       numericInput("pnt", "Please enter the 'x' value to which you want to approximate: ", 0, step = 0.1),
       numericInput("trms", "Please enter the desired ammount of terms:", 2, min = 1 , max = 8),
-      checkboxInput("show", "Show all approximations?", TRUE),
       numericInput("xmin", "Edit 'x' axis lower limit:", -6),
       numericInput("xmax", "Edit 'x' axis upper limit:", 6)
       ),
@@ -90,11 +89,11 @@ ui <- fluidPage(
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem c)'",
-      textInput("ODE", "Please enter the ODE", "2*x^3 + y"),
-      numericInput("xi","Enter x initial value:",0),
-      numericInput("yi", "Enter y initial value:",0),
-      numericInput("step","Enter the desired step size:",1),
-      numericInput("upbound","Enter the upper bound:",2),
+      textInput("ODE", "Please enter the ODE", "x^2 - y^2"),
+      numericInput("xi","Enter x initial value:",-5),
+      numericInput("yi", "Enter y initial value:",5),
+      numericInput("step","Enter the desired number of steps:",20),
+      numericInput("upbound","Enter the upper bound:",5),
       selectInput("RK", "Select which RK order you want to plot:", choices = c("RK2","RK3","RK4","All together"))
       )
     
@@ -108,6 +107,7 @@ ui <- fluidPage(
                 tabPanel("Solution",
                          tags$b(paste("Instructions:")),
                          textOutput("Problem Instructions"),
+                         textOutput("Approximation"),
                          plotOutput("Graphical Representation")),
                 tabPanel("Code",
                          uiOutput("Procedure")),
@@ -238,11 +238,71 @@ server <- function (input,output,session){
   })
   
   
+########### THIS SECTION IS FOR THE FUNCITON SOLUTION OBTAINED #################
+  
+  output$`Approximation` <- renderText({
+    
+    problemId <- input$`ExamProblems`
+    
+    ############## Approximation for Problem 1 Chocolate #######################
+    
+    if (problemId == "First Section - Problem 1 a)") {
+      
+      sol <- ""
+      
+    }
+    
+    else{
+      
+      
+      ############## Approximation for Problem 2 Lagrange ########################
+    
+      if (problemId == "Second Section - Problem a)") {
+      
+        sol <- ""
+      
+      }
+    
+      else{
+      
+      ############## Plot for problem 3 Taylor ###############################
+      
+        if (problemId == "Second Section - Problem b)") {
+        
+          sol <- ""
+        
+        }
+      
+        else{
+        
+          ############## Plot for problem 4 Runge Kutta ########################
+        
+          if (problemId == "Second Section - Problem c)") {
+            
+            sol <- ""
+          
+          }
+        
+          else{
+          
+            sol <- "Sorry for the inconvenience, we are still working hard to make this application evenn better."
+          
+          
+          }
+        }
+      }
+    }
+    
+    paste(sol)
+
+  })
+  
 ########### THIS SECTION IS FOR THE PLOTS CREATED BY THE PROGRAM ###############
   
   output$`Graphical Representation` <- renderPlot({
     
     problemId <- input$`ExamProblems`
+    
     
     ############## Plot for Problem 1 Chocolate ################################
     
@@ -307,8 +367,9 @@ server <- function (input,output,session){
           return(interPoly)
         }
         
-        x = as.numeric(unlist(strapply(strsplit(input$`valsX`,","), "\\d+", as.numeric)))
-        y = as.numeric(unlist(strapply(strsplit(input$`valsY`,","), "\\d+", as.numeric)))
+        x <-  as.numeric(unlist(strsplit(input$valsX,",")))
+        y <-  as.numeric(unlist(strsplit(input$valsY,",")))
+        
         graph <- lagrange(cbind(x,y))
         
       }
@@ -378,16 +439,9 @@ server <- function (input,output,session){
             return(taylorOut)
           }
           
-          # -----
+          # Sending the output signal:
           
-          if (input$`show` == TRUE){
-            for (i in trms) {
-              graph <- taylorPlot(input$`funT`, i)
-            }
-          }
-          else{
-            graph <- taylorPlot(input$`funT`, input$`trms`)
-          }
+          graph <- taylorPlot(input$`funT`, input$`trms`)
           
         }
         
@@ -397,7 +451,7 @@ server <- function (input,output,session){
           
           if (problemId == "Second Section - Problem c)") {
             
-            if (input$`RK` == "RK2" | input$`RK` == "All together"){
+            if (input$`RK` == "RK2"){
               
               # Runge-Kutta - 2nd order
               rungeKutta2 <- function(funct, x0, y0, x1, n) {
@@ -419,12 +473,81 @@ server <- function (input,output,session){
                 return(cbind(vx, vy))
               }
               
-              graph <- RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
+              RK2Plot <- function(func, x0, y0, x1, n) {
+                # Plot of the second, third and fourth order RK approximations
+                #
+                # Parameters
+                # ----------
+                # func : string
+                # function of two variable
+                # x0, y0 : numeric
+                # initial values
+                # x1 : numeric
+                # upper bound
+                # n : numeric
+                # number of steps
+                #
+                # Returns
+                # -------
+                # void
+                
+                # Calculate aproxminations
+                rk2 = rungeKutta2(func, x0, y0, x1, n)
+                
+                x2 <- rk2[,1]
+                y2 <- rk2[,2]
+                
+                # Computeanalytical answer of the ODE to compare all the approximations
+                model <- function(x, y, parms){
+                  with(as.list(c(y,parms)), {
+                    dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y
+                    list(dy)
+                  })
+                }
+                y <- c(y = init_y)
+                parms <- c()
+                x <- seq(init_x,upper_bound,length(init_x:upper_bound)/number_of_steps)
+                out <- ode( y, times = x, model, parms )
+                
+                # Plot
+                plot(
+                  out,
+                  xlab = "x",
+                  ylab = "f'(x)",
+                  type = "l",
+                  main = ' Runge-Kutta ',
+                  col = "black",
+                  lwd = 2
+                )
+                
+                lines(x2, y2, col = "#f44336")
+                
+                legend(
+                  'topleft',
+                  inset = .05,
+                  legend = c("RK 2nd order", "f'(x)"),
+                  col = c('#f44336', 'black'),
+                  lwd = c(1),
+                  bty = 'n',
+                  cex = .75
+                )
+                
+                # -----
+                
+                funct           = input$`ODE`
+                init_y          = input$`yi`
+                init_x          = input$`xi`
+                upper_bound     = input$`upbound`
+                number_of_steps = input$`step`
+                
+              }
+              
+              graph <- RK2Plot(input$`ODE`, input$`xi`, input$`yi`, input$`upbound`, input$`step`)
               
             }
             else{
               
-              if(input$`RK` == "RK3" | input$`RK` == "All together"){
+              if(input$`RK` == "RK3"){
                 
                 # Runge-Kutta - 3rd order
                 rungeKutta3 <- function(funct, x0, y0, x1, n) {
@@ -447,11 +570,81 @@ server <- function (input,output,session){
                   return(cbind(vx, vy))
                 }
                 
-                graph <- RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
+                RK3Plot <- function(func, x0, y0, x1, n) {
+                  # Plot of the second, third and fourth order RK approximations
+                  #
+                  # Parameters
+                  # ----------
+                  # func : string
+                  # function of two variable
+                  # x0, y0 : numeric
+                  # initial values
+                  # x1 : numeric
+                  # upper bound
+                  # n : numeric
+                  # number of steps
+                  #
+                  # Returns
+                  # -------
+                  # void
+                  
+                  # Calculate aproxminations
+                  rk3 = rungeKutta3(func, x0, y0, x1, n)
+                  
+                  x3 <- rk3[,1]
+                  y3 <- rk3[,2]
+                  
+                  # Computeanalytical answer of the ODE to compare all the approximations
+                  model <- function(x, y, parms){
+                    with(as.list(c(y,parms)), {
+                      dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y
+                      list(dy)
+                    })
+                  }
+                  y <- c(y = init_y)
+                  parms <- c()
+                  x <- seq(init_x,upper_bound,length(init_x:upper_bound)/number_of_steps)
+                  out <- ode( y, times = x, model, parms )
+                  
+                  # Plot
+                  plot(
+                    out,
+                    xlab = "x",
+                    ylab = "f'(x)",
+                    type = "l",
+                    main = ' Runge-Kutta ',
+                    col = "black",
+                    lwd = 2
+                  )
+                  
+                  lines(x3, y3, col = "#4caf50")
+                  
+                  legend(
+                    'topleft',
+                    inset = .05,
+                    legend = c("RK 3rd order", "f'(x)"),
+                    col = c('#4caf50', 'black'),
+                    lwd = c(1),
+                    bty = 'n',
+                    cex = .75
+                  )
+                  
+                  # -----
+                  
+                  funct           = input$`ODE`
+                  init_y          = input$`yi`
+                  init_x          = input$`xi`
+                  upper_bound     = input$`upbound`
+                  number_of_steps = input$`step`
+                  
+                }
+                
+                graph <- RK3Plot(input$`ODE`, input$`xi`, input$`yi`, input$`upbound`, input$`step`)
                 
               }
               else{
-                if(input$`RK` == "RK4" | input$`RK` == "All together"){
+                
+                if(input$`RK` == "RK4"){
                   
                   # Runge-Kutta - 4th order
                   rungeKutta4 <- function(funct, x0, y0, x1, n) {
@@ -475,93 +668,164 @@ server <- function (input,output,session){
                     return(cbind(vx, vy))
                   }
                   
-                  graph <- RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
+                  RK4Plot <- function(func, x0, y0, x1, n) {
+                    # Plot of the second, third and fourth order RK approximations
+                    #
+                    # Parameters
+                    # ----------
+                    # func : string
+                    # function of two variable
+                    # x0, y0 : numeric
+                    # initial values
+                    # x1 : numeric
+                    # upper bound
+                    # n : numeric
+                    # number of steps
+                    #
+                    # Returns
+                    # -------
+                    # void
+                    
+                    # Calculate aproxminations
+                    rk4 = rungeKutta4(func, x0, y0, x1, n)
+                    
+                    x4 <- rk4[,1]
+                    y4 <- rk4[,2]
+                    
+                    # Computeanalytical answer of the ODE to compare all the approximations
+                    model <- function(x, y, parms){
+                      with(as.list(c(y,parms)), {
+                        dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y
+                        list(dy)
+                      })
+                    }
+                    y <- c(y = init_y)
+                    parms <- c()
+                    x <- seq(init_x,upper_bound,length(init_x:upper_bound)/number_of_steps)
+                    out <- ode( y, times = x, model, parms )
+                    
+                    # Plot
+                    plot(
+                      out,
+                      xlab = "x",
+                      ylab = "f'(x)",
+                      type = "l",
+                      main = ' Runge-Kutta ',
+                      col = "black",
+                      lwd = 2
+                    )
+                    
+                    lines(x4, y4, col = "#2196f3")
+                    
+                    legend(
+                      'topleft',
+                      inset = .05,
+                      legend = c("RK 4th order", "f'(x)"),
+                      col = c('#2196f3', 'black'),
+                      lwd = c(1),
+                      bty = 'n',
+                      cex = .75
+                    )
+                    
+                    # -----
+                    
+                    funct <- input$`ODE`
+                    init_y <- input$`yi`
+                    init_x <- input$`xi`
+                    upper_bound <- input$`upbound`
+                    number_of_steps <- input$`step`
+                    
+                  }
+                  
+                  graph <- RK4Plot(input$`ODE`, input$`xi`, input$`yi`, input$`upbound`, input$`step`)
                   
                 }
                 else{
+                  
+                  if (input$`RK` == "All together"){
+                    
+                    RKPlot <- function(func, x0, y0, x1, n) {
+                      # Plot of the second, third and fourth order RK approximations
+                      #
+                      # Parameters
+                      # ----------
+                      # func : string
+                      # function of two variable
+                      # x0, y0 : numeric
+                      # initial values
+                      # x1 : numeric
+                      # upper bound
+                      # n : numeric
+                      # number of steps
+                      #
+                      # Returns
+                      # -------
+                      # void
+                      
+                      # Calculate aproxminations
+                      rk2 = rungeKutta2(func, x0, y0, x1, n)
+                      rk3 = rungeKutta3(func, x0, y0, x1, n)
+                      rk4 = rungeKutta4(func, x0, y0, x1, n)
+                      
+                      x2 <- rk2[,1]
+                      y2 <- rk2[,2]
+                      
+                      x3 <- rk3[,1]
+                      y3 <- rk3[,2]
+                      
+                      x4 <- rk4[,1]
+                      y4 <- rk4[,2]
+                      
+                      # Compute analytical answer of the ODE to compare all the approximations
+                      model <- function(x, y, parms){
+                        with(as.list(c(y,parms)), {
+                          dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y
+                          list(dy)
+                        })
+                      }
+                      y <- c(y = init_y)
+                      parms <- c()
+                      x <- seq(init_x,upper_bound,length(init_x:upper_bound)/number_of_steps)
+                      out <- ode( y, times = x, model, parms )
+                      
+                      # Plot
+                      plot(
+                        out,
+                        xlab = "x",
+                        ylab = "f'(x)",
+                        type = "l",
+                        main = ' Runge-Kutta ',
+                        col = "black",
+                        lwd = 2
+                      )
+                      
+                      lines(x2, y2, col = "#f44336")
+                      lines(x3, y3, col = "#4caf50")
+                      lines(x4, y4, col = "#2196f3")
+                      
+                      legend(
+                        'topleft',
+                        inset = .05,
+                        legend = c("RK 4th order", "RK 3rd order", "RK 2nd order", "f'(x)"),
+                        col = c('#2196f3', '#4caf50', '#f44336', 'black'),
+                        lwd = c(1),
+                        bty = 'n',
+                        cex = .75
+                      )
+                      
+                    }
+                    
+                    graph <- RKPlot(input$`ODE`, input$`xi`, input$`yi`, input$`upbound`, input$`step`)
+                    
+                  }
+                  
+                  else{
+                  
                   paste("Sorry for the inconvenience, we are still working hard to make this application evenn better.")
+                  }
                 }
               }
             }
-            
-            RKPlot <- function(func, x0, y0, x1, n) {
-              # Plot of the second, third and fourth order RK approximations
-              #
-              # Parameters
-              # ----------
-              # func : string
-              # function of two variable
-              # x0, y0 : numeric
-              # initial values
-              # x1 : numeric
-              # upper bound
-              # n : numeric
-              # number of steps
-              #
-              # Returns
-              # -------
-              # void
-              
-              # Calculate aproxminations
-              rk2 = rungeKutta2(func, x0, y0, x1, n)
-              rk3 = rungeKutta3(func, x0, y0, x1, n)
-              rk4 = rungeKutta4(func, x0, y0, x1, n)
-              
-              x2 <- rk2[,1]
-              y2 <- rk2[,2]
-              
-              x3 <- rk3[,1]
-              y3 <- rk3[,2]
-              
-              x4 <- rk4[,1]
-              y4 <- rk4[,2]
-              
-              # Computeanalytical answer of the ODE to compare all the approximations
-              model <- function(x, y, parms){
-                with(as.list(c(y,parms)), {
-                  dy = eval(parse(text=funct), envir=list(x,y))#2*x^3 + y
-                  list(dy)
-                })
-              }
-              y <- c(y = init_y)
-              parms <- c()
-              x <- seq(init_x,upper_bound,length(init_x:upper_bound)/number_of_steps)
-              out <- ode( y, times = x, model, parms )
-              
-              # Plot
-              plot(
-                out,
-                xlab = "x",
-                ylab = "f'(x)",
-                type = "l",
-                main = ' Runge-Kutta ',
-                col = "black",
-                lwd = 2
-              )
-              
-              lines(x2, y2, col = "#f44336")
-              lines(x3, y3, col = "#4caf50")
-              lines(x4, y4, col = "#2196f3")
-              
-              legend(
-                'topleft',
-                inset = .05,
-                legend = c("RK 4th order", "RK 3rd order", "RK 2nd order", "f'(x)"),
-                col = c('#2196f3', '#4caf50', '#f44336', 'black'),
-                lwd = c(1),
-                bty = 'n',
-                cex = .75
-              )
-            }
-            
-            # -----
-            
-            funct           = input$`ODE`
-            init_y          = input$`yi`
-            init_x          = input$`xi`
-            upper_bound     = input$`upbound`
-            number_of_steps = input$`step`
-            
           }
           
           else{

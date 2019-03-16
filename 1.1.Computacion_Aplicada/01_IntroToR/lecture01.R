@@ -25,6 +25,17 @@ print(res)
 v = c(0,1,2,3,4);
 print(v[4])
 
+
+A = "sin(3),pi,4,2.3"
+A
+B = unlist(strsplit(A,","), "\\d+", as.numeric)
+B
+f<-function(x) {
+  eval(parse(text=B))
+  strapply(B, "\\d+", as.numeric)
+}
+f(B)
+
 # Create a vector of 5 characters
 v = c("a","b","c","d","e")
 
