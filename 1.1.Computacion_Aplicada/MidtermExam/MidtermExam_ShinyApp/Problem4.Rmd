@@ -4,7 +4,7 @@ runtime: shiny
 output: html_document
 ---
 
-# Commented Code for Problem 4
+# Runge - Kutta Approximation Method
 
 First we define a variable to call for the database to be analized:
 ```{r}

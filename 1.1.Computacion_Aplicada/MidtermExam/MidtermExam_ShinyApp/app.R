@@ -76,11 +76,11 @@ ui <- fluidPage(
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem b)'",
       textInput("funT","Please enter your function:", "sin(x^2)"),
-      numericInput("pnt", "Please enter the 'x' value to which you want to approximate: ", 0),
-      numericInput("xmin", "Please enter lower value of 'x': ", -6),
-      numericInput("xmax", "Please enter upper value of 'x':", 6),
-      numericInput("trms", "Please enter the desired ammount of terms:", 2),
-      checkboxInput("show", "Show all approximations?", TRUE)
+      numericInput("pnt", "Please enter the 'x' value to which you want to approximate: ", 0, step = 0.1),
+      numericInput("trms", "Please enter the desired ammount of terms:", 2, min = 1 , max = 8),
+      checkboxInput("show", "Show all approximations?", TRUE),
+      numericInput("xmin", "Edit 'x' axis lower limit:", -6),
+      numericInput("xmax", "Edit 'x' axis upper limit:", 6)
       ),
     
     ######### Input Panel for Problem 4 ########################################
@@ -264,7 +264,49 @@ server <- function (input,output,session){
       
       if (problemId == "Second Section - Problem a)") {
         
+        # install.packages("polynom")
+        library(polynom)
+        library(pracma)
+        lagrange <- function(coordinates) {
+          # Plot the Lagrange polynomial, evaluated within the x coordinates
+          # (from parameter coordinates)
+          #
+          # Parameters
+          # ----------
+          # coordinates : nx2 matrix 
+          # where the first column represents the x coordinate while the second
+          # column represents the y coordinate
+          #
+          # Returns
+          # -------
+          # The Lagrange polynomial
+          
+          x = coordinates[,1]
+          y = coordinates[,2]
+          
+          interPoly = poly.calc(x,y)
+          xx = x
+          yy = lagrangeInterp(x,y,xx)
+          
+          plot(xx, yy, xlab="x", ylab="f(x)")
+          lines(interPoly, col = "#4caf50")
+          
+          legend(
+            'topleft',
+            inset = .05,
+            legend = c("Coordinates", "Lagrange polynomial"),
+            col = c('black', '#4caf50'),
+            lwd = c(1),
+            bty = 'n',
+            cex = .75
+          )
+          
+          return(interPoly)
+        }
         
+        x = seq(-5,5,0.5)
+        y = x^3 + 5*x^2 + 1
+        graph <- lagrange(cbind(x,y))
         
       }
       
@@ -274,10 +316,10 @@ server <- function (input,output,session){
         
         if (problemId == "Second Section - Problem b)") {
           
-          # pnt <- input$`pnt`
-          # xmin <- input$`xmin`
-          # xmax <- input$`xmax`
-          # trms <- seq(1,input$`trms`,1)
+          pnt <- input$`pnt`
+          xmin <- input$`xmin`
+          xmax <- input$`xmax`
+          trms <- seq(1:input$`trms`)
           # fctn <- input$`funT`
           # npoints <- 250
           # nmult <- 5
@@ -306,7 +348,7 @@ server <- function (input,output,session){
             to = 2*pi
             x <- seq(from, to, length.out = 100)
             yf <- f(x)
-            c <- 0 # The Taylor Series shall be centered in zero
+            c <- pnt # The Taylor Series shall be centered in zero
             
             taylorOut <- taylor(f, c, taylorOrder)
             yp <- polyval(taylorOut, x)
@@ -340,7 +382,14 @@ server <- function (input,output,session){
           
           # -----
           
-          graph <- taylorPlot(input$`funT`, input$`trms`)
+          graph <- if (input$`show` == TRUE){
+            for (num in trms) {
+              taylorPlot(input$`funT`, num)
+            }
+          }
+          else{
+            taylorPlot(input$`funT`, input$`trms`)
+          }
           
           #####
           
