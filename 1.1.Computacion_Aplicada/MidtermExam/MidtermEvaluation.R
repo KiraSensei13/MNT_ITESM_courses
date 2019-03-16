@@ -314,10 +314,10 @@ RKPlot <- function(func, x0, y0, x1, n) {
 
 # -----
 
-funct           = "x - 0.05*y"
-init_y          = 1
-init_x          = -10
-upper_bound     = 10
+funct           = "x^2 - y^2"
+init_y          = 5
+init_x          = -5
+upper_bound     = 5
 number_of_steps = length(init_x:upper_bound)*2
 
 RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
