@@ -30,6 +30,8 @@ library(shiny)
 library(shinythemes)
 # Adding the codes:
 library(markdown)
+library(deSolve)
+library(gsubfn)
 
 
 #*******************************************************************************
@@ -67,8 +69,9 @@ ui <- fluidPage(
     
     conditionalPanel(
       condition = "input.ExamProblems == 'Second Section - Problem a)'",
-      textInput("valsX", "Enter the values for the 'x' column separated by a space:", "1 2 3 4"),
-      textInput("valsY", "Enter the values for the 'y' column separated by a space:", "4 3 2 1")
+      textInput("valsX", "Enter the values for the 'x' column separated only by a comma:", "1,2,3,4,7,8,9,10"),
+      textInput("valsY", "Enter the values for the 'y' column separated only by a comma:", "4,3,2,1,3,6,8,10"),
+      helpText("Make sure you add the same amount of values in both columns!")
       ),
     
     ######### Input Panel for Problem 3 ########################################
@@ -416,6 +419,8 @@ server <- function (input,output,session){
                 return(cbind(vx, vy))
               }
               
+              graph <- RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
+              
             }
             else{
               
@@ -441,6 +446,9 @@ server <- function (input,output,session){
                   }
                   return(cbind(vx, vy))
                 }
+                
+                graph <- RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
+                
               }
               else{
                 if(input$`RK` == "RK4" | input$`RK` == "All together"){
@@ -466,6 +474,8 @@ server <- function (input,output,session){
                     }
                     return(cbind(vx, vy))
                   }
+                  
+                  graph <- RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
                   
                 }
                 else{
@@ -564,8 +574,6 @@ server <- function (input,output,session){
         }
       }
     }
-    
-    graph <- RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
     
     paste(graph)
     

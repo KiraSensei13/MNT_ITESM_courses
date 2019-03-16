@@ -60,6 +60,7 @@ hist(glm_predicted)
 # SECOND SECTION
 # a) Lagrange polynomials. This algorithm receives a nx2 matrix, where the first column represents the x coordinate while the second column represents the y coordinate. The code must provide as output the Lagrange polynomial interpolation expression in terms of "x". (30 points) *TIP: Use the functions: expression, D, parse and paste within a loop to get the desired output.
 
+library(deSolve)
 library(polynom)
 library(pracma)
 lagrange <- function(coordinates) {
@@ -313,7 +314,7 @@ RKPlot <- function(func, x0, y0, x1, n) {
 
 # -----
 
-funct           = "x^2 - 0.05*y"
+funct           = "x - 0.05*y"
 init_y          = 1
 init_x          = -10
 upper_bound     = 10
