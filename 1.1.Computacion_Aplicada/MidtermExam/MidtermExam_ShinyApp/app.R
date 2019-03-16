@@ -274,74 +274,133 @@ server <- function (input,output,session){
         
         if (problemId == "Second Section - Problem b)") {
           
+          # pnt <- input$`pnt`
+          # xmin <- input$`xmin`
+          # xmax <- input$`xmax`
+          # trms <- seq(1,input$`trms`,1)
+          # fctn <- input$`funT`
+          # npoints <- 250
+          # nmult <- 5
+          
           library(pracma)
-          pnt <- input$`pnt`
-          xmin <- input$`xmin`
-          xmax <- input$`xmax`
-          trms <- seq(1,input$`trms`,1)
-          fctn <- input$`funT`
-          npoints <- 250
-          nmult <- 5
+          taylorPlot <- function(funct, taylorOrder) {
+            # Plot the Taylor approximations up to the 2nd, 4th, 6th and 8th terms
+            #
+            # Parameters
+            # ----------
+            # f : function
+            # Vectorized function of one variable
+            # taylorOrder : numeric
+            # the number of terms to get
+            #
+            # Returns
+            # -------
+            # The Taylor Series
+            
+            f <- function(n) {
+              return(eval(parse(text=funct), envir=list(x=n)))
+            }
+            
+            # Interval of points to be ploted
+            from = -2*pi
+            to = 2*pi
+            x <- seq(from, to, length.out = 100)
+            yf <- f(x)
+            c <- 0 # The Taylor Series shall be centered in zero
+            
+            taylorOut <- taylor(f, c, taylorOrder)
+            yp <- polyval(taylorOut, x)
+            
+            plot(
+              x,
+              yf,
+              xlab = "x",
+              ylab = "f(x)",
+              type = "l",
+              main = ' Taylor Series Approximation of f(x) ',
+              col = "black",
+              xlim = c(xmin, xmax),
+              lwd = 2
+            )
+            
+            lines(x, yp, col = "#4caf50")
+            
+            legend(
+              'topleft',
+              inset = .05,
+              legend = c("Taylor Approximation", "f(x)"),
+              col = c('#4caf50', 'black'),
+              lwd = c(1),
+              bty = 'n',
+              cex = .75
+            )
+            
+            return(taylorOut)
+          }
+          
+          # -----
+          
+          graph <- taylorPlot(input$`funT`, input$`trms`)
           
           #####
           
-          poly <- function(a,p) {
-            
-            A <- matrix(0,4,5)
-            A[1,1:2] <- c(a[1]-a[2]*p,a[2])
-            A[2,1:3] <- A[1,1:3]+a[3]*c(p^2,-2*p,1)
-            A[3,1:4] <- A[2,1:4]+a[4]*c(p^3,-3*p^2,3*p^2,1)   
-            A[4,] <- A[3,]+a[5]*c(p^4,-4*p^3,6*p^2,-4*p,1)
-            A
-          }
-          
-          data <- reactive({
-            x <- seq(xmin,xmax,length=npoints)
-            if(pnt==0) i <- nmult*25
-            else i <- nmult*pnt
-            p <- x[i]
-            h <- x[2]-x[1]
-            f <- function(x) {
-              eval(parse(text=fctn))
-            }
-            y <- f(x)
-            p0 <- y[i]
-            p1 <- (y[i+1]-y[i])/h
-            p2 <- (y[i-1]-2*y[i]+y[i+1])/h^2
-            p3 <- (y[i+2]-3*y[i+1]+3*y[i]-y[i-1])/h^3
-            p4 <- (y[i+2]-4*y[i+1]+6*y[i]-4*y[i-1]+y[i-2])/h^4
-            
-            yr <- c(min(y)-(max(y)-min(y)/3),max(y)+(max(y)-min(y)/3))
-            
-            list(cbind(x,y),c(p0,p1,p2,p3,p4),p,yr)
-          })
-          
-          x <- data()[[1]][,1]
-          y <- data()[[1]][,2]
-          yr <- data()[[4]]
-          
-          graph <-  plot(x,y,ylim=yr, xlim = c(xmin,xmax), xlab="x",ylab="",type="l",lwd=3)
-                    if(pnt==0){
-                      i <- nmult*25
-                    } 
-                    else{
-                      i <- nmult*pnt
-                    } 
-                    points(x[i],y[i],pch=20,cex=2)
-                    a <- data()[[2]]
-                    p <- data()[[3]]
-                    
-                    y <- a[1]+a[2]*(x-p)
-                    lines(x,y,lwd=1,col="blue")
-                     
-                    y <- y+a[3]/2*(x-p)^2
-                    lines(x,y,lwd=1,col="green")
-                     
-                    y <- y+a[4]/6*(x-p)^3
-                    lines(x,y,lwd=1,col="red")
-                     
-                    y <- y+a[5]/24*(x-p)^4
-                    lines(x,y,lwd=1,col="gray")
+          # poly <- function(a,p) {
+          #   
+          #   A <- matrix(0,4,5)
+          #   A[1,1:2] <- c(a[1]-a[2]*p,a[2])
+          #   A[2,1:3] <- A[1,1:3]+a[3]*c(p^2,-2*p,1)
+          #   A[3,1:4] <- A[2,1:4]+a[4]*c(p^3,-3*p^2,3*p^2,1)   
+          #   A[4,] <- A[3,]+a[5]*c(p^4,-4*p^3,6*p^2,-4*p,1)
+          #   A
+          # }
+          # 
+          # data <- reactive({
+          #   x <- seq(xmin,xmax,length=npoints)
+          #   if(pnt==0) i <- nmult*25
+          #   else i <- nmult*pnt
+          #   p <- x[i]
+          #   h <- x[2]-x[1]
+          #   f <- function(x) {
+          #     eval(parse(text=fctn))
+          #   }
+          #   y <- f(x)
+          #   p0 <- y[i]
+          #   p1 <- (y[i+1]-y[i])/h
+          #   p2 <- (y[i-1]-2*y[i]+y[i+1])/h^2
+          #   p3 <- (y[i+2]-3*y[i+1]+3*y[i]-y[i-1])/h^3
+          #   p4 <- (y[i+2]-4*y[i+1]+6*y[i]-4*y[i-1]+y[i-2])/h^4
+          #   
+          #   yr <- c(min(y)-(max(y)-min(y)/3),max(y)+(max(y)-min(y)/3))
+          #   
+          #   list(cbind(x,y),c(p0,p1,p2,p3,p4),p,yr)
+          # })
+          # 
+          # x <- data()[[1]][,1]
+          # y <- data()[[1]][,2]
+          # yr <- data()[[4]]
+          # 
+          # graph <-  plot(x,y,ylim=yr, xlim = c(xmin,xmax), xlab="x",ylab="",type="l",lwd=3)
+          #           if(pnt==0){
+          #             i <- nmult*25
+          #           } 
+          #           else{
+          #             i <- nmult*pnt
+          #           } 
+          #           points(x[i],y[i],pch=20,cex=2)
+          #           a <- data()[[2]]
+          #           p <- data()[[3]]
+          #           
+          #           y <- a[1]+a[2]*(x-p)
+          #           lines(x,y,lwd=1,col="blue")
+          #            
+          #           y <- y+a[3]/2*(x-p)^2
+          #           lines(x,y,lwd=1,col="green")
+          #            
+          #           y <- y+a[4]/6*(x-p)^3
+          #           lines(x,y,lwd=1,col="red")
+          #            
+          #           y <- y+a[5]/24*(x-p)^4
+          #           lines(x,y,lwd=1,col="gray")
                     
         }
         

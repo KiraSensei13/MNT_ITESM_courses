@@ -163,7 +163,7 @@ taylorPlot <- function(funct, taylorOrder) {
 
 # -----
 
-taylorPlot("sin(x)", 5)
+taylorPlot("sin(x)", 8)
 taylorPlot("cos(x)", 2)
 taylorPlot("tan(x)", 3)
 
