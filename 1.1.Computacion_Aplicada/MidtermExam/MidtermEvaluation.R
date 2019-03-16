@@ -60,20 +60,55 @@ hist(glm_predicted)
 # SECOND SECTION
 # a) Lagrange polynomials. This algorithm receives a nx2 matrix, where the first column represents the x coordinate while the second column represents the y coordinate. The code must provide as output the Lagrange polynomial interpolation expression in terms of "x". (30 points) *TIP: Use the functions: expression, D, parse and paste within a loop to get the desired output.
 
-library(rSymPy)
-lagrange.poly <- function(x, y) {
+library(polynom)
+library(pracma)
+lagrange <- function(coordinates) {
+  # Plot the Lagrange polynomial, evaluated within the x coordinates
+  # (from parameter coordinates)
+  #
+  # Parameters
+  # ----------
+  # coordinates : nx2 matrix 
+  # where the first column represents the x coordinate while the second
+  # column represents the y coordinate
+  #
+  # Returns
+  # -------
+  # The Lagrange polynomial
+
+  x = coordinates[,1]
+  y = coordinates[,2]
+  
+  interPoly = poly.calc(x,y)
+  xx = x
+  yy = lagrangeInterp(x,y,xx)
+  
+  plot(xx, yy, xlab="x", ylab="f(x)")
+  lines(interPoly, col = "#4caf50")
+  
+  legend(
+    'topleft',
+    inset = .05,
+    legend = c("Coordinates", "Lagrange polynomial"),
+    col = c('black', '#4caf50'),
+    lwd = c(1),
+    bty = 'n',
+    cex = .75
+  )
+  
+  return(interPoly)
 }
 
-x <- c(0, 2, 3, 4)
-y <- c(7, 11, 28, 63)
-lagrange.poly(x, y)
+x = seq(-5,5,0.5)
+y = x^3 + 5*x^2 + 1
+lagrange(cbind(x,y))
 
 ################################################################################
 # b) Taylor series: The algorithm receives an expression or a string with the function to do and the number of terms to get. The output will be an expression containing all the Taylor series about 0. (30 points) *TIP: Use the functions: expression, D, parse and paste within a loop to get the desired output.
 
 library(pracma)
 taylorPlot <- function(funct, taylorOrder) {
-  # Plot the Taylor approximations up to the 2nd, 4th, 6th and 8th terms
+  # Plot the Taylor approximations up to the taylorOrder terms
   #
   # Parameters
   # ----------
