@@ -241,6 +241,7 @@ rungeKutta4 <- function(funct, x0, y0, x1, n) {
 
 # -----
 
+library (deSolve)
 RKPlot <- function(func, x0, y0, x1, n) {
   # Plot of the second, third and fourth order RK approximations
   #
