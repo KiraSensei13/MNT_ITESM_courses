@@ -38,7 +38,7 @@ summary(choco_data) # Exploring the data.
 chocolate_labels <-
   choco_data[, 1] # First column contains the names of candy and we define it as the label for each row.
 choco_data <-
-  choco_data[, -1] # Taking away the first column that contains the candy names.
+  choco_data[,-1] # Taking away the first column that contains the candy names.
 
 # Setting numeric values to categoric value:
 choco_data$chocolate <- as.factor(choco_data$chocolate)
@@ -65,7 +65,7 @@ mdl <-
 summary(mdl) # Visualizing the model to determine the most significant variables.
 
 # Lets see the performance of our beta coefficients:
-predicted <- predict(mdl, choco_data[, ], type = "response")
+predicted <- predict(mdl, choco_data[,], type = "response")
 hist(predicted)
 
 #We assume that: all values less than 0.5 correspond to the first category, 0.5 or bigger correspond to the second category
@@ -179,9 +179,10 @@ lagrange <- function(coordinates) {
     return(eval(parse(text = interPoly_str), envir = list(x = n)))
   }
   
+  xx = seq(min(x), max(x), length(x) / 1000)
   yy = c()
-  for (i in 1:length(x)) {
-    yy[i] = interpolation(x[i])
+  for (i in 1:length(xx)) {
+    yy[i] = interpolation(xx[i])
   }
   
   plot(x,
@@ -189,7 +190,7 @@ lagrange <- function(coordinates) {
        xlab = "x",
        ylab = "f(x)",
        main = ' Lagrange polynomials ')
-  lines(x, yy, col = "#4caf50")
+  lines(xx, yy, col = "#4caf50")
   
   legend(
     'topleft',
@@ -207,7 +208,7 @@ lagrange <- function(coordinates) {
 # -----
 
 x = seq(-5, 5, 0.5)
-y = x ^ 3 + 5 * x ^ 2 + 1
+y = x ^ 2 + 5 * x ^ 3 + 8
 lagrange(cbind(x, y))
 
 # -----
@@ -257,7 +258,7 @@ mytaylor <- function(f, c, taylorOrder = 4) {
   T <- f(c)
   library(pracma) # to add, derive, factorial and power a poly
   for (i in 1:taylorOrder) {
-    T <- polyadd(T, fderiv(f, c, i) / fact(i) * polypow(c(1,-c), i))
+    T <- polyadd(T, fderiv(f, c, i) / fact(i) * polypow(c(1, -c), i))
   }
   return(T)
 }
