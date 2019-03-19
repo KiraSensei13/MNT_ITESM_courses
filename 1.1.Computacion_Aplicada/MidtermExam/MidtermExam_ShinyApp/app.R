@@ -80,7 +80,8 @@ ui <- fluidPage(
       condition = "input.ExamProblems == 'Second Section - Problem b)'",
       textInput("funT","Please enter your function:", "sin(x^2)"),
       numericInput("pnt", "Please enter the 'x' value to which you want to approximate: ", 0, step = 0.1),
-      numericInput("trms", "Please enter the desired ammount of terms:", 2, min = 1 , max = 8),
+      numericInput("trms", "Please enter the desired ammount of terms:", 2, min = 1),
+      checkboxInput("show", "Show all approximations?", TRUE),
       numericInput("xmin", "Edit 'x' axis lower limit:", -6),
       numericInput("xmax", "Edit 'x' axis upper limit:", 6)
       ),
@@ -385,9 +386,29 @@ server <- function (input,output,session){
           xmax <- input$`xmax`
           trms <- seq(1:input$`trms`)
           
-          library(pracma)
+          rm(list = ls(all = TRUE)) # Delete workspace
+          graphics.off() # Clear plots
+          cat("\014") # Clear console
+          
+          # -----
+          
+          mytaylor <- function(f, c, taylorOrder = 4) {
+            fun <- match.fun(f)
+            f <- function(x)
+              fun(x)
+            
+            T <- f(c)
+            library(pracma) # to add, derive, factorial and power a poly
+            for (i in 1:taylorOrder) {
+              T <- polyadd(T, fderiv(f, c, i) / fact(i) * polypow(c(1, -c), i))
+            }
+            return(T)
+          }
+          
+          # -----
+          
           taylorPlot <- function(funct, taylorOrder) {
-            # Plot the Taylor approximations up to the 2nd, 4th, 6th and 8th terms
+            # Plot the Taylor approximations up to the taylorOrder terms
             #
             # Parameters
             # ----------
@@ -401,15 +422,17 @@ server <- function (input,output,session){
             # The Taylor Series
             
             f <- function(n) {
-              return(eval(parse(text=funct), envir=list(x=n)))
+              return(eval(parse(text = funct), envir = list(x = n)))
             }
             
             # Interval of points to be ploted
-            x <- seq(xmin, xmax, length.out = 250)
+            from = -2 * pi
+            to = 2 * pi
+            x <- seq(from, to, length.out = 100)
             yf <- f(x)
-            c <- pnt # The Taylor Series shall be centered in zero
+            c <- 0 # The Taylor Series shall be centered in zero
             
-            taylorOut <- taylor(f, c, taylorOrder)
+            taylorOut <- mytaylor(f, c, taylorOrder)
             yp <- polyval(taylorOut, x)
             
             plot(
@@ -420,7 +443,6 @@ server <- function (input,output,session){
               type = "l",
               main = ' Taylor Series Approximation of f(x) ',
               col = "black",
-              xlim = c(xmin, xmax),
               lwd = 2
             )
             
@@ -441,7 +463,13 @@ server <- function (input,output,session){
           
           # Sending the output signal:
           
-          graph <- taylorPlot(input$`funT`, input$`trms`)
+          if (input$`show` == TRUE){
+            graph <- taylorPlot(input$`funT`, input$`trms`)
+          }
+          else{
+            graph <- taylorPlot(input$`funT`, input$`trms`)
+          }
+            
           
         }
         
