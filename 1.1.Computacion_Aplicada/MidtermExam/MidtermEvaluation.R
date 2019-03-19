@@ -82,6 +82,7 @@ cat("\014") # Clear console
 
 # -----
 
+# function to convert a list to a R polynomial
 getpoly <- function(coef = c(0, 1)) {
   a <- as.numeric(coef)
   while ((la <- length(a)) > 1 && a[la] == 0)
@@ -91,64 +92,81 @@ getpoly <- function(coef = c(0, 1)) {
 
 # -----
 
-poly2char <- function(x, decreasing = FALSE, ...)
+# function to convert a R polynomial to a string of characters
+poly2char <- function(x, ...)
 {
   p <- unclass(x)
   lp <- length(p) - 1
   names(p) <- 0:lp
   p <- p[p != 0]
   
+  # return zero if the polynomial is empty
   if (length(p) == 0)
     return("0")
   
-  if (decreasing)
-    p <- rev(p)
-  
+  # let's handle the signs (print nothing if positive)
   signs <- ifelse(p < 0, "- ", "+ ")
   signs[1] <- if (signs[1] == "- ")
     "-"
   else
     ""
-  
+  # get the polynomial coeficient
   np <- names(p)
   p <- as.character(abs(p))
+  # get "empty" if the coeficient is zero
   p[p == "1" & np != "0"] <- ""
   
+  # let's handle/get the exponent
   pow <- paste("x^", np, sep = "")
   pow[np == "0"] <- ""
   pow[np == "1"] <- "x"
+  
+  # add starts to show the multiplication between coefs and x's
   stars <- rep.int("*", length(p))
   stars[p == "" | pow == ""] <- ""
+  
+  # use paste to concatenate the precious calculations
+  # and return the string
   paste(signs, p, stars, pow, sep = "", collapse = " ")
 }
 
 # -----
 
 interpolatepoly <- function(x, y, tol = sqrt(.Machine$double.eps)) {
+  # if y is not specified as an argument, then return something in the form of:
+  # y = x
   if (missing(y)) {
-    p <- 1
-    for (xi in x)
-      p <- c(0, p) - c(xi * p, 0)
-    return(getpoly(p))
+   p <- 1
+   for (xi in x)
+     p <- c(0, p) - c(xi * p, 0)
+   # abd get the polynomial
+   return(getpoly(p))
   }
   
-  toss <- duplicated(x)
-  if (any(toss)) {
-    crit <- max(tapply(y, x, function(x)
-      diff(range(x))))
-    keep <- !toss
+  # let's check if some duplicates exist in x
+  jettison <- duplicated(x)
+  # if a least one value in jettison is true, then remove them
+  if (any(jettison)) {
+    # and merge the duplicates using recursion
+    crit <- max(tapply(y, x, function(x) diff(range(x))))
+    keep <- !jettison
+    
+    # let's save the calculation for further use
     y <- y[keep]
     x <- x[keep]
   }
   
+  # convert the list of coefs into a class polynomial if the list is
+  # short enough
   m <- length(x)
   if (m <= 1)
     return(getpoly(y))
   
+  # Lagrange Interpolating Polynomial Formula
   r <- 0
   for (i in 1:m)
+    # from http://mathworld.wolfram.com/LagrangeInterpolatingPolynomial.html
     r <- r + (y[i] * unclass(Recall(x[-i]))) / prod(x[i] - x[-i])
-  
   r[abs(r) < tol] <- 0
   getpoly(r)
 }
@@ -251,13 +269,18 @@ cat("\014") # Clear console
 # -----
 
 mytaylor <- function(f, c, taylorOrder = 4) {
+  # Let's ensure that the function can be evaluated
   fun <- match.fun(f)
+  # and create that save math function
   f <- function(x)
     fun(x)
   
+  # let's center the appoximation on c
   T <- f(c)
   library(pracma) # to add, derive, factorial and power a poly
   for (i in 1:taylorOrder) {
+    # Taylor Series Formula
+    # from http://mathworld.wolfram.com/TaylorSeries.html
     T <- polyadd(T, fderiv(f, c, i) / fact(i) * polypow(c(1, -c), i))
   }
   return(T)
@@ -346,6 +369,7 @@ rungeKutta2 <- function(funct, x0, y0, x1, n) {
   vy[1] <- y <- y0
   h <- (x1 - x0) / n
   for (i in 1:n) {
+    # from http://campus.usal.es/~mpg/Personales/PersonalMAGL/Docencia/MetNumTema4Teo(09-10).pdf
     k1 <- h * f(x, y)
     k2 <- h * f(x + 0.5 * h, y + 0.5 * k1)
     vx[i + 1] <- x <- x0 + i * h
@@ -368,9 +392,10 @@ rungeKutta3 <- function(funct, x0, y0, x1, n) {
   vy[1] <- y <- y0
   h <- (x1 - x0) / n
   for (i in 1:n) {
+    # from http://campus.usal.es/~mpg/Personales/PersonalMAGL/Docencia/MetNumTema4Teo(09-10).pdf
     k1 <- h * f(x, y)
     k2 <- h * f(x + 0.5 * h, y + 0.5 * k1)
-    k3 <- h * f(x + h, y + k2)
+    k3 <- h * f(x + h, y - k1 + 2 * k2)
     vx[i + 1] <- x <- x0 + i * h
     vy[i + 1] <- y <- y + (k1 + 4 * k2 + k3) / 6
   }
@@ -391,6 +416,7 @@ rungeKutta4 <- function(funct, x0, y0, x1, n) {
   vy[1] <- y <- y0
   h <- (x1 - x0) / n
   for (i in 1:n) {
+    # from http://campus.usal.es/~mpg/Personales/PersonalMAGL/Docencia/MetNumTema4Teo(09-10).pdf
     k1 <- h * f(x, y)
     k2 <- h * f(x + 0.5 * h, y + 0.5 * k1)
     k3 <- h * f(x + 0.5 * h, y + 0.5 * k2)
