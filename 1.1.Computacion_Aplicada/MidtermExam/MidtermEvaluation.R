@@ -80,7 +80,18 @@ rm(list = ls(all = TRUE)) # Delete workspace
 graphics.off() # Clear plots
 cat("\014") # Clear console
 
-# -----
+# ------------------------------------------------
+
+# Enter the two column vectors for x and y values:
+# *Remember to add the same amount of values on each vector!
+# Here we show a different example, but you culd just fill in the values for x and y separated by single commas as a vector.
+# x = seq(-5, 5, 0.5)
+# y = x ^ 2 + 5 * x ^ 3 + 8
+
+x=c(1,2,3,4)
+y=c(4,3,2,1)
+
+# ------------------------------------------------
 
 # function to convert a list to a R polynomial
 getpoly <- function(coef = c(0, 1)) {
@@ -223,10 +234,10 @@ lagrange <- function(coordinates) {
   return(interPoly_str)
 }
 
-# -----
 
-x = seq(-5, 5, 0.5)
-y = x ^ 2 + 5 * x ^ 3 + 8
+
+# Calling the function to obtain the solution:
+
 lagrange(cbind(x, y))
 
 # -----
@@ -266,7 +277,15 @@ rm(list = ls(all = TRUE)) # Delete workspace
 graphics.off() # Clear plots
 cat("\014") # Clear console
 
-# -----
+# ----------------------------------------------
+
+# Enter the your the function and the number of terms to get as follows:
+# taylorPlot("YOUR FUNCTION", NUMBER OF TERMS)
+taylorPlot("sin(x)", 8)
+taylorPlot("cos(x)", 2)
+taylorPlot("tan(x)", 3)
+
+# ----------------------------------------------
 
 mytaylor <- function(f, c, taylorOrder = 4) {
   # Let's ensure that the function can be evaluated
@@ -342,12 +361,6 @@ taylorPlot <- function(funct, taylorOrder) {
   return(taylorOut)
 }
 
-# -----
-
-taylorPlot("sin(x)", 8)
-taylorPlot("cos(x)", 2)
-taylorPlot("tan(x)", 3)
-
 ################################################################################
 # c) Runge-Kutta. The algorithm will receive an ODE, initial values for x and y, the step size and the upper bound. The output will be the plot of the second, third and fourth order RK approximations. To demonstrate the functionality of your code, use the analytical answer of the ODE to compare all the approximations (30 points)
 
@@ -355,7 +368,20 @@ rm(list = ls(all = TRUE)) # Delete workspace
 graphics.off() # Clear plots
 cat("\014") # Clear console
 
-# -----
+
+# Enter your input in the following manner:
+# -------------------------------------------
+# ODE to be evaluated (enter it as a string):
+funct           = "x^2 - y"
+# Enter Y initial Value:
+init_y          = 1
+# Enter X initial Value:
+init_x          = -5
+# Enter Upper bound
+upper_bound     = 5
+# Enter number of steps (the step size is going to be calculated calculated):
+number_of_steps = length(init_x:upper_bound) * 2
+# ---------------------------------------------
 
 # Runge-Kutta - 2nd order
 rungeKutta2 <- function(funct, x0, y0, x1, n) {
@@ -508,12 +534,6 @@ RKPlot <- function(func, x0, y0, x1, n) {
   )
 }
 
-# -----
 
-funct           = "x^2 - y"
-init_y          = 1
-init_x          = -5
-upper_bound     = 5
-number_of_steps = length(init_x:upper_bound) * 2
-
+# Calling the function for the solution:
 RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
