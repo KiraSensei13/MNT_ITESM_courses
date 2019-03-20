@@ -1,0 +1,12 @@
+name: MidtermExam_ShinyApp
+title: MidtermExam_ShinyApp
+username:
+account: brux
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 794624
+bundleId: 1944811
+url: https://brux.shinyapps.io/MidtermExam_ShinyApp/
+when: 1552773731.15533
+asMultiple: FALSE
+asStatic: FALSE
