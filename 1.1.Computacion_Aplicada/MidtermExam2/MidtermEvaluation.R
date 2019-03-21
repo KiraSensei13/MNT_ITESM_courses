@@ -31,8 +31,8 @@ cat("\014") # Clear console
 
 # Runge-Kutta - 2nd order
 rungeKutta2 <- function(funct, x0, y0, x1, n) {
-  f <- function(xx, yy) {
-    return(eval(parse(text = funct), envir = list(x = xx, y = yy)))
+  f <- function(P, N) {
+    return(eval(parse(text = funct), envir = list(x = P, y = N)))
   }
   
   vx <- double(n + 1)
@@ -54,8 +54,8 @@ rungeKutta2 <- function(funct, x0, y0, x1, n) {
 
 # Runge-Kutta - 3rd order
 rungeKutta3 <- function(funct, x0, y0, x1, n) {
-  f <- function(xx, yy) {
-    return(eval(parse(text = funct), envir = list(x = xx, y = yy)))
+  f <- function(P, N) {
+    return(eval(parse(text = funct), envir = list(x = P, y = N)))
   }
   
   vx <- double(n + 1)
@@ -78,8 +78,8 @@ rungeKutta3 <- function(funct, x0, y0, x1, n) {
 
 # Runge-Kutta - 4th order
 rungeKutta4 <- function(funct, x0, y0, x1, n) {
-  f <- function(xx, yy) {
-    return(eval(parse(text = funct), envir = list(x = xx, y = yy)))
+  f <- function(P, N) {
+    return(eval(parse(text = funct), envir = list(x = P, y = N)))
   }
   
   vx <- double(n + 1)
@@ -200,6 +200,29 @@ RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
 #-------------------------------------------------------------------------------
 #d) Coupled Runge-Kutta. Modify the fourth order RK algorithm to receive two ODEs. The output will be the plot of both ODEs approximations. (10 points)
 
+runge.kutta <- function(funct, initial, x){
+  f <- function(P, N) {
+    return(eval(parse(text = funct), envir = list(x = P, y = N)))
+  }
+  
+  if(!is.function(f))stop("f must be a function")
+  if(!is.numeric(initial)||length(initial)!=1)stop("initial must be a scalar")
+  if(!is.vector(x,mode="numeric"))stop("x must be a numeric vector")
+  y <- initial
+  for(i in 1:(length(x)-1)){
+    stepsize <- x[i+1]-x[i]
+    f1 <- stepsize*f(y[i],x[i])
+    f2 <- stepsize*f(y[i]+f1/2,x[i]+stepsize/2)
+    f3 <- stepsize*f(y[i]+f2/2,x[i]+stepsize/2)
+    f4 <- stepsize*f(y[i]+f3,x[i]+stepsize)
+    y <- c(y,y[i]+(f1+2*f2+2*f3+f4)/6)}
+  y
+}
+x = seq(4,10,0.1)
+y = runge.kutta("-0.16*x + 0.08*x*y",4,x)
+y = runge.kutta("4.5*y - 0.9*x*y",4,x)
+plot(x,y)
+
 library (deSolve)
 RKPlot2 <-
   function(func_1,
@@ -243,7 +266,7 @@ RKPlot2 <-
     
     model_1 <- function(x, y, parms) {
       with(as.list(c(y, parms)), {
-        dy = eval(parse(text = func_1), envir = list(x, y))#2*x^3 + y
+        dy = eval(parse(text = funct_1), envir = list(x, y))#2*x^3 + y
         list(dy)
       })
     }
@@ -257,7 +280,7 @@ RKPlot2 <-
     
     model_2 <- function(x, y, parms) {
       with(as.list(c(y, parms)), {
-        dy = eval(parse(text = func_2), envir = list(x, y))#2*x^3 + y
+        dy = eval(parse(text = funct_2), envir = list(x, y))#2*x^3 + y
         list(dy)
       })
     }
@@ -274,15 +297,13 @@ RKPlot2 <-
     # deSolve function 1
     plot(
       out_1,
-      xlab = "t",
-      ylab = "f'(t)",
+      xlab = "x",
+      ylab = "f'(x)",
       type = "l",
       main = ' Runge-Kutta ',
-      col = "#0d47a1",
-      # blue darken-4
+      col = "black",
       lwd = 2,
-      xlim = c(init_x, upper_bound),
-      ylim = c(plot_ymin, plot_ymax)
+      ylim=c(plot_ymin,plot_ymax)
     )
     
     # RK4 function 1
@@ -316,8 +337,8 @@ RKPlot2 <-
 # dx_2/dt =  (2/25)x_1 - (2/25)x_2
 
 # ODEs to be evaluated (enter it as a string):
-funct_1 = "-(2/25)*x + (1/50)*y"
-funct_2 = "(2/25)*x - (2/25)*y"
+funct_1 = "-0.16*x + 0.08*x*y"
+funct_2 = "4.5*y - 0.9*x*y"
 # Enter Y initial Value:
 init_y = 4
 # Enter X initial Value:
@@ -325,7 +346,7 @@ init_x = 4
 # Enter Upper bound
 upper_bound = 10
 # Enter number of steps (the step size is going to be calculated calculated):
-number_of_steps = 24
+number_of_steps = 1000
 
 # Calling the function for the solution:
 RKPlot2(funct_1,
@@ -334,8 +355,8 @@ RKPlot2(funct_1,
         init_y,
         upper_bound,
         number_of_steps,
-        1,
-        5.5)
+        -0,
+        100)
 
 ################################################################################
 # Third Section (60 points)
