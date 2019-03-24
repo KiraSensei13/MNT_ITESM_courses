@@ -200,163 +200,79 @@ RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
 #-------------------------------------------------------------------------------
 #d) Coupled Runge-Kutta. Modify the fourth order RK algorithm to receive two ODEs. The output will be the plot of both ODEs approximations. (10 points)
 
-runge.kutta <- function(funct, initial, x){
-  f <- function(P, N) {
-    return(eval(parse(text = funct), envir = list(x = P, y = N)))
-  }
-  
-  if(!is.function(f))stop("f must be a function")
-  if(!is.numeric(initial)||length(initial)!=1)stop("initial must be a scalar")
-  if(!is.vector(x,mode="numeric"))stop("x must be a numeric vector")
-  y <- initial
-  for(i in 1:(length(x)-1)){
-    stepsize <- x[i+1]-x[i]
-    f1 <- stepsize*f(y[i],x[i])
-    f2 <- stepsize*f(y[i]+f1/2,x[i]+stepsize/2)
-    f3 <- stepsize*f(y[i]+f2/2,x[i]+stepsize/2)
-    f4 <- stepsize*f(y[i]+f3,x[i]+stepsize)
-    y <- c(y,y[i]+(f1+2*f2+2*f3+f4)/6)}
-  y
-}
-x = seq(4,10,0.1)
-y = runge.kutta("-0.16*x + 0.08*x*y",4,x)
-y = runge.kutta("4.5*y - 0.9*x*y",4,x)
-plot(x,y)
-
-library (deSolve)
-RKPlot2 <-
-  function(func_1,
-           func_2,
-           x0,
-           y0,
-           x1,
-           n,
-           plot_ymin,
-           plot_ymax) {
-    # Plot of the second, third and fourth order RK approximations
-    #
-    # Parameters
-    # ----------
-    # func : string
-    # ODE function of two variabless
-    # x0, y0 : numeric
-    # initial values
-    # x1 : numeric
-    # upper bound
-    # n : numeric
-    # number of steps
-    # plot_ymin, plot_ymax : numeric
-    # set the plot y-axis range
-    #
-    # Returns
-    # -------
-    # void
-    
-    # Calculate aproxminations
-    rk4_1 = rungeKutta4(func_1, x0, y0, x1, n)
-    rk4_2 = rungeKutta4(func_2, x0, y0, x1, n)
-    
-    x4_1 <- rk4_1[, 1]
-    y4_1 <- rk4_1[, 2]
-    
-    x4_2 <- rk4_2[, 1]
-    y4_2 <- rk4_2[, 2]
-    
-    # Compute analytical answer of the ODE approximations
-    
-    model_1 <- function(x, y, parms) {
-      with(as.list(c(y, parms)), {
-        dy = eval(parse(text = funct_1), envir = list(x, y))#2*x^3 + y
-        list(dy)
-      })
-    }
-    y <- c(y = init_y)
-    parms <- c()
-    x <-
-      seq(init_x,
-          upper_bound,
-          length(init_x:upper_bound) / number_of_steps)
-    out_1 <- ode(y, times = x, model_1, parms)
-    
-    model_2 <- function(x, y, parms) {
-      with(as.list(c(y, parms)), {
-        dy = eval(parse(text = funct_2), envir = list(x, y))#2*x^3 + y
-        list(dy)
-      })
-    }
-    y <- c(y = init_y)
-    parms <- c()
-    x <-
-      seq(init_x,
-          upper_bound,
-          length(init_x:upper_bound) / number_of_steps)
-    out_2 <- ode(y, times = x, model_2, parms)
-    
-    ### Plot
-    
-    # deSolve function 1
-    plot(
-      out_1,
-      xlab = "x",
-      ylab = "f'(x)",
-      type = "l",
-      main = ' Runge-Kutta ',
-      col = "black",
-      lwd = 2,
-      ylim=c(plot_ymin,plot_ymax)
-    )
-    
-    # RK4 function 1
-    lines(x4_1, y4_1, col = "#42a5f5") # blue lighten-1
-    
-    # deSolve function 2
-    lines(out_2, col = "#b71c1c", lwd = 2) # blue lighten-1
-    
-    # RK4 function 2
-    lines(x4_2, y4_2, col = "#e53935") # red darken-1
-    
-    legend(
-      'topleft',
-      inset = .05,
-      legend = c(
-        "deSolve function 1",
-        "RK4 function 1",
-        "deSolve function 2",
-        "RK4 function 2"
-      ),
-      col = c('#0d47a1', '#42a5f5', '#b71c1c', '#e53935'),
-      lwd = c(1),
-      bty = 'n',
-      cex = .75
-    )
-  }
+rm(list = ls(all = TRUE)) # Delete workspace
+graphics.off() # Clear plots
+cat("\014") # Clear console
 
 # -----
 
-# dx_1/dt = -(2/25)x_1 + (1/50)x_2
-# dx_2/dt =  (2/25)x_1 - (2/25)x_2
+# Runge-Kutta - 4th order - for a 2-equation 1st order system
+rungeKutta4_2eq <- function(fun_1, fun_2, x0, y0, x1, n) {
+  f <- function(t, x, y) {
+    return(eval(parse(text = fun_1), envir = list(
+      t = t, x = x, y = y
+    )))
+  }
+  g <- function(t, x, y) {
+    return(eval(parse(text = fun_2), envir = list(
+      t = t, x = x, y = y
+    )))
+  }
+  
+  xx <- double(n + 1)
+  xx[1] <- xn <- x0
 
-# ODEs to be evaluated (enter it as a string):
-funct_1 = "-0.16*x + 0.08*x*y"
-funct_2 = "4.5*y - 0.9*x*y"
-# Enter Y initial Value:
-init_y = 4
-# Enter X initial Value:
-init_x = 4
-# Enter Upper bound
-upper_bound = 10
-# Enter number of steps (the step size is going to be calculated calculated):
-number_of_steps = 1000
+  yy <- double(n + 1)
+  yy[1] <- yn <- y0
+  
+  zz <- double(n + 1)
+  zz[1] <- yn <- y0
 
-# Calling the function for the solution:
-RKPlot2(funct_1,
-        funct_2,
-        init_x,
-        init_y,
-        upper_bound,
-        number_of_steps,
-        -0,
-        100)
+  h <- (x1 - x0) / n
+  for (i in 1:n) {
+    # https://www.calvin.edu/~scofield/courses/m231/materials/rungeKuttaFormulas.pdf
+    tn = i
+    
+    kn1 = f(tn, xn, yn)
+    ln1 = g(tn, xn, yn)
+    
+    kn2 = f(tn + h/2, xn + (1 / 2) * kn1 * h, yn + (1 / 2) * ln1 * h)
+    ln2 = g(tn + h/2, xn + (1 / 2) * kn1 * h, yn + (1 / 2) * ln1 * h)
+    
+    kn3 = f(tn + h/2, xn + (1 / 2) * kn2 * h, yn + (1 / 2) * ln2 * h)
+    ln3 = g(tn + h/2, xn + (1 / 2) * kn2 * h, yn + (1 / 2) * ln2 * h)
+    
+    kn4 = f(tn + h, xn + kn3 * h, yn + ln3 * h)
+    ln4 = g(tn + h, xn + kn3 * h, yn + ln3 * h)
+    
+    xx[tn + 1] <- xn <- x0 + tn * h
+    yy[tn + 1] <- xn <- xn + h * (kn1 + 2 * kn2 + 2 * kn3 + kn4)/6
+    zz[tn + 1] <- yn <- yn + h * (ln1 + 2 * ln2 + 2 * ln3 + ln4)/6
+    
+  }
+  return(cbind(xx, yy, zz))
+}
+
+out <-
+  rungeKutta4_2eq("-0.16*x + 0.08*x*y", "4.5*y - 0.9*x*y", 4, 4, 24, 1000)
+
+out <-
+  rungeKutta4_2eq("-(2/25)*x + (1/50)*y", "(2/25)*x - (2/25)*y", 0, 25, 100, 1000)
+
+plot(
+  out[, 1],
+  out[, 3],
+  xlab = "t",
+  ylab = "f(t)",
+  type = "l",
+  main = ' Runge-Kutta ',
+  col = "black",
+  lwd = 1
+)
+
+lines(out[, 1], out[, 2], col = "#4caf50")
+
+
 
 ################################################################################
 # Third Section (60 points)
@@ -384,7 +300,7 @@ RKPlot2(funct_1,
 # upper_bound = 24 # 2 yrs = 24 months
 # # Enter number of steps (the step size is going to be calculated calculated):
 # number_of_steps = 1700
-# 
+#
 # # Calling the function for the solution:
 # RKPlot2(funct_1,
 #         funct_2,
@@ -413,7 +329,7 @@ predpreyLV <- function(t, y, p) {
   })
 }
 
-a <- 16
+a <- 0.16
 b <- 0.08
 c <- 4.5
 d <- 0.9
@@ -450,7 +366,7 @@ matplot(LV.out[, 1], LV.out[, 2:3], type = "l", ylab = "population")
 # upper_bound = 60 # minutes
 # # Enter number of steps (the step size is going to be calculated calculated):
 # number_of_steps = 10
-# 
+#
 # # Calling the function for the solution:
 # RKPlot2(funct_1,
 #         funct_2,
