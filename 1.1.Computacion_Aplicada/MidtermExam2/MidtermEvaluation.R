@@ -32,21 +32,22 @@ cat("\014") # Clear console
 # ----- ENTER YOUR INPUT ----
 
 # ODE to be evaluated:
-funct = function(x,y){-0.16*x + 0.08*x*y}
+funct = "x^2 - y"
 # Enter Y initial Value:
-init_y = 4
+init_y          = 1
 # Enter X initial Value:
-init_x = 4
+init_x          = -5
 # Enter Upper bound
-upper_bound = 10
+upper_bound     = 5
 # Enter number of steps (the step size is going to be calculated calculated):
-number_of_steps = 24 #length(init_x:upper_bound) * 2
-
-# ------- THE PROGRAM ----
+number_of_steps = length(init_x:upper_bound) * 2
+# ---------------------------------------------
 
 # Runge-Kutta - 2nd order
 rungeKutta2 <- function(funct, x0, y0, x1, n) {
-  f <- funct
+  f <- function(xx, yy) {
+    return(eval(parse(text = funct), envir = list(x = xx, y = yy)))
+  }
   
   vx <- double(n + 1)
   vy <- double(n + 1)
@@ -67,7 +68,9 @@ rungeKutta2 <- function(funct, x0, y0, x1, n) {
 
 # Runge-Kutta - 3rd order
 rungeKutta3 <- function(funct, x0, y0, x1, n) {
-  f <- funct
+  f <- function(xx, yy) {
+    return(eval(parse(text = funct), envir = list(x = xx, y = yy)))
+  }
   
   vx <- double(n + 1)
   vy <- double(n + 1)
@@ -89,7 +92,9 @@ rungeKutta3 <- function(funct, x0, y0, x1, n) {
 
 # Runge-Kutta - 4th order
 rungeKutta4 <- function(funct, x0, y0, x1, n) {
-  f <- funct
+  f <- function(xx, yy) {
+    return(eval(parse(text = funct), envir = list(x = xx, y = yy)))
+  }
   
   vx <- double(n + 1)
   vy <- double(n + 1)
@@ -145,8 +150,8 @@ RKPlot <- function(func, x0, y0, x1, n) {
   
   # Compute analytical answer of the ODE to compare all the approximations
   model <- function(x, y, parms) {
-    with(c(y, parms), {
-      dy = funct #2*x^3 + y
+    with(as.list(c(y, parms)), {
+      dy = eval(parse(text = funct), envir = list(x, y))#2*x^3 + y
       list(dy)
     })
   }
@@ -196,19 +201,6 @@ RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
 
 #-------------------------------------------------------------------------------
 #d) Coupled Runge-Kutta. Modify the fourth order RK algorithm to receive two ODEs. The output will be the plot of both ODEs approximations. (10 points)
-    
-        # ENTER YOUR INPUT #
-# ODEs to be evaluated (enter it as a string):
-funct_1 = -0.16*x + 0.08*x*y
-funct_2 = 4.5*y - 0.9*x*y
-# Enter Y initial Value:
-init_y = 4
-# Enter X initial Value:
-init_x = 4
-# Enter Upper bound
-upper_bound = 10
-# Enter number of steps (the step size is going to be calculated calculated):
-number_of_steps = 1000
 
 rm(list = ls(all = TRUE)) # Delete workspace
 graphics.off() # Clear plots
@@ -217,119 +209,68 @@ cat("\014") # Clear console
 # -----
 
 # Runge-Kutta - 4th order - for a 2-equation 1st order system
-rungeKutta4_2eq <- function(fun_1, fun_2, x0, y0, x1, n) {
-  f <- funct_1
-  g <- funct_2
+rungeKutta4_2eq <- function(y0, times, funct, p) {
   
-  xx <- double(n + 1)
-  xx[1] <- xn <- x0
-
-  yy <- double(n + 1)
-  yy[1] <- yn <- y0
+  xx <- double(length(times)-1)
+  xx[1] <- xn <- y0[1]
   
-  zz <- double(n + 1)
-  zz[1] <- yn <- y0
+  yy <- double(length(times)-1)
+  yy[1] <- yn <- y0[2]
 
-  h <- (x1 - x0) / n
-  for (i in 1:n) {
+  h <- (max(times) - min(times)) / length(times)
+  i = 2
+  
+  for (tn in times) {
     # https://www.calvin.edu/~scofield/courses/m231/materials/rungeKuttaFormulas.pdf
-    tn = i
+    # https://math.stackexchange.com/questions/721076/help-with-using-the-runge-kutta-4th-order-method-on-a-system-of-2-first-order-od
+
+    kn1 = funct(tn, xn, yn)[[1]][[1]]
+    ln1 = funct(tn, xn, yn)[[1]][[2]]
     
-    kn1 = f(tn, xn, yn)
-    ln1 = g(tn, xn, yn)
+    kn2 = funct(tn + h/2, xn + (1 / 2) * kn1 * h, yn + (1 / 2) * ln1 * h)[[1]][[1]]
+    ln2 = funct(tn + h/2, xn + (1 / 2) * kn1 * h, yn + (1 / 2) * ln1 * h)[[1]][[2]]
     
-    kn2 = f(tn + h/2, xn + (1 / 2) * kn1 * h, yn + (1 / 2) * ln1 * h)
-    ln2 = g(tn + h/2, xn + (1 / 2) * kn1 * h, yn + (1 / 2) * ln1 * h)
+    kn3 = funct(tn + h/2, xn + (1 / 2) * kn2 * h, yn + (1 / 2) * ln2 * h)[[1]][[1]]
+    ln3 = funct(tn + h/2, xn + (1 / 2) * kn2 * h, yn + (1 / 2) * ln2 * h)[[1]][[2]]
     
-    kn3 = f(tn + h/2, xn + (1 / 2) * kn2 * h, yn + (1 / 2) * ln2 * h)
-    ln3 = g(tn + h/2, xn + (1 / 2) * kn2 * h, yn + (1 / 2) * ln2 * h)
+    kn4 = funct(tn + h, xn + kn3 * h, yn + ln3 * h)[[1]][[1]]
+    ln4 = funct(tn + h, xn + kn3 * h, yn + ln3 * h)[[1]][[2]]
     
-    kn4 = f(tn + h, xn + kn3 * h, yn + ln3 * h)
-    ln4 = g(tn + h, xn + kn3 * h, yn + ln3 * h)
+    xx[i] = as.numeric(xn)
+    yy[i] = as.numeric(yn)
     
-    tt[tn + 1] <- xn <- x0 + tn * h
-    xx[tn + 1] <- xn <- xn + h * (kn1 + 2 * kn2 + 2 * kn3 + kn4)/6
-    yy[tn + 1] <- yn <- yn + h * (ln1 + 2 * ln2 + 2 * ln3 + ln4)/6
-    
+    xn <- xn + h * (kn1 + 2 * kn2 + 2 * kn3 + kn4)/6
+    yn <- yn + h * (ln1 + 2 * ln2 + 2 * ln3 + ln4)/6
+    i = i + 1
   }
-  return(cbind(tt, xx, yy))
+  
+  xx = xx[-length(times+1)]
+  yy = yy[-length(times+1)]
+  
+  mmin = as.numeric(min(xx))
+  mmax = as.numeric(max(xx))
+  mmin <- if(mmin > min(yy)) min(yy) else mmin
+  mmax <- if(mmax < max(yy)) max(yy) else mmax
+  
+  plot(
+    times,
+    xx,
+    xlab = "t",
+    ylab = "f(t)",
+    type = "l",
+    main = ' Runge-Kutta ',
+    col = "black",
+    lwd = 1,
+    ylim=c(mmin,mmax)
+  )
+  lines(times, yy, col = "#4caf50")
+  
+  return(cbind(xx, yy))
 }
 
-out <-
-  rungeKutta4_2eq(-0.16*x + 0.08*x*y, 4.5*y - 0.9*x*y, 4, 4, 24, 1000)
+# -----
 
-out <-
-  rungeKutta4_2eq(-(2/25)*x + (1/50)*y, (2/25)*x - (2/25)*y, 0, 25, 100, 1000)
-
-plot(
-  out[, 1],
-  out[, 3],
-  xlab = "t",
-  ylab = "f(t)",
-  type = "l",
-  main = ' Runge-Kutta ',
-  col = "black",
-  lwd = 1
-)
-
-lines(out[, 1], out[, 2], col = "#4caf50")
-
-# Calling the function for the solution:
-RKPlot2(funct_1,
-        funct_2,
-        init_x,
-        init_y,
-        upper_bound,
-        number_of_steps,
-        -0,
-        100)
-
-################################################################################
-# Third Section (60 points)
-# Applied Computing. In this section you will use your fourth-order coupled Runge-Kutta algorithm code to solve different problems. Compare your answers with the "ode" function from the "deSolve" R package. Plot your answer vs the deSolve answer. Justify if the problem is stiff or not, the chosen step size, and the time units that the step size represent (seconds, minutes, hours, days, etc).
-
-#-------------------------------------------------------------------------------
-# c) Lotka-Volterra equations / predator-prey equations. The following ODEs describe the interaction between foxes and bunnies.
-#
-# dx/dt = -16x + 0.08xy
-# dy/dt = 4.5y - 0.9xy
-#
-# At the start of the model there are 4 foxes and 4 bunnies. Choose the best step size to model the first 2 years of the ecosystem (30 points)
-
-#-------------------------------------------------------------------------------
-# OUR ANSWER
-
-# ODEs to be evaluated (provided by the problem):
-funct_1 = "-16*x + 0.08*x*y"
-funct_2 = "4.5*y - 0.9*x*y"
-# Enter Y initial Value:
-init_y = 4
-# Enter X initial Value:
-init_x = 4
-# Enter Upper bound
-upper_bound = 24 # 2 yrs = 24 months
-# Enter number of steps (the step size is going to be calculated calculated):
-number_of_steps = 1700
- 
-# Calling the function for the solution:
-RKPlot2(funct_1,
-        funct_2,
-        init_x,
-        init_y,
-        upper_bound,
-        number_of_steps,
-        -10000,
-        3000)
-
-#-------------------------------------------------------------------------------
-# THE deSolve ANSWER
-
-library(deSolve)
-library(lattice)
-
-# P -> x ; N -> y
-
-predpreyLV <- function(t, y, p) {
+myFunction <- function(t, y, p) {
   N <- y[1]
   P <- y[2]
   with(as.list(p), {
@@ -350,8 +291,57 @@ p <- c(a = a,
        d = d)
 y0 <- c(N = 4, P = 4)
 times <- seq(0, 24, 0.1)
-LV.out <- ode(y = y0, times, predpreyLV, p)
 
+out <- rungeKutta4_2eq(y0, times, myFunction, p)
+
+################################################################################
+# Third Section (60 points)
+# Applied Computing. In this section you will use your fourth-order coupled Runge-Kutta algorithm code to solve different problems. Compare your answers with the "ode" function from the "deSolve" R package. Plot your answer vs the deSolve answer. Justify if the problem is stiff or not, the chosen step size, and the time units that the step size represent (seconds, minutes, hours, days, etc).
+
+#-------------------------------------------------------------------------------
+# c) Lotka-Volterra equations / predator-prey equations. The following ODEs describe the interaction between foxes and bunnies.
+#
+# dx/dt = -16x + 0.08xy
+# dy/dt = 4.5y - 0.9xy
+#
+# At the start of the model there are 4 foxes and 4 bunnies. Choose the best step size to model the first 2 years of the ecosystem (30 points)
+
+# P -> x ; N -> y
+
+predpreyLV <- function(t, y, p) {
+  N <- y[1]
+  P <- y[2]
+  with(as.list(p), {
+    dNdt <- c * N - d * P * N
+    dPdt <- -a * P + b * P * N
+    return(list(c(dNdt, dPdt)))
+  })
+}
+
+a <- 16
+b <- 0.08
+c <- 4.5
+d <- 0.9
+
+p <- c(a = a,
+       b = b,
+       c = c,
+       d = d)
+y0 <- c(N = 4, P = 4)
+times <- seq(0, 24, 0.01)
+
+#-------------------------------------------------------------------------------
+# OUR ANSWER
+
+out <- rungeKutta4_2eq(y0, times, predpreyLV, p)
+
+#-------------------------------------------------------------------------------
+# THE deSolve ANSWER
+
+library(deSolve)
+library(lattice)
+
+LV.out <- ode(y = y0, times, predpreyLV, p)
 matplot(LV.out[, 1], LV.out[, 2:3], type = "l", ylab = "population")
 
 #-------------------------------------------------------------------------------
@@ -361,37 +351,6 @@ matplot(LV.out[, 1], LV.out[, 2:3], type = "l", ylab = "population")
 # dx_2/dt =  (2/25)x_1 - (2/25)x_2
 #
 # Choose the best step size to model the first 60 minutes. Assume that the first tank has 25 gallons and the second tank is empty before the h2 door is opened. (30 points)
-
-#-------------------------------------------------------------------------------
-# OUR ANSWER
-
-# # ODEs to be evaluated (enter it as a string):
-# funct_1 = "-(2/25)*x + (1/50)*y"
-# funct_2 = "(2/25)*x - (2/25)*y"
-# # Enter Y initial Value:
-# init_y = 25
-# # Enter X initial Value:
-# init_x = 0
-# # Enter Upper bound
-# upper_bound = 60 # minutes
-# # Enter number of steps (the step size is going to be calculated calculated):
-# number_of_steps = 10
-#
-# # Calling the function for the solution:
-# RKPlot2(funct_1,
-#         funct_2,
-#         init_x,
-#         init_y,
-#         upper_bound,
-#         number_of_steps,
-#         -150,
-#         65)
-
-#-------------------------------------------------------------------------------
-# THE deSolve ANSWER
-
-library(deSolve)
-library(lattice)
 
 # P -> x ; N -> y
 
@@ -416,6 +375,17 @@ p <- c(a = a,
        d = d)
 y0 <- c(N = 0, P = 25)
 times <- seq(0, 100, 0.1)
-LV.out <- ode(y = y0, times, watertanksLV, p)
 
+#-------------------------------------------------------------------------------
+# OUR ANSWER
+
+out <- rungeKutta4_2eq(y0, times, watertanksLV, p)
+
+#-------------------------------------------------------------------------------
+# THE deSolve ANSWER
+
+library(deSolve)
+library(lattice)
+
+LV.out <- ode(y = y0, times, watertanksLV, p)
 matplot(LV.out[, 1], LV.out[, 2:3], type = "l", ylab = "gallons")
