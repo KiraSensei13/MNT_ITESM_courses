@@ -4,7 +4,7 @@
 #*     Antonio Osamu Katagiri Tanaka (A01212611)
 #*
 #* FILENAME :
-#*     MidtermExam.R
+#*     MidtermEvaluation.R
 #*
 #* DESCRIPTION :
 #*     Simulations (Ene 19 Gpo 1)
@@ -23,11 +23,26 @@
 #-------------------------------------------------------------------------------
 #c) Runge-Kutta. The algorithm will receive an ODE, initial values for x and y, the step size and the upper bound. The output will be the plot of the second, third and fourth order RK approximations. To demonstrate the functionality of your code, use the analytical answer of the ODE to compare all the approximations (30 points)
 
+# ----- CLEARING EVERYTHING ----
+
 rm(list = ls(all = TRUE)) # Delete workspace
 graphics.off() # Clear plots
 cat("\014") # Clear console
 
-# -----
+# ----- ENTER YOUR INPUT ----
+
+# ODE to be evaluated (enter it as a string):
+funct = "-0.16*x + 0.08*x*y"
+# Enter Y initial Value:
+init_y = 4
+# Enter X initial Value:
+init_x = 4
+# Enter Upper bound
+upper_bound = 10
+# Enter number of steps (the step size is going to be calculated calculated):
+number_of_steps = 24 #length(init_x:upper_bound) * 2
+
+# ------- THE PROGRAM ----
 
 # Runge-Kutta - 2nd order
 rungeKutta2 <- function(funct, x0, y0, x1, n) {
@@ -99,7 +114,7 @@ rungeKutta4 <- function(funct, x0, y0, x1, n) {
   return(cbind(vx, vy))
 }
 
-# -----
+# ----- VALIDATING RESULTS ----
 
 library (deSolve)
 RKPlot <- function(func, x0, y0, x1, n) {
@@ -182,9 +197,16 @@ RKPlot <- function(func, x0, y0, x1, n) {
 
 # -----
 
-# ODE to be evaluated (enter it as a string):
-funct = "4.5*y - 0.9*y"
-funct = "-0.16*x + 0.08*x*y"
+# Calling the function for the solution:
+RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
+
+#-------------------------------------------------------------------------------
+#d) Coupled Runge-Kutta. Modify the fourth order RK algorithm to receive two ODEs. The output will be the plot of both ODEs approximations. (10 points)
+    
+        # ENTER YOUR INPUT #
+# ODEs to be evaluated (enter it as a string):
+funct_1 = "-0.16*x + 0.08*x*y"
+funct_2 = "4.5*y - 0.9*x*y"
 # Enter Y initial Value:
 init_y = 4
 # Enter X initial Value:
@@ -192,13 +214,7 @@ init_x = 4
 # Enter Upper bound
 upper_bound = 10
 # Enter number of steps (the step size is going to be calculated calculated):
-number_of_steps = 24 #length(init_x:upper_bound) * 2
-
-# Calling the function for the solution:
-RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
-
-#-------------------------------------------------------------------------------
-#d) Coupled Runge-Kutta. Modify the fourth order RK algorithm to receive two ODEs. The output will be the plot of both ODEs approximations. (10 points)
+number_of_steps = 1000
 
 rm(list = ls(all = TRUE)) # Delete workspace
 graphics.off() # Clear plots
@@ -272,7 +288,15 @@ plot(
 
 lines(out[, 1], out[, 2], col = "#4caf50")
 
-
+# Calling the function for the solution:
+RKPlot2(funct_1,
+        funct_2,
+        init_x,
+        init_y,
+        upper_bound,
+        number_of_steps,
+        -0,
+        100)
 
 ################################################################################
 # Third Section (60 points)
@@ -289,27 +313,27 @@ lines(out[, 1], out[, 2], col = "#4caf50")
 #-------------------------------------------------------------------------------
 # OUR ANSWER
 
-# # ODEs to be evaluated (enter it as a string):
-# funct_1 = "-16*x + 0.08*x*y"
-# funct_2 = "4.5*y - 0.9*x*y"
-# # Enter Y initial Value:
-# init_y = 4
-# # Enter X initial Value:
-# init_x = 4
-# # Enter Upper bound
-# upper_bound = 24 # 2 yrs = 24 months
-# # Enter number of steps (the step size is going to be calculated calculated):
-# number_of_steps = 1700
-#
-# # Calling the function for the solution:
-# RKPlot2(funct_1,
-#         funct_2,
-#         init_x,
-#         init_y,
-#         upper_bound,
-#         number_of_steps,
-#         -10000,
-#         3000)
+# ODEs to be evaluated (provided by the problem):
+funct_1 = "-16*x + 0.08*x*y"
+funct_2 = "4.5*y - 0.9*x*y"
+# Enter Y initial Value:
+init_y = 4
+# Enter X initial Value:
+init_x = 4
+# Enter Upper bound
+upper_bound = 24 # 2 yrs = 24 months
+# Enter number of steps (the step size is going to be calculated calculated):
+number_of_steps = 1700
+ 
+# Calling the function for the solution:
+RKPlot2(funct_1,
+        funct_2,
+        init_x,
+        init_y,
+        upper_bound,
+        number_of_steps,
+        -10000,
+        3000)
 
 #-------------------------------------------------------------------------------
 # THE deSolve ANSWER
