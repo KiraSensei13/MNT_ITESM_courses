@@ -31,8 +31,8 @@ cat("\014") # Clear console
 
 # ----- ENTER YOUR INPUT ----
 
-# ODE to be evaluated (enter it as a string):
-funct = "-0.16*x + 0.08*x*y"
+# ODE to be evaluated:
+funct = function(x,y){-0.16*x + 0.08*x*y}
 # Enter Y initial Value:
 init_y = 4
 # Enter X initial Value:
@@ -46,9 +46,7 @@ number_of_steps = 24 #length(init_x:upper_bound) * 2
 
 # Runge-Kutta - 2nd order
 rungeKutta2 <- function(funct, x0, y0, x1, n) {
-  f <- function(P, N) {
-    return(eval(parse(text = funct), envir = list(x = P, y = N)))
-  }
+  f <- funct
   
   vx <- double(n + 1)
   vy <- double(n + 1)
@@ -69,9 +67,7 @@ rungeKutta2 <- function(funct, x0, y0, x1, n) {
 
 # Runge-Kutta - 3rd order
 rungeKutta3 <- function(funct, x0, y0, x1, n) {
-  f <- function(P, N) {
-    return(eval(parse(text = funct), envir = list(x = P, y = N)))
-  }
+  f <- funct
   
   vx <- double(n + 1)
   vy <- double(n + 1)
@@ -93,9 +89,7 @@ rungeKutta3 <- function(funct, x0, y0, x1, n) {
 
 # Runge-Kutta - 4th order
 rungeKutta4 <- function(funct, x0, y0, x1, n) {
-  f <- function(P, N) {
-    return(eval(parse(text = funct), envir = list(x = P, y = N)))
-  }
+  f <- funct
   
   vx <- double(n + 1)
   vy <- double(n + 1)
@@ -151,8 +145,8 @@ RKPlot <- function(func, x0, y0, x1, n) {
   
   # Compute analytical answer of the ODE to compare all the approximations
   model <- function(x, y, parms) {
-    with(as.list(c(y, parms)), {
-      dy = eval(parse(text = funct), envir = list(x, y))#2*x^3 + y
+    with(c(y, parms), {
+      dy = funct #2*x^3 + y
       list(dy)
     })
   }
@@ -205,8 +199,8 @@ RKPlot(funct, init_x, init_y, upper_bound, number_of_steps)
     
         # ENTER YOUR INPUT #
 # ODEs to be evaluated (enter it as a string):
-funct_1 = "-0.16*x + 0.08*x*y"
-funct_2 = "4.5*y - 0.9*x*y"
+funct_1 = -0.16*x + 0.08*x*y
+funct_2 = 4.5*y - 0.9*x*y
 # Enter Y initial Value:
 init_y = 4
 # Enter X initial Value:
@@ -224,16 +218,8 @@ cat("\014") # Clear console
 
 # Runge-Kutta - 4th order - for a 2-equation 1st order system
 rungeKutta4_2eq <- function(fun_1, fun_2, x0, y0, x1, n) {
-  f <- function(t, x, y) {
-    return(eval(parse(text = fun_1), envir = list(
-      t = t, x = x, y = y
-    )))
-  }
-  g <- function(t, x, y) {
-    return(eval(parse(text = fun_2), envir = list(
-      t = t, x = x, y = y
-    )))
-  }
+  f <- funct_1
+  g <- funct_2
   
   xx <- double(n + 1)
   xx[1] <- xn <- x0
@@ -261,19 +247,19 @@ rungeKutta4_2eq <- function(fun_1, fun_2, x0, y0, x1, n) {
     kn4 = f(tn + h, xn + kn3 * h, yn + ln3 * h)
     ln4 = g(tn + h, xn + kn3 * h, yn + ln3 * h)
     
-    xx[tn + 1] <- xn <- x0 + tn * h
-    yy[tn + 1] <- xn <- xn + h * (kn1 + 2 * kn2 + 2 * kn3 + kn4)/6
-    zz[tn + 1] <- yn <- yn + h * (ln1 + 2 * ln2 + 2 * ln3 + ln4)/6
+    tt[tn + 1] <- xn <- x0 + tn * h
+    xx[tn + 1] <- xn <- xn + h * (kn1 + 2 * kn2 + 2 * kn3 + kn4)/6
+    yy[tn + 1] <- yn <- yn + h * (ln1 + 2 * ln2 + 2 * ln3 + ln4)/6
     
   }
-  return(cbind(xx, yy, zz))
+  return(cbind(tt, xx, yy))
 }
 
 out <-
-  rungeKutta4_2eq("-0.16*x + 0.08*x*y", "4.5*y - 0.9*x*y", 4, 4, 24, 1000)
+  rungeKutta4_2eq(-0.16*x + 0.08*x*y, 4.5*y - 0.9*x*y, 4, 4, 24, 1000)
 
 out <-
-  rungeKutta4_2eq("-(2/25)*x + (1/50)*y", "(2/25)*x - (2/25)*y", 0, 25, 100, 1000)
+  rungeKutta4_2eq(-(2/25)*x + (1/50)*y, (2/25)*x - (2/25)*y, 0, 25, 100, 1000)
 
 plot(
   out[, 1],
