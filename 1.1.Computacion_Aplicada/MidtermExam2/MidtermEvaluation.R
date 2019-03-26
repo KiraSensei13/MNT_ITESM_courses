@@ -375,7 +375,7 @@ p <- c(a = a,
 y0 <- c(N = 4, P = 4)
 
 # time vector: to define t0, tf, and the step size
-times <- seq(0, 24, 0.1)
+times <- seq(0, 12, 0.1) # time unit = months
 
 # ----- VALIDATING RESULTS -----
 
