@@ -338,9 +338,24 @@ rungeKutta4_2eq <- function(y0, times, funct, p) {
     col = "#2196f3", # (blue)
     lwd = 1,
     ylim = c(mmin, mmax)
+    
   )
   # plot yy in the same image
   lines(times, yy, col = "#4caf50") # (green)
+  
+  # add a legent to the plot
+  legend(
+    'topleft',
+    inset = .05,
+    legend = c(
+      "f1",
+      "f2"
+    ),
+    col = c('#4caf50','#2196f3'),
+    lwd = c(1),
+    bty = 'n',
+    cex = .75
+  )
   
   # return xx and yy (just in case)
   return(cbind(xx, yy))
@@ -425,7 +440,7 @@ p <- c(a = a,
 y0 <- c(N = 4, P = 4)
 
 # time vector: to define t0, tf, and the step size
-times <- seq(0, 24, 0.01) # time unit = months
+times <- seq(0, 2, 0.01) # time unit = years
 
 # ----- STUDENT RESULTS -----
 
@@ -437,11 +452,11 @@ library(deSolve)
 library(lattice) # to plot using matplot
 
 LV.out <- ode(y = y0, times, predpreyLV, p)
-matplot(LV.out[, 1], LV.out[, 2:3], type = "l", ylab = "population")
+matplot(LV.out[, 1], LV.out[, 2:3], type = "l",main = 'deSolve Approximation', xlab = "t", ylab = "population")
 
 # ----- RESULTS ANALYSIS -----
 
-# The problem is not stiff as the differential equations are numerically stable
+# This problem is stiff as the differential equations are not numerically stable and must use excesively small steplenghts due to the rapid changes in population that force the entire system to be evaluated with such small steplengths, even in the regions where the curve is smoother. We decided to use the stepsize of 0.01 years (87.66 hours), since this stepsize proved to have a stable response even with larger time inetvals.
 
 
 #-------------------------------------------------------------------------------
@@ -483,7 +498,7 @@ p <- c(a = a,
 y0 <- c(N = 0, P = 25)
 
 # time vector: to define t0, tf, and the step size
-times <- seq(0, 60, 0.1) # time unit = minutes
+times <- seq(0, 600, 1) # time unit = minutes
 
 # ----- STUDENT RESULTS -----
 
@@ -495,11 +510,11 @@ library(deSolve)
 library(lattice) # to plot using matplot
 
 LV.out <- ode(y = y0, times, watertanksLV, p)
-matplot(LV.out[, 1], LV.out[, 2:3], type = "l", ylab = "gallons")
+matplot(LV.out[, 1], LV.out[, 2:3], type = "l", main = 'deSolve Approximation', xlab = "t", ylab = "gallons")
 
 # ----- RESULTS ANALYSIS -----
 
-# The problem is not stiff as the differential equations are numerically stable
+# This is not a stiff problem, since the numerical method applied (coupled-RK) has a stable behaviour, well appoximated to the solution and doesn't need to be evaluated with excesively small steplengths in relation to the smoothness of the curve. The behaviour continues to be stable even in larger time intervals. We decided to use the steplength of 0.1 minutes (6 seconds) since it is a comprehensive length and to avoid the bit of noise generated at the beginning of the function when using biger steps. Nonetheless, increasing the time interval to be evaluated allows an increase in steplength with equaly good performance.
 
 #*******************************************************************************
 
