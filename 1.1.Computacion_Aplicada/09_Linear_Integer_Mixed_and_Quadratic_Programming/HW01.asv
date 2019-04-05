@@ -16,9 +16,6 @@
 % * START DATE :
 % *     04 Apr 2019
 % ************************************************************************
-
-clc;
-
 % Problem 1:
 % Solve the Following transportation problem:
 s = [37.6; 40.4; 44.5];
@@ -45,7 +42,6 @@ m = length(d);
 f = reshape(C',n*m,1);
 A = zeros(n,n*m);
 
-% create a diagonal matrices A and Aeq
 for i=1:n
     A(i,1+(i-1)*4:i*4) = 1;
 end
@@ -58,16 +54,11 @@ for j=1:m
 end
 
 beq = d;
-LB = zeros(n*m,1);
-UB = Inf(n*m,1);
+x = linprog(f,A,b,Aeq,beq,zeros(n*m,1),Inf(n*m,1));
 
-x = linprog(f,A,b,Aeq,beq,LB,UB);
+assig = reshape(x,m,n)'
+total_cost = sum(sum(assig.*C))
 
-assig = reshape(x,m,n)';
-total_cost = sum(sum(assig.*C));
-
-assig
-total_cost
 
 % ************************************************************************
 % Problem 2:
