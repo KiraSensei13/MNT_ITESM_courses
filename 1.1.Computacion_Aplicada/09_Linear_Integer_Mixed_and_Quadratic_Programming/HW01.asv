@@ -87,8 +87,8 @@ assig = assig*2;
 total_cost = total_cost*2;
 
 % Print the calculations
-disp(assig);
-disp(total_cost);
+assig
+total_cost
 
 clear all;
 
@@ -128,6 +128,3 @@ options = optimset('Algorithm','interior-point-convex');
 % Construct the QP, invoke solver
 [x,fval] = quadprog(H,f,A,b,[],[],l,[],[],options);
 
-% Print the calculations
-disp(x);
-disp(fval);
