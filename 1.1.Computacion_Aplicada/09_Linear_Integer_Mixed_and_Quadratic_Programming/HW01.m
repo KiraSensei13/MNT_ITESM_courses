@@ -114,20 +114,64 @@ clear all;
 
 load('Tiingo_data.mat')
 
-% Let us first define the above parameters
-H = diag([1; 0]);
-f = [3; 4];
-A = [-1 -3; 2 5; 3 4];
-b = [-15; 100; 80];
-l = zeros(2,1);
+% Let's convert the closing prices into returns
+% CLOSING PRICES
+CP_KO  = res.KO;
+CP_PG  = res.PG;
+CP_PFE = res.PFE;
+CP_MRK = res.MRK;
+CP_VZ  = res.VZ;
+CP_DIS = res.DIS;
+CP_MCD = res.MCD;
+CP_WMT = res.WMT;
+CP_V   = res.V;
 
-% Let's set what MATLAB solver to use with the Algorithm field in the
-% optimization options
-options = optimset('Algorithm','interior-point-convex');
+% RETURNS
+R_KO  = (CP_KO(2:end)-CP_KO(1:end-1))./CP_KO(1:end-1);
+R_PG  = (CP_PG(2:end)-CP_PG(1:end-1))./CP_PG(1:end-1);
+R_PFE = (CP_PFE(2:end)-CP_PFE(1:end-1))./CP_PFE(1:end-1);
+R_MRK = (CP_MRK(2:end)-CP_MRK(1:end-1))./CP_MRK(1:end-1);
+R_VZ  = (CP_VZ(2:end)-CP_VZ(1:end-1))./CP_VZ(1:end-1);
+R_DIS = (CP_DIS(2:end)-CP_DIS(1:end-1))./CP_DIS(1:end-1);
+R_MCD = (CP_MCD(2:end)-CP_MCD(1:end-1))./CP_MCD(1:end-1);
+R_WMT = (CP_WMT(2:end)-CP_WMT(1:end-1))./CP_WMT(1:end-1);
+R_V   = (CP_V(2:end)-CP_V(1:end-1))./CP_V(1:end-1);
 
-% Construct the QP, invoke solver
-[x,fval] = quadprog(H,f,A,b,[],[],l,[],[],options);
+Returns = [R_KO R_PG R_PFE R_MRK R_VZ R_DIS R_MCD R_WMT R_V];
 
-% Print the calculations
-disp(x);
-disp(fval);
+% Expected returns / mean of the returns per security
+muR  = mean(Returns);
+
+% Returns variance per security / risk
+C = cov(Returns); % std(R)^2 variances are in the main diagonal ...
+sigmaR = diag(C); % extract the main diagonal of C
+
+% Plot their expected return versus variance.
+scatter(sigmaR,muR,1)
+title("Pareto Front")
+xlabel("risk") 
+ylabel("return") 
+fields = fieldnames(res);
+for i = 1:length(muR)
+	text(sigmaR(i),muR(i),strcat("  ", fields(i)));
+end
+
+
+% % Let us first define the above parameters
+% H = diag([1; 0]);
+% f = [3; 4];
+% A = [-1 -3; 2 5; 3 4];
+% b = [-15; 100; 80];
+% l = zeros(2,1);
+% 
+% % Let's set MATLAB solver to use with the Algorithm field in the
+% % optimization options
+% options = optimset('Algorithm','interior-point-convex');
+% 
+% % Construct the QP, invoke solver
+% [x,fval] = quadprog(H,f,A,b,[],[],l,[],[],options);
+% % where: [x,fval] = quadprog(H,f,A,b,Aeq,Beq,l,u,x0,options);
+% 
+% % Print the calculations
+% disp(x);
+% disp(fval);
