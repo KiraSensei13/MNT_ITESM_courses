@@ -17,8 +17,9 @@
 % *     04 Apr 2019
 % ************************************************************************
 
+warning('off')
 clc;
-clear all;
+% clear all;
 
 %% ************************************************************************
 % Problem 1:
@@ -54,7 +55,7 @@ s = floor(s);
 
 % The following is based on:
 % http://web.tecnico.ulisboa.pt/mcasquilho/compute/_linpro/TaylorB_module_b.pdf
-f = [C(1,:) C(2,:) C(3,:)]';
+%f = [C(1,:) C(2,:) C(3,:)]';
 n = length(s);
 m = length(d);
 f = reshape(C',n*m,1);
@@ -87,10 +88,10 @@ assig = assig*2;
 total_cost = total_cost*2;
 
 % Print the calculations
-assig
-total_cost
+disp(assig);
+disp(total_cost);
 
-clear all;
+% clear all;
 
 %% ************************************************************************
 % Problem 2:
@@ -114,17 +115,198 @@ clear all;
 
 load('Tiingo_data.mat')
 
-% Let us first define the above parameters
-H = diag([1; 0]);
-f = [3; 4];
-A = [-1 -3; 2 5; 3 4];
-b = [-15; 100; 80];
-l = zeros(2,1);
+% Let's convert the closing prices into returns
+% CLOSING PRICES
+CP_KO  = res.KO;
+CP_PG  = res.PG;
+CP_PFE = res.PFE;
+CP_MRK = res.MRK;
+CP_VZ  = res.VZ;
+CP_DIS = res.DIS;
+CP_MCD = res.MCD;
+CP_WMT = res.WMT;
+CP_V   = res.V;
 
-% Let's set what MATLAB solver to use with the Algorithm field in the
-% optimization options
-options = optimset('Algorithm','interior-point-convex');
+% RETURNS
+R_KO  = (CP_KO(2:end)-CP_KO(1:end-1))./CP_KO(1:end-1);
+R_PG  = (CP_PG(2:end)-CP_PG(1:end-1))./CP_PG(1:end-1);
+R_PFE = (CP_PFE(2:end)-CP_PFE(1:end-1))./CP_PFE(1:end-1);
+R_MRK = (CP_MRK(2:end)-CP_MRK(1:end-1))./CP_MRK(1:end-1);
+R_VZ  = (CP_VZ(2:end)-CP_VZ(1:end-1))./CP_VZ(1:end-1);
+R_DIS = (CP_DIS(2:end)-CP_DIS(1:end-1))./CP_DIS(1:end-1);
+R_MCD = (CP_MCD(2:end)-CP_MCD(1:end-1))./CP_MCD(1:end-1);
+R_WMT = (CP_WMT(2:end)-CP_WMT(1:end-1))./CP_WMT(1:end-1);
+R_V   = (CP_V(2:end)-CP_V(1:end-1))./CP_V(1:end-1);
 
-% Construct the QP, invoke solver
-[x,fval] = quadprog(H,f,A,b,[],[],l,[],[],options);
+Returns = [R_KO R_PG R_PFE R_MRK R_VZ R_DIS R_MCD R_WMT R_V];
+
+fields = transpose(fieldnames(res)); % asset names
+nAssets = length(fields); % number of assets
+
+% Normalized Asset Prices
+assetP = data./data(1, :); %%NormalizedPrice
+figure(1);
+plot(assetP);
+xlabel('Day count');
+ylabel('Normalized Price');
+title('Normalized Asset Prices');
+for i = 1:nAssets
+	text(length(assetP(:,i)),assetP(end,i),strcat( "  ", fields(i)) );
+end
+
+% Expected returns / mean of the returns per security
+muR  = mean(Returns);
+
+% Risk-Adjusted Returns
+assetRisk =  std(Returns);
+
+% Returns variance per security / risk
+C = cov(Returns); % std(R)^2 variances are in the main diagonal ...
+sigmaR = diag(C); % extract the main diagonal of C
+
+% Plot their expected return versus variance.
+figure(2);
+scatter(sigmaR,muR,2);
+title("Pareto Front");
+xlabel("Risk (Std Dev of Return)");
+ylabel("Expected Return"); 
+for i = 1:nAssets
+	text(sigmaR(i),muR(i),strcat( "  ", fields(i)) );
+end
+
+% Quadratic Programming Portfolio Optimization
+
+%load port5
+%r = mean_return;
+%Q = Correlation .* (stdDev_return * stdDev_return');
+
+% Load the data for the problem
+r = transpose(muR); % returns
+Q = C;%sigmaR;         % risk
+% Set the number of assets
+N = length(r);
+% Create continuous variables xvars representing the asset allocation
+% fraction
+xvars = optimvar('xvars',N,1,'LowerBound',0,'UpperBound',1);
+% binary variables vvars representing whether or not the associated
+% xvars is zero or strictly positive
+vvars = optimvar('vvars',N,1,'Type','integer','LowerBound',0,'UpperBound',1);
+% and zvar representing the  variable, a positive scalar.
+zvar = optimvar('zvar',1,'LowerBound',0);
+% Set the Optimization Problem
+qpprob = optimproblem('ObjectiveSense','maximize');
+% Set the risk-aversion
+lambda = 10;
+% Define the objective function
+qpprob.Objective = r'*xvars - lambda*zvar;
+
+
+options = optimoptions(@intlinprog,'Display','off'); % Suppress iterative display
+[xLinInt,fval,exitFlagInt,output] = solve(qpprob,'options',options);
+thediff = 1e-4;
+iter = 1; % iteration counter
+assets = xLinInt.xvars;
+truequadratic = assets'*Q*assets;
+zslack = zeros(length(truequadratic),1); %xLinInt.zvar;
+history = [truequadratic,zslack];
+
+options = optimoptions(options,'LPOptimalityTolerance',1e-10,'RelativeGapTolerance',1e-8,...
+                      'ConstraintTolerance',1e-9,'IntegerTolerance',1e-6);
+
+while abs((zslack - truequadratic)/truequadratic) > thediff % relative error
+    constr = 2*assets'*Q*xvars - zvar <= assets'*Q*assets;
+    newname = ['iteration',num2str(iter)];
+    qpprob.Constraints.(newname) = constr;
+    % Solve the problem with the new constraints
+    [xLinInt,fval,exitFlagInt,output] = solve(qpprob,'options',options);
+    assets = (assets+xLinInt.xvars)/2; % Midway from the previous to the current
+    %assets = xLinInt(xvars); % Use the previous line or this one
+    truequadratic = xLinInt.xvars'*Q*xLinInt.xvars;
+    zslack = xLinInt.zvar;
+    history = [history;truequadratic,zslack];
+    iter = iter + 1;
+end
+
+Percentage_of_Investment = xLinInt.xvars/sum(xLinInt.xvars);
+
+% disp(strcat( ...
+%          "Percentage of Investment with ", ...
+%          "k = ", num2str(lambda)));
+% disp(Percentage_of_Investment)
+
+for n = 1:length(lambda)
+    
+    for i = 1:nAssets
+        print(i) = ...
+           strcat( ...
+               fields(i), ...
+               " : ", ...
+               num2str(round(Percentage_of_Investment(i),4)), ...
+               "%" ...
+           );
+    end
+    disp(strcat( ...
+        "Percentage of Investment with ", ...
+        "k = ", num2str(lambda(n))));
+    disp(transpose(print));
+
+% figure(3);
+% bar(Percentage_of_Investment, 0.125);
+% grid on;
+% xlabel('Asset index');
+% ylabel('Proportion of investment');
+% title('Optimal asset allocation');
+% for i = 1:nAssets
+% 	text(i,Percentage_of_Investment(i),fields(i));
+% end
+
+end
+
+% % Solve using quadprog
+% problem = prob2struct(qpprob);
+% problem.solver = 'quadprog';
+% x = quadprog(problem)
+
+% sum val
+% 1   x
+
+%% Solved using a portfolio object
+% % Set Up a Portfolio
+% % Let's do sigmaR.^2 as it (re)calculates the standard deviation 
+% % which is the square-root of variance)
+p = Portfolio('AssetMean',muR, 'AssetCovar',sigmaR.^2,'AssetList',fields);
+p = setDefaultConstraints(p);
+p = setSolver(p, 'quadprog');
+hold on
+plotFrontier(obj)
+hold off
+% % Compute the Efficient Frontier Using the Portfolio
+% weights = estimateFrontier(p, 1001); % Estimate weights
+% [risk, ret] = estimatePortMoments(p, weights);
+% 
+% % Plot Efficient Frontier
+% hold on
+% plot(risk,ret,'m-');
+% hold off
+% 
+% % Risk Aversion
+% k = 1001;
+% 
+% for n = 1:length(k)
+%     for i = 1:nAssets
+%         percent = weights(:,1001-k(n));
+%         Percentage_of_Investment(i) = ...
+%            strcat( ...
+%                fields(i), ...
+%                " : ", ...
+%                num2str(round(percent(i),4)), ...
+%                "%" ...
+%            );
+%     end
+%     disp(strcat( ...
+%         "Percentage of Investment with ", ...
+%         "k = ", num2str(k(n))));
+%     disp(transpose(Percentage_of_Investment));
+% end
+
 
