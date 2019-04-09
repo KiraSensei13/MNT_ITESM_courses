@@ -147,31 +147,16 @@ C = cov(Returns); % std(R)^2 variances are in the main diagonal ...
 sigmaR = diag(C); % extract the main diagonal of C
 
 % Plot their expected return versus variance.
+figure(1)
 scatter(sigmaR,muR,1)
 title("Pareto Front")
 xlabel("risk") 
 ylabel("return") 
 fields = fieldnames(res);
-for i = 1:length(muR)
-	text(sigmaR(i),muR(i),strcat("  ", fields(i)));
+nAssets = length(fields); % number of assets
+for i = 1:nAssets
+	text(sigmaR(i),muR(i),strcat( "  ", fields(i)) );
 end
 
+% Quadratic Programming Portfolio Optimization
 
-% % Let us first define the above parameters
-% H = diag([1; 0]);
-% f = [3; 4];
-% A = [-1 -3; 2 5; 3 4];
-% b = [-15; 100; 80];
-% l = zeros(2,1);
-% 
-% % Let's set MATLAB solver to use with the Algorithm field in the
-% % optimization options
-% options = optimset('Algorithm','interior-point-convex');
-% 
-% % Construct the QP, invoke solver
-% [x,fval] = quadprog(H,f,A,b,[],[],l,[],[],options);
-% % where: [x,fval] = quadprog(H,f,A,b,Aeq,Beq,l,u,x0,options);
-% 
-% % Print the calculations
-% disp(x);
-% disp(fval);
