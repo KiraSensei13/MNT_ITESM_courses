@@ -175,10 +175,7 @@ for i = 1:nAssets
 end
 
 % Quadratic Programming Portfolio Optimization
-
-%load port5
-%r = mean_return;
-%Q = Correlation .* (stdDev_return * stdDev_return');
+% based on: openExample('optim/PortfolioMIQPExample')
 
 % Load the data for the problem
 r = transpose(muR); % returns
@@ -196,24 +193,26 @@ zvar = optimvar('zvar',1,'LowerBound',0);
 % Set the Optimization Problem
 qpprob = optimproblem('ObjectiveSense','maximize');
 % Set the risk-aversion
-lambda = 10;
+lambda = 8;
 % Define the objective function
 qpprob.Objective = r'*xvars - lambda*zvar;
-
-
+% solving the problem with the current constraints
 options = optimoptions(@intlinprog,'Display','off'); % Suppress iterative display
 [xLinInt,fval,exitFlagInt,output] = solve(qpprob,'options',options);
+% stop iterating when the slack variable is within 0.01% of the true quadratic value
 thediff = 1e-4;
 iter = 1; % iteration counter
 assets = xLinInt.xvars;
 truequadratic = assets'*Q*assets;
-zslack = zeros(length(truequadratic),1); %xLinInt.zvar;
+zslack = zeros(length(truequadratic),1);
+% keep a history of the computed true quadratic and slack variables for plotting.
 history = [truequadratic,zslack];
-
 options = optimoptions(options,'LPOptimalityTolerance',1e-10,'RelativeGapTolerance',1e-8,...
                       'ConstraintTolerance',1e-9,'IntegerTolerance',1e-6);
-
+% Compute the quadratic and slack values.
 while abs((zslack - truequadratic)/truequadratic) > thediff % relative error
+    % If the quadratic and slack values differ,
+    % then add another linear constraint and solve again.
     constr = 2*assets'*Q*xvars - zvar <= assets'*Q*assets;
     newname = ['iteration',num2str(iter)];
     qpprob.Constraints.(newname) = constr;
@@ -243,16 +242,6 @@ disp(strcat( ...
     "k = ", num2str(lambda)));
 disp(transpose(print));
 
-% figure(3);
-% bar(Percentage_of_Investment, 0.125);
-% grid on;
-% xlabel('Asset index');
-% ylabel('Proportion of investment');
-% title('Optimal asset allocation');
-% for i = 1:nAssets
-% 	text(i,Percentage_of_Investment(i),fields(i));
-% end
-
 % PLOT Efficient Frontier
 % Let's do sigmaR.^2 as it (re)calculates the standard deviation 
 % which is the square-root of variance)
@@ -262,3 +251,14 @@ p = setSolver(p, 'quadprog');
 hold on
 plotFrontier(p)
 hold off
+
+% PLOT Percentage_of_Investment
+figure(3);
+bar(Percentage_of_Investment, 0.125);
+grid on;
+xlabel('Asset index');
+ylabel('Proportion of investment');
+title('Optimal asset allocation');
+for i = 1:nAssets
+	text(i,Percentage_of_Investment(i),fields(i));
+end
