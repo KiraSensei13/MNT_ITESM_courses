@@ -228,20 +228,27 @@ while abs((zslack - truequadratic)/truequadratic) > thediff % relative error
 end
 
 Percentage_of_Investment = xLinInt.xvars/sum(xLinInt.xvars);
+
+% disp(strcat( ...
+%          "Percentage of Investment with ", ...
+%          "k = ", num2str(lambda)));
+% disp(Percentage_of_Investment)
+
+for n = 1:length(lambda)
     
-for i = 1:nAssets
-    print(i) = ...
-       strcat( ...
-           fields(i), ...
-           " : ", ...
-           num2str(round(Percentage_of_Investment(i),4)), ...
-           "%" ...
-       );
-end
-disp(strcat( ...
-    "Percentage of Investment with ", ...
-    "k = ", num2str(lambda)));
-disp(transpose(print));
+    for i = 1:nAssets
+        print(i) = ...
+           strcat( ...
+               fields(i), ...
+               " : ", ...
+               num2str(round(Percentage_of_Investment(i),4)), ...
+               "%" ...
+           );
+    end
+    disp(strcat( ...
+        "Percentage of Investment with ", ...
+        "k = ", num2str(lambda(n))));
+    disp(transpose(print));
 
 % figure(3);
 % bar(Percentage_of_Investment, 0.125);
@@ -253,12 +260,53 @@ disp(transpose(print));
 % 	text(i,Percentage_of_Investment(i),fields(i));
 % end
 
-% PLOT Efficient Frontier
-% Let's do sigmaR.^2 as it (re)calculates the standard deviation 
-% which is the square-root of variance)
+end
+
+% % Solve using quadprog
+% problem = prob2struct(qpprob);
+% problem.solver = 'quadprog';
+% x = quadprog(problem)
+
+% sum val
+% 1   x
+
+%% Solved using a portfolio object
+% % Set Up a Portfolio
+% % Let's do sigmaR.^2 as it (re)calculates the standard deviation 
+% % which is the square-root of variance)
 p = Portfolio('AssetMean',muR, 'AssetCovar',sigmaR.^2,'AssetList',fields);
 p = setDefaultConstraints(p);
 p = setSolver(p, 'quadprog');
 hold on
-plotFrontier(p)
+plotFrontier(obj)
 hold off
+% % Compute the Efficient Frontier Using the Portfolio
+% weights = estimateFrontier(p, 1001); % Estimate weights
+% [risk, ret] = estimatePortMoments(p, weights);
+% 
+% % Plot Efficient Frontier
+% hold on
+% plot(risk,ret,'m-');
+% hold off
+% 
+% % Risk Aversion
+% k = 1001;
+% 
+% for n = 1:length(k)
+%     for i = 1:nAssets
+%         percent = weights(:,1001-k(n));
+%         Percentage_of_Investment(i) = ...
+%            strcat( ...
+%                fields(i), ...
+%                " : ", ...
+%                num2str(round(percent(i),4)), ...
+%                "%" ...
+%            );
+%     end
+%     disp(strcat( ...
+%         "Percentage of Investment with ", ...
+%         "k = ", num2str(k(n))));
+%     disp(transpose(Percentage_of_Investment));
+% end
+
+
