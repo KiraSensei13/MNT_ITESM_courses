@@ -44,11 +44,13 @@ C = [41 27 28 24; 40 29 100 23; 37 30 27 21];
 % Upload to Blackboard a pdf file with a MATLAB script that solves both
 % cases.
 % The pdf should also include the solution matrix A for each case.
+disp("Problem 1: Matrix of assignation and cost.");
 [assig, total_cost] = EvenTransportation(s,d,C);
 
 % Print the calculations
 disp(assig);
 disp(total_cost);
+disp(" ");
 
 %% ************************************************************************
 % Problem 2:
@@ -69,6 +71,8 @@ disp(total_cost);
 % Plot this data on the previous graph.
 % Upload to Blackboard a pdf file that contains a MATLAB script, any MATLAB
 % functions that you implemented, and the required plots and results.
+
+disp("Problem 2: Percentage of investment given a risk-aversion.");
 
 load('Tiingo_data.mat')
 PortfolioOptimization(res,data,1);
@@ -213,9 +217,9 @@ function [out] = PortfolioOptimization(res,data,k)
     zvar = optimvar('zvar',1,'LowerBound',0);
     % Set the Optimization Problem
     qpprob = optimproblem('ObjectiveSense','maximize');
-    % Set the risk-aversion
-    %lambda = k;
     
+    % Set the risk-aversion: lambda = k
+    % and iterate if k is a vector
     for lambda = k(1):k(end)
         % Define the objective function
         qpprob.Objective = r'*xvars - lambda*zvar;
@@ -249,8 +253,11 @@ function [out] = PortfolioOptimization(res,data,k)
             iter = iter + 1;
         end
 
+        % Convert the porfolio weights into percentages of investment per
+        % asset
         Percentage_of_Investment = xLinInt.xvars/sum(xLinInt.xvars);
 
+        % Prepare variables to print
         for i = 1:nAssets
             print(i) = ...
                strcat( ...
@@ -260,7 +267,9 @@ function [out] = PortfolioOptimization(res,data,k)
                    "%" ...
                );
         end
+        % Retun the final calculation
         out = transpose(print);
+        % and print
         disp(strcat( ...
             "Percentage of Investment with ", ...
             "risk-aversion k = ", num2str(lambda)));
