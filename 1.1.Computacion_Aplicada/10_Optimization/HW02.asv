@@ -41,10 +41,9 @@ close all;
 % functions that you implemented, and required results.
 
 fun = @(x) (4 - 2.1*x(1)^2/10 + x(1)^4/3)*x(1)^2 + x(1)*x(2) + (- 4 + 4*x(2)^2)*x(2)^2;
-x0 = [-3,-2];
+x0 = [0,2];
 x = fmincon(fun,x0,[],[],[],[],[-3 -2],[3 2]);
 disp("Problem 1:");
-disp(strcat("Find the minimum value starting from the point [",num2str(x0(1)),",",num2str(x0(2)),"]"));
 disp(strcat("x_1 = ",num2str(x(1))));
 disp(strcat("x_2 = ",num2str(x(2))));
 disp(" ");
@@ -97,7 +96,6 @@ fcnMin = @(x) a*(x(2) - b*x(1)^2 + c*x(1) - r)^2 + s*(1 - t)*cos(x(1)) + s;
 x_guess = [15 10];
 xmin = fminsearch(fcnMin,x_guess);
 disp("Problem 2:");
-disp(strcat("Minimize the function with starting point [",num2str(x_guess(1)),",",num2str(x_guess(2)),"]"));
 disp(strcat("x_1 = ",num2str(xmin(1))));
 disp(strcat("x_2 = ",num2str(xmin(2))));
 disp(" ");
