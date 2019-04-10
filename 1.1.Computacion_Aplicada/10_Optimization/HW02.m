@@ -1,41 +1,37 @@
 % ************************************************************************
 % * AUTHOR(S) :
-% *     Bruno González Soria          (A01169284)
+% *     Bruno Gonzï¿½lez Soria          (A01169284)
 % *     Antonio Osamu Katagiri Tanaka (A01212611)
 % *
 % * FILENAME :
-% *     HW02.m
+% *     HW01.m
 % *
 % * DESCRIPTION :
-% *     Computaciónn Aplicada (Ene 19 Gpo 1)
-% *     Homework on Optimization 
+% *     Computaciï¿½nn Aplicada (Ene 19 Gpo 1)
+% *     Homework on Optimization
 % *
 % * NOTES :
 % *     
 % *
 % * START DATE :
-% *     11 Apr 2019
+% *     10 Apr 2019
 % ************************************************************************
 
+warning('off')
 clc;
-% clear all;
-
-% syms -> Short-cut for constructing symbolic variables.
-% diff -> Differentiates a symbolic expression.
-% solve -> Symbolic solution of algebraic equations.
-% subs -> Symbolic substitution
-% fminunc -> Unconstrained minimization. Finds a local minimum of a function of several variables.
-% fminbnd -> Single-variable bounded nonlinear function minimization. Finds a local minimal in the
-% interval -> xmin < x < xmax.
-% fmincon -> Finds a constrained minimum of a function of several variables.
-% fminsearch -> Multidimensional unconstrained nonlinear minimization (Nelder-Mead).
+clear all;
+close all;
 
 %% ************************************************************************
 % Problem 1:
 % Solve the following problem using the optimization toolbox:
-% min f(x) = (4 - 2.1 x^2_1 + x^4_1/3) x^2_1 + x_1 x_2 + (-4 + 4x^2_2) x^2_2
-% for x_1 [-3; 3] and x_2 [-2; 2].
-% 1 Use function fmincon to solve the problem.
+%
+%            /            2      4 \
+%            |     2.1 x_1    x_1  |    2                         2     2
+% min f(x) = | 4 - ------- +  ---- | x_1  + x_1 x_2 + (- 4 + 4 x_2 ) x_2
+%  x         \         10       3  /
+%
+% Use function fmincon to solve the problem
 % Upload to Blackboard a pdf file that contains a MATLAB script, any MATLAB
 % functions that you implemented, and required results.
 
@@ -63,13 +59,23 @@ disp(['Final Objective: ' num2str(objective(x))])
 
 %% ************************************************************************
 % Problem 2:
-% Using function fminsearch minimize Branin’s function:
-% f(x) = a(x^2 - bx^2_1 + cx_1 - r)^2 + s(1 - t) cos(x_1) + s
+% Using function fminsearch minimize Braninï¿½s function:
+%
+%                      2             2
+% f(x) = a (x_2 - b x_1  + c x_1 - r)  + s  (1 - t) cos(x_1) + s
+%
 % where
-% a = 1             b = 5.1 / 4Pi^2
-% c = 5 / Pi        r = 6
-% s = 10            t = 1 / 8Pi
-% for x_1 [-5; 10] y x_2 [0; 15].
+a = 1;
+b = 5.1/(4*pi^2);
+c = 5/pi;
+r = 6;
+s = 10;
+t = 1/(8*pi);
+%
+% for
+% x_1 >= -5; x_1 <= 10
+% x_2 >=  0; x_2 <= 15
+%
 % Upload to Blackboard a pdf file that contains a MATLAB script, any MATLAB
 % functions that you implemented, and required results.
 
