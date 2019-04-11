@@ -1,20 +1,20 @@
 % ************************************************************************
 % * AUTHOR(S) :
-% *     Bruno González Soria          (A01169284)
+% *     Bruno Gonzï¿½lez Soria          (A01169284)
 % *     Antonio Osamu Katagiri Tanaka (A01212611)
 % *
 % * FILENAME :
 % *     HW01.m
 % *
 % * DESCRIPTION :
-% *     Computaciónn Aplicada (Ene 19 Gpo 1)
+% *     Computaciï¿½n Aplicada (Ene 19 Gpo 1)
 % *     Homework on Linear, mixed, and quadratic programming 
 % *
 % * NOTES :
 % *     
 % *
 % * START DATE :
-% *     04 Apr 2019
+% *     11 Apr 2019
 % ************************************************************************
 
 warning('off')
@@ -25,9 +25,9 @@ close all;
 %% ************************************************************************
 % Problem 1:
 % Solve the Following transportation problem:
-s = [37.6; 40.4; 44.5];
-d = [20 30 30 40];
-C = [41 27 28 24; 40 29 100 23; 37 30 27 21];
+% s = [37.6; 40.4; 44.5]';
+% d = [20 30 30 40]';
+% C = [41 27 28 24; 40 29 100 23; 37 30 27 21];
 
 % transportation costs tableau
 %             | destination     | supply
@@ -44,13 +44,13 @@ C = [41 27 28 24; 40 29 100 23; 37 30 27 21];
 % Upload to Blackboard a pdf file with a MATLAB script that solves both
 % cases.
 % The pdf should also include the solution matrix A for each case.
-disp("Problem 1: Matrix of assignation and cost.");
-[assig, total_cost] = EvenTransportation(s,d,C);
-
-% Print the calculations
-disp(assig);
-disp(total_cost);
-disp(" ");
+% disp("Problem 1: Matrix of assignation and cost.");
+% [assig, total_cost] = EvenTransportation(s,d,C);
+% 
+% % Print the calculations
+% disp(assig);
+% disp(total_cost);
+% disp(" ");
 
 %% ************************************************************************
 % Problem 2:
@@ -58,7 +58,7 @@ disp(" ");
 % following DJI stocks from January 1, 2018 through January 1, 2019.
 %
 % KO Coca-Cola            DIS Disney
-% PG Procter & Gamble     MCD McDonald’s
+% PG Procter & Gamble     MCD McDonaldï¿½s
 % PFE Pfizer              WMT WalMart
 % MRK Merck               V Visa
 % VZ Verizon
@@ -91,50 +91,50 @@ PortfolioOptimization(res,data,50);
 %% ************************************************************************
 % Problem 1 FUNCTION DEFINITION
 
-function [assig, total_cost] = EvenTransportation(s,d,C)
-    % Only multiples of 2 units can be transported, so let's assume each unit
-    % contains 2 objects. Let's simulate this by divition by 2.
-    s = s/2;
-    d = d/2;
-    C = C/2;
-
-    % Only integer units can be transported, so round toward negative infinity.
-    s = floor(s);
-
-    % The following is based on:
-    % http://web.tecnico.ulisboa.pt/mcasquilho/compute/_linpro/TaylorB_module_b.pdf
-    %f = [C(1,:) C(2,:) C(3,:)]';
-    n = length(s);
-    m = length(d);
-    f = reshape(C',n*m,1);
-    A = zeros(n,n*m);
-    %
-    for i=1:n
-        A(i,1+(i-1)*4:i*4) = 1;
-    end
-    %
-    b = s;
-    Aeq = zeros(n,n*m);
-    %
-    for j=1:m
-        Aeq(j,j:m:n*m) = 1;
-    end
-    %
-    beq = d;
-    LB = zeros(n*m,1);
-    UB = Inf(n*m,1);
-    %
-    x = linprog(f,A,b,Aeq,beq,LB,UB);
-    %
-    assig = reshape(x,m,n)';
-    total_cost = sum(sum(assig.*C));
-
-    % Up to this point calculations have been made by units of 2 objects, let's
-    % multiply the result by 2 to get the transportation assignments and const
-    % by product
-    assig = assig*2;
-    total_cost = total_cost*2;
-end
+% function [assig, total_cost] = EvenTransportation(s,d,C)
+%     
+%     % Only multiples of 2 units can be transported, so let's assume each unit
+%     % contains 2 objects. Let's simulate this by divition by 2.
+%     s = s/2;
+%     d = d/2;
+% 
+%     % Only integer units can be transported, so round toward negative infinity.
+%     s = floor(s);
+% 
+%     % The following is based on:
+%     % http://web.tecnico.ulisboa.pt/mcasquilho/compute/_linpro/TaylorB_module_b.pdf
+%     % f = [C(1,:) C(2,:) C(3,:)]';
+%     n = length(s);
+%     m = length(d);
+%     f = reshape(C',n*m,1);
+%     A = zeros(n,n*m);
+%     
+%     for i=1:n
+%         A(i,1+(i-1)*4:i*4) = 1;
+%     end
+%     %
+%     b = s;
+%     Aeq = zeros(n,n*m);
+%     %
+%     for j=1:m
+%         Aeq(j,j:m:n*m) = 1;
+%     end
+%     %
+%     beq = d;
+%     LB = zeros(n*m,1);
+%     UB = Inf(n*m,1);
+%     %
+%     x = linprog(f,A,b,Aeq,beq,LB,UB);
+%     %
+%     assig = reshape(x,m,n)';
+%     total_cost = sum(sum(assig.*C));
+% 
+%     % Up to this point calculations have been made by units of 2 objects, let's
+%     % multiply the result by 2 to get the transportation assignments and const
+%     % by product
+%     assig = assig*2;
+%     total_cost = total_cost*2;
+% end
 
 %% ************************************************************************
 % Problem 2 FUNCTION DEFINITION
@@ -184,7 +184,7 @@ function [out] = PortfolioOptimization(res,data,k)
 
     % % Risk-Adjusted Returns
     % assetRisk =  std(Returns);
-
+    
     % Returns variance per security / risk
     C = cov(Returns); % std(R)^2 variances are in the main diagonal ...
     sigmaR = diag(C); % extract the main diagonal of C
