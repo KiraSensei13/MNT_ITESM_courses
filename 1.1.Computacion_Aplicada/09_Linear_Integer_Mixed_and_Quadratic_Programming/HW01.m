@@ -79,7 +79,7 @@ load('Tiingo_data.mat')
 % PortfolioOptimization(res,data,2);
 % PortfolioOptimization(res,data,2.5);
 % PortfolioOptimization(res,data,4);
- PortfolioOptimization(res,data,7);
+% PortfolioOptimization(res,data,7);
 % PortfolioOptimization(res,data,9);
 % PortfolioOptimization(res,data,11);
 % PortfolioOptimization(res,data,20);
