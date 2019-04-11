@@ -184,7 +184,7 @@ function [out] = PortfolioOptimization(res,data,k)
 
     % % Risk-Adjusted Returns
     % assetRisk =  std(Returns);
-    
+    quadprog
     % Returns variance per security / risk
     C = cov(Returns); % std(R)^2 variances are in the main diagonal ...
     sigmaR = diag(C); % extract the main diagonal of C
