@@ -25,9 +25,9 @@ close all;
 %% ************************************************************************
 % Problem 1:
 % Solve the Following transportation problem:
-s = [37.6; 40.4; 44.5]';
-d = [20 30 30 40]';
-C = [41 27 28 24; 40 29 100 23; 37 30 27 21];
+% s = [37.6; 40.4; 44.5]';
+% d = [20 30 30 40]';
+% C = [41 27 28 24; 40 29 100 23; 37 30 27 21];
 
 % transportation costs tableau
 %             | destination     | supply
@@ -44,13 +44,13 @@ C = [41 27 28 24; 40 29 100 23; 37 30 27 21];
 % Upload to Blackboard a pdf file with a MATLAB script that solves both
 % cases.
 % The pdf should also include the solution matrix A for each case.
-disp("Problem 1: Matrix of assignation and cost.");
-[assig, total_cost] = EvenTransportation(s,d,C);
-
-% Print the calculations
-disp(assig);
-disp(total_cost);
-disp(" ");
+% disp("Problem 1: Matrix of assignation and cost.");
+% [assig, total_cost] = EvenTransportation(s,d,C);
+% 
+% % Print the calculations
+% disp(assig);
+% disp(total_cost);
+% disp(" ");
 
 %% ************************************************************************
 % Problem 2:
@@ -79,62 +79,62 @@ load('Tiingo_data.mat')
 % PortfolioOptimization(res,data,2);
 % PortfolioOptimization(res,data,2.5);
 % PortfolioOptimization(res,data,4);
-% PortfolioOptimization(res,data,7);
+ PortfolioOptimization(res,data,7);
 % PortfolioOptimization(res,data,9);
 % PortfolioOptimization(res,data,11);
 % PortfolioOptimization(res,data,20);
 % PortfolioOptimization(res,data,50);
 % WARNING: Your PC may freeze with a big k such as 1000. Uncomment at your
 % own risk ...
-PortfolioOptimization(res,data,1000);
+% PortfolioOptimization(res,data,1000);
 
 %% ************************************************************************
 % Problem 1 FUNCTION DEFINITION
 
-function [assig, total_cost] = EvenTransportation(s,d,C)
-    
-    % Only multiples of 2 units can be transported, so let's assume each unit
-    % contains 2 objects. Let's simulate this by divition by 2.
-    s = s/2;
-    d = d/2;
-
-    % Only integer units can be transported, so round toward negative infinity.
-    s = floor(s);
-
-    % The following is based on:
-    % http://web.tecnico.ulisboa.pt/mcasquilho/compute/_linpro/TaylorB_module_b.pdf
-    % f = [C(1,:) C(2,:) C(3,:)]';
-    n = length(s);
-    m = length(d);
-    f = reshape(C',n*m,1);
-    A = zeros(n,n*m);
-    
-    for i=1:n
-        A(i,1+(i-1)*4:i*4) = 1;
-    end
-    %
-    b = s;
-    Aeq = zeros(n,n*m);
-    %
-    for j=1:m
-        Aeq(j,j:m:n*m) = 1;
-    end
-    %
-    beq = d;
-    LB = zeros(n*m,1);
-    UB = Inf(n*m,1);
-    %
-    x = linprog(f,A,b,Aeq,beq,LB,UB);
-    %
-    assig = reshape(x,m,n)';
-    total_cost = sum(sum(assig.*C));
-
-    % Up to this point calculations have been made by units of 2 objects, let's
-    % multiply the result by 2 to get the transportation assignments and const
-    % by product
-    assig = assig*2;
-    total_cost = total_cost*2;
-end
+% function [assig, total_cost] = EvenTransportation(s,d,C)
+%     
+%     % Only multiples of 2 units can be transported, so let's assume each unit
+%     % contains 2 objects. Let's simulate this by divition by 2.
+%     s = s/2;
+%     d = d/2;
+% 
+%     % Only integer units can be transported, so round toward negative infinity.
+%     s = floor(s);
+% 
+%     % The following is based on:
+%     % http://web.tecnico.ulisboa.pt/mcasquilho/compute/_linpro/TaylorB_module_b.pdf
+%     % f = [C(1,:) C(2,:) C(3,:)]';
+%     n = length(s);
+%     m = length(d);
+%     f = reshape(C',n*m,1);
+%     A = zeros(n,n*m);
+%     
+%     for i=1:n
+%         A(i,1+(i-1)*4:i*4) = 1;
+%     end
+%     %
+%     b = s;
+%     Aeq = zeros(n,n*m);
+%     %
+%     for j=1:m
+%         Aeq(j,j:m:n*m) = 1;
+%     end
+%     %
+%     beq = d;
+%     LB = zeros(n*m,1);
+%     UB = Inf(n*m,1);
+%     %
+%     x = linprog(f,A,b,Aeq,beq,LB,UB);
+%     %
+%     assig = reshape(x,m,n)';
+%     total_cost = sum(sum(assig.*C));
+% 
+%     % Up to this point calculations have been made by units of 2 objects, let's
+%     % multiply the result by 2 to get the transportation assignments and const
+%     % by product
+%     assig = assig*2;
+%     total_cost = total_cost*2;
+% end
 
 %% ************************************************************************
 % Problem 2 FUNCTION DEFINITION
