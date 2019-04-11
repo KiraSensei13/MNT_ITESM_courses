@@ -77,7 +77,7 @@ disp("Problem 2: Percentage of investment given a risk-aversion.");
 load('Tiingo_data.mat')
 PortfolioOptimization(res,data,1);
 PortfolioOptimization(res,data,2);
-PortfolioOptimization(res,data,2:5);
+PortfolioOptimization(res,data,2.5);
 PortfolioOptimization(res,data,4);
 PortfolioOptimization(res,data,7);
 PortfolioOptimization(res,data,9);
@@ -188,7 +188,7 @@ function [out] = PortfolioOptimization(res,data,k)
     % Returns variance per security / risk
     C = cov(Returns); % std(R)^2 variances are in the main diagonal ...
     sigmaR = diag(C); % extract the main diagonal of C
-
+    
     % Plot their expected return versus variance.
     figure(2);
     scatter(sigmaR,muR,2);
