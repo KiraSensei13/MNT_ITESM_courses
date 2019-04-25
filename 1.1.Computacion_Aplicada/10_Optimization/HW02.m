@@ -4,7 +4,7 @@
 % *     Antonio Osamu Katagiri Tanaka (A01212611)
 % *
 % * FILENAME :
-% *     HW01.m
+% *     HW02.m
 % *
 % * DESCRIPTION :
 % *     Computación Aplicada (Ene 19 Gpo 1)
