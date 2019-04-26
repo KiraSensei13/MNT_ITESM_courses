@@ -1,4 +1,5 @@
 https://www.ted.com/talks/jason_clay_how_big_brands_can_save_biodiversity
+http://ekonomiaisrodowisko.pl/uploads/ekonomiaisrodowisko%2060/18_jastrzebska.pdf
 
 we where atacking the wrong driver
 problems came from people and policies not from the weather
