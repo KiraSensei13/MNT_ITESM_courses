@@ -17,9 +17,9 @@
 % *     25 Apr 2019
 % ************************************************************************
 
-% warning('off')
-% clc;
-% close all;
+warning('off')
+clc;
+close all;
 
 %% ************************************************************************
 % Problem 1:
@@ -107,9 +107,55 @@ neighbor = route;
 neighbor(n1:n2) = route(n2:-1:n1);
 end
 
-function TSPplot(x,coordinates)
-x = coordinates(:,1); % x coordinates
-y = coordinates(:,2); % y coordinates
-% Now plot these points and make sure you add 1 term to return to the starting point
-plot(route,y)
+function TSPplot(route, coordenates, s, varargin)
+
+% plotTSP(route, coordenates, s, flag=0)
+%
+% Plots a TSP route given their coordinates. flag specifies how
+% the cities are enumerated:
+%    0: no numbers
+%    1: order in which they are visited
+%    2: original numbers
+
+if length(varargin)>=1
+   flag = varargin{1};
+else
+   flag = 1;
+end
+
+n = length(route);
+xy = [];
+for i=1:n
+   xy = [xy;coordenates(route(i),:)];
+end
+xy = [xy; xy(1,:)];
+axis([0 1 0 1])
+if flag==0
+   plot(xy(:,1),xy(:,2),s)
+   axis([0 1 0 1])
+end
+if flag==1
+   % Order in which they are visited
+   plot(xy(:,1),xy(:,2),s,...
+      xy(:,1),xy(:,2),'.r',...
+      xy(1,1),xy(1,2),'ok',...
+      xy(2,1),xy(2,2),'sb')
+   axis([0 1 0 1])
+   for i=1:n
+      text(coordenates(route(i),1)+0.01,coordenates(route(i),2),...
+         sprintf('%d',i), 'FontSize', 8)
+   end
+end
+if flag==2
+   % Original numbers
+   plot(xy(:,1),xy(:,2),s,...
+      xy(:,1),xy(:,2),'.r',...
+      xy(1,1),xy(1,2),'ok',...
+      xy(2,1),xy(2,2),'sb')
+   axis([0 1 0 1])
+   for i=1:n
+      text(coordenates(route(i),1)+0.01,coordenates(route(i),2),...
+         sprintf('%d',route(i)), 'FontSize', 8)
+   end
+end
 end
