@@ -1,13 +1,13 @@
 % ************************************************************************
 % * AUTHOR(S) :
-% *     Bruno González Soria          (A01169284)
+% *     Bruno Gonzï¿½lez Soria          (A01169284)
 % *     Antonio Osamu Katagiri Tanaka (A01212611)
 % *
 % * FILENAME :
 % *     HW01.m
 % *
 % * DESCRIPTION :
-% *     Computación Aplicada (Ene 19 Gpo 1)
+% *     Computaciï¿½n Aplicada (Ene 19 Gpo 1)
 % *     Homework on Linear, mixed, and quadratic programming 
 % *
 % * NOTES :
@@ -58,7 +58,7 @@ disp(" ");
 % following DJI stocks from January 1, 2018 through January 1, 2019.
 %
 % KO Coca-Cola            DIS Disney
-% PG Procter & Gamble     MCD McDonald’s
+% PG Procter & Gamble     MCD McDonaldï¿½s
 % PFE Pfizer              WMT WalMart
 % MRK Merck               V Visa
 % VZ Verizon
@@ -188,7 +188,7 @@ function [out] = PortfolioOptimization(res,data,k)
     % Returns variance per security / risk
     C = cov(Returns); % std(R)^2 variances are in the main diagonal ...
     sigmaR = diag(C); % extract the main diagonal of C
-
+    
     % Plot their expected return versus variance.
     figure(2);
     scatter(sigmaR,muR,2);
