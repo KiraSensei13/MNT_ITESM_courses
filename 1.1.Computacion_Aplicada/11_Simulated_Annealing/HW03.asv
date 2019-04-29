@@ -89,78 +89,26 @@ function f = objFcnTSP(varargin)
             route = varargin{1};
             n = length(route);
             % Initialize with distance between last a first city
-            f = distances(route(n), route(1));
-            
-            for i=2:n
-                % Add distance from city i to city i-1
-                f = f + distances(route(i-1), route(i));
-            end
+        f = distances(route(n), route(1));
+        for i=2:n
+            % Add distance from city i to city i-1
+            f = f + distances(route(i-1), route(i));
         end
     end
 end
+end
 
 function neighbor = TSPinversion(optimValues,varargin)
-    route = optimValues.x;
-    n = length(route);
-    m1 = floor(rand*n)+1;
-    m2 = mod(floor(rand*(n-1))+m1, n)+1;
-    n1 = min([m1 m2]);
-    n2 = max([m1 m2]);
-    neighbor = route;
-    neighbor(n1:n2) = route(n2:-1:n1);
+route = optimValues.x;
+n = length(route);
+m1 = floor(rand*n)+1;
+m2 = mod(floor(rand*(n-1))+m1, n)+1;
+n1 = min([m1 m2]);
+n2 = max([m1 m2]);
+neighbor = route;
+neighbor(n1:n2) = route(n2:-1:n1);
 end
 
-function TSPplot(route, coordenates, s, varargin)
-% plotTSP(route, coordenates, s, flag=0)
-%
-% Plots a TSP route given their coordinates. flag specifies how
-% the cities are enumerated:
-%    0: no numbers
-%    1: order in which they are visited
-%    2: original numbers
-
-    if length(varargin)>=1
-       flag = varargin{1};
-    else
-       flag = 1;
-    end
-
-    n = length(route);
-    xy = [];
-    for i=1:n
-       xy = [xy;coordenates(route(i),:)];
-    end
-    xy = [xy; xy(1,:)];
-    axis([0 1 0 1])
-    if flag==0
-       plot(xy(:,1),xy(:,2),s)
-       axis([0 1 0 1])
-    end
-    if flag==1
-       % Order in which they are visited
-       plot(xy(:,1),xy(:,2),s,...
-          xy(:,1),xy(:,2),'.r',...
-          xy(1,1),xy(1,2),'ok',...
-          xy(2,1),xy(2,2),'sb')
-       axis([0 1 0 1])
-       for i=1:n
-          text(coordenates(route(i),1)+0.01,coordenates(route(i),2),...
-             sprintf('%d',i), 'FontSize', 8)
-       end
-    end
-    if flag==2
-       % Original numbers
-       plot(xy(:,1),xy(:,2),s,...
-          xy(:,1),xy(:,2),'.r',...
-          xy(1,1),xy(1,2),'ok',...
-          xy(2,1),xy(2,2),'sb')
-       axis([0 1 0 1])
-       for i=1:n
-          text(coordenates(route(i),1)+0.01,coordenates(route(i),2),...
-             sprintf('%d',route(i)), 'FontSize', 8)
-       end
-    end
-end
 
 %% ************************************************************************
 % Problem 2:
