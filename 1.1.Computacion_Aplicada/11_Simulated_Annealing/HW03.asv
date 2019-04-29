@@ -40,14 +40,12 @@ coordinates = rand(N,2);
 distances = TSPtable(coordinates);
 objFcnTSP(distances);
 route0 = randperm(N)';
-
 TSPplot(route0,coordinates,'b',2)
     xlabel('x')
     ylabel('y')
     title(sprintf('TSP?with?%d?cities',N))
 options = optimoptions(@simulannealbnd,'DataType','custom',...
     'AnnealingFcn',@TSPinversion);
-
 r0 = randperm(N);
 
 TSPplot(r0,coordinates,'-')
