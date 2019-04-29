@@ -1,0 +1,54 @@
+tuesday april 9 2019
+chicken, cheese quesadillas 5.58 g of salt
+
+wednesday april 10 2019
+vegetable soup 1.732 g of salt
+meatballs, beef 0.956  g of salt
+garden salad, vegetables 0.075g of salt
+fruit salad 0.036 g of salt
+
+thursday april 11 2019
+garden salad, vegetables 0.075 g of salt
+chichen, cheese quesadillas 3.348 g of salt
+
+friday april 12 2019
+pork spareribs 1.875 g of salt
+
+saturday april 13 2019
+chips, tortilla 1.367 g of salt
+chicken, cooked 0.048 g of salt
+beef steak 0.795 g of salt
+
+sunday april 14 2019
+chips, tortilla 1.367 g of salt
+chicken, cooked 0.192 g of salt
+
+monday april 15 2019
+chichen wings 3.03 g of salt
+
+tuesday april 16 2019
+clazone, meat 2.237 g of salt
+
+wednesday april 17 2019
+steak sandwich 1.954 g of salt
+beef steak 0.795 g of salt
+
+thursday april 18 2019
+beef strak 0.662 g of salt
+
+friday april 19 2019
+fried rice, beef 1.63 g of salt
+beef steak 0.795 g of salt
+
+saturday april 20 2019
+steak sandwitch 1.954 g of salt
+
+
+----------
+TOTAL: 28.873 g of salt in 12 days
+(2.406 g per day)
+
+
+----------
+14.26 pounds of waste in 12 days
+(1.188 pounds per day)
