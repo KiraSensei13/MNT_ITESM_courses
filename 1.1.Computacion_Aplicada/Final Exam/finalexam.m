@@ -37,15 +37,21 @@ rng(31416)
 % 
 % where 0 < xi < 5.
 % 
-% Maximize function f (x) using the Nelder-Mead algorithm (fminsearch) and
+% Maximize function f () using the Nelder-Mead algorithm (fminsearch) and
 % simulated annealing (simulannealbnd). Modify whatever parameters you deem
 % necessary to produce a good performance of these algorithms, regardless
 % of the state of the random number generator. Use randomly generated
 % initial point in the valid range of x.
+%% ************************************************************************
 %   a) Implement f (x) as a MATLAB function.
+
+
+
+%% ************************************************************************
 %   b) Give your best solution found (optimal x and evaluation of x) for
 %   each algorithm.
+
+%% ************************************************************************
 %   c) Which of these two algorithms has a better expected performance on
 %   this problem when varying the initial point(s)? Justify your answer.
-% 
 
