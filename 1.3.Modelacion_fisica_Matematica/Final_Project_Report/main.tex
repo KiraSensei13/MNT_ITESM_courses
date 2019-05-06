@@ -115,14 +115,14 @@ chapterinoneline,
 \thesistitle{Fabrication of graphitic-carbon suspended nanowires through mechanoelectrospinning of photocrosslinkable polymers}
 
 % Your supervisor's name, this is used in the title page, print it elsewhere with \supname and \cosupname
-\supervisor{Dr. Héctor Alán \textsc{Aguirre} Soto}
+\supervisor{Ph.D Daniel López \textsc{Aguayo}}
 \cosupervisor{Dra. Dora Iliana \textsc{Medina} Medina}
 
 % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \examiner{}
 
 % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
-\degree{Master of Science in Nanotechnology (MNT)}
+\degree{Mathematical Physical Modelling F4005}
 
 % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
 \author{Antonio Osamu \textsc{Katagiri} Tanaka}
@@ -175,12 +175,12 @@ chapterinoneline,
 \vspace*{.06\textheight}
 {\scshape\LARGE \univname\par} % University name
 
-\begin{center}
+%\begin{center}
 \includegraphics[width=0.15\textwidth]{./Figures/uniLogo.png}
-\end{center}
+%\end{center}
 
 \vspace{0.5cm}
-\textsc{\Large Masters Thesis Proposal}\\[0.5cm]      % Thesis type
+\textsc{\Large Final Project Report}\\[0.5cm]      % Thesis type
 
 \HRule \\%[0.5cm]                           % Horizontal line
 {\huge \bfseries \ttitle\par}\vspace{0.0cm} % Thesis title
@@ -193,27 +193,23 @@ chapterinoneline,
 % Author name - remove the \href bracket to remove the link
 \href{https://linkedin.com/in/osamu-katagiri-84b2b940/}{\authorname}
 %\authorname
+
 \end{flushleft}
 \end{minipage}
+
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushright} \large
-\emph{Principal Advisor:} \\
+\emph{Instructor:} \\
 % Supervisor name - remove the \href bracket to remove the link
 %\href{http://www.doramedina.com}{\supname}
 \supname
 
-\bigskip
-
-\emph{Co-advisor and\\Director of Program:} \\
-% Supervisor name - remove the \href bracket to remove the link
-\href{https://www.medinadora.com/}{\cosupname}
-%\cosupname
 \end{flushright}
 \end{minipage}\\[0.5cm]
- 
+
 \vfill
 
-\large \textit{A thesis proposal submitted in fulfillment of the requirements\\ for the degree of
+\large \textit{A project report submitted in fulfillment of the requirements\\ for the course of
 % University requirement text
 \degreename}\\[0.25cm]
 \textit{in}\\[0.25cm]
@@ -232,80 +228,6 @@ chapterinoneline,
 \end{titlepage}
 
 %----------------------------------------------------------------------------------------
-%	COMMITTEE'S PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{committee}
-\addchaptertocentry{\supervisingcommittee} % Add the the supervising committee to the table of contents
-The committee members, hereby, recommend that the proposal by \authorname \text{ }to be accepted to develop the thesis project as a partial requirement for the degree of \degreename.
-
-\begin{flushright} \large
-
-\bigskip
-\bigskip
-\medskip
-
-\noindent \rule[0.0em]{15em}{0.5pt}\\ % This prints a line for the signature
-%\href{http://www.alanaguirre.com}{\supname}
-\supname\\
-Tecnológico de Monterrey\\
-\emph{Principal Advisor}
-
-\bigskip
-\bigskip
-\medskip
-
-\noindent \rule[0.0em]{15em}{0.5pt}\\ % This prints a line for the signature
-%\href{http://www.alanaguirre.com}{\supname}
-\cosupname\\
-Tecnológico de Monterrey\\
-\emph{Co-Advisor}
-
-\bigskip
-\bigskip
-\medskip
-
-\noindent \rule[0.0em]{15em}{0.5pt}\\ % This prints a line for the signature
-%\href{http://www.alanaguirre.com}{\supname}
-Marc \textsc{Madou}\\
-Tecnológico de Monterrey\\
-\emph{Committee Member}
-
-\bigskip
-\bigskip
-\medskip
-
-\noindent \rule[0.0em]{15em}{0.5pt}\\ % This prints a line for the signature
-%\href{http://www.alanaguirre.com}{\supname}
-Sergio Omar \textsc{Martínez} Chapa\\
-Tecnológico de Monterrey\\
-\emph{Committee Member}
-
-\end{flushright}
-
-\vfill
-
-\begin{center}
-
-\bigskip
-\bigskip
-\medskip
-
-\noindent \rule[0.0em]{15em}{0.5pt}\\ % This prints a line for the signature
-\cosupname \\
-\emph{Director of Program in Nanotechnology}\\
-School of Engineering and Sciences\\
-%\href{http://www.doramedina.com}{\supname}
-
-\bigskip
-{\addressname \text{, } \large \today}\\[0cm]
-
-\end{center}
-\end{committee}
-
-\cleardoublepage
-
-%----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
 
@@ -313,7 +235,7 @@ School of Engineering and Sciences\\
 
 \listoffigures % Prints the list of figures
 
-%\listoftables % Prints the list of tables
+\listoftables % Prints the list of tables
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -406,14 +328,18 @@ Carbon nano-wires are versatile materials composed of carbon chains with a wide 
 %\RaggedRight
 {\fontsize{12}{15} \selectfont
 
-\include{Chapters/1_Introduction}
-\include{Chapters/2_ProblmemDefinitionAndMotivation}
-\include{Chapters/3_HypothesisAndResearchQuestions}
-\include{Chapters/4_Objectives}
-\include{Chapters/5_StateoftheArt}
-\include{Chapters/6_TheoreticalFramework}
-\include{Chapters/7_Methodology}
-\include{Chapters/8_WorkPlan}
+\include{Chapters/a_Problem_Definition}
+\include{Chapters/b_Relevant_Course_Content}
+\include{Chapters/c_Conclusions}
+
+%\include{Chapters/1_Introduction}
+%\include{Chapters/2_ProblmemDefinitionAndMotivation}
+%\include{Chapters/3_HypothesisAndResearchQuestions}
+%\include{Chapters/4_Objectives}
+%\include{Chapters/5_StateoftheArt}
+%\include{Chapters/6_TheoreticalFramework}
+%\include{Chapters/7_Methodology}
+%\include{Chapters/8_WorkPlan}
 
 }
 
