@@ -12,9 +12,8 @@ For the electrosinning process purpose, a model that predicts the final fiber di
 In the stable jet region, shown in Figures a and b, the slender body approximation is assumed to model the stable viscoelastic electrospun jet, where the flow was simplified to an nonuniform elongation with all quantities depending only on the $z-axis$. In addition, a negligible effect of solvent evaporation from the jet was assumed. Moreover, the viscoelastic Giesekus constitutive laws were used to determine the relation between the viscous stresses in the momentum equation. The Giesekus model adds quadratic nonlinearity and considers that the deviatoric stress is the sum of the solvent and polymer stresses. The current model for the stable jet region was based on Feng's model <12>. With the assumptions above, the equations governing the stable jet are applicable for a specific length $L_{sj}$. $L_{sj}$ is a function of the stable model ouput parameters <27>. He et al. <27> provide a rational theory considering a steady-state flow of an infinite viscous jet pulled from a capillary orifice and accelerated by a constant external $E$. Since the electrical force is dominant over other forces in the stable je, the bending instability occurs when the conductive and convective $I_{s}$ are equal. He et al. defined $L_{sj}$ as follows:
 
 \begin{equation}
-L_{\text{sj}}=\frac{4 \text{kQ}^3}{I^2 \pi \rho ^2}\left(\left(\frac{2 Q
-   \varsigma_{\text{sj}}}{\text{$\pi $K$\rho
-   $E}_{\text{sj}}}\right)^{-\frac{2}{3}}-\frac{1}{{r_{0}}^{2}}\right)
+L_{\text{sj}}=\frac{4 \text{kQ}^3}{\pi \rho ^2 I^2}\left(\left(\frac{2 \varsigma_{\text{sj}}
+   Q}{\text{$\pi $K$\rho $E}_{\text{sj}}}\right){}^{-\frac{2}{3}}-\frac{1}{r_0^2}\right)
 \label{eq:specificLength}
 \end{equation}
 
@@ -28,10 +27,52 @@ the mass conservation equation for the jet is as follows:
 Where $r$ and $v$ are measured at $z$. The charge conservation balance is give by <12>:
 
 \begin{equation}
-\text{kE} \text{$\pi $r}^2+2 \text{$\pi $r$\varsigma$v}=I
+2 \text{$\pi $r$\varsigma$v}+\text{$\pi $r}^2 \text{kE}=I
 \label{eq:chargeConservation}
 \end{equation}
 
-The forces
+The forces applied on the small control volume shown in Figure c are the tangential and the normal components of the electric force, the viscous stress and $\gamma$. The linear momentum equation in the axial direction $z$ is given by <12>:
+
+\begin{equation}
+\left(\tau _t^e-\frac{\tau _n^e \text{dr}}{\text{dz}}\right) 2 \pi  r+\frac{d \left(\pi  r^2
+   \left(\tau _{\text{zz}}-p\right)\right)}{\text{dz}}+\frac{\gamma  \text{dr} 2 \pi  r}{r
+   \text{dz}}+\rho  g \pi  r^2=\frac{d \left(\rho  \pi  r^2 v^2\right)}{\text{dz}}
+\label{eq:linearMomentum}
+\end{equation}
+
+Where $\tau_{t^e}$ and $\tau_{n^e}$ are the tangential and the normal forces, respectively, per unit area exerted on the surface of the jet due to $E$. $\tau_{zz}$ is the shear stress in the axial direction $Z$, g is the gravitational acceleration, and p is the pressure. Since the sum of the normal forces at the surface of the jet is equal to zero, the following can be defined:
+
+\begin{equation}
+p+\tau _n^e=\tau _{\text{rr}}+\frac{\gamma }{r}
+\label{eq:sumNormalForces}
+\end{equation}
+
+Where $\tau_{rr}$ is the shear stress in the radial direction. The Giesekus model adds quadratic nonlinearity and divides the deviatoric stress into a solvent contribution and a polymer contribution <26> as follows:
+
+\begin{equation}
+\tau =\tau _s+\tau _p
+\label{eq:shearStress}
+\end{equation}
+
+Where $\tau$ is the total shear stress, $\tau_{p}$ is the polymer shear stress, and $\tau_{s}$ is the solvent shear stress, which is deduced from the newtonian constitutive law given by:
+
+\begin{equation}
+\tau _s=\frac{3 \eta _s \text{dv}}{\text{dz}}
+\label{eq:solventShearStress}
+\end{equation}
+
+Where $\eta_{s}$ is the solution viscosity. The $\tau_{p}$ equations are obtained from the viscoelastic laws <26> as follows:
+
+\begin{equation}
+\tau _{\text{prr}}+\lambda  \left(v \tau _{\text{prr}}'+v' \tau
+   _{\text{prr}}\right)+\frac{\alpha  \lambda  \tau _{\text{prr}}^2}{\eta _p}=-\eta _p v'
+\label{eq:polymer1ShearStress}
+\end{equation}
+
+\begin{equation}
+\tau _{\text{pzz}}+\lambda  \left(v \tau _{\text{pzz}}'+v' \tau
+   _{\text{pzz}}\right)+\frac{\alpha  \lambda  \tau _{\text{prr}}^2}{\eta _p}=2 \eta _p v'
+\label{eq:polymer2ShearStress}
+\end{equation}
 
 
