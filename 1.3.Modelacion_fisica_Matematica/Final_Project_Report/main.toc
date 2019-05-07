@@ -5,4 +5,4 @@
 \contentsline {chapter}{\numberline {2}Relevant Course Content}{4}{chapter.9}% 
 \contentsline {section}{\numberline {2.1}Theoretical Framework}{4}{section.10}% 
 \contentsline {section}{\numberline {2.2}Course Content to be Used}{4}{section.11}% 
-\contentsline {chapter}{\numberline {3}Conclusions}{8}{chapter.21}% 
+\contentsline {chapter}{\numberline {3}Conclusions}{8}{chapter.23}% 
