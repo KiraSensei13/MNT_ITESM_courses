@@ -45,9 +45,9 @@ close all, clear all, clc, format compact
 % load shellfish data
 ssds = spreadsheetDatastore('./shellfish.xlsx');
 ssds.Sheets = 1;
-data = read(ssds);
-ssds.Sheets = 2;
-predict = read(ssds);
+read(ssds)
+data
+predict
 
 %% ************************************************************************
 % a) Train a neural network using the information of these 4077.
