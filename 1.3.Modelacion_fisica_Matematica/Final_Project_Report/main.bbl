@@ -19,6 +19,50 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{Abuzade2012}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1453e96895ac8127c7e62e3dccb79326}{%
+           family={Abuzade},
+           familyi={A\bibinitperiod},
+           given={Ramazan\bibnamedelima Ali},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8e15407bc9c0df4a1f5c5224a4c86dd0}{%
+           family={Zadhoush},
+           familyi={Z\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5dbc0ad216aa5c267d374c108002cb0a}{%
+           family={Gharehaghaji},
+           familyi={G\bibinitperiod},
+           given={Ali\bibnamedelima Akbar},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{39b0f9871490f1d65bc395edfd17c402}
+      \strng{fullhash}{39b0f9871490f1d65bc395edfd17c402}
+      \strng{bibnamehash}{39b0f9871490f1d65bc395edfd17c402}
+      \strng{authorbibnamehash}{39b0f9871490f1d65bc395edfd17c402}
+      \strng{authornamehash}{39b0f9871490f1d65bc395edfd17c402}
+      \strng{authorfullhash}{39b0f9871490f1d65bc395edfd17c402}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Ultrafine fibers were spun from polyacrylonitrile (PAN) solution in N,N‐dimethylformamide using a homemade electrospinning setup. Fibers with diameter ranging from 80 to 340 nm were obtained. Fiber size and fiber size distribution were investigated for various concentration, applied voltage, and tip‐to‐collector distance using image analysis. The diameters of the electrospun fibers increase when increasing the solution concentration and decrease slightly when increasing the voltage and needle tip‐to‐collector distance. Porosity and air permeability are vital properties in applications of electrospun nanofibrous structures. In this study, effects of process parameters on the porosity and air permeability of electrospun nanoweb were investigated as well. Results of statistical analysis showed that solution concentration and applied voltage have significant influences on pore diameters. It was concluded that nanofiber diameter played an important role on the diameter of pores formed by the intersections of nanofibers. A more realistic understanding of porosity was obtained and a quantitative relationship between nanoweb parameters and its air permeability was established by regression analysis. Two separate models were constructed for predicting air permeability in relation to process parameters. Optimization of electrospinning process for producing nanoweb with desirable air permeability is well achieved by these models. The models presented in this study are of high importance for their ability to predict the air permeability of PAN nanoweb both by process or structure parameters. {©} 2012 Wiley Periodicals, Inc. J Appl Polym Sci, 2012}
+      \field{journaltitle}{Journal of Applied Polymer Science}
+      \field{number}{126}
+      \field{title}{{Air permeability of electrospun polyacrylonitrile nanoweb}}
+      \field{volume}{1}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1002/app.36774
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/262871690{\_}Air{\_}permeability{\_}of{\_}electrospun{\_}polyacrylonitrile{\_}nanoweb
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/262871690%7B%5C_%7DAir%7B%5C_%7Dpermeability%7B%5C_%7Dof%7B%5C_%7Delectrospun%7B%5C_%7Dpolyacrylonitrile%7B%5C_%7Dnanoweb
+      \endverb
+    \endentry
     \entry{Boer2014}{book}{}
       \name{author}{2}{}{%
         {{hash=6ee0b9d745395aec58364116f478ad83}{%
@@ -92,6 +136,48 @@
       \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}Thesis/relatedTheses/Master Thesis 2017 Braulio Cardenas{\_}AAS{\_}Revised.pdf:pdf
       \endverb
     \endentry
+    \entry{Feng2002}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c20acfe6249a8c626b470a7e1634ed06}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Physics}%
+      }
+      \strng{namehash}{c20acfe6249a8c626b470a7e1634ed06}
+      \strng{fullhash}{c20acfe6249a8c626b470a7e1634ed06}
+      \strng{bibnamehash}{c20acfe6249a8c626b470a7e1634ed06}
+      \strng{authorbibnamehash}{c20acfe6249a8c626b470a7e1634ed06}
+      \strng{authornamehash}{c20acfe6249a8c626b470a7e1634ed06}
+      \strng{authorfullhash}{c20acfe6249a8c626b470a7e1634ed06}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Electrospinning uses an external electrostatic field to accelerate and stretch a charged polymer jet, and may produce ultrafine “nanofibers.” Many polymers have been successfully electrospun in the laboratory. Recently Hohman et al. [Phys. Fluids, 13, 2201 (2001)] proposed an electrohydrodynamic model for electrospinning Newtonian jets. A problem arises, however, with the boundary condition at the nozzle. Unless the initial surface charge density is zero or very small, the jet bulges out upon exiting the nozzle in a “ballooning instability,” which never occurs in reality. In this paper, we will first describe a slightly different Newtonian model that avoids the instability. Well-behaved solutions are produced that are insensitive to the initial charge density, except inside a tiny “boundary layer” at the nozzle. Then a non-Newtonian viscosity function is introduced into the model and the effects of extension thinning and thickening are explored. Results show two distinct regimes of stretching. For a “mild...}
+      \field{issn}{1070-6631}
+      \field{journaltitle}{Physics of Fluids}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{{The stretching of an electrified non-Newtonian jet: A model for electrospinning}}
+      \field{volume}{14}
+      \field{year}{2002}
+      \field{pages}{3912\bibrangedash 3926}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1063/1.1510664
+      \endverb
+      \verb{urlraw}
+      \verb http://aip.scitation.org/doi/10.1063/1.1510664
+      \endverb
+      \verb{url}
+      \verb http://aip.scitation.org/doi/10.1063/1.1510664
+      \endverb
+      \keyw{ballooning instability,electrohydrodynamics,flow instability,jets,non-Newtonian flow}
+    \endentry
     \entry{Franklin1951}{article}{}
       \name{author}{1}{}{%
         {{hash=103db1fe9c171aa941a9b4d1c3667a50}{%
@@ -131,6 +217,229 @@
       \endverb
       \verb{url}
       \verb http://www.royalsocietypublishing.org/doi/10.1098/rspa.1951.0197
+      \endverb
+    \endentry
+    \entry{Gupta2004}{article}{}
+      \name{author}{1}{}{%
+        {{hash=67f9f7afd2e23a7b841fed71274ab7da}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Pankaj},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Virginia Tech}%
+      }
+      \strng{namehash}{67f9f7afd2e23a7b841fed71274ab7da}
+      \strng{fullhash}{67f9f7afd2e23a7b841fed71274ab7da}
+      \strng{bibnamehash}{67f9f7afd2e23a7b841fed71274ab7da}
+      \strng{authorbibnamehash}{67f9f7afd2e23a7b841fed71274ab7da}
+      \strng{authornamehash}{67f9f7afd2e23a7b841fed71274ab7da}
+      \strng{authorfullhash}{67f9f7afd2e23a7b841fed71274ab7da}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Ph. D.}
+      \field{month}{12}
+      \field{title}{{Processing-Structure-Property Studies of: I) Submicron Polymeric Fibers Produced By Electrospinning and II) Films Of Linear Low Density Polyethylenes As Influenced By The Short Chain Branch Length In Copolymers Of Ethylene/1-Butene, Ethylene/1-Hexene {\&}amp}}
+      \field{year}{2004}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Gupta - 2004 - Processing-Structure-Property Studies of I) Submicron Polymeric Fibers Produced By Electrospinning and II) Films Of Linea.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://vtechworks.lib.vt.edu/handle/10919/30090
+      \endverb
+      \verb{url}
+      \verb https://vtechworks.lib.vt.edu/handle/10919/30090
+      \endverb
+      \keyw{Electrospinning,Polyethylene,Processing,Property Studies,Structure}
+    \endentry
+    \entry{He2007}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f9c6d5589bddc9aec6e4eb44fabac11d}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Ji-Huan},
+           giveni={J\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=80b6349fec838a6d4bf8080ad3418556}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Lan},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5054d8715f6746af9ed28c566f168046}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yue},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bc6c6f66f139beef784a50d9f1485019}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yong},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe8bd086dfef8a7b6340a492b5fca379}
+      \strng{fullhash}{dec666fcb21f839a52e87d8772084ba9}
+      \strng{bibnamehash}{fe8bd086dfef8a7b6340a492b5fca379}
+      \strng{authorbibnamehash}{fe8bd086dfef8a7b6340a492b5fca379}
+      \strng{authornamehash}{fe8bd086dfef8a7b6340a492b5fca379}
+      \strng{authorfullhash}{dec666fcb21f839a52e87d8772084ba9}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{09598103}
+      \field{journaltitle}{Polymer International}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{{Mathematical models for continuous electrospun nanofibers and electrospun nanoporous microspheres}}
+      \field{volume}{56}
+      \field{year}{2007}
+      \field{pages}{1323\bibrangedash 1329}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1002/pi.2370
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.wiley.com/10.1002/pi.2370
+      \endverb
+      \verb{url}
+      \verb http://doi.wiley.com/10.1002/pi.2370
+      \endverb
+    \endentry
+    \entry{Helgeson2008}{article}{}
+      \name{author}{4}{}{%
+        {{hash=a06dd6118a41222408e720cc5491ee12}{%
+           family={Helgeson},
+           familyi={H\bibinitperiod},
+           given={Matthew\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=00ede7bd951da19cb3c7dcdb22d6ac79}{%
+           family={Grammatikos},
+           familyi={G\bibinitperiod},
+           given={Kristie\bibnamedelima N.},
+           giveni={K\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=576a4028f8c66cd732f4347aa6d98e8e}{%
+           family={Deitzel},
+           familyi={D\bibinitperiod},
+           given={Joseph\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0e11e2b688a57301050a0e8283c67208}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={Norman\bibnamedelima J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{3162dd9f3dfe036301863e712b304295}
+      \strng{fullhash}{bc7e58a84ef8452de290f683219d51c2}
+      \strng{bibnamehash}{3162dd9f3dfe036301863e712b304295}
+      \strng{authorbibnamehash}{3162dd9f3dfe036301863e712b304295}
+      \strng{authornamehash}{3162dd9f3dfe036301863e712b304295}
+      \strng{authorfullhash}{bc7e58a84ef8452de290f683219d51c2}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a simplified approach to understanding the mechanics of stable electrospinning jets based on electrohydrodynamic theory that explicitly incorporates the extensional rheology of polymeric fluids. Flow regimes of electrospun jets are identified by analogy to uniaxial extension of a fluid jet. These flow regimes predict the limiting kinematics of electrospinning jets and identify dimensionless parameters important to the control and operation of electrospinning processes. In situ kinematic measurements validate model assumptions and scaling predictions, and allow the reduction of entire jet radius and velocity profiles to several key parameters. The model predictions are shown to hold both above and below the entanglement concentration, as well as for solutions with added electrolyte and increased conductivity. The analysis also enables direct measurement of the apparent extensional viscosity of solutions at the high extension rates experienced during electrospinning. Finally, dimensional analysis of the model yields a correlation for electrospun fiber diameter in terms of measurable fluid properties, controlled process parameters, and measured jet variables, demonstrating the influence of mechanics in the straight portion of the jet on ultimate fiber morphology.}
+      \field{issn}{0032-3861}
+      \field{journaltitle}{Polymer}
+      \field{month}{6}
+      \field{number}{12}
+      \field{title}{{Theory and kinematic measurements of the mechanics of stable electrospun polymer jets}}
+      \field{volume}{49}
+      \field{year}{2008}
+      \field{pages}{2924\bibrangedash 2936}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/J.POLYMER.2008.04.025
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0032386108003522
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0032386108003522
+      \endverb
+    \endentry
+    \entry{Hinch}{report}{}
+      \name{author}{1}{}{%
+        {{hash=f65b2c54f2dd74ac4bcad61a8487f511}{%
+           family={Hinch},
+           familyi={H\bibinitperiod},
+           given={E\bibnamedelima J},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f65b2c54f2dd74ac4bcad61a8487f511}
+      \strng{fullhash}{f65b2c54f2dd74ac4bcad61a8487f511}
+      \strng{bibnamehash}{f65b2c54f2dd74ac4bcad61a8487f511}
+      \strng{authorbibnamehash}{f65b2c54f2dd74ac4bcad61a8487f511}
+      \strng{authornamehash}{f65b2c54f2dd74ac4bcad61a8487f511}
+      \strng{authorfullhash}{f65b2c54f2dd74ac4bcad61a8487f511}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Lecture 2: Constitutive Relations}}
+      \field{type}{techreport}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Hinch - Unknown - Lecture 2 Constitutive Relations.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.whoi.edu/cms/files/lecture02{\_}28326.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.whoi.edu/cms/files/lecture02%7B%5C_%7D28326.pdf
+      \endverb
+    \endentry
+    \entry{Hohman2001}{article}{}
+      \name{author}{4}{}{%
+        {{hash=16d1df1ce672a36e811f4fd62465fa51}{%
+           family={Hohman},
+           familyi={H\bibinitperiod},
+           given={Moses\bibnamedelima M},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=6814ceb4b12c9332727e9d1025d16854}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d0529e37c370211a21bcb56c2e9e81d0}{%
+           family={Rutledge},
+           familyi={R\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7b08b1e717ce032c2c0945b3183ef038}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={Michael\bibnamedelima P},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{4cfb0d34816dc13a89ea5760647ea1df}
+      \strng{fullhash}{5ac867fc06f8c40effc7d3174ad1340a}
+      \strng{bibnamehash}{4cfb0d34816dc13a89ea5760647ea1df}
+      \strng{authorbibnamehash}{4cfb0d34816dc13a89ea5760647ea1df}
+      \strng{authornamehash}{4cfb0d34816dc13a89ea5760647ea1df}
+      \strng{authorfullhash}{5ac867fc06f8c40effc7d3174ad1340a}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Electrospinning is a process in which solid fibers are produced from a polymeric fluid stream solution or melt delivered through a millimeter-scale nozzle. This article uses the stability theory described in the previous article to develop a quantitative method for predicting when electrospinning occurs. First a method for calculating the shape and charge density of a steady jet as it thins from the nozzle is presented and is shown to capture quantitative features of the experiments. Then, this information is combined with the stability analysis to predict scaling laws for the jet behavior and to produce operating diagrams for when electrospinning occurs, both as a function of experimental parameters. Predictions for how the regime of electrospinning changes as a function of the fluid conductivity and viscosity are presented.}
+      \field{title}{{Electrospinning and electrically forced jets. II. Applications}}
+      \field{year}{2001}
+      \verb{doi}
+      \verb 10.1063/1.1384013
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Hohman et al. - 2001 - Electrospinning and electrically forced jets. II. Applications.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://pof.aip.org/pof/copyright.jsp
+      \endverb
+      \verb{url}
+      \verb http://pof.aip.org/pof/copyright.jsp
       \endverb
     \endentry
     \entry{Hribar2014}{article}{}
@@ -191,6 +500,68 @@
       \verb http://www.ncbi.nlm.nih.gov/pubmed/24257507
       \endverb
     \endentry
+    \entry{Ismail2016}{article}{}
+      \name{author}{5}{}{%
+        {{hash=51add7c187b1442743c1fc581f757cae}{%
+           family={Ismail},
+           familyi={I\bibinitperiod},
+           given={Nagham},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a0ea8a348ca180ac84c4b71125e37e68}{%
+           family={Maksoud},
+           familyi={M\bibinitperiod},
+           given={Fouad\bibnamedelima Junior},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=2e5fd9a5fff91fa1d660d36f67bd5cd8}{%
+           family={Ghaddar},
+           familyi={G\bibinitperiod},
+           given={Nesreen},
+           giveni={N\bibinitperiod}}}%
+        {{hash=819c1bb87bdb215caff9890dd04bac5c}{%
+           family={Ghali},
+           familyi={G\bibinitperiod},
+           given={Kamel},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f16d07077f6362afa9f8ceb2717e0257}{%
+           family={Tehrani-Bagha},
+           familyi={T\bibinithyphendelim B\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley {\&} Sons, Ltd}%
+      }
+      \strng{namehash}{2b2d983fd61e76e5a2b3af7258ca7d0c}
+      \strng{fullhash}{138d66bd06ffbcf4372716feb988178d}
+      \strng{bibnamehash}{2b2d983fd61e76e5a2b3af7258ca7d0c}
+      \strng{authorbibnamehash}{2b2d983fd61e76e5a2b3af7258ca7d0c}
+      \strng{authornamehash}{2b2d983fd61e76e5a2b3af7258ca7d0c}
+      \strng{authorfullhash}{138d66bd06ffbcf4372716feb988178d}
+      \field{sortinit}{I}
+      \field{sortinithash}{320bc8fe8101b9376f9f21cd507de0e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00218995}
+      \field{journaltitle}{Journal of Applied Polymer Science}
+      \field{month}{11}
+      \field{number}{43}
+      \field{title}{{Simplified modeling of the electrospinning process from the stable jet region to the unstable region for predicting the final nanofiber diameter}}
+      \field{volume}{133}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1002/app.44112
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Ismail et al. - 2016 - Simplified modeling of the electrospinning process from the stable jet region to the unstable region for predicti.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.wiley.com/10.1002/app.44112
+      \endverb
+      \verb{url}
+      \verb http://doi.wiley.com/10.1002/app.44112
+      \endverb
+      \keyw{conducting polymers,electrospinning,fibers}
+    \endentry
     \entry{Landis2011}{book}{}
       \name{author}{1}{}{%
         {{hash=242eca1f846e4d24d346782fb85498a7}{%
@@ -223,6 +594,104 @@
       \endverb
       \verb{url}
       \verb https://learning.oreilly.com/library/view/nano-lithography/9781118621707/
+      \endverb
+    \endentry
+    \entry{Lee2007}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2f6fb848016d754999ebc0651f8a1564}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Seungsin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=79ab0fdea4c4dfcec8086f9a4a32b8dd}{%
+           family={Obendorf},
+           familyi={O\bibinitperiod},
+           given={S.\bibnamedelimi Kay},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Sage PublicationsSage UK: London, England}%
+      }
+      \strng{namehash}{abe2eab607749fc81c6e0f488da21f62}
+      \strng{fullhash}{abe2eab607749fc81c6e0f488da21f62}
+      \strng{bibnamehash}{abe2eab607749fc81c6e0f488da21f62}
+      \strng{authorbibnamehash}{abe2eab607749fc81c6e0f488da21f62}
+      \strng{authornamehash}{abe2eab607749fc81c6e0f488da21f62}
+      \strng{authorfullhash}{abe2eab607749fc81c6e0f488da21f62}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{To examine the potential of electrospun nanofibrous webs as barriers to liquid penetration in protective clothing systems for agricultural workers, layered fabric systems with electrospun polyurethane fiber web layered on spunbonded nonwoven were developed. Barrier performance was evaluated for the layered fabric systems with different levels of electrospun web area density, using three pesticide mixtures that represent a range of surface tension and viscosity. Effects of electrospun web density on air permeability and water vapor transmission were assessed as indications of thermal comfort performance. Pore size distribution was measured to examine the effect of electrospun fiber web layers on pore size. Penetration testing showed that a very thin layer of electrospun polyurethane web significantly improved barrier performance for challenge liquids with a range of physicochemical properties. Air permeability decreased with increasing electrospun web area density, but was still higher than most of protect.}
+      \field{issn}{0040-5175}
+      \field{journaltitle}{Textile Research Journal}
+      \field{month}{9}
+      \field{number}{9}
+      \field{title}{{Use of Electrospun Nanofiber Web for Protective Textile Materials as Barriers to Liquid Penetration}}
+      \field{volume}{77}
+      \field{year}{2007}
+      \field{pages}{696\bibrangedash 702}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1177/0040517507080284
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1177/0040517507080284
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1177/0040517507080284
+      \endverb
+      \keyw{barrier performance,electrospinning,nanotechnology,protective clothing,thermal comfort}
+    \endentry
+    \entry{Leung2010}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d4bfcbb0ef22e666865a540404fe37cb}{%
+           family={Leung},
+           familyi={L\bibinitperiod},
+           given={Wallace\bibnamedelima Woon-Fong},
+           giveni={W\bibinitperiod\bibinitdelim W\bibinithyphendelim F\bibinitperiod}}}%
+        {{hash=803b1a9f0c759c40ec1e637c7e8f6707}{%
+           family={Hung},
+           familyi={H\bibinitperiod},
+           given={Chi-Ho},
+           giveni={C\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=7ae1178ae34fa210c64fc10a77c549ce}{%
+           family={Yuen},
+           familyi={Y\bibinitperiod},
+           given={Ping-Tang},
+           giveni={P\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{88d4f4e59c3824f9a36156dcf91a526f}
+      \strng{fullhash}{88d4f4e59c3824f9a36156dcf91a526f}
+      \strng{bibnamehash}{88d4f4e59c3824f9a36156dcf91a526f}
+      \strng{authorbibnamehash}{88d4f4e59c3824f9a36156dcf91a526f}
+      \strng{authornamehash}{88d4f4e59c3824f9a36156dcf91a526f}
+      \strng{authorfullhash}{88d4f4e59c3824f9a36156dcf91a526f}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The objective of this study is to evaluate the effect of face velocity, nanofiber packing density and nanofiber layer thickness on filtration efficiency and pressure drop of filters with nanofibers coated on a substrate. The substrate is a non-woven microfiber medium with negligible filtration efficiency and pressure drop as compared to nanofiber layer. The nanofiber layer is composed of electrospun polyethylene oxide nanofibers with mean diameter equals to 208nm. Test aerosol is sodium chloride with size ranging from 50 to 480nm. Experimental results show that the most penetrating particle size decreases from 140 to 90nm when nanofiber packing density increases from 3.9 to 36×10−3. When face velocity is increased from 5 to 10cms−1, the filtration efficiency generally decreases, and the reduction becomes larger at smaller particle sizes especially for those below 100nm. By maintaining nanofiber packing density at 8.7×10−2 and almost triple the nanofiber layer thickness, the most penetrating particle size decreases slightly from 140 to 120nm. This suggests nanofiber layer thickness has less prominent effect on most penetrating particle size than nanofiber packing density. By adding more nanofibers on microfiber substrate in a single layer especially under high fiber packing, the pressure drop across the filter elevates without significantly improving the filtration efficiency exhibiting a diminishing return behavior. Hence, the method of “multi-layering” is proposed to fabricate nanofiber filter with greatly reduced pressure drop. This is advantageous for high efficiency applications with nanofibers of high packing density.}
+      \field{issn}{1383-5866}
+      \field{journaltitle}{Separation and Purification Technology}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{{Effect of face velocity, nanofiber packing density and thickness on filtration performance of filters with nanofibers coated on a substrate}}
+      \field{volume}{71}
+      \field{year}{2010}
+      \field{pages}{30\bibrangedash 37}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/J.SEPPUR.2009.10.017
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1383586609004407
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1383586609004407
       \endverb
     \endentry
     \entry{Madou2011}{article}{}
@@ -288,6 +757,250 @@
       \verb :C$\backslash$:/Users/oskat/Dropbox/PAPER/Papers/Bisht.pdf:pdf
       \endverb
       \keyw{abrication of polymeric nano,attention from researchers due,considerable,electrospinning,fi bers has attracted,mems,micro,microelectromechanical systems,microfabrication,nanopatterning,of applica-,polymeric nano fi ber,suspended nano fi bers,to a wide variety}
+    \endentry
+    \entry{Nagham2017}{article}{}
+      \name{author}{5}{}{%
+        {{hash=1e184b09af942eb855160a1b8d55dde3}{%
+           family={Nagham},
+           familyi={N\bibinitperiod},
+           given={Ismaila},
+           giveni={I\bibinitperiod}}}%
+        {{hash=a64c6709388b973439044a6e1ff721a8}{%
+           family={Maksoudb},
+           familyi={M\bibinitperiod},
+           given={Fouad\bibnamedelima Junior},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=53ffee5bc4c9d81383511afd20d531ab}{%
+           family={Nesreen},
+           familyi={N\bibinitperiod},
+           given={Ghaddara},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f973945ec6f4edc1d6a5ac82005b467c}{%
+           family={Ghalia},
+           familyi={G\bibinitperiod},
+           given={Kamel},
+           giveni={K\bibinitperiod}}}%
+        {{hash=8ac9bd502b32733d0a901b2f0dae55be}{%
+           family={Tehrani-Baghab},
+           familyi={T\bibinithyphendelim B\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon}%
+      }
+      \strng{namehash}{84373dc26c8969f56e59909bc3e7b017}
+      \strng{fullhash}{b2970b3cff35e04accf6d9e335eaa68b}
+      \strng{bibnamehash}{84373dc26c8969f56e59909bc3e7b017}
+      \strng{authorbibnamehash}{84373dc26c8969f56e59909bc3e7b017}
+      \strng{authornamehash}{84373dc26c8969f56e59909bc3e7b017}
+      \strng{authorfullhash}{b2970b3cff35e04accf6d9e335eaa68b}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0021-8502}
+      \field{journaltitle}{Journal of Aerosol Science}
+      \field{month}{11}
+      \field{title}{{A mathematical model to predict the effect of electrospinning processing parameters on the morphological characteristic of nano-fibrous web and associated filtration efficiency}}
+      \field{volume}{113}
+      \field{year}{2017}
+      \field{pages}{227\bibrangedash 241}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/J.JAEROSCI.2017.08.013
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}Thesis/relatedArticles/ElectrospinMathModel.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0021850216302154
+      \endverb
+      \verb{url}
+      \verb https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0021850216302154
+      \endverb
+    \endentry
+    \entry{Rafiei2013}{article}{}
+      \name{author}{5}{}{%
+        {{hash=93a4811390108da9fd2a9513325ff9f7}{%
+           family={Rafiei},
+           familyi={R\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1d3300d11489a83e9613a09bdbe25cb6}{%
+           family={Maghsoodloo},
+           familyi={M\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3a9eb8f15f569916a3f067917ad96607}{%
+           family={Noroozi},
+           familyi={N\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod}}}%
+        {{hash=2f2760f00673fab27fb8b18f16526133}{%
+           family={Mottaghitalab},
+           familyi={M\bibinitperiod},
+           given={V},
+           giveni={V\bibinitperiod}}}%
+        {{hash=eecd67c65d0cce8e5940de54a88494e5}{%
+           family={Haghi},
+           familyi={H\bibinitperiod},
+           given={A.\bibnamedelimi K},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{3b2e057c5b5ef7182a7dfbfbea770aca}
+      \strng{fullhash}{c8781d2cc3af3bbfe8b1123899939448}
+      \strng{bibnamehash}{3b2e057c5b5ef7182a7dfbfbea770aca}
+      \strng{authorbibnamehash}{3b2e057c5b5ef7182a7dfbfbea770aca}
+      \strng{authornamehash}{3b2e057c5b5ef7182a7dfbfbea770aca}
+      \strng{authorfullhash}{c8781d2cc3af3bbfe8b1123899939448}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Cellulose Chemestry and Technology}}
+      \field{volume}{47}
+      \field{year}{2013}
+      \field{pages}{323}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb http://www.cellulosechemtechnol.ro/index.php
+      \endverb
+      \verb{url}
+      \verb http://www.cellulosechemtechnol.ro/index.php
+      \endverb
+    \endentry
+    \entry{Reneker2006}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=8690f9e011f01659e59d1fbdb030c24d}{%
+           family={Reneker},
+           familyi={R\bibinitperiod},
+           given={Darrell\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=f77061c22b952690d0c48bbd50a09ac6}{%
+           family={Fong},
+           familyi={F\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{89c2cc5be7b4b6daf22f84ccf9ac09a7}
+      \strng{fullhash}{89c2cc5be7b4b6daf22f84ccf9ac09a7}
+      \strng{bibnamehash}{89c2cc5be7b4b6daf22f84ccf9ac09a7}
+      \strng{authorbibnamehash}{89c2cc5be7b4b6daf22f84ccf9ac09a7}
+      \strng{authornamehash}{89c2cc5be7b4b6daf22f84ccf9ac09a7}
+      \strng{authorfullhash}{89c2cc5be7b4b6daf22f84ccf9ac09a7}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{{Polymeric Nanofibers: Introduction}}
+      \field{year}{2006}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1021/bk-2006-0918.ch001
+      \endverb
+      \verb{urlraw}
+      \verb http://pubs.acs.org/doi/abs/10.1021/bk-2006-0918.ch001
+      \endverb
+      \verb{url}
+      \verb http://pubs.acs.org/doi/abs/10.1021/bk-2006-0918.ch001
+      \endverb
+    \endentry
+    \entry{Roozemond2007}{report}{}
+      \name{author}{2}{}{%
+        {{hash=f9f439bd07f0f993a0389f0403be5103}{%
+           family={Roozemond},
+           familyi={R\bibinitperiod},
+           given={P\bibnamedelima C},
+           giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=859a297d81989cb02e0c4131dd6ffb42}{%
+           family={Solberg},
+           familyi={S\bibinitperiod},
+           given={R\bibnamedelima H\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a169862c6c681b9c2105b7c278122c93}
+      \strng{fullhash}{a169862c6c681b9c2105b7c278122c93}
+      \strng{bibnamehash}{a169862c6c681b9c2105b7c278122c93}
+      \strng{authorbibnamehash}{a169862c6c681b9c2105b7c278122c93}
+      \strng{authornamehash}{a169862c6c681b9c2105b7c278122c93}
+      \strng{authorfullhash}{a169862c6c681b9c2105b7c278122c93}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A model for electrospinning of a Newtonian fluid, derived by Feng [1], was implemented in For-tran code based on a relaxation method, by Solberg [2]. Expansion of the model to a viscoelastic fluid, using the Giesekus constitutive equation was derived by Feng [3]. This report deals with expanding the Newtonian base code to a viscoelastic code. The main issue with the relaxation method is to provide the code with a sufficiently accurate initial guess. A method is presented that is based on a Newtonian solution as an initial guess for the vis-coelastic model. Solutions for a viscoelastic and a Newtonian fluid are compared and the effect of strain-hardening is shown.}
+      \field{title}{{A Model for Electrospinning Viscoelastic Fluids}}
+      \field{type}{techreport}
+      \field{year}{2007}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Roozemond, Solberg - 2007 - A Model for Electrospinning Viscoelastic Fluids.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.mate.tue.nl/mate/pdfs/7892.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.mate.tue.nl/mate/pdfs/7892.pdf
+      \endverb
+    \endentry
+    \entry{Shin2001a}{article}{}
+      \name{author}{4}{}{%
+        {{hash=04895e47e199bdeb105c33c28519a116}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Y.\bibnamedelimi M.},
+           giveni={Y\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=8ce2ec38feceeb5dc4331cd60507f988}{%
+           family={Hohman},
+           familyi={H\bibinitperiod},
+           given={M.\bibnamedelimi M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=2253de395e0805b05666e03159bf7261}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={M.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=1ae374a405a9b5ce7daa378d58080892}{%
+           family={Rutledge},
+           familyi={R\bibinitperiod},
+           given={G.\bibnamedelimi C.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Physics}%
+      }
+      \strng{namehash}{b3d9faf239fd0c67d48f802981079d50}
+      \strng{fullhash}{45fa8014cf83277a33e4ced4a7c8dbc2}
+      \strng{bibnamehash}{b3d9faf239fd0c67d48f802981079d50}
+      \strng{authorbibnamehash}{b3d9faf239fd0c67d48f802981079d50}
+      \strng{authornamehash}{b3d9faf239fd0c67d48f802981079d50}
+      \strng{authorfullhash}{45fa8014cf83277a33e4ced4a7c8dbc2}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Polymeric fibers with diameters in the range from 50 nm to 5 $\mu$m are produced by accelerating a fluid jet in an electric field, in a process known as “electrospinning.” Here we show that an essential element of the process is a fluid instability, the rapidly whipping jet. The phenomena responsible for the onset of whipping are revealed by a linear instability analysis that describes the jet behavior in terms of known fluid properties and operating conditions. The behavior of two competing instabilities, the Rayleigh mode and the axisymmetric conducting mode, is also described. The results are summarized using operating diagrams, delineating regimes of operation in electrospinning, which are in good agreement with experimental observations.}
+      \field{issn}{0003-6951}
+      \field{journaltitle}{Applied Physics Letters}
+      \field{month}{2}
+      \field{number}{8}
+      \field{title}{{Electrospinning: A whipping fluid jet generates submicron polymer fibers}}
+      \field{volume}{78}
+      \field{year}{2001}
+      \field{pages}{1149\bibrangedash 1151}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1063/1.1345798
+      \endverb
+      \verb{urlraw}
+      \verb http://aip.scitation.org/doi/10.1063/1.1345798
+      \endverb
+      \verb{url}
+      \verb http://aip.scitation.org/doi/10.1063/1.1345798
+      \endverb
+      \keyw{flow instability,jets,polymer fibres,spin coating}
     \endentry
     \entry{Siddiqui2019}{article}{}
       \name{author}{10}{}{%
@@ -377,6 +1090,84 @@
       \verb{url}
       \verb https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S2213343718307358
       \endverb
+    \endentry
+    \entry{Taylor1969}{article}{}
+      \name{author}{1}{}{%
+        {{hash=82a50d139c0bb0720ead635e48db335b}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{82a50d139c0bb0720ead635e48db335b}
+      \strng{fullhash}{82a50d139c0bb0720ead635e48db335b}
+      \strng{bibnamehash}{82a50d139c0bb0720ead635e48db335b}
+      \strng{authorbibnamehash}{82a50d139c0bb0720ead635e48db335b}
+      \strng{authornamehash}{82a50d139c0bb0720ead635e48db335b}
+      \strng{authorfullhash}{82a50d139c0bb0720ead635e48db335b}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1364-5021}
+      \field{journaltitle}{Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}
+      \field{month}{12}
+      \field{number}{1515}
+      \field{title}{{Electrically Driven Jets}}
+      \field{volume}{313}
+      \field{year}{1969}
+      \field{pages}{453\bibrangedash 475}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1098/rspa.1969.0205
+      \endverb
+      \verb{urlraw}
+      \verb http://rspa.royalsocietypublishing.org/cgi/doi/10.1098/rspa.1969.0205
+      \endverb
+      \verb{url}
+      \verb http://rspa.royalsocietypublishing.org/cgi/doi/10.1098/rspa.1969.0205
+      \endverb
+    \endentry
+    \entry{Yarin2011}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0b6b368fbd95112e1c5bd272c4b41476}{%
+           family={Yarin},
+           familyi={Y\bibinitperiod},
+           given={A.L.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley {\&} Sons, Ltd}%
+      }
+      \strng{namehash}{0b6b368fbd95112e1c5bd272c4b41476}
+      \strng{fullhash}{0b6b368fbd95112e1c5bd272c4b41476}
+      \strng{bibnamehash}{0b6b368fbd95112e1c5bd272c4b41476}
+      \strng{authorbibnamehash}{0b6b368fbd95112e1c5bd272c4b41476}
+      \strng{authornamehash}{0b6b368fbd95112e1c5bd272c4b41476}
+      \strng{authorfullhash}{0b6b368fbd95112e1c5bd272c4b41476}
+      \field{sortinit}{Y}
+      \field{sortinithash}{b8d711a035f7be9840c721c82920477e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{10427147}
+      \field{journaltitle}{Polymers for Advanced Technologies}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{{Coaxial electrospinning and emulsion electrospinning of core-shell fibers}}
+      \field{volume}{22}
+      \field{year}{2011}
+      \field{pages}{310\bibrangedash 317}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1002/pat.1781
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.wiley.com/10.1002/pat.1781
+      \endverb
+      \verb{url}
+      \verb http://doi.wiley.com/10.1002/pat.1781
+      \endverb
+      \keyw{core,co‐electrospinning,drug release,emulsion electrospinning,encapsulation,nanofluidics,nanotubes,shell nanofibers}
     \endentry
   \enddatalist
 \endrefsection

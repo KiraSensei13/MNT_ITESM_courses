@@ -71,7 +71,7 @@ chapterinoneline,
 %\usepackage[style=apa, backend=biber]{biblatex}
 
 % The filename of the bibliography
-\addbibresource{mainBiblio.bib}
+\addbibresource{mainBiblio2.bib}
 
 % Required to generate language-dependent quotes in the bibliography
 \usepackage[autostyle=true]{csquotes}
@@ -232,6 +232,19 @@ chapterinoneline,
 \end{titlepage}
 
 %----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+
+Carbon nano-wires are versatile materials composed of carbon chains with a wide range of applications due to their unrivalled properties in electrical matters. Regardless of the high interest in the implementation of carbon nano-wires in several applications and devices, no feasible processes have been developed to fabricate carbon nano-wires. Carbon nano-wires have been fabricated with the use of a photoresist, but little is known about polymers that can produce more conductive carbon nano-wires after pyrolysis. Various polymer solutions have been tested in near field electrospinning (NFES) and photopolymerization processes, however, few have been tested for nano-wire frabication purposes through pyrolysis. The intention behind the thesis proposal is to implement rheology analyses of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nano-wires with them. This thesis work arises from the need to test a greater variety of polymers with the goal to design a polymer solution to fabricate carbon nano-wires with better properties than the current SU-8 polymeric nano-fibers. The research process will include the design of polymer solutions that can be electrospun, photopolymerized, and then pyrolyzed into conducting carbon nanowires. On the other hand, it is intended to engineer a newly designed polymer solution to achieve mass scale manufacturing of carbon nano-wires in a inexpensive, continuous, simple and reproducible manner. \\
+
+\noindent
+\textbf{keywords:} \keywordnames
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
 
@@ -239,7 +252,7 @@ chapterinoneline,
 
 \listoffigures % Prints the list of figures
 
-\listoftables % Prints the list of tables
+%\listoftables % Prints the list of tables
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -276,19 +289,6 @@ chapterinoneline,
 \end{abbreviations}
 
 %----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{abstract}
-\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-
-Carbon nano-wires are versatile materials composed of carbon chains with a wide range of applications due to their unrivalled properties in electrical matters. Regardless of the high interest in the implementation of carbon nano-wires in several applications and devices, no feasible processes have been developed to fabricate carbon nano-wires. Carbon nano-wires have been fabricated with the use of a photoresist, but little is known about polymers that can produce more conductive carbon nano-wires after pyrolysis. Various polymer solutions have been tested in near field electrospinning (NFES) and photopolymerization processes, however, few have been tested for nano-wire frabication purposes through pyrolysis. The intention behind the thesis proposal is to implement rheology analyses of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nano-wires with them. This thesis work arises from the need to test a greater variety of polymers with the goal to design a polymer solution to fabricate carbon nano-wires with better properties than the current SU-8 polymeric nano-fibers. The research process will include the design of polymer solutions that can be electrospun, photopolymerized, and then pyrolyzed into conducting carbon nanowires. On the other hand, it is intended to engineer a newly designed polymer solution to achieve mass scale manufacturing of carbon nano-wires in a inexpensive, continuous, simple and reproducible manner. \\
-
-\noindent
-\textbf{keywords:} \keywordnames
-\end{abstract}
-
-%----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
 %----------------------------------------------------------------------------------------
 
@@ -305,17 +305,26 @@ Carbon nano-wires are versatile materials composed of carbon chains with a wide 
 %	SYMBOLS
 %----------------------------------------------------------------------------------------
 
-%\begin{symbols}{lll} % Include a list of Symbols (a three column table)
+\begin{symbols}{lll} % Include a list of Symbols (a three column table)
 
-%$a$ & distance & \si{\meter} \\
-%$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
-%Symbol & Name & Unit \\
+$AP$ & air permeability & m/s \\
+$C$ & polymer concentration & wt\% \\
+$E$ & electric field & V/m \\
+$I$ & electric current & A \\
+$k$ & resistance parameter & $\Omega$ \\
+$Q$ & volumetric mass flow rate & $m^{3}$/s \\
+$r$ & distance & m \\
 
-%\addlinespace % Gap to separate the Roman symbols from the Greek
+\addlinespace % Gap to separate the Roman symbols from the Greek
 
-%$\omega$ & angular frequency & \si{\radian} \\
+$\alpha$ & solidity & \\
+$\gamma$ & surface tension coefficient & N/m \\
+$\lambda$ & mean free path for air molecules & m \\
+$\rho$ & density of the solution & kg/$m^{3}$ \\
+$\omega$ & rotation rate & rad/s \\
+$\bar{\varepsilon}$ & permittivity of air & \\
 
-%\end{symbols}
+\end{symbols}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
