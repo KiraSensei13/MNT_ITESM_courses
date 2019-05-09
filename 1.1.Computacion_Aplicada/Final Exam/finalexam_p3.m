@@ -95,8 +95,17 @@ end
 
 % let's feed our neuron/perceptron some intputs to get a guess.
 inputs = data_arr(1,1:width(data)-1);
+% initialize the weights randomly
+nInputs = size(inputs,2);
+weights = zeros(1,nInputs);
+for k=1:nInputs
+    weights(1,k) = randi([-10 10]);
+end
+% set the known target to compute the error
 target = data_arr(1,width(data));
-neuron = perceptron(inputs,target);
+% let's create a neuron
+neuron = perceptron(inputs,weights,target);
+%neuron.train;
 % disp(neuron); % debugging purposes
 
 %% ************************************************************************
@@ -122,7 +131,7 @@ for k=1:width(predict)
     if isa(table_col,'cell')
         % convert data.Sex values to integers:
         % F = 70, M = 77, I = 73
-        data_arr(1:height(predict),k) = cell2mat(table_col);
+        predict_arr(1:height(predict),k) = cell2mat(table_col);
     else
         predict_arr(1:height(predict),k) = table_col;
     end

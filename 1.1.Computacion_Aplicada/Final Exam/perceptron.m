@@ -10,35 +10,37 @@ classdef perceptron
     properties
 
         Inputs;
-        target;
         weights;
+        target;
         Output;
         
     end
     methods
         
-        function obj = perceptron(Inputs,target)
+        function obj = perceptron(Inputs,weights,target)
             % class constructor
             if(nargin > 0)
                 
                 obj.Inputs = Inputs;
-                nInputs = size(Inputs,2);
+%                 nInputs = size(Inputs,2);
+                
+                obj.weights = weights;
                 
                 obj.target = target;
                 
-                % initialize the weights randomly
-                for k=1:nInputs
-                    obj.weights(k,1) = randi([-10 10]);
-                end
+%                 % initialize the weights randomly
+%                 for k=1:nInputs
+%                     obj.weights(k,1) = randi([-10 10]);
+%                 end
                 
                 % make a guess
                 obj.Output = obj.guess();
                 
-                obj.weights = obj.train(target);
+                %obj.weights = obj.train();
             end
         end
         
-        function guess = guess(obj)
+        function guessedObj = guess(obj)
             nInputs = size(obj.Inputs,2);
             sum = 0;
             for k=1:nInputs
@@ -46,24 +48,30 @@ classdef perceptron
             end
 %             disp(sum); % debugging purposes
             guess = activationFunct(sum);
+            
+            obj.Output = guess;
+            guessedObj = obj;
         end
         
-        function train(obj)
+        function trainedObj = train(obj)
             nInputs = size(obj.Inputs,2);
             guess = obj.Output;
 %             disp(target) % debugging purposes
 %             disp(guess) % debugging purposes
             error = obj.target - guess;
-            disp(error);
-            learningRate = 10;
+            learningRate = 0.001;
+            train = obj.weights;
             
             % Tune all the weights
-            for k=1:(nInputs-1)
-                obj.weights(k,1) = ...
-                    obj.weights(k,1) + error*obj.Inputs(k)*learningRate;
+            for k=1:nInputs
+                train(1,k) = ...
+                    train(1,k) + error*obj.Inputs(k)*learningRate;
+                disp(obj.Inputs(k))
             end
+            
+            obj.weights = train;
+            trainedObj = obj;
         end
-        
     end
 end
 

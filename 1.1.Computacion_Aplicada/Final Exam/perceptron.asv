@@ -10,31 +10,33 @@ classdef perceptron
     properties
 
         Inputs;
-        target;
         weights;
+        target;
         Output;
         
     end
     methods
         
-        function obj = perceptron(Inputs,target)
+        function obj = perceptron(Inputs,weights,target)
             % class constructor
             if(nargin > 0)
                 
                 obj.Inputs = Inputs;
                 nInputs = size(Inputs,2);
                 
+                obj.weights = weights
+                
                 obj.target = target;
                 
-                % initialize the weights randomly
-                for k=1:nInputs
-                    obj.weights(k,1) = randi([-10 10]);
-                end
+%                 % initialize the weights randomly
+%                 for k=1:nInputs
+%                     obj.weights(k,1) = randi([-10 10]);
+%                 end
                 
                 % make a guess
                 obj.Output = obj.guess();
                 
-                trainedobj.train(target);
+                %obj.weights = obj.train();
             end
         end
         
@@ -50,18 +52,25 @@ classdef perceptron
         
         function train(obj)
             nInputs = size(obj.Inputs,2);
-            guess = obj.guess();
+            guess = obj.Output;
 %             disp(target) % debugging purposes
 %             disp(guess) % debugging purposes
             error = obj.target - guess;
-            disp(error);
             learningRate = 10;
+            train = obj.weights;
             
             % Tune all the weights
-            for k=1:(nInputs-1)
-                obj.weights(k,1) = ...
-                    obj.weights(k,1) + error*obj.Inputs(k)*learningRate;
+            for k=1:nInputs
+                train(k,1) = ...
+                    train(k,1) + error*obj.Inputs(k)*learningRate;
             end
+            
+            disp(obj.target)
+            disp(guess)
+            disp(error)
+            disp(obj.Inputs)
+            
+            obj.weights = train;
         end
         
     end
