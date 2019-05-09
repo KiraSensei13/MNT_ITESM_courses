@@ -44,10 +44,37 @@ close all, clear all, clc, format compact
 
 % load shellfish data
 ssds = spreadsheetDatastore('./shellfish.xlsx');
+
+% store the 1st sheet - DATA **********************************************
 ssds.Sheets = 1;
 data = read(ssds);
-ssds.Sheets = 2;
-predict = read(ssds);
+data_arr = zeros(height(data),width(data));
+
+% convert cell matrix to ordinary matrix
+for k=1:width(data)
+    data_varNames = data.Properties.VariableNames(k);
+    data_varNames = cell2mat(data_varNames);
+    %data_varNames % debugging purposes
+    
+    table_col = table2array(data(1:height(data),k));
+    %class(table_col) % debugging purposes
+    
+    %try % debugging purposes
+    if isa(table_col,'cell')
+        % convert data.Sex values to integers:
+        % F = 70, M = 77, I = 73
+        data_arr(1:height(data),k) = cell2mat(table_col);
+    else
+        data_arr(1:height(data),k) = table_col;
+    end
+    %catch % debugging purposes
+    %    warning(varName); % debugging purposes
+    %end % debugging purposes
+
+    %class(data_arr) % debugging purposes
+end
+
+% data_arr shall be used for the neural training
 
 %% ************************************************************************
 % a) Train a neural network using the information of these 4077.
@@ -56,14 +83,57 @@ predict = read(ssds);
 %        data sets.
 %     2) Explain any pre-processing done to the data.
 
+% let's train the neuron/perceptron with the known training data in
+% data_arr - Through a SUPERVISED LEARNING ALGORITHM
+%    1) Provide the perceptron with inputs for which there is a known
+%       answer
+%    2) Ask the perceptron to guess an answer
+%    3) Compute the error (Did it get the answer right or wrong?)
+%    4) Adjust all the weights according to the error
+%    5) Return to step 1) and repeat!
 
+
+% let's feed our neuron/perceptron some intputs to get a guess.
+inputs = data_arr(1,1:width(data)-1);
+target = data_arr(1,width(data));
+neuron = perceptron(inputs,target);
+% disp(neuron); % debugging purposes
 
 %% ************************************************************************
 % b) Using your trained neural network, determine the age of the 100
 %    individuals in sheet predict. Write the results to as a column of an
 %    Excel worksheet.
 
+% store the 2nd sheet - PREDICT *******************************************
+ssds.Sheets = 2;
+predict = read(ssds);
+predict_arr = zeros(height(predict),width(predict));
 
+% convert cell matrix to ordinary matrix
+for k=1:width(predict)
+    predict_varNames = predict.Properties.VariableNames(k);
+    predict_varNames = cell2mat(predict_varNames);
+    %predict_varNames % debugging purposes
+    
+    table_col = table2array(predict(1:height(predict),k));
+    %class(table_col) % debugging purposes
+    
+    %try % debugging purposes
+    if isa(table_col,'cell')
+        % convert data.Sex values to integers:
+        % F = 70, M = 77, I = 73
+        data_arr(1:height(predict),k) = cell2mat(table_col);
+    else
+        predict_arr(1:height(predict),k) = table_col;
+    end
+    %catch % debugging purposes
+    %    warning(varName); % debugging purposes
+    %end % debugging purposes
+
+    %class(data_arr) % debugging purposes
+end
+
+% data from predict_arr shall be used to predict the Age
 
 %% ************************************************************************
 % c) Give an estimate of the expected error of your neural network on new
