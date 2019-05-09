@@ -1,0 +1,208 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>**********************************************************************</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-05-09"><meta name="DC.source" content="bIntegerProgramming.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>**********************************************************************</h1><!--introduction--><div><ul><li>AUTHOR(S) :</li><li>Bruno Gonz&aacute;lez Soria          (A01169284)</li><li>Antonio Osamu Katagiri Tanaka (A01212611) *</li><li>FILENAME :</li><li>HW03.m *</li><li>DESCRIPTION :</li><li>Computaci&oacute;n Aplicada (Ene 19 Gpo 1)</li><li>Final Exam *</li><li>NOTES :</li><li>In submitting the solution to this final exam, We Bruno Gonz&aacute;lez</li><li>Soria and Antonio Osamu Katagiri Tanaka affirm our awareness of the</li><li>standards of the Tecnol&oacute;gico de Monterrey Ethics Code. *</li><li>START DATE :</li><li>02 May 2019</li></ul></div><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">**********************************************************************</a></li><li><a href="#2">**********************************************************************</a></li><li><a href="#3">**********************************************************************</a></li></ul></div><h2 id="1">**********************************************************************</h2><p>This script should start with the command rng(31416), and should not contain any other call that initializes the state of the random number generator.</p><pre class="codeinput">close <span class="string">all</span>, clear <span class="string">all</span>, clc, format <span class="string">compact</span>
+rng(31416)
+</pre><h2 id="2">**********************************************************************</h2><p>Problem : INTEGER PROGRAMMING</p><p>An airline company is considering the purchase of new long-, medium-, and short-range jet passenger airplanes. The purchase price is $33.5M for each long-range plane, $25M for each medium-range plane, and $17.5M for each short-range plane. The board of directors has authorized a maximum of $750M for these purchases. Regardless of which planes are purchased, air travel of all distances is expected to be sufficiently large enough so that these planes would be utilized at essentially maximum capacity. It is estimated that the net annual profit (after subtracting capital recovery costs) would be $2.1M per long-range plane, $1.5M per medium-range plane, and $1.15M per short-range plane.</p><p>Enough trained pilots are available to the company to crew 30 new airplanes. If only short-range planes were purchased, facilities would be able to handle 40 new planes. However, each medium-plane is equivalent to 1+1/3 short-range planes, and each long-range plane is equivalent to 1+2/3 short-range planes in terms of their use of maintenance facilities. Using the preceding data, management wishes to know how many planes of each type should be purchased to maximize profit.</p><h2 id="3">**********************************************************************</h2><p>a) Formulate the problem as an integer programming problem.</p><pre>  Let L be the number of long-range jets to buy
+  Let M be the number of medium-range jets to buy
+  Let S be the number of short-range jets to buy
+  And let P the profit</pre><pre>  Maximise P = 2.1*L + 1.5*M + 1.15*S</pre><pre>  Subject to: 33.5*L + 25*M + 17.55*S &lt;= 750
+              L + M + S &lt;= 30
+              1.67*L + 1.33*M + S &lt;= 40
+              L &gt;= 0, M &gt;= 0, S &gt;= 0
+              L, M, S are integers</pre><p>b) Use intlinprog to find the solution (number of planes of each type and    maximum profit)</p><pre class="codeinput">l = optimvar(<span class="string">'L'</span>,<span class="string">'Type'</span>,<span class="string">'integer'</span>);
+m = optimvar(<span class="string">'M'</span>,<span class="string">'Type'</span>,<span class="string">'integer'</span>);
+s = optimvar(<span class="string">'S'</span>,<span class="string">'Type'</span>,<span class="string">'integer'</span>);
+prob = optimproblem(<span class="string">'ObjectiveSense'</span>,<span class="string">'maximize'</span>);
+prob.Objective = 2.1*l + 1.5*m + 1.15*s;
+prob.Constraints.cons1 = 33.5*l + 25*m + 17.55*s &lt;= 750;
+prob.Constraints.cons2 = l + m + s &lt;= 30;
+prob.Constraints.cons3 = (5/3)*l + (4/3)*m + s &lt;= 40;
+prob.Constraints.cons4 = l &gt;= 0;
+prob.Constraints.cons5 = m &gt;= 0;
+prob.Constraints.cons6 = s &gt;= 0;
+
+options = optimoptions(<span class="string">'intlinprog'</span>,<span class="string">'Display'</span>,<span class="string">'off'</span>);
+
+sol = solve(prob);
+disp(sol);
+</pre><pre class="codeoutput">LP:                Optimal objective value is -47.811912.                                           
+
+Heuristics:        Found 1 solution using rounding.                                                 
+                   Upper bound is -46.650000.                                                       
+                   Relative gap is 2.44%.                                                          
+
+Cut Generation:    Applied 1 mir cut.                                                               
+                   Lower bound is -47.809396.                                                       
+                   Relative gap is 2.43%.                                                          
+
+Branch and Bound:
+
+   nodes     total   num int        integer       relative                                          
+explored  time (s)  solution           fval        gap (%)                                         
+       2      0.00         2  -4.780000e+01   1.223065e-12                                          
+
+Optimal solution found.
+
+Intlinprog stopped because the objective value is within a gap tolerance of the
+optimal value, options.AbsoluteGapTolerance = 0 (the default value). The intcon
+variables are integer within tolerance, options.IntegerTolerance = 1e-05 (the
+default value).
+
+    L: 14.0000
+    M: 0
+    S: 16
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% ************************************************************************
+% * AUTHOR(S) :
+% *     Bruno González Soria          (A01169284)
+% *     Antonio Osamu Katagiri Tanaka (A01212611)
+% *
+% * FILENAME :
+% *     HW03.m
+% *
+% * DESCRIPTION :
+% *     Computación Aplicada (Ene 19 Gpo 1)
+% *     Final Exam
+% *
+% * NOTES :
+% *     In submitting the solution to this final exam, We Bruno González
+% *     Soria and Antonio Osamu Katagiri Tanaka affirm our awareness of the
+% *     standards of the Tecnológico de Monterrey Ethics Code.
+% *
+% * START DATE :
+% *     02 May 2019
+%% ************************************************************************
+% This script should start with the command rng(31416), and should not
+% contain any other call that initializes the state of the random number
+% generator. 
+
+close all, clear all, clc, format compact
+rng(31416)
+
+%% ************************************************************************
+% Problem : INTEGER PROGRAMMING
+% 
+% An airline company is considering the purchase of new long-, medium-, and
+% short-range jet passenger airplanes. The purchase price is $33.5M for
+% each long-range plane, $25M for each medium-range plane, and $17.5M for
+% each short-range plane. The board of directors has authorized a maximum
+% of $750M for these purchases. Regardless of which planes are purchased,
+% air travel of all distances is expected to be sufficiently large enough
+% so that these planes would be utilized at essentially maximum capacity.
+% It is estimated that the net annual profit (after subtracting capital
+% recovery costs) would be $2.1M per long-range plane, $1.5M per
+% medium-range plane, and $1.15M per short-range plane.
+% 
+% Enough trained pilots are available to the company to crew 30 new
+% airplanes. If only short-range planes were purchased, facilities would be
+% able to handle 40 new planes. However, each medium-plane is equivalent to
+% 1+1/3 short-range planes, and each long-range plane is equivalent to
+% 1+2/3 short-range planes in terms of their use of maintenance facilities.
+% Using the preceding data, management wishes to know how many planes of
+% each type should be purchased to maximize profit.
+
+%% ************************************************************************
+% a) Formulate the problem as an integer programming problem.
+%
+%    Let L be the number of long-range jets to buy
+%    Let M be the number of medium-range jets to buy
+%    Let S be the number of short-range jets to buy
+%    And let P the profit
+%    
+%    Maximise P = 2.1*L + 1.5*M + 1.15*S
+%
+%    Subject to: 33.5*L + 25*M + 17.55*S <= 750
+%                L + M + S <= 30
+%                1.67*L + 1.33*M + S <= 40
+%                L >= 0, M >= 0, S >= 0
+%                L, M, S are integers
+%
+% b) Use intlinprog to find the solution (number of planes of each type and
+%    maximum profit)
+
+l = optimvar('L','Type','integer');
+m = optimvar('M','Type','integer');
+s = optimvar('S','Type','integer');
+prob = optimproblem('ObjectiveSense','maximize');
+prob.Objective = 2.1*l + 1.5*m + 1.15*s;
+prob.Constraints.cons1 = 33.5*l + 25*m + 17.55*s <= 750;
+prob.Constraints.cons2 = l + m + s <= 30;
+prob.Constraints.cons3 = (5/3)*l + (4/3)*m + s <= 40;
+prob.Constraints.cons4 = l >= 0;
+prob.Constraints.cons5 = m >= 0;
+prob.Constraints.cons6 = s >= 0;
+
+options = optimoptions('intlinprog','Display','off');
+
+sol = solve(prob);
+disp(sol);
+
+##### SOURCE END #####
+--></body></html>

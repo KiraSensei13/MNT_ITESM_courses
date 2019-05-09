@@ -51,7 +51,10 @@ rng(31416)
 %   b) Give your best solution found (optimal x and evaluation of x) for
 %   each algorithm.
 
+
+
 %% ************************************************************************
 %   c) Which of these two algorithms has a better expected performance on
 %   this problem when varying the initial point(s)? Justify your answer.
+
 
