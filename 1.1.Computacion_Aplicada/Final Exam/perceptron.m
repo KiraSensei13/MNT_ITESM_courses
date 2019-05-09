@@ -20,57 +20,51 @@ classdef perceptron
         function obj = perceptron(Inputs,weights,target)
             % class constructor
             if(nargin > 0)
-                
                 obj.Inputs = Inputs;
-%                 nInputs = size(Inputs,2);
-                
                 obj.weights = weights;
-                
                 obj.target = target;
-                
-%                 % initialize the weights randomly
-%                 for k=1:nInputs
-%                     obj.weights(k,1) = randi([-10 10]);
-%                 end
-                
-                % make a guess
-                obj.Output = obj.guess();
-                
-                %obj.weights = obj.train();
+                obj.Output = obj.guess(); % save the preliminary guess
             end
         end
         
         function guessedObj = guess(obj)
-            nInputs = size(obj.Inputs,2);
+            nInputs = size(obj.Inputs,2); % get the number of inputs
+            % compute the weighted sum
             sum = 0;
             for k=1:nInputs
                 sum = sum + obj.Inputs(k)*obj.weights(k);
             end
 %             disp(sum); % debugging purposes
+            % let the activation function to make an output guess
             guess = activationFunct(sum);
             
+            % modify the Output property
             obj.Output = guess;
+            % return the modified object
             guessedObj = obj;
         end
         
         function trainedObj = train(obj)
-            nInputs = size(obj.Inputs,2);
+            nInputs = size(obj.Inputs,2); % get the number of inputs
             guess = obj.Output;
 %             disp(target) % debugging purposes
 %             disp(guess) % debugging purposes
             error = obj.target - guess;
-            learningRate = 0.001;
+            learningRate = 0.001; % value used to avoid tunning overshoots
             train = obj.weights;
             
             % Tune all the weights
             for k=1:nInputs
                 train(1,k) = ...
                     train(1,k) + error*obj.Inputs(k)*learningRate;
-                disp(obj.Inputs(k))
+%                 disp(obj.Inputs(k)) % debugging purposes
             end
             
+            % modify the weights property
             obj.weights = train;
+            % return the modified object
             trainedObj = obj;
+
         end
     end
 end
@@ -80,32 +74,3 @@ function res = activationFunct(sum)
     % implement a linear trendline to make a guess
     res = 0.0074*sum + 7.4145;
 end
-
-% classdef perceptron
-%     % write a description of the class here.
-%     properties
-%         % define the properties of the class here, (like fields of a struct)
-%         minute = 0;
-%         hour;
-%         day;
-%         month;
-%         year;
-%     end
-%     methods
-%         % methods, including the constructor are defined in this block
-%         function obj = perceptron(minute,hour,day,month,year)
-%             % class constructor
-%             if(nargin > 0)
-%                 obj.minute = minute;
-%                 obj.hour   = hour;
-%                 obj.day    = day;
-%                 obj.month  = month;
-%                 obj.year   = year;
-%             end
-%         end
-%         
-%         function obj = rollDay(obj,numdays)
-%             obj.day = obj.day + numdays;
-%         end
-%     end
-% end

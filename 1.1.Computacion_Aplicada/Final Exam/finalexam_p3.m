@@ -83,7 +83,7 @@ end
 %        data sets.
 %     2) Explain any pre-processing done to the data.
 
-% let's train the neuron/perceptron with the known training data in
+% let's train the brain/perceptron with the known training data in
 % data_arr - Through a SUPERVISED LEARNING ALGORITHM
 %    1) Provide the perceptron with inputs for which there is a known
 %       answer
@@ -92,21 +92,42 @@ end
 %    4) Adjust all the weights according to the error
 %    5) Return to step 1) and repeat!
 
-
-% let's feed our neuron/perceptron some intputs to get a guess.
-inputs = data_arr(1,1:width(data)-1);
 % initialize the weights randomly
-nInputs = size(inputs,2);
+nInputs = width(data)-1;
 weights = zeros(1,nInputs);
 for k=1:nInputs
     weights(1,k) = randi([-10 10]);
 end
-% set the known target to compute the error
-target = data_arr(1,width(data));
-% let's create a neuron
-neuron = perceptron(inputs,weights,target);
-%neuron.train;
-% disp(neuron); % debugging purposes
+
+% let's create some variables to see how well brain is being trained
+guess = zeros(1,length(data_arr));
+known = zeros(1,length(data_arr));
+
+% let's train the brain n-times
+n = 50;
+for i=1:n
+    for k=1:length(data_arr)
+        % let's feed our brain/perceptron some intputs to get a guess.
+        inputs = data_arr(k,1:width(data)-1);
+        % set the known target to compute the error
+        target = data_arr(k,width(data));
+        % let's create a brain
+        brain = perceptron(inputs,weights,target);
+        % let's ask brain for a guess
+        brain = brain.guess;
+        % let's train the brain according to the previous guess
+        brain = brain.train;
+        % update the weights according to the training
+        weights = brain.weights;
+        % populate the tracking variables
+        guess(1,k) = brain.Output;
+        known(1,k) = brain.target;
+    end
+end
+
+% let's create more variables to see how well brain is being trained
+error = known - guess; % error shall be close to zero ...
+scatter(1:length(data_arr),error);
 
 %% ************************************************************************
 % b) Using your trained neural network, determine the age of the 100
