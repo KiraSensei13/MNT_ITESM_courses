@@ -11,9 +11,9 @@
 % *     Final Exam
 % *
 % * NOTES :
-% *     In submitting the solution to this final exam, I (we) ?your name(s)?
-% *     affirm my (our) awareness of the standards of the Tecnológico de
-% *     Monterrey Ethics Code.
+% *     In submitting the solution to this final exam, We Bruno González
+% *     Soria and Antonio Osamu Katagiri Tanaka affirm our awareness of the
+% *     standards of the Tecnológico de Monterrey Ethics Code.
 % *
 % * START DATE :
 % *     02 May 2019
@@ -25,33 +25,28 @@
 rng(31416)
 
 %% ************************************************************************
-% Problem 1: OPTIMIZATION
-% Consider the following function:
+% Problem : INTEGER PROGRAMMING
 % 
-%                  ____6___                     2
-%                  \      /             18  / ixi \
-%         f(X) =    \        sin(xi) sin   | ----- |
-%                   /                       \  Pi /
-%                  /_______\
-%                     i=1
+% An airline company is considering the purchase of new long-, medium-, and
+% short-range jet passenger airplanes. The purchase price is $33.5M for
+% each long-range plane, $25M for each medium-range plane, and $17.5M for
+% each short-range plane. The board of directors has authorized a maximum
+% of $750M for these purchases. Regardless of which planes are purchased,
+% air travel of all distances is expected to be sufficiently large enough
+% so that these planes would be utilized at essentially maximum capacity.
+% It is estimated that the net annual profit (after subtracting capital
+% recovery costs) would be $2.1M per long-range plane, $1.5M per
+% medium-range plane, and $1.15M per short-range plane.
 % 
-% where 0 < xi < 5.
-% 
-% Maximize function f () using the Nelder-Mead algorithm (fminsearch) and
-% simulated annealing (simulannealbnd). Modify whatever parameters you deem
-% necessary to produce a good performance of these algorithms, regardless
-% of the state of the random number generator. Use randomly generated
-% initial point in the valid range of x.
-%% ************************************************************************
-%   a) Implement f (x) as a MATLAB function.
-
-
-
-%% ************************************************************************
-%   b) Give your best solution found (optimal x and evaluation of x) for
-%   each algorithm.
+% Enough trained pilots are available to the company to crew 30 new
+% airplanes. If only short-range planes were purchased, facilities would be
+% able to handle 40 new planes. However, each medium-plane is equivalent to
+% ? ? ? short-range planes, and each long-range plane is equivalent to ? ?
+% ? short-range planes in terms of their use of maintenance facilities.
+% Using the preceding data, management wishes to know how many planes of
+% each type should be purchased to maximize profit.
 
 %% ************************************************************************
-%   c) Which of these two algorithms has a better expected performance on
-%   this problem when varying the initial point(s)? Justify your answer.
+% a) Formulate the problem as an integer programming problem.
+% b) Use intlinprog to find the solution (number of planes of each type and maximum profit)
 
