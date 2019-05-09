@@ -348,3 +348,23 @@ https://docs.google.com/viewerng/viewer?url=https://vdocuments.site/google-reade
 https://github.com/googlesamples/android-sunflower
 
 https://onedrive.live.com/?authkey=%21AJRazHi1NSdjMSY&id=B97411139F1D3D85%213962&cid=B97411139F1D3D85
+
+/******************************************************************************/
+
+0001  0.1822
+0010  0.0142
+0020 -0.0336
+0030 -0.0373
+0040 -0.0432
+0050 -0.0150
+0060 -0.0216
+0070 -0.0125
+0080 -0.0208
+0090 -0.0012
+0091 -0.0128
+0095 -0.0098
+0100 -0.0142
+1000 -0.0029
+
+
+

@@ -50,7 +50,8 @@ classdef perceptron
 %             disp(target) % debugging purposes
 %             disp(guess) % debugging purposes
             error = obj.target - guess;
-            learningRate = 0.001; % value used to avoid tunning overshoots
+            % value used to avoid tunning overshoots
+            learningRate = 0.00001;
             train = obj.weights;
             
             % Tune all the weights

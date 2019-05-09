@@ -15,6 +15,9 @@
 % *     affirm my (our) awareness of the standards of the Tecnológico de
 % *     Monterrey Ethics Code.
 % *
+% *     Thanks to The Coding Train: https://www.youtube.com/watch?v=XJ7HLz9
+% *     VYz0&list=PLRqwX-V7Uu6Y7MdSCaIfsxc561QI0U0Tb&index=1
+% *
 % * START DATE :
 % *     02 May 2019
 % ************************************************************************
@@ -54,12 +57,8 @@ data_arr = zeros(height(data),width(data));
 for k=1:width(data)
     data_varNames = data.Properties.VariableNames(k);
     data_varNames = cell2mat(data_varNames);
-    %data_varNames % debugging purposes
-    
     table_col = table2array(data(1:height(data),k));
-    %class(table_col) % debugging purposes
     
-    %try % debugging purposes
     if isa(table_col,'cell')
         % convert data.Sex values to integers:
         % F = 70, M = 77, I = 73
@@ -67,11 +66,6 @@ for k=1:width(data)
     else
         data_arr(1:height(data),k) = table_col;
     end
-    %catch % debugging purposes
-    %    warning(varName); % debugging purposes
-    %end % debugging purposes
-
-    %class(data_arr) % debugging purposes
 end
 
 % data_arr shall be used for the neural training
@@ -96,15 +90,17 @@ end
 nInputs = width(data)-1;
 weights = zeros(1,nInputs);
 for k=1:nInputs
-    weights(1,k) = randi([-10 10]);
+    weights(1,k) = randi([-8 8]);
 end
+% from previous trainings, the weights are estimated to be the following:
+weights = [-7.5340 5.6109 5.3689 6.3149 2.7319 -10.4802 7.2560 0.1472];
 
 % let's create some variables to see how well brain is being trained
 guess = zeros(1,length(data_arr));
 known = zeros(1,length(data_arr));
 
 % let's train the brain n-times
-n = 50;
+n = 10;
 for i=1:n
     for k=1:length(data_arr)
         % let's feed our brain/perceptron some intputs to get a guess.
@@ -125,9 +121,7 @@ for i=1:n
     end
 end
 
-% let's create more variables to see how well brain is being trained
-error = known - guess; % error shall be close to zero ...
-scatter(1:length(data_arr),error);
+guess = round(guess);
 
 %% ************************************************************************
 % b) Using your trained neural network, determine the age of the 100
@@ -143,12 +137,8 @@ predict_arr = zeros(height(predict),width(predict));
 for k=1:width(predict)
     predict_varNames = predict.Properties.VariableNames(k);
     predict_varNames = cell2mat(predict_varNames);
-    %predict_varNames % debugging purposes
-    
     table_col = table2array(predict(1:height(predict),k));
-    %class(table_col) % debugging purposes
-    
-    %try % debugging purposes
+
     if isa(table_col,'cell')
         % convert data.Sex values to integers:
         % F = 70, M = 77, I = 73
@@ -156,18 +146,44 @@ for k=1:width(predict)
     else
         predict_arr(1:height(predict),k) = table_col;
     end
-    %catch % debugging purposes
-    %    warning(varName); % debugging purposes
-    %end % debugging purposes
-
-    %class(data_arr) % debugging purposes
 end
 
 % data from predict_arr shall be used to predict the Age
+
+% let's create a variable to store the predictions
+predictedAge = zeros(length(predict_arr),1);
+
+% let's guess predict_arr
+for k=1:length(predict_arr)
+    % let's feed our brain/perceptron some intputs to get a guess.
+    inputs = predict_arr(k,1:size(predict_arr,2));
+    % set the known target to 0 ... this is not used in this step
+    target = 0;
+    % let's create a brain
+    brain = perceptron(inputs,weights,target);
+    % let's ask brain for a guess
+    brain = brain.guess;
+    % populate the tracking variables
+    predictedAge(k,1) = brain.Output;
+end
+
+predictedAge = round(predictedAge);
+
+% Save predictions into a CSV file
+tbl = [predict array2table(predictedAge)];
+writetable(tbl,'./predictions.csv','WriteRowNames',true,'Delimiter',','); 
 
 %% ************************************************************************
 % c) Give an estimate of the expected error of your neural network on new
 %    data. Explain your answer.
 
-
+% let's create more variables to see how well brain is trained
+error = known - guess; % error shall be close to zero ...
+x = 1:length(error);
+scatter(x,error,3,[0 0.4470 0.7410],'filled');
+title("Scatter Plot of the Predictions' Error with "+n+" Trains");
+xlabel('Predictions');
+ylabel('Error = Prediction - Target');
+txt = strcat('mean(error) = ', num2str(mean(error)));
+text(0,max(error)-1,txt) % print the error's mean into the chart
 
