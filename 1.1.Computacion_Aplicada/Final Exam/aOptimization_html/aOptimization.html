@@ -1,0 +1,232 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>**********************************************************************</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-05-09"><meta name="DC.source" content="aOptimization.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>**********************************************************************</h1><!--introduction--><div><ul><li>AUTHOR(S) :</li><li>Bruno Gonz&aacute;lez Soria          (A01169284)</li><li>Antonio Osamu Katagiri Tanaka (A01212611) *</li><li>FILENAME :</li><li>HW03.m *</li><li>DESCRIPTION :</li><li>Computaci&oacute;n Aplicada (Ene 19 Gpo 1)</li><li>Final Exam *</li><li>NOTES :</li><li>In submitting the solution to this final exam, We Bruno Gonz&aacute;lez</li><li>Soria and Antonio Osamu Katagiri Tanaka affirm our awareness of the</li><li>standards of the Tecnol&oacute;gico de Monterrey Ethics Code. *</li><li>START DATE :</li><li>02 May 2019</li></ul></div><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">**********************************************************************</a></li><li><a href="#2">**********************************************************************</a></li><li><a href="#3">**********************************************************************</a></li><li><a href="#4">**********************************************************************</a></li><li><a href="#5">**********************************************************************</a></li><li><a href="#6">**********************************************************************</a></li></ul></div><h2 id="1">**********************************************************************</h2><p>This script should start with the command rng(31416), and should not contain any other call that initializes the state of the random number generator.</p><pre class="codeinput">close <span class="string">all</span>, clear <span class="string">all</span>, clc, format <span class="string">compact</span>
+rng(31416)
+</pre><h2 id="2">**********************************************************************</h2><p>Problem 1: OPTIMIZATION Consider the following function:</p><pre>                ____6___                     2
+                \      /             18  / ixi \
+       f(X) =    \        sin(xi) sin   | ----- |
+                 /                       \  Pi /
+                /_______\
+                   i=1</pre><p>where 0 &lt; xi &lt; 5.</p><p>Maximize function f () using the Nelder-Mead algorithm (fminsearch) and simulated annealing (simulannealbnd). Modify whatever parameters you deem necessary to produce a good performance of these algorithms, regardless of the state of the random number generator. Use randomly generated initial point in the valid range of x.</p><h2 id="3">**********************************************************************</h2><pre class="language-matlab">a) Implement <span class="string">f</span> <span class="string">(x)</span> <span class="string">as</span> <span class="string">a</span> <span class="string">MATLAB</span> <span class="string">function.</span>
+</pre><pre class="codeinput">i = 1:6;
+f = @(x) -fx(x);
+</pre><h2 id="4">**********************************************************************</h2><pre class="language-matlab">b) Give <span class="string">your</span> <span class="string">best</span> <span class="string">solution</span> <span class="string">found</span> <span class="string">(optimal x and evaluation of x)</span> <span class="string">for</span>
+each <span class="string">algorithm.</span>
+</pre><pre class="codeinput"><span class="comment">% NelderMeade</span>
+x0 = rand([1 6])*5;
+options = optimset(<span class="string">'Display'</span>, <span class="string">'off'</span>, <span class="string">'MaxFunEvals'</span>, 10000);
+disp(<span class="string">"The optimal value of x usning NelderMeade (fminsearch) method is:"</span>)
+[x,fval,exitflag,output] = fminsearch(f,x0,options)
+
+<span class="comment">% Simulated Annealing</span>
+disp(<span class="string">"The optimal value of x usning Simulated Annealing (simulannealbnd) method is:"</span>)
+lb = zeros([1 6]);
+ub = ones([1 6])*5;
+[x,fval,exitflag,output] = simulannealbnd(f,x0,lb,ub,options)
+</pre><pre class="codeoutput">The optimal value of x usning NelderMeade (fminsearch) method is:
+</pre><h2 id="5">**********************************************************************</h2><pre class="language-matlab">c) Which <span class="string">of</span> <span class="string">these</span> <span class="string">two</span> <span class="string">algorithms</span> <span class="string">has</span> <span class="string">a</span> <span class="string">better</span> <span class="string">expected</span> <span class="string">performance</span> <span class="string">on</span>
+this <span class="string">problem</span> <span class="string">when</span> <span class="string">varying</span> <span class="string">the</span> <span class="string">initial</span> <span class="string">point(s)?</span> <span class="string">Justify</span> <span class="string">your</span> <span class="string">answer.</span>
+</pre><pre class="codeinput"><span class="comment">% From this two algorithms, fminsearch has a better expected performance on</span>
+<span class="comment">% this problem. The reason is that the fval (objective function value at</span>
+<span class="comment">% the solution) obtained is larger than the one obtained in simulannealbnd,</span>
+<span class="comment">% thus closer to a maximum in the function. Additionally, unlike other</span>
+<span class="comment">% solvers, fminsearch stops when it satisfies both TolFun and TolX.</span>
+</pre><h2 id="6">**********************************************************************</h2><pre class="language-matlab">DEFINED <span class="string">FUNCTIONS:</span>
+Problem <span class="string">1</span> <span class="string">a)</span>
+</pre><pre class="codeinput"><span class="keyword">function</span> fcn = fx (x)
+suma=0;
+    <span class="keyword">for</span> i = 1:6
+        newterm = sin(x(i))*sin((i*x(i))^2/pi)^18;
+        suma = suma + newterm;
+    <span class="keyword">end</span>
+    fcn = suma;
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">x =
+    4.4463    1.1141    4.6886    0.0604    0.9936    0.0606
+fval =
+   -1.7347
+exitflag =
+     1
+output = 
+  struct with fields:
+
+    iterations: 786
+     funcCount: 1297
+     algorithm: 'Nelder-Mead simplex direct search'
+       message: 'Optimization terminated:&#8629; the current x satisfies the termination criteria using OPTIONS.TolX of 1.000000e-04 &#8629; and F(X) satisfies the convergence criteria using OPTIONS.TolFun of 1.000000e-04 &#8629;'
+The optimal value of x usning Simulated Annealing (simulannealbnd) method is:
+x =
+    0.8269    2.4652    3.4183    1.2366    1.6021    2.7953
+fval =
+   -2.7718
+exitflag =
+     1
+output = 
+  struct with fields:
+
+     iterations: 6009
+      funccount: 6166
+        message: 'Optimization terminated: change in best function value less than options.FunctionTolerance.'
+       rngstate: [1&times;1 struct]
+    problemtype: 'boundconstraints'
+    temperature: [6&times;1 double]
+      totaltime: 1.6105
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% ************************************************************************
+% * AUTHOR(S) :
+% *     Bruno González Soria          (A01169284)
+% *     Antonio Osamu Katagiri Tanaka (A01212611)
+% *
+% * FILENAME :
+% *     HW03.m
+% *
+% * DESCRIPTION :
+% *     Computación Aplicada (Ene 19 Gpo 1)
+% *     Final Exam
+% *
+% * NOTES :
+% *     In submitting the solution to this final exam, We Bruno González
+% *     Soria and Antonio Osamu Katagiri Tanaka affirm our awareness of the
+% *     standards of the Tecnológico de Monterrey Ethics Code.
+% *
+% * START DATE :
+% *     02 May 2019
+%% ************************************************************************
+% This script should start with the command rng(31416), and should not
+% contain any other call that initializes the state of the random number
+% generator. 
+
+close all, clear all, clc, format compact
+rng(31416)
+
+%% ************************************************************************
+% Problem 1: OPTIMIZATION
+% Consider the following function:
+% 
+%                  ____6___                     2
+%                  \      /             18  / ixi \
+%         f(X) =    \        sin(xi) sin   | REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH- |
+%                   /                       \  Pi /
+%                  /_______\
+%                     i=1
+% 
+% where 0 < xi < 5.
+% 
+% Maximize function f () using the Nelder-Mead algorithm (fminsearch) and
+% simulated annealing (simulannealbnd). Modify whatever parameters you deem
+% necessary to produce a good performance of these algorithms, regardless
+% of the state of the random number generator. Use randomly generated
+% initial point in the valid range of x.
+%% ************************************************************************
+%   a) Implement f (x) as a MATLAB function.
+i = 1:6;
+f = @(x) -fx(x);
+
+%% ************************************************************************
+%   b) Give your best solution found (optimal x and evaluation of x) for
+%   each algorithm.
+
+% NelderMeade
+x0 = rand([1 6])*5;
+options = optimset('Display', 'off', 'MaxFunEvals', 10000);
+disp("The optimal value of x usning NelderMeade (fminsearch) method is:")
+[x,fval,exitflag,output] = fminsearch(f,x0,options)
+
+% Simulated Annealing
+disp("The optimal value of x usning Simulated Annealing (simulannealbnd) method is:")
+lb = zeros([1 6]);
+ub = ones([1 6])*5;
+[x,fval,exitflag,output] = simulannealbnd(f,x0,lb,ub,options)
+
+%% ************************************************************************
+%   c) Which of these two algorithms has a better expected performance on
+%   this problem when varying the initial point(s)? Justify your answer.
+
+% From this two algorithms, fminsearch has a better expected performance on
+% this problem. The reason is that the fval (objective function value at
+% the solution) obtained is larger than the one obtained in simulannealbnd,
+% thus closer to a maximum in the function. Additionally, unlike other
+% solvers, fminsearch stops when it satisfies both TolFun and TolX.
+
+%% ************************************************************************
+%   DEFINED FUNCTIONS:
+%   Problem 1 a)
+function fcn = fx (x)
+suma=0;
+    for i = 1:6
+        newterm = sin(x(i))*sin((i*x(i))^2/pi)^18;
+        suma = suma + newterm;
+    end
+    fcn = suma;
+end
+
+
+##### SOURCE END #####
+--></body></html>

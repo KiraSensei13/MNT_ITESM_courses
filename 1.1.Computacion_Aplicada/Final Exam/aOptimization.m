@@ -22,6 +22,7 @@
 % contain any other call that initializes the state of the random number
 % generator. 
 
+close all, clear all, clc, format compact
 rng(31416)
 
 %% ************************************************************************
@@ -44,17 +45,44 @@ rng(31416)
 % initial point in the valid range of x.
 %% ************************************************************************
 %   a) Implement f (x) as a MATLAB function.
-
-
+i = 1:6;
+f = @(x) -fx(x);
 
 %% ************************************************************************
 %   b) Give your best solution found (optimal x and evaluation of x) for
 %   each algorithm.
 
+% NelderMeade
+x0 = rand([1 6])*5;
+options = optimset('Display', 'off', 'MaxFunEvals', 10000);
+disp("The optimal value of x usning NelderMeade (fminsearch) method is:")
+[x,fval,exitflag,output] = fminsearch(f,x0,options)
 
+% Simulated Annealing
+disp("The optimal value of x usning Simulated Annealing (simulannealbnd) method is:")
+lb = zeros([1 6]);
+ub = ones([1 6])*5;
+[x,fval,exitflag,output] = simulannealbnd(f,x0,lb,ub,options)
 
 %% ************************************************************************
 %   c) Which of these two algorithms has a better expected performance on
 %   this problem when varying the initial point(s)? Justify your answer.
 
+% From this two algorithms, fminsearch has a better expected performance on
+% this problem. The reason is that the fval (objective function value at
+% the solution) obtained is larger than the one obtained in simulannealbnd,
+% thus closer to a maximum in the function. Additionally, unlike other
+% solvers, fminsearch stops when it satisfies both TolFun and TolX.
+
+%% ************************************************************************
+%   DEFINED FUNCTIONS:
+%   Problem 1 a)
+function fcn = fx (x)
+suma=0;
+    for i = 1:6
+        newterm = sin(x(i))*sin((i*x(i))^2/pi)^18;
+        suma = suma + newterm;
+    end
+    fcn = suma;
+end
 
