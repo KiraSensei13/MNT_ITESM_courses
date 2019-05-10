@@ -54,20 +54,25 @@ f = @(x) -fx(x);
 
 % NelderMeade
 x0 = rand([1 6])*5;
-options = optimset('Display', 'off', 'MaxFunEvals', 1000);
+options = optimset('Display', 'off', 'MaxFunEvals', 10000);
 disp("The optimal value of x usning NelderMeade (fminsearch) method is:")
-fminsearch(f,x0,options)
+[x,fval,exitflag,output] = fminsearch(f,x0,options)
 
 % Simulated Annealing
 disp("The optimal value of x usning Simulated Annealing (simulannealbnd) method is:")
 lb = zeros([1 6]);
 ub = ones([1 6])*5;
-simulannealbnd(f,x0,lb,ub,options)
+[x,fval,exitflag,output] = simulannealbnd(f,x0,lb,ub,options)
 
 %% ************************************************************************
 %   c) Which of these two algorithms has a better expected performance on
 %   this problem when varying the initial point(s)? Justify your answer.
 
+% From this two algorithms, fminsearch has a better expected performance on
+% this problem. The reason is that the fval (objective function value at
+% the solution) obtained is larger than the one obtained in simulannealbnd,
+% thus closer to a maximum in the function. Additionally, unlike other
+% solvers, fminsearch stops when it satisfies both TolFun and TolX.
 
 
 %% ************************************************************************
@@ -114,11 +119,12 @@ simulannealbnd(f,x0,lb,ub,options)
 % Profit maximization:
 % f = 2.1*a + 1.5*b + 1.15*c;
 
+
 %% ************************************************************************
 % b) Use intlinprog to find the solution (number of planes of each type and
 % maximum profit).
 % prob = optimproblem ('ObjectiveSense','maximize');
-% w = intlinprog(f,intcon,A,b,Aeq,beq,lb,ub,x0,options);
+%  = intlinprog(f,intcon,A,b,Aeq,beq,lb,ub,x0,options);
 
 
 %% ************************************************************************
