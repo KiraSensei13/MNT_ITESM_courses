@@ -50,7 +50,7 @@ disp(" ");
 
 %% ************************************************************************
 % Problem 2:
-% Using function fminsearch minimize Branin�s function:
+% Using function fminsearch minimize Branin's function:
 %
 %                      2             2
 % f(x) = a (x_2 - b x_1  + c x_1 - r)  + s (1 - t) cos(x_1) + s

@@ -54,15 +54,14 @@ f = @(x) -fx(x);
 
 % NelderMeade
 x0 = rand([1 6])*5;
-options = optimset('Display', 'off', 'MaxFunEvals', 1000);
 disp("The optimal value of x usning NelderMeade (fminsearch) method is:")
 fminsearch(f,x0,options)
+disp("The optimal value of x usning NelderMeade (fminsearch) method is:")
 
 % Simulated Annealing
-disp("The optimal value of x usning Simulated Annealing (simulannealbnd) method is:")
-lb = zeros([1 6]);
-ub = ones([1 6])*5;
-simulannealbnd(f,x0,lb,ub,options)
+ x = simulannealbnd(fcnMax,x0,0,5,options);
+
+
 
 %% ************************************************************************
 %   c) Which of these two algorithms has a better expected performance on
