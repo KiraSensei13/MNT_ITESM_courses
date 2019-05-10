@@ -330,3 +330,41 @@ Part2 :
 Part3 : 
 
 Paper Trail : https://bit.ly/2DBFVuE
+
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0141813019309274
+
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0008622312009359
+
+https://www.researchgate.net/publication/243845020_High_char-yielding_polyacrylonitrile-co-itaconic_acid-co-methyl_acrylate_Synthesis_and_properties
+
+https://www.google.com/search?q=%22High+char-yielding+poly%5Bacrylonitrile-co-(itaconic+acid)-co-(methyl+acrylate)%5D%3A+Synthesis+and+properties%22&rlz=1C1GCEU_esMX837MX837&oq=%22High+char-yielding+poly%5Bacrylonitrile-co-(itaconic+acid)-co-(methyl+acrylate)%5D%3A+Synthesis+and+properties%22&aqs=chrome..69i57.1156j0j1&sourceid=chrome&ie=UTF-8
+
+https://vdocuments.site/documents/synthesis-spinning-and-properties-of-very-high-molecular-weight-polyacrylonitrile-co-methyl.html
+
+https://docs.google.com/viewerng/viewer?url=https://vdocuments.site/google-reader?url%3Df37a91119b04edbb0694cb3c9512522168007afb4f2d735429962a5a5f5bbc35b9840c3df0760450b4f62bebee7c37c7dda749fe709e1639711131ab8ec41792zcE51hl0m9l2mVbGrlhUfcnKM9vC522+IS46Scta8M4djPxCvCA3wzmQMPFqH25IjYcROkikyN+leLYueUGyEseqhQdV5yn/oLSdrKsUnJOVwnRaxPh8CCFA4Z55/gB8tIHC67ElgZE6Lm3ONH3DY33JQKjFaLDeS2FY5FTbnAY%3D
+
+/******************************************************************************/
+
+https://github.com/googlesamples/android-sunflower
+
+https://onedrive.live.com/?authkey=%21AJRazHi1NSdjMSY&id=B97411139F1D3D85%213962&cid=B97411139F1D3D85
+
+/******************************************************************************/
+
+0001  0.1822
+0010  0.0142
+0020 -0.0336
+0030 -0.0373
+0040 -0.0432
+0050 -0.0150
+0060 -0.0216
+0070 -0.0125
+0080 -0.0208
+0090 -0.0012
+0091 -0.0128
+0095 -0.0098
+0100 -0.0142
+1000 -0.0029
+
+
+
