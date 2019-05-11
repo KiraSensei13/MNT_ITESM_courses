@@ -19,5 +19,11 @@
 \contentsline {section}{\numberline {4.2}Urban agriculture and social sustainability of cities}{22}{section.25}% 
 \contentsline {subsection}{\numberline {4.2.1}Educational functions}{22}{subsection.26}% 
 \contentsline {subsection}{\numberline {4.2.2}Civic engagement}{23}{subsection.27}% 
-\contentsline {chapter}{\numberline {5}Discussion}{25}{chapter.28}% 
-\contentsline {chapter}{\numberline {6}Conclusion}{26}{chapter.29}% 
+\contentsline {subsection}{\numberline {4.2.3}Safety and security}{24}{subsection.28}% 
+\contentsline {subsection}{\numberline {4.2.4}Gender equality and social equity}{25}{subsection.29}% 
+\contentsline {subsection}{\numberline {4.2.5}Health benefits}{26}{subsection.30}% 
+\contentsline {subsection}{\numberline {4.2.6}Recreation}{27}{subsection.31}% 
+\contentsline {subsection}{\numberline {4.2.7}Technology and innovation promotion}{27}{subsection.32}% 
+\contentsline {section}{\numberline {4.3}Urban agriculture and environmental sustainability of cities}{28}{section.33}% 
+\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.34}% 
+\contentsline {chapter}{\numberline {6}Conclusion}{30}{chapter.35}% 
