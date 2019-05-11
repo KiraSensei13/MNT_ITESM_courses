@@ -1,0 +1,16 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\contentsline {chapter}{Abstract}{i}{section*.1}% 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.4}% 
+\contentsline {chapter}{\numberline {2}Conceptual Framework}{5}{chapter.5}% 
+\contentsline {section}{\numberline {2.1}Overview of urban agriculture}{5}{section.6}% 
+\contentsline {section}{\numberline {2.2}Conceptualising a sustainable city}{6}{section.7}% 
+\contentsline {subsection}{\numberline {2.2.1}The Green City Index}{9}{subsection.8}% 
+\contentsline {subsection}{\numberline {2.2.2}Global City Indicators Facility}{10}{subsection.9}% 
+\contentsline {subsection}{\numberline {2.2.3}Global Compact Cities Circles of Sustainability}{11}{subsection.10}% 
+\contentsline {chapter}{\numberline {3}Methods}{13}{chapter.11}% 
+\contentsline {chapter}{\numberline {4}Analyses}{15}{chapter.13}% 
+\contentsline {section}{\numberline {4.1}Urban agriculture and economic sustainability of cities}{15}{section.14}% 
+\contentsline {subsection}{\numberline {4.1.1}Fulltime employment}{15}{subsection.15}% 
+\contentsline {chapter}{\numberline {5}Discussion}{17}{chapter.17}% 
+\contentsline {chapter}{\numberline {6}Conclusion}{18}{chapter.18}% 
