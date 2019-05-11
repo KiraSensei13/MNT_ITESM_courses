@@ -32,6 +32,8 @@
 \contentsline {subsection}{\numberline {4.3.5}Organic farming in percentage of total agricultural area}{32}{subsection.38}% 
 \contentsline {chapter}{\numberline {5}Discussion}{34}{chapter.39}% 
 \contentsline {section}{\numberline {5.1}Urban agriculture-sustainable city nexus}{34}{section.40}% 
-\contentsline {subsection}{\numberline {5.1.1}Implications for cities in the global south and compact cities}{36}{subsection.41}% 
-\contentsline {chapter}{\numberline {6}Conclusion}{38}{chapter.42}% 
-\contentsline {chapter}{\numberline {A}Supplementary Tables}{43}{appendix.44}% 
+\contentsline {section}{\numberline {5.2}Implications for cities in the global south and compact cities}{36}{section.41}% 
+\contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.42}% 
+\contentsline {chapter}{\numberline {A}The Green City Index}{44}{appendix.44}% 
+\contentsline {chapter}{\numberline {B}Global City Indicators Facility}{45}{appendix.46}% 
+\contentsline {chapter}{\numberline {C}Global Compact Cities Circles of Sustainability}{46}{appendix.48}% 
