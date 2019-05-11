@@ -11,6 +11,13 @@
 \contentsline {chapter}{\numberline {3}Methods}{13}{chapter.11}% 
 \contentsline {chapter}{\numberline {4}Analyses}{15}{chapter.13}% 
 \contentsline {section}{\numberline {4.1}Urban agriculture and economic sustainability of cities}{15}{section.14}% 
-\contentsline {subsection}{\numberline {4.1.1}Fulltime employment}{15}{subsection.15}% 
-\contentsline {chapter}{\numberline {5}Discussion}{17}{chapter.17}% 
-\contentsline {chapter}{\numberline {6}Conclusion}{18}{chapter.18}% 
+\contentsline {subsection}{\numberline {4.1.1}Full-time employment}{15}{subsection.15}% 
+\contentsline {subsection}{\numberline {4.1.2}Employment for women}{17}{subsection.18}% 
+\contentsline {subsection}{\numberline {4.1.3}Income generation and gross domestic product}{18}{subsection.20}% 
+\contentsline {subsection}{\numberline {4.1.4}Savings and expenditure}{19}{subsection.22}% 
+\contentsline {subsection}{\numberline {4.1.5}Tax revenue}{21}{subsection.24}% 
+\contentsline {section}{\numberline {4.2}Urban agriculture and social sustainability of cities}{22}{section.25}% 
+\contentsline {subsection}{\numberline {4.2.1}Educational functions}{22}{subsection.26}% 
+\contentsline {subsection}{\numberline {4.2.2}Civic engagement}{23}{subsection.27}% 
+\contentsline {chapter}{\numberline {5}Discussion}{25}{chapter.28}% 
+\contentsline {chapter}{\numberline {6}Conclusion}{26}{chapter.29}% 
