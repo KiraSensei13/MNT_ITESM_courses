@@ -35,5 +35,5 @@
 \contentsline {section}{\numberline {5.2}Implications for cities in the global south and compact cities}{36}{section.41}% 
 \contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.42}% 
 \contentsline {chapter}{\numberline {A}The Green City Index}{44}{appendix.44}% 
-\contentsline {chapter}{\numberline {B}Global City Indicators Facility}{45}{appendix.46}% 
-\contentsline {chapter}{\numberline {C}Global Compact Cities Circles of Sustainability}{46}{appendix.48}% 
+\contentsline {chapter}{\numberline {B}Global City Indicators Facility}{48}{appendix.49}% 
+\contentsline {chapter}{\numberline {C}Global Compact Cities Circles of Sustainability}{55}{appendix.56}% 
