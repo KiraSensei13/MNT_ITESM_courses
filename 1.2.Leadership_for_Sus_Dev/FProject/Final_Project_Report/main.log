@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  12 MAY 2019 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  12 MAY 2019 23:50
 entering extended mode
 **./main.tex
 (main.tex
@@ -1683,11 +1683,25 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (main.bbl)
+ (main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Hiremath
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Ndunda
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 164.
 Package biblatex Info: Reference segment=0 on input line 164.
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box76
 Package hyperref Info: Link coloring ON on input line 164.
 
@@ -1738,7 +1752,7 @@ LaTeX Font Info:    Try loading font information for OT1+zplm on input line 164
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 1: section
-<./Figures/uniLogo.png, id=155, 401.5pt x 401.5pt>
+<./Figures/uniLogo.png, id=167, 401.5pt x 401.5pt>
 File: ./Figures/uniLogo.png Graphic file (type png)
 <use ./Figures/uniLogo.png>
 Package pdftex.def Info: ./Figures/uniLogo.png  used on input line 183.
@@ -1809,28 +1823,28 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
 
 
 ] [5]
-Overfull \hbox (9.11397pt too wide) in paragraph at lines 19--20
-\T1/ppl/m/n/12 ploy-ment, shel-ter, ba-sic ser-vices, so-cial in-fras-truc-ture
- and trans-porta-tion (Hire-
+Overfull \hbox (0.76218pt too wide) in paragraph at lines 19--20
+\T1/ppl/m/n/12 limit the quan-tity and qual-ity of amenity veg-e-ta-tion. Stud-
+ies have also shown
  []
 
-[6] [7] [8] [9] [10]) [11]
+[6] [7] [8] [9]) [10]
 \openout2 = `Chapters/3_Methods.aux'.
 
  (Chapters/3_Methods.tex
 Chapter 3.
-<./Figures/sustainableCityFramework.png, id=309, 964.5636pt x 546.3612pt>
+<./Figures/sustainableCityFramework.png, id=419, 964.5636pt x 546.3612pt>
 File: ./Figures/sustainableCityFramework.png Graphic file (type png)
 <use ./Figures/sustainableCityFramework.png>
 Package pdftex.def Info: ./Figures/sustainableCityFramework.png  used on input 
 line 11.
 (pdftex.def)             Requested size: 404.02908pt x 228.86154pt.
 1: section
-[12
+[11
 
 
 
-]) [13 <./Figures/sustainableCityFramework.png>]
+]) [12 <./Figures/sustainableCityFramework.png>]
 \openout2 = `Chapters/4_Analyses.aux'.
 
  (Chapters/4_Analyses.tex
@@ -1839,12 +1853,6 @@ Chapter 4.
 Overfull \hbox (1.55501pt too wide) in paragraph at lines 11--12
 \T1/ppl/m/n/12 Urban agri-cul-ture pro-vides em-ploy-ment, and has thus be-come
  a ma-jor means
- []
-
-
-Overfull \hbox (5.14174pt too wide) in paragraph at lines 11--12
-\T1/ppl/m/n/12 of liveli-hood, for peo-ple in many cities par-tic-u-larly in th
-e global south (Darkey
  []
 
 
@@ -1868,17 +1876,17 @@ Underfull \hbox (badness 3701) in paragraph at lines 23--24
  []
 
 1: section
-[14
+[13
 
 
 
 ]
-<./Figures/vegySupplyChain.png, id=333, 503.481pt x 423.984pt>
+<./Figures/vegySupplyChain.png, id=452, 503.481pt x 423.984pt>
 File: ./Figures/vegySupplyChain.png Graphic file (type png)
 <use ./Figures/vegySupplyChain.png>
 Package pdftex.def Info: ./Figures/vegySupplyChain.png  used on input line 34.
 (pdftex.def)             Requested size: 303.0218pt x 255.18163pt.
- [15 <./Figures/vegySupplyChain.png>] [16]
+ [14 <./Figures/vegySupplyChain.png>]
 Underfull \hbox (badness 4792) in paragraph at lines 60--60
 []|\T1/ppl/m/n/10.95 Accra, Ku-masi, Tako-radi and
  []
@@ -1888,82 +1896,124 @@ Overfull \hbox (7.58842pt too wide) in paragraph at lines 51--71
  [] 
  []
 
-[17]
+[15]
 Underfull \hbox (badness 1902) in paragraph at lines 85--85
 []|\T1/ppl/m/n/10.95 Annual in-come per ha
  []
 
-[18]
-Overfull \hbox (7.5946pt too wide) in paragraph at lines 110--129
+[16]
+Overfull \hbox (7.5946pt too wide) in paragraph at lines 108--127
  [] 
  []
 
-[19]
-Overfull \hbox (3.43887pt too wide) in paragraph at lines 138--139
+[17]
+Overfull \hbox (3.43887pt too wide) in paragraph at lines 134--135
 []\T1/ppl/m/n/12 Transportation taxes are also paid by ur-ban farm-ers who tran
 s-port their goods
  []
 
-[20] [21] [22] [23]
-Overfull \hbox (12.36598pt too wide) in paragraph at lines 172--173
+[18] [19] [20]
+Overfull \hbox (0.65479pt too wide) in paragraph at lines 164--165
+\T1/ppl/m/n/12 clude en-coun-ters with phys-i-cal dan-ger such as poi-sonous an
+-i-mals and thorny
+ []
+
+[21]
+Overfull \hbox (12.36598pt too wide) in paragraph at lines 168--169
 \T1/ppl/m/n/12 eq-uity through the em-ploy-ment op-por-tu-ni-ties it of-fers to
  both men and women.
  []
 
-[24] [25] [26]
-Overfull \hbox (18.30531pt too wide) in paragraph at lines 196--196
+[22] [23]
+Overfull \hbox (18.30531pt too wide) in paragraph at lines 192--192
 []\T1/ppl/b/n/14.4 Urban agri-cul-ture and en-vi-ron-men-tal sus-tain-abil-ity 
 of cities 
  []
 
-[27]
-Overfull \hbox (1.00201pt too wide) in paragraph at lines 210--211
+[24]
+Overfull \hbox (1.00201pt too wide) in paragraph at lines 206--207
 []\T1/ppl/m/n/12 The con-ven-tional lit-er-a-ture in-di-cates that strate-gies 
 such as wastew-a-ter reuse,
  []
 
-[28] [29]
-LaTeX Font Info:    Try loading font information for TS1+ppl on input line 224.
+
+Overfull \hbox (5.43115pt too wide) in paragraph at lines 206--207
+\T1/ppl/m/n/12 net-works, soil and plant mea-sure-ment sys-tems, and dy-namic s
+im-u-la-tion mod-
+ []
+
+[25] [26]
+LaTeX Font Info:    Try loading font information for TS1+ppl on input line 220.
 
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ppl.fd"
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-) [30]
-Overfull \hbox (1.30312pt too wide) in paragraph at lines 226--227
-\T1/ppl/m/n/12 and dif-fuses light re-flected from nearby ur-ban sur-faces (Ak-
-bari, 2002; Alexan-
- []
-
-[31]) [32]
+) [27] [28]) [29]
 \openout2 = `Chapters/5_Discussion.aux'.
 
  (Chapters/5_Discussion.tex
 Chapter 5.
 1: section
-[33
+[30
 
 
 
-] [34] [35]) [36]
+] [31] [32] [33]
+<./Figures/theApp.png, id=708, 589.4522pt x 548.0475pt>
+File: ./Figures/theApp.png Graphic file (type png)
+<use ./Figures/theApp.png>
+Package pdftex.def Info: ./Figures/theApp.png  used on input line 61.
+(pdftex.def)             Requested size: 383.82639pt x 356.87056pt.
+ [34 <./Figures/theApp.png>]) [35]
 \openout2 = `Chapters/6_Conclusion.aux'.
 
- (Chapters/6_Conclusion.tex
+
+(Chapters/6_Conclusion.tex
 Chapter 6.
 1: section
-[37
+[36
 
 
 
-]) [38]
+]) [37]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 369.
 
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
+Overfull \hbox (0.9088pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 cal con-tam-i-na-tion in farms and mar-kets and as-so-ci-ated
+ con-sumer risk groups.
+ []
+
+
 Overfull \hbox (15.24588pt too wide) in paragraph at lines 369--369
 []\T1/ppl/m/n/10.95 Owusu Am-pon-sah et al.   As-sess-ing low qual-ity wa-ter 
 use pol-icy frame-work:Case
+ []
+
+1: section
+[38
+
+
+]
+Overfull \hbox (1.116pt too wide) in paragraph at lines 369--369
+\T1/cmtt/m/n/10.95 content / uploads / 2014 / 06 / FoodMetres -[] Urban -[] Org
+anic -[] Waste -[] Management -[]
+ []
+
+
+Overfull \hbox (1.91081pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 tural Meth-ods. In: \T1/ppl/m/it/10.95 In-ter-na-tional jour
+-nal of en-vi-ron-men-tal re-search and pub-lic health
+ []
+
+
+Overfull \hbox (0.13133pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 12.6 (June 2015), pp. 687991. \T1/ppl/m/sc/10.95 issn\T1/ppl
+/m/n/10.95 : 1660-4601. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1/cmtt
+/m/n/10.95 10 . 3390 / ijerph120606879$[][]\T1/ppl/m/n/10.95 .
  []
 
 
@@ -1974,11 +2024,181 @@ Overfull \hbox (2.11774pt too wide) in paragraph at lines 369--369
 : [][]$\T1/cmtt/m/n/10.95 https : / / academic .
  []
 
-1: section
-[39
+[39]
+Overfull \hbox (5.28625pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 health. In: \T1/ppl/m/it/10.95 En-vi-ron-ment In-ter-na-tion
+al \T1/ppl/m/n/10.95 75 (Feb. 2015), pp. 117135. \T1/ppl/m/sc/10.95 issn\T1/pp
+l/m/n/10.95 : 01604120.
+ []
 
 
-] [40]
+Overfull \hbox (12.70117pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 0013-9165. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1
+/cmtt/m/n/10.95 10 . 1177 / 001391659702900401$[][]\T1/ppl/m/n/10.95 . \T1/ppl/
+m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 http : / / journals .
+ sagepub .
+ []
+
+
+Overfull \hbox (1.46118pt too wide) in paragraph at lines 369--369
+[]\T1/ppl/m/n/10.95 Katharine Bradley and Ryan E. Galt.   Prac-tic-ing food ju
+s-tice at Dig Deep Farms
+ []
+
+[40]
+Overfull \hbox (7.01186pt too wide) in paragraph at lines 369--369
+\T1/cmtt/m/n/10.95 PMC4475942 % 20http : / / www . pnas . org / lookup / doi / 
+10 . 1073 / pnas . 1423674112$[][]\T1/ppl/m/n/10.95 . 
+ []
+
+
+Overfull \hbox (4.42757pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/it/10.95 sys-tems\T1/ppl/m/n/10.95 . 2010. \T1/ppl/m/sc/10.95 url\T1/
+ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . researchgate . net / 
+publication / 239827101 %
+ []
+
+
+Overfull \hbox (2.67834pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 re-lated to agri-cul-tural sys-tems. In: \T1/ppl/m/it/10.95 
+En-vi-ron-ment In-ter-na-tional \T1/ppl/m/n/10.95 29.2-3 (June 2003),
+ []
+
+
+Overfull \hbox (16.02974pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 0007-070X. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1
+/cmtt/m/n/10.95 10 . 1108 / BFJ -[] 06 -[] 2015 -[] 0200$[][]\T1/ppl/m/n/10.95 
+. \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 http : / / 
+www . emeraldinsight .
+ []
+
+
+Overfull \hbox (29.90785pt too wide) in paragraph at lines 369--369
+\T1/cmtt/m/n/10.95 monographs / iwmi -[] jointly -[] published / irrigated -[] 
+urban -[] vegetable -[] production -[]
+ []
+
+[41]
+Overfull \hbox (6.26126pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 fras-truc-ture. In: \T1/ppl/m/it/10.95 Built En-vi-ron-ment 
+\T1/ppl/m/n/10.95 33.1 (Mar. 2007), pp. 115133. \T1/ppl/m/sc/10.95 issn\T1/ppl
+/m/n/10.95 : 02637960.
+ []
+
+
+Overfull \hbox (6.60904pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/it/10.95 phia, PA\T1/ppl/m/n/10.95 . 2012. \T1/ppl/m/sc/10.95 url\T1/
+ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . researchgate . net / 
+publication / 304048480 %
+ []
+
+
+Overfull \hbox (9.93274pt too wide) in paragraph at lines 369--369
+\T1/cmtt/m/n/10.95 %7DWith % 7B % 5C _ %7Da % 7B % 5C _ %7DFocus % 7B % 5C _ %7
+Don % 7B % 5C _ %7DPhiladelphia %
+ []
+
+
+Overfull \hbox (6.89883pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/it/10.95 Poverty Al-le-vi-a-tion and Food Se-cu-rity\T1/ppl/m/n/10.95
+ . 2012. \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 http
+s : / / www . semanticscholar .
+ []
+
+
+Overfull \hbox (18.76128pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 tain-abil-ity: a re-view of in-di-ca-tors. In: \T1/ppl/m/it/
+10.95 Land-scape Ecol-ogy \T1/ppl/m/n/10.95 30.7 (Aug. 2015), pp. 1175
+ []
+
+[42]
+Overfull \hbox (0.92177pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 Prin-ci-ples and Rights at Work. Re-port of the Director-Gene
+ral, 2006. In: (2006).
+ []
+
+
+Overfull \hbox (5.84819pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 Veg-e-ta-tion Re-duce Crime? In: \T1/ppl/m/it/10.95 En-vi-ro
+n-ment & Be-hav-ior \T1/ppl/m/n/10.95 33.3 (May 2001), pp. 343
+ []
+
+[43]
+Overfull \hbox (9.93274pt too wide) in paragraph at lines 369--369
+\T1/cmtt/m/n/10.95 / / d3dqsm2futmewz . cloudfront . net / docs / SCN / sept09 
+% 7B % 5C _ %7Dvalleywide /
+ []
+
+[44]
+Overfull \hbox (5.94263pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 con-cep-tual re-view. In: \T1/ppl/m/it/10.95 En-vi-ron-men-t
+al Im-pact As-sess-ment Re-view \T1/ppl/m/n/10.95 18.6 (Nov. 1998),
+ []
+
+
+Overfull \hbox (29.64534pt too wide) in paragraph at lines 369--369
+[][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect . com / science / artic
+le / abs / pii / S0195925598000195$[][]\T1/ppl/m/n/10.95 . 
+ []
+
+
+Overfull \hbox (8.77437pt too wide) in paragraph at lines 369--369
+\T1/cmtt/m/n/10.95 com / farmers -[] perception -[] and -[] knowledge -[] of -[
+] health -[] risks -[] in -[] wastewater -[]
+ []
+
+
+Overfull \hbox (8.10669pt too wide) in paragraph at lines 369--369
+[]\T1/ppl/m/n/10.95 Mikiko Nishimura and Takashi Ya-mano.   Emerg-ing Pri-vate
+ Ed-u-ca-tion in Africa:
+ []
+
+
+Overfull \hbox (28.00336pt too wide) in paragraph at lines 369--369
+[]\T1/ppl/m/n/10.95 R. Nu-gent.   The im-pact of ur-ban agri-cul-ture on the h
+ouse-hold and lo-cal economies.
+ []
+
+[45]
+Overfull \hbox (0.41296pt too wide) in paragraph at lines 369--369
+[]\T1/ppl/m/n/10.95 Jon Padgham, Ja-son Jab-bour, and Katie Di-et-rich.   Man-
+ag-ing change and build-
+ []
+
+
+Overfull \hbox (4.13002pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 0955. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1/cmtt
+/m/n/10.95 10 . 1016 / J . UCLIM . 2015 . 04 . 003$[][]\T1/ppl/m/n/10.95 . \T1/
+ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www .
+ sciencedirect .
+ []
+
+
+Overfull \hbox (26.1837pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 data: In-ter-pre-ta-tion with a new agri-cul-tural emis-sions
+ in-ven-tory (MASAGE_NH3).
+ []
+
+
+Overfull \hbox (0.1114pt too wide) in paragraph at lines 369--369
+\T1/cmtt/m/n/10.95 3119(13 ) 60543 -[] 2$[][]\T1/ppl/m/n/10.95 . \T1/ppl/m/sc/1
+0.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedi
+rect . com / science / article /
+ []
+
+[46]
+Overfull \hbox (12.7646pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / t
+heurbanfoodcrisis . wordpress . com / urban -[] farming / benefits -[]
+ []
+
+[47]
+Overfull \hbox (4.41403pt too wide) in paragraph at lines 369--369
+\T1/ppl/m/n/10.95 green roofs in Chicago. In: \T1/ppl/m/it/10.95 At-mo-spheric
+ En-vi-ron-ment \T1/ppl/m/n/10.95 42.31 (Oct. 2008), pp. 7266
+ []
+
+[48]
 \openout2 = `Appendices/AppendixA.aux'.
 
  (Appendices/AppendixA.tex
@@ -2004,11 +2224,11 @@ Overfull \hbox (0.95074pt too wide) in paragraph at lines 121--161
  []
 
 1: section
-[41
+[49
 
 
 
-] [42] [43] [44])
+] [50] [51] [52])
 \openout2 = `Appendices/AppendixB.aux'.
 
  (Appendices/AppendixB.tex
@@ -2044,13 +2264,13 @@ Overfull \hbox (0.95076pt too wide) in paragraph at lines 114--129
  []
 
 1: section
-[45
+[53
 
 
 
 
 
-] [46] [47] [48] [49] [50])
+] [54] [55] [56] [57] [58])
 \openout2 = `Appendices/AppendixC.aux'.
 
  (Appendices/AppendixC.tex
@@ -2075,12 +2295,12 @@ e-
 
 )
 1: section
-[51
+[59
 
 
 
 
-] [52] [53] [54] [55]
+] [60] [61] [62] [63]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 386.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
  (main.aux (Chapters/1_Introduction.aux)
@@ -2091,23 +2311,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 386.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BDF814AA02693C5EF9722D3E8A40BA01;7292.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: 628D1385EA967E721433A00D6B844184;7685.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46727 strings out of 492946
- 969908 string characters out of 3126267
- 1362430 words of memory out of 3000000
- 49839 multiletter control sequences out of 15000+200000
+ 47149 strings out of 492946
+ 982631 string characters out of 3126267
+ 1383184 words of memory out of 3000000
+ 50165 multiletter control sequences out of 15000+200000
  584091 words of font info for 115 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,83p,2261b,2434s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,20n,83p,2445b,3021s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\oskat\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
 ectt1095.pk>{C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/b
 ase/8r.enc}<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
@@ -2116,9 +2332,9 @@ e1/urw/palatino/uplb8a.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/urw/palatino/uplr8a.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/oskat/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (60 pages, 417284 bytes).
+Output written on main.pdf (68 pages, 782823 bytes).
 PDF statistics:
- 693 PDF objects out of 1000 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
- 324 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1294 PDF objects out of 1440 (max. 8388607)
+ 230 named destinations out of 1000 (max. 500000)
+ 353 words of extra memory for PDF output out of 10000 (max. 10000000)
 
