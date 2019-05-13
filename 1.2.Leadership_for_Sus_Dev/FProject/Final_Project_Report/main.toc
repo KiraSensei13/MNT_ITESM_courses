@@ -2,38 +2,38 @@
 \babel@toc {english}{}
 \contentsline {chapter}{Abstract}{i}{section*.1}% 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.4}% 
-\contentsline {chapter}{\numberline {2}Conceptual Framework}{5}{chapter.5}% 
-\contentsline {section}{\numberline {2.1}Overview of urban agriculture}{5}{section.6}% 
-\contentsline {section}{\numberline {2.2}Conceptualising a sustainable city}{6}{section.7}% 
-\contentsline {subsection}{\numberline {2.2.1}The Green City Index}{9}{subsection.8}% 
-\contentsline {subsection}{\numberline {2.2.2}Global City Indicators Facility}{10}{subsection.9}% 
-\contentsline {subsection}{\numberline {2.2.3}Global Compact Cities Circles of Sustainability}{11}{subsection.10}% 
-\contentsline {chapter}{\numberline {3}Methods}{13}{chapter.11}% 
-\contentsline {chapter}{\numberline {4}Analyses}{15}{chapter.13}% 
-\contentsline {section}{\numberline {4.1}Urban agriculture and economic sustainability of cities}{15}{section.14}% 
-\contentsline {subsection}{\numberline {4.1.1}Full-time employment}{15}{subsection.15}% 
-\contentsline {subsection}{\numberline {4.1.2}Employment for women}{17}{subsection.18}% 
-\contentsline {subsection}{\numberline {4.1.3}Income generation and gross domestic product}{18}{subsection.20}% 
-\contentsline {subsection}{\numberline {4.1.4}Savings and expenditure}{19}{subsection.22}% 
-\contentsline {subsection}{\numberline {4.1.5}Tax revenue}{21}{subsection.24}% 
-\contentsline {section}{\numberline {4.2}Urban agriculture and social sustainability of cities}{22}{section.25}% 
-\contentsline {subsection}{\numberline {4.2.1}Educational functions}{22}{subsection.26}% 
-\contentsline {subsection}{\numberline {4.2.2}Civic engagement}{23}{subsection.27}% 
-\contentsline {subsection}{\numberline {4.2.3}Safety and security}{24}{subsection.28}% 
-\contentsline {subsection}{\numberline {4.2.4}Gender equality and social equity}{25}{subsection.29}% 
-\contentsline {subsection}{\numberline {4.2.5}Health benefits}{26}{subsection.30}% 
-\contentsline {subsection}{\numberline {4.2.6}Recreation}{27}{subsection.31}% 
-\contentsline {subsection}{\numberline {4.2.7}Technology and innovation promotion}{27}{subsection.32}% 
-\contentsline {section}{\numberline {4.3}Urban agriculture and environmental sustainability of cities}{28}{section.33}% 
-\contentsline {subsection}{\numberline {4.3.1}Management of emissions}{28}{subsection.34}% 
-\contentsline {subsection}{\numberline {4.3.2}Water management}{29}{subsection.35}% 
-\contentsline {subsection}{\numberline {4.3.3}Waste management}{30}{subsection.36}% 
-\contentsline {subsection}{\numberline {4.3.4}Energy efficiency}{31}{subsection.37}% 
-\contentsline {subsection}{\numberline {4.3.5}Organic farming in percentage of total agricultural area}{32}{subsection.38}% 
-\contentsline {chapter}{\numberline {5}Discussion}{34}{chapter.39}% 
-\contentsline {section}{\numberline {5.1}Urban agriculture-sustainable city nexus}{34}{section.40}% 
-\contentsline {section}{\numberline {5.2}Implications for cities in the global south and compact cities}{36}{section.41}% 
-\contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.42}% 
-\contentsline {chapter}{\numberline {A}The Green City Index}{44}{appendix.44}% 
-\contentsline {chapter}{\numberline {B}Global City Indicators Facility}{48}{appendix.49}% 
-\contentsline {chapter}{\numberline {C}Global Compact Cities Circles of Sustainability}{55}{appendix.56}% 
+\contentsline {chapter}{\numberline {2}Conceptual Framework}{4}{chapter.5}% 
+\contentsline {section}{\numberline {2.1}Overview of urban agriculture}{4}{section.6}% 
+\contentsline {section}{\numberline {2.2}Conceptualising a sustainable city}{5}{section.7}% 
+\contentsline {subsection}{\numberline {2.2.1}The Green City Index}{7}{subsection.8}% 
+\contentsline {subsection}{\numberline {2.2.2}Global City Indicators Facility}{9}{subsection.9}% 
+\contentsline {subsection}{\numberline {2.2.3}Global Compact Cities Circles of Sustainability}{10}{subsection.10}% 
+\contentsline {chapter}{\numberline {3}Methods}{12}{chapter.11}% 
+\contentsline {chapter}{\numberline {4}Analyses}{14}{chapter.13}% 
+\contentsline {section}{\numberline {4.1}Urban agriculture and economic sustainability of cities}{14}{section.14}% 
+\contentsline {subsection}{\numberline {4.1.1}Full-time employment}{14}{subsection.15}% 
+\contentsline {subsection}{\numberline {4.1.2}Employment for women}{16}{subsection.18}% 
+\contentsline {subsection}{\numberline {4.1.3}Income generation and gross domestic product}{17}{subsection.20}% 
+\contentsline {subsection}{\numberline {4.1.4}Savings and expenditure}{18}{subsection.22}% 
+\contentsline {subsection}{\numberline {4.1.5}Tax revenue}{20}{subsection.24}% 
+\contentsline {section}{\numberline {4.2}Urban agriculture and social sustainability of cities}{21}{section.25}% 
+\contentsline {subsection}{\numberline {4.2.1}Educational functions}{21}{subsection.26}% 
+\contentsline {subsection}{\numberline {4.2.2}Civic engagement}{22}{subsection.27}% 
+\contentsline {subsection}{\numberline {4.2.3}Safety and security}{23}{subsection.28}% 
+\contentsline {subsection}{\numberline {4.2.4}Gender equality and social equity}{24}{subsection.29}% 
+\contentsline {subsection}{\numberline {4.2.5}Health benefits}{25}{subsection.30}% 
+\contentsline {subsection}{\numberline {4.2.6}Recreation}{26}{subsection.31}% 
+\contentsline {subsection}{\numberline {4.2.7}Technology and innovation promotion}{26}{subsection.32}% 
+\contentsline {section}{\numberline {4.3}Urban agriculture and environmental sustainability of cities}{27}{section.33}% 
+\contentsline {subsection}{\numberline {4.3.1}Management of emissions}{27}{subsection.34}% 
+\contentsline {subsection}{\numberline {4.3.2}Water management}{28}{subsection.35}% 
+\contentsline {subsection}{\numberline {4.3.3}Waste management}{29}{subsection.36}% 
+\contentsline {subsection}{\numberline {4.3.4}Energy efficiency}{30}{subsection.37}% 
+\contentsline {subsection}{\numberline {4.3.5}Organic farming in percentage of total agricultural area}{31}{subsection.38}% 
+\contentsline {chapter}{\numberline {5}Discussion}{33}{chapter.39}% 
+\contentsline {section}{\numberline {5.1}Urban agriculture-sustainable city nexus}{33}{section.40}% 
+\contentsline {section}{\numberline {5.2}Implications for cities in the global south and compact cities}{35}{section.41}% 
+\contentsline {chapter}{\numberline {6}Conclusion}{37}{chapter.42}% 
+\contentsline {chapter}{\numberline {A}The Green City Index}{41}{appendix.44}% 
+\contentsline {chapter}{\numberline {B}Global City Indicators Facility}{45}{appendix.49}% 
+\contentsline {chapter}{\numberline {C}Global Compact Cities Circles of Sustainability}{51}{appendix.56}% 
