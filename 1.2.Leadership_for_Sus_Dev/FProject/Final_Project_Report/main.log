@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  12 MAY 2019 23:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  13 MAY 2019 11:18
 entering extended mode
 **./main.tex
 (main.tex
@@ -1426,6 +1426,31 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 )
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pdfpages.
+sty"
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eso-pic\eso-pic.st
+y"
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\atbegsh
+i.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+))
+\AM@pagewidth=\dimen295
+\AM@pageheight=\dimen296
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pppdftex.
+def"
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box75
+\AM@global@opts=\toks40
+\AM@toc@title=\toks41
+\c@AM@survey=\count446
+\AM@templatesizebox=\box76
+)
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperref.
 sty"
 Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
@@ -1460,7 +1485,7 @@ Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
 Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
 Package: xcolor-patch 2016/05/16 xcolor patch
 Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
@@ -1468,9 +1493,9 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 ty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen295
-\Hy@linkcounter=\count446
-\Hy@pagecounter=\count447
+\@linkdim=\dimen297
+\Hy@linkcounter=\count447
+\Hy@pagecounter=\count448
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.de
 f"
@@ -1478,7 +1503,7 @@ File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count448
+\Hy@SavedSpaceFactor=\count449
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/00miktex\hyperref.
 cfg"
@@ -1491,12 +1516,12 @@ Package hyperref Info: Plain pages OFF on input line 4534.
 Package hyperref Info: Backreferencing OFF on input line 4539.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4772.
-\c@Hy@tempcnt=\count449
+\c@Hy@tempcnt=\count450
 LaTeX Info: Redefining \url on input line 5125.
-\XeTeXLinkMargin=\dimen296
-\Fld@menulength=\count450
-\Field@Width=\dimen297
-\Fld@charsize=\dimen298
+\XeTeXLinkMargin=\dimen298
+\Fld@menulength=\count451
+\Field@Width=\dimen299
+\Fld@charsize=\dimen300
 Package hyperref Info: Hyper figures OFF on input line 6380.
 Package hyperref Info: Link nesting OFF on input line 6385.
 Package hyperref Info: Hyper index ON on input line 6388.
@@ -1506,20 +1531,20 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6405.
 Package hyperref Info: PDF/A mode OFF on input line 6410.
 LaTeX Info: Redefining \ref on input line 6450.
 LaTeX Info: Redefining \pageref on input line 6454.
-\Hy@abspage=\count451
-\c@Item=\count452
-\c@Hfootnote=\count453
+\Hy@abspage=\count452
+\c@Item=\count453
+\c@Hfootnote=\count454
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 164.
+(scrhack)             need that hack, on input line 167.
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdftex.d
 ef"
 File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
-\Fld@listcount=\count454
-\c@bookmark@seq@number=\count455
+\Fld@listcount=\count455
+\c@bookmark@seq@number=\count456
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\rerunfile
 check.sty"
@@ -1529,10 +1554,10 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip109
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 164.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 164.
-Package hyperref Info: Option `colorlinks' set `true' on input line 164.
-Package hyperref Info: Option `unicode' set `true' on input line 164.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 167.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 167.
+Package hyperref Info: Option `colorlinks' set `true' on input line 167.
+Package hyperref Info: Option `unicode' set `true' on input line 167.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\puenc.def
 "
@@ -1540,7 +1565,7 @@ File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 164.
+Package hyperref Info: Option `breaklinks' set `true' on input line 167.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1557,31 +1582,31 @@ Package csquotes Info: ... found 'babel' package.
 (Appendices/AppendixB.aux) (Appendices/AppendixC.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 164.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 164.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 167.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 167.
 
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 164.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 167.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ppl.fd"
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -1597,17 +1622,17 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count456
-\scratchdimen=\dimen299
-\scratchbox=\box75
-\nofMPsegments=\count457
-\nofMParguments=\count458
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count459
-\MPscratchDim=\dimen300
-\MPnumerator=\count460
-\makeMPintoPDFobject=\count461
-\everyMPtoPDFconversion=\toks41
+\scratchcounter=\count457
+\scratchdimen=\dimen301
+\scratchbox=\box77
+\nofMPsegments=\count458
+\nofMParguments=\count459
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count460
+\MPscratchDim=\dimen302
+\MPnumerator=\count461
+\makeMPintoPDFobject=\count462
+\everyMPtoPDFconversion=\toks43
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
 base.sty"
@@ -1664,18 +1689,18 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 164.
-Package scrbase Info: activating english \abbrevname on input line 164.
-Package scrbase Info: activating english \byname on input line 164.
-Package scrbase Info: activating english \acknowledgementname on input line 164
+(scrlayer)             \begin{document} on input line 167.
+Package scrbase Info: activating english \abbrevname on input line 167.
+Package scrbase Info: activating english \byname on input line 167.
+Package scrbase Info: activating english \acknowledgementname on input line 167
 .
-Package scrbase Info: activating english \authorshipname on input line 164.
+Package scrbase Info: activating english \authorshipname on input line 167.
 Package scrbase Info: activating english \supervisingcommittee on input line 16
-4.
-Package scrbase Info: activating english \constantsname on input line 164.
-Package scrbase Info: activating english \symbolsname on input line 164.
+7.
+Package scrbase Info: activating english \constantsname on input line 167.
+Package scrbase Info: activating english \symbolsname on input line 167.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 164.
+LaTeX Info: Redefining \selectfont on input line 167.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1699,11 +1724,17 @@ Package biblatex Warning: The following entry could not be found
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 164.
-Package biblatex Info: Reference segment=0 on input line 164.
+Package biblatex Info: Reference section=0 on input line 167.
+Package biblatex Info: Reference segment=0 on input line 167.
  ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box76
-Package hyperref Info: Link coloring ON on input line 164.
+\AtBeginShipoutBox=\box78
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\pdflscape
+.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+Package hyperref Info: Link coloring ON on input line 167.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -1713,54 +1744,54 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 estring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count462
+\c@section@level=\count463
 )
-LaTeX Info: Redefining \ref on input line 164.
-LaTeX Info: Redefining \pageref on input line 164.
-LaTeX Info: Redefining \nameref on input line 164.
+LaTeX Info: Redefining \ref on input line 167.
+LaTeX Info: Redefining \pageref on input line 167.
+LaTeX Info: Redefining \nameref on input line 167.
  (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 164.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 167.
 
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ppl.fd"
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 164
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 167
 .
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlzplm.fd"
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 164
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 167
 .
  ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omszplm.fd
 "
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 164
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 167
 .
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxzplm.fd"
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 164
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 167
 .
  ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1zplm.fd
 "
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 1: section
-<./Figures/uniLogo.png, id=167, 401.5pt x 401.5pt>
+<./Figures/uniLogo.png, id=159, 401.5pt x 401.5pt>
 File: ./Figures/uniLogo.png Graphic file (type png)
 <use ./Figures/uniLogo.png>
-Package pdftex.def Info: ./Figures/uniLogo.png  used on input line 183.
+Package pdftex.def Info: ./Figures/uniLogo.png  used on input line 186.
 (pdftex.def)             Requested size: 60.60188pt x 60.60223pt.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 190.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 193.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 199.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 202.
 [1
 
 
@@ -1771,9 +1802,9 @@ niLogo.png>]
  Abstract
 --------------------
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 240.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 243.
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
@@ -1782,7 +1813,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 252.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 255.
  (main.toc
 1: section
 [2
@@ -1799,6 +1830,26 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
 1: section
 [4
 
+] (main.lot
+Overfull \hbox (6.79964pt too wide) in paragraph at lines 16--16
+ [][] [][][]\T1/ppl/m/n/10.95 Supplementary Ta-ble: Global City In-di-ca-tors F
+a-cil-ity. Source: (ISO/IEC 
+ []
+
+
+Overfull \hbox (67.36261pt too wide) in paragraph at lines 18--18
+ \T1/ppl/m/n/10.95 Source: KPMG In-ter-na-tional (2016) (http://www.circlesofsu
+stainability.org/circles- 
+ []
+
+)
+\tf@lot=\write8
+\openout8 = `main.lot'.
+
+
+1: section
+[5
+
 ]
 1: section
 \openout2 = `Chapters/1_Introduction.aux'.
@@ -1810,64 +1861,58 @@ Chapter 1.
 
 
 
-] [2]) [3]
+]) [2] [3]
 \openout2 = `Chapters/2_ConceptualFramework.aux'.
 
  (Chapters/2_ConceptualFramework.tex
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 7.
+
+Overfull \hbox (2.22762pt too wide) in paragraph at lines 11--12
+\T1/ppl/m/n/12 house-hold food needs and other com-mer-cial rea-sons [[][]7[][]
+, [][]64[][]]. Nor-mally, house-
+ []
+
 1: section
 [4
 
 
 
 ] [5]
-Overfull \hbox (0.76218pt too wide) in paragraph at lines 19--20
-\T1/ppl/m/n/12 limit the quan-tity and qual-ity of amenity veg-e-ta-tion. Stud-
-ies have also shown
- []
+LaTeX Font Info:    Try loading font information for TS1+ppl on input line 28.
 
-[6] [7] [8] [9]) [10]
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ppl.fd"
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+) [6] [7]) [8]
 \openout2 = `Chapters/3_Methods.aux'.
 
  (Chapters/3_Methods.tex
 Chapter 3.
-<./Figures/sustainableCityFramework.png, id=419, 964.5636pt x 546.3612pt>
+<./Figures/sustainableCityFramework.png, id=424, 964.5636pt x 546.3612pt>
 File: ./Figures/sustainableCityFramework.png Graphic file (type png)
 <use ./Figures/sustainableCityFramework.png>
 Package pdftex.def Info: ./Figures/sustainableCityFramework.png  used on input 
-line 11.
+line 9.
 (pdftex.def)             Requested size: 404.02908pt x 228.86154pt.
 1: section
-[11
+[9
 
 
 
-]) [12 <./Figures/sustainableCityFramework.png>]
+ <./Figures/sustainableCityFramework.png>]) [10]
 \openout2 = `Chapters/4_Analyses.aux'.
 
  (Chapters/4_Analyses.tex
 Chapter 4.
 
-Overfull \hbox (1.55501pt too wide) in paragraph at lines 11--12
-\T1/ppl/m/n/12 Urban agri-cul-ture pro-vides em-ploy-ment, and has thus be-come
- a ma-jor means
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
 []|\T1/ppl/m/n/10.95 Sub-Saharan
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 20--21
+Underfull \hbox (badness 4001) in paragraph at lines 21--22
 []|\T1/ppl/m/n/10.95 Commercial veg-etable grow-ing or
- []
-
-
-Underfull \hbox (badness 3701) in paragraph at lines 22--23
-[]|\T1/ppl/m/n/10.95 Perishable high-value com-modi-ties
  []
 
 
@@ -1875,164 +1920,148 @@ Underfull \hbox (badness 3701) in paragraph at lines 23--24
 []|\T1/ppl/m/n/10.95 Perishable high-value com-modi-ties
  []
 
+
+Underfull \hbox (badness 3701) in paragraph at lines 24--25
+[]|\T1/ppl/m/n/10.95 Perishable high-value com-modi-ties
+ []
+
 1: section
-[13
+[11
 
 
 
 ]
-<./Figures/vegySupplyChain.png, id=452, 503.481pt x 423.984pt>
+<./Figures/vegySupplyChain.png, id=455, 503.481pt x 423.984pt>
 File: ./Figures/vegySupplyChain.png Graphic file (type png)
 <use ./Figures/vegySupplyChain.png>
-Package pdftex.def Info: ./Figures/vegySupplyChain.png  used on input line 34.
+Package pdftex.def Info: ./Figures/vegySupplyChain.png  used on input line 35.
 (pdftex.def)             Requested size: 303.0218pt x 255.18163pt.
- [14 <./Figures/vegySupplyChain.png>]
-Underfull \hbox (badness 4792) in paragraph at lines 60--60
+ [12 <./Figures/vegySupplyChain.png>]
+Underfull \hbox (badness 4792) in paragraph at lines 61--61
 []|\T1/ppl/m/n/10.95 Accra, Ku-masi, Tako-radi and
  []
 
 
-Overfull \hbox (7.58842pt too wide) in paragraph at lines 51--71
+Overfull \hbox (7.58842pt too wide) in paragraph at lines 52--72
  [] 
  []
 
-[15]
-Underfull \hbox (badness 1902) in paragraph at lines 85--85
+[13]
+Underfull \hbox (badness 1902) in paragraph at lines 86--86
 []|\T1/ppl/m/n/10.95 Annual in-come per ha
  []
 
-[16]
-Overfull \hbox (7.5946pt too wide) in paragraph at lines 108--127
+[14]
+Overfull \hbox (7.5946pt too wide) in paragraph at lines 109--128
  [] 
  []
 
-[17]
-Overfull \hbox (3.43887pt too wide) in paragraph at lines 134--135
-[]\T1/ppl/m/n/12 Transportation taxes are also paid by ur-ban farm-ers who tran
-s-port their goods
- []
-
-[18] [19] [20]
+[15] [16]
 Overfull \hbox (0.65479pt too wide) in paragraph at lines 164--165
 \T1/ppl/m/n/12 clude en-coun-ters with phys-i-cal dan-ger such as poi-sonous an
 -i-mals and thorny
  []
 
-[21]
-Overfull \hbox (12.36598pt too wide) in paragraph at lines 168--169
-\T1/ppl/m/n/12 eq-uity through the em-ploy-ment op-por-tu-ni-ties it of-fers to
- both men and women.
- []
-
-[22] [23]
-Overfull \hbox (18.30531pt too wide) in paragraph at lines 192--192
+[17]
+Overfull \hbox (18.30531pt too wide) in paragraph at lines 190--190
 []\T1/ppl/b/n/14.4 Urban agri-cul-ture and en-vi-ron-men-tal sus-tain-abil-ity 
 of cities 
  []
 
-[24]
-Overfull \hbox (1.00201pt too wide) in paragraph at lines 206--207
-[]\T1/ppl/m/n/12 The con-ven-tional lit-er-a-ture in-di-cates that strate-gies 
-such as wastew-a-ter reuse,
- []
-
-
-Overfull \hbox (5.43115pt too wide) in paragraph at lines 206--207
-\T1/ppl/m/n/12 net-works, soil and plant mea-sure-ment sys-tems, and dy-namic s
-im-u-la-tion mod-
- []
-
-[25] [26]
-LaTeX Font Info:    Try loading font information for TS1+ppl on input line 220.
-
-
-("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ppl.fd"
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-) [27] [28]) [29]
+[18] [19] [20]) [21]
 \openout2 = `Chapters/5_Discussion.aux'.
 
  (Chapters/5_Discussion.tex
 Chapter 5.
 1: section
-[30
+[22
 
 
 
-] [31] [32] [33]
-<./Figures/theApp.png, id=708, 589.4522pt x 548.0475pt>
-File: ./Figures/theApp.png Graphic file (type png)
-<use ./Figures/theApp.png>
-Package pdftex.def Info: ./Figures/theApp.png  used on input line 61.
-(pdftex.def)             Requested size: 383.82639pt x 356.87056pt.
- [34 <./Figures/theApp.png>]) [35]
+] [23] [24]
+<./Figures/app1.png, id=653, 170.13562pt x 170.13562pt>
+File: ./Figures/app1.png Graphic file (type png)
+<use ./Figures/app1.png>
+Package pdftex.def Info: ./Figures/app1.png  used on input line 50.
+(pdftex.def)             Requested size: 181.81184pt x 181.82263pt.
+<./Figures/app2.png, id=654, 170.13562pt x 170.13562pt>
+File: ./Figures/app2.png Graphic file (type png)
+<use ./Figures/app2.png>
+Package pdftex.def Info: ./Figures/app2.png  used on input line 58.
+(pdftex.def)             Requested size: 181.81184pt x 181.82263pt.
+<./Figures/app3.png, id=655, 170.13562pt x 359.09157pt>
+File: ./Figures/app3.png Graphic file (type png)
+<use ./Figures/app3.png>
+Package pdftex.def Info: ./Figures/app3.png  used on input line 66.
+(pdftex.def)             Requested size: 181.81184pt x 383.75844pt.
+ [25 <./Figures/app1.png>]) [26 <./Figures/app2.png>] [27 <./Figures/app3.png>]
 \openout2 = `Chapters/6_Conclusion.aux'.
 
-
-(Chapters/6_Conclusion.tex
+ (Chapters/6_Conclusion.tex
 Chapter 6.
 1: section
-[36
+[28
 
 
 
-]) [37]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 369.
+]) [29]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 363.
 
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (0.9088pt too wide) in paragraph at lines 369--369
+Overfull \hbox (0.9088pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 cal con-tam-i-na-tion in farms and mar-kets and as-so-ci-ated
  con-sumer risk groups.
  []
 
 
-Overfull \hbox (15.24588pt too wide) in paragraph at lines 369--369
+Overfull \hbox (15.24588pt too wide) in paragraph at lines 363--363
 []\T1/ppl/m/n/10.95 Owusu Am-pon-sah et al.   As-sess-ing low qual-ity wa-ter 
 use pol-icy frame-work:Case
  []
 
 1: section
-[38
+[30
 
 
 ]
-Overfull \hbox (1.116pt too wide) in paragraph at lines 369--369
+Overfull \hbox (1.116pt too wide) in paragraph at lines 363--363
 \T1/cmtt/m/n/10.95 content / uploads / 2014 / 06 / FoodMetres -[] Urban -[] Org
 anic -[] Waste -[] Management -[]
  []
 
 
-Overfull \hbox (1.91081pt too wide) in paragraph at lines 369--369
+Overfull \hbox (1.91081pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 tural Meth-ods. In: \T1/ppl/m/it/10.95 In-ter-na-tional jour
 -nal of en-vi-ron-men-tal re-search and pub-lic health
  []
 
 
-Overfull \hbox (0.13133pt too wide) in paragraph at lines 369--369
+Overfull \hbox (0.13133pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 12.6 (June 2015), pp. 687991. \T1/ppl/m/sc/10.95 issn\T1/ppl
 /m/n/10.95 : 1660-4601. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1/cmtt
 /m/n/10.95 10 . 3390 / ijerph120606879$[][]\T1/ppl/m/n/10.95 .
  []
 
 
-Overfull \hbox (2.11774pt too wide) in paragraph at lines 369--369
+Overfull \hbox (2.11774pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 1986), p. 1030. \T1/ppl/m/sc/10.95 issn\T1/ppl/m/n/10.95 : 00
 029092. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 10 . 
 2307 / 1242159$[][]\T1/ppl/m/n/10.95 . \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 
 : [][]$\T1/cmtt/m/n/10.95 https : / / academic .
  []
 
-[39]
-Overfull \hbox (5.28625pt too wide) in paragraph at lines 369--369
+[31]
+Overfull \hbox (5.28625pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 health. In: \T1/ppl/m/it/10.95 En-vi-ron-ment In-ter-na-tion
 al \T1/ppl/m/n/10.95 75 (Feb. 2015), pp. 117135. \T1/ppl/m/sc/10.95 issn\T1/pp
 l/m/n/10.95 : 01604120.
  []
 
 
-Overfull \hbox (12.70117pt too wide) in paragraph at lines 369--369
+Overfull \hbox (12.70117pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 0013-9165. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1
 /cmtt/m/n/10.95 10 . 1177 / 001391659702900401$[][]\T1/ppl/m/n/10.95 . \T1/ppl/
 m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 http : / / journals .
@@ -2040,32 +2069,32 @@ m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 http : / / journals .
  []
 
 
-Overfull \hbox (1.46118pt too wide) in paragraph at lines 369--369
+Overfull \hbox (1.46118pt too wide) in paragraph at lines 363--363
 []\T1/ppl/m/n/10.95 Katharine Bradley and Ryan E. Galt.   Prac-tic-ing food ju
 s-tice at Dig Deep Farms
  []
 
-[40]
-Overfull \hbox (7.01186pt too wide) in paragraph at lines 369--369
+[32]
+Overfull \hbox (7.01186pt too wide) in paragraph at lines 363--363
 \T1/cmtt/m/n/10.95 PMC4475942 % 20http : / / www . pnas . org / lookup / doi / 
 10 . 1073 / pnas . 1423674112$[][]\T1/ppl/m/n/10.95 . 
  []
 
 
-Overfull \hbox (4.42757pt too wide) in paragraph at lines 369--369
+Overfull \hbox (4.42757pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/it/10.95 sys-tems\T1/ppl/m/n/10.95 . 2010. \T1/ppl/m/sc/10.95 url\T1/
 ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . researchgate . net / 
 publication / 239827101 %
  []
 
 
-Overfull \hbox (2.67834pt too wide) in paragraph at lines 369--369
+Overfull \hbox (2.67834pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 re-lated to agri-cul-tural sys-tems. In: \T1/ppl/m/it/10.95 
 En-vi-ron-ment In-ter-na-tional \T1/ppl/m/n/10.95 29.2-3 (June 2003),
  []
 
 
-Overfull \hbox (16.02974pt too wide) in paragraph at lines 369--369
+Overfull \hbox (16.02974pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 0007-070X. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1
 /cmtt/m/n/10.95 10 . 1108 / BFJ -[] 06 -[] 2015 -[] 0200$[][]\T1/ppl/m/n/10.95 
 . \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 http : / / 
@@ -2073,100 +2102,100 @@ www . emeraldinsight .
  []
 
 
-Overfull \hbox (29.90785pt too wide) in paragraph at lines 369--369
+Overfull \hbox (29.90785pt too wide) in paragraph at lines 363--363
 \T1/cmtt/m/n/10.95 monographs / iwmi -[] jointly -[] published / irrigated -[] 
 urban -[] vegetable -[] production -[]
  []
 
-[41]
-Overfull \hbox (6.26126pt too wide) in paragraph at lines 369--369
+[33]
+Overfull \hbox (6.26126pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 fras-truc-ture. In: \T1/ppl/m/it/10.95 Built En-vi-ron-ment 
 \T1/ppl/m/n/10.95 33.1 (Mar. 2007), pp. 115133. \T1/ppl/m/sc/10.95 issn\T1/ppl
 /m/n/10.95 : 02637960.
  []
 
 
-Overfull \hbox (6.60904pt too wide) in paragraph at lines 369--369
+Overfull \hbox (6.60904pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/it/10.95 phia, PA\T1/ppl/m/n/10.95 . 2012. \T1/ppl/m/sc/10.95 url\T1/
 ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . researchgate . net / 
 publication / 304048480 %
  []
 
 
-Overfull \hbox (9.93274pt too wide) in paragraph at lines 369--369
+Overfull \hbox (9.93274pt too wide) in paragraph at lines 363--363
 \T1/cmtt/m/n/10.95 %7DWith % 7B % 5C _ %7Da % 7B % 5C _ %7DFocus % 7B % 5C _ %7
 Don % 7B % 5C _ %7DPhiladelphia %
  []
 
-
-Overfull \hbox (6.89883pt too wide) in paragraph at lines 369--369
+[34]
+Overfull \hbox (6.89883pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/it/10.95 Poverty Al-le-vi-a-tion and Food Se-cu-rity\T1/ppl/m/n/10.95
  . 2012. \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 http
 s : / / www . semanticscholar .
  []
 
 
-Overfull \hbox (18.76128pt too wide) in paragraph at lines 369--369
+Overfull \hbox (18.76128pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 tain-abil-ity: a re-view of in-di-ca-tors. In: \T1/ppl/m/it/
 10.95 Land-scape Ecol-ogy \T1/ppl/m/n/10.95 30.7 (Aug. 2015), pp. 1175
  []
 
-[42]
-Overfull \hbox (0.92177pt too wide) in paragraph at lines 369--369
+
+Overfull \hbox (0.92177pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 Prin-ci-ples and Rights at Work. Re-port of the Director-Gene
 ral, 2006. In: (2006).
  []
 
-
-Overfull \hbox (5.84819pt too wide) in paragraph at lines 369--369
+[35]
+Overfull \hbox (5.84819pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 Veg-e-ta-tion Re-duce Crime? In: \T1/ppl/m/it/10.95 En-vi-ro
 n-ment & Be-hav-ior \T1/ppl/m/n/10.95 33.3 (May 2001), pp. 343
  []
 
-[43]
-Overfull \hbox (9.93274pt too wide) in paragraph at lines 369--369
+[36]
+Overfull \hbox (9.93274pt too wide) in paragraph at lines 363--363
 \T1/cmtt/m/n/10.95 / / d3dqsm2futmewz . cloudfront . net / docs / SCN / sept09 
 % 7B % 5C _ %7Dvalleywide /
  []
 
-[44]
-Overfull \hbox (5.94263pt too wide) in paragraph at lines 369--369
+
+Overfull \hbox (5.94263pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 con-cep-tual re-view. In: \T1/ppl/m/it/10.95 En-vi-ron-men-t
 al Im-pact As-sess-ment Re-view \T1/ppl/m/n/10.95 18.6 (Nov. 1998),
  []
 
 
-Overfull \hbox (29.64534pt too wide) in paragraph at lines 369--369
+Overfull \hbox (29.64534pt too wide) in paragraph at lines 363--363
 [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect . com / science / artic
 le / abs / pii / S0195925598000195$[][]\T1/ppl/m/n/10.95 . 
  []
 
 
-Overfull \hbox (8.77437pt too wide) in paragraph at lines 369--369
+Overfull \hbox (8.77437pt too wide) in paragraph at lines 363--363
 \T1/cmtt/m/n/10.95 com / farmers -[] perception -[] and -[] knowledge -[] of -[
 ] health -[] risks -[] in -[] wastewater -[]
  []
 
 
-Overfull \hbox (8.10669pt too wide) in paragraph at lines 369--369
+Overfull \hbox (8.10669pt too wide) in paragraph at lines 363--363
 []\T1/ppl/m/n/10.95 Mikiko Nishimura and Takashi Ya-mano.   Emerg-ing Pri-vate
  Ed-u-ca-tion in Africa:
  []
 
 
-Overfull \hbox (28.00336pt too wide) in paragraph at lines 369--369
+Overfull \hbox (28.00336pt too wide) in paragraph at lines 363--363
 []\T1/ppl/m/n/10.95 R. Nu-gent.   The im-pact of ur-ban agri-cul-ture on the h
 ouse-hold and lo-cal economies.
  []
 
-[45]
-Overfull \hbox (0.41296pt too wide) in paragraph at lines 369--369
+[37]
+Overfull \hbox (0.41296pt too wide) in paragraph at lines 363--363
 []\T1/ppl/m/n/10.95 Jon Padgham, Ja-son Jab-bour, and Katie Di-et-rich.   Man-
 ag-ing change and build-
  []
 
 
-Overfull \hbox (4.13002pt too wide) in paragraph at lines 369--369
+Overfull \hbox (4.13002pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 0955. \T1/ppl/m/sc/10.95 doi\T1/ppl/m/n/10.95 : [][]$\T1/cmtt
 /m/n/10.95 10 . 1016 / J . UCLIM . 2015 . 04 . 003$[][]\T1/ppl/m/n/10.95 . \T1/
 ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www .
@@ -2174,31 +2203,31 @@ ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www .
  []
 
 
-Overfull \hbox (26.1837pt too wide) in paragraph at lines 369--369
+Overfull \hbox (26.1837pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 data: In-ter-pre-ta-tion with a new agri-cul-tural emis-sions
  in-ven-tory (MASAGE_NH3).
  []
 
 
-Overfull \hbox (0.1114pt too wide) in paragraph at lines 369--369
+Overfull \hbox (0.1114pt too wide) in paragraph at lines 363--363
 \T1/cmtt/m/n/10.95 3119(13 ) 60543 -[] 2$[][]\T1/ppl/m/n/10.95 . \T1/ppl/m/sc/1
 0.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedi
 rect . com / science / article /
  []
 
-[46]
-Overfull \hbox (12.7646pt too wide) in paragraph at lines 369--369
+[38]
+Overfull \hbox (12.7646pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / t
 heurbanfoodcrisis . wordpress . com / urban -[] farming / benefits -[]
  []
 
-[47]
-Overfull \hbox (4.41403pt too wide) in paragraph at lines 369--369
+[39]
+Overfull \hbox (4.41403pt too wide) in paragraph at lines 363--363
 \T1/ppl/m/n/10.95 green roofs in Chicago. In: \T1/ppl/m/it/10.95 At-mo-spheric
  En-vi-ron-ment \T1/ppl/m/n/10.95 42.31 (Oct. 2008), pp. 7266
  []
 
-[48]
+[40]
 \openout2 = `Appendices/AppendixA.aux'.
 
  (Appendices/AppendixA.tex
@@ -2224,11 +2253,11 @@ Overfull \hbox (0.95074pt too wide) in paragraph at lines 121--161
  []
 
 1: section
-[49
+[41
 
 
 
-] [50] [51] [52])
+] [42] [43] [44])
 \openout2 = `Appendices/AppendixB.aux'.
 
  (Appendices/AppendixB.tex
@@ -2264,13 +2293,13 @@ Overfull \hbox (0.95076pt too wide) in paragraph at lines 114--129
  []
 
 1: section
-[53
+[45
 
 
 
 
 
-] [54] [55] [56] [57] [58])
+] [46] [47] [48] [49] [50])
 \openout2 = `Appendices/AppendixC.aux'.
 
  (Appendices/AppendixC.tex
@@ -2295,12 +2324,168 @@ e-
 
 )
 1: section
-[59
+[51
 
 
 
 
-] [60] [61] [62] [63]
+] [52] [53] [54] [55]
+
+Package pdfpages Warning: Option `page' is unknow to \includepdf.
+(pdfpages)                Did you mean `pages'? (Note the `s'!)
+(pdfpages)                OK, I'll proceed as if it were `pages'.
+
+
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<pdf/survey.pdf, id=1115, 597.55246pt x 845.07724pt>
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf>
+Package pdftex.def Info: pdf/survey.pdf  used on input line 382.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf>
+Package pdftex.def Info: pdf/survey.pdf  used on input line 382.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<pdf/survey.pdf, id=1118, page=1, 597.55246pt x 845.07724pt>
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 1>
+Package pdftex.def Info: pdf/survey.pdf , page1 used on input line 382.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 1>
+Package pdftex.def Info: pdf/survey.pdf , page1 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 1>
+Package pdftex.def Info: pdf/survey.pdf , page1 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 1>
+Package pdftex.def Info: pdf/survey.pdf , page1 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 1>
+Package pdftex.def Info: pdf/survey.pdf , page1 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[56
+
+ <./pdf/survey.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<pdf/survey.pdf, id=1135, page=2, 597.55246pt x 845.07724pt>
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 2>
+Package pdftex.def Info: pdf/survey.pdf , page2 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 2>
+Package pdftex.def Info: pdf/survey.pdf , page2 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 2>
+Package pdftex.def Info: pdf/survey.pdf , page2 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[57 <./pdf/survey.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<pdf/survey.pdf, id=1142, page=3, 597.55246pt x 845.07724pt>
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 3>
+Package pdftex.def Info: pdf/survey.pdf , page3 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 3>
+Package pdftex.def Info: pdf/survey.pdf , page3 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 3>
+Package pdftex.def Info: pdf/survey.pdf , page3 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[58 <./pdf/survey.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<pdf/survey.pdf, id=1149, page=4, 597.55246pt x 845.07724pt>
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 4>
+Package pdftex.def Info: pdf/survey.pdf , page4 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 4>
+Package pdftex.def Info: pdf/survey.pdf , page4 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 4>
+Package pdftex.def Info: pdf/survey.pdf , page4 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[59 <./pdf/survey.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<pdf/survey.pdf, id=1156, page=5, 597.55246pt x 845.07724pt>
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 5>
+Package pdftex.def Info: pdf/survey.pdf , page5 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 5>
+Package pdftex.def Info: pdf/survey.pdf , page5 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 5>
+Package pdftex.def Info: pdf/survey.pdf , page5 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[60 <./pdf/survey.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<pdf/survey.pdf, id=1163, page=6, 597.55246pt x 845.07724pt>
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 6>
+Package pdftex.def Info: pdf/survey.pdf , page6 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 6>
+Package pdftex.def Info: pdf/survey.pdf , page6 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 6>
+Package pdftex.def Info: pdf/survey.pdf , page6 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[61 <./pdf/survey.pdf>]
+
+pdfTeX warning: pdflatex (file ./pdf/survey.pdf): PDF inclusion: found PDF vers
+ion <1.7>, but at most version <1.5> allowed
+<pdf/survey.pdf, id=1171, page=7, 597.55246pt x 845.07724pt>
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 7>
+Package pdftex.def Info: pdf/survey.pdf , page7 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 7>
+Package pdftex.def Info: pdf/survey.pdf , page7 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: pdf/survey.pdf Graphic file (type pdf)
+<use pdf/survey.pdf, page 7>
+Package pdftex.def Info: pdf/survey.pdf , page7 used on input line 382.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[62 <./pdf/survey.pdf>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 386.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
  (main.aux (Chapters/1_Introduction.aux)
@@ -2311,19 +2496,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 386.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 628D1385EA967E721433A00D6B844184;7685.
+(rerunfilecheck)             Checksum: 581073335EF6AD358A3394682209BCF2;7361.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47149 strings out of 492946
- 982631 string characters out of 3126267
- 1383184 words of memory out of 3000000
- 50165 multiletter control sequences out of 15000+200000
+ 47816 strings out of 492946
+ 994478 string characters out of 3126267
+ 1395317 words of memory out of 3000000
+ 50803 multiletter control sequences out of 15000+200000
  584091 words of font info for 115 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,83p,2445b,3021s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,20n,83p,2445b,3019s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\oskat\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
 ectt1095.pk>{C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/b
 ase/8r.enc}<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
@@ -2332,9 +2517,9 @@ e1/urw/palatino/uplb8a.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/urw/palatino/uplr8a.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/oskat/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (68 pages, 782823 bytes).
+Output written on main.pdf (68 pages, 1229665 bytes).
 PDF statistics:
- 1294 PDF objects out of 1440 (max. 8388607)
- 230 named destinations out of 1000 (max. 500000)
- 353 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1323 PDF objects out of 1440 (max. 8388607)
+ 234 named destinations out of 1000 (max. 500000)
+ 397 words of extra memory for PDF output out of 10000 (max. 10000000)
 

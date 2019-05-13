@@ -93,6 +93,9 @@ chapterinoneline,
 % insert degree celsius symbol
 \usepackage{textcomp}
 
+% include other pdf pages
+\usepackage{pdfpages}
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
@@ -138,7 +141,7 @@ chapterinoneline,
 \subject{Nanotechnology}
 
 % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
-\keywords{sustainable cities, compact cities, urban agriculture, urban land use planning}
+\keywords{android, technology, mobile application, Garden Gem, sustainable cities, compact cities, urban agriculture, urban land planning}
 
 % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
 \university{\href{https://tec.mx/}{Instituto Tecnonólogico y de Estudios Superiores de Monterrey}}
@@ -224,7 +227,7 @@ chapterinoneline,
 \vfill
 
 % Address and Date
-{\addressname \text{, } \large \today}\\[4cm]
+{\addressname \text{, } \large May 12, 2019}\\[4cm] %\today
 % University/department logo - uncomment to place it
 %\includegraphics{./Figures/uniLogo.png}
  
@@ -239,7 +242,7 @@ chapterinoneline,
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 
-The debate on the role of urban agriculture in the sustainable city discourse remains unresolved in the conventional literature. Therefore, the purpose of this study was to review relevant literature to clarify the role of urban agriculture in sustainable cities. The search for literature was guided by themes such as: a) urban agricultural practices, b) indicators for the measurement of sustainable cities, c) economic, social and environmental benefits of urban agriculture, and d) negative effects of urban agriculture on the city. The results from a synthesis of the literature indicate that urban agriculture supports the economic, social and environmental sustainability of cities. However, if the discussion gives credence to only the economic dimension of sustainability, then urban agriculture loses the debate. This is because the economic benefits of prime city land that is used used for nonagricultural purposes (such as commercial or industrial) is profound. However, the social and environmental functions of responsible urban agriculture, particularly in reducing the rift between urbanisation and nature, may be difficult to quantify. These social and environmental functions underscore the importance of urban agriculture in the city landscape. The paper concludes by arguing that focussing on only economic sustainability in the urban agriculture-sustainable city discourse is a travesty of the idea of sustainable development. The paper presents practical steps that can be taken to preserve agriculture in cities towards their sustainability. \\
+The implications of urban agriculture in a sustainable city is unresolved in the conventional literature. The purpose of this report is to: 1) review relevant literature to address the impact of urban agriculture in sustainable cities; and 2) develop a software tool for educational purposes in order to ease the starting urban agricultural process for the average citizen. The results from this report comprises: 1) a synthesis of the literature that indicates that urban agriculture supports the economic, social and environmental sustainability of cities; and 2) an Android application (Garden Gem). Nevertheless, if the economic dimension of sustainability is only considered, then urban agriculture is not feasible, as the economic benefits non-agricultural activities (such as commercial or industrial) are significantly greater. However, the social and environmental impacts of urban agriculture are be difficult to quantify. The social and environmental impacts are underestimated in the city landscape. \\
 
 \noindent
 \textbf{keywords:} \keywordnames
@@ -253,7 +256,7 @@ The debate on the role of urban agriculture in the sustainable city discourse re
 
 \listoffigures % Prints the list of figures
 
-%\listoftables % Prints the list of tables
+\listoftables % Prints the list of tables
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -349,15 +352,6 @@ The debate on the role of urban agriculture in the sustainable city discourse re
 \include{Chapters/5_Discussion}
 \include{Chapters/6_Conclusion}
 
-%\include{Chapters/1_Introduction}
-%\include{Chapters/2_ProblmemDefinitionAndMotivation}
-%\include{Chapters/3_HypothesisAndResearchQuestions}
-%\include{Chapters/4_Objectives}
-%\include{Chapters/5_StateoftheArt}
-%\include{Chapters/6_TheoreticalFramework}
-%\include{Chapters/7_Methodology}
-%\include{Chapters/8_WorkPlan}
-
 }
 
 %\include{Chapters/__IntroToLaTeX} 
@@ -380,6 +374,12 @@ The debate on the role of urban agriculture in the sustainable city discourse re
 \include{Appendices/AppendixA}
 \include{Appendices/AppendixB}
 \include{Appendices/AppendixC}
+
+%----------------------------------------------------------------------------------------
+%	ATTACHMENTS
+%----------------------------------------------------------------------------------------
+
+\includepdf[page=-]{pdf/survey}
 
 %----------------------------------------------------------------------------------------
 

@@ -1016,6 +1016,30 @@
       \endverb
       \keyw{California,Dig Deep Farms {\&} Produce,food justice,foodie logics,self-determination}
     \endentry
+    \entry{Broadway2009}{article}{}
+      \name{author}{1}{}{%
+        {{hash=aff9386a57851a1ebf59f3a7be986c4e}{%
+           family={Broadway},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{aff9386a57851a1ebf59f3a7be986c4e}
+      \strng{fullhash}{aff9386a57851a1ebf59f3a7be986c4e}
+      \strng{bibnamehash}{aff9386a57851a1ebf59f3a7be986c4e}
+      \strng{authorbibnamehash}{aff9386a57851a1ebf59f3a7be986c4e}
+      \strng{authornamehash}{aff9386a57851a1ebf59f3a7be986c4e}
+      \strng{authorfullhash}{aff9386a57851a1ebf59f3a7be986c4e}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{American Cities : The Example of Milwaukee by. New York.}}
+      \field{year}{2009}
+      \verb{doi}
+      \verb https://doi.org/10.1177/0969776417736098
+      \endverb
+    \endentry
     \entry{Buechler2005}{article}{}
       \name{author}{2}{}{%
         {{hash=c07cbb7ad1f37855e79ef903118511f4}{%
@@ -1123,6 +1147,36 @@
       \endverb
       \keyw{Acreage Farming,Building,Integrated Agriculture,Integrated Farming,Zero,commercialization,hydroponics,trends,urban rooftop farming}
     \endentry
+    \entry{Calvet-Mir2019}{article}{}
+      \name{author}{2}{}{%
+        {{hash=28bffa974646a0a337bda9e839cd7ece}{%
+           family={Calvet-Mir},
+           familyi={C\bibinithyphendelim M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e2bac51224f80345db6b1c4cef81b5cd}{%
+           family={March},
+           familyi={M\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{cb9bafcd9ee81f3fa8330825715fada7}
+      \strng{fullhash}{cb9bafcd9ee81f3fa8330825715fada7}
+      \strng{bibnamehash}{cb9bafcd9ee81f3fa8330825715fada7}
+      \strng{authorbibnamehash}{cb9bafcd9ee81f3fa8330825715fada7}
+      \strng{authornamehash}{cb9bafcd9ee81f3fa8330825715fada7}
+      \strng{authorfullhash}{cb9bafcd9ee81f3fa8330825715fada7}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{European Urban and Regional Studies}
+      \field{title}{{Crisis and post-crisis urban gardening initiatives from a Southern European perspective: The case of Barcelona.}}
+      \field{volume}{26(1)}
+      \field{year}{2019}
+      \field{pages}{97\bibrangedash 112}
+      \range{pages}{16}
+    \endentry
     \entry{Camps-Calvet2016}{article}{}
       \name{author}{4}{}{%
         {{hash=9ddd0c2237349255b6fcb25c40d917da}{%
@@ -1176,6 +1230,34 @@
       \endverb
       \verb{url}
       \verb https://www.sciencedirect.com/science/article/pii/S1462901116300089
+      \endverb
+    \endentry
+    \entry{Certoma2015}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0fa53125d793867fb38dffe5d79607dd}{%
+           family={Certom{à}},
+           familyi={C\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{0fa53125d793867fb38dffe5d79607dd}
+      \strng{fullhash}{0fa53125d793867fb38dffe5d79607dd}
+      \strng{bibnamehash}{0fa53125d793867fb38dffe5d79607dd}
+      \strng{authorbibnamehash}{0fa53125d793867fb38dffe5d79607dd}
+      \strng{authornamehash}{0fa53125d793867fb38dffe5d79607dd}
+      \strng{authorfullhash}{0fa53125d793867fb38dffe5d79607dd}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Planning Theory}
+      \field{title}{{Expanding the ‘dark side of planning': Governmentality and biopolitics in urban garden planning.}}
+      \field{volume}{14(1)}
+      \field{year}{2015}
+      \field{pages}{23\bibrangedash 43}
+      \range{pages}{21}
+      \verb{doi}
+      \verb https://doi.org/10.1177/1473095213506202
       \endverb
     \endentry
     \entry{Close2006}{article}{}
