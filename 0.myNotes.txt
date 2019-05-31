@@ -331,6 +331,8 @@ Part3 :
 
 Paper Trail : https://bit.ly/2DBFVuE
 
+/******************************************************************************/
+
 https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0141813019309274
 
 https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0008622312009359
@@ -339,9 +341,23 @@ https://www.researchgate.net/publication/243845020_High_char-yielding_polyacrylo
 
 https://www.google.com/search?q=%22High+char-yielding+poly%5Bacrylonitrile-co-(itaconic+acid)-co-(methyl+acrylate)%5D%3A+Synthesis+and+properties%22&rlz=1C1GCEU_esMX837MX837&oq=%22High+char-yielding+poly%5Bacrylonitrile-co-(itaconic+acid)-co-(methyl+acrylate)%5D%3A+Synthesis+and+properties%22&aqs=chrome..69i57.1156j0j1&sourceid=chrome&ie=UTF-8
 
-https://vdocuments.site/documents/synthesis-spinning-and-properties-of-very-high-molecular-weight-polyacrylonitrile-co-methyl.html
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0032386114009276
 
 https://docs.google.com/viewerng/viewer?url=https://vdocuments.site/google-reader?url%3Df37a91119b04edbb0694cb3c9512522168007afb4f2d735429962a5a5f5bbc35b9840c3df0760450b4f62bebee7c37c7dda749fe709e1639711131ab8ec41792zcE51hl0m9l2mVbGrlhUfcnKM9vC522+IS46Scta8M4djPxCvCA3wzmQMPFqH25IjYcROkikyN+leLYueUGyEseqhQdV5yn/oLSdrKsUnJOVwnRaxPh8CCFA4Z55/gB8tIHC67ElgZE6Lm3ONH3DY33JQKjFaLDeS2FY5FTbnAY%3D
+
+/******************************************************************************/
+
+polyacrylonitrile copolymers -> 3-ammoniumcarboxylate-3-butenoic acid methyl ester
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0032386114009276
+
+very high molecular weight   -> polyacrylonitrile-co-methyl acrylate (PAN-co-MA)
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0008622312009359
+
+pure starch fiber            -> High amylose maize starch (HAMS, Gelose 80)
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0141813019309274
+
+A review on polymer nanofibers by electrospinning and their applications in nanocomposites
+https://www.sciencedirect.com/science/article/pii/S0266353803001787
 
 /******************************************************************************/
 
@@ -378,4 +394,46 @@ https://www.youtube.com/watch?v=XJ7HLz9VYz0&list=PLRqwX-V7Uu6Y7MdSCaIfsxc561QI0U
 
 /******************************************************************************/
 
+Dr. Héctor Alán Aguirre Soto
+Fabrication of graphitic-carbon suspended nanowires through mechanoelectrospinning of photocrosslinkable polymers
+
+998 zwx
+
+/******************************************************************************/
+
+Do we want something similar to PEO or something more similar to Bis-phenol A novolac epoxy?
+
+Yes, because with these (lithography) you can get to micron scale or maybe less because the diffraction limit is a function of wavelength. But this means that these processes are really expensive.
+
+SU-8 turned out to be a really bad photoresist for integrated circuits, but really good to make Carbon-MicroElectroMechanical Systems because it yields conductive carbon structures with high aspect ratios, but people don't know why. 
+
+/******************************************************************************/
+
+207520
+
+/******************************************************************************/
+
+UAM
+Master in Molecular Nanoscience and Nanotechnology       ; http://www.icmol.es/master/nano/content.php?menu=content
+                                                         ; http://www.uam.es/Ciencias/M%C3%A1ster-en-Materiales-Avanzados/1446759227148.htm?language=es&pid=1242650400756&title=Asignaturas%20Materiales%20Avanzados,%20Nanotecnolog?a%20y%20Fot?nica%202018-19
+                                                         ; file:///C:/Users/oskat/Downloads/32303_simulacion_ymetodos_numericos_en_materiales_y_nanoestruct_18_19.pdf
+                                                         ; file:///C:/Users/oskat/Downloads/32298_nanocaracterizacion_materiales_por_tec_microscopicas_18_19.pdf
+Máster Universitario en Electroquímica                   ; https://web.ua.es/es/ecyt/estructura-y-contenido.html
+Máster en Materiales Avanzados Nanotecnología y Fotónica ; http://matavanz-uam.000webhostapp.com/info_ac_horarios.html
+Convocatoria de becas UAM – Banco Santander              ; https://tec.mx/es/internacionalizacion/uam-banco-santander
+                                                         ; http://sitios.itesm.mx/vi/convocatorias/BecaUAM2019.pdf
+< https://modelo-carta.com/declaracion/ >
+
+/******************************************************************************/
+
+Braulio overview
+
+http://www.uhv.es/sites/milka/doc/poster_aes.pdf
+http://microchem.com/pdf/SU-82000DataSheet2000_5thru2015Ver4.pdf
+https://www.nanoscience.com/techniques/scanning-electron-microscopy/
+thermogravimetric analysis
+C/MEMS
+
+
+/******************************************************************************/
 
