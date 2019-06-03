@@ -434,6 +434,39 @@ https://www.nanoscience.com/techniques/scanning-electron-microscopy/
 thermogravimetric analysis
 C/MEMS
 
+/******************************************************************************/
+
+From literature
+
+[Madrid    ] Tomás Torres
+[Madrid    ] Giovanni Bottari
+[Madrid    ] Gema de la Torre
+[Madrid    ] F. Agulló-Rueda
+[Madrid    ] Giovanni Bottari
+[Madrid    ] Olga Trukhina
+[Madrid    ] Mine Ince
+[Edinburgh ] Beatriz Ballesteros
+[Paris     ] Jean-Philippe Bourgoin
+[Paris     ] Stéphane Campidelli
+[Paris     ] Arianna Filoramo
+[Regensburg] David Díaz Díaz
+[Erlangen  ] Dirk M. Guldi
+[Erlangen  ] Christian Ehli
+[Erlangen  ] Daniel Kiessling
+[Erlangen  ] Fabian Werner
+[Germany   ] Vito Sgobba
+[Trieste   ] Carla Cioffi
+[Trieste   ] Maurizio Prato
+[Niigata   ] G. M. Aminur Rahman
 
 /******************************************************************************/
+
+From UAM courses
+
+    Carmen Morant Zacarés    : c.morant@uam.es           : www.uam.es/c.morant
+Dr. Leonardo Soriano de Arpe : l.soriano@uam.es          : 
+    Máximo León Macarrón     : maximo.leon@uam.es        : 
+    David Bravo Roldán       : david.bravo@uam.es        : 
+    Herko van der Meulen     : herko.vandermeulen@uam.es : 
+    José María Sanz          : josem.sanz@uam.es         : 
 
