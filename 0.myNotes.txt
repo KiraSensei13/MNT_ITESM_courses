@@ -472,4 +472,12 @@ Dr. Leonardo Soriano de Arpe : l.soriano@uam.es          :
 
 /******************************************************************************/
 
+Near Field Electrospinning REVIEW
 
+Multifunctional Nanofibers towards Active Biomedical Therapeutics
+https://www.mdpi.com/2073-4360/7/2/186/htm
+
+Fabrication of Patterned Nanofibrous Mats Using Direct-Write Electrospinning
+https://pubs.acs.org/doi/full/10.1021/la3009249?src=recsys
+
+/******************************************************************************/
