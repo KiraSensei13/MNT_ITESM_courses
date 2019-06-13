@@ -481,3 +481,65 @@ Fabrication of Patterned Nanofibrous Mats Using Direct-Write Electrospinning
 https://pubs.acs.org/doi/full/10.1021/la3009249?src=recsys
 
 /******************************************************************************/
+
+LANDSCAPE LaTeX TABLE
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+\pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}
+
+% move margin to fit table
+%\addtolength{\oddsidemargin}{-1.5in}
+%\addtolength{\evensidemargin}{-.875in}
+\addtolength{\topmargin}{0.5in}
+
+\begin{table}[th]
+\caption{Electrospun Polymer Solutions - Solution and Process Parameters}
+%\begin{center}
+% total table width eq 0.91\textheight = 100%
+\begin{tabular}{
+>{\raggedright\arraybackslash}p{0.130\textheight}
+>{\raggedright\arraybackslash}p{0.130\textheight}
+>{\raggedright\arraybackslash}p{0.090\textheight}
+>{\raggedright\arraybackslash}p{0.290\textheight}
+>{\raggedright\arraybackslash}p{0.180\textheight}
+>{\raggedright\arraybackslash}p{0.080\textheight} }  
+\hline
+Lorem      & ipsum & dolor  & sit & amet    & consectetur \\
+\hline
+adipiscing & elit  & sed    & do  & eiusmod & tempor      \\
+incididunt & ut    & labore & et  & dolore  & magna       \\
+\hline
+\label{tbl:FloresCompare}
+\end{tabular}
+%\end{center}
+\end{table}
+
+%\addtolength{\oddsidemargin}{0.0in}
+%\addtolength{\evensidemargin}{0.0in}
+\addtolength{\topmargin}{0.0in}
+
+\end{landscape}
+\pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/******************************************************************************/
+
+Other NFES techniques to be considered:
+
+mapped direct-writing (MDW)
+leap direct-writing (LDW)
+helix direct-writing (HDW)
+
+pyro-electrodynamic printing
+
+/******************************************************************************/
+
+Macromolecules 
+
+Journal: Progress in polymer science
+Title: polymers for spunable fibers with spacial control
+
+/******************************************************************************/
+
+
