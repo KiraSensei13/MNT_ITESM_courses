@@ -562,4 +562,15 @@ This book is a collection of the physical properties of most commonly used solve
 
 /******************************************************************************/
 
+The name “bootstrapping” comes from the phrase, “To lift himself up by his bootstraps.” This refers to something that is preposterous and impossible. Try as hard as you can, you cannot lift yourself into the air by tugging at pieces of leather on your boots.
 
+There is some mathematical theory that justifies bootstrapping techniques. However, the use of bootstrapping does feel like you are doing the impossible. Although it does not seem like you would be able to improve upon the estimate of a population statistic by reusing the same sample over and over again, bootstrapping can, in fact, do this.
+
+"Bootstrapping" crome from the phrase "Pull yourself up by your bootstraps"; which means to improve a preposterous and impossible situation by your own efforts. [1] There is some theory that justifies bootstrapping techniques [2]; however bootstrapping does feel like doing the impossible. Although it does not seem like the situation would be able to improve by reusing the same sample over and over again, but bootstrapping can.
+
+[1] https://www.phrases.org.uk/meanings/pull-yourself-up-by-your-bootstraps.html
+[2] https://www.sciencedirect.com/science/article/pii/S0304407619301472?dgcid=rss_sd_all
+
+/******************************************************************************/
+
+Fit a cubic regression, as a function of age, to the kidney data of Figures 1.1
