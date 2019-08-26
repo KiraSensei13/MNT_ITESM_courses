@@ -1,0 +1,40 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\contentsline {chapter}{Abstract}{i}{section*.1}% 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.5}% 
+\contentsline {chapter}{\numberline {2}Theoretical Framework}{4}{chapter.6}% 
+\contentsline {section}{\numberline {2.1}Overview of urban agriculture}{4}{section.7}% 
+\contentsline {section}{\numberline {2.2}Conceptualising a sustainable city}{5}{section.8}% 
+\contentsline {subsection}{\numberline {2.2.1}The Green City Index}{6}{subsection.9}% 
+\contentsline {subsection}{\numberline {2.2.2}Global City Indicators Facility}{7}{subsection.10}% 
+\contentsline {subsection}{\numberline {2.2.3}Global Compact Cities Circles of Sustainability}{7}{subsection.11}% 
+\contentsline {chapter}{\numberline {3}Methods}{9}{chapter.12}% 
+\contentsline {section}{\numberline {3.1}Garden Gem Development}{10}{section.14}% 
+\contentsline {chapter}{\numberline {4}Analyses}{11}{chapter.15}% 
+\contentsline {section}{\numberline {4.1}Urban agriculture and economic sustainability of cities}{11}{section.16}% 
+\contentsline {subsection}{\numberline {4.1.1}Full-time employment}{11}{subsection.17}% 
+\contentsline {subsection}{\numberline {4.1.2}Employment for women}{12}{subsection.20}% 
+\contentsline {subsection}{\numberline {4.1.3}Income generation and gross domestic product}{13}{subsection.22}% 
+\contentsline {subsection}{\numberline {4.1.4}Savings and expenditure}{14}{subsection.24}% 
+\contentsline {section}{\numberline {4.2}Urban agriculture and social sustainability of cities}{15}{section.26}% 
+\contentsline {subsection}{\numberline {4.2.1}Educational functions}{15}{subsection.27}% 
+\contentsline {subsection}{\numberline {4.2.2}Civic engagement}{16}{subsection.28}% 
+\contentsline {subsection}{\numberline {4.2.3}Safety and security}{17}{subsection.29}% 
+\contentsline {subsection}{\numberline {4.2.4}Health benefits}{18}{subsection.30}% 
+\contentsline {section}{\numberline {4.3}Urban agriculture and environmental sustainability of cities}{18}{section.31}% 
+\contentsline {subsection}{\numberline {4.3.1}Management of emissions}{18}{subsection.32}% 
+\contentsline {subsection}{\numberline {4.3.2}Waste management}{19}{subsection.33}% 
+\contentsline {subsection}{\numberline {4.3.3}Energy efficiency}{20}{subsection.34}% 
+\contentsline {subsection}{\numberline {4.3.4}Organic farming in percentage of total agricultural area}{21}{subsection.35}% 
+\contentsline {chapter}{\numberline {5}Garden Gem}{22}{chapter.36}% 
+\contentsline {section}{\numberline {5.1}Impact on the Economic Dimension}{22}{section.37}% 
+\contentsline {section}{\numberline {5.2}Impact on the Social Dimension}{23}{section.38}% 
+\contentsline {section}{\numberline {5.3}Impact on the Environmental Dimension}{24}{section.39}% 
+\contentsline {section}{\numberline {5.4}Garden Gem Objectives}{24}{section.40}% 
+\contentsline {subsection}{\numberline {5.4.1}Monetization}{25}{subsection.41}% 
+\contentsline {section}{\numberline {5.5}Garden Gem Results}{25}{section.42}% 
+\contentsline {subsection}{\numberline {5.5.1}Development of the mobile application}{25}{subsection.43}% 
+\contentsline {chapter}{\numberline {6}Conclusion}{28}{chapter.47}% 
+\contentsline {chapter}{\numberline {A}The Green City Index}{41}{appendix.49}% 
+\contentsline {chapter}{\numberline {B}Global City Indicators Facility}{45}{appendix.54}% 
+\contentsline {chapter}{\numberline {C}Global Compact Cities Circles of Sustainability}{51}{appendix.61}% 

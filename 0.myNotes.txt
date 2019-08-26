@@ -331,6 +331,8 @@ Part3 :
 
 Paper Trail : https://bit.ly/2DBFVuE
 
+/******************************************************************************/
+
 https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0141813019309274
 
 https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0008622312009359
@@ -339,9 +341,23 @@ https://www.researchgate.net/publication/243845020_High_char-yielding_polyacrylo
 
 https://www.google.com/search?q=%22High+char-yielding+poly%5Bacrylonitrile-co-(itaconic+acid)-co-(methyl+acrylate)%5D%3A+Synthesis+and+properties%22&rlz=1C1GCEU_esMX837MX837&oq=%22High+char-yielding+poly%5Bacrylonitrile-co-(itaconic+acid)-co-(methyl+acrylate)%5D%3A+Synthesis+and+properties%22&aqs=chrome..69i57.1156j0j1&sourceid=chrome&ie=UTF-8
 
-https://vdocuments.site/documents/synthesis-spinning-and-properties-of-very-high-molecular-weight-polyacrylonitrile-co-methyl.html
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0032386114009276
 
 https://docs.google.com/viewerng/viewer?url=https://vdocuments.site/google-reader?url%3Df37a91119b04edbb0694cb3c9512522168007afb4f2d735429962a5a5f5bbc35b9840c3df0760450b4f62bebee7c37c7dda749fe709e1639711131ab8ec41792zcE51hl0m9l2mVbGrlhUfcnKM9vC522+IS46Scta8M4djPxCvCA3wzmQMPFqH25IjYcROkikyN+leLYueUGyEseqhQdV5yn/oLSdrKsUnJOVwnRaxPh8CCFA4Z55/gB8tIHC67ElgZE6Lm3ONH3DY33JQKjFaLDeS2FY5FTbnAY%3D
+
+/******************************************************************************/
+
+polyacrylonitrile copolymers -> 3-ammoniumcarboxylate-3-butenoic acid methyl ester
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0032386114009276
+
+very high molecular weight   -> polyacrylonitrile-co-methyl acrylate (PAN-co-MA)
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0008622312009359
+
+pure starch fiber            -> High amylose maize starch (HAMS, Gelose 80)
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0141813019309274
+
+A review on polymer nanofibers by electrospinning and their applications in nanocomposites
+https://www.sciencedirect.com/science/article/pii/S0266353803001787
 
 /******************************************************************************/
 
@@ -366,5 +382,195 @@ https://onedrive.live.com/?authkey=%21AJRazHi1NSdjMSY&id=B97411139F1D3D85%213962
 0100 -0.0142
 1000 -0.0029
 
+/******************************************************************************/
 
+https://www.youtube.com/watch?v=XJ7HLz9VYz0&list=PLRqwX-V7Uu6Y7MdSCaIfsxc561QI0U0Tb&index=1
 
+/******************************************************************************/
+
+[A01169284] Bruno González Soria \\
+[A01212611] Antonio Osamu Katagiri Tanaka \\
+[A01750267] Carlos Cardoso Isidoro
+
+/******************************************************************************/
+
+Dr. Héctor Alán Aguirre Soto
+Fabrication of graphitic-carbon suspended nanowires through mechanoelectrospinning of photocrosslinkable polymers
+
+998 zwx
+
+/******************************************************************************/
+
+Do we want something similar to PEO or something more similar to Bis-phenol A novolac epoxy?
+
+Yes, because with these (lithography) you can get to micron scale or maybe less because the diffraction limit is a function of wavelength. But this means that these processes are really expensive.
+
+SU-8 turned out to be a really bad photoresist for integrated circuits, but really good to make Carbon-MicroElectroMechanical Systems because it yields conductive carbon structures with high aspect ratios, but people don't know why. 
+
+/******************************************************************************/
+
+207520
+
+/******************************************************************************/
+
+UAM
+Master in Molecular Nanoscience and Nanotechnology       ; http://www.icmol.es/master/nano/content.php?menu=content
+                                                         ; http://www.uam.es/Ciencias/M%C3%A1ster-en-Materiales-Avanzados/1446759227148.htm?language=es&pid=1242650400756&title=Asignaturas%20Materiales%20Avanzados,%20Nanotecnolog?a%20y%20Fot?nica%202018-19
+                                                         ; file:///C:/Users/oskat/Downloads/32303_simulacion_ymetodos_numericos_en_materiales_y_nanoestruct_18_19.pdf
+                                                         ; file:///C:/Users/oskat/Downloads/32298_nanocaracterizacion_materiales_por_tec_microscopicas_18_19.pdf
+Máster Universitario en Electroquímica                   ; https://web.ua.es/es/ecyt/estructura-y-contenido.html
+Máster en Materiales Avanzados Nanotecnología y Fotónica ; http://matavanz-uam.000webhostapp.com/info_ac_horarios.html
+Convocatoria de becas UAM – Banco Santander              ; https://tec.mx/es/internacionalizacion/uam-banco-santander
+                                                         ; http://sitios.itesm.mx/vi/convocatorias/BecaUAM2019.pdf
+< https://modelo-carta.com/declaracion/ >
+
+/******************************************************************************/
+
+Braulio overview
+
+http://www.uhv.es/sites/milka/doc/poster_aes.pdf
+http://microchem.com/pdf/SU-82000DataSheet2000_5thru2015Ver4.pdf
+https://www.nanoscience.com/techniques/scanning-electron-microscopy/
+thermogravimetric analysis
+C/MEMS
+
+/******************************************************************************/
+
+From literature
+
+[Madrid    ] Tomás Torres
+[Madrid    ] Giovanni Bottari
+[Madrid    ] Gema de la Torre
+[Madrid    ] F. Agulló-Rueda
+[Madrid    ] Giovanni Bottari
+[Madrid    ] Olga Trukhina
+[Madrid    ] Mine Ince
+[Edinburgh ] Beatriz Ballesteros
+[Paris     ] Jean-Philippe Bourgoin
+[Paris     ] Stéphane Campidelli
+[Paris     ] Arianna Filoramo
+[Regensburg] David Díaz Díaz
+[Erlangen  ] Dirk M. Guldi
+[Erlangen  ] Christian Ehli
+[Erlangen  ] Daniel Kiessling
+[Erlangen  ] Fabian Werner
+[Germany   ] Vito Sgobba
+[Trieste   ] Carla Cioffi
+[Trieste   ] Maurizio Prato
+[Niigata   ] G. M. Aminur Rahman
+
+/******************************************************************************/
+
+From UAM courses
+
+    Carmen Morant Zacarés    : c.morant@uam.es           : www.uam.es/c.morant
+Dr. Leonardo Soriano de Arpe : l.soriano@uam.es          : 
+    Máximo León Macarrón     : maximo.leon@uam.es        : 
+    David Bravo Roldán       : david.bravo@uam.es        : 
+    Herko van der Meulen     : herko.vandermeulen@uam.es : 
+    José María Sanz          : josem.sanz@uam.es         : 
+
+https://tec.mx/en/internationalization/uam-banco-santander-scholarship
+http://sitios.itesm.mx/vi/uam.html
+
+/******************************************************************************/
+
+Near Field Electrospinning REVIEW
+
+Multifunctional Nanofibers towards Active Biomedical Therapeutics
+https://www.mdpi.com/2073-4360/7/2/186/htm
+
+Fabrication of Patterned Nanofibrous Mats Using Direct-Write Electrospinning
+https://pubs.acs.org/doi/full/10.1021/la3009249?src=recsys
+
+/******************************************************************************/
+
+LANDSCAPE LaTeX TABLE
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+\pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}
+
+% move margin to fit table
+%\addtolength{\oddsidemargin}{-1.5in}
+%\addtolength{\evensidemargin}{-.875in}
+\addtolength{\topmargin}{0.5in}
+
+\begin{table}[th]
+\caption{Electrospun Polymer Solutions - Solution and Process Parameters}
+%\begin{center}
+% total table width eq 0.91\textheight = 100%
+\begin{tabular}{
+>{\raggedright\arraybackslash}p{0.130\textheight}
+>{\raggedright\arraybackslash}p{0.130\textheight}
+>{\raggedright\arraybackslash}p{0.090\textheight}
+>{\raggedright\arraybackslash}p{0.290\textheight}
+>{\raggedright\arraybackslash}p{0.180\textheight}
+>{\raggedright\arraybackslash}p{0.080\textheight} }  
+\hline
+Lorem      & ipsum & dolor  & sit & amet    & consectetur \\
+\hline
+adipiscing & elit  & sed    & do  & eiusmod & tempor      \\
+incididunt & ut    & labore & et  & dolore  & magna       \\
+\hline
+\label{tbl:FloresCompare}
+\end{tabular}
+%\end{center}
+\end{table}
+
+%\addtolength{\oddsidemargin}{0.0in}
+%\addtolength{\evensidemargin}{0.0in}
+\addtolength{\topmargin}{0.0in}
+
+\end{landscape}
+\pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/******************************************************************************/
+
+Other NFES techniques to be considered:
+
+mapped direct-writing (MDW)
+leap direct-writing (LDW)
+helix direct-writing (HDW)
+
+pyro-electrodynamic printing
+
+/******************************************************************************/
+
+Macromolecules 
+
+Journal: Progress in polymer science
+Title: polymers for spunable fibers with spacial control
+
+/******************************************************************************/
+
+https://photos.app.goo.gl/CxSCtFV6HW5wGAff8
+https://photos.app.goo.gl/po7a7uyB7h5wJFoLA
+
+/******************************************************************************/
+
+https://community.blackboard.com/thread/5863-saml-authentication-request-has-expired-error
+
+https://blackboard.secure.force.com/publickbarticleview?id=kAC39000000CadX
+
+Parece ser un error en la configuracón de SAML - ya intenté eliminar las cookies pero sigo con el mismo problema.
+
+/******************************************************************************/
+
+This book is a collection of the physical properties of most commonly used solvents along with information on their behaviour in the environment during and after use and their health and fire hazards.
+
+/******************************************************************************/
+
+The name “bootstrapping” comes from the phrase, “To lift himself up by his bootstraps.” This refers to something that is preposterous and impossible. Try as hard as you can, you cannot lift yourself into the air by tugging at pieces of leather on your boots.
+
+There is some mathematical theory that justifies bootstrapping techniques. However, the use of bootstrapping does feel like you are doing the impossible. Although it does not seem like you would be able to improve upon the estimate of a population statistic by reusing the same sample over and over again, bootstrapping can, in fact, do this.
+
+"Bootstrapping" crome from the phrase "Pull yourself up by your bootstraps"; which means to improve a preposterous and impossible situation by your own efforts. [1] There is some theory that justifies bootstrapping techniques [2]; however bootstrapping does feel like doing the impossible. Although it does not seem like the situation would be able to improve by reusing the same sample over and over again, but bootstrapping can.
+
+[1] https://www.phrases.org.uk/meanings/pull-yourself-up-by-your-bootstraps.html
+[2] https://www.sciencedirect.com/science/article/pii/S0304407619301472?dgcid=rss_sd_all
+
+/******************************************************************************/
+
+Fit a cubic regression, as a function of age, to the kidney data of Figures 1.1
