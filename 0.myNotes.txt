@@ -576,3 +576,9 @@ There is some mathematical theory that justifies bootstrapping techniques. Howev
 Fit a cubic regression, as a function of age, to the kidney data of Figures 1.1
 
 O365GRP-macrophotosci
+
+/******************************************************************************/
+
+A solar collector is used as a heat source for a Carnot engine with a heat sink at 300 K. The efficiency
+of the solar collector " is defined as the fraction of the energy reaching the collector that is actually
+absorbed. It is related to the temperature of the collector as follows:
