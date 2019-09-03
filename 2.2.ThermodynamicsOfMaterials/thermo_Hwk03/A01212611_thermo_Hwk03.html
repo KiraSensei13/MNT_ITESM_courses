@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Thermo_Hwk03</title>
+<title>A01212611_thermo_Hwk03</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13302,14 +13302,14 @@ $$ T_f = 243.839 K $$
 <p>Solar collector $\varepsilon$ is given by:
 $$ \varepsilon = 0.75\, -1.75 \left(\frac{T}{300 K}-1\right) $$</p>
 <p>The Carnot engine efficiency $\eta$ is given by:
-$$ \eta = \left(\frac{T}{300 K}-1\right) $$</p>
+$$ \eta = \frac{T}{300 K}-1 $$</p>
 <p>The system's efficiency $\epsilon$ is given by:
 $$ \epsilon = \varepsilon \eta $$
 $$ \epsilon = -\frac{1.75 T^{2}}{(300 K)^{2}} + \frac{4.25 T}{300 K} - 1.5 $$</p>
 <p>Let's find $\frac{\partial \epsilon}{\partial T}$
 $$ \frac{\partial \epsilon}{\partial T} = -\frac{2(1.75)}{300^{2}} T + \frac{4.25}{300}$$
 $$ \frac{\partial \epsilon}{\partial T} = \frac{17}{1200} - \frac{7}{180000} T $$</p>
-<p>Let's find T for $\frac{\partial \epsilon}{\partial T} = 0$
+<p>Let's find where the function is the maximum by calculating T for $\frac{\partial \epsilon}{\partial T} = 0$
 $$ \frac{17}{1200} - \frac{7}{180000} T = 0 $$
 $$ T = 354.286 K $$</p>
 $$ \varepsilon = 0.75\, -1.75 \left(\frac{T}{300 K}-1\right); \text{with } T = 354.286 K $$$$ \varepsilon = 0.433 $$<div class="alert alert-block alert-info">
@@ -13556,8 +13556,8 @@ $$ P_f = \frac{\overline{C_v} P_i V_i}{\overline{C_v} V_f + V_f R - V_i R} $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <p>The work performed per cycle is given by the area within the PV curve.
-$$ W_{performed} = \pi (14-8) (4.5-3.0) atm L $$
-$$ W_{performed} = 9\pi atm L$$</p>
+$$ W_{performed} = \pi (14-8) (4.5-3.0) atm L g^{-1} $$
+$$ W_{performed} = 9\pi atm L g^{-1} $$</p>
 <p>as: $ 1 atm L = 101.3 J $ <br></p>
 <div class="alert alert-block alert-info">
 $$ W_{performed} = \frac{9117}{10} \pi J g^{-1} = 2864.190 J g^{-1}$$
@@ -13613,13 +13613,14 @@ $$ \eta_{engine} = \frac{2864.190 J g^{-1}}{2864.190 J g^{-1} + 5700 J g^{-1}} =
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>The following is extracted from: Mungan, C. E. (2009). Heat engine with finite thermal reservoirs and nonideal efficiency. Latin-American Journal of Physics Education, 3(2), 239–242.</p>
 <p>Let's denote some variables: <br>
 $ dQ_H $ = heat transfer out of the hot reservoir <br>
 $ dQ_C $ = heat transfer into the cold reservoir <br>
 $ dW $ = work output by the engine <br>
 $ dT_H $ = change in temperature of the hot reservoir ($ dT_H &lt; 0$ as it's cooling down) <br>
 $ T_{Ho} $ = $ T_1 $ = initial temperature of the hot reservoir <br>
-$ dT_C $ = change in temperature of the cold reservoir ($ dT_C &gt; 0$ as it's warms up) <br>
+$ dT_C $ = change in temperature of the cold reservoir ($ dT_C &gt; 0$ as it warms up) <br>
 $ T_{Co} $ = $ T_2 $ = initial temperature of the cold reservoir <br>
 $ T $ = final temperature of both reservoirs <br>
 $ \eta $ = 2nd law efficiency given</p>
@@ -13645,11 +13646,10 @@ $ T_{\min }=\sqrt{T_{\text{Co}} T_{\text{Ho}}} $ is the geometric average of the
 $ T_{\max }=\frac{T_{Co} + T_{Ho}}{2} $ is their aithmetic average</p>
 <p>The total work output by the engine is the difference in heat transfers for the two reservoirs, as follows:
 $$ W = Q_H - Q_C = C_1(T_{Ho} - T) - C_2(T - T_{Co}) $$</p>
+<p>And the maximum amount of work is given by:</p>
 <div class="alert alert-block alert-info">
-And the maximum amount of work is given by:
 $$ W_{max} = C_1 C_2 (T_{max} - T_{min}) $$
 </div><p>The maximum work is achieved for reversible operation of the engine when $\eta = 1$.  On the other hand, zero work is output for maximally irreversible operation of the engine when $\eta = 0$.</p>
-<p>Thinking process extracted from: Mungan, C. E. (2009). Heat engine with finite thermal reservoirs and nonideal efficiency. Latin-American Journal of Physics Education, 3(2), 239–242.</p>
 
 </div>
 </div>
