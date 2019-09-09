@@ -586,3 +586,31 @@ A solar collector is used as a heat source for a Carnot engine with a heat sink 
 Fong H, Reneker DH. Elastomeric nanofibers of styrene butadienee styrene triblock copolymer. Journal of Polymer Science, Part B: Polymer Physics 2000;37:3488e93.
 
 S. Megelski,J.S.Stephens, D. BruceChase,and J. F. Rabolt, “Micro- and nanostructured surface morphology on electro- spun polymer fibers,” Macromolecules,vol.35, no.22, pp.8456– 8466, 2002.
+
+/******************************************************************************/
+
+import pyromat as pm 
+import matplotlib.pyplot as plt
+import numpy as np
+#pm.info()
+
+# Draw the plot's workspace
+scale = 6;
+plt.subplots(figsize=(3*scale, 2*scale))
+
+# Temperature range
+T = np.arange(0,400,10)
+
+#It can be very simple to get some quick information.
+Al = pm.get('ig.Al')
+plt.plot(T, Al.s(T), '-', linewidth=3, label='Al')
+
+#It can be very simple to get some quick information.
+O2 = pm.get('ig.O2')
+plt.plot(T, O2.s(T), '-', linewidth=3, label='O2')
+
+plt.xlabel('Temperature [K]', fontsize=24);
+plt.ylabel('Entropy [kJ/kg]', fontsize=24);
+plt.title("Figure 1: P vs. V", size=24)
+plt.legend(prop={'size': 18})
+display(plt);
