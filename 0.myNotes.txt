@@ -583,3 +583,6 @@ A solar collector is used as a heat source for a Carnot engine with a heat sink 
 
 /******************************************************************************/
 
+Fong H, Reneker DH. Elastomeric nanofibers of styrene butadienee styrene triblock copolymer. Journal of Polymer Science, Part B: Polymer Physics 2000;37:3488e93.
+
+S. Megelski,J.S.Stephens, D. BruceChase,and J. F. Rabolt, “Micro- and nanostructured surface morphology on electro- spun polymer fibers,” Macromolecules,vol.35, no.22, pp.8456– 8466, 2002.
