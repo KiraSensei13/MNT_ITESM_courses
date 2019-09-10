@@ -614,3 +614,229 @@ plt.ylabel('Entropy [kJ/kg]', fontsize=24);
 plt.title("Figure 1: P vs. V", size=24)
 plt.legend(prop={'size': 18})
 display(plt);
+
+/******************************************************************************/
+
+1. Luo, C. J.; Stoyanov, S. D.; Stride, E.; Pelan, E.; Edirisinghe, M.
+‘Electrospinning versus fibre production methods: From specifics to technological convergence.’ Chem. Soc. Rev. 41 (2012): 4708–4735.
+2. Qi, S.; Craig, D. ‘Recent developments in micro- and nanofabrication
+techniques for the preparation of amorphous pharmaceutical dosage
+forms.’ Adv. Drug Deliv. Rev. 100 (2016): 67–84.
+3. Kessick, R.; Fenn, J.; Tepper, G. ‘The use of AC potentials in electrospraying
+and electrospinning processes.’ Polymer 45 (2004): 2981–2984.
+4. Sarkar, S.; Deevi, S.; Tepper, G. ‘Biased AC electrospinning of aligned
+polymer nanofibers.’ Macromol. Rapid Commun. 28 (2007): 1034–1039.
+5. Balogh, A.; Cselko, R.; Demuth, B.; Verreck, G.; Mensch, J.; Marosi, G.;
+Nagy, Z. K. ‘Alternating current electrospinning for preparation of fibrous
+drug delivery systems.’ Int. J. Pharm. 495 (2015): 75–80.
+6. Balogh, A.; Farkas, B.; Verreck, G.; Mensch, J.; Borbas, E.; Nagy, B.; Marosi,
+G.; Nagy, Z. K. ‘AC and DC electrospinning of hydroxypropylmethylcellulose
+with polyethylene oxides as secondary polymer for improved drug dissolution.’ Int. J. Pharm. 505 (2016): 159–166.
+7. Balogh, A.; Farkas, B.; Palvolgyi, A.; Domokos, A.; Demuth, B.;
+Marosi, G.; Nagy, Z. K. ‘Novel alternating current electrospinning of hydroxypropylmethylcellulose acetate succinate (HPMCAS) nanofibers
+for dissolution enhancement: The importance of solution conductivity.’ J.
+Pharm. Sci. 106 (2017): 1634–1643.
+8. Brown, T. D.; Dalton, P. D.; Hutmacher, D. W. ‘Melt electrospinning
+today: An opportune time for an emerging polymer process.’ Prog. Polym.
+Sci. 56 (2016): 116–166.
+9. Nagy, Z. K.; Balogh, A.; Dravavolgyi, G.; Ferguson, J.; Pataki, H.; Vajna,
+B.; Marosi, G. ‘Solvent-free melt electrospinning for preparation of fast
+dissolving drug delivery system and comparison with solvent-based
+electrospun and melt extruded systems.’ J. Pharm. Sci. 102 (2013):
+508–517.
+10. Balogh, A.; Dravavolgyi, G.; Farago, K.; Farkas, A.; Vigh, T.; Soti, P. L.;
+Wagner, I.; Madarasz, J.; Pataki, H.; Marosi, G.; Nagy, Z. K. ‘Plasticized
+drug-loaded melt electrospun polymer mats: Characterization, thermal
+degradation, and release kinetics.’ J. Pharm. Sci. 103 (2014): 1278–1287.
+11. Lian, H.; Meng, Z. ‘Melt electrospinning vs. solution electrospinning: A
+comparative study of drug-loaded poly (ε-caprolactone) fibres.’ Mater. Sci.
+Eng. C 74 (2017): 117–123.
+12. Hochleitner, G.; Jungst, T.; Brown, T. D.; Hahn, K.; Moseke, C.; Jakob,
+F.; Dalton, P. D.; Groll, J. ‘Additive manufacturing of scaffolds with submicron filaments via melt electrospinning writing.’ Biofabrication 7
+(2015): 035002.
+13. McCann, J. T.; Marquez, M.; Xia, Y. ‘Melt coaxial electrospinning: A versatile method for the encapsulation of solid materials and fabrication of
+phase change nanofibers.’ Nano Lett. 6 (2006): 2868–2872.
+14. Sarkar, K.; Gomez, C.; Zambrano, S.; Ramirez, M.; de Hoyos, E.; Vasquez,
+H.; Lozano, K. ‘Electrospinning to Forcespinning.’ Mater. Today 13
+(2010): 12–14.
+15. Dosunmu, O. O.; Chase, G. G.; Kataphinan, W.; Reneker, D. H.
+‘Electrospinning of polymer nanofibres from multiple jets on a porous
+tubular surface.’ Nanotechnology 17 (2006): 1123–1127.
+16. Mahalingam, S.; Edirisinghe, M. ‘Forming of polymer nanofibers by a
+pressurised gyration process.’ Macromol. Rapid Commun. 34 (2013):
+1134–1139.
+17. Badrossamay, M. R.; McIlwee, H. A.; Goss, J. A.; Parker, K. K. ‘Nanofiber
+assembly by rotary jet-spinning.’ Nano Lett. 10 (2010): 2257–2261.
+18. Zander, N. E. ‘Formation of melt and solution spun polycaprolactone fibers
+by centrifugal spinning.’ J. Appl. Polym. Sci. 132 (2015): 41269.
+19. Amalorpava Mary, L. ‘Centrifugal spun ultrafine fibrous web as a potential
+drug delivery vehicle.’ Express Polym. Lett. 7 (2013): 238–248.
+20. Buzgo, M.; Rampichova, M.; Vocetkova, K.; Sovkova, V.; Lukasova, V.;
+Doupnik, M.; Mickova, A.; Rustichelli, F.; Amler, E. ‘Emulsion centrifugal
+spinning for production of 3D drug releasing nanofibres with core/shell
+structure.’ RSC Adv. 7 (2017): 1215–1228.
+21. Marano, S.; Barker, S. A.; Raimi-Abraham, B. T.; Missaghi, S.; RajabiSiahboomi, A.; Craig, D. Q. ‘Development of micro-fibrous solid
+dispersions of poorly water-soluble drugs in sucrose using temperaturecontrolled centrifugal spinning.’ Eur. J. Pharm. Biopharm. 103 (2016):
+84–94.
+22. Zhang, X.; Lu, Y. ‘Centrifugal spinning: An alternative approach to fabricate nanofibers at high speed and low cost.’ Polym. Rev. 54 (2014):
+677–701.
+23. (a) Kancheva, M.; Toncheva, A.; Manolova, N.; Rashkov, I. ‘Advanced
+centrifugal electrospinning setup.’ Mater. Lett. 136 (2014): 150–152;
+(b) Erickson, A. E.; Edmondson, D.; Chang, F. C.; Wood, D.; Gong, A.;
+Levengood, S. L.; Zhang, M. ‘High-throughput and high-yield fabrication of uniaxially-aligned chitosan-based nanofibers by centrifugal
+electrospinning.’ Carbohydr. Polym. 134 (2015): 467–474.
+24. (a) Liao, C.-C.; Wang, C.-C.; Shih, K.-C.; Chen, C.-Y. ‘Electrospinning fabrication of partially crystalline bisphenol A polycarbonate nanofibers:
+Effects on conformation, crystallinity, and mechanical properties.’ Eur.
+Polym. J. 47 (2011): 911–924; (b) Edmondson, D.; Cooper, A.; Jana,
+S.; Wood, D.; Zhang, M. ‘Centrifugal electrospinning of highly aligned
+polymer nanofibers over a large area.’ J. Mater. Chem. 22 (2012):
+18646–18652.
+25. Wang, L.; Chang, M.-W.; Ahmad, Z.; Zheng, H.; Li, J.-S. ‘Mass and controlled fabrication of aligned PVP fibers for matrix type antibiotic drug
+delivery systems.’ Chem. Eng. J. 307 (2017): 661–669.
+26. Souza, M. A.; Sakamoto, K. Y.; Mattoso, L. H. C. ‘Release of the diclofenac
+sodium by nanofibers of poly(3-hydroxybutyrate-co-3-hydroxyvalerate)
+obtained from electrospinning and solution blow spinning.’ J. Nanomater.
+2014 (2014): 129035.
+27. Oliveira, J. E.; Medeiros, E. S.; Cardozo, L.; Voll, F.; Madureira, E. H.;
+Mattoso, L. H.; Assis, O. B. ‘Development of poly(lactic acid) nanostructured
+membranes for the controlled delivery of progesterone to livestock animals.’
+Mater. Sci. Eng. C 33 (2013): 844–849.
+28. Bonan, R. F.; Bonan, P. R.; Batista, A. U.; Sampaio, F. C.; Albuquerque, A.
+J.; Moraes, M. C.; Mattoso, L. H.; Glenn, G. M.; Medeiros, E. S.; Oliveira,
+J. E. ‘In vitro antimicrobial activity of solution blow spun poly(lactic acid)/
+polyvinylpyrrolidone nanofibers loaded with Copaiba (Copaifera sp.) oil.’
+Mater. Sci. Eng. C 48 (2015): 372–377.
+29. Balogh, A.; Farkas, B.; Farago, K.; Farkas, A.; Wagner, I.; Van Assche, I.;
+Verreck, G.; Nagy, Z. K.; Marosi, G. ‘Melt-blown and electrospun drugloaded polymer fiber mats for dissolution enhancement: A comparative
+study.’ J. Pharm. Sci. 104 (2015): 1767–1776.
+30. Arumuganathar, S.; Irvine, S.; McEwan, J. R.; Jayasinghe, S. N. ‘A novel
+direct aerodynamically assisted threading methodology for generating biologically viable microthreads encapsulating living primary cells.’ J. Appl.
+Polym. Sci. 107 (2008): 1215–1225.
+31. Jiang, K.; Long, Y. Z.; Chen, Z. J.; Liu, S. L.; Huang, Y. Y.; Jiang, X.;
+Huang, Z. Q. ‘Airflow-directed in situ electrospinning of a medical glue
+of cyanoacrylate for rapid hemostasis in liver resection.’ Nanoscale 6
+(2014): 7792–7798.
+32. Balogh, A.; Horváthová, T.; Fülöp, Z.; Loftsson, T.; Harasztos, A. H.; Marosi,
+G.; Nagy, Z. K. ‘Electroblowing and electrospinning of fibrous diclofenac
+sodium–cyclodextrin complex-based reconstitution injection.’ J. Drug Del.
+Sci. Technol. 26 (2015): 28–34.
+33. Soti, P. L.; Bocz, K.; Pataki, H.; Eke, Z.; Farkas, A.; Verreck, G.; Kiss, E.;
+Fekete, P.; Vigh, T.; Wagner, I.; Nagy, Z. K.; Marosi, G. ‘Comparison of
+spray drying, electroblowing and electrospinning for preparation of
+Eudragit E and itraconazole solid dispersions.’ Int. J. Pharm. 494 (2015):
+23–30.
+34. (a) Mahalingam, S.; Raimi-Abraham, B. T.; Craig, D. Q. M.; Edirisinghe,
+M. ‘Solubility–spinnability map and model for the preparation of
+fibres of polyethylene (terephthalate) using gyration and pressure.’
+Chem. Eng. J. 280 (2015): 344–353; (b) Mahalingam, S.; Ren, G. G.;
+Edirisinghe, M. J. ‘Rheology and pressurised gyration of starch and
+starch-loaded poly(ethylene oxide).’ Carbohydr. Polym. 114 (2014):
+279–287.
+35. Raimi-Abraham, B. T.; Mahalingam, S.; Edirisinghe, M.; Craig, D. Q.
+‘Generation of poly(N-vinylpyrrolidone) nanofibres using pressurised gyration.’ Mater. Sci. Eng. C 39 (2014): 168–176.
+36. Brako, F.; Raimi-Abraham, B.; Mahalingam, S.; Craig, D. Q. M.; Edirisinghe,
+M. ‘Making nanofibres of mucoadhesive polymer blends for vaginal therapies.’ Eur. Polym. J. 70 (2015): 186–196.
+37. Raimi-Abraham, B. T.; Mahalingam, S.; Davies, P. J.; Edirisinghe, M.;
+Craig, D. Q. ‘Development and characterization of amorphous nanofiber
+drug dispersions prepared using pressurized gyration.’ Mol. Pharm. 12
+(2015): 3851–3861.
+38. Zhang, S.; Karaca, B. T.; VanOosten, S. K.; Yuca, E.; Mahalingam, S.;
+Edirisinghe, M.; Tamerler, C. ‘Coupling infusion and gyration for the
+nanoscale assembly of functional polymer nanofibers integrated with
+genetically engineered proteins.’ Macromol. Rapid Commun. 36 (2015):
+1322–1328.
+39. Wu, X.; Mahalingam, S.; VanOosten, S. K.; Wisdom, C.; Tamerler, C.;
+Edirisinghe, M. ‘New generation of tunable bioactive shape memory mats
+integrated with genetically engineered proteins.’ Macromol. Biosci. 17
+(2017): 1600270.
+40. Illangakoon, U. E.; Mahalingam, S.; Wang, K.; Cheong, Y. K.; Canales,
+E.; Ren, G. G.; Cloutman-Green, E.; Edirisinghe, M.; Ciric, L. ‘Gyrospun antimicrobial nanoparticle loaded fibrous polymeric filters.’ Mater. Sci. Eng.
+C 74 (2017): 315–324.
+41. Xu, Z.; Mahalingam, S.; Basnett, P.; Raimi-Abraham, B.; Roy, I.; Craig, D.;
+Edirisinghe, M. ‘Making nonwoven fibrous poly(ε-caprolactone) constructs
+for antimicrobial and tissue engineering applications by pressurized melt
+gyration.’ Macromol. Mater. Eng. 301 (2016): 922–934.
+42. (a) Ahmad, Z.; Zhang, H. B.; Farook, U.; Edirisinghe, M.; Stride, E.; Colombo,
+P. ‘Generation of multilayered structures for biomedical applications using
+a novel tri-needle coaxial device and electrohydrodynamic flow.’ J. R. Soc.
+Interface. 5 (2008): 1255–1261; (b) Labbaf, S.; Deb, S.; Cama, G.; Stride,
+E.; Edirisinghe, M. ‘Preparation of multicompartment sub-micron particles
+using a triple-needle electrohydrodynamic device.’ J. Colloid Interface Sci.
+409 (2013): 245–254; (c) Labbaf, S.; Ghanbar, H.; Stride, E.; Edirisinghe,
+M. ‘Preparation of multilayered polymeric structures using a novel fourneedle coaxial electrohydrodynamic device.’ Macromol. Rapid Commun. 35
+(2014): 618–623.
+43. (a) Loscertales, I. G.; Barrero, A.; Guerrero, I.; Cortijo, R.; Marquez, M.;
+Ganan-Calvo, A. M. ‘Micro/nano encapsulation via electrified coaxial
+liquid jets.’ Science 295 (2002): 1695–1698; (b) Lopez-Herrera, J. M.
+‘Coaxial jets generated from electrified Taylor cones: Scaling laws.’ Aerosol
+Sci. 34 (2003): 535–552; (c) Chen, X.; Jia, L.; Yin, X.; Cheng, J.; Lu, J.
+‘Spraying modes in coaxial jet electrospray with outer driving liquid.’
+Phys. Fluids 17 (2005): 032101; (d) Mei, F.; Chen, D. R. ‘Investigation
+of compound jet electrospray: Particle encapsulation.’ Phys. Fluids 19
+(2007): 103303.
+44. Zamani, M.; Prabhakaran, M. P.; Ramakrishna, S. ‘Advances in drug delivery
+via electrospun and electrosprayed nanomaterials.’ Int. J. Nanomedicine 8
+(2013): 2997–3017.
+45. (a) Ciach, T. ‘Application of electro-hydro-dynamic atomization in drug
+delivery.’ J. Drug Del. Sci. Technol. 17 (2007): 367–375; (b) Yurteri, C.
+U.; Hartman, R. P. A.; Marijnissen, J. C. M. ‘Producing pharmaceutical particles via electrospraying with an emphasis on nano and nanostructured particles: A review.’ KONA Powder Part. J. 28 (2010): 91–115;
+(c) Jayasinghe, S. N.; Auguste, J.; Scotton, C. J. ‘Platform technologies for
+directly reconstructing 3D living biomaterials.’ Adv. Mater. 27 (2015): 7794–
+7799; (d) Bock, N.; Dargaville, T. R.; Woodruff, M. A. ‘Electrospraying of
+polymers with therapeutic molecules: State of the art.’ Prog. Polym. Sci. 37
+(2012): 1510–1551.
+46. Wang, F.; Li, Z.; Tamama, K.; Sen, C. K.; Guan, J. ‘Fabrication and characterization of prosurvival growth factor releasing, anisotropic scaffolds
+for enhanced mesenchymal stem cell survival/growth and orientation.’
+Biomacromolecules 10 (2009): 2609–2618.
+47. Zhu, W.; Masood, F.; O’Brien, J.; Zhang, L. G. ‘Highly aligned nanocomposite
+scaffolds by electrospinning and electrospraying for neural tissue regeneration.’ Nanomedicine 11 (2015): 693–704.
+48. Jaworek, A.; Krupa, A.; Lackowski, M.; Sobczyk, A. T.; Czech, T.;
+Ramakrishna, S.; Sundarrajan, S.; Pliszka, D. ‘Nanocomposite fabric formation by electrospinning and electrospraying technologies.’ J. Electrost.
+67 (2009): 435–438.
+49. Birajdar, M. S.; Lee, J. ‘Sonication-triggered zero-order release by uncorking
+core–shell nanofibers.’ Chem. Eng. J. 288 (2016): 1–8.
+50. Guarino, V.; Altobelli, R.; Cirillo, V.; Cummaro, A.; Ambrosio, L. ‘Additive
+electrospraying: A route to process electrospun scaffolds for controlled
+molecular release.’ Polym. Adv. Technol. 26 (2015): 1359–1369.
+51. Cheng, J.; Jun, Y.; Qin, J.; Lee, S. H. ‘Electrospinning versus microfluidic
+spinning of functional fibers for biomedical applications.’ Biomater. 114
+(2017): 121–143.
+52. Kang, E.; Jeong, G. S.; Choi, Y. Y.; Lee, K. H.; Khademhosseini, A.; Lee,
+S. H. ‘Digitally tunable physicochemical coding of material composition
+and topography in continuous microfibres.’ Nature Mater. 10 (2011):
+877–883.
+53. Chae, S.-K.; Kang, E.; Khademhosseini, A.; Lee, S.-H. ‘Micro/nanometerscale fiber with highly ordered structures by mimicking the spinning process of silkworm.’ Adv. Mater. 25 (2013): 3071–3078.
+54. Ahn, S. Y.; Mun, C. H.; Lee, S. H. ‘Microfluidic spinning of fibrous alginate
+carrier having highly enhanced drug loading capability and delayed release
+profile.’ RSC Adv. 5 (2015): 15172–15181.
+55. Sofokleous, P.; Stride, E.; Bonfield, W.; Edirisinghe, M. ‘Design, construction and performance of a portable handheld electrohydrodynamic
+multi-needle spray gun for biomedical applications.’ Mater. Sci. Eng. C 33
+(2013): 213–223.
+56. (a) Qin, C. C.; Duan, X. P.; Wang, L.; Zhang, L. H.; Yu, M.; Dong, R. H.;
+Yan, X.; He, H. W.; Long, Y. Z. ‘Melt electrospinning of poly(lactic acid)
+and polycaprolactone microfibers by using a hand-operated Wimshurst
+generator.’ Nanoscale 7 (2015): 16611–16615; (b) Xu, S. C.; Qin, C. C.;
+Yu, M.; Dong, R. H.; Yan, X.; Zhao, H.; Han, W. P.; Zhang, H. D.; Long,
+Y. Z. ‘A battery-operated portable handheld electrospinning apparatus.’ Nanoscale 7 (2015): 12351–12355; (c) Yan, X.; Yu, M.; Zhang, L.
+H.; Jia, X. S.; Li, J. T.; Duan, X. P.; Qin, C. C.; Dong, R. H.; Long, Y. Z.
+‘A portable electrospinning apparatus based on a small solar cell and
+a hand generator: Design, performance and application.’ Nanoscale 8
+(2016): 209–213.
+57. Mouthuy, P.-A.; Groszkowski, L.; Ye, H. ‘Performances of a portable
+electrospinning apparatus.’ Biotechnol. Lett. 37 (2015): 1107–1116.
+58. Haik, J.; Kornhaber, R.; Blal, B.; Harats, M. ‘The feasibility of a handheld
+electrospinning device for the application of nanofibrous wound dressings.’
+Adv. Wound Care 6 (2017): 166–174.
+59. Zhang, B.; Yan, X.; He, H.-W.; Yu, M.; Ning, X.; Long, Y.-Z. ‘Solventfree electrospinning: Opportunities and challenges.’ Polym. Chem. 8
+(2017): 333–352.
+60. Levit, N.; Tepper, G. ‘Supercritical CO2-assisted electrospinning.’ J.
+Supercrit. Fluids 31 (2004): 329–333.
+61. Deravi, L. F.; Sinatra, N. R.; Chantre, C. O.; Nesmith, A. P.; Yuan,
+H.; Deravi, S. K.; Goss, J. A.; MacQueen, L. A.; Badrossamy, M. R.;
+Gonzalez, G. M.; Phillips, M. D.; Parker, K. K. ‘Design and fabrication of
+fibrous nanomaterials using pull spinning.’ Macromol. Mater. Eng. 302
+(2017): 1600404
+
+/******************************************************************************/
+
+
