@@ -13212,12 +13212,8 @@ Osamu Katagiri - A01212611@itesm.mx - CEM <br></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Stolen, S., Grande, T., &amp; Neil L., A. (2004). Chemical Thermodynamics of Materials - Macroscopic and Microscopic Aspects. (J. W. &amp; S. Inc., Ed.). John Wiley &amp; Sons Ltd.</p>
-</li>
-<li><p>Keszei, &amp; Erno. (2016). Gibbs – Helmholtz equation and entropy. ChemTexts, 2(15), 15–16. <a href="https://doi.org/10.1007/s40828-016-0034-4">https://doi.org/10.1007/s40828-016-0034-4</a></p>
-</li>
-</ul>
+<p><strong>[1] Stolen, S., Grande, T., &amp; Neil L., A. (2004). Chemical Thermodynamics of Materials - Macroscopic and Microscopic Aspects. (J. W. &amp; S. Inc., Ed.). John Wiley &amp; Sons Ltd.</strong></p>
+<p><strong>[2] Keszei, &amp; Erno. (2016). Gibbs – Helmholtz equation and entropy. ChemTexts, 2(15), 15–16. <a href="https://doi.org/10.1007/s40828-016-0034-4">https://doi.org/10.1007/s40828-016-0034-4</a></strong></p>
 
 </div>
 </div>
@@ -13269,14 +13265,29 @@ Osamu Katagiri - A01212611@itesm.mx - CEM <br></p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>$\frac{G}{T}$ is</li>
+<li><p>from [1], equation (1) "is the G-H equation in one of its most subtantial form",
+$$ \left(\frac{\partial(G / T)}{\partial T}\right)_{P,n} = -\frac{H}{T^2} $$</p>
+</li>
+<li><p>where <br>
+$T$ = temperature <br>
+$P$ = pressure <br>
+$n$ = composition vector that contains the amoun of all the components of the thermodynamic system <br>
+$G$ = Gibbs function <br>
+$H$ = enthalpy <br></p>
+</li>
 </ul>
-$$ \left(\frac{\partial\left(\frac{G}{T}\right)}{\partial T}\right)_P = \frac{T\left(\frac{\partial G}{\partial T}\right)_P - G \left(\frac{\partial T}{\partial T}\right)_P}{T^{2}} $$$$ \left(\frac{\partial \left(\frac{G}{T}\right)}{\partial T}\right)_P = \frac{1}{T}\left(\left(\frac{\partial G}{\partial T}\right)_P - \frac{G}{T}\right) $$<ul>
-<li>as $\frac{\partial G\left(T,P\right)}{\partial T} = -S$, (Gibbs-Helmholtz relation with entropy), then:</li>
+$$ d \left(\frac{\partial(G / T)}{\partial T}\right)_{P,n} = -\frac{H}{T^2} dT $$$$ \int_{T_i}^{T_f} \, d\left(\frac{\partial(G / T)}{\partial T}\right)_{P,n} = \int_{T_i}^{T_f} -\frac{H}{T^2}\, dT $$$$ \int_{T_i}^{T_f} \, d\left(\frac{\partial(G / T)}{\partial T}\right)_{P,n} = -H \int_{T_i}^{T_f} \frac{1}{T^2}\, dT $$<ul>
+<li>if $\partial(G / T) = \Delta G_T$</li>
 </ul>
-$$ G = U - TS + PV = H - TS \rightarrow -S = \frac{G-H}{T} $$$$ \left(\frac{\partial \left(\frac{G}{T}\right)}{dT}\right)_P = \frac{1}{T} \left(\frac{G-H}{T} - \frac{G}{T} \right) $$<ul>
-<li>therefore<div class="alert alert-block alert-info">
-$$ \left(\frac{\partial \left(\frac{G}{T}\right)}{\partial T}\right)_P = - \frac{H}{T^{2}} $$
+$$ \int_{T_i}^{T_f} \, d\left(\frac{\Delta G_T}{T}\right)_{P,n} = -H \int_{T_i}^{T_f} \frac{1}{T^2}\, dT $$$$ \left(\frac{\Delta G_{T_f}}{T_f}\right)_{P,n} - \left(\frac{\Delta G_{T_i}}{T_i}\right)_{P,n} = -H \left[\frac{1}{T_i} - \frac{1}{T_f}\right] $$<ul>
+<li><p>Solve for $\Delta G_{T_f}$
+$$ \left(\frac{\Delta G_{T_f}}{T_f}\right)_{P,n} = + \left(\frac{\Delta G_{T_i}}{T_i}\right)_{P,n} - H \left[\frac{1}{T_i} - \frac{1}{T_f}\right] $$
+$$ \Delta G_{T_f} = + \frac{\Delta G_{T_i} T_f}{T_i} - H \left[\frac{T_f}{T_i} - \frac{T_f}{T_f}\right] $$
+$$ \Delta G_{T_f} = \Delta G_{T_i} \frac{T_f}{T_i} - H \left[\frac{T_f}{T_i} - 1\right] $$</p>
+</li>
+<li><p>therefore</p>
+<div class="alert alert-block alert-info">
+$$ \Delta G_{T_f} = \Delta G_{T_i} \frac{T_f}{T_i} + H \left[1 - \frac{T_f}{T_i}\right] $$
 </div></li>
 </ul>
 
@@ -13329,24 +13340,21 @@ $$ \left(\frac{\partial \left(\frac{G}{T}\right)}{\partial T}\right)_P = - \frac
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$ \Delta G = \Delta H - T \Delta S $$$$ T = \frac{\Delta H - \Delta G}{S} $$$$ T = \frac{(-(-90.46)-(-58.43))}{((\frac{1}{2}205.2) + 71.13 - 75.9)} $$$$ T = 1.5219 K $$<ul>
-<li>let's obtain the eqilibrium temperature to ensure $T$ makes the reaction spontaneous.</li>
+$$ \Delta G = \Delta H - T \Delta S $$$$ T = \frac{\Delta H - \Delta G}{S} $$$$ T = \frac{90.46-(-58.43)}{\frac{205.2}{2} + 71.13 - 75.9} K $$$$ T = 1.5219 K $$<ul>
+<li>let's obtain the eqilibrium temperature (spontaneous reaction)</li>
 </ul>
-$$ \Delta G = \Delta H - T \Delta S = 0 $$$$ \Delta H - T \Delta S = 0 \rightarrow \Delta H = T \Delta S $$<ul>
-<li>divide by $\Delta S$</li>
-</ul>
-$$ \frac{\Delta H}{\Delta S} = \frac{T \Delta S}{\Delta S} $$$$ \frac{\Delta H}{\Delta S} = T $$<ul>
+$$ \Delta G = \Delta H - T \Delta S = 0 $$$$ \Delta H - T \Delta S = 0 \rightarrow \Delta H = T \Delta S $$$$ \frac{\Delta H}{\Delta S} = T $$<ul>
 <li>calculate $\Delta S$</li>
 </ul>
-$$ \Delta S = \sum \Delta S_P - \sum \Delta S_R $$$$ \Delta S = \left((75.9 + \left(\frac{1}{2}205.2\right) - 71.13\right) $$$$ \Delta S = 178.5 - 71.13 $$$$ \Delta S = 107.37 J mol^{-1} K^{-1} $$<ul>
+$$ \Delta S = 75.9 + \frac{205.2}{2} - 71.13 $$$$ \Delta S = 107.37 kJ mol^{-1} K^{-1} $$<ul>
 <li>calculate $\Delta H$</li>
 </ul>
-$$ \Delta H = \sum \Delta H_P - \sum \Delta H_R $$$$ \Delta H = \left(\left(0+\frac{1}{2}\times 0\right) - (-90.46)\right) $$$$ \Delta H = 90.46 J mol^{-1} $$<ul>
+$$ \Delta H = 0+\frac{1}{2} (0) - (-90.46) $$$$ \Delta H = 90.46 J mol^{-1} $$<ul>
 <li>substitute $\Delta S$ and $\Delta H$</li>
 </ul>
-$$ T = \frac{\Delta H}{\Delta S} $$$$ T = \frac{90.46\times 10^{3}}{107.37} $$$$ T = 842.5 K $$<ul>
+$$ T = \frac{\Delta H}{\Delta S} $$$$ T = \frac{90.46}{107.37 \times 10^{-3}} $$$$ T = 842.82 K $$<ul>
 <li>therefore<div class="alert alert-block alert-info">
-At $842.5 K$ the $\Delta G = 0$ and the sistem is in equilibrium, therefore the reaction will be spontaneous when $T<842.5K$
+The reaction will be spontaneous at $T$ less than $842.82 K$
 </div></li>
 </ul>
 

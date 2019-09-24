@@ -880,3 +880,20 @@ High-throughput and high-yield fabrication of uniaxially-aligned chitosan-based 
 /******************************************************************************/
 
 
+* from [1], equation (1) "is the G-H equation in one of its most subtantial form",
+$$ \left(\frac{\partial(G / T)}{\partial T}\right)_{P,n} = -\frac{H}{T^2} $$
+
+* where <br>
+$T$ = temperature <br>
+$P$ = pressure <br>
+$n$ = composition vector that contains the amoun of all the components of the thermodynamic system <br>
+$G$ = Gibbs function <br>
+$H$ = enthalpy <br>
+
+$$ d \left(\frac{\partial(G / T)}{\partial T}\right)_{P,n} = -\frac{H}{T^2} dT $$
+$$ \int_{T_1}^{T_2} \, d\left(\frac{\partial(G / T)}{\partial T}\right)_{P,n} = \int_{T_1}^{T_2} -\frac{H}{T^2}\, dT $$
+$$ \int_{T_1}^{T_2} \, d\left(\frac{\partial(G / T)}{\partial T}\right)_{P,n} = -H \int_{T_1}^{T_2} \frac{1}{T^2}\, dT $$
+
+* if $\partial(G / T) = \Delta G_T$
+
+$$ \int_{T_1}^{T_2} \, d\left(\frac{\Delta G_T}{\partial T}\right)_{P,n} = -H \int_{T_1}^{T_2} \frac{1}{T^2}\, dT $$
