@@ -1,0 +1,229 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% writeLaTeX Example: A quick guide to LaTeX
+%
+% Source: Dave Richeson (divisbyzero.com), Dickinson College
+% 
+% A one-size-fits-all LaTeX cheat sheet. Kept to two pages, so it 
+% can be printed (double-sided) on one piece of paper
+% 
+% Feel free to distribute this example, but please keep the referral
+% to divisbyzero.com
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+% -----------------------------------------------------------------------
+
+\title{Quick Guide to LaTeX}
+
+\begin{document}
+
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{Algorithms, Evidence, and Data Science Cookbook}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% -----------------------------------------------------------------------
+\section{Part I: Classic Statistical Inference} % -----------------------
+% -----------------------------------------------------------------------
+
+* \textbf{Population:} the entire group
+
+* \textbf{Sample:} a subset of the population
+
+* \textbf{Mean:} 
+$\mu$ is the mean of the population; $\bar{x}$ is the mean of the sample
+$$ \underset{i=1}{\overset{n}{\frac{1}{n}\sum }}x_i $$
+
+* \textbf{Variance:} the dispersion around the mean
+\begin{multicols}{2}
+Variance of a population:
+$$ \sigma^2 = \underset{i=1}{\overset{n}{\frac{1}{n}\sum }} {\left(x_i - \mu \right)}^2 $$
+
+\pagebreak 
+Variance of a sample:
+$$ s^2 = \underset{i=1}{\overset{n}{\frac{1}{n}\sum }} {\left(x_i - \bar{x} \right)}^2 $$
+\end{multicols}
+
+* \textbf{Standard Deviation:} square root of the variance
+
+* \textbf{Standard Error:} an estimate of the standard deviation of the sampling distribution
+\begin{multicols}{2}
+For a mean:
+$$ se(\bar{x}) = \frac{s}{\sqrt{n}} $$
+
+\pagebreak 
+For the difference between two means:
+$$ se(\bar{x_1}, \bar{x_2}) = \sqrt{\frac{{s_1}^2}{n_1} + \frac{{s_2}^2}{n_2}} $$
+\end{multicols}
+
+\subsection{T-test, one-sample}
+* null hypothesis $H_o : \mu = \mu_0$ \\
+* alternative hypothesis $H_a : \mu \{=, > or <\} \mu_0$ \\
+* $t-statistic t$ standarices the difference between $\bar{x}$ and $\mu_0$
+$$ t = \frac{\bar{x} - \mu_0}{se(\bar{x})} $$
+degrees of freedom $df = n - 1$ \\
+* $p-value$: probability that $\bar{x}$ was obtained by chance given $\mu_0 = \mu$. \\
+* \textbf{algorithm:} read the t-distribution critical values (chart) for the $p-value$ using $t$ and $df$ \\
+if($p-value < \alpha$)\{ reject $H_o$ and accept $H_a$ \} \\
+else \{ cant reject $H_o$ \} \\
+* $\alpha$ is the predetermined value of significance (usually 0.05) \\
+* if($t$ is of the 'wrong' sign){$p-value = 1 - {p-value}_{chart}$}
+
+\subsection{paired two-sample t-test}
+each value of one group corresponds to a value in the other group\\
+* \textbf{algorithm:} subtract the values for each sample to get one set of values and use $\mu_0$ to perform a one-sample t-test\\
+
+\subsection{unpaired two-sample t-test}
+the two populations are independent \\
+* $H_o : \mu_1 = \mu_2$ \\
+* $H_a : \mu_1 \{=, > or <\} \mu_2$ \\
+* $t-statistic t$
+$$ t = \frac{\bar{x_1} - \bar{x_2}}{se(\bar{x_1}, \bar{x_2})} $$
+degrees of freedom $df = (n_1 - 1) + (n_2 - 1)$ \\
+* \textbf{algorithm:} same as in one-sample t-test \\
+* double the $p-value$ for $H_a : \mu_1 \neq \mu_2$ \\
+
+\medskip 
+* \textbf{Type I error $\alpha$:} probability of rejecting a true $H_o$ \\
+* \textbf{Type II error $\beta$:} probability of failing to reject a false $H_o$ \\
+
+% -----------------------------------------------------------------------
+\subsection{Algorithms and Inference} % -------------------------------
+
+* \textbf{Algorithm:} set of data probability-steps to produce an estimator \\
+* \textbf{Inference:} measuring the uncertainty around the estimator \\
+
+\emph{e.g.:} $\bar{x}$ the algorithm, while $se(\bar{x})$ is the inference 
+
+% -----------------------------------------------------------------------
+\subsubsection{A Regression Example}
+
+any regression is a conditional mean $\hat{Y_i} = E(Y_i|X_i)$ \\
+* $Y:$ response variable \\
+* $X:$ covariate/predictor/feature \\
+* predicted values = fitted curve given $x$:
+$$\hat{Y}(x) = \hat{\beta_0} + \hat{\beta_1} x$$
+
+% -----------------------------------------------------------------------
+\subsubsection{Hypothesis Testing}
+
+% -----------------------------------------------------------------------
+\subsubsection{Notes}
+
+% -----------------------------------------------------------------------
+\subsection{Frequentist Inference} % ------------------------------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Frequentism in Practice}
+
+% -----------------------------------------------------------------------
+\subsubsection{Frequentist Optimality}
+
+% -----------------------------------------------------------------------
+\subsubsection{Notes and Details}
+
+% -----------------------------------------------------------------------
+\subsection{Bayesian Inference} % ---------------------------------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Two Examples}
+
+% -----------------------------------------------------------------------
+\subsubsection{Uninformative Prior Distributions}
+
+% -----------------------------------------------------------------------
+\subsubsection{Flaws in Frequentist Inference}
+
+% -----------------------------------------------------------------------
+\subsubsection{A Bayesian/Frequentist Comparison List}
+
+% -----------------------------------------------------------------------
+\subsubsection{Notes and Details}
+
+% -----------------------------------------------------------------------
+\subsection{Fisherian Inference and Maximum Likelihood Estimation} % ----
+
+% -----------------------------------------------------------------------
+\subsubsection{Likelihood and Maximum Likelihood}
+
+% -----------------------------------------------------------------------
+\subsubsection{Fisher Information and the MLE}
+
+% -----------------------------------------------------------------------
+\subsubsection{Conditional Inference}
+
+% -----------------------------------------------------------------------
+\subsubsection{Permutation and Randomization}
+
+% -----------------------------------------------------------------------
+\subsubsection{Notes and Details}
+
+% -----------------------------------------------------------------------
+\subsection{Parametric Models and Exponential Families} % ---------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Univariate Families}
+
+% -----------------------------------------------------------------------
+\section{} % ------------------------------------------------------------
+\hrule
+Osamu Katagiri - A01212611, \href{https://www.linkedin.com/in/osamu-katagiri-84b2b940/}{linkedin.com/osamu-katagiri/}
+\end{multicols}
+
+\end{document}
