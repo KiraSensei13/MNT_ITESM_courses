@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  26 SEP 2019 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  26 SEP 2019 18:22
 entering extended mode
 **./ComputerAgeStatisticalInference_cookbook.tex
 (ComputerAgeStatisticalInference_cookbook.tex
@@ -481,16 +481,16 @@ Overfull \hbox (3.59618pt too wide) detected at line 403
 [] \OT1/cmr/m/n/8 = [] \OMS/cmsy/m/n/8  []
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 473.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 500.
 [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 473.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 500.
  (ComputerAgeStatisticalInference_cookbook.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 473.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 473.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 500.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 500.
 Package rerunfilecheck Info: File `ComputerAgeStatisticalInference_cookbook.out
 ' has not changed.
 (rerunfilecheck)             Checksum: 2F664D95B9ECF98EAD2849DE624CB67C;2120.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 473.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 500.
  ) 
 Here is how much of TeX's memory you used:
  6504 strings out of 492946
@@ -520,7 +520,7 @@ msfonts/cm/cmsy6.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/oskat/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on ComputerAgeStatisticalInference_cookbook.pdf (3 pages, 235100
+Output written on ComputerAgeStatisticalInference_cookbook.pdf (3 pages, 237835
  bytes).
 PDF statistics:
  215 PDF objects out of 1000 (max. 8388607)
