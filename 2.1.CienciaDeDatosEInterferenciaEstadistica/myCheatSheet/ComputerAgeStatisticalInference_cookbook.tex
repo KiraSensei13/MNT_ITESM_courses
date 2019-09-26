@@ -298,38 +298,152 @@ purpose: choose one of the two possible density functions for observed data $x$ 
 * null hypothesis density $f_0(x)$ \\
 * alternative density $f_1(x)$ \\
 let $L(x)$ be the Likelihood Ratio
-$$ L(x) = \frac{f_0(x)}{f_1(x)} $$
+$$ L(X) = \frac{f_1(X)}{f_0(X)} $$
 let the testing rule $t_c{x}$ be:
 $$
-t_c{x} = \begin{cases} 1(pic f_1(x)), & ln(L(x)) \geq c \\ 0(pic f_0(x)), & ln(L(x)) < c \end{cases}
+t_c{x} = \begin{cases} 1(pic f_1(x)), & ln(L(X)) \geq c \\ 0(pic f_0(x)), & ln(L(X)) < c \end{cases}
 $$
 * only rules in the $t_c{x}$ form can be optimal
 \emph{prblem Steps} \\
-* 1) desity funcs  
+* 1) define the density functions $f_0(x_i)$ and $f_1(x_i)$ for $f_0(x)$ and $f_1(x)$ \\
+\emph{e.g.}
+\begin{multicols}{2}
+$$ f_0 \sim N(\mu_0,{\sigma^2}_0) $$
+$$ f_0 \sim N(0,1) $$
+$$ f_0(x_i) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{{x_i}^2}{2}} $$
+
+\pagebreak 
+$$ f_1 \sim N(\mu_1,{\sigma^2}_1) $$
+$$ f_1 \sim N(0.5,1) $$
+$$ f_1(x_i) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{{x_i - 0.5}^2}{2}} $$
+\end{multicols}
+* 2) calculate the likelihood functions $f_0(X)$ and $f_1(X)$ \\
+\emph{e.g.}
+$$ f_0(X)) = \left[\frac{1}{\sqrt{2 \pi}}\right]^n e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} {x_i}^2} $$
+$$ f_1(X) = \left[\frac{1}{\sqrt{2 \pi}}\right]^n e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} ((x_i - 0.5)^2)} $$
+* 3) calculate the likelihood ratio \\
+\emph{e.g.}
+$$ L(X) = \frac{e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum} ((x_i - 0.5)^2})}}{e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum} {x_i}^2}}} $$
+$$ L(X) = e^{-\frac{1}{2} \left[n \bar{x} - \frac{n}{4}\right]} $$
+* 4) remove all independent variables
+\emph{e.g.} \\
+\begin{multicols}{2}
+$$ L(X) > c \Rightarrow $$
+only the mean depends on the sample $x$
+
+\pagebreak 
+$$ e^{-\frac{1}{2} \left[n \bar{x} - \frac{n}{4}\right]} > c_1 $$
+$$ -\frac{1}{2} \left[n \bar{x} - \frac{n}{4}\right] > C_2 $$
+$$ n \bar{x} - \frac{n}{4} > c_3 $$
+$$ \bar{x} > c_4 $$
+$$ \bar{x} > c $$
+\end{multicols}
+* 5) the \emph{most powerful} hypothesis test at any type I error rate $\alpha$ is to compare $c$ to a constant. \\
+\emph{e.g.} \\
+$$ \alpha = P(\bar{x} > c | \mu = \mu_0) $$
+$$ \alpha = P((\bar{x} - \mu)\sqrt{n} > (c - \mu)\sqrt{n} | \mu = 0) $$
+$$ \alpha = 1 - P(\bar{x}\sqrt{n} \leq c\sqrt{n} | \mu = 0) $$
+$$ \alpha = 1 - \Phi(c\sqrt{n}) $$
+$\Phi$ is the cumulative density function (CDF) of a normal distribution $N(\mu_0,{\sigma^2}_0)$ \\
+
+* 6) calculate $c$
+\begin{multicols}{2}
+\emph{e.g.}
+$$ \Phi(c \sqrt{n}) = 1 - \alpha $$
+$$ c \sqrt{n} = \Phi^{-1}(1 - \alpha) $$
+$$ c = 0 + \frac{1}{\sqrt{n}} \Phi^{-1}(1 - \alpha) $$
+
+\pagebreak 
+In general:\\
+$$ c = \mu_0 + \frac{1}{\sqrt{n}} \Phi^{-1}(1 - \alpha) $$
+\end{multicols}
+* 7) calculate $\beta$, such that it's minimized \\
+\emph{e.g.} \\
+$$ \beta = P(\bar{x} \leq c | \mu = \mu_1) $$
+$$ \beta = P((\bar{x} - \mu) \sqrt{n} \leq (c - \mu) \sqrt{n} | \mu = 0.5) $$
+$$ \beta = \Phi ((c - 0.5) \sqrt{n} ) $$
 
 % -----------------------------------------------------------------------
-\subsubsection{Notes and Details}
+\subsubsection{Notes and Details} 
+* $1 - \beta$ is the power of the hypothesis test (probability of correctly rejecting $f_0(x)$)
 
 % -----------------------------------------------------------------------
 \subsection{Bayesian Inference} % ---------------------------------------
 
-% -----------------------------------------------------------------------
-\subsubsection{Two Examples}
+\subsubsection{Bayes Rule}
+$$ P(A|B) = \frac{P(B|A)P(A)}{P(B)} $$
+
+* Bayes Rule (for one $\mu$) can be written as:
+\begin{multicols}{2}
+$$ g(\mu | x) = c_x L_x(\mu) g(\mu) $$
+
+\pagebreak 
+where: \\
+$\mu:$ an unobserved point in the parameter space $\Omega$ \\
+$x:$ a point in the sample space $X$ \\
+$c_x:$ normalization constant of the posterior distribution \\
+$g(\mu | x):$ posterior distribution
+$L_x(\mu):$ likelihood function
+$g(\mu):$ prior distribution
+\end{multicols}
+* Bayes Rule (for two $\mu_1$, $\mu_2$) can be written as:
+\begin{multicols}{2}
+$$ \frac{g(\mu_1 | x)}{g(\mu_2 | x)} = \frac{g(\mu_1)}{g(\mu_2)} \frac{L_x(\mu_1)}{L_x(\mu_2)} $$
+
+\pagebreak 
+The posterior odds ratio is the prior odds ratio times the likelihood ratio
+\end{multicols}
+
+$$ L_x(\mu) = \prod _{1=1}^n e^{-\frac{1}{2}(x_i - \mu)^2} $$
 
 % -----------------------------------------------------------------------
-\subsubsection{Uninformative Prior Distributions}
+\subsubsection{Warm-up example}
+\emph{e.g.} Find the probability of identical twins. The doctor says that $\frac{1}{3}$ of twin births are identical. A sonogram observed same sex. identical twins are of the same sex, while fraternals have 0.5 probability to be of the same sex.
+
+$$ \frac{g(identical | sameSex)}{g(fraternal | sameSex)} = \frac{g(identical)}{g(fraternal)} \times \frac{L_{identical}(sameSex)}{L_{fraternal}(sameSex)} $$
+$$ \frac{g(identical | sameSex)}{g(fraternal | sameSex)} = \frac{\frac{1}{3}}{1 - \frac{1}{3}} \times \frac{1}{\frac{1}{2}} $$
 
 % -----------------------------------------------------------------------
 \subsubsection{Flaws in Frequentist Inference}
 
+* In Frequentist, if the algorith changes (even if the data points stay exactly the same), the significance level is different for each algorithm.
+
+* On Bayesian inference, the algorithm stays the same $\rightarrow$ the significance level does not change.
+
 % -----------------------------------------------------------------------
 \subsubsection{A Bayesian/Frequentist Comparison List}
+\begin{multicols}{2}
+\textbf{Bayesian:}
+
+* attention is in choosing an algorithm $t(x)$
+
+* operates only in one sample with the whole parameter space
+
+* answers all posible questions at once, since the posterior is a distribution
+
+\pagebreak 
+\textbf{Frequentist:}
+
+* attention is in choosing a prior $\prod$
+
+* operates with one parameter (specific question) in many samples
+
+* only computes the expected value and the variance (each answer requires an specific algorithm)
+
+* is more flexible than Bayes as we can come up with many algorithms
+\end{multicols}
 
 % -----------------------------------------------------------------------
 \subsubsection{Notes and Details}
 
+* like in frequentist, the fundamental unit of inference is a family of probability densities.
+
+* Bayesian inferences assumes the knowledge of a prior density $g(\mu), \mu \epsilon \Omega$
+
 % -----------------------------------------------------------------------
 \subsection{Fisherian Inference and Maximum Likelihood Estimation} % ----
+
+
 
 % -----------------------------------------------------------------------
 \subsubsection{Likelihood and Maximum Likelihood}
