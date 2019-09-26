@@ -33,6 +33,7 @@
 \usepackage{ifthen}
 \usepackage[landscape]{geometry}
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage{slashbox}
 
 
 \ifthenelse{\lengthtest { \paperwidth = 11in}}
@@ -154,11 +155,71 @@ degrees of freedom $df = (n_1 - 1) + (n_2 - 1)$ \\
 % -----------------------------------------------------------------------
 \subsubsection{A Regression Example}
 
+\subsubsection{Linear Regression}
 any regression is a conditional mean $\hat{Y_i} = E(Y_i|X_i)$ \\
 * $Y:$ response variable \\
 * $X:$ covariate/predictor/feature \\
+* $\hat{\beta_0}, \hat{\beta_1}:$ regression coefficients \\
+\begin{multicols}{2}
+$$ \hat{\beta_0} = \hat{Y} - \hat{\beta_1} \hat{X} $$
+$$ se(\hat{\beta_0}) = \hat{\sigma}^2 \left[\frac{1}{n} + \frac{\bar{x}^2}{\underset{i=1}{\overset{n}{\sum }}(X_i - \bar{X})^2}\right] $$
+
+\pagebreak 
+$$ \hat{\beta_1} = \frac{\underset{i=1}{\overset{n}{\sum }}(X_i - \bar{X})(Y_i - \bar{Y})}{\underset{i=1}{\overset{n}{\sum }}(X_i - \bar{X})^2} $$
+$$ se(\hat{\beta_1}) = \frac{{\hat{\sigma}}^2}{\underset{i=1}{\overset{n}{\sum }}(X_i - \bar{X})^2} $$
+\end{multicols}
 * predicted values = fitted curve given $x$:
 $$\hat{Y}(x) = \hat{\beta_0} + \hat{\beta_1} x$$
+* residuals $\hat{\epsilon}$:
+$$ \hat{\epsilon}_i = Y_i - \hat{Y_i} = Y_i - \hat{\beta_0} + \beta_1 X_i $$
+* residual sum of squares $RSS$
+$$ RSS(\hat{\beta_0}, \hat{\beta_1}) = \underset{i=1}{\overset{n}{\sum }}\hat{\epsilon_i}^2 $$
+* mean square error $\hat{\sigma}^2$
+$$ \hat{\sigma}^2 = \frac{RSS(\hat{\beta_0}, \hat{\beta_1})}{n - 2} $$
+
+\subsubsection{LOWESS \& LOESS}
+* 1) specify the number of points within the range/window $n$
+* 2) neighbour weightings $w(x_k)$
+\begin{multicols}{2}
+$$ w(x_k) = {\left(1 - {\left|\frac{x_i - x_k}{d}\right|}^{3}\right)}^{3} $$
+
+\pagebreak 
+$for k = 1, ..., n$ \\
+$d$ is the distance between $x_i$ and the $k^{th}$ neighbouring point
+\end{multicols}
+* 3) for each range, estimate a regression function \\
+LOWESS: $\hat{y_k} = a + b x_k$ \\
+LOESS: $\hat{y_k} = a + b x_k + c {x_k}^2 $ \\
+* 4) robust weightings $G(x_k)$
+$$
+G(x_k) = \begin{cases} \left(1 - \left(\frac{\left|y_i - \hat{y_i}\right|}{6 median(\left|y_i - \hat{y_i}\right|)}\right)^2\right)^2, & \left|\frac{\left|y_i - \hat{y_i}\right|}{6 median(\left|y_i - \hat{y_i}\right|)}\right| < 1 \\ 0, & \left|\frac{\left|y_i - \hat{y_i}\right|}{6 median(\left|y_i - \hat{y_i}\right|)}\right| \geq 1 \end{cases}
+$$
+
+LOWESS: $\hat{y_k} = \underset{k}{\overset{}{\sum}} w(x_k) G(x_k) (a + b x_k)^2$ \\
+LOESS: $\hat{y_k} = \underset{k}{\overset{}{\sum}} w(x_k) G(x_k) (a + b x_k + c {x_k}^2)^2$ \\
+* 5) A series of new smoothed values is the result. The procedure can be repeated to get a more precise curve fitting.
+
+\subsubsection{Bootstrapping}
+* bootstrap principle: $\sigma_{(\text{sampling w/replacemnt})} = \sigma_{(\text{across samples})}$ \\
+* bootstrap iterations: $B$ \\
+* original sample: $(x_i, y_i)_{i = 1}^{N}$ \\
+* bootstrap samples: $(x_{j(b)}, y_{j(b)})_{j \epsilon I}$ for $b = 1, ..., B$, $I = \{1, ..., N\}$, and $j$ is the index that is randomly sampled from I \\
+* for each b, compute $\hat{y_{j(b)}}$ using LOWESS or any other model
+
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+\backslashbox{j}{b} & 1 & 2 & 3 & $\cdots$ & $B$ \\
+\hline
+1 & \bar{\hat{y_{1(1)}} & cell6 & cell2 & $\cdots$ & 4 \\
+%\hline
+%2 & cell8 & cell9 & cell2 & $\cdots$ & 4 \\
+%\hline
+%$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ \\
+%\hline
+%3 & cell8 & cell9 & cell2 & $\cdots$ & 4 \\
+%\hline
+\end{tabular}
+
 
 % -----------------------------------------------------------------------
 \subsubsection{Hypothesis Testing}
