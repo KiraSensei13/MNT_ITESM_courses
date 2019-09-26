@@ -1,0 +1,30 @@
+\BOOKMARK [1][-]{section*.1}{Part I: Classic Statistical Inference}{}% 1
+\BOOKMARK [2][-]{section*.2}{Algorithms and Inference}{section*.1}% 2
+\BOOKMARK [3][-]{section*.3}{A Regression Example}{section*.2}% 3
+\BOOKMARK [3][-]{section*.4}{Linear Regression}{section*.2}% 4
+\BOOKMARK [3][-]{section*.5}{LOWESS \046 LOESS}{section*.2}% 5
+\BOOKMARK [3][-]{section*.6}{Bootstrapping}{section*.2}% 6
+\BOOKMARK [3][-]{section*.7}{Hypothesis Testing}{section*.2}% 7
+\BOOKMARK [2][-]{section*.8}{T-test, one-sample}{section*.1}% 8
+\BOOKMARK [2][-]{section*.9}{paired two-sample t-test}{section*.1}% 9
+\BOOKMARK [2][-]{section*.10}{unpaired two-sample t-test}{section*.1}% 10
+\BOOKMARK [3][-]{section*.11}{Notes}{section*.10}% 11
+\BOOKMARK [2][-]{section*.12}{Frequentist Inference}{section*.1}% 12
+\BOOKMARK [3][-]{section*.13}{Frequentist principles}{section*.12}% 13
+\BOOKMARK [3][-]{section*.14}{Frequentist Optimality}{section*.12}% 14
+\BOOKMARK [3][-]{section*.15}{Notes and Details}{section*.12}% 15
+\BOOKMARK [2][-]{section*.16}{Bayesian Inference}{section*.1}% 16
+\BOOKMARK [3][-]{section*.17}{Two Examples}{section*.16}% 17
+\BOOKMARK [3][-]{section*.18}{Uninformative Prior Distributions}{section*.16}% 18
+\BOOKMARK [3][-]{section*.19}{Flaws in Frequentist Inference}{section*.16}% 19
+\BOOKMARK [3][-]{section*.20}{A Bayesian/Frequentist Comparison List}{section*.16}% 20
+\BOOKMARK [3][-]{section*.21}{Notes and Details}{section*.16}% 21
+\BOOKMARK [2][-]{section*.22}{Fisherian Inference and Maximum Likelihood Estimation}{section*.1}% 22
+\BOOKMARK [3][-]{section*.23}{Likelihood and Maximum Likelihood}{section*.22}% 23
+\BOOKMARK [3][-]{section*.24}{Fisher Information and the MLE}{section*.22}% 24
+\BOOKMARK [3][-]{section*.25}{Conditional Inference}{section*.22}% 25
+\BOOKMARK [3][-]{section*.26}{Permutation and Randomization}{section*.22}% 26
+\BOOKMARK [3][-]{section*.27}{Notes and Details}{section*.22}% 27
+\BOOKMARK [2][-]{section*.28}{Parametric Models and Exponential Families}{section*.1}% 28
+\BOOKMARK [3][-]{section*.29}{Univariate Families}{section*.28}% 29
+\BOOKMARK [1][-]{section*.30}{}{}% 30

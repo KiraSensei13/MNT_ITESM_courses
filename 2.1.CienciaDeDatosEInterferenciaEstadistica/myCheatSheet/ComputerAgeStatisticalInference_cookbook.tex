@@ -89,16 +89,16 @@
 
 * \textbf{Mean:} 
 $\mu$ is the mean of the population; $\bar{x}$ is the mean of the sample
-$$ \underset{i=1}{\overset{n}{\frac{1}{n}\sum }}x_i $$
+$$ \frac{1}{n} \underset{i=1}{\overset{n}{\sum}}x_i $$
 
 * \textbf{Variance:} the dispersion around the mean
 \begin{multicols}{2}
 Variance of a population:
-$$ \sigma^2 = \underset{i=1}{\overset{n}{\frac{1}{n}\sum }} {\left(x_i - \mu \right)}^2 $$
+$$ \sigma^2 = \frac{1}{n} \underset{i=1}{\overset{n}{\sum}} {\left(x_i - \mu \right)}^2 $$
 
 \pagebreak 
 Variance of a sample:
-$$ s^2 = \underset{i=1}{\overset{n}{\frac{1}{n}\sum }} {\left(x_i - \bar{x} \right)}^2 $$
+$$ s^2 = \frac{1}{n} \underset{i=1}{\overset{n}{\sum}} {\left(x_i - \bar{x} \right)}^2 $$
 \end{multicols}
 
 * \textbf{Standard Deviation:} square root of the variance
@@ -106,43 +106,12 @@ $$ s^2 = \underset{i=1}{\overset{n}{\frac{1}{n}\sum }} {\left(x_i - \bar{x} \rig
 * \textbf{Standard Error:} an estimate of the standard deviation of the sampling distribution
 \begin{multicols}{2}
 For a mean:
-$$ se(\bar{x}) = \frac{s}{\sqrt{n}} $$
+$$ se(\bar{x}) = \sqrt{\frac{s^2}{n}} $$
 
 \pagebreak 
 For the difference between two means:
 $$ se(\bar{x_1}, \bar{x_2}) = \sqrt{\frac{{s_1}^2}{n_1} + \frac{{s_2}^2}{n_2}} $$
 \end{multicols}
-
-\subsection{T-test, one-sample}
-* null hypothesis $H_o : \mu = \mu_0$ \\
-* alternative hypothesis $H_a : \mu \{=, > or <\} \mu_0$ \\
-* $t-statistic t$ standarices the difference between $\bar{x}$ and $\mu_0$
-$$ t = \frac{\bar{x} - \mu_0}{se(\bar{x})} $$
-degrees of freedom $df = n - 1$ \\
-* $p-value$: probability that $\bar{x}$ was obtained by chance given $\mu_0 = \mu$. \\
-* \textbf{algorithm:} read the t-distribution critical values (chart) for the $p-value$ using $t$ and $df$ \\
-if($p-value < \alpha$)\{ reject $H_o$ and accept $H_a$ \} \\
-else \{ cant reject $H_o$ \} \\
-* $\alpha$ is the predetermined value of significance (usually 0.05) \\
-* if($t$ is of the 'wrong' sign){$p-value = 1 - {p-value}_{chart}$}
-
-\subsection{paired two-sample t-test}
-each value of one group corresponds to a value in the other group\\
-* \textbf{algorithm:} subtract the values for each sample to get one set of values and use $\mu_0$ to perform a one-sample t-test\\
-
-\subsection{unpaired two-sample t-test}
-the two populations are independent \\
-* $H_o : \mu_1 = \mu_2$ \\
-* $H_a : \mu_1 \{=, > or <\} \mu_2$ \\
-* $t-statistic t$
-$$ t = \frac{\bar{x_1} - \bar{x_2}}{se(\bar{x_1}, \bar{x_2})} $$
-degrees of freedom $df = (n_1 - 1) + (n_2 - 1)$ \\
-* \textbf{algorithm:} same as in one-sample t-test \\
-* double the $p-value$ for $H_a : \mu_1 \neq \mu_2$ \\
-
-\medskip 
-* \textbf{Type I error $\alpha$:} probability of rejecting a true $H_o$ \\
-* \textbf{Type II error $\beta$:} probability of failing to reject a false $H_o$ \\
 
 % -----------------------------------------------------------------------
 \subsection{Algorithms and Inference} % -------------------------------
@@ -206,35 +175,137 @@ LOESS: $\hat{y_k} = \underset{k}{\overset{}{\sum}} w(x_k) G(x_k) (a + b x_k + c 
 * bootstrap samples: $(x_{j(b)}, y_{j(b)})_{j \epsilon I}$ for $b = 1, ..., B$, $I = \{1, ..., N\}$, and $j$ is the index that is randomly sampled from I \\
 * for each b, compute $\hat{y_{j(b)}}$ using LOWESS or any other model
 
-\begin{tabular}{ |c|c|c|c|c|c| }
+\begin{center}
+\begin{tabular}{ |cccccc| }
 \hline
 \backslashbox{j}{b} & 1 & 2 & 3 & $\cdots$ & $B$ \\
-\hline
-1 & \bar{\hat{y_{1(1)}} & cell6 & cell2 & $\cdots$ & 4 \\
-%\hline
-%2 & cell8 & cell9 & cell2 & $\cdots$ & 4 \\
-%\hline
-%$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ \\
-%\hline
-%3 & cell8 & cell9 & cell2 & $\cdots$ & 4 \\
-%\hline
-\end{tabular}
 
+1 & $\bar{\hat{y_{1(1)}}}$ & $\bar{\hat{y_{1(2)}}}$ & $\bar{\hat{y_{1(3)}}}$ & $\cdots$ & $\bar{\hat{y_{1(B)}}}$ \\
+
+2 & $\bar{\hat{y_{2(1)}}}$ & $\bar{\hat{y_{2(2)}}}$ & $\bar{\hat{y_{2(3)}}}$ & $\cdots$ & $\bar{\hat{y_{2(B)}}}$ \\
+
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ \\
+
+$N$ & $\bar{\hat{y_{N(1)}}}$ & $\bar{\hat{y_{N(2)}}}$ & $\bar{\hat{y_{N(3)}}}$ & $\cdots$ & $\bar{\hat{y_{N(B)}}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+* for each $j$ row, the standard deviation $\sigma_{j}^{boot}$ is \\
+$$ \sigma_{j}^{boot} = \sqrt{\frac{(\bar{\hat{y_j}} - \bar{\bar{\hat{y_j}}})^2}{B - 1}} $$
+* sort $\bar{\hat{i(b)}}$ by value from min to max $\rightarrow$ get the $5^{th}$ and $95^{th}$ values to get a $90\%$ confidence interval
 
 % -----------------------------------------------------------------------
 \subsubsection{Hypothesis Testing}
 
+\subsection{T-test, one-sample}
+* null hypothesis $H_o : \mu = \mu_0$ \\
+* alternative hypothesis $H_a : \mu \{=, > or <\} \mu_0$ \\
+* $t-statistic t$ standarices the difference between $\bar{x}$ and $\mu_0$
+$$ t = \frac{\bar{x} - \mu_0}{se(\bar{x})} $$
+degrees of freedom $df = n - 1$ \\
+* $p-value$: probability that $\bar{x}$ was obtained by chance given $\mu_0 = \mu$. \\
+* \textbf{algorithm:} read the t-distribution critical values (chart) for the $p-value$ using $t$ and $df$ \\
+if($p-value < \alpha$)\{ reject $H_o$ and accept $H_a$ \} \\
+else \{ cant reject $H_o$ \} \\
+* $\alpha$ is the predetermined value of significance (usually 0.05) \\
+* if($t$ is of the 'wrong' sign){$p-value = 1 - {p-value}_{chart}$}
+
+\subsection{paired two-sample t-test}
+each value of one group corresponds to a value in the other group\\
+* \textbf{algorithm:} subtract the values for each sample to get one set of values and use $\mu_0$ to perform a one-sample t-test\\
+
+\subsection{unpaired two-sample t-test}
+the two populations are independent \\
+* $H_o : \mu_1 = \mu_2$ \\
+* $H_a : \mu_1 \{=, > or <\} \mu_2$ \\
+* $t-statistic t$
+$$ t = \frac{\bar{x_1} - \bar{x_2}}{se(\bar{x_1}, \bar{x_2})} $$
+degrees of freedom $df = (n_1 - 1) + (n_2 - 1)$ \\
+* \textbf{algorithm:} same as in one-sample t-test \\
+* double the $p-value$ for $H_a : \mu_1 \neq \mu_2$ \\
+
+\medskip 
+* \textbf{Type I error $\alpha$:} probability of rejecting a true $H_o$ \\
+* \textbf{Type II error $\beta$:} probability of failing to reject a false $H_o$ \\
+
 % -----------------------------------------------------------------------
 \subsubsection{Notes}
+
+* the OLS confidence intervals work asymptotically $\rightarrow$ they assume the number of available observations is infinite, but it assumes normality \\
+* in LOWESS, $n$ is not infinite, but it does not assume any distribution
 
 % -----------------------------------------------------------------------
 \subsection{Frequentist Inference} % ------------------------------------
 
-% -----------------------------------------------------------------------
-\subsubsection{Frequentism in Practice}
+* assumes the observed data comes from a probability distribution $F$\\
+* $x = (x_1, ..., x_n)$ is the data vector (aka. \emph{the sample's values}) \\
+* $X = (X_1, ..., X_n)$ is the vector of random variables (aka. \emph{a sample, individual draws of $F$}) \\
+* the expectation property $\theta = E_F(X_i)$ (aka. the true expectation value of any draw $X_i$) \\
+* $\hat{\theta}$ is the best estimate of $\theta$
+\begin{multicols}{2}
+$$ \hat{\theta} = t(x) $$
+
+\pagebreak 
+usually,
+$$ t(x) = \bar{x} $$
+where $t(x)$ is the algorithm
+\end{multicols}
+* $\hat{\theta}$ is sample specific, is a realization of $\hat{\Theta} = t(x)$. Typically,
+\begin{multicols}{2}
+$$ E_F(\hat{\Theta}) = \mu $$
+
+\pagebreak 
+$\mu$ is the expected value of producing an estimate using $t(x)$ when $x$ comes from $F$
+\end{multicols}
+* \textbf{Bias-Variance Trade-Off:} models with lower bias will have higher variance and vice versa. \\
+* \textbf{Bias:} error from incorrect assumptions to make target function easier to learn (high bias $\rightarrow$ missing relevant relations or under-fitting)\\
+* \textbf{Variance:} error from sensitivity to fluctuations in
+the dataset, or how much the target estimate would
+differ if different training data was used (high variance $\rightarrow$ modelling noise or over-fitting)
+\begin{multicols}{2}
+$$ bias = \mu - \theta$$
+(aka. $expected - true values$)
+
+\pagebreak 
+$$ var = E_F\{(\hat{\Theta} - \mu)^2\} $$
+\end{multicols}
+
+\subsubsection{Frequentist principles}
+* usually defines parameters with infinite sequence of trials $\rightarrow$ hypothetical data sets $X^{(1)}, X^{(2)}, \hdots$ generate infinite samples ${\hat{\Theta}}^{(1)}, {\hat{\Theta}}^{(2)}, \hdots$
+* 1) Plug-in principle: relate the sample $se(\bar{x})$ with the true variance.
+$$ {var}_F(x) = \hat{{var}_F} = \frac{1}{n - 1} \underset{i=1}{\overset{n}{\sum}} {\left(x_i - \bar{x} \right)^2} $$
+$$ se(\bar{x}) = \left[\frac{{var}_F(x)}{n}\right]^{\frac{1}{2}} $$
+* 2) Taylor series approximations: relate $t(x)$ by local linear approximations (aka. compute $\bar{se}(x)$ of the transformed estimator)
+$$ se(\hat{\theta}) = se(\bar{x}) \frac{d \hat{\theta}}{d \bar{x}} = se(\bar{x}) \frac{d t(x)}{d \bar{x}} $$
+* 3.1) Parametric Families: given $x = (x_1, ..., x_n)$, the Likelihood Function $L(x)$ (aka. the probability to observe x) is given by: \\
+\emph{e.g.} $\hat{\theta} = \mu$ for a normal distribution
+$$ P(x | N(\mu, \sigma^2)) = P(x_1 | N(\mu, \sigma^2)) ... P(x_n | N(\mu, \sigma^2)) $$
+$$ P(x | N(\mu, \sigma^2)) = \left(\frac{1}{\sqrt{2 \pi \sigma^2}}\right)^n  \prod _{1=1}^n e^{-\frac{(x_i - \mu)^2}{2 \sigma^2}} = L(x)$$
+* 3.2) MLE (maximum likelihood estimate): find $\hat{\theta}$ such that $L(x)$ is maximized \\
+\emph{e.g.}
+$$ \overset{\max}{\hat{\theta}} L(x) \Rightarrow \overset{\max}{\mu} L(x) = \hat{\mu}^{MLE}$$
+* 4) Simulation and Bootstrap: estimate $F$ as $\hat{F}$, then simulate values from $\hat{F}$ to get a prior sample $\hat{\Theta}^{(k)} = t(x^{(b)})$ \\
+The empirical standard deviation of the $\hat{\Theta}'s$ is the frequentist estimate for $se(\hat{\theta})$ \\
+* 5) Pivotal Statistics: Frequentist use pivotal statistics whenever they are available to conduct stat. tests \\
+\emph{e.g.} t-test is a pivotal statistic as it does not depend on parameters the distribution might have.
 
 % -----------------------------------------------------------------------
 \subsubsection{Frequentist Optimality}
+
+Neyman-Pearson lemma optimum hypothesis-testing algorithm: \\
+purpose: choose one of the two possible density functions for observed data $x$ \\
+* null hypothesis density $f_0(x)$ \\
+* alternative density $f_1(x)$ \\
+let $L(x)$ be the Likelihood Ratio
+$$ L(x) = \frac{f_0(x)}{f_1(x)} $$
+let the testing rule $t_c{x}$ be:
+$$
+t_c{x} = \begin{cases} 1(pic f_1(x)), & ln(L(x)) \geq c \\ 0(pic f_0(x)), & ln(L(x)) < c \end{cases}
+$$
+* only rules in the $t_c{x}$ form can be optimal
+\emph{prblem Steps} \\
+* 1) desity funcs  
 
 % -----------------------------------------------------------------------
 \subsubsection{Notes and Details}
