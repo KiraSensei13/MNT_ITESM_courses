@@ -282,6 +282,8 @@ $$ se(\hat{\theta}) = se(\bar{x}) \frac{d \hat{\theta}}{d \bar{x}} = se(\bar{x})
 \emph{e.g.} $\hat{\theta} = \mu$ for a normal distribution
 $$ P(x | N(\mu, \sigma^2)) = P(x_1 | N(\mu, \sigma^2)) ... P(x_n | N(\mu, \sigma^2)) $$
 $$ P(x | N(\mu, \sigma^2)) = \left(\frac{1}{\sqrt{2 \pi \sigma^2}}\right)^n  \prod _{1=1}^n e^{-\frac{(x_i - \mu)^2}{2 \sigma^2}} = L(x)$$
+$$ L(x) = \prod _{1=1}^n f_{\theta}(x_i) $$
+where $f_{\theta}$ is the density function \\
 * 3.2) MLE (maximum likelihood estimate): find $\hat{\theta}$ such that $L(x)$ is maximized \\
 \emph{e.g.}
 $$ \overset{\max}{\hat{\theta}} L(x) \Rightarrow \overset{\max}{\mu} L(x) = \hat{\mu}^{MLE}$$
@@ -394,7 +396,7 @@ $$ \frac{g(\mu_1 | x)}{g(\mu_2 | x)} = \frac{g(\mu_1)}{g(\mu_2)} \frac{L_x(\mu_1
 The posterior odds ratio is the prior odds ratio times the likelihood ratio
 \end{multicols}
 
-$$ L_x(\mu) = \prod _{1=1}^n e^{-\frac{1}{2}(x_i - \mu)^2} $$
+$$ L_x(\mu) = \prod _{i=1}^n e^{-\frac{1}{2}(x_i - \mu)^2} $$
 
 % -----------------------------------------------------------------------
 \subsubsection{Warm-up example}
@@ -424,7 +426,7 @@ $$ \frac{g(identical | sameSex)}{g(fraternal | sameSex)} = \frac{\frac{1}{3}}{1 
 \pagebreak 
 \textbf{Frequentist:}
 
-* attention is in choosing a prior $\prod$
+* attention is in choosing a prior $\Pi$
 
 * operates with one parameter (specific question) in many samples
 
@@ -471,28 +473,224 @@ $$variance = E_F\{({\hat{\mu}}^{(i)} - E(\hat{\mu}))^2\}$$
 \end{multicols}
 
 * Reasonable Bayesian justification
+\begin{multicols}{2}
+$$ P(\theta | x) = c_x \Pi(\theta) e^{\ell_x(\theta)} $$
 
+\pagebreak 
+$P(\theta | x):$ posterior \\
+$c_x:$ constant \\
+$\Pi(\theta):$ prior \\
+$e^{\ell_x(\theta)}:$ maximum likelihood estimation
+\end{multicols}
 
-% -----------------------------------------------------------------------
-\subsubsection{Likelihood and Maximum Likelihood}
+* Fisherian inference assumes a flat prior (aka. unknown prior), so that the MLE $\hat{\theta}^{MLE}$ is a maximizer of $P(\theta | x)$. (The MLE is the highest point of the posterior distribution)
 
+* As the algorithm does not change, the significance level is not affected by unexpected changes in the algorithm.
+
+\medskip 
+\emph{e.g.} - for a Normal density function\\
+* let $\theta = (\mu, \sigma^2)$ \\
+* density function $f_{\theta} = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{1}{2} \left(\frac{x_i - \mu}{\sigma}\right)^2}$
+* Since: $L(x) = \prod _{1=1}^n f_{\theta}(x_i)$
+Log-Likelihood function $\ell_x(\theta) = \underset{i=1}{\overset{n}{\sum}} Log\{f_{\theta}(x_i)\} = \underset{i=1}{\overset{I}{\sum}} \ell_x(\theta)$
+$$ \hat{\mu^{MLE}} = \bar{x} $$
+$$ \sigma^{MLE} = \sqrt{\frac{\underset{i=1}{\overset{n}{\sum}} (x_i - \bar{x})^2}{n}} $$
+
+* MLE can cause over-fitting identification problems when we fit a lot of parameters in $\theta$ (it would become very specific to our sample $\rightarrow$ may not represent the population)
 % -----------------------------------------------------------------------
 \subsubsection{Fisher Information and the MLE}
 
+Log-Likelihood Function
+$$ \ell_x(\theta) = Log f_{\theta}(x) $$
+
+Score Function \\
+how higher or lower is the likelihood function value of the sample as $\theta$ varies?
+$$ \dot{\ell}_x(\theta) = \frac{\dot{f_{\theta}}(x)}{f_{\theta}(x)} $$
+
+Expectation of $\dot{\ell}_x(\theta)$
+\begin{multicols}{2}
+$$ E(x) = \int_x x f(x)\, dx $$
+
+\pagebreak 
+$f(x):$ density function
+\end{multicols}
+$$ E[\dot{\ell}_x(\theta)] = 0 $$
+
+Variance of $\dot{\ell}_x(\theta)$
+$$ V[x] = \int_x \left[x - E(x)\right]^2 f(x)\, dx $$
+$$ V[\dot{\ell}_x(\theta)] = \int_x \left[\dot{\ell}_x(\theta)\right]^2 f_{\theta}(x) \, dx $$
+
+Fisher Information $I_0$
+$$ I_0 = V[\dot{\ell}_x(\theta)] $$
+
+\begin{multicols}{2}
+$$ \ddot{\ell}_x(\theta) = \frac{\ddot{f_{\theta}}(x)}{f_{\theta}(x)} - \left(\frac{\dot{f_{\theta}}(x)}{f_{\theta}(x)}\right)^2 $$
+
+\pagebreak 
+$$ E(\ddot{\ell}_x(\theta)) = - I_0 $$
+\end{multicols}
+
+MLE estimator of $\hat{\theta} : \hat{\theta}^{MLE}$
+$$ \hat{\theta}^{MLE} \sim N\left(\theta,\frac{1}{I_0}\right) $$
+
+\medskip
+\emph{e.g.} for a normal dist. \\
+let $x_i \sim N(\theta, \sigma^2)$ \\
+* 1) compute ${\ell}_x(\theta)$ \\
+density function $f_{\theta}(x) = \prod _{i=1}^n \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x_i - \mu)^2}{2 \sigma^2}}$ \\
+likelihood function ${\ell}_x(\theta) = -\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} \frac{(x_i - \theta)^2}{\sigma^2} - \frac{n}{2} Log(2 \pi \sigma^2)$ \\
+* 2) score function $\dot{\ell}_x(\theta) = \frac{1}{\sigma^2} \underset{i=1}{\overset{n}{\sum}} (x_i - \theta)$ \\
+$\ddot{\ell}_x(\theta) = -\frac{n}{\sigma^2}$ \\
+* 3) compute $I_0$ \\
+as $E(\ddot{\ell}_x(\theta)) = - I_0$, Fisher Information $I_0 = \frac{n}{\sigma^2}$ \\
+* 4) compute $\hat{\theta}^{MLE}$ \\
+$E(\dot{\ell}_x(\theta)) = \frac{1}{\sigma^2} \underset{i=1}{\overset{n}{\sum}} (x_i - \theta) = 0$, such that \\
+$\underset{i=1}{\overset{n}{\sum}} x_i = n \theta \Rightarrow \hat{\theta}^{MLE} = \frac{\underset{i=1}{\overset{n}{\sum}} x_i}{n} = \bar{x}$ \\
+* 5) compute $se(\hat{\theta}^{MLE})$ \\
+for a large n, \\
+$\hat{\theta}^{MLE} \sim N\left(\theta,\frac{1}{I_0}\right) \Rightarrow \hat{\theta}^{MLE} \sim N\left(\theta,\frac{\sigma^2}{n}\right)$
+$$ se(\hat{\theta}^{MLE}) = \frac{1}{I_0} = \frac{\sigma^2}{n} $$
+* 6) $se(\hat{\theta}^{MLE}) = \frac{1}{n I_0}$, by Cramer-Rao lower bound. \\
+The MLE has variance at least as small as the best unbiased estimate of $\theta$
+
 % -----------------------------------------------------------------------
 \subsubsection{Conditional Inference}
+\emph{e.g.} An \emph{iid} sample $x \sim N(\theta, 0)$ has produced estimate $\hat{\theta} = \bar{x}$. however,
+\begin{multicols}{2}
+$$
+n = \begin{cases} 25, & \text{prob } \frac{1}{2} \\ 100, & \text{prob } \frac{1}{2} \end{cases}
+$$
+
+\pagebreak 
+$n = 25$ was declined
+\end{multicols}
+
+* Classical Frequentist rational: \\
+$$ sd(\bar{x}) = \sigma_{\bar{x}} = \sqrt{\frac{1}{2} \frac{\sigma^2}{100} + \frac{1}{2} \frac{\sigma^2}{25}} = 0.158 $$
+
+* Conditional Inference rational: \\
+$$ sd(\bar{x}) = \sqrt{\frac{\sigma^2}{25}} = 0.2 $$
+
+* use the likelihood function (based on observation) without the prior \\
+* ``just take the sample you have" \\
+
+1) more relevant inferences (w/what really happened) \\
+2) simpler inferences (no correlation between the result and the sample size selection)
+
+\medskip
+\emph{e.g.} Observed Fisher Information $I_{(x)}$
+$$ I_{(x)} = -\ddot{\ell_x}(\hat{\theta}^{MLE}) $$
+In large samples $I_{(x)} = I_0$. Use $I_{(x)}$ in small samples 
+$$ E[I_{(x)}] = n I_0 $$ 
+
+* 1) compute the log-likelihood \\
+$$ f_{\theta}(x) = \frac{1}{\pi} \frac{1}{1 + (x + \theta)^2} \Rightarrow \text{Cauchi density function} $$
+$$ \ell_x(\theta) = Log\left(\frac{1}{\pi}\right) + Log(1) - Log(1 + (x + \theta)^2) $$
+* 2) get its derivative \\
+$$ \dot{\ell}_x(\theta) = \frac{2(x - \theta)}{1 + (x + \theta)^2} $$
+* 3) get the 2nd derivative \\
+$$ \ddot{\ell}_x(\theta) = \frac{-2(1 + (x - \theta)^2) + 4(x - \theta)^2}{(1 + (x - \theta)^2)^2} $$
+* 4) get the observed fisher information \\
+$$ I_{(x)} = -\ddot{\ell_x}(\hat{\theta}^{MLE}) $$
+* 5) get the variance of the estimate, even if the distribution does not have a defined variance or expected value \\
+- for 10000 samples of size $n$ with $\theta = 0$, compute $1/I_{(x)}$ and $\hat{\theta}^{MLE}$ \\
+- group the 10000 $\hat{\theta}^{MLE}$ values according to quantiles of $1/I_{(x)}$ and calculate the empirical variance for each sample.
+
+\medskip
+* for all samples, the unconditional variance $1/n I_0$ is the same because all the samples are of the same size. \\
+* on the other hand, $I_{(x)}$ will vary from sample to sample ($\hat{\theta}^{MLE}$ is different for each sample).
+* $I_{(x)}$ is related to the variance.
 
 % -----------------------------------------------------------------------
 \subsubsection{Permutation and Randomization}
 
-% -----------------------------------------------------------------------
-\subsubsection{Notes and Details}
+* when performing a t-test, it's assumed that the data samples come from a normal distribution.
+
+* small samples may follow a different distribution. Randomization removes the normality assumption
+
+* Randomization is: taking random groups from the data that are of the same size as the tested groups.
+
+\medskip
+* 1) compute the t-statistic for each randomly sampled pair of groups \\
+* 2) get the t-statistic histogram
+
+Utilizing random generated groups, it's expected the t-values not to be very high $\rightarrow$ construct an empirical distribution of t-values
 
 % -----------------------------------------------------------------------
 \subsection{Parametric Models and Exponential Families} % ---------------
 
 % -----------------------------------------------------------------------
 \subsubsection{Univariate Families}
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Normal & $\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{1}{2} \frac{(x - \mu)^2}{\sigma^2}}$ & $\mathbb{R}^{(1)}$ & $\mu \epsilon \mathbb{R}^{(1)}$ & $\mu$ \\
+$N(\mu,\sigma^2)$ &  &  & $\sigma^2 \epsilon \mathbb{R}^{+}$ & $\sigma^2$ \\
+\end{tabular}
+\end{center}
+* has two parameters, but they are very specific. $\mu$ is the location parameter, and $\sigma^2$ is the wide/narrow parameter \\
+* model quatities that take positive and/or negative continuous values, if the distribution is symetric and if there are no too many extreme values
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Poisson & $\frac{e^{-\lambda \lambda^x}}{x!}$ & $\mathbb{N}_{0}$ & $\lambda \epsilon \mathbb{R}^{+}$ & $\lambda$ \\
+$Poi(\lambda)$ &  &  &  & $\lambda$ \\
+\end{tabular}
+\end{center}
+* if the mean grows/shrinks the variance also grows/shrinks proportionally \\
+* $\lambda$ must stay positive and is the interval of time of an exponential distribution, which is continuous $\rightarrow$ the expected number of successes can have decimals \\
+* model a quantity that is discrete, it's the number of counts of something \\
+* It's not very flexible as only has one parameter to tweak
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Binomial & $\left(\text{}_x^n\right) \theta^n (1 - \theta)^{n - x}$ & $\{0,...$ & $0 \leq$ & $n \theta$ \\
+$Bi(n, \theta)$ &  & $,n\}$ & $\theta \leq 1$ & $n \theta (1 - \theta)$ \\
+\end{tabular}
+\end{center}
+* model the count of successes as Poisson, but we know the number of trials $n$
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Gamma & $\frac{x^{\nu - 1} e^{-\frac{x}{\sigma}}}{\sigma^\nu \Gamma(\nu)}$ & $\mathbb{R}^{+}$ & $\nu > 0$ & $\sigma \nu$ \\
+$Ga(\nu,\sigma)$ &  &  & $\sigma > 0$ & $\sigma^2 \nu$ \\
+\end{tabular}
+\end{center}
+* the Gamma is used to model positive quantities. its common to use the inverse Gamma to model variances.
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Beta & $\frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha,\beta)}$ & $0 \leq x \leq 1$ & $\alpha > 0$ & $\frac{\alpha}{\alpha + \beta}$ \\
+$Be(\alpha,\beta)$ &  &  & $\beta > 0$ & $var$ \\
+\end{tabular}
+\end{center}
+$var = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}$ \\
+* as x goes from 0 to 1, it's mostly used to talk about probabilities (aka. probability distribution)
+
+\medskip
+* both the Gamma and Beta have two parameters that convey some degree of flexibility \\
+* Gamma is flexible but not as flexible as Beta \\
+* The Binomial can approximate a Poisson with a large $n$ and small probability. \\
 
 % -----------------------------------------------------------------------
 \section{} % ------------------------------------------------------------
