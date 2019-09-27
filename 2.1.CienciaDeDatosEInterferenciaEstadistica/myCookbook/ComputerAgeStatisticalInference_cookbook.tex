@@ -147,7 +147,7 @@ $$ RSS(\hat{\beta_0}, \hat{\beta_1}) = \underset{i=1}{\overset{n}{\sum }}\hat{\e
 $$ \hat{\sigma}^2 = \frac{RSS(\hat{\beta_0}, \hat{\beta_1})}{n - 2} $$
 
 \subsubsection{LOWESS \& LOESS}
-* 1) specify the number of points within the range/window $n$
+* 1) specify the number of points within the range/window $n$ \\
 * 2) neighbour weightings $w(x_k)$
 \begin{multicols}{2}
 $$ w(x_k) = {\left(1 - {\left|\frac{x_i - x_k}{d}\right|}^{3}\right)}^{3} $$
@@ -272,7 +272,7 @@ $$ var = E_F\{(\hat{\Theta} - \mu)^2\} $$
 \end{multicols}
 
 \subsubsection{Frequentist principles}
-* usually defines parameters with infinite sequence of trials $\rightarrow$ hypothetical data sets $X^{(1)}, X^{(2)}, \hdots$ generate infinite samples ${\hat{\Theta}}^{(1)}, {\hat{\Theta}}^{(2)}, \hdots$
+* usually defines parameters with infinite sequence of trials $\rightarrow$ hypothetical data sets $X^{(1)}, X^{(2)}, \hdots$ generate infinite samples ${\hat{\Theta}}^{(1)}, {\hat{\Theta}}^{(2)}, \hdots$ \\
 * 1) Plug-in principle: relate the sample $se(\bar{x})$ with the true variance.
 $$ {var}_F(x) = \hat{{var}_F} = \frac{1}{n - 1} \underset{i=1}{\overset{n}{\sum}} {\left(x_i - \bar{x} \right)^2} $$
 $$ se(\bar{x}) = \left[\frac{{var}_F(x)}{n}\right]^{\frac{1}{2}} $$
