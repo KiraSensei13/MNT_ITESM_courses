@@ -880,3 +880,31 @@ High-throughput and high-yield fabrication of uniaxially-aligned chitosan-based 
 /******************************************************************************/
 
 https://app.knovel.com/web/toc.v/cid:kpYHTPPCC4/viewerType:toc//root_slug:yaws-handbook-thermodynamic/url_slug:yaws-handbook-thermodynamic?b-q=Yaws%27%20Handbook%20of%20Thermodynamic&sort_on=default&b-subscription=true&b-group-by=true&b-sort-on=default&b-
+
+/******************************************************************************/
+
+    # Draw the plot's workspace
+    scale = 6;
+    plt.subplots(figsize=(3*scale, 2*scale));
+
+    # Define constants
+    Tmin = Tmin - 1000;
+    Tmax = Tmax + 1000;
+    T = np.linspace(Tmin, Tmax, 1000);
+
+    # Plot
+    G1 = G_(H1, S1, T);
+    plt.plot(T, G1, '-', linewidth=3, label=G1_name);
+
+    G2 = G_(H2, S2, T);
+    plt.plot(T, G2, '-', linewidth=3, label=G2_name);
+
+    Tzeros = np.linspace(0, 0, 1000);
+    plt.plot(T, Tzeros, ':', linewidth=3);
+
+    # Display plots
+    plt.xlabel(r'$T$' + '    ' + r'$[K]$', fontsize=24, **pfont);
+    plt.ylabel(r'${{\Delta G}^\theta}_{sys}$' + '    ' + r'$[kJ mol^{-1}]$', fontsize=24, **pfont);
+    plt.title(plot_name, size=24, **pfont);
+    plt.legend(prop={'size': 18});
+    display(plt);
