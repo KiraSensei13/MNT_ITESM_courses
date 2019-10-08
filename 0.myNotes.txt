@@ -908,3 +908,11 @@ plt.ylim(-1e9, 0.125e9)
 
 /******************************************************************************/
 
+Stolen, S., Grande, T., & Neil L., A. (2004). Chemical Thermodynamics of Materials - Macroscopic and Microscopic Aspects. (J. W. & S. Inc., Ed.). John Wiley & Sons Ltd.
+
+R. Gaskell, D., & E. Laughlin, D. (2018). Introcuction to the Thermodynamics of Materials. (C. Press, Ed.). Taylor & Francis Group.
+
+Mortimer G., R. (2013). Mathematics for Physical Chemistry. (A. P. of Elsevier, Ed.) (14th ed.). Amsterdam: British Library Cataloguing in Plublication Data.
+
+/******************************************************************************/
+
