@@ -960,3 +960,20 @@ with grdevices.render_to_bytesio(grdevices.png, width=1024, height=896, res=150)
 pp.plot()
 #display(Image(data=img.getvalue(), format='png', embed=True))
 '''
+
+/******************************************************************************/
+
+sd_lines = LineCollection([
+    [[t, exp - sd], [t, exp + sd]]
+    for t, exp, sd in zip(t, nonpar_vals, sd_hat_vals)
+])
+
+plt.plot(t, par_vals, ':', linewidth=3, label='gamma model');
+plt.plot(t, nonpar_vals, '-', linewidth=3, label='Nonparametric fit ' + r'$\pm$' + ' 1 sd');
+
+/******************************************************************************/
+
+https://cran.r-project.org/web/checks/check_summary_by_maintainer.html#summary_by_maintainer
+
+/******************************************************************************/
+
