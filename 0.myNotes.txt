@@ -916,3 +916,47 @@ Mortimer G., R. (2013). Mathematics for Physical Chemistry. (A. P. of Elsevier, 
 
 /******************************************************************************/
 
+# A Rpy2 Example
+
+'''
+data = robjects.r('read.table(file = "http://personality-project.org/r/datasets/R.appendix3.data", header = T)')
+
+afex = rpackages.importr('afex')
+#print(data.head())
+
+model = afex.aov_ez('Subject', 'Recall', data, within='Valence');
+#print(model)
+
+emmeans = rpackages.importr('emmeans', robject_translations = {'recover.data.call': 'recover_data_call1'})
+
+pairwise = emmeans.emmeans(model, 'Valence', contr='pairwise', adj='holm')
+#print(pairwise)
+'''
+
+'''
+graphics = robjects.packages.importr('graphics')
+
+with grdevices.render_to_bytesio(grdevices.jpeg, width=1024, height=896, res=150) as img:
+    graphics.barplot(IntVector((1, 2, 3, 4, 5)), tlab='Value')
+    
+#display(Image(data=img.getvalue(), format='jpeg', embed=True))
+
+##########
+
+datasets = robjects.packages.importr('datasets')
+mtcars = robjects.packages.data(datasets).fetch('mtcars')['mtcars']
+#print(mtcars.head())
+
+with grdevices.render_to_bytesio(grdevices.png, width=1024, height=896, res=150) as img:
+    gp = ggplot2.ggplot(mtcars)
+    pp = (
+        gp
+        + ggplot2.aes_string(x='wt', y='mpg')
+        + ggplot2.geom_point(ggplot2.aes_string(colour='qsec'))
+        + ggplot2.scale_colour_gradient(low='yellow', high='red')
+        + ggplot2.labs(title='Rpy2 ggplot2 MTCARS')
+        + ggplot2.theme_bw()
+    )
+pp.plot()
+#display(Image(data=img.getvalue(), format='png', embed=True))
+'''
