@@ -977,3 +977,23 @@ https://cran.r-project.org/web/checks/check_summary_by_maintainer.html#summary_b
 
 /******************************************************************************/
 
+Research Group Nanotec
+
+Dora Iliana Medina Medina        <dora.medina@tec.mx>;
+                                 <hcruzm@cinvestav.mx>;
+Laura Catalina Duque Ossa        <A01747663@itesm.mx>;
+María Montserrat Segura López    <msegura@tec.mx>;
+Claudia Noemi Vargas Hernández   <claudianvh@tec.mx>;
+Diego Sebastián Ceciliano Franco <A01373414@itesm.mx>;
+Elvia Patricia Sánchez Rodríguez <elvia.sanchez@tec.mx>;
+Jesús Alberto Martínez Espinosa  <A01750270@itesm.mx>;
+Jose Ivan Aviles Castrillo       <A01749804@itesm.mx>;
+Juan Carlos Ortíz Herrera        <A01748940@itesm.mx>;
+Katya Michelle Aguilar Pérez     <A01750272@itesm.mx>;
+Nora Argelia Tafoya Medina       <nuorriael@itesm.mx>;
+Lindsay Sidney Hernández Muñoz   <lindsay.hdz@tec.mx>;
+Olimpia Basurto Vázquez          <A01099673@itesm.mx>;
+Gustavo Ruíz Pulido              <A01166117@itesm.mx>;
+
+/******************************************************************************/
+
