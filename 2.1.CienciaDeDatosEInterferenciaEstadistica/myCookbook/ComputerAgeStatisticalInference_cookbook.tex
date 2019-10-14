@@ -207,7 +207,7 @@ degrees of freedom $df = n - 1$ \\
 * $p-value$: probability that $\bar{x}$ was obtained by chance given $\mu_0 = \mu$. \\
 * \textbf{algorithm:} read the t-distribution critical values (chart) for the $p-value$ using $t$ and $df$ \\
 if($p-value < \alpha$)\{ reject $H_o$ and accept $H_a$ \} \\
-else \{ cant reject $H_o$ \} \\
+else \{ can't reject $H_o$ \} \\
 * $\alpha$ is the predetermined value of significance (usually 0.05) \\
 * if($t$ is of the 'wrong' sign){$p-value = 1 - {p-value}_{chart}$}
 
@@ -306,7 +306,7 @@ $$
 t_c{x} = \begin{cases} 1(pic f_1(x)), & ln(L(X)) \geq c \\ 0(pic f_0(x)), & ln(L(X)) < c \end{cases}
 $$
 * only rules in the $t_c{x}$ form can be optimal
-\emph{prblem Steps} \\
+\emph{problem Steps} \\
 * 1) define the density functions $f_0(x_i)$ and $f_1(x_i)$ for $f_0(x)$ and $f_1(x)$ \\
 \emph{e.g.}
 \begin{multicols}{2}
@@ -321,7 +321,7 @@ $$ f_1(x_i) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{{x_i - 0.5}^2}{2}} $$
 \end{multicols}
 * 2) calculate the likelihood functions $f_0(X)$ and $f_1(X)$ \\
 \emph{e.g.}
-$$ f_0(X)) = \left[\frac{1}{\sqrt{2 \pi}}\right]^n e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} {x_i}^2} $$
+$$ f_0(X) = \left[\frac{1}{\sqrt{2 \pi}}\right]^n e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} {x_i}^2} $$
 $$ f_1(X) = \left[\frac{1}{\sqrt{2 \pi}}\right]^n e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} ((x_i - 0.5)^2)} $$
 * 3) calculate the likelihood ratio \\
 \emph{e.g.}
@@ -367,7 +367,7 @@ $$ \beta = \Phi ((c - 0.5) \sqrt{n} ) $$
 
 % -----------------------------------------------------------------------
 \subsubsection{Notes and Details} 
-* $1 - \beta$ is the power of the hypothesis test (probability of correctly rejecting $f_0(x)$)
+* $1 - \beta$ is the power of the hypothesis test (probability of correctly rejecting $f_0(x)$
 
 % -----------------------------------------------------------------------
 \subsection{Bayesian Inference} % ---------------------------------------
@@ -377,7 +377,7 @@ $$ P(A|B) = \frac{P(B|A)P(A)}{P(B)} $$
 
 * Bayes Rule (for one $\mu$) can be written as:
 \begin{multicols}{2}
-$$ g(\mu | x) = c_x L_x(\mu) g(\mu) $$
+$$ g(\mu | x) = c_x L_x(\mu) \Pi(\mu) $$
 
 \pagebreak 
 where: \\
@@ -386,7 +386,7 @@ $x:$ a point in the sample space $X$ \\
 $c_x:$ normalization constant of the posterior distribution \\
 $g(\mu | x):$ posterior distribution
 $L_x(\mu):$ likelihood function
-$g(\mu):$ prior distribution
+$\Pi(\mu):$ prior distribution
 \end{multicols}
 * Bayes Rule (for two $\mu_1$, $\mu_2$) can be written as:
 \begin{multicols}{2}
@@ -630,6 +630,7 @@ Notation &  &  &  & Var \\
 \hline
 Normal & $\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{1}{2} \frac{(x - \mu)^2}{\sigma^2}}$ & $\mathbb{R}^{(1)}$ & $\mu \epsilon \mathbb{R}^{(1)}$ & $\mu$ \\
 $N(\mu,\sigma^2)$ &  &  & $\sigma^2 \epsilon \mathbb{R}^{+}$ & $\sigma^2$ \\
+\hline
 \end{tabular}
 \end{center}
 * has two parameters, but they are very specific. $\mu$ is the location parameter, and $\sigma^2$ is the wide/narrow parameter \\
@@ -641,8 +642,9 @@ $N(\mu,\sigma^2)$ &  &  & $\sigma^2 \epsilon \mathbb{R}^{+}$ & $\sigma^2$ \\
 Name & Density & X & $\Omega$ & E \\
 Notation &  &  &  & Var \\
 \hline
-Poisson & $\frac{e^{-\lambda \lambda^x}}{x!}$ & $\mathbb{N}_{0}$ & $\lambda \epsilon \mathbb{R}^{+}$ & $\lambda$ \\
+Poisson & $\frac{e^{-\lambda}\lambda^x}{x!}$ & $\mathbb{N}_{0}$ & $\lambda \epsilon \mathbb{R}^{+}$ & $\lambda$ \\
 $Poi(\lambda)$ &  &  &  & $\lambda$ \\
+\hline
 \end{tabular}
 \end{center}
 * if the mean grows/shrinks the variance also grows/shrinks proportionally \\
@@ -658,6 +660,7 @@ Notation &  &  &  & Var \\
 \hline
 Binomial & $\left(\text{}_x^n\right) \theta^n (1 - \theta)^{n - x}$ & $\{0,...$ & $0 \leq$ & $n \theta$ \\
 $Bi(n, \theta)$ &  & $,n\}$ & $\theta \leq 1$ & $n \theta (1 - \theta)$ \\
+\hline
 \end{tabular}
 \end{center}
 * model the count of successes as Poisson, but we know the number of trials $n$
@@ -670,6 +673,7 @@ Notation &  &  &  & Var \\
 \hline
 Gamma & $\frac{x^{\nu - 1} e^{-\frac{x}{\sigma}}}{\sigma^\nu \Gamma(\nu)}$ & $\mathbb{R}^{+}$ & $\nu > 0$ & $\sigma \nu$ \\
 $Ga(\nu,\sigma)$ &  &  & $\sigma > 0$ & $\sigma^2 \nu$ \\
+\hline
 \end{tabular}
 \end{center}
 * the Gamma is used to model positive quantities. its common to use the inverse Gamma to model variances.
@@ -682,6 +686,7 @@ Notation &  &  &  & Var \\
 \hline
 Beta & $\frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha,\beta)}$ & $0 \leq x \leq 1$ & $\alpha > 0$ & $\frac{\alpha}{\alpha + \beta}$ \\
 $Be(\alpha,\beta)$ &  &  & $\beta > 0$ & $var$ \\
+\hline
 \end{tabular}
 \end{center}
 $var = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}$ \\
