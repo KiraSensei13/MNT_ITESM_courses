@@ -997,3 +997,23 @@ Gustavo Ruíz Pulido              <A01166117@itesm.mx>;
 
 /******************************************************************************/
 
+Av Lago de Guadalupe KM 3.5, Margarita Maza de Juárez, 52926 Cd López Mateos, Méx.
+
+Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
+
+/******************************************************************************/
+
+listado de contactos de pares académicos:::
+
+nombre: 
+universidad: 
+puesto: 
+correo institucional: 
+áreas de interés: 
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: 
+compartir recomendaciones para abordar al investigador: 
+compartir sus impresiones: 
+rol del investigador en el congreso: 
+
+/******************************************************************************/
+
