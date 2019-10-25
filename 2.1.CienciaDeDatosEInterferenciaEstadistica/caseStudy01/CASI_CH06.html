@@ -14590,10 +14590,10 @@ $$ Log\{g_\alpha(\theta)\} = a_0 + \sum _{j=1}^{4} \alpha_j \theta^j $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./CASI_Exercises_ch6.jpg&#39;</span><span class="p">));</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./data/CASI_Exercises_ch6.jpg&#39;</span><span class="p">));</span>
 </pre></div>
 
     </div>
@@ -15123,18 +15123,15 @@ sd_hat(t)   0.00   1.09   2.20   3.35   4.58   5.91   7.40   9.14  11.32  14.47 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$ \text{As in Exercise 6,} $$$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^x}{x!} $$$$ \text{is the probability of seeing a species x times. So,} $$$$ \text{with x = 1} $$<div class="alert alert-block alert-info">
+$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^1}{1!} = e^{\theta_k}{\theta_k} $$
+$$ \text{is the probability of seeing a species once.} $$
+</div>$$ \text{Therefore,} $$$$ \sum_{all} \theta_k e^{-\theta_k} = S \int_0^\infty \theta e^{-\theta} g(\theta) = e_1 $$
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
