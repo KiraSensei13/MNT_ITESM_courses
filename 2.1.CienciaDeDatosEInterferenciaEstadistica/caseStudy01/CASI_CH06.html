@@ -15127,7 +15127,7 @@ sd_hat(t)   0.00   1.09   2.20   3.35   4.58   5.91   7.40   9.14  11.32  14.47 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 $$ \text{As in Exercise 6,} $$$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^x}{x!} $$$$ \text{is the probability of seeing a species x times. So,} $$$$ \text{with x = 1} $$<div class="alert alert-block alert-info">
-$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^1}{1!} = e^{\theta_k}{\theta_k} $$
+$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^1}{1!} = e^{-\theta_k}{\theta_k} $$
 $$ \text{is the probability of seeing a species once.} $$
 </div>$$ \text{Therefore,} $$$$ \sum_{all} \theta_k e^{-\theta_k} = S \int_0^\infty \theta e^{-\theta} g(\theta) = e_1 $$
 </div>
@@ -15152,7 +15152,7 @@ $$ \text{is the probability of seeing a species once.} $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 $$ \text{in the book:} $$$$ E(t) = S \int_0^\infty e^{-\theta} \left(1 - e^{-\theta t}\right) g(\theta) d\theta $$$$ \text{is the expected number of new species (aka. species NOT SEEN) in the new trapping period} $$$$ \text{and seen AT LEAST ONCE in the trapping period.} $$<hr>
-$$ \text{Now let's compute:} $$$$ \text{the expected number of new species (aka. species SEEN) in the new trapping period} $$$$ \text{and seen EXACTLY ONCE in the trapping period.} $$$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^x}{x!} $$$$ \text{is the probability of seeing a species x times. So,} $$$$ \text{with x = 1} $$$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^1}{1!} = e^{\theta_k}{\theta_k} $$$$ \text{is the probability of seeing a species EXACTLY ONCE.} $$<hr>
+$$ \text{Now let's compute:} $$$$ \text{the expected number of old species (aka. species SEEN) in the new trapping period} $$$$ \text{and seen EXACTLY ONCE in the trapping period.} $$$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^x}{x!} $$$$ \text{is the probability of seeing a species x times. So,} $$$$ \text{with x = 1} $$$$ Poi(\theta_k) = \frac{e^{-\theta_k}{\theta_k}^1}{1!} = e^{-\theta_k}{\theta_k} $$$$ \text{is the probability of seeing a species EXACTLY ONCE.} $$<hr>
 $$ \text{in the book:} $$$$ \left(1 - e^{-\theta_k t}\right) $$$$ \text{is the probability of seeing a species AT LEAST ONCE.} $$<hr>
 $$ \left(e^{-\theta_k}{\theta_k}\right) \left(1 - e^{-\theta_k t}\right) $$$$ \text{is the probability of seeing a species EXACTLY ONCE in the trapping period} $$$$ \text{and seen AT LEAST ONCE in the new trapping period.} $$<hr>
 $$ \text{Therefore, E(t) can be depicted as:} $$$$ E(t) = \sum_{k = 1}^S \left(e^{-\theta_k}{\theta_k}\right) \left(1 - e^{-\theta_k t}\right) $$<div class="alert alert-block alert-info">
