@@ -1026,4 +1026,32 @@ http://llc.stat.purdue.edu/2018/41600/
 
 /******************************************************************************/
 
+# plot the ith posterior estimates
+r.assign("r_tg", tg);
+r.assign("r_result", result);
+gPost = robjects.r('sapply(seq_len(100), function(i) local({r_tg <- r_tg * r_result$P[i, ]; r_tg / sum(r_tg)}))');
 
+scale = 6;
+fig, ax = plt.subplots(figsize=(3*scale, 2*scale));
+
+# Plot
+#for i in np.linspace(0, 99, 20, dtype = int):
+#    plt.plot(tau, gPost[i], '-', linewidth=3);
+
+
+index = 90
+plt.plot(tau, gPost[index], '-', linewidth=3);
+maxgPost = max(gPost[index])
+for i in range(len(gPost[index])):
+    if gPost[index][i] == maxgPost:
+        print(tau[i])
+    
+# Display plots
+plt.yscale('linear');
+plt.xlabel(r'$\theta$', fontsize=24);
+plt.ylabel(r'$\hat{g}(\theta) \mp sd$', fontsize=24);
+plt.title('Figure 6.4', size=24);
+#plt.legend(prop={'size': 18});
+#plt.xlim(0,6);
+#plt.ylim(0,0.02);
+display(plt);
