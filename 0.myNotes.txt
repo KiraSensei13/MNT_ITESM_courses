@@ -1005,15 +1005,50 @@ Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
 
 listado de contactos de pares académicos:::
 
-nombre: 
-universidad: 
-puesto: 
-correo institucional: 
-áreas de interés: 
-identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: 
-compartir recomendaciones para abordar al investigador: 
-compartir sus impresiones: 
-rol del investigador en el congreso: 
+nombre:               Marc Madou
+universidad:          University of California
+puesto:               Chancellor's Profesor
+correo institucional: mmadou@uci.edu
+áreas de interés:     Carbon-MEMS
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Plenary Lecturer
+
+nombre:               Satadal Saha
+universidad:          IIT Kharagpur
+puesto:               Professor, Project Director and Founder-Mentor
+correo institucional: drsatadal.saha@gmail.com; satadal.saha@smst.iitkgp.ac.in
+áreas de interés:     Health for the Billions
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Plenary Lecturer
+
+nombre:               Rodrigo Martínez
+universidad:          Clemson University
+puesto:               Associate Professor
+correo institucional: rofrigm@clemson.edu
+áreas de interés:     Carbon Manufacturing using Renewables
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Session Chair and Lecturer
+
+nombre:               Monsur Islam
+universidad:          Karlsruhe Institute of Technology
+puesto:               Post-doctoral Researcher
+correo institucional: monsur.islam@kit.edu
+áreas de interés:     Celular Carbon Materials
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Lecturer
+
+nombre:               Babak Rezaei
+universidad:          DTU Nanolab Technical University of Denmark
+puesto:               Post-doctoral Researcher
+correo institucional: barez@dtu.dk
+áreas de interés:     3D Carbon Structures
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Lecturer
 
 /******************************************************************************/
 
