@@ -1090,3 +1090,14 @@ plt.title('Figure 6.4', size=24);
 #plt.xlim(0,6);
 #plt.ylim(0,0.02);
 display(plt);
+
+/******************************************************************************/
+
+Lecture 19:
+In short (as seen in class), the poisson regression adopts the characteristics of other regression models, however the difference relays in the dependent variable. The dependent variable now follows a poisson distribution, meaning that the possible values are the positive integers only. As in logistic regression, poisson regression has a discrete response variable but its not limited to specific values.
+
+Lecture 20:
+As discussed during class, a regression tree is generated in an iterative process where the data is splitted (by thresholds t's) into two groups and then continues spliting each group into smaller groups. The purpose is to select the appropiate t that minimizes the variability of the data within aech new group.
+
+/******************************************************************************/
+
