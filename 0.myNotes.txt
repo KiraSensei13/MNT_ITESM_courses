@@ -1101,3 +1101,147 @@ As discussed during class, a regression tree is generated in an iterative proces
 
 /******************************************************************************/
 
+Dortmund Data Bank
+http://www.ddbst.com/sitesearch.html
+
+/******************************************************************************/
+
+def cubicRegression(x_str, x_units, y_str, y_units, df, fig_name):
+    # PLOT FIG
+    scale = 6;
+    fig, ax = plt.subplots(figsize=(3*scale, 2*scale));
+
+    # sort values by the independent variable
+    df_x = df.sort_values(by=[x_str])
+    # remove NANs from both variables and store them
+    df_x = df_x.dropna(subset=[x_str, y_str])
+    x = df_x.iloc[:][x_str]
+    y = df_x.iloc[:][y_str]
+
+    # CUBIC REGRESSION
+    X = np.column_stack((x, x**2, x**3)); #for a cubic model
+    X = sm.add_constant(X); # the model needs an intercept so add a column of 1s
+    model = sm.OLS(y, X);
+    results = model.fit();
+
+    #display(model)
+
+    # Confidence Intervals
+    # create a summary table with all influence and outlier measures
+    st, data, ss2 = summary_table(results, alpha=0.05)
+
+    # Collect Stat. Info.
+    fittedvalues = data[:, 2]
+    #predict_mean_se  = data[:, 3]
+    predict_mean_ci_low, predict_mean_ci_upp = data[:, 4:6].T
+    predict_ci_low, predict_ci_upp = data[:, 6:8].T
+
+    # print result.params
+    parameters = '';
+    for i in range(len(results.params)):
+        new_param = '';
+        if results.params[i] < 0:
+            new_param = str(round(results.params[i],2))
+        else:
+            new_param = '+' + str(round(results.params[i],2))
+        
+        if i == 0:
+            parameters = parameters + ' ' + new_param
+        elif i == 1:
+            parameters = parameters + ' ' + new_param + 'x'
+        else:
+            parameters = parameters + ' ' + new_param + 'x^' + str(i) 
+
+    # Plot
+    ax.set(autoscale_on=True)
+    plt.plot(x, fittedvalues,        '-', color='olive',  linewidth=3, label='cubic regression: ' + parameters)
+    plt.plot(x, predict_ci_low,      ':', color='salmon', linewidth=3, label='prediction confidence interval - 95%')
+    plt.plot(x, predict_ci_upp,      ':', color='salmon', linewidth=3)
+    plt.plot(x, predict_mean_ci_low, ':', color='gold',   linewidth=3, label='mean confidence interval - 95%')
+    plt.plot(x, predict_mean_ci_upp, ':', color='gold',   linewidth=3)
+    plt.scatter(x, y, s=25, label='Raw data')
+    
+    ax.set(autoscale_on=False)
+    xx = np.linspace(min(x), max(x), 1000)
+    plt.plot(xx, results.params[0] + results.params[1]*xx + results.params[2]*xx**2 + results.params[3]*xx**3, '--', color='olive', linewidth=0.125);
+
+    # Display plots
+    plt.yscale('linear');
+    plt.xlabel(x_str + '    ' + x_units, fontsize=24);
+    plt.ylabel(y_str + '    ' + y_units, fontsize=24);
+    plt.title(fig_name, size=24);
+    plt.legend(prop={'size': 18});
+    plt.ticklabel_format(axis='both', style='sci', scilimits=(-2,2))
+    display(plt);
+
+/******************************************************************************/
+
+# PLOT FIG
+fig_name = 'Figure 1';
+x_str = 'appliedVoltage'; x_units = r'$[V]$';
+y_str = 'fiberDiameter'; y_units = r'$[nm]$';
+breakLim = [6000, 24900];
+
+# sort values by the independent variable
+df_x = df.sort_values(by=[x_str])
+# remove NANs from both variables and store them
+df_x = df_x.dropna(subset=[x_str, y_str])
+x = df_x.iloc[:][x_str]
+y = df_x.iloc[:][y_str]
+
+# If we were to simply plot pts, we'd lose most of the interesting
+# details due to the outliers. So let's 'break' or 'cut-out' the y-axis
+# into two portions - use the top (ax) for the outliers, and the bottom
+# (ax2) for the details of the majority of our data
+scale = 6;
+f, (ax, ax3) = plt.subplots(nrows=2, ncols=1, sharex=True, sharey=False, figsize=(3*scale, 2*scale))
+
+#fig3 = plt.figure(constrained_layout=True)
+#gs = fig3.add_gridspec(3, 3)
+#f3_ax1 = fig3.add_subplot(gs[0, :])
+
+# plot the same data on both axes
+ax.scatter(x,y)
+ax3.scatter(x,y)
+
+# zoom-in / limit the view to different portions of the data
+dy = (max(y)-min(y)) / (len(y)*10)
+ax.set_ylim(breakLim[1], max(y)+dy)  # TOP part
+ax3.set_ylim(min(y)-dy, breakLim[0])  # BOTTOM part
+
+# hide the spines between ax and ax2
+ax.spines['bottom'].set_visible(False)
+ax.xaxis.tick_top()
+ax.tick_params(top=False)  # don't put tick labels at the top
+
+ax3.spines['top'].set_visible(False)
+ax3.xaxis.tick_bottom()
+
+d = 0.0075  # how big to make the diagonal lines in axes coordinates
+# arguments to pass to plot, just so we don't keep repeating them
+kwargs = dict(transform=ax.transAxes, color='k', clip_on=False)
+ax.plot((-d, +d), (-d, +d), **kwargs)        # top-left diagonal
+ax.plot((1 - d, 1 + d), (-d, +d), **kwargs)  # top-right diagonal
+
+kwargs.update(transform=ax3.transAxes)  # switch to the bottom axes
+ax3.plot((-d, +d), (1 - d, 1 + d), **kwargs)  # bottom-left diagonal
+ax3.plot((1 - d, 1 + d), (1 - d, 1 + d), **kwargs)  # bottom-right diagonal
+
+# Vary the distance between ax and ax2 via f.subplots_adjust(hspace=...)
+f.subplots_adjust(hspace=0.075)
+
+# add a big axis, hide frame
+f.add_subplot(111, frameon=False)
+# hide tick and tick label of the big axis
+plt.tick_params(labelcolor='none', top=False, bottom=False, left=False, right=False)
+
+# Display plots
+plt.xlabel(x_str + '    ' + x_units, fontsize=24);
+ax.set_ylabel(y_str + '    ' + y_units, fontsize=24)
+ax.yaxis.set_label_coords(-0.06, 0)
+plt.title(fig_name, size=24);
+plt.show()
+
+cubicRegression(x_str, x_units, y_str, y_units, df, 'original: ' + fig_name)
+
+/******************************************************************************/
