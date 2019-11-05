@@ -1007,7 +1007,7 @@ listado de contactos de pares académicos:::
 
 nombre:               Marc Madou
 universidad:          University of California
-puesto:               Chancellor's Profesor
+puesto:               Chancellor's Professor
 correo institucional: mmadou@uci.edu
 áreas de interés:     Carbon-MEMS
 identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
@@ -1036,7 +1036,7 @@ nombre:               Monsur Islam
 universidad:          Karlsruhe Institute of Technology
 puesto:               Post-doctoral Researcher
 correo institucional: monsur.islam@kit.edu
-áreas de interés:     Celular Carbon Materials
+áreas de interés:     Cellular Carbon Materials
 identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
 compartir recomendaciones para abordar al investigador e impresiones: 
 rol del investigador en el congreso: Lecturer
