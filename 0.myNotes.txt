@@ -1245,3 +1245,24 @@ plt.show()
 cubicRegression(x_str, x_units, y_str, y_units, df, 'original: ' + fig_name)
 
 /******************************************************************************/
+
+Done!
+Thank you for confirming your email address!
+
+Your source code and 17-page Computer Vision and Deep Learning Resource Guide PDF has been emailed to you and should land in your inbox within a few minutes.
+
+/******************************************************************************/
+
+CHEMICAL COMPANY
+https://www.angus.com/
+
+/******************************************************************************/
+
+When studing the interactions of several factors, the complexity of the experiemnts relays on the problem that the number of posible factor combinations can grow very fast with the increase of levels and factors. For example, if we consider 10 factors with 2 levels each, the number of posible experiments is 2^10 or 1024.
+
+In practice it is difficult (and often expensive) to perform all experiments within the same experimental conditions.
+
+So, the purpose of 2^p factorial experiments is to find which factors have a significant impact on the outcome. And by doing this we reduce the amount of experimental work by grouping such experiemnts in small blocks.
+
+/******************************************************************************/
+
