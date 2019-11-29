@@ -990,6 +990,46 @@ $$ \Sigma (\underline{\alpha}) = \begin{bmatrix}
  \text{zeros} &  &  & {\sigma_{\lambda_N}}^2 \\
 \end{bmatrix} $$
 
+\medskip
+* MLE estimate of $\alpha$ is to satisfy: $x^T [y - \mu (\alpha)] = 0$ \\
+where: \\
+$y$ is the data \\
+$\mu (\alpha)$ is the means vector (adjust $\alpha$ to better describe $y$) \\
+For the Normal distribution, ${\hat{\alpha}}^{MLE} = (x^T x)^{-1} \cdot x^T y$ \\
+For other family distributions $\hat{\alpha}$ is to be solved numerically.
+
+\medskip
+* ${\hat{\alpha}}^{MLE} \stackrel{a}{\sim} (\alpha, (x^T \cdot \Sigma (\alpha) \cdot x)^{-1})$ \\
+where $(x^T \cdot \Sigma (\alpha) \cdot x)^{-1} $ is the variance of ${\hat{\alpha}}^{MLE}$
+
+\medskip
+The DEVIANCE FUNCTION D() can be used to get MLE estimates of $\alpha$. The D() between two densities $f_1$ and $f_2$ is: $$ D(f_1, f_2) = 2 \cdot \int_{sampleSpace} f_1 (y) \cdot log \left( \frac{f_1 (y)}{f_2 (y)} \right) dy $$
+
+\medskip
+Deviance for: \\
+Normal (known $\sigma^2$) $$ \left( \frac{\mu_1 - \mu_2}{\sigma} \right)^2 $$
+Binomial $$ 2 n \left[ \pi_1 \cdot log \left( \frac{\pi_1}{\pi_2} \right) + (1 - \pi_1) \cdot log \left( \frac{1 - \pi_1}{1 - \pi_2} \right) \right] $$
+Poisson $$ 2 \cdot \mu_1 \left[ \left(\frac{\mu_2}{\mu_1} - 1\right) \cdot log \left(\frac{\mu_2}{\mu_1}\right) \right] $$
+
+\medskip
+Hoeffding's Lemma $\rightarrow$ the MLE $\hat{\alpha}$ ia the choice of $\alpha$ that minimizes the total deviance. (as OLS minimizes the sum of squares)
+
+% -----------------------------------------------------------------------
+\subsection{Regression Trees} % -----------------------------------------
+
+(aka. fancy averaging) - a technique to estimate regression surfaces using adapting partitioning.
+
+\medskip
+At a given step $k$, of the partitioning algorithm,
+the mean of group $k$ is $$ m_k = \sum_{i \epsilon \text{ group k}} \frac{y_i}{N_k} $$ and the sum of squares of group $k$ is $$ {S_k}^2 = \sum_{i \epsilon \text{ group k}} (y_i - m_k)^2 $$
+
+The total ${S_k}^2$ is given by: $$ {S_k}^2 = {S_{k_{left}}}^2 + {S_{k_{right}}}^2 + \frac{{N_{k_{left}}}^2 {N_{k_{right}}}^2}{N_k} (m_{k_{left}} - m_{k_{right}}) $$ the purpose is to maximize the 3rd term (aka. the information gain) in order to get a smaller ${S_k}^2$
+
+% -----------------------------------------------------------------------
+\subsubsection{Impurity}
+
+The impurity of a node measures the deviation from the predicted behaviour
+
 % -----------------------------------------------------------------------
 \section{} % ------------------------------------------------------------
 \hrule
