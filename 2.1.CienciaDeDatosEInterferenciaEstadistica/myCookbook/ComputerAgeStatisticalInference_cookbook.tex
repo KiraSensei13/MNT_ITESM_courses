@@ -1028,7 +1028,38 @@ The total ${S_k}^2$ is given by: $$ {S_k}^2 = {S_{k_{left}}}^2 + {S_{k_{right}}}
 % -----------------------------------------------------------------------
 \subsubsection{Impurity}
 
-The impurity of a node measures the deviation from the predicted behaviour
+The impurity of a node measures the deviation from the predicted behaviour of the node. $\rightarrow$ it's the probability that the prediction is incorrect usually measured by the Gini impurity or the mse (sum of squares error)
+
+\medskip
+The Gini impurity is as follows: $$ \sum_{\text{group i}} p(i) \cdot (1 - p(i)) $$ where $p(i)$ is the probability of success of the node. \emph{e.g.} $\sum_{\text{group i}} p(i) \cdot (1 - p(i)) = \frac{5}{95 + 5} \left(\frac{95}{95 + 5}\right) + \frac{10}{150 + 10} \left(\frac{150}{150 + 10}\right)$, where 5 points where wrong about outcome A, 95 right about outcome A, 10 wrong about outcome B and 150 right about outcome B.
+
+% -----------------------------------------------------------------------
+\subsection{Life Tables \& Hazard Rates} % ------------------------------
+
+What is the probability of dying/failing at time $i$?
+
+% -----------------------------------------------------------------------
+\subsubsection{Discrete time}
+
+$$ S_i = \sum_{j \geq i} f_j = P_r(x \geq i) $$ is the probability of surviving past time $i - 1$, where \\
+$S_i$ is the marginal survival rate ($S_{0, i - 1} = S_{i, j}$) \\
+$f_j$ probability of dying at time $j$ \\
+$x$ length of a lifetime
+
+$$ h_i = \frac{f_i}{S_i} = P_r(x = i | x \geq i) $$ is the probability of dying exactly at time $i$ given survival past time $i - 1$
+
+$$ S_{i, j} = \prod_{k = i}^{j} (1 - h_k) = P(x > j | x \geq i) $$ is the conditional surviving rate past age $j$ given survived time $i - 1$
+
+\medskip
+parameter estimates: \\
+$\hat{h_i} = \frac{y_i}{n_i}$ death rate at time $i$ \\
+$\hat{S_{t_0, j}} = \prod_{k 0 = t_0}^{j} (1 - \hat{h_k})$
+
+\medskip
+It can be used to learn the probability of a $t_0$ old to survive past time $t_n$
+
+% -----------------------------------------------------------------------
+\subsubsection{Continuous time}
 
 % -----------------------------------------------------------------------
 \section{} % ------------------------------------------------------------
