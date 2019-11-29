@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  29 NOV 2019 03:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  29 NOV 2019 04:33
 entering extended mode
 **./ComputerAgeStatisticalInference_cookbook.tex
 (ComputerAgeStatisticalInference_cookbook.tex
@@ -555,23 +555,23 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 824.
 
 [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1070.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1113.
  [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1070.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1113.
  (ComputerAgeStatisticalInference_cookbook.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1070.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1070.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1113.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1113.
 
 Package rerunfilecheck Info: File `ComputerAgeStatisticalInference_cookbook.out
 ' has not changed.
-(rerunfilecheck)             Checksum: D68D05851740A4A72C93B08FCB278EC1;3746.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1070.
+(rerunfilecheck)             Checksum: D09B691F90F3D7D5CB835D3AED77581F;3872.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1113.
  ) 
 Here is how much of TeX's memory you used:
- 6558 strings out of 492946
- 96895 string characters out of 3126267
+ 6562 strings out of 492946
+ 96943 string characters out of 3126267
  216454 words of memory out of 3000000
- 10325 multiletter control sequences out of 15000+200000
+ 10327 multiletter control sequences out of 15000+200000
  11417 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,12n,31p,493b,485s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -600,10 +600,10 @@ skat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb
 ><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 latxfont/line10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ComputerAgeStatisticalInference_cookbook.pdf (7 pages, 325104
+Output written on ComputerAgeStatisticalInference_cookbook.pdf (7 pages, 329819
  bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 59 named destinations out of 1000 (max. 500000)
- 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 425 words of extra memory for PDF output out of 10000 (max. 10000000)
 

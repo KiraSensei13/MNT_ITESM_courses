@@ -1061,6 +1061,51 @@ It can be used to learn the probability of a $t_0$ old to survive past time $t_n
 % -----------------------------------------------------------------------
 \subsubsection{Continuous time}
 
+$$ S(t) = \int_t^\infty f(x) dx = P(T \geq t) $$ is the survival function, where $f(x) is a density function (pdf)$. $S(t) = 1 - F(t)$ as it's the reverse cdf (cumulative distribution function)
+
+$$ h(t) = \frac{f(t)}{S(t)} $$ is the hazard rate density function
+
+$$ S(t) = e^{- \int_0^t h(x) dx} $$ is the continuous survival function in terms of the hazard function
+
+% -----------------------------------------------------------------------
+\subsubsection{Censored Data}
+
+Censored data includes information in which the number of subjects can change due to a death but also due to a loss of tracking.
+
+\medskip
+If $n$ is the no. of subjects at risk, $y$ the no. of deaths, $l$ the no. of lost subjects, $h$ the hazard rate $\frac{y}{n}$, then: The Kaplan-Meier Estimate $$ \hat{S_j} = \prod_{k \leq j} \left( \frac{n - k}{n - k + 1} \right)^{d_{(k)}} $$ can be used as the survival function for censored data. $d_{(k)} = l_k$ and $k = month no.$
+
+$$ sd(\hat{S_j}) = \hat{S_j} \left[\sum_{k \leq j} \frac{y_k}{n_k (n_k - y_k)}\right]^{\frac{1}{2}} $$ is the standard error of Kaplan-Meier Estimate
+
+% -----------------------------------------------------------------------
+\subsubsection{log-rank test}
+
+When working with "regular data", \emph{t-test} can be implemented to compare survival times of two treatments.
+
+\medskip
+However, when dealing with "censored data", \emph{log-rank test} is to be used.
+
+* Say the Null Hyp as the hazard rate for time i is the same for treatment A and in treatment B $Ho(t) : h_{A,i} = h_{B,i}$
+
+* Ask "If $n_d$ patients are randomly drawn from $n$, what is the probability distribution for the number of drawn patients to be in treatment A?" \\
+$n_d$ the total no. of deaths, $n_s$ the total no. survivals, $n_A$ the total no. of subjects in treatment A, and $n_B$ the total no. of subjects in treatment B.
+
+\medskip
+If $Ho(t)$ is TRUE, then:
+
+$$ E(y) = \frac{n_A \cdot n_d}{n} $$ is the mean of the hyper-geometric distribution
+
+$$ V(y) = \frac{n_A n_B n_d n_s}{n^2 (n - 1)} $$ the variance of $E(y)$
+
+\medskip
+If $Ho(t)$ is FALSE, then: it's more probable to draw a subject from treatment B, which has a higher hazard rate.
+
+* For all point in time, calculate $y_i$, $E_i$, $V_i$ and compute the log-rank statistic $z$
+
+$$ z = \frac{\sum_{i = 1}^{N} (y_i - E_i)}{\left(\sum_{i = 1}^{N} V_i\right)^{\frac{1}{2}}} $$ the numerator is close to zero if $Ho$ is TRUE
+
+* Finally, compare $z$ to normal critical values.
+
 % -----------------------------------------------------------------------
 \section{} % ------------------------------------------------------------
 \hrule

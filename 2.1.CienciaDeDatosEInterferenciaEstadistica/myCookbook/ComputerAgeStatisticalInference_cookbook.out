@@ -48,4 +48,6 @@
 \BOOKMARK [2][-]{section*.48}{Life Tables \046 Hazard Rates}{section*.1}% 48
 \BOOKMARK [3][-]{section*.49}{Discrete time}{section*.48}% 49
 \BOOKMARK [3][-]{section*.50}{Continuous time}{section*.48}% 50
-\BOOKMARK [1][-]{section*.51}{}{}% 51
+\BOOKMARK [3][-]{section*.51}{Censored Data}{section*.48}% 51
+\BOOKMARK [3][-]{section*.52}{log-rank test}{section*.48}% 52
+\BOOKMARK [1][-]{section*.53}{}{}% 53
