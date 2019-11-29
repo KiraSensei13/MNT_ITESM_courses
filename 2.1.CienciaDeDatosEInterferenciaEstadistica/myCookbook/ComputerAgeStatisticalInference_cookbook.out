@@ -18,11 +18,29 @@
 \BOOKMARK [3][-]{section*.18}{Warm-up example}{section*.16}% 18
 \BOOKMARK [3][-]{section*.19}{Flaws in Frequentist Inference}{section*.16}% 19
 \BOOKMARK [3][-]{section*.20}{A Bayesian/Frequentist Comparison List}{section*.16}% 20
-\BOOKMARK [3][-]{section*.21}{Notes and Details}{section*.16}% 21
-\BOOKMARK [2][-]{section*.22}{Fisherian Inference and Maximum Likelihood Estimation}{section*.1}% 22
-\BOOKMARK [3][-]{section*.23}{Fisher Information and the MLE}{section*.22}% 23
-\BOOKMARK [3][-]{section*.24}{Conditional Inference}{section*.22}% 24
-\BOOKMARK [3][-]{section*.25}{Permutation and Randomization}{section*.22}% 25
-\BOOKMARK [2][-]{section*.26}{Parametric Models and Exponential Families}{section*.1}% 26
-\BOOKMARK [3][-]{section*.27}{Univariate Families}{section*.26}% 27
-\BOOKMARK [1][-]{section*.28}{}{}% 28
+\BOOKMARK [3][-]{section*.21}{Bayesian Reasoning - estimate \040from x if N\(m, A\)}{section*.16}% 21
+\BOOKMARK [3][-]{section*.22}{Notes and Details}{section*.16}% 22
+\BOOKMARK [2][-]{section*.23}{Fisherian Inference and Maximum Likelihood Estimation}{section*.1}% 23
+\BOOKMARK [3][-]{section*.24}{Fisher Information and the MLE}{section*.23}% 24
+\BOOKMARK [3][-]{section*.25}{Conditional Inference}{section*.23}% 25
+\BOOKMARK [3][-]{section*.26}{Permutation and Randomization}{section*.23}% 26
+\BOOKMARK [2][-]{section*.27}{Parametric Models and Exponential Families}{section*.1}% 27
+\BOOKMARK [3][-]{section*.28}{Univariate Families}{section*.27}% 28
+\BOOKMARK [3][-]{section*.29}{Multinomial Distribution \(a.k.a. multidimensional binomial\)}{section*.27}% 29
+\BOOKMARK [3][-]{section*.30}{Multinomial-Poisson relationship}{section*.27}% 30
+\BOOKMARK [3][-]{section*.31}{Exponential Families - Poisson Dist.}{section*.27}% 31
+\BOOKMARK [3][-]{section*.32}{Exponential Families - Gamma Dist.}{section*.27}% 32
+\BOOKMARK [2][-]{section*.33}{James-Stein Estimator vs Bayes vs MLE}{section*.1}% 33
+\BOOKMARK [3][-]{section*.34}{Estimate \040from x if N\(m, A\)}{section*.33}% 34
+\BOOKMARK [3][-]{section*.35}{Expected Squared Error}{section*.33}% 35
+\BOOKMARK [3][-]{section*.36}{James-Stein Theorem}{section*.33}% 36
+\BOOKMARK [2][-]{section*.37}{Ridge Regression vs Linear Regression}{section*.1}% 37
+\BOOKMARK [3][-]{section*.38}{Linear Regression}{section*.37}% 38
+\BOOKMARK [3][-]{section*.39}{Ridge Regression}{section*.37}% 39
+\BOOKMARK [3][-]{section*.40}{Logistic Regression}{section*.37}% 40
+\BOOKMARK [2][-]{section*.41}{Generalized Linear Models - GLMs}{section*.1}% 41
+\BOOKMARK [3][-]{section*.42}{GLM - exponential family}{section*.41}% 42
+\BOOKMARK [3][-]{section*.43}{GLM - Binomial Distribution}{section*.41}% 43
+\BOOKMARK [3][-]{section*.44}{GLM - Poisson Distribution}{section*.41}% 44
+\BOOKMARK [3][-]{section*.45}{GLM - Parameter Estimation}{section*.41}% 45
+\BOOKMARK [1][-]{section*.46}{}{}% 46

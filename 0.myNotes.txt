@@ -1277,3 +1277,34 @@ Solve[(8000 - 10 T + 8.3144` T (-Log[1 - s] + Log[s]))*(0 -
       8.3144` T (-Log[1 - l] + Log[l]))*(l) + ((12000 - 10*T)*l + 
      8.3144*T*((1 - l)*Log[1 - l] + l*Log[l]) - 20000*l*(1 - l)), {s, 
   l}]
+
+/******************************************************************************/
+
+442 658 4907
+
+/******************************************************************************/
+
+*CHOPO*
+Sucursal: 5 DE FEBRERO
+Dirección: 5 DE FEBRERO NO. 1303.COL.ZONA INDUSTRIAL CARRILLO PUERTO, SANTIAGO DE QUERÉTARO
+Horario general: Lunes a viernes de 7:00 a 19:00 y sábado de 7:00 a 15:00
+Teléfono: 55 1104 4888
+
+*VIDA CARE*
+Dirección: Circuito, Del Mesón 100, El prado, 76039 Santiago de Querétaro, Qro.
+Horario: Lunes a sábado de 7:00 a 20:00 y domingo de 7:00 a 14:00
+Teléfono: 442 242 2990
+
+*QUERÉTARO STAR MEDICAL HOSPITAL*
+Dirección: Blvd. Bernardo Quintana Arrioja 4060, San Pablo, 76125 Santiago de Querétaro, Qro.
+Horario: abierto todo el día
+Teléfono: 442 427 8000
+
+/******************************************************************************/
+
+\begin{multicols}{2}
+
+
+\pagebreak 
+
+\end{multicols}

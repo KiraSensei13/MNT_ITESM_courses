@@ -436,6 +436,14 @@ $$ \frac{g(identical | sameSex)}{g(fraternal | sameSex)} = \frac{\frac{1}{3}}{1 
 \end{multicols}
 
 % -----------------------------------------------------------------------
+\subsubsection{Bayesian Reasoning - estimate $\mu$ from $x$ if $\mu \sim N(m, A)$}
+
+normal likelihood function (assume a variance of $1$): $$ x|\mu \sim N(\mu, 1) $$
+the normal posterior: $$ \mu|x \sim N(m + B(x - m), B) $$
+where $B = \frac{A = \text{prior variance}}{A + 1 = \text{total variance}}$, $m = \text{prior parameter}$
+therefore: $$ \hat{\mu}^{Bayes} = m + B(x - m) $$
+
+% -----------------------------------------------------------------------
 \subsubsection{Notes and Details}
 
 * like in frequentist, the fundamental unit of inference is a family of probability densities.
@@ -696,6 +704,291 @@ $var = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}$ \\
 * both the Gamma and Beta have two parameters that convey some degree of flexibility \\
 * Gamma is flexible but not as flexible as Beta \\
 * The Binomial can approximate a Poisson with a large $n$ and small probability. \\
+
+% -----------------------------------------------------------------------
+\subsubsection{Multinomial Distribution (a.k.a. multidimensional binomial)}
+
+Used when observations take take a finite number of possible outcome values $L$.
+
+\medskip
+* let $\underbar{x} = (x_1, \hdots , x_L)$ be the vector of counts given the possible outcomes, where $x_l$ is de number of cases/counts having outcome $l$. \emph{e.g.} $\underbar{x} = (150, 300, 1000, 50)$, where outcome $l = 1$ happened $150$ times, and outcome $l = 4$ happened $50$ times \\
+* code the outcomes in terms of unit vectors of length $L$. \emph{e.g.} $e_l = {(0, \hdots, 0, 1, 0, \hdots, 0)}^T$, where the $1$ is in the $l^{th}$ place. \\
+* encode the outcomes as unit vectors with assigned probabilities in $\pi_l$, a vector of probabilities. $$ \pi_l = P\{e_l\}, l = 1, 2, 3, \hdots, L $$
+
+\medskip
+$\underbar{x}$ follows a multinomial distribution $f_{\pi}$ $$ f_{\pi}(\underbar{x}) = \underbar{x} \sim Mult_L(n, \pi) = \frac{n!}{x_1! x_2! \hdots x_L!} \cdot \prod_{l = 1}^{L} {\pi_l}^{x_l} $$
+where $L$ is the no. of outcomes, $n$ the no. of observations, and $\pi$ is the prob. vector. \\
+
+* The multinomial distribution assumes the probabilities are constant.
+
+\medskip
+The parameter space $\Omega$ of $\pi$ is $S_L$; a set of probability vectors $\pi$ such that the components of $\pi$ are positive quantities for all $l's$
+$$ S_L = \{\pi : \pi_l \geq 0 \forall l \text{ and } \sum_{l = 1}^{L} \pi_l = 1 \} $$
+
+\medskip
+The sample space $X$ for \underbar{x} is a subset of $n S_L$ with integer components. \emph{e.g.} for $L = 2$ (a Binomial dist.), $(\pi_1, \pi_2) = (\pi, 1 - \pi)$; $(x_1, x_2) = (x, n - x)$
+
+\medskip
+The mean vector $E(x) = n \pi$
+
+\medskip
+The covariance matrix $\Sigma$ is given by: $$ \Sigma = n \cdot \left(
+\begin{bmatrix}
+ \pi_1 &  &  & \text{zeros} \\
+   & \pi_2 &  &  \\
+   &  & \ddots &  \\
+ \text{zeros} &  &  & \pi_L \\
+\end{bmatrix}
+- \pi \cdot \pi^T \right) $$
+
+\medskip
+The variance of $x_l$ is:
+$$ V(x_l) = n \cdot \pi_l \cdot (1 - \pi_l) $$
+
+\medskip
+The covariance of $x_l$ is:
+$$ Cov(x_l, x_j) = - n \pi_l \cdot \pi_j $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Multinomial-Poisson relationship}
+
+IF \{ \\
+$S_1, S_2, \hdots, S_L$ are independent Poisson distributions/counts; meaning that the counts of each category follow the distribution: $S_l \stackrel{ind}{\sim} Poi(\mu_l), l = 1, 2, \hdots, L $.
+
+Each Poisson has a different $\mu_l$ parameter, which is a vector of mean/rate parameters. \\
+\} \\
+THEN \{ \\
+the vector of successes is given by: $$ \underbar{S} | \sum_{l = 1}^{L} S_l \sim Mult_L \left( \sum_{l = 1}^{L} S_L, \frac{\underline{\mu}}{\sum_{l = 1}^{L} \mu_l} \right) $$ \\
+\}
+
+\medskip
+IF \{ \\
+the number of trials $N$ is distributed Poisson with parameter $n$ $$ N \sim Poi(n) $$ \\
+\} \\
+THEN \{ \\
+$$ Mult_L(N, \underline{\pi}) \sim Poi(n \cdot \underline{\pi}) $$ \\
+\} \\
+where $\underline{\pi}$ is the probability vector, and $n \cdot \underline{\pi}$ is a vector of expected values (means).
+
+\medskip
+For a large $n$, the approximation $$ \underline{x} \stackrel{a}{\sim} Poi(n \cdot \underline{\pi}) $$ removes the need to compute multinomial correlations
+
+\medskip
+* the multinomial distribution contains all distributions on sample space $X$ composed of $\underline{L}$ discrete categories $\rightarrow$ the multinomial dist. can model any distribution
+
+% -----------------------------------------------------------------------
+\subsubsection{Exponential Families - Poisson Dist.}
+
+$$ f_{\mu} (x) = \frac{\mu^x e^{- \mu}}{x!} $$
+
+From the ratio of two Poissons $\frac{f_{\mu} (x)}{f_{\mu_o} (x)}$,
+
+$$ f_{\mu} (x) = e^{-(\mu - \mu_o)} \cdot \left(\frac{\mu}{\mu_o}\right)^x \cdot f_{\mu_o} (x) $$
+
+given: $\alpha = log(\frac{\mu}{\mu_o})$, then: $\left(\frac{\mu}{\mu_o}\right)^x = e^{\alpha x}$ and $\mu = e^{\alpha} \mu_o$
+
+therefore:
+
+$$ f_{\mu} (x) = e^{\alpha x} - \Psi(\alpha) \cdot f_{\mu_o} (x) $$
+$$ \Psi(\alpha) = \mu_o (e^{\alpha - 1}) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Exponential Families - Gamma Dist.}
+
+$$ f_{\underline{\alpha}} (x) = \frac{x^{\nu - 1} \cdot e^{-\frac{x}{\sigma}}}{\sigma^{\nu} \Gamma(\nu)} $$
+
+$\underline{\alpha} = (\alpha_1, \alpha_2) = \left(-\frac{1}{\sigma}, \nu\right) \epsilon A	\subseteq \{\alpha_1 < 0; \alpha_2 > 0\}$ \\
+$\underline{y} = (y_1, y_2) = (\gamma, log(x))$ \\
+$\Psi (\underline{\alpha}) = \alpha_2 log(-\alpha_1) + log(\Gamma(\alpha_2))$ \\
+
+\medskip
+IF \{ \\
+$\underline{x} = (x_1, \hdots, x_n)$ is $iid$ from $f_{\mu} (x) = e^{\underline{\alpha}^T \underline{y} - \Psi (\underline{\alpha})} \cdot f_{\mu_o} (x)$ and $y_i = t (x_i)$ \\
+\} \\
+THEN \{ \\
+$$ f_{\underline{\alpha}} (\underline{x}) = e^{n(\underline{\alpha}^T \bar{y} - \Psi (\underline{\alpha})) \cdot f_o (\underline{x})} $$
+
+with: $\bar{y} = \sum_{i = 1}^{n} \frac{y_i}{n}$ \\
+\} \\
+
+\medskip
+$\Psi (\alpha)$ can be computed numerically by doing:
+$$ \Psi (\alpha) = log \int_{\text{sample space } X} e^{\underline{\alpha} y} f_o (x) dx $$
+
+where $f_o (x)$ is the \emph{pdf} in question
+
+% -----------------------------------------------------------------------
+\subsection{James-Stein Estimator vs Bayes vs MLE} % --------------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Estimate $\mu$ from $x$ if $\mu \sim N(m, A)$}
+
+$$ \hat{\underline{\mu}}^{Bayes} = \underline{M} + B(\underline{x} - \underline{M}) $$
+where $m = \text{prior parameter}$, $B = \frac{A}{A + 1} = \frac{\text{prior variance}}{\text{total variance}}$, $\underline{M} = [m, m, \hdots, m]$
+
+$$ \hat{\underline{\mu}}^{MLE} = \underline{x} $$
+
+$$ \hat{\underline{\mu}}^{JS} = \hat{\underline{M}} + \hat{B} (\underline{x} - \hat{M}) $$
+where $\hat{M} = \bar{x}$, $\hat{\underline{M}} = [\hat{M}, \hat{M}, \hdots, \hat{M}]$, $\hat{B} = \frac{1 - N - 3}{\sum_{i = 1}^{N} (x_i - \bar{x})^2}$ \\
+(for $N$ points)
+
+% -----------------------------------------------------------------------
+\subsubsection{Expected Squared Error}
+
+$$ E \{\parallel \hat{\underline{\mu}}^{Bayes} - \underline{\mu} \parallel^2\} = NB $$
+
+$$ E \{\parallel \hat{\underline{\mu}}^{MLE} - \underline{\mu} \parallel^2\} = N $$
+
+$$ E \{\parallel \hat{\underline{\mu}}^{JS} - \underline{\mu} \parallel^2\} = NB + 3(1 - B) $$
+
+\medskip
+$\hat{\underline{\mu}}^{JS}$ has a bigger ESE than $\hat{\underline{\mu}}^{Bayes}$ as $\underline{M}$ and $B$ are estimated, but still better than $\hat{\underline{\mu}}^{MLE}$ if $N \leq 4$ observations.
+
+% -----------------------------------------------------------------------
+\subsubsection{James-Stein Theorem}
+
+IF $x_i|\mu_i \sim N(\mu_i, 1)$ for $i = 1, 2, \hdots, N$ with $N \geq 4$; THEN $$ E \{\parallel\hat{\underline{\mu}}^{JS} - \underline{\mu}\parallel^2\} < E \{\parallel \hat{\underline{\mu}}^{MLE} - \underline{\mu} \parallel^2\} $$ for all choices of $\underline{\mu} \epsilon \mathbb{R}^N$ (not Bayesian reasoning any more)
+
+\medskip
+* JS gets observations from Normal distributions which have different means for each observation (estimate different means for each observation).
+* JS is a shrinks the effects of individual observations towards the common mean
+* extreme shrinkage is to say each observation is the average of all observations
+* void shrinkage is to say each observation is its own average (as in MLE)
+* JS is in between.
+
+% -----------------------------------------------------------------------
+\subsection{Ridge Regression vs Linear Regression} % --------------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Linear Regression}
+
+based on MLE, it assumes a n-dimensional vector $\underline{y} = (y_1, \hdots, y_n)^T$ from a linear model $\underline{y} = x \beta + \underline{\epsilon}$ \\
+where: \\
+$\beta$ a unknown p-dimensional parameter vector \\
+$\underline{\epsilon}$ uncertain values (aka. independent random variables or independent draws from a dist.) \\
+$x$ known data points \\
+$\underline{y}$ outcomes taken from the linear model \\
+
+\medskip
+Thus: $\epsilon \sim (0, \sigma^2 I_n)$
+where: \\
+$mean = 0$ \\
+the variance $I_n$ is the identity matrix of size $n$ \\
+
+\medskip
+$\hat{\beta} = \stackrel{argmin}{\beta} \{\parallel\epsilon\parallel^2\} = \stackrel{argmin}{\beta} \{\parallel \underline{y} - x \beta \parallel^2\}$
+
+\medskip
+differentiating:
+$$ \hat{\beta}^{OLS} = S^{-1} \cdot x^T y $$
+where: $S = x^T x$
+
+\medskip
+standard error:
+$$ \hat{\beta}^{OLS} \sim (\beta, \sigma^2 \cdot S^{-1}) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Ridge Regression}
+
+$\hat{\beta} = \stackrel{argmin}{\beta} \{\parallel y - x \cdot \beta \parallel^2 + \lambda \cdot \parallel \beta \parallel^2\}$ \\
+where: $\parallel \beta \parallel^2 = {\beta_1}^2 + {\beta_2}^2 + \hdots + {\beta_p}^2$
+
+\medskip
+if $\beta$ coefficients are small, the better the results $\rightarrow$ as the variance decreases by introducing some bias. $\lambda$ is how much the sum of squares is penalized.
+
+\medskip
+differentiating:
+$$ \hat{\beta}^{Ridge} = (S + \lambda \cdot I_n)^{-1} \cdot x^T y $$
+
+\medskip
+standard error:
+$$ \hat{\beta}^{Ridge} \sim ((S + \lambda \cdot I_n)^{-1} \cdot S \cdot \beta, \sigma^2 \cdot (S + \lambda \cdot I_n)^{-1} \cdot S \cdot (S + \lambda \cdot I_n)^{-1}) $$
+
+\medskip
+Ridge is a regularized regression, meaning that the variables need to be rescaled as the coefficients have to be on the same scale.
+
+\medskip
+OLS is a special case of Rigde where $\lambda = 0$
+
+% -----------------------------------------------------------------------
+\subsubsection{Logistic Regression}
+
+In OLS $y$ can take values in $\mathbb{R}$, or $y \epsilon \mathbb{R}$. However, to predict proportions then $y = p$ should $y_i = p_i \epsilon \{0,1\} \forall i$
+
+\medskip
+for each observation the odds ratio is: $\lambda_i = log \left(\frac{p_i}{1 - p_i}\right)$
+
+\medskip
+for the 1-dimension case, $\lambda_i = log \left(\frac{p_i}{1 - p_i}\right) = \beta_0 + \beta_1 \cdot x_i + \epsilon_i$ \\
+using MLE, estimate $\beta_0$, $\beta_1$ and therefore $\lambda_i$ \\
+$\hat{\lambda} (x) = \hat{\beta_0} + \hat{\beta_1} \cdot x_i $
+
+$$ \hat{\lambda_i} = log \left(\frac{\hat{p_i}}{1 - \hat{p_i}}\right) $$
+$$ \hat{p_i} = (1 + e^{-(\hat{\beta_0} + \hat{\beta_1} \cdot x_i)})^{-1} $$ This transformation does not work well when $x = 0$ or $x = 1$ as the OLS loss function $\stackrel{min}{\beta} \parallel \lambda - x \beta \parallel^2$ increases with the right prediction and decreases with a wrong prediction.
+
+\medskip
+The Deviance Function has the opposite behaviour...
+$$ D = p_i \cdot log \left( \frac{p_i}{\hat{p_i}} \right) + (1 - p_i) \cdot log \left( \frac{1 - p_i}{1 - \hat{p_i}} \right) $$
+
+\medskip
+multiply assuming independent sampling to get the loss function:
+$$ D(\hat{p_i}|p_i) = 2n_i \left[ p_i \cdot log \left( \frac{p_i}{\hat{p_i}} \right) + (1 - p_i) \cdot log \left( \frac{1 - p_i}{1 - \hat{p_i}} \right) \right] $$ Then minimize the loss function to estimate $(\hat{\beta_0}, \hat{\beta_1})$
+
+% -----------------------------------------------------------------------
+\subsection{Generalized Linear Models - GLMs} % -------------------------
+
+GLMs extend linear regression to Binomial, Poisson, Gamma or any exponential distribution.
+
+* GLMs transform an estimation problem in to a regression problem where the regression parameters are to be estimated.
+
+% -----------------------------------------------------------------------
+\subsubsection{GLM - exponential family}
+
+start with 1-parameter exponential family: $$ f_{\lambda} (y) = e^{\lambda y - \gamma(\lambda)} \cdot f_o (y) $$
+
+where: the observed data $\underline{y} = (y_1, y_2, \hdots, y_N)^T$ is assumed to come from $y_i \stackrel{ind}{\sim} f_{\lambda_i} (\cdot)$ for $i = 1, \hdots, N$
+
+\medskip
+write $\underline{\lambda}$ as a regression equation to avoid $N$ estimations (one for each $\lambda_i$) $$ \underline{\lambda} = \underline{x} \cdot \underline{\alpha} $$
+where: \\
+$\alpha$ is a coefficients vector to assess the importance of each $x$ \\
+$x$ the covariance matrix from the data
+
+\medskip
+the likelihood of $\underline{y}$ for an exponential family is:
+$$ f_{\underline{\lambda}} (\underline{y}) = e^{\underline{\lambda} \cdot \underline{y} - \gamma(\underline{\lambda})} \cdot f_o (\underline{y}) $$
+
+\medskip
+let $\underline{\lambda} = \underline{x} \cdot \underline{\alpha}$, $\underline{z} = \underline{x}^T y$, $\Psi (\alpha) = \sum_{i = 1}^{N} \gamma({x_i}^T \cdot \alpha)$ such that $$ f_{\underline{\alpha}} (\underline{y}) = e^{\underline{\alpha}^T \underline{z} - \Psi (\alpha)} \cdot f_o (\underline{y}) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{GLM - Binomial Distribution}
+
+$$ \lambda = log \left( \frac{\pi}{1 + \pi} \right) $$
+$$ \gamma (\lambda) = n log (1 + e^{\lambda}) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{GLM - Poisson Distribution}
+
+$$ \lambda = log (\mu) $$
+$$ \gamma (\lambda) = e^{\lambda} $$
+
+% -----------------------------------------------------------------------
+\subsubsection{GLM - Parameter Estimation}
+
+$(\mu \lambda, {\sigma_\lambda}^2)$ denotes the expectation and variance of a univariate density $f_\lambda (y)$ in terms of the exponential family properties $$ y \sim (\mu \lambda, {\sigma_\lambda}^2) $$
+
+\medskip
+a N-dimensional vector $y$ from $f_{\underline{\alpha}} (y)$ has mean and covariance matrix: $$ y \sim (\underline{\mu} (\underline{\alpha}), \Sigma (\underline{\alpha})) $$
+
+where:
+$$ \underline{\mu} (\underline{\alpha}) = [\mu_{\lambda_1}, \mu_{\lambda_2}, \hdots, \mu_{\lambda_N}] $$
+$$ \Sigma (\underline{\alpha}) = \begin{bmatrix}
+ {\sigma_{\lambda_1}}^2 &  &  & \text{zeros} \\
+   & {\sigma_{\lambda_2}}^2 &  &  \\
+   &  & \ddots &  \\
+ \text{zeros} &  &  & {\sigma_{\lambda_N}}^2 \\
+\end{bmatrix} $$
 
 % -----------------------------------------------------------------------
 \section{} % ------------------------------------------------------------
