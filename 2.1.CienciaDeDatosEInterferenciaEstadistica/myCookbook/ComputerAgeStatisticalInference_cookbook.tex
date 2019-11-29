@@ -1107,6 +1107,126 @@ $$ z = \frac{\sum_{i = 1}^{N} (y_i - E_i)}{\left(\sum_{i = 1}^{N} V_i\right)^{\f
 * Finally, compare $z$ to normal critical values.
 
 % -----------------------------------------------------------------------
+\subsection{Jackknife} % ------------------------------------------------
+
+Used to assign a standard error to a $\hat{\theta}$
+
+\medskip
+* given a \emph{iid} sample $\underline{x} = (x_1, \hdots, x_n)$ from an unknown probability distribution F on some sample space $X$
+
+* some algorithm S() can be applied to compute $\hat{\theta} = S(x)$
+
+* let $x_{-i} = (x_1, x_2, \hdots, x_{i - 1}, x_{i + 1}, \hdots, x_n)$ (remove $x_i$)
+
+* so, $\hat{\theta}_{-i} = S(x_{-i})$
+
+$$ \hat{se}_{Jack} = \left[\frac{n - 1}{n} \cdot \sum_{i = 1}^{n} (\hat{\theta}_{-i} - \hat{\theta}(\cdot))^2 \right]^{\frac{1}{2}} $$ where: $\hat{\theta}(\cdot) = \sum_{i = 1}^{n} \frac{\hat{\theta}_{-i}}{n}$
+
+\medskip
+i) get each one of the $\hat{\theta}_{-i}$ \\
+ii) numerically compute $\hat{\theta}(\cdot)$ \\
+iii) do $\hat{\theta}_{-i} - \hat{\theta}(\cdot)$ \\
+iv) apply JK equation
+
+\medskip
+* works for any distribution
+* it depends on local derivatives - non-smooth statistics can result in erradic behaviour
+
+% -----------------------------------------------------------------------
+\subsection{Non-parametric Bootstrap} % ---------------------------------
+
+* replaces an unknown distribution $F$ with an estimate $\hat{F} = \underline{x}$
+
+* each bootstrap sample provides a bootstrap replication of $\hat{\theta}^{*,b} = S(\underline{x}^{*,b})$ for $b = 1, 2, \hdots, B$
+
+$$ \hat{se}_{boot} = \left[ \frac{\sum_{b = 1}^B (\hat{\theta}^{*,b} - \hat{\theta}^{*,\cdot})^2}{n - 1} \right] = se(\hat{F}) $$ where $\hat{\theta}^{*,\cdot} = \frac{\sum_{b = 1}^B \hat{\theta}^{*,b}}{B}$
+
+\medskip
+* "moves" the data much more than Jackknife \\
+* does not depend on local derivatives \\
+* can estimate any other measure of variability \\
+* more computational intensive than Jackknife
+
+% -----------------------------------------------------------------------
+\subsection{Re-sampling Plans} % ----------------------------------------
+
+Say $\underline{P} = (P_1, \hdots, P_n)^T$ is a vector of weights with $\sum_{i = 1}^{n} P_i = 1$ and $P_i \geq 0 \forall i$
+
+\medskip
+$\hat{\theta}^* = S(\underline{P})$ denotes $\hat{\theta}$ under a particular resampling vector $\underline{P}$. ($\underline{x}$ is fixed)
+
+\medskip
+For the sample mean,
+$$ S(\underline{x}) = \sum_{i = 1}^{n} \frac{x_i}{n} $$
+$$ \hat{\theta}^* = S(\underline{P}) = \sum_{i = 1}^{n} P_i \cdot x_i $$
+
+\medskip
+For the sample variance,
+$$ S(\underline{x}) = \frac{\sum_{i = 1}^{n} (x_i - \bar{x})}{n - 1} $$
+$$ \hat{\theta}^* = \frac{n}{n - 1} \left[\sum_{i = 1}^n P_i {x_i}^2 - \left( \sum_{i = 1}^n P_i x_i \right)^2\right] $$
+
+\medskip
+The original estimate is $\hat{\theta} = S(\underline{P_o})$, where: $$ \underline{P_o} = \frac{1}{n} \cdot [1, 1, 1, \hdots, 1] \text{ (of n components)}$$ which is the initial/original vector of weights.
+
+\medskip
+The $i^{th}$ iteration of the Jackknife estimate is: $$ \hat{\theta}_{-i} = S(P_{-i}) $$, where $P_{-1} = \frac{1}{n - 1} [1, 1, 1, \hdots, 1]$ where the $0$ is located in the $i^{th}$ element being removed.
+
+\medskip
+A Bootstrap sample has weight vector $$ \underline{P_b} = \frac{(k_1, k_2, \hdots, k_n)^T}{n} $$ with $k_b$ being the no. of times each observation is chosen from the finite bootstrap sample in iteration $b$
+
+$$ k_b \sim Mult_L(n, \underline{P_o}) $$ where $L$ is the no. of categories/outcomes, and $n$ is the no. of samples/draws.
+
+$$ f (k_b) = \frac{n!}{k_1! k_2! \hdots k_n!} \cdot \prod_{l = 1}^{L = n} {P_{k_l}}^{k_l} = \frac{n!}{k_1! k_2! \hdots k_n!} \cdot \frac{1}{n^n} $$ is the multinomial pdf of $k_b$
+
+% -----------------------------------------------------------------------
+\subsubsection{Infinitesimal Jackknife}
+
+let's use the "convex combination" of vectors $\underline{P_o}$ and $\underline{P_{-i}}$
+
+$$ \underline{P_i} = \underline{P_o} + \varepsilon (\underline{P_{-1}} - \underline{P_o}) $$
+
+$$ D_i = \lim_{e \rightarrow 0} \frac{S(\underline{P_i} (\varepsilon)) - S(\underline{P_o})}{\varepsilon \parallel \underline{P_i} - \underline{P_o} \parallel} $$
+
+$$ \hat{se}_IJ = \left(\frac{{D_i}^2}{n^2}\right)^{frac{1}{2}} $$ computationally, shall be done with a small $\varepsilon$
+
+% -----------------------------------------------------------------------
+\subsubsection{Moving Blocks Bootstrap}
+
+Used in time series data, where $x$ occurs in a meaningful order.
+
+\medskip
+Let $B_m$ be the set of continuous blocks of length $m$. \emph{e.g.} $B_3 = \{(x_1, x_2, x_3), (x_2, x_3, x_4), \hdots, (x_{n-2}, x_{n-1}, x_n)\}$
+
+\medskip
+Choose a m big enough such that the correlation between the $x's$ is negligible
+
+\medskip
+Then use regular 1-sample bootstrap to randomly draw $n/m$ block numbers
+
+$$ \hat{se}_{bootB} = \left[\sum_{b = 1}^B \frac{\hat{\theta}^{*,b} - \hat{\theta}^{*,\cdot}}{B - 1} \right]^{\frac{1}{2}} $$ where $\hat{\theta}^{*,\cdot} = \sum_{b = 1}^B \frac{\hat{\theta}^{*,b}}{B}$
+
+% -----------------------------------------------------------------------
+\subsubsection{Multisample Bootstrap}
+
+Used when subjects in data are classified in 2 or more groups; and want to compute an estimator (e.g. median) for each group and then compare between them.
+
+\medskip
+Do not sample from the $n_total$ observations, instead re-sample with replacement $n_1$ samples of group 1 and $n_2$ samples of group 2 separately.
+
+\medskip
+Then perform t-student for the means of the estimator. (as each bootstap sample provides a bootstrap replication of S())
+
+% -----------------------------------------------------------------------
+\subsubsection{Parametric Bootstrap}
+
+In regular bootstrap sample $\underline{x}$ is used as $\hat{F}$; where every outcome/category has the same probability ($1/n$), by keeping the y-axis at a fixed width histogram-wise.
+
+\medskip
+Parametric Bootstrap is about keeping categories in the x-axis at a fixed width histogram-wise.
+
+* it uses $f_{\hat{\theta}} (x)$ as $\hat{F}$, therefore the vector of weights $P$ is given by $f_{\hat{\theta}} (x)$
+
+% -----------------------------------------------------------------------
 \section{} % ------------------------------------------------------------
 \hrule
 Osamu Katagiri - A01212611, \href{https://www.katagiri-mx.com/}{https://www.katagiri-mx.com/}

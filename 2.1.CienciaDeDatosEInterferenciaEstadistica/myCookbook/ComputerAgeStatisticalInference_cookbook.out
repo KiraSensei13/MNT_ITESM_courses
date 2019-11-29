@@ -50,4 +50,11 @@
 \BOOKMARK [3][-]{section*.50}{Continuous time}{section*.48}% 50
 \BOOKMARK [3][-]{section*.51}{Censored Data}{section*.48}% 51
 \BOOKMARK [3][-]{section*.52}{log-rank test}{section*.48}% 52
-\BOOKMARK [1][-]{section*.53}{}{}% 53
+\BOOKMARK [2][-]{section*.53}{Jackknife}{section*.1}% 53
+\BOOKMARK [2][-]{section*.54}{Non-parametric Bootstrap}{section*.1}% 54
+\BOOKMARK [2][-]{section*.55}{Re-sampling Plans}{section*.1}% 55
+\BOOKMARK [3][-]{section*.56}{Infinitesimal Jackknife}{section*.55}% 56
+\BOOKMARK [3][-]{section*.57}{Moving Blocks Bootstrap}{section*.55}% 57
+\BOOKMARK [3][-]{section*.58}{Multisample Bootstrap}{section*.55}% 58
+\BOOKMARK [3][-]{section*.59}{Parametric Bootstrap}{section*.55}% 59
+\BOOKMARK [1][-]{section*.60}{}{}% 60
