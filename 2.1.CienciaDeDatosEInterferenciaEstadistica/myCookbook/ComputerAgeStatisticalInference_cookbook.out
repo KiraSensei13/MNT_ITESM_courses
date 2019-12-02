@@ -30,31 +30,32 @@
 \BOOKMARK [3][-]{section*.30}{Multinomial-Poisson relationship}{section*.27}% 30
 \BOOKMARK [3][-]{section*.31}{Exponential Families - Poisson Dist.}{section*.27}% 31
 \BOOKMARK [3][-]{section*.32}{Exponential Families - Gamma Dist.}{section*.27}% 32
-\BOOKMARK [2][-]{section*.33}{James-Stein Estimator vs Bayes vs MLE}{section*.1}% 33
-\BOOKMARK [3][-]{section*.34}{Estimate \040from x if N\(m, A\)}{section*.33}% 34
-\BOOKMARK [3][-]{section*.35}{Expected Squared Error}{section*.33}% 35
-\BOOKMARK [3][-]{section*.36}{James-Stein Theorem}{section*.33}% 36
-\BOOKMARK [2][-]{section*.37}{Ridge Regression vs Linear Regression}{section*.1}% 37
-\BOOKMARK [3][-]{section*.38}{Linear Regression}{section*.37}% 38
-\BOOKMARK [3][-]{section*.39}{Ridge Regression}{section*.37}% 39
-\BOOKMARK [3][-]{section*.40}{Logistic Regression}{section*.37}% 40
-\BOOKMARK [2][-]{section*.41}{Generalized Linear Models - GLMs}{section*.1}% 41
-\BOOKMARK [3][-]{section*.42}{GLM - exponential family}{section*.41}% 42
-\BOOKMARK [3][-]{section*.43}{GLM - Binomial Distribution}{section*.41}% 43
-\BOOKMARK [3][-]{section*.44}{GLM - Poisson Distribution}{section*.41}% 44
-\BOOKMARK [3][-]{section*.45}{GLM - Parameter Estimation}{section*.41}% 45
-\BOOKMARK [2][-]{section*.46}{Regression Trees}{section*.1}% 46
-\BOOKMARK [3][-]{section*.47}{Impurity}{section*.46}% 47
-\BOOKMARK [2][-]{section*.48}{Life Tables \046 Hazard Rates}{section*.1}% 48
-\BOOKMARK [3][-]{section*.49}{Discrete time}{section*.48}% 49
-\BOOKMARK [3][-]{section*.50}{Continuous time}{section*.48}% 50
-\BOOKMARK [3][-]{section*.51}{Censored Data}{section*.48}% 51
-\BOOKMARK [3][-]{section*.52}{log-rank test}{section*.48}% 52
-\BOOKMARK [2][-]{section*.53}{Jackknife}{section*.1}% 53
-\BOOKMARK [2][-]{section*.54}{Non-parametric Bootstrap}{section*.1}% 54
-\BOOKMARK [2][-]{section*.55}{Re-sampling Plans}{section*.1}% 55
-\BOOKMARK [3][-]{section*.56}{Infinitesimal Jackknife}{section*.55}% 56
-\BOOKMARK [3][-]{section*.57}{Moving Blocks Bootstrap}{section*.55}% 57
-\BOOKMARK [3][-]{section*.58}{Multisample Bootstrap}{section*.55}% 58
-\BOOKMARK [3][-]{section*.59}{Parametric Bootstrap}{section*.55}% 59
-\BOOKMARK [1][-]{section*.60}{}{}% 60
+\BOOKMARK [1][-]{section*.33}{Part II: Early Computer-Age Methods}{}% 33
+\BOOKMARK [2][-]{section*.34}{James-Stein Estimator vs Bayes vs MLE}{section*.33}% 34
+\BOOKMARK [3][-]{section*.35}{Estimate \040from x if N\(m, A\)}{section*.34}% 35
+\BOOKMARK [3][-]{section*.36}{Expected Squared Error}{section*.34}% 36
+\BOOKMARK [3][-]{section*.37}{James-Stein Theorem}{section*.34}% 37
+\BOOKMARK [2][-]{section*.38}{Ridge Regression vs Linear Regression}{section*.33}% 38
+\BOOKMARK [3][-]{section*.39}{Linear Regression}{section*.38}% 39
+\BOOKMARK [3][-]{section*.40}{Ridge Regression}{section*.38}% 40
+\BOOKMARK [3][-]{section*.41}{Logistic Regression}{section*.38}% 41
+\BOOKMARK [2][-]{section*.42}{Generalized Linear Models - GLMs}{section*.33}% 42
+\BOOKMARK [3][-]{section*.43}{GLM - exponential family}{section*.42}% 43
+\BOOKMARK [3][-]{section*.44}{GLM - Binomial Distribution}{section*.42}% 44
+\BOOKMARK [3][-]{section*.45}{GLM - Poisson Distribution}{section*.42}% 45
+\BOOKMARK [3][-]{section*.46}{GLM - Parameter Estimation}{section*.42}% 46
+\BOOKMARK [2][-]{section*.47}{Regression Trees}{section*.33}% 47
+\BOOKMARK [3][-]{section*.48}{Impurity}{section*.47}% 48
+\BOOKMARK [2][-]{section*.49}{Life Tables \046 Hazard Rates}{section*.33}% 49
+\BOOKMARK [3][-]{section*.50}{Discrete time}{section*.49}% 50
+\BOOKMARK [3][-]{section*.51}{Continuous time}{section*.49}% 51
+\BOOKMARK [3][-]{section*.52}{Censored Data}{section*.49}% 52
+\BOOKMARK [3][-]{section*.53}{Log-Rank Test}{section*.49}% 53
+\BOOKMARK [2][-]{section*.54}{Jackknife}{section*.33}% 54
+\BOOKMARK [2][-]{section*.55}{Non-parametric Bootstrap}{section*.33}% 55
+\BOOKMARK [2][-]{section*.56}{Re-sampling Plans}{section*.33}% 56
+\BOOKMARK [3][-]{section*.57}{Infinitesimal Jackknife}{section*.56}% 57
+\BOOKMARK [3][-]{section*.58}{Moving Blocks Bootstrap}{section*.56}% 58
+\BOOKMARK [3][-]{section*.59}{Multisample Bootstrap}{section*.56}% 59
+\BOOKMARK [3][-]{section*.60}{Parametric Bootstrap}{section*.56}% 60
+\BOOKMARK [1][-]{section*.61}{}{}% 61

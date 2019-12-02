@@ -818,6 +818,11 @@ $$ \Psi (\alpha) = log \int_{\text{sample space } X} e^{\underline{\alpha} y} f_
 where $f_o (x)$ is the \emph{pdf} in question
 
 % -----------------------------------------------------------------------
+\section{Part II: Early Computer-Age Methods} % -------------------------
+% -----------------------------------------------------------------------
+
+
+% -----------------------------------------------------------------------
 \subsection{James-Stein Estimator vs Bayes vs MLE} % --------------------
 
 % -----------------------------------------------------------------------
@@ -964,14 +969,20 @@ let $\underline{\lambda} = \underline{x} \cdot \underline{\alpha}$, $\underline{
 % -----------------------------------------------------------------------
 \subsubsection{GLM - Binomial Distribution}
 
+\begin{multicols}{2}
 $$ \lambda = log \left( \frac{\pi}{1 + \pi} \right) $$
+\pagebreak
 $$ \gamma (\lambda) = n log (1 + e^{\lambda}) $$
+\end{multicols}
 
 % -----------------------------------------------------------------------
 \subsubsection{GLM - Poisson Distribution}
 
+\begin{multicols}{2}
 $$ \lambda = log (\mu) $$
+\pagebreak
 $$ \gamma (\lambda) = e^{\lambda} $$
+\end{multicols}
 
 % -----------------------------------------------------------------------
 \subsubsection{GLM - Parameter Estimation}
@@ -1003,7 +1014,7 @@ For other family distributions $\hat{\alpha}$ is to be solved numerically.
 where $(x^T \cdot \Sigma (\alpha) \cdot x)^{-1} $ is the variance of ${\hat{\alpha}}^{MLE}$
 
 \medskip
-The DEVIANCE FUNCTION D() can be used to get MLE estimates of $\alpha$. The D() between two densities $f_1$ and $f_2$ is: $$ D(f_1, f_2) = 2 \cdot \int_{sampleSpace} f_1 (y) \cdot log \left( \frac{f_1 (y)}{f_2 (y)} \right) dy $$
+The DEVIANCE FUNCTION D() can be used to get MLE estimates of $\alpha$. The D() between two densities $f_1$ and $f_2$ is: $$ D(f_1, f_2) = 2 \cdot \int_{sampleSpace\mathtt{y}} f_1 (y) \cdot log \left( \frac{f_1 (y)}{f_2 (y)} \right) d\mathtt{y} $$
 
 \medskip
 Deviance for: \\
@@ -1078,14 +1089,14 @@ If $n$ is the no. of subjects at risk, $y$ the no. of deaths, $l$ the no. of los
 $$ sd(\hat{S_j}) = \hat{S_j} \left[\sum_{k \leq j} \frac{y_k}{n_k (n_k - y_k)}\right]^{\frac{1}{2}} $$ is the standard error of Kaplan-Meier Estimate
 
 % -----------------------------------------------------------------------
-\subsubsection{log-rank test}
+\subsubsection{Log-Rank Test}
 
 When working with "regular data", \emph{t-test} can be implemented to compare survival times of two treatments.
 
 \medskip
 However, when dealing with "censored data", \emph{log-rank test} is to be used.
 
-* Say the Null Hyp as the hazard rate for time i is the same for treatment A and in treatment B $Ho(t) : h_{A,i} = h_{B,i}$
+* Say the Null Hyp as the hazard rate for time i is the same for treatment A and in treatment B $Ho(i) : h_{A,i} = h_{B,i}$
 
 * Ask "If $n_d$ patients are randomly drawn from $n$, what is the probability distribution for the number of drawn patients to be in treatment A?" \\
 $n_d$ the total no. of deaths, $n_s$ the total no. survivals, $n_A$ the total no. of subjects in treatment A, and $n_B$ the total no. of subjects in treatment B.
@@ -1187,7 +1198,7 @@ $$ \underline{P_i} = \underline{P_o} + \varepsilon (\underline{P_{-1}} - \underl
 
 $$ D_i = \lim_{e \rightarrow 0} \frac{S(\underline{P_i} (\varepsilon)) - S(\underline{P_o})}{\varepsilon \parallel \underline{P_i} - \underline{P_o} \parallel} $$
 
-$$ \hat{se}_IJ = \left(\frac{{D_i}^2}{n^2}\right)^{frac{1}{2}} $$ computationally, shall be done with a small $\varepsilon$
+$$ \hat{se}_{IJ} = \left(\frac{{D_i}^2}{n^2}\right)^{\frac{1}{2}} $$ computationally, shall be done with a small $\varepsilon$
 
 % -----------------------------------------------------------------------
 \subsubsection{Moving Blocks Bootstrap}
