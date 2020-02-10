@@ -1308,3 +1308,74 @@ Teléfono: 442 427 8000
 \pagebreak
 
 \end{multicols}
+
+/******************************************************************************/
+
+plotName  = "PS wt% in THF";
+fileNames = [
+    "./csv/ps_thf_01_3.csv",
+    "./csv/ps_thf_01_4.csv"
+];
+fileDescription = [
+    "35.583 wt%",
+    "39.941 wt%"
+];
+headDrops = [0, 0];
+tailDrops = [0, 0];
+a = [9, 2];
+
+# Plot all files in one plot
+compareData_(plotName, fileNames, headDrops, tailDrops, fileDescription)
+
+# Fit the GNF model to each file
+for i in range(len(fileNames)):
+    fit_GNF_(fileNames[i], headDrops[i], tailDrops[i], fileDescription[i] + " - " + fileNames[i],  a[i])
+
+/******************************************************************************/
+
+Invitacion_Misa_Susumu_y_Tomiko.pdf:
+https://www.dropbox.com/s/2aoey0k5v4wivrf/Invitacion_Misa_Susumu_y_Tomiko.pdf?dl=0
+
+Parroquia San Juan Bautista:
+https://goo.gl/maps/a2wsnEvuBHhwBHdQA
+
+Fonda El Morral:
+https://goo.gl/maps/U4wPvVRpNbQEHJKCA
+
+/******************************************************************************/
+
+14-823-434
+https://www.fishersci.com/us/en/catalog/search/products?keyword=14-823-434
+
+14-820-16
+https://www.fishersci.com/us/en/catalog/search/products?keyword=BD+Reusable+Yale%E2%84%A2+Tuberculin+Syringes
+
+/******************************************************************************/
+
+Remitente
+Nombre: Antonio Osamu Katagiri Tanaka <A01212611@itesm.mx>
+Dirección: Tec de Monterrey Campus Monterrey
+Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
+
+Destinatario
+Nombre: Yessica Díaz Mora <ydiaz@tec.mx>
+Dirección: Tec de Monterrey Campus Estado de México. 
+Av Lago de Guadalupe KM 3.5, Margarita Maza de Juárez, 52926 Cd López Mateos, Méx.
+Edificio: Departamento de Matemáticas - Aulas 1 - planta baja
+
+/******************************************************************************/
+
+Remitente
+Nombre: Antonio Osamu Katagiri Tanaka <A01212611@itesm.mx>
+Dirección: Tec de Monterrey Campus Estado de México.
+Av Lago de Guadalupe KM 3.5, Margarita Maza de Juárez, 52926 Cd López Mateos, Méx.
+ 
+Destinatario
+Nombre: Héctor Alán Aguirre Soto <alan.aguirre@tec.mx>
+Dirección: Tec de Monterrey Campus Monterrey. 
+Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
+Edificio: A4 - 222D
+
+/******************************************************************************/
+
+
