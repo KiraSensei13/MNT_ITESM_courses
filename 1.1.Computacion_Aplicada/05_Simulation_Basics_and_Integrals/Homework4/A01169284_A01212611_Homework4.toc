@@ -1,0 +1,24 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Problem I}{4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Function 1}{4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2}Function 2}{5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3}Let's plot the approximations}{5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Problem II}{8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Problem III}{11}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Problem IV}{14}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}\emph {integralPlot} function}{17}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B}\emph {derivativePlot} function}{18}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C}Full R Script}{19}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D}Full Output Log}{27}% 

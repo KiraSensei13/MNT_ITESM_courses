@@ -91,7 +91,7 @@ Import@"https://raw.githubusercontent.com/jkuczm/\
 MathematicaCellsToTeX/master/NoInstall.m"
 PacletInstall@"http://github.com/jkuczm/MathematicaCellsToTeX/\
 releases/download/v0.2.2/CellsToTeX-0.2.2.paclet"
-*)
+*) 
 Needs@"CellsToTeX`";
 
 testCell = Cell[BoxData[MakeBoxes[
@@ -114,6 +114,1267 @@ http://trefle.io/api/plants/138738/?token=SWVENEduMFMxellqNHFIM3RmL0c4Zz09
 
 LaTeX packages directory:
 C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex
+
+/******************************************************************************/
+
+# #Data normalization
+# # variables that have larger values, they contribute more, and the entire clustering will be dominated by them. So to avoid that, what we do is we normalize all the variables so that the average is 0 and standard deviation is 1, so let's do that
+# z = mydata[,-5]
+# m = apply(z,2,mean)
+# s = apply(z,2,sd)
+# 
+# z = scale(z,center=m, scale=s)
+# mydata = cbind(data.frame(z), mydata[5]) # now all values are between -3 and 3
+# 
+# pairs.panels(mydata[,-5],
+#              gap=0,
+#              bg=species_col[mydata$Species],
+#              pch=21)
+# 
+# summary(mydata)
+
+/******************************************************************************/
+
+PDF as image
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
+\includegraphics[page=32,width=\textwidth]{../Clase5_Simulation_Basics_and_Integrals.pdf}
+\end{tabular}
+\caption{Problem I instructions}
+\label{fig:Test}
+\end{figure}
+
+/******************************************************************************/
+
+personal information:
+graduate program:
+supervisor:
+context of the research:
+particular problem to be solved:
+relevance and justification:
+related background:
+proposed solution model:
+objectives:
+hypothesis:
+research questions:
+
+/******************************************************************************/
+
+[brief bio - Osamu Katagiri]
+
+2012-2016 : Cursé la carrera de ingeniería en sistemas digitales (ISD) en el Tec campus Querétaro
+
+mid2016-mid2018 : Participé en el programa Edison (https://www.ge.com/careers/working-at-ge/edison-engineering-development-program) en General Electric.
+
+late2015-late2018 : Trabajé en desarrollo y verificación de software para dos proyectos
+    1) APMS (Advanced Power Management System) para la aeronave G500 de Gulfstream (http://www.gulfstream.com/aircraft/gulfstream-g500)
+    2) ELMS3 (Electrical Load Management System) para el Boeing 777X (https://www.boeing.com/commercial/777x/)
+<Si algún día vuelas en uno se esos te agarras fuerte 😊>
+
+2019-present : Estoy cursando la maestría en nanotecnología en el campus EdMex. Mi investigación se va a centrar en soluciones poliméricas para la síntesis de nano-cables de carbono mediante NFES (Near-Field Electrospinning).
+
+/******************************************************************************/
+
+
+Osamu Katagiri Tanaka
+MS student at ITESM - CEM
+BS Digital Systems and Robotics Engineering at ITESM - QRO
+A01212611@itesm
+
+My research is focused on the development of rheology analises of different polymer solutions to determine if they can be easily electrospun at low voltages with the purpose to synthesize nanowires.
+
+/******************************************************************************/
+
+//-- Removing a file added in the most recent unpushed commit --//
+
+If the file was added with your most recent commit, and you have not pushed to GitHub, you can delete the file and amend the commit:
+
+Open Git Bash.
+
+Change the current working directory to your local repository.
+
+To remove the file, enter git rm --cached:
+
+$ git rm --cached giant_file
+# Stage our giant file for removal, but leave it on disk
+Commit this change using --amend -CHEAD:
+
+$ git commit --amend -CHEAD
+# Amend the previous commit with your change
+# Simply making a new commit won't work, as you need
+# to remove the file from the unpushed history as well
+Push your commits to GitHub:
+
+$ git push
+# Push our rewritten, smaller commit
+
+/******************************************************************************/
+
+Dora Iliana Medina Medina <dora.medina@tec.mx>
+Héctor Alán Aguirre Soto <alan.aguirre@tec.mx>
+
+/******************************************************************************/
+
+THESIS MESSAGE
+
+Introduction :
+Carbon fibers are versatile materials composed of carbon chains with a wide range of applications.
+
+Problem statement :
+Carbon nanowires have been fabricated with a photoresist, but little is known about polymers that can produce more conductive carbon nanowires after pyrolysis.
+
+Background :
+FFES or Far field electrospinning is a inexpensive process to produce polymer fibers, but with low accuracy due to electric instabilities.
+
+Near field electrospinning (NFES) is similar to FFES, but with a reduced distance between the fiber source and the collector and higher precision.
+
+Related Work :
+Various polymer solutions have being tested and measured through NFSE and photopolymerization processes; it was found that it is not possible to predict the behaviour of the electrospinning process, so additional properties are to be considered to achieve a stable process.
+
+Hypothesis :
+The properties of the polymer solution can be amended to obtain a electrospun-able, photopolymerizable and pyrolyzable/graphitizable fibers.
+
+Methodology :
+Analyse the rheology of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nanowires with them.
+
+Expected Results :
+Design polymer solutions that can be electrospun by NFES, photopolymerized, and then pyrolyzed into conducting carbon nanowires.
+
+Further Work :
+The use of the newly designed polymer solution within the NFES-Photopolymerization-Pyrolysis process can be amended to achieve mass scale manufacturing of carbon nanowires in a cheap, continuous, simple and reproducible manner.
+
+Conclusion :
+The new/tailored polymer solution can be used to synthesize carbon nanowires with high conductive properties and reduced thickness.
+
+/* video **********************************************************************/
+
+•	Introduce yourself, the programme you are enrolled in, name of advisor, and the area of research you are interested in.
+
+
+•	Content and Motivation (Problem definition)
+Carbon nanowires have been fabricated with a photoresist, but little is known about polymers that can produce more conductive carbon nanowires after pyrolysis.
+
+•	Why should the problem be tackled differently? (What has been done wrong or been ignored?)
+Various polymer solutions have being tested and measured through NFSE and photopolymerization processes; it was found that it is not possible to predict the behaviour of the electrospinning process, so additional properties are to be considered to achieve a stable process.
+
+•	Objectives
+Design polymer solutions that can be electrospun by NFES, photopolymerized, and then pyrolyzed into conducting carbon nanowires.
+
+•	Hypothesis
+The properties of the polymer solution can be amended to obtain a electrospun-able, photopolymerizable and pyrolyzable/graphitizable fibers.
+
+•	A few words on how you will tackle the problem at hand
+Analyse the rheology of different polymer solutions to determine if they can be easily electrospun at low voltages and then fabricate nanowires with them.
+
+•	References (if any)
+Madou, M. J., Dunn-Rankin, D., Kulinsky, L., Mirsepassi, A.,
+Bisht, G. S., Oh, S., & Canton, G. (2011). Controlled
+Continuous Patterning of Polymeric Nanofibers on
+Three-Dimensional Substrates Using Low-Voltage Near-Field
+Electrospinning. Nano Letters, 11(4), 1831–1837.
+https://doi.org/10.1021/nl2006164
+
+Chang, C., Limkrailassiri, K., & Lin, L. (2008). Continuous
+near-field electrospinning for large area deposition of
+orderly nanofiber patterns. Applied Physics Letters, 93(12),
+1–4. https://doi.org/10.1063/1.2975834
+
+Gommes, C. J., Blacher, S., Dunsmuir, J. H., & Tsou, A. H.
+(2012). Practical Methods for Measuring the Tortuosity of
+Porous Materials from Binary or Gray-Tone Tomographic
+Reconstructions. AIChE Journal, 55(8), 2000–2012.
+https://doi.org/10.1002/aic
+
+Chen, J. (2007). Thermal and Mechanical Cracking in
+TIPS-Pentacene Thin Films. Journal of Polymer Science Part B:
+Polymer Physics, 45(April), 1390–1398.
+https://doi.org/10.1002/polb
+
+Sharma, C. S., Sharma, A., & Madou, M. (2010). Multiscale
+carbon structures fabricated by direct micropatterning of
+electrospun mats of SU-8 photoresist nanofibers. Langmuir,
+26(4), 2218–2222. https://doi.org/10.1021/la904078r
+
+Cheong, Y. K., Lim, W. H., Lee, S. H., Pua, C. H., Chong, W. Y.,
+& Ahmad, H. (2016). 405 nm laser processing of thin SU-8 polymer
+film. Optik, 127(4), 1651–1655.
+https://doi.org/10.1016/j.ijleo.2015.11.057
+
+
+/******************************************************************************/
+
+Vector Differential Calculus - VIDEO
+
+paper trail:
+https://goo.gl/Ws46kE
+https://www.dropbox.com/s/7uruqmv9v2a0r4k/Notes_VectorDiffCalculus_.pdf?dl=0
+
+video:
+https://youtu.be/xdl2BX5FLZg
+
+/******************************************************************************/
+
+a01166117
+Gustavo Ruíz Pulido
+
+/******************************************************************************/
+
+https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows
+
+/******************************************************************************/
+
+Part1 : https://youtu.be/YUr3wdoM1iw
+Part2 : 
+Part3 : 
+
+Paper Trail : https://bit.ly/2DBFVuE
+
+/******************************************************************************/
+
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0141813019309274
+
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0008622312009359
+
+https://www.researchgate.net/publication/243845020_High_char-yielding_polyacrylonitrile-co-itaconic_acid-co-methyl_acrylate_Synthesis_and_properties
+
+https://www.google.com/search?q=%22High+char-yielding+poly%5Bacrylonitrile-co-(itaconic+acid)-co-(methyl+acrylate)%5D%3A+Synthesis+and+properties%22&rlz=1C1GCEU_esMX837MX837&oq=%22High+char-yielding+poly%5Bacrylonitrile-co-(itaconic+acid)-co-(methyl+acrylate)%5D%3A+Synthesis+and+properties%22&aqs=chrome..69i57.1156j0j1&sourceid=chrome&ie=UTF-8
+
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0032386114009276
+
+https://docs.google.com/viewerng/viewer?url=https://vdocuments.site/google-reader?url%3Df37a91119b04edbb0694cb3c9512522168007afb4f2d735429962a5a5f5bbc35b9840c3df0760450b4f62bebee7c37c7dda749fe709e1639711131ab8ec41792zcE51hl0m9l2mVbGrlhUfcnKM9vC522+IS46Scta8M4djPxCvCA3wzmQMPFqH25IjYcROkikyN+leLYueUGyEseqhQdV5yn/oLSdrKsUnJOVwnRaxPh8CCFA4Z55/gB8tIHC67ElgZE6Lm3ONH3DY33JQKjFaLDeS2FY5FTbnAY%3D
+
+/******************************************************************************/
+
+polyacrylonitrile copolymers -> 3-ammoniumcarboxylate-3-butenoic acid methyl ester
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0032386114009276
+
+very high molecular weight   -> polyacrylonitrile-co-methyl acrylate (PAN-co-MA)
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0008622312009359
+
+pure starch fiber            -> High amylose maize starch (HAMS, Gelose 80)
+https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0141813019309274
+
+A review on polymer nanofibers by electrospinning and their applications in nanocomposites
+https://www.sciencedirect.com/science/article/pii/S0266353803001787
+
+/******************************************************************************/
+
+https://github.com/googlesamples/android-sunflower
+
+https://onedrive.live.com/?authkey=%21AJRazHi1NSdjMSY&id=B97411139F1D3D85%213962&cid=B97411139F1D3D85
+
+/******************************************************************************/
+
+0001  0.1822
+0010  0.0142
+0020 -0.0336
+0030 -0.0373
+0040 -0.0432
+0050 -0.0150
+0060 -0.0216
+0070 -0.0125
+0080 -0.0208
+0090 -0.0012
+0091 -0.0128
+0095 -0.0098
+0100 -0.0142
+1000 -0.0029
+
+/******************************************************************************/
+
+https://www.youtube.com/watch?v=XJ7HLz9VYz0&list=PLRqwX-V7Uu6Y7MdSCaIfsxc561QI0U0Tb&index=1
+
+/******************************************************************************/
+
+[A01169284] Bruno González Soria \\
+[A01212611] Antonio Osamu Katagiri Tanaka \\
+[A01750267] Carlos Cardoso Isidoro
+
+/******************************************************************************/
+
+Dr. Héctor Alán Aguirre Soto
+Fabrication of graphitic-carbon suspended nanowires through mechanoelectrospinning of photocrosslinkable polymers
+
+998 zwx
+
+/******************************************************************************/
+
+Do we want something similar to PEO or something more similar to Bis-phenol A novolac epoxy?
+
+Yes, because with these (lithography) you can get to micron scale or maybe less because the diffraction limit is a function of wavelength. But this means that these processes are really expensive.
+
+SU-8 turned out to be a really bad photoresist for integrated circuits, but really good to make Carbon-MicroElectroMechanical Systems because it yields conductive carbon structures with high aspect ratios, but people don't know why. 
+
+/******************************************************************************/
+
+207520
+
+/******************************************************************************/
+
+UAM
+Master in Molecular Nanoscience and Nanotechnology       ; http://www.icmol.es/master/nano/content.php?menu=content
+                                                         ; http://www.uam.es/Ciencias/M%C3%A1ster-en-Materiales-Avanzados/1446759227148.htm?language=es&pid=1242650400756&title=Asignaturas%20Materiales%20Avanzados,%20Nanotecnolog?a%20y%20Fot?nica%202018-19
+                                                         ; file:///C:/Users/oskat/Downloads/32303_simulacion_ymetodos_numericos_en_materiales_y_nanoestruct_18_19.pdf
+                                                         ; file:///C:/Users/oskat/Downloads/32298_nanocaracterizacion_materiales_por_tec_microscopicas_18_19.pdf
+Máster Universitario en Electroquímica                   ; https://web.ua.es/es/ecyt/estructura-y-contenido.html
+Máster en Materiales Avanzados Nanotecnología y Fotónica ; http://matavanz-uam.000webhostapp.com/info_ac_horarios.html
+Convocatoria de becas UAM – Banco Santander              ; https://tec.mx/es/internacionalizacion/uam-banco-santander
+                                                         ; http://sitios.itesm.mx/vi/convocatorias/BecaUAM2019.pdf
+< https://modelo-carta.com/declaracion/ >
+
+/******************************************************************************/
+
+Braulio overview
+
+http://www.uhv.es/sites/milka/doc/poster_aes.pdf
+http://microchem.com/pdf/SU-82000DataSheet2000_5thru2015Ver4.pdf
+https://www.nanoscience.com/techniques/scanning-electron-microscopy/
+thermogravimetric analysis
+C/MEMS
+
+/******************************************************************************/
+
+From literature
+
+[Madrid    ] Tomás Torres
+[Madrid    ] Giovanni Bottari
+[Madrid    ] Gema de la Torre
+[Madrid    ] F. Agulló-Rueda
+[Madrid    ] Giovanni Bottari
+[Madrid    ] Olga Trukhina
+[Madrid    ] Mine Ince
+[Edinburgh ] Beatriz Ballesteros
+[Paris     ] Jean-Philippe Bourgoin
+[Paris     ] Stéphane Campidelli
+[Paris     ] Arianna Filoramo
+[Regensburg] David Díaz Díaz
+[Erlangen  ] Dirk M. Guldi
+[Erlangen  ] Christian Ehli
+[Erlangen  ] Daniel Kiessling
+[Erlangen  ] Fabian Werner
+[Germany   ] Vito Sgobba
+[Trieste   ] Carla Cioffi
+[Trieste   ] Maurizio Prato
+[Niigata   ] G. M. Aminur Rahman
+
+/******************************************************************************/
+
+From UAM courses
+
+    Carmen Morant Zacarés    : c.morant@uam.es           : www.uam.es/c.morant
+Dr. Leonardo Soriano de Arpe : l.soriano@uam.es          : 
+    Máximo León Macarrón     : maximo.leon@uam.es        : 
+    David Bravo Roldán       : david.bravo@uam.es        : 
+    Herko van der Meulen     : herko.vandermeulen@uam.es : 
+    José María Sanz          : josem.sanz@uam.es         : 
+
+https://tec.mx/en/internationalization/uam-banco-santander-scholarship
+http://sitios.itesm.mx/vi/uam.html
+
+/******************************************************************************/
+
+Near Field Electrospinning REVIEW
+
+Multifunctional Nanofibers towards Active Biomedical Therapeutics
+https://www.mdpi.com/2073-4360/7/2/186/htm
+
+Fabrication of Patterned Nanofibrous Mats Using Direct-Write Electrospinning
+https://pubs.acs.org/doi/full/10.1021/la3009249?src=recsys
+
+/******************************************************************************/
+
+LANDSCAPE LaTeX TABLE
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+\pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}
+
+% move margin to fit table
+%\addtolength{\oddsidemargin}{-1.5in}
+%\addtolength{\evensidemargin}{-.875in}
+\addtolength{\topmargin}{0.5in}
+
+\begin{table}[th]
+\caption{Electrospun Polymer Solutions - Solution and Process Parameters}
+%\begin{center}
+% total table width eq 0.91\textheight = 100%
+\begin{tabular}{
+>{\raggedright\arraybackslash}p{0.130\textheight}
+>{\raggedright\arraybackslash}p{0.130\textheight}
+>{\raggedright\arraybackslash}p{0.090\textheight}
+>{\raggedright\arraybackslash}p{0.290\textheight}
+>{\raggedright\arraybackslash}p{0.180\textheight}
+>{\raggedright\arraybackslash}p{0.080\textheight} }  
+\hline
+Lorem      & ipsum & dolor  & sit & amet    & consectetur \\
+\hline
+adipiscing & elit  & sed    & do  & eiusmod & tempor      \\
+incididunt & ut    & labore & et  & dolore  & magna       \\
+\hline
+\label{tbl:FloresCompare}
+\end{tabular}
+%\end{center}
+\end{table}
+
+%\addtolength{\oddsidemargin}{0.0in}
+%\addtolength{\evensidemargin}{0.0in}
+\addtolength{\topmargin}{0.0in}
+
+\end{landscape}
+\pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/******************************************************************************/
+
+Other NFES techniques to be considered:
+
+mapped direct-writing (MDW)
+leap direct-writing (LDW)
+helix direct-writing (HDW)
+
+pyro-electrodynamic printing
+
+/******************************************************************************/
+
+Macromolecules 
+
+Journal: Progress in polymer science
+Title: polymers for spunable fibers with spacial control
+
+/******************************************************************************/
+
+https://photos.app.goo.gl/CxSCtFV6HW5wGAff8
+https://photos.app.goo.gl/po7a7uyB7h5wJFoLA
+
+/******************************************************************************/
+
+https://community.blackboard.com/thread/5863-saml-authentication-request-has-expired-error
+
+https://blackboard.secure.force.com/publickbarticleview?id=kAC39000000CadX
+
+Parece ser un error en la configuracón de SAML - ya intenté eliminar las cookies pero sigo con el mismo problema.
+
+/******************************************************************************/
+
+This book is a collection of the physical properties of most commonly used solvents along with information on their behaviour in the environment during and after use and their health and fire hazards.
+
+/******************************************************************************/
+
+The name “bootstrapping” comes from the phrase, “To lift himself up by his bootstraps.” This refers to something that is preposterous and impossible. Try as hard as you can, you cannot lift yourself into the air by tugging at pieces of leather on your boots.
+
+There is some mathematical theory that justifies bootstrapping techniques. However, the use of bootstrapping does feel like you are doing the impossible. Although it does not seem like you would be able to improve upon the estimate of a population statistic by reusing the same sample over and over again, bootstrapping can, in fact, do this.
+
+"Bootstrapping" crome from the phrase "Pull yourself up by your bootstraps"; which means to improve a preposterous and impossible situation by your own efforts. [1] There is some theory that justifies bootstrapping techniques [2]; however bootstrapping does feel like doing the impossible. Although it does not seem like the situation would be able to improve by reusing the same sample over and over again, but bootstrapping can.
+
+[1] https://www.phrases.org.uk/meanings/pull-yourself-up-by-your-bootstraps.html
+[2] https://www.sciencedirect.com/science/article/pii/S0304407619301472?dgcid=rss_sd_all
+
+/******************************************************************************/
+
+Fit a cubic regression, as a function of age, to the kidney data of Figures 1.1
+
+O365GRP-macrophotosci
+
+/******************************************************************************/
+
+A solar collector is used as a heat source for a Carnot engine with a heat sink at 300 K. The efficiency of the solar collector " is defined as the fraction of the energy reaching the collector that is actually absorbed. It is related to the temperature of the collector as follows:
+
+/******************************************************************************/
+
+Fong H, Reneker DH. Elastomeric nanofibers of styrene butadienee styrene triblock copolymer. Journal of Polymer Science, Part B: Polymer Physics 2000;37:3488e93.
+
+S. Megelski,J.S.Stephens, D. BruceChase,and J. F. Rabolt, “Micro- and nanostructured surface morphology on electro- spun polymer fibers,” Macromolecules,vol.35, no.22, pp.8456– 8466, 2002.
+
+/******************************************************************************/
+
+import pyromat as pm 
+import matplotlib.pyplot as plt
+import numpy as np
+#pm.info()
+
+# Draw the plot's workspace
+scale = 6;
+plt.subplots(figsize=(3*scale, 2*scale))
+
+# Temperature range
+T = np.arange(0,400,10)
+
+#It can be very simple to get some quick information.
+Al = pm.get('ig.Al')
+plt.plot(T, Al.s(T), '-', linewidth=3, label='Al')
+
+#It can be very simple to get some quick information.
+O2 = pm.get('ig.O2')
+plt.plot(T, O2.s(T), '-', linewidth=3, label='O2')
+
+plt.xlabel('Temperature [K]', fontsize=24);
+plt.ylabel('Entropy [kJ/kg]', fontsize=24);
+plt.title("Figure 1: P vs. V", size=24)
+plt.legend(prop={'size': 18})
+display(plt);
+
+/******************************************************************************/
+
+1. Luo, C. J.; Stoyanov, S. D.; Stride, E.; Pelan, E.; Edirisinghe, M.
+‘Electrospinning versus fibre production methods: From specifics to technological convergence.’ Chem. Soc. Rev. 41 (2012): 4708–4735.
+2. Qi, S.; Craig, D. ‘Recent developments in micro- and nanofabrication
+techniques for the preparation of amorphous pharmaceutical dosage
+forms.’ Adv. Drug Deliv. Rev. 100 (2016): 67–84.
+3. Kessick, R.; Fenn, J.; Tepper, G. ‘The use of AC potentials in electrospraying
+and electrospinning processes.’ Polymer 45 (2004): 2981–2984.
+4. Sarkar, S.; Deevi, S.; Tepper, G. ‘Biased AC electrospinning of aligned
+polymer nanofibers.’ Macromol. Rapid Commun. 28 (2007): 1034–1039.
+5. Balogh, A.; Cselko, R.; Demuth, B.; Verreck, G.; Mensch, J.; Marosi, G.;
+Nagy, Z. K. ‘Alternating current electrospinning for preparation of fibrous
+drug delivery systems.’ Int. J. Pharm. 495 (2015): 75–80.
+6. Balogh, A.; Farkas, B.; Verreck, G.; Mensch, J.; Borbas, E.; Nagy, B.; Marosi,
+G.; Nagy, Z. K. ‘AC and DC electrospinning of hydroxypropylmethylcellulose
+with polyethylene oxides as secondary polymer for improved drug dissolution.’ Int. J. Pharm. 505 (2016): 159–166.
+7. Balogh, A.; Farkas, B.; Palvolgyi, A.; Domokos, A.; Demuth, B.;
+Marosi, G.; Nagy, Z. K. ‘Novel alternating current electrospinning of hydroxypropylmethylcellulose acetate succinate (HPMCAS) nanofibers
+for dissolution enhancement: The importance of solution conductivity.’ J.
+Pharm. Sci. 106 (2017): 1634–1643.
+8. Brown, T. D.; Dalton, P. D.; Hutmacher, D. W. ‘Melt electrospinning
+today: An opportune time for an emerging polymer process.’ Prog. Polym.
+Sci. 56 (2016): 116–166.
+9. Nagy, Z. K.; Balogh, A.; Dravavolgyi, G.; Ferguson, J.; Pataki, H.; Vajna,
+B.; Marosi, G. ‘Solvent-free melt electrospinning for preparation of fast
+dissolving drug delivery system and comparison with solvent-based
+electrospun and melt extruded systems.’ J. Pharm. Sci. 102 (2013):
+508–517.
+10. Balogh, A.; Dravavolgyi, G.; Farago, K.; Farkas, A.; Vigh, T.; Soti, P. L.;
+Wagner, I.; Madarasz, J.; Pataki, H.; Marosi, G.; Nagy, Z. K. ‘Plasticized
+drug-loaded melt electrospun polymer mats: Characterization, thermal
+degradation, and release kinetics.’ J. Pharm. Sci. 103 (2014): 1278–1287.
+11. Lian, H.; Meng, Z. ‘Melt electrospinning vs. solution electrospinning: A
+comparative study of drug-loaded poly (ε-caprolactone) fibres.’ Mater. Sci.
+Eng. C 74 (2017): 117–123.
+12. Hochleitner, G.; Jungst, T.; Brown, T. D.; Hahn, K.; Moseke, C.; Jakob,
+F.; Dalton, P. D.; Groll, J. ‘Additive manufacturing of scaffolds with submicron filaments via melt electrospinning writing.’ Biofabrication 7
+(2015): 035002.
+13. McCann, J. T.; Marquez, M.; Xia, Y. ‘Melt coaxial electrospinning: A versatile method for the encapsulation of solid materials and fabrication of
+phase change nanofibers.’ Nano Lett. 6 (2006): 2868–2872.
+14. Sarkar, K.; Gomez, C.; Zambrano, S.; Ramirez, M.; de Hoyos, E.; Vasquez,
+H.; Lozano, K. ‘Electrospinning to Forcespinning.’ Mater. Today 13
+(2010): 12–14.
+15. Dosunmu, O. O.; Chase, G. G.; Kataphinan, W.; Reneker, D. H.
+‘Electrospinning of polymer nanofibres from multiple jets on a porous
+tubular surface.’ Nanotechnology 17 (2006): 1123–1127.
+16. Mahalingam, S.; Edirisinghe, M. ‘Forming of polymer nanofibers by a
+pressurised gyration process.’ Macromol. Rapid Commun. 34 (2013):
+1134–1139.
+17. Badrossamay, M. R.; McIlwee, H. A.; Goss, J. A.; Parker, K. K. ‘Nanofiber
+assembly by rotary jet-spinning.’ Nano Lett. 10 (2010): 2257–2261.
+18. Zander, N. E. ‘Formation of melt and solution spun polycaprolactone fibers
+by centrifugal spinning.’ J. Appl. Polym. Sci. 132 (2015): 41269.
+19. Amalorpava Mary, L. ‘Centrifugal spun ultrafine fibrous web as a potential
+drug delivery vehicle.’ Express Polym. Lett. 7 (2013): 238–248.
+20. Buzgo, M.; Rampichova, M.; Vocetkova, K.; Sovkova, V.; Lukasova, V.;
+Doupnik, M.; Mickova, A.; Rustichelli, F.; Amler, E. ‘Emulsion centrifugal
+spinning for production of 3D drug releasing nanofibres with core/shell
+structure.’ RSC Adv. 7 (2017): 1215–1228.
+21. Marano, S.; Barker, S. A.; Raimi-Abraham, B. T.; Missaghi, S.; RajabiSiahboomi, A.; Craig, D. Q. ‘Development of micro-fibrous solid
+dispersions of poorly water-soluble drugs in sucrose using temperaturecontrolled centrifugal spinning.’ Eur. J. Pharm. Biopharm. 103 (2016):
+84–94.
+22. Zhang, X.; Lu, Y. ‘Centrifugal spinning: An alternative approach to fabricate nanofibers at high speed and low cost.’ Polym. Rev. 54 (2014):
+677–701.
+23. (a) Kancheva, M.; Toncheva, A.; Manolova, N.; Rashkov, I. ‘Advanced
+centrifugal electrospinning setup.’ Mater. Lett. 136 (2014): 150–152;
+(b) Erickson, A. E.; Edmondson, D.; Chang, F. C.; Wood, D.; Gong, A.;
+Levengood, S. L.; Zhang, M. ‘High-throughput and high-yield fabrication of uniaxially-aligned chitosan-based nanofibers by centrifugal
+electrospinning.’ Carbohydr. Polym. 134 (2015): 467–474.
+24. (a) Liao, C.-C.; Wang, C.-C.; Shih, K.-C.; Chen, C.-Y. ‘Electrospinning fabrication of partially crystalline bisphenol A polycarbonate nanofibers:
+Effects on conformation, crystallinity, and mechanical properties.’ Eur.
+Polym. J. 47 (2011): 911–924; (b) Edmondson, D.; Cooper, A.; Jana,
+S.; Wood, D.; Zhang, M. ‘Centrifugal electrospinning of highly aligned
+polymer nanofibers over a large area.’ J. Mater. Chem. 22 (2012):
+18646–18652.
+25. Wang, L.; Chang, M.-W.; Ahmad, Z.; Zheng, H.; Li, J.-S. ‘Mass and controlled fabrication of aligned PVP fibers for matrix type antibiotic drug
+delivery systems.’ Chem. Eng. J. 307 (2017): 661–669.
+26. Souza, M. A.; Sakamoto, K. Y.; Mattoso, L. H. C. ‘Release of the diclofenac
+sodium by nanofibers of poly(3-hydroxybutyrate-co-3-hydroxyvalerate)
+obtained from electrospinning and solution blow spinning.’ J. Nanomater.
+2014 (2014): 129035.
+27. Oliveira, J. E.; Medeiros, E. S.; Cardozo, L.; Voll, F.; Madureira, E. H.;
+Mattoso, L. H.; Assis, O. B. ‘Development of poly(lactic acid) nanostructured
+membranes for the controlled delivery of progesterone to livestock animals.’
+Mater. Sci. Eng. C 33 (2013): 844–849.
+28. Bonan, R. F.; Bonan, P. R.; Batista, A. U.; Sampaio, F. C.; Albuquerque, A.
+J.; Moraes, M. C.; Mattoso, L. H.; Glenn, G. M.; Medeiros, E. S.; Oliveira,
+J. E. ‘In vitro antimicrobial activity of solution blow spun poly(lactic acid)/
+polyvinylpyrrolidone nanofibers loaded with Copaiba (Copaifera sp.) oil.’
+Mater. Sci. Eng. C 48 (2015): 372–377.
+29. Balogh, A.; Farkas, B.; Farago, K.; Farkas, A.; Wagner, I.; Van Assche, I.;
+Verreck, G.; Nagy, Z. K.; Marosi, G. ‘Melt-blown and electrospun drugloaded polymer fiber mats for dissolution enhancement: A comparative
+study.’ J. Pharm. Sci. 104 (2015): 1767–1776.
+30. Arumuganathar, S.; Irvine, S.; McEwan, J. R.; Jayasinghe, S. N. ‘A novel
+direct aerodynamically assisted threading methodology for generating biologically viable microthreads encapsulating living primary cells.’ J. Appl.
+Polym. Sci. 107 (2008): 1215–1225.
+31. Jiang, K.; Long, Y. Z.; Chen, Z. J.; Liu, S. L.; Huang, Y. Y.; Jiang, X.;
+Huang, Z. Q. ‘Airflow-directed in situ electrospinning of a medical glue
+of cyanoacrylate for rapid hemostasis in liver resection.’ Nanoscale 6
+(2014): 7792–7798.
+32. Balogh, A.; Horváthová, T.; Fülöp, Z.; Loftsson, T.; Harasztos, A. H.; Marosi,
+G.; Nagy, Z. K. ‘Electroblowing and electrospinning of fibrous diclofenac
+sodium–cyclodextrin complex-based reconstitution injection.’ J. Drug Del.
+Sci. Technol. 26 (2015): 28–34.
+33. Soti, P. L.; Bocz, K.; Pataki, H.; Eke, Z.; Farkas, A.; Verreck, G.; Kiss, E.;
+Fekete, P.; Vigh, T.; Wagner, I.; Nagy, Z. K.; Marosi, G. ‘Comparison of
+spray drying, electroblowing and electrospinning for preparation of
+Eudragit E and itraconazole solid dispersions.’ Int. J. Pharm. 494 (2015):
+23–30.
+34. (a) Mahalingam, S.; Raimi-Abraham, B. T.; Craig, D. Q. M.; Edirisinghe,
+M. ‘Solubility–spinnability map and model for the preparation of
+fibres of polyethylene (terephthalate) using gyration and pressure.’
+Chem. Eng. J. 280 (2015): 344–353; (b) Mahalingam, S.; Ren, G. G.;
+Edirisinghe, M. J. ‘Rheology and pressurised gyration of starch and
+starch-loaded poly(ethylene oxide).’ Carbohydr. Polym. 114 (2014):
+279–287.
+35. Raimi-Abraham, B. T.; Mahalingam, S.; Edirisinghe, M.; Craig, D. Q.
+‘Generation of poly(N-vinylpyrrolidone) nanofibres using pressurised gyration.’ Mater. Sci. Eng. C 39 (2014): 168–176.
+36. Brako, F.; Raimi-Abraham, B.; Mahalingam, S.; Craig, D. Q. M.; Edirisinghe,
+M. ‘Making nanofibres of mucoadhesive polymer blends for vaginal therapies.’ Eur. Polym. J. 70 (2015): 186–196.
+37. Raimi-Abraham, B. T.; Mahalingam, S.; Davies, P. J.; Edirisinghe, M.;
+Craig, D. Q. ‘Development and characterization of amorphous nanofiber
+drug dispersions prepared using pressurized gyration.’ Mol. Pharm. 12
+(2015): 3851–3861.
+38. Zhang, S.; Karaca, B. T.; VanOosten, S. K.; Yuca, E.; Mahalingam, S.;
+Edirisinghe, M.; Tamerler, C. ‘Coupling infusion and gyration for the
+nanoscale assembly of functional polymer nanofibers integrated with
+genetically engineered proteins.’ Macromol. Rapid Commun. 36 (2015):
+1322–1328.
+39. Wu, X.; Mahalingam, S.; VanOosten, S. K.; Wisdom, C.; Tamerler, C.;
+Edirisinghe, M. ‘New generation of tunable bioactive shape memory mats
+integrated with genetically engineered proteins.’ Macromol. Biosci. 17
+(2017): 1600270.
+40. Illangakoon, U. E.; Mahalingam, S.; Wang, K.; Cheong, Y. K.; Canales,
+E.; Ren, G. G.; Cloutman-Green, E.; Edirisinghe, M.; Ciric, L. ‘Gyrospun antimicrobial nanoparticle loaded fibrous polymeric filters.’ Mater. Sci. Eng.
+C 74 (2017): 315–324.
+41. Xu, Z.; Mahalingam, S.; Basnett, P.; Raimi-Abraham, B.; Roy, I.; Craig, D.;
+Edirisinghe, M. ‘Making nonwoven fibrous poly(ε-caprolactone) constructs
+for antimicrobial and tissue engineering applications by pressurized melt
+gyration.’ Macromol. Mater. Eng. 301 (2016): 922–934.
+42. (a) Ahmad, Z.; Zhang, H. B.; Farook, U.; Edirisinghe, M.; Stride, E.; Colombo,
+P. ‘Generation of multilayered structures for biomedical applications using
+a novel tri-needle coaxial device and electrohydrodynamic flow.’ J. R. Soc.
+Interface. 5 (2008): 1255–1261; (b) Labbaf, S.; Deb, S.; Cama, G.; Stride,
+E.; Edirisinghe, M. ‘Preparation of multicompartment sub-micron particles
+using a triple-needle electrohydrodynamic device.’ J. Colloid Interface Sci.
+409 (2013): 245–254; (c) Labbaf, S.; Ghanbar, H.; Stride, E.; Edirisinghe,
+M. ‘Preparation of multilayered polymeric structures using a novel fourneedle coaxial electrohydrodynamic device.’ Macromol. Rapid Commun. 35
+(2014): 618–623.
+43. (a) Loscertales, I. G.; Barrero, A.; Guerrero, I.; Cortijo, R.; Marquez, M.;
+Ganan-Calvo, A. M. ‘Micro/nano encapsulation via electrified coaxial
+liquid jets.’ Science 295 (2002): 1695–1698; (b) Lopez-Herrera, J. M.
+‘Coaxial jets generated from electrified Taylor cones: Scaling laws.’ Aerosol
+Sci. 34 (2003): 535–552; (c) Chen, X.; Jia, L.; Yin, X.; Cheng, J.; Lu, J.
+‘Spraying modes in coaxial jet electrospray with outer driving liquid.’
+Phys. Fluids 17 (2005): 032101; (d) Mei, F.; Chen, D. R. ‘Investigation
+of compound jet electrospray: Particle encapsulation.’ Phys. Fluids 19
+(2007): 103303.
+44. Zamani, M.; Prabhakaran, M. P.; Ramakrishna, S. ‘Advances in drug delivery
+via electrospun and electrosprayed nanomaterials.’ Int. J. Nanomedicine 8
+(2013): 2997–3017.
+45. (a) Ciach, T. ‘Application of electro-hydro-dynamic atomization in drug
+delivery.’ J. Drug Del. Sci. Technol. 17 (2007): 367–375; (b) Yurteri, C.
+U.; Hartman, R. P. A.; Marijnissen, J. C. M. ‘Producing pharmaceutical particles via electrospraying with an emphasis on nano and nanostructured particles: A review.’ KONA Powder Part. J. 28 (2010): 91–115;
+(c) Jayasinghe, S. N.; Auguste, J.; Scotton, C. J. ‘Platform technologies for
+directly reconstructing 3D living biomaterials.’ Adv. Mater. 27 (2015): 7794–
+7799; (d) Bock, N.; Dargaville, T. R.; Woodruff, M. A. ‘Electrospraying of
+polymers with therapeutic molecules: State of the art.’ Prog. Polym. Sci. 37
+(2012): 1510–1551.
+46. Wang, F.; Li, Z.; Tamama, K.; Sen, C. K.; Guan, J. ‘Fabrication and characterization of prosurvival growth factor releasing, anisotropic scaffolds
+for enhanced mesenchymal stem cell survival/growth and orientation.’
+Biomacromolecules 10 (2009): 2609–2618.
+47. Zhu, W.; Masood, F.; O’Brien, J.; Zhang, L. G. ‘Highly aligned nanocomposite
+scaffolds by electrospinning and electrospraying for neural tissue regeneration.’ Nanomedicine 11 (2015): 693–704.
+48. Jaworek, A.; Krupa, A.; Lackowski, M.; Sobczyk, A. T.; Czech, T.;
+Ramakrishna, S.; Sundarrajan, S.; Pliszka, D. ‘Nanocomposite fabric formation by electrospinning and electrospraying technologies.’ J. Electrost.
+67 (2009): 435–438.
+49. Birajdar, M. S.; Lee, J. ‘Sonication-triggered zero-order release by uncorking
+core–shell nanofibers.’ Chem. Eng. J. 288 (2016): 1–8.
+50. Guarino, V.; Altobelli, R.; Cirillo, V.; Cummaro, A.; Ambrosio, L. ‘Additive
+electrospraying: A route to process electrospun scaffolds for controlled
+molecular release.’ Polym. Adv. Technol. 26 (2015): 1359–1369.
+51. Cheng, J.; Jun, Y.; Qin, J.; Lee, S. H. ‘Electrospinning versus microfluidic
+spinning of functional fibers for biomedical applications.’ Biomater. 114
+(2017): 121–143.
+52. Kang, E.; Jeong, G. S.; Choi, Y. Y.; Lee, K. H.; Khademhosseini, A.; Lee,
+S. H. ‘Digitally tunable physicochemical coding of material composition
+and topography in continuous microfibres.’ Nature Mater. 10 (2011):
+877–883.
+53. Chae, S.-K.; Kang, E.; Khademhosseini, A.; Lee, S.-H. ‘Micro/nanometerscale fiber with highly ordered structures by mimicking the spinning process of silkworm.’ Adv. Mater. 25 (2013): 3071–3078.
+54. Ahn, S. Y.; Mun, C. H.; Lee, S. H. ‘Microfluidic spinning of fibrous alginate
+carrier having highly enhanced drug loading capability and delayed release
+profile.’ RSC Adv. 5 (2015): 15172–15181.
+55. Sofokleous, P.; Stride, E.; Bonfield, W.; Edirisinghe, M. ‘Design, construction and performance of a portable handheld electrohydrodynamic
+multi-needle spray gun for biomedical applications.’ Mater. Sci. Eng. C 33
+(2013): 213–223.
+56. (a) Qin, C. C.; Duan, X. P.; Wang, L.; Zhang, L. H.; Yu, M.; Dong, R. H.;
+Yan, X.; He, H. W.; Long, Y. Z. ‘Melt electrospinning of poly(lactic acid)
+and polycaprolactone microfibers by using a hand-operated Wimshurst
+generator.’ Nanoscale 7 (2015): 16611–16615; (b) Xu, S. C.; Qin, C. C.;
+Yu, M.; Dong, R. H.; Yan, X.; Zhao, H.; Han, W. P.; Zhang, H. D.; Long,
+Y. Z. ‘A battery-operated portable handheld electrospinning apparatus.’ Nanoscale 7 (2015): 12351–12355; (c) Yan, X.; Yu, M.; Zhang, L.
+H.; Jia, X. S.; Li, J. T.; Duan, X. P.; Qin, C. C.; Dong, R. H.; Long, Y. Z.
+‘A portable electrospinning apparatus based on a small solar cell and
+a hand generator: Design, performance and application.’ Nanoscale 8
+(2016): 209–213.
+57. Mouthuy, P.-A.; Groszkowski, L.; Ye, H. ‘Performances of a portable
+electrospinning apparatus.’ Biotechnol. Lett. 37 (2015): 1107–1116.
+58. Haik, J.; Kornhaber, R.; Blal, B.; Harats, M. ‘The feasibility of a handheld
+electrospinning device for the application of nanofibrous wound dressings.’
+Adv. Wound Care 6 (2017): 166–174.
+59. Zhang, B.; Yan, X.; He, H.-W.; Yu, M.; Ning, X.; Long, Y.-Z. ‘Solventfree electrospinning: Opportunities and challenges.’ Polym. Chem. 8
+(2017): 333–352.
+60. Levit, N.; Tepper, G. ‘Supercritical CO2-assisted electrospinning.’ J.
+Supercrit. Fluids 31 (2004): 329–333.
+61. Deravi, L. F.; Sinatra, N. R.; Chantre, C. O.; Nesmith, A. P.; Yuan,
+H.; Deravi, S. K.; Goss, J. A.; MacQueen, L. A.; Badrossamy, M. R.;
+Gonzalez, G. M.; Phillips, M. D.; Parker, K. K. ‘Design and fabrication of
+fibrous nanomaterials using pull spinning.’ Macromol. Mater. Eng. 302a:(Geoffrey Ingram Taylor)
+(2017): 1600404
+
+/******************************************************************************/
+
+https://books.google.com.mx/books/about/Fundamentals_of_Fibre_Formation.html?id=eUGncGZ-QVwC&redir_esc=y
+
+https://royalsocietypublishing.org/doi/10.1098/rspa.1964.0151
+
+/******************************************************************************/
+
+Experimental study on jet impact speed in near-field electrospinning for precise patterning of nanofiber
+
+Accuracy Improvement of Nano-fiber Deposition by Near-Field Electrospinning
+
+Continuous near-field electrospinning for large area deposition of orderly nanofiber patterns
+
+Electrohydrodynamic Direct-Writing Micropatterns with Assisted Airflow
+
+Tethered Pyro-Electrohydrodynamic Spinning for Patterning Well-Ordered Structures at Micro-and Nanoscale
+
+Fabricated Wavy Micro/Nanofiber via Auxiliary Electrodes in Near-Field Electrospinning
+
+Additive manufacturing of scaffolds with sub-micron filaments via melt electrospinning writing Related content Patterned melt electrospun substrates for tissue engineering
+
+Controlled Continuous Patterning of Polymeric Nanofibers on Three-Dimensional Substrates Using Low-Voltage Near-Field Electrospinning
+
+Materials and Manufacturing Processes Continuously Tunable and Oriented Nanofiber Direct-Written by Mechano-Electrospinning Continuously Tunable and Oriented Nanofiber Direct-Written by Mechano-Electrospinning
+
+Precision deposition of a nanofibre by near-field electrospinning
+
+Patterned polydiacetylene-embedded polystyrene nanofibers based on electrohydrodynamic jet printing
+
+Polymer nanofibers prepared by low-voltage near-field electrospinning
+
+Fabrication of Patterned Nanofibrous Mats Using Direct-Write Electrospinning
+
+Study of the electrostatic jet initiation in near-field electrospinning
+
+A direct 3D suspension near-field electrospinning technique for the fabrication of polymer nanoarrays
+
+High-throughput and high-yield fabrication of uniaxially-aligned chitosan-based nanofibers by centrifugal electrospinning
+
+/******************************************************************************/
+
+https://app.knovel.com/web/toc.v/cid:kpYHTPPCC4/viewerType:toc//root_slug:yaws-handbook-thermodynamic/url_slug:yaws-handbook-thermodynamic?b-q=Yaws%27%20Handbook%20of%20Thermodynamic&sort_on=default&b-subscription=true&b-group-by=true&b-sort-on=default&b-
+
+/******************************************************************************/
+
+    scale = 6;
+    fig, axs = plt.subplots(1,3,figsize=(3*scale, 2*scale/3));
+    axs[0].plot(T_melt/u.K,P_melt/u.Pa, '-', linewidth=3, label='Solid-Liquid Boundary')
+    axs[0].scatter([T_trip/u.K],[P_trip/u.Pa],s=100, color='c', label='Triple Point')
+    axs[0].set_title('Solid-Liquid Boundary')
+    axs[0].ticklabel_format(style='sci', axis='both', scilimits=(0,0))
+    axs[1].plot(T_vap/u.K,(P_vap/u.Pa).to_base_units(), '-c', linewidth=3, label='Liquid-Gas Boundary')
+    axs[1].scatter([T_trip/u.K],[P_trip/u.Pa],s=100, color='c', label='Triple Point')
+    axs[1].scatter([T_crit/u.K],[P_crit/u.Pa],s=100, label='Critical Point')
+    axs[1].set_title('Liquid-Gas Boundary')
+    axs[1].ticklabel_format(style='sci', axis='both', scilimits=(0,0))
+    axs[2].plot(T_sub/u.K,P_sub/u.Pa, '-g', linewidth=3, label='Solid-Gas Boundary')
+    axs[2].scatter([T_trip/u.K],[P_trip/u.Pa],s=100, color='c', label='Triple Point')
+    axs[2].set_title('Solid-Gas Boundary')
+    axs[2].ticklabel_format(style='sci', axis='both', scilimits=(0,0))
+    display(plt);
+
+plt.annotate('solid', xy=(200,4e6), xycoords='data', fontsize=20, **pfont)
+plt.annotate('liquid', xy=(240,4e6), xycoords='data', fontsize=20, **pfont)
+plt.annotate('gas', xy=(240,0.5e6), xycoords='data', fontsize=20, **pfont)
+plt.xlim(900, 1400)
+plt.ylim(-1e9, 0.125e9)
+
+/******************************************************************************/
+
+Stolen, S., Grande, T., & Neil L., A. (2004). Chemical Thermodynamics of Materials - Macroscopic and Microscopic Aspects. (J. W. & S. Inc., Ed.). John Wiley & Sons Ltd.
+
+R. Gaskell, D., & E. Laughlin, D. (2018). Introcuction to the Thermodynamics of Materials. (C. Press, Ed.). Taylor & Francis Group.
+
+Mortimer G., R. (2013). Mathematics for Physical Chemistry. (A. P. of Elsevier, Ed.) (14th ed.). Amsterdam: British Library Cataloguing in Plublication Data.
+
+/******************************************************************************/
+
+# A Rpy2 Example
+
+'''
+data = robjects.r('read.table(file = "http://personality-project.org/r/datasets/R.appendix3.data", header = T)')
+
+afex = rpackages.importr('afex')
+#print(data.head())
+
+model = afex.aov_ez('Subject', 'Recall', data, within='Valence');
+#print(model)
+
+emmeans = rpackages.importr('emmeans', robject_translations = {'recover.data.call': 'recover_data_call1'})
+
+pairwise = emmeans.emmeans(model, 'Valence', contr='pairwise', adj='holm')
+#print(pairwise)
+'''
+
+'''
+graphics = robjects.packages.importr('graphics')
+
+with grdevices.render_to_bytesio(grdevices.jpeg, width=1024, height=896, res=150) as img:
+    graphics.barplot(IntVector((1, 2, 3, 4, 5)), tlab='Value')
+    
+#display(Image(data=img.getvalue(), format='jpeg', embed=True))
+
+##########
+
+datasets = robjects.packages.importr('datasets')
+mtcars = robjects.packages.data(datasets).fetch('mtcars')['mtcars']
+#print(mtcars.head())
+
+with grdevices.render_to_bytesio(grdevices.png, width=1024, height=896, res=150) as img:
+    gp = ggplot2.ggplot(mtcars)
+    pp = (
+        gp
+        + ggplot2.aes_string(x='wt', y='mpg')
+        + ggplot2.geom_point(ggplot2.aes_string(colour='qsec'))
+        + ggplot2.scale_colour_gradient(low='yellow', high='red')
+        + ggplot2.labs(title='Rpy2 ggplot2 MTCARS')
+        + ggplot2.theme_bw()
+    )
+pp.plot()
+#display(Image(data=img.getvalue(), format='png', embed=True))
+'''
+
+/******************************************************************************/
+
+sd_lines = LineCollection([
+    [[t, exp - sd], [t, exp + sd]]
+    for t, exp, sd in zip(t, nonpar_vals, sd_hat_vals)
+])
+
+plt.plot(t, par_vals, ':', linewidth=3, label='gamma model');
+plt.plot(t, nonpar_vals, '-', linewidth=3, label='Nonparametric fit ' + r'$\pm$' + ' 1 sd');
+
+/******************************************************************************/
+
+https://cran.r-project.org/web/checks/check_summary_by_maintainer.html#summary_by_maintainer
+
+/******************************************************************************/
+
+Research Group Nanotec
+
+Dora Iliana Medina Medina        <dora.medina@tec.mx>;
+                                 <hcruzm@cinvestav.mx>;
+Laura Catalina Duque Ossa        <A01747663@itesm.mx>;
+María Montserrat Segura López    <msegura@tec.mx>;
+Claudia Noemi Vargas Hernández   <claudianvh@tec.mx>;
+Diego Sebastián Ceciliano Franco <A01373414@itesm.mx>;
+Elvia Patricia Sánchez Rodríguez <elvia.sanchez@tec.mx>;
+Jesús Alberto Martínez Espinosa  <A01750270@itesm.mx>;
+Jose Ivan Aviles Castrillo       <A01749804@itesm.mx>;
+Juan Carlos Ortíz Herrera        <A01748940@itesm.mx>;
+Katya Michelle Aguilar Pérez     <A01750272@itesm.mx>;
+Nora Argelia Tafoya Medina       <nuorriael@itesm.mx>;
+Lindsay Sidney Hernández Muñoz   <lindsay.hdz@tec.mx>;
+Olimpia Basurto Vázquez          <A01099673@itesm.mx>;
+Gustavo Ruíz Pulido              <A01166117@itesm.mx>;
+
+/******************************************************************************/
+
+Av Lago de Guadalupe KM 3.5, Margarita Maza de Juárez, 52926 Cd López Mateos, Méx.
+
+Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
+
+/******************************************************************************/
+
+listado de contactos de pares académicos:::
+
+nombre:               Marc Madou
+universidad:          University of California
+puesto:               Chancellor's Professor
+correo institucional: mmadou@uci.edu
+áreas de interés:     Carbon-MEMS
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Plenary Lecturer
+
+nombre:               Satadal Saha
+universidad:          IIT Kharagpur
+puesto:               Professor, Project Director and Founder-Mentor
+correo institucional: drsatadal.saha@gmail.com; satadal.saha@smst.iitkgp.ac.in
+áreas de interés:     Health for the Billions
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Plenary Lecturer
+
+nombre:               Rodrigo Martínez
+universidad:          Clemson University
+puesto:               Associate Professor
+correo institucional: rofrigm@clemson.edu
+áreas de interés:     Carbon Manufacturing using Renewables
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Session Chair and Lecturer
+
+nombre:               Monsur Islam
+universidad:          Karlsruhe Institute of Technology
+puesto:               Post-doctoral Researcher
+correo institucional: monsur.islam@kit.edu
+áreas de interés:     Cellular Carbon Materials
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Lecturer
+
+nombre:               Babak Rezaei
+universidad:          DTU Nanolab Technical University of Denmark
+puesto:               Post-doctoral Researcher
+correo institucional: barez@dtu.dk
+áreas de interés:     3D Carbon Structures
+identificar si es un contacto potencial para invitarlo a contestar la encuesta de reputación de las rankeadoras de universidades: Eligible
+compartir recomendaciones para abordar al investigador e impresiones: 
+rol del investigador en el congreso: Lecturer
+
+/******************************************************************************/
+
+807796-100ML - CYRENE™ BIORENEWABLE
+GF31259527-1 - POLYBENZIMIDAZOLE, (PBI), ROD, DIAMETER&
+
+/******************************************************************************/
+
+http://llc.stat.purdue.edu/2018/41600/
+
+/******************************************************************************/
+
+# plot the ith posterior estimates
+r.assign("r_tg", tg);
+r.assign("r_result", result);
+gPost = robjects.r('sapply(seq_len(100), function(i) local({r_tg <- r_tg * r_result$P[i, ]; r_tg / sum(r_tg)}))');
+
+scale = 6;
+fig, ax = plt.subplots(figsize=(3*scale, 2*scale));
+
+# Plot
+#for i in np.linspace(0, 99, 20, dtype = int):
+#    plt.plot(tau, gPost[i], '-', linewidth=3);
+
+
+index = 90
+plt.plot(tau, gPost[index], '-', linewidth=3);
+maxgPost = max(gPost[index])
+for i in range(len(gPost[index])):
+    if gPost[index][i] == maxgPost:
+        print(tau[i])
+    
+# Display plots
+plt.yscale('linear');
+plt.xlabel(r'$\theta$', fontsize=24);
+plt.ylabel(r'$\hat{g}(\theta) \mp sd$', fontsize=24);
+plt.title('Figure 6.4', size=24);
+#plt.legend(prop={'size': 18});
+#plt.xlim(0,6);
+#plt.ylim(0,0.02);
+display(plt);
+
+/******************************************************************************/
+
+Lecture 19:
+In short (as seen in class), the poisson regression adopts the characteristics of other regression models, however the difference relays in the dependent variable. The dependent variable now follows a poisson distribution, meaning that the possible values are the positive integers only. As in logistic regression, poisson regression has a discrete response variable but its not limited to specific values.
+
+Lecture 20:
+As discussed during class, a regression tree is generated in an iterative process where the data is splitted (by thresholds t's) into two groups and then continues spliting each group into smaller groups. The purpose is to select the appropiate t that minimizes the variability of the data within aech new group.
+
+/******************************************************************************/
+
+Dortmund Data Bank
+http://www.ddbst.com/sitesearch.html
+
+/******************************************************************************/
+
+def cubicRegression(x_str, x_units, y_str, y_units, df, fig_name):
+    # PLOT FIG
+    scale = 6;
+    fig, ax = plt.subplots(figsize=(3*scale, 2*scale));
+
+    # sort values by the independent variable
+    df_x = df.sort_values(by=[x_str])
+    # remove NANs from both variables and store them
+    df_x = df_x.dropna(subset=[x_str, y_str])
+    x = df_x.iloc[:][x_str]
+    y = df_x.iloc[:][y_str]
+
+    # CUBIC REGRESSION
+    X = np.column_stack((x, x**2, x**3)); #for a cubic model
+    X = sm.add_constant(X); # the model needs an intercept so add a column of 1s
+    model = sm.OLS(y, X);
+    results = model.fit();
+
+    #display(model)
+
+    # Confidence Intervals
+    # create a summary table with all influence and outlier measures
+    st, data, ss2 = summary_table(results, alpha=0.05)
+
+    # Collect Stat. Info.
+    fittedvalues = data[:, 2]
+    #predict_mean_se  = data[:, 3]
+    predict_mean_ci_low, predict_mean_ci_upp = data[:, 4:6].T
+    predict_ci_low, predict_ci_upp = data[:, 6:8].T
+
+    # print result.params
+    parameters = '';
+    for i in range(len(results.params)):
+        new_param = '';
+        if results.params[i] < 0:
+            new_param = str(round(results.params[i],2))
+        else:
+            new_param = '+' + str(round(results.params[i],2))
+        
+        if i == 0:
+            parameters = parameters + ' ' + new_param
+        elif i == 1:
+            parameters = parameters + ' ' + new_param + 'x'
+        else:
+            parameters = parameters + ' ' + new_param + 'x^' + str(i) 
+
+    # Plot
+    ax.set(autoscale_on=True)
+    plt.plot(x, fittedvalues,        '-', color='olive',  linewidth=3, label='cubic regression: ' + parameters)
+    plt.plot(x, predict_ci_low,      ':', color='salmon', linewidth=3, label='prediction confidence interval - 95%')
+    plt.plot(x, predict_ci_upp,      ':', color='salmon', linewidth=3)
+    plt.plot(x, predict_mean_ci_low, ':', color='gold',   linewidth=3, label='mean confidence interval - 95%')
+    plt.plot(x, predict_mean_ci_upp, ':', color='gold',   linewidth=3)
+    plt.scatter(x, y, s=25, label='Raw data')
+    
+    ax.set(autoscale_on=False)
+    xx = np.linspace(min(x), max(x), 1000)
+    plt.plot(xx, results.params[0] + results.params[1]*xx + results.params[2]*xx**2 + results.params[3]*xx**3, '--', color='olive', linewidth=0.125);
+
+    # Display plots
+    plt.yscale('linear');
+    plt.xlabel(x_str + '    ' + x_units, fontsize=24);
+    plt.ylabel(y_str + '    ' + y_units, fontsize=24);
+    plt.title(fig_name, size=24);
+    plt.legend(prop={'size': 18});
+    plt.ticklabel_format(axis='both', style='sci', scilimits=(-2,2))
+    display(plt);
+
+/******************************************************************************/
+
+# PLOT FIG
+fig_name = 'Figure 1';
+x_str = 'appliedVoltage'; x_units = r'$[V]$';
+y_str = 'fiberDiameter'; y_units = r'$[nm]$';
+breakLim = [6000, 24900];
+
+# sort values by the independent variable
+df_x = df.sort_values(by=[x_str])
+# remove NANs from both variables and store them
+df_x = df_x.dropna(subset=[x_str, y_str])
+x = df_x.iloc[:][x_str]
+y = df_x.iloc[:][y_str]
+
+# If we were to simply plot pts, we'd lose most of the interesting
+# details due to the outliers. So let's 'break' or 'cut-out' the y-axis
+# into two portions - use the top (ax) for the outliers, and the bottom
+# (ax2) for the details of the majority of our data
+scale = 6;
+f, (ax, ax3) = plt.subplots(nrows=2, ncols=1, sharex=True, sharey=False, figsize=(3*scale, 2*scale))
+
+#fig3 = plt.figure(constrained_layout=True)
+#gs = fig3.add_gridspec(3, 3)
+#f3_ax1 = fig3.add_subplot(gs[0, :])
+
+# plot the same data on both axes
+ax.scatter(x,y)
+ax3.scatter(x,y)
+
+# zoom-in / limit the view to different portions of the data
+dy = (max(y)-min(y)) / (len(y)*10)
+ax.set_ylim(breakLim[1], max(y)+dy)  # TOP part
+ax3.set_ylim(min(y)-dy, breakLim[0])  # BOTTOM part
+
+# hide the spines between ax and ax2
+ax.spines['bottom'].set_visible(False)
+ax.xaxis.tick_top()
+ax.tick_params(top=False)  # don't put tick labels at the top
+
+ax3.spines['top'].set_visible(False)
+ax3.xaxis.tick_bottom()
+
+d = 0.0075  # how big to make the diagonal lines in axes coordinates
+# arguments to pass to plot, just so we don't keep repeating them
+kwargs = dict(transform=ax.transAxes, color='k', clip_on=False)
+ax.plot((-d, +d), (-d, +d), **kwargs)        # top-left diagonal
+ax.plot((1 - d, 1 + d), (-d, +d), **kwargs)  # top-right diagonal
+
+kwargs.update(transform=ax3.transAxes)  # switch to the bottom axes
+ax3.plot((-d, +d), (1 - d, 1 + d), **kwargs)  # bottom-left diagonal
+ax3.plot((1 - d, 1 + d), (1 - d, 1 + d), **kwargs)  # bottom-right diagonal
+
+# Vary the distance between ax and ax2 via f.subplots_adjust(hspace=...)
+f.subplots_adjust(hspace=0.075)
+
+# add a big axis, hide frame
+f.add_subplot(111, frameon=False)
+# hide tick and tick label of the big axis
+plt.tick_params(labelcolor='none', top=False, bottom=False, left=False, right=False)
+
+# Display plots
+plt.xlabel(x_str + '    ' + x_units, fontsize=24);
+ax.set_ylabel(y_str + '    ' + y_units, fontsize=24)
+ax.yaxis.set_label_coords(-0.06, 0)
+plt.title(fig_name, size=24);
+plt.show()
+
+cubicRegression(x_str, x_units, y_str, y_units, df, 'original: ' + fig_name)
+
+/******************************************************************************/
+
+Done!
+Thank you for confirming your email address!
+
+Your source code and 17-page Computer Vision and Deep Learning Resource Guide PDF has been emailed to you and should land in your inbox within a few minutes.
+
+/******************************************************************************/
+
+CHEMICAL COMPANY
+https://www.angus.com/
+
+/******************************************************************************/
+
+A,}JXJJHYy*pVeM6
+
+/******************************************************************************/
+
+When studing the interactions of several factors, the complexity of the experiemnts relays on the problem that the number of posible factor combinations can grow very fast with the increase of levels and factors. For example, if we consider 10 factors with 2 levels each, the number of posible experiments is 2^10 or 1024.
+
+In practice it is difficult (and often expensive) to perform all experiments within the same experimental conditions.
+
+So, the purpose of 2^p factorial experiments is to find which factors have a significant impact on the outcome. And by doing this we reduce the amount of experimental work by grouping such experiemnts in small blocks.
+
+/******************************************************************************/
+
+Solve[(8000 - 10 T + 8.3144` T (-Log[1 - s] + Log[s]))*(0 - 
+      s) + ((10*T - 8000)*(1 - s) + 
+     8.3144*T*((1 - s)*Log[1 - s] + s*Log[s])) == (12000 - 
+      20000 (1 - l) + 20000 l - 10 T + 
+      8.3144` T (-Log[1 - l] + Log[l]))*(l) + ((12000 - 10*T)*l + 
+     8.3144*T*((1 - l)*Log[1 - l] + l*Log[l]) - 20000*l*(1 - l)), {s, 
+  l}]
+
+/******************************************************************************/
+
+442 658 4907
+
+/******************************************************************************/
+
+*CHOPO*
+Sucursal: 5 DE FEBRERO
+Dirección: 5 DE FEBRERO NO. 1303.COL.ZONA INDUSTRIAL CARRILLO PUERTO, SANTIAGO DE QUERÉTARO
+Horario general: Lunes a viernes de 7:00 a 19:00 y sábado de 7:00 a 15:00
+Teléfono: 55 1104 4888
+
+*VIDA CARE*
+Dirección: Circuito, Del Mesón 100, El prado, 76039 Santiago de Querétaro, Qro.
+Horario: Lunes a sábado de 7:00 a 20:00 y domingo de 7:00 a 14:00
+Teléfono: 442 242 2990
+
+*QUERÉTARO STAR MEDICAL HOSPITAL*
+Dirección: Blvd. Bernardo Quintana Arrioja 4060, San Pablo, 76125 Santiago de Querétaro, Qro.
+Horario: abierto todo el día
+Teléfono: 442 427 8000
+
+/******************************************************************************/
+
+\begin{multicols}{2}
+
+
+\pagebreak
+
+\end{multicols}
+
+/******************************************************************************/
+
+plotName  = "PS wt% in THF";
+fileNames = [
+    "./csv/ps_thf_01_3.csv",
+    "./csv/ps_thf_01_4.csv"
+];
+fileDescription = [
+    "35.583 wt%",
+    "39.941 wt%"
+];
+headDrops = [0, 0];
+tailDrops = [0, 0];
+a = [9, 2];
+
+# Plot all files in one plot
+compareData_(plotName, fileNames, headDrops, tailDrops, fileDescription)
+
+# Fit the GNF model to each file
+for i in range(len(fileNames)):
+    fit_GNF_(fileNames[i], headDrops[i], tailDrops[i], fileDescription[i] + " - " + fileNames[i],  a[i])
+
+/******************************************************************************/
+
+Invitacion_Misa_Susumu_y_Tomiko.pdf:
+https://www.dropbox.com/s/2aoey0k5v4wivrf/Invitacion_Misa_Susumu_y_Tomiko.pdf?dl=0
+
+Parroquia San Juan Bautista:
+https://goo.gl/maps/a2wsnEvuBHhwBHdQA
+
+Fonda El Morral:
+https://goo.gl/maps/U4wPvVRpNbQEHJKCA
+
+/******************************************************************************/
+
+14-823-434
+https://www.fishersci.com/us/en/catalog/search/products?keyword=14-823-434
+
+14-820-16
+https://www.fishersci.com/us/en/catalog/search/products?keyword=BD+Reusable+Yale%E2%84%A2+Tuberculin+Syringes
+
+/******************************************************************************/
+
+Remitente
+Nombre: Antonio Osamu Katagiri Tanaka <A01212611@itesm.mx>
+Dirección: Tec de Monterrey Campus Monterrey
+Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
+
+Destinatario
+Nombre: Yessica Díaz Mora <ydiaz@tec.mx>
+Dirección: Tec de Monterrey Campus Estado de México. 
+Av Lago de Guadalupe KM 3.5, Margarita Maza de Juárez, 52926 Cd López Mateos, Méx.
+Edificio: Departamento de Matemáticas - Aulas 1 - planta baja
+
+/******************************************************************************/
+
+Remitente
+Nombre: Antonio Osamu Katagiri Tanaka <A01212611@itesm.mx>
+Dirección: Tec de Monterrey Campus Estado de México.
+Av Lago de Guadalupe KM 3.5, Margarita Maza de Juárez, 52926 Cd López Mateos, Méx.
+ 
+Destinatario
+Nombre: Héctor Alán Aguirre Soto <alan.aguirre@tec.mx>
+Dirección: Tec de Monterrey Campus Monterrey. 
+Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
+Edificio: A4 - 222D
 
 /******************************************************************************/
 

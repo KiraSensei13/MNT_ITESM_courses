@@ -1,0 +1,22 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Problem 1 instructions.}}{4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2}{\ignorespaces Taylor series until the 6th term of Function 1.}}{4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3}{\ignorespaces Taylor series until the 6th term of Function 2.}}{5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4}{\ignorespaces Listing \ref {lst:taylorPtFuncts1and2} output; $ f(x) = Sin(x) $ approximations, centered in 0.}}{7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5}{\ignorespaces Listing \ref {lst:taylorPtFuncts1and2} output; $ f(x) = e^{ix} $ approximations, centered in 1.}}{7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6}{\ignorespaces Problem 2 instructions.}}{8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7}{\ignorespaces Listing \ref {lst:riemannFunct4} output; $ \DOTSI \intop \ilimits@ _{-2}^{2} e^{x+x^2} \ dx $.}}{10}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8}{\ignorespaces Problem 3 instructions.}}{11}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9}{\ignorespaces Problem 4 instructions.}}{14}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {10}{\ignorespaces Listing \ref {lst:derivative} output.}}{16}% 

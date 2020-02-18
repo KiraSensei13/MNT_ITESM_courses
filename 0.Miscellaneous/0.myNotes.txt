@@ -1,0 +1,9 @@
+CLAUSTRO DE PROFESORES: Micro y Nanosistemas
+
+Ciro Angel Rodríguez González <ciro.rodriguez@tec.mx>; C. Monterrey
+Sergio Omar Martínez Chapa    <smart@tec.mx>;          C. Monterrey
+Hyundoo Hwang                 <hwang@itesm.mx>;        ENCIT
+Israel De León Arizpe         <ideleon@tec.mx>;        C. Monterrey
+Roberto Parra Saldivar        <r.parra@tec.mx>;        C. Monterrey
+Víctor Hugo Pérez González    <vhpg@tec.mx>;           C. Monterrey
+

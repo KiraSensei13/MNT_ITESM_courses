@@ -1,0 +1,1246 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% writeLaTeX Example: A quick guide to LaTeX
+%
+% Source: Dave Richeson (divisbyzero.com), Dickinson College
+% 
+% A one-size-fits-all LaTeX cheat sheet. Kept to two pages, so it 
+% can be printed (double-sided) on one piece of paper
+% 
+% Feel free to distribute this example, but please keep the referral
+% to divisbyzero.com
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage{slashbox}
+
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+% -----------------------------------------------------------------------
+
+\title{Quick Guide to LaTeX}
+
+\begin{document}
+
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{Algorithms, Evidence, and Data Science Cookbook}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% -----------------------------------------------------------------------
+\section{Part I: Classic Statistical Inference} % -----------------------
+% -----------------------------------------------------------------------
+
+* \textbf{Population:} the entire group
+
+* \textbf{Sample:} a subset of the population
+
+* \textbf{Mean:} 
+$\mu$ is the mean of the population; $\bar{x}$ is the mean of the sample
+$$ \frac{1}{n} \underset{i=1}{\overset{n}{\sum}}x_i $$
+
+* \textbf{Variance:} the dispersion around the mean
+\begin{multicols}{2}
+Variance of a population:
+$$ \sigma^2 = \frac{1}{n} \underset{i=1}{\overset{n}{\sum}} {\left(x_i - \mu \right)}^2 $$
+
+\pagebreak 
+Variance of a sample:
+$$ s^2 = \frac{1}{n} \underset{i=1}{\overset{n}{\sum}} {\left(x_i - \bar{x} \right)}^2 $$
+\end{multicols}
+
+* \textbf{Standard Deviation:} square root of the variance
+
+* \textbf{Standard Error:} an estimate of the standard deviation of the sampling distribution
+\begin{multicols}{2}
+For a mean:
+$$ se(\bar{x}) = \sqrt{\frac{s^2}{n}} $$
+
+\pagebreak 
+For the difference between two means:
+$$ se(\bar{x_1}, \bar{x_2}) = \sqrt{\frac{{s_1}^2}{n_1} + \frac{{s_2}^2}{n_2}} $$
+\end{multicols}
+
+% -----------------------------------------------------------------------
+\subsection{Algorithms and Inference} % -------------------------------
+
+* \textbf{Algorithm:} set of data probability-steps to produce an estimator \\
+* \textbf{Inference:} measuring the uncertainty around the estimator \\
+
+\emph{e.g.:} $\bar{x}$ the algorithm, while $se(\bar{x})$ is the inference 
+
+% -----------------------------------------------------------------------
+\subsubsection{A Regression Example}
+
+\subsubsection{Linear Regression}
+any regression is a conditional mean $\hat{Y_i} = E(Y_i|X_i)$ \\
+* $Y:$ response variable \\
+* $X:$ covariate/predictor/feature \\
+* $\hat{\beta_0}, \hat{\beta_1}:$ regression coefficients \\
+\begin{multicols}{2}
+$$ \hat{\beta_0} = \hat{Y} - \hat{\beta_1} \hat{X} $$
+$$ se(\hat{\beta_0}) = \hat{\sigma}^2 \left[\frac{1}{n} + \frac{\bar{x}^2}{\underset{i=1}{\overset{n}{\sum }}(X_i - \bar{X})^2}\right] $$
+
+\pagebreak 
+$$ \hat{\beta_1} = \frac{\underset{i=1}{\overset{n}{\sum }}(X_i - \bar{X})(Y_i - \bar{Y})}{\underset{i=1}{\overset{n}{\sum }}(X_i - \bar{X})^2} $$
+$$ se(\hat{\beta_1}) = \frac{{\hat{\sigma}}^2}{\underset{i=1}{\overset{n}{\sum }}(X_i - \bar{X})^2} $$
+\end{multicols}
+* predicted values = fitted curve given $x$:
+$$\hat{Y}(x) = \hat{\beta_0} + \hat{\beta_1} x$$
+* residuals $\hat{\epsilon}$:
+$$ \hat{\epsilon}_i = Y_i - \hat{Y_i} = Y_i - \hat{\beta_0} + \beta_1 X_i $$
+* residual sum of squares $RSS$
+$$ RSS(\hat{\beta_0}, \hat{\beta_1}) = \underset{i=1}{\overset{n}{\sum }}\hat{\epsilon_i}^2 $$
+* mean square error $\hat{\sigma}^2$
+$$ \hat{\sigma}^2 = \frac{RSS(\hat{\beta_0}, \hat{\beta_1})}{n - 2} $$
+
+\subsubsection{LOWESS \& LOESS}
+* 1) specify the number of points within the range/window $n$ \\
+* 2) neighbour weightings $w(x_k)$
+\begin{multicols}{2}
+$$ w(x_k) = {\left(1 - {\left|\frac{x_i - x_k}{d}\right|}^{3}\right)}^{3} $$
+
+\pagebreak 
+$for k = 1, ..., n$ \\
+$d$ is the distance between $x_i$ and the $k^{th}$ neighbouring point
+\end{multicols}
+* 3) for each range, estimate a regression function \\
+LOWESS: $\hat{y_k} = a + b x_k$ \\
+LOESS: $\hat{y_k} = a + b x_k + c {x_k}^2 $ \\
+* 4) robust weightings $G(x_k)$
+$$
+G(x_k) = \begin{cases} \left(1 - \left(\frac{\left|y_i - \hat{y_i}\right|}{6 median(\left|y_i - \hat{y_i}\right|)}\right)^2\right)^2, & \left|\frac{\left|y_i - \hat{y_i}\right|}{6 median(\left|y_i - \hat{y_i}\right|)}\right| < 1 \\ 0, & \left|\frac{\left|y_i - \hat{y_i}\right|}{6 median(\left|y_i - \hat{y_i}\right|)}\right| \geq 1 \end{cases}
+$$
+
+LOWESS: $\hat{y_k} = \underset{k}{\overset{}{\sum}} w(x_k) G(x_k) (a + b x_k)^2$ \\
+LOESS: $\hat{y_k} = \underset{k}{\overset{}{\sum}} w(x_k) G(x_k) (a + b x_k + c {x_k}^2)^2$ \\
+* 5) A series of new smoothed values is the result. The procedure can be repeated to get a more precise curve fitting.
+
+\subsubsection{Bootstrapping}
+* bootstrap principle: $\sigma_{(\text{sampling w/replacemnt})} = \sigma_{(\text{across samples})}$ \\
+* bootstrap iterations: $B$ \\
+* original sample: $(x_i, y_i)_{i = 1}^{N}$ \\
+* bootstrap samples: $(x_{j(b)}, y_{j(b)})_{j \epsilon I}$ for $b = 1, ..., B$, $I = \{1, ..., N\}$, and $j$ is the index that is randomly sampled from I \\
+* for each b, compute $\hat{y_{j(b)}}$ using LOWESS or any other model
+
+\begin{center}
+\begin{tabular}{ |cccccc| }
+\hline
+\backslashbox{j}{b} & 1 & 2 & 3 & $\cdots$ & $B$ \\
+
+1 & $\bar{\hat{y_{1(1)}}}$ & $\bar{\hat{y_{1(2)}}}$ & $\bar{\hat{y_{1(3)}}}$ & $\cdots$ & $\bar{\hat{y_{1(B)}}}$ \\
+
+2 & $\bar{\hat{y_{2(1)}}}$ & $\bar{\hat{y_{2(2)}}}$ & $\bar{\hat{y_{2(3)}}}$ & $\cdots$ & $\bar{\hat{y_{2(B)}}}$ \\
+
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ \\
+
+$N$ & $\bar{\hat{y_{N(1)}}}$ & $\bar{\hat{y_{N(2)}}}$ & $\bar{\hat{y_{N(3)}}}$ & $\cdots$ & $\bar{\hat{y_{N(B)}}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+* for each $j$ row, the standard deviation $\sigma_{j}^{boot}$ is \\
+$$ \sigma_{j}^{boot} = \sqrt{\frac{(\bar{\hat{y_j}} - \bar{\bar{\hat{y_j}}})^2}{B - 1}} $$
+* sort $\bar{\hat{i(b)}}$ by value from min to max $\rightarrow$ get the $5^{th}$ and $95^{th}$ values to get a $90\%$ confidence interval
+
+% -----------------------------------------------------------------------
+\subsubsection{Hypothesis Testing}
+
+\subsection{T-test, one-sample}
+* null hypothesis $H_o : \mu = \mu_0$ \\
+* alternative hypothesis $H_a : \mu \{=, > or <\} \mu_0$ \\
+* $t-statistic t$ standarices the difference between $\bar{x}$ and $\mu_0$
+$$ t = \frac{\bar{x} - \mu_0}{se(\bar{x})} $$
+degrees of freedom $df = n - 1$ \\
+* $p-value$: probability that $\bar{x}$ was obtained by chance given $\mu_0 = \mu$. \\
+* \textbf{algorithm:} read the t-distribution critical values (chart) for the $p-value$ using $t$ and $df$ \\
+if($p-value < \alpha$)\{ reject $H_o$ and accept $H_a$ \} \\
+else \{ can't reject $H_o$ \} \\
+* $\alpha$ is the predetermined value of significance (usually 0.05) \\
+* if($t$ is of the 'wrong' sign){$p-value = 1 - {p-value}_{chart}$}
+
+\subsection{paired two-sample t-test}
+each value of one group corresponds to a value in the other group\\
+* \textbf{algorithm:} subtract the values for each sample to get one set of values and use $\mu_0$ to perform a one-sample t-test\\
+
+\subsection{unpaired two-sample t-test}
+the two populations are independent \\
+* $H_o : \mu_1 = \mu_2$ \\
+* $H_a : \mu_1 \{=, > or <\} \mu_2$ \\
+* $t-statistic t$
+$$ t = \frac{\bar{x_1} - \bar{x_2}}{se(\bar{x_1}, \bar{x_2})} $$
+degrees of freedom $df = (n_1 - 1) + (n_2 - 1)$ \\
+* \textbf{algorithm:} same as in one-sample t-test \\
+* double the $p-value$ for $H_a : \mu_1 \neq \mu_2$ \\
+
+\medskip 
+* \textbf{Type I error $\alpha$:} probability of rejecting a true $H_o$ \\
+* \textbf{Type II error $\beta$:} probability of failing to reject a false $H_o$ \\
+
+% -----------------------------------------------------------------------
+\subsubsection{Notes}
+
+* the OLS confidence intervals work asymptotically $\rightarrow$ they assume the number of available observations is infinite, but it assumes normality \\
+* in LOWESS, $n$ is not infinite, but it does not assume any distribution
+
+% -----------------------------------------------------------------------
+\subsection{Frequentist Inference} % ------------------------------------
+
+* assumes the observed data comes from a probability distribution $F$\\
+* $x = (x_1, ..., x_n)$ is the data vector (aka. \emph{the sample's values}) \\
+* $X = (X_1, ..., X_n)$ is the vector of random variables (aka. \emph{a sample, individual draws of $F$}) \\
+* the expectation property $\theta = E_F(X_i)$ (aka. the true expectation value of any draw $X_i$) \\
+* $\hat{\theta}$ is the best estimate of $\theta$
+\begin{multicols}{2}
+$$ \hat{\theta} = t(x) $$
+
+\pagebreak 
+usually,
+$$ t(x) = \bar{x} $$
+where $t(x)$ is the algorithm
+\end{multicols}
+* $\hat{\theta}$ is sample specific, is a realization of $\hat{\Theta} = t(x)$. Typically,
+\begin{multicols}{2}
+$$ E_F(\hat{\Theta}) = \mu $$
+
+\pagebreak 
+$\mu$ is the expected value of producing an estimate using $t(x)$ when $x$ comes from $F$
+\end{multicols}
+* \textbf{Bias-Variance Trade-Off:} models with lower bias will have higher variance and vice versa. \\
+* \textbf{Bias:} error from incorrect assumptions to make target function easier to learn (high bias $\rightarrow$ missing relevant relations or under-fitting)\\
+* \textbf{Variance:} error from sensitivity to fluctuations in
+the dataset, or how much the target estimate would
+differ if different training data was used (high variance $\rightarrow$ modelling noise or over-fitting)
+\begin{multicols}{2}
+$$ bias = \mu - \theta$$
+(aka. $expected - true values$)
+
+\pagebreak 
+$$ var = E_F\{(\hat{\Theta} - \mu)^2\} $$
+\end{multicols}
+
+\subsubsection{Frequentist principles}
+* usually defines parameters with infinite sequence of trials $\rightarrow$ hypothetical data sets $X^{(1)}, X^{(2)}, \hdots$ generate infinite samples ${\hat{\Theta}}^{(1)}, {\hat{\Theta}}^{(2)}, \hdots$ \\
+* 1) Plug-in principle: relate the sample $se(\bar{x})$ with the true variance.
+$$ {var}_F(x) = \hat{{var}_F} = \frac{1}{n - 1} \underset{i=1}{\overset{n}{\sum}} {\left(x_i - \bar{x} \right)^2} $$
+$$ se(\bar{x}) = \left[\frac{{var}_F(x)}{n}\right]^{\frac{1}{2}} $$
+* 2) Taylor series approximations: relate $t(x)$ by local linear approximations (aka. compute $\bar{se}(x)$ of the transformed estimator)
+$$ se(\hat{\theta}) = se(\bar{x}) \frac{d \hat{\theta}}{d \bar{x}} = se(\bar{x}) \frac{d t(x)}{d \bar{x}} $$
+* 3.1) Parametric Families: given $x = (x_1, ..., x_n)$, the Likelihood Function $L(x)$ (aka. the probability to observe x) is given by: \\
+\emph{e.g.} $\hat{\theta} = \mu$ for a normal distribution
+$$ P(x | N(\mu, \sigma^2)) = P(x_1 | N(\mu, \sigma^2)) ... P(x_n | N(\mu, \sigma^2)) $$
+$$ P(x | N(\mu, \sigma^2)) = \left(\frac{1}{\sqrt{2 \pi \sigma^2}}\right)^n  \prod _{1=1}^n e^{-\frac{(x_i - \mu)^2}{2 \sigma^2}} = L(x)$$
+$$ L(x) = \prod _{1=1}^n f_{\theta}(x_i) $$
+where $f_{\theta}$ is the density function \\
+* 3.2) MLE (maximum likelihood estimate): find $\hat{\theta}$ such that $L(x)$ is maximized \\
+\emph{e.g.}
+$$ \overset{\max}{\hat{\theta}} L(x) \Rightarrow \overset{\max}{\mu} L(x) = \hat{\mu}^{MLE}$$
+* 4) Simulation and Bootstrap: estimate $F$ as $\hat{F}$, then simulate values from $\hat{F}$ to get a prior sample $\hat{\Theta}^{(k)} = t(x^{(b)})$ \\
+The empirical standard deviation of the $\hat{\Theta}'s$ is the frequentist estimate for $se(\hat{\theta})$ \\
+* 5) Pivotal Statistics: Frequentist use pivotal statistics whenever they are available to conduct stat. tests \\
+\emph{e.g.} t-test is a pivotal statistic as it does not depend on parameters the distribution might have.
+
+% -----------------------------------------------------------------------
+\subsubsection{Frequentist Optimality}
+
+Neyman-Pearson lemma optimum hypothesis-testing algorithm: \\
+purpose: choose one of the two possible density functions for observed data $x$ \\
+* null hypothesis density $f_0(x)$ \\
+* alternative density $f_1(x)$ \\
+let $L(x)$ be the Likelihood Ratio
+$$ L(X) = \frac{f_1(X)}{f_0(X)} $$
+let the testing rule $t_c{x}$ be:
+$$
+t_c{x} = \begin{cases} 1(pic f_1(x)), & ln(L(X)) \geq c \\ 0(pic f_0(x)), & ln(L(X)) < c \end{cases}
+$$
+* only rules in the $t_c{x}$ form can be optimal
+\emph{problem Steps} \\
+* 1) define the density functions $f_0(x_i)$ and $f_1(x_i)$ for $f_0(x)$ and $f_1(x)$ \\
+\emph{e.g.}
+\begin{multicols}{2}
+$$ f_0 \sim N(\mu_0,{\sigma^2}_0) $$
+$$ f_0 \sim N(0,1) $$
+$$ f_0(x_i) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{{x_i}^2}{2}} $$
+
+\pagebreak 
+$$ f_1 \sim N(\mu_1,{\sigma^2}_1) $$
+$$ f_1 \sim N(0.5,1) $$
+$$ f_1(x_i) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{{x_i - 0.5}^2}{2}} $$
+\end{multicols}
+* 2) calculate the likelihood functions $f_0(X)$ and $f_1(X)$ \\
+\emph{e.g.}
+$$ f_0(X) = \left[\frac{1}{\sqrt{2 \pi}}\right]^n e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} {x_i}^2} $$
+$$ f_1(X) = \left[\frac{1}{\sqrt{2 \pi}}\right]^n e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} ((x_i - 0.5)^2)} $$
+* 3) calculate the likelihood ratio \\
+\emph{e.g.}
+$$ L(X) = \frac{e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum} ((x_i - 0.5)^2})}}{e^{-\frac{1}{2} \underset{i=1}{\overset{n}{\sum} {x_i}^2}}} $$
+$$ L(X) = e^{-\frac{1}{2} \left[n \bar{x} - \frac{n}{4}\right]} $$
+* 4) remove all independent variables
+\emph{e.g.} \\
+\begin{multicols}{2}
+$$ L(X) > c \Rightarrow $$
+only the mean depends on the sample $x$
+
+\pagebreak 
+$$ e^{-\frac{1}{2} \left[n \bar{x} - \frac{n}{4}\right]} > c_1 $$
+$$ -\frac{1}{2} \left[n \bar{x} - \frac{n}{4}\right] > C_2 $$
+$$ n \bar{x} - \frac{n}{4} > c_3 $$
+$$ \bar{x} > c_4 $$
+$$ \bar{x} > c $$
+\end{multicols}
+* 5) the \emph{most powerful} hypothesis test at any type I error rate $\alpha$ is to compare $c$ to a constant. \\
+\emph{e.g.} \\
+$$ \alpha = P(\bar{x} > c | \mu = \mu_0) $$
+$$ \alpha = P((\bar{x} - \mu)\sqrt{n} > (c - \mu)\sqrt{n} | \mu = 0) $$
+$$ \alpha = 1 - P(\bar{x}\sqrt{n} \leq c\sqrt{n} | \mu = 0) $$
+$$ \alpha = 1 - \Phi(c\sqrt{n}) $$
+$\Phi$ is the cumulative density function (CDF) of a normal distribution $N(\mu_0,{\sigma^2}_0)$ \\
+
+* 6) calculate $c$
+\begin{multicols}{2}
+\emph{e.g.}
+$$ \Phi(c \sqrt{n}) = 1 - \alpha $$
+$$ c \sqrt{n} = \Phi^{-1}(1 - \alpha) $$
+$$ c = 0 + \frac{1}{\sqrt{n}} \Phi^{-1}(1 - \alpha) $$
+
+\pagebreak 
+In general:\\
+$$ c = \mu_0 + \frac{1}{\sqrt{n}} \Phi^{-1}(1 - \alpha) $$
+\end{multicols}
+* 7) calculate $\beta$, such that it's minimized \\
+\emph{e.g.} \\
+$$ \beta = P(\bar{x} \leq c | \mu = \mu_1) $$
+$$ \beta = P((\bar{x} - \mu) \sqrt{n} \leq (c - \mu) \sqrt{n} | \mu = 0.5) $$
+$$ \beta = \Phi ((c - 0.5) \sqrt{n} ) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Notes and Details} 
+* $1 - \beta$ is the power of the hypothesis test (probability of correctly rejecting $f_0(x)$
+
+% -----------------------------------------------------------------------
+\subsection{Bayesian Inference} % ---------------------------------------
+
+\subsubsection{Bayes Rule}
+$$ P(A|B) = \frac{P(B|A)P(A)}{P(B)} $$
+
+* Bayes Rule (for one $\mu$) can be written as:
+\begin{multicols}{2}
+$$ g(\mu | x) = c_x L_x(\mu) \Pi(\mu) $$
+
+\pagebreak 
+where: \\
+$\mu:$ an unobserved point in the parameter space $\Omega$ \\
+$x:$ a point in the sample space $X$ \\
+$c_x:$ normalization constant of the posterior distribution \\
+$g(\mu | x):$ posterior distribution
+$L_x(\mu):$ likelihood function
+$\Pi(\mu):$ prior distribution
+\end{multicols}
+* Bayes Rule (for two $\mu_1$, $\mu_2$) can be written as:
+\begin{multicols}{2}
+$$ \frac{g(\mu_1 | x)}{g(\mu_2 | x)} = \frac{g(\mu_1)}{g(\mu_2)} \frac{L_x(\mu_1)}{L_x(\mu_2)} $$
+
+\pagebreak 
+The posterior odds ratio is the prior odds ratio times the likelihood ratio
+\end{multicols}
+
+$$ L_x(\mu) = \prod _{i=1}^n e^{-\frac{1}{2}(x_i - \mu)^2} $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Warm-up example}
+\emph{e.g.} Find the probability of identical twins. The doctor says that $\frac{1}{3}$ of twin births are identical. A sonogram observed same sex. identical twins are of the same sex, while fraternals have 0.5 probability to be of the same sex.
+
+$$ \frac{g(identical | sameSex)}{g(fraternal | sameSex)} = \frac{g(identical)}{g(fraternal)} \times \frac{L_{identical}(sameSex)}{L_{fraternal}(sameSex)} $$
+$$ \frac{g(identical | sameSex)}{g(fraternal | sameSex)} = \frac{\frac{1}{3}}{1 - \frac{1}{3}} \times \frac{1}{\frac{1}{2}} $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Flaws in Frequentist Inference}
+
+* In Frequentist, if the algorith changes (even if the data points stay exactly the same), the significance level is different for each algorithm.
+
+* On Bayesian inference, the algorithm stays the same $\rightarrow$ the significance level does not change.
+
+% -----------------------------------------------------------------------
+\subsubsection{A Bayesian/Frequentist Comparison List}
+\begin{multicols}{2}
+\textbf{Bayesian:}
+
+* attention is in choosing an algorithm $t(x)$
+
+* operates only in one sample with the whole parameter space
+
+* answers all posible questions at once, since the posterior is a distribution
+
+\pagebreak 
+\textbf{Frequentist:}
+
+* attention is in choosing a prior $\Pi$
+
+* operates with one parameter (specific question) in many samples
+
+* only computes the expected value and the variance (each answer requires an specific algorithm)
+
+* is more flexible than Bayes as we can come up with many algorithms
+\end{multicols}
+
+% -----------------------------------------------------------------------
+\subsubsection{Bayesian Reasoning - estimate $\mu$ from $x$ if $\mu \sim N(m, A)$}
+
+normal likelihood function (assume a variance of $1$): $$ x|\mu \sim N(\mu, 1) $$
+the normal posterior: $$ \mu|x \sim N(m + B(x - m), B) $$
+where $B = \frac{A = \text{prior variance}}{A + 1 = \text{total variance}}$, $m = \text{prior parameter}$
+therefore: $$ \hat{\mu}^{Bayes} = m + B(x - m) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Notes and Details}
+
+* like in frequentist, the fundamental unit of inference is a family of probability densities.
+
+* Bayesian inferences assumes the knowledge of a prior density $g(\mu), \mu \epsilon \Omega$
+
+% -----------------------------------------------------------------------
+\subsection{Fisherian Inference and Maximum Likelihood Estimation} % ----
+
+* The log-likelihood function is defined as:
+\begin{multicols}{2}
+$$ \ell_x(\theta) = Log\{f_{\theta}(x)\} $$
+for a fixed $x$ and a variable $\theta$
+
+\pagebreak 
+$\ell_x(\theta):$ gets the most likely parameters to get the sample $x$
+$f_{\theta}(x):$ likelihood function (aka. family probability densities)
+$\theta:$ vector of parameters
+\end{multicols}
+
+* The $MLE$ is the value of $\theta \epsilon \Omega$ that maximizes $\ell_x(\theta)$
+$$ MLE:\hat{\theta} = \overset{argmax}{\theta \epsilon \Omega}\{\ell_x(\theta)\}$$
+
+* Estimate functions of the true parameter: $\hat{\gamma} = T(\hat{\theta})$
+
+* Good frequentist properties (good bias \& variance):
+\begin{multicols}{2}
+$$bias = \mu - E(\hat{\mu})$$
+$\mu:$ true value of the parameter \\
+$E(\hat{\mu}):$ expected value of the estimate
+
+\pagebreak 
+$$variance = \underset{i=1}{\overset{I}{\sum}} ({\hat{\mu}}^{(i)} - E(\hat{\mu}))^2$$
+$$variance = E_F\{({\hat{\mu}}^{(i)} - E(\hat{\mu}))^2\}$$
+\end{multicols}
+
+* Reasonable Bayesian justification
+\begin{multicols}{2}
+$$ P(\theta | x) = c_x \Pi(\theta) e^{\ell_x(\theta)} $$
+
+\pagebreak 
+$P(\theta | x):$ posterior \\
+$c_x:$ constant \\
+$\Pi(\theta):$ prior \\
+$e^{\ell_x(\theta)}:$ maximum likelihood estimation
+\end{multicols}
+
+* Fisherian inference assumes a flat prior (aka. unknown prior), so that the MLE $\hat{\theta}^{MLE}$ is a maximizer of $P(\theta | x)$. (The MLE is the highest point of the posterior distribution)
+
+* As the algorithm does not change, the significance level is not affected by unexpected changes in the algorithm.
+
+\medskip 
+\emph{e.g.} - for a Normal density function\\
+* let $\theta = (\mu, \sigma^2)$ \\
+* density function $f_{\theta} = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{1}{2} \left(\frac{x_i - \mu}{\sigma}\right)^2}$
+* Since: $L(x) = \prod _{1=1}^n f_{\theta}(x_i)$
+Log-Likelihood function $\ell_x(\theta) = \underset{i=1}{\overset{n}{\sum}} Log\{f_{\theta}(x_i)\} = \underset{i=1}{\overset{I}{\sum}} \ell_x(\theta)$
+$$ \hat{\mu^{MLE}} = \bar{x} $$
+$$ \sigma^{MLE} = \sqrt{\frac{\underset{i=1}{\overset{n}{\sum}} (x_i - \bar{x})^2}{n}} $$
+
+* MLE can cause over-fitting identification problems when we fit a lot of parameters in $\theta$ (it would become very specific to our sample $\rightarrow$ may not represent the population)
+% -----------------------------------------------------------------------
+\subsubsection{Fisher Information and the MLE}
+
+Log-Likelihood Function
+$$ \ell_x(\theta) = Log f_{\theta}(x) $$
+
+Score Function \\
+how higher or lower is the likelihood function value of the sample as $\theta$ varies?
+$$ \dot{\ell}_x(\theta) = \frac{\dot{f_{\theta}}(x)}{f_{\theta}(x)} $$
+
+Expectation of $\dot{\ell}_x(\theta)$
+\begin{multicols}{2}
+$$ E(x) = \int_x x f(x)\, dx $$
+
+\pagebreak 
+$f(x):$ density function
+\end{multicols}
+$$ E[\dot{\ell}_x(\theta)] = 0 $$
+
+Variance of $\dot{\ell}_x(\theta)$
+$$ V[x] = \int_x \left[x - E(x)\right]^2 f(x)\, dx $$
+$$ V[\dot{\ell}_x(\theta)] = \int_x \left[\dot{\ell}_x(\theta)\right]^2 f_{\theta}(x) \, dx $$
+
+Fisher Information $I_0$
+$$ I_0 = V[\dot{\ell}_x(\theta)] $$
+
+\begin{multicols}{2}
+$$ \ddot{\ell}_x(\theta) = \frac{\ddot{f_{\theta}}(x)}{f_{\theta}(x)} - \left(\frac{\dot{f_{\theta}}(x)}{f_{\theta}(x)}\right)^2 $$
+
+\pagebreak 
+$$ E(\ddot{\ell}_x(\theta)) = - I_0 $$
+\end{multicols}
+
+MLE estimator of $\hat{\theta} : \hat{\theta}^{MLE}$
+$$ \hat{\theta}^{MLE} \sim N\left(\theta,\frac{1}{I_0}\right) $$
+
+\medskip
+\emph{e.g.} for a normal dist. \\
+let $x_i \sim N(\theta, \sigma^2)$ \\
+* 1) compute ${\ell}_x(\theta)$ \\
+density function $f_{\theta}(x) = \prod _{i=1}^n \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x_i - \mu)^2}{2 \sigma^2}}$ \\
+likelihood function ${\ell}_x(\theta) = -\frac{1}{2} \underset{i=1}{\overset{n}{\sum}} \frac{(x_i - \theta)^2}{\sigma^2} - \frac{n}{2} Log(2 \pi \sigma^2)$ \\
+* 2) score function $\dot{\ell}_x(\theta) = \frac{1}{\sigma^2} \underset{i=1}{\overset{n}{\sum}} (x_i - \theta)$ \\
+$\ddot{\ell}_x(\theta) = -\frac{n}{\sigma^2}$ \\
+* 3) compute $I_0$ \\
+as $E(\ddot{\ell}_x(\theta)) = - I_0$, Fisher Information $I_0 = \frac{n}{\sigma^2}$ \\
+* 4) compute $\hat{\theta}^{MLE}$ \\
+$E(\dot{\ell}_x(\theta)) = \frac{1}{\sigma^2} \underset{i=1}{\overset{n}{\sum}} (x_i - \theta) = 0$, such that \\
+$\underset{i=1}{\overset{n}{\sum}} x_i = n \theta \Rightarrow \hat{\theta}^{MLE} = \frac{\underset{i=1}{\overset{n}{\sum}} x_i}{n} = \bar{x}$ \\
+* 5) compute $se(\hat{\theta}^{MLE})$ \\
+for a large n, \\
+$\hat{\theta}^{MLE} \sim N\left(\theta,\frac{1}{I_0}\right) \Rightarrow \hat{\theta}^{MLE} \sim N\left(\theta,\frac{\sigma^2}{n}\right)$
+$$ se(\hat{\theta}^{MLE}) = \frac{1}{I_0} = \frac{\sigma^2}{n} $$
+* 6) $se(\hat{\theta}^{MLE}) = \frac{1}{n I_0}$, by Cramer-Rao lower bound. \\
+The MLE has variance at least as small as the best unbiased estimate of $\theta$
+
+% -----------------------------------------------------------------------
+\subsubsection{Conditional Inference}
+\emph{e.g.} An \emph{iid} sample $x \sim N(\theta, 0)$ has produced estimate $\hat{\theta} = \bar{x}$. however,
+\begin{multicols}{2}
+$$
+n = \begin{cases} 25, & \text{prob } \frac{1}{2} \\ 100, & \text{prob } \frac{1}{2} \end{cases}
+$$
+
+\pagebreak 
+$n = 25$ was declined
+\end{multicols}
+
+* Classical Frequentist rational: \\
+$$ sd(\bar{x}) = \sigma_{\bar{x}} = \sqrt{\frac{1}{2} \frac{\sigma^2}{100} + \frac{1}{2} \frac{\sigma^2}{25}} = 0.158 $$
+
+* Conditional Inference rational: \\
+$$ sd(\bar{x}) = \sqrt{\frac{\sigma^2}{25}} = 0.2 $$
+
+* use the likelihood function (based on observation) without the prior \\
+* ``just take the sample you have" \\
+
+1) more relevant inferences (w/what really happened) \\
+2) simpler inferences (no correlation between the result and the sample size selection)
+
+\medskip
+\emph{e.g.} Observed Fisher Information $I_{(x)}$
+$$ I_{(x)} = -\ddot{\ell_x}(\hat{\theta}^{MLE}) $$
+In large samples $I_{(x)} = I_0$. Use $I_{(x)}$ in small samples 
+$$ E[I_{(x)}] = n I_0 $$ 
+
+* 1) compute the log-likelihood \\
+$$ f_{\theta}(x) = \frac{1}{\pi} \frac{1}{1 + (x + \theta)^2} \Rightarrow \text{Cauchi density function} $$
+$$ \ell_x(\theta) = Log\left(\frac{1}{\pi}\right) + Log(1) - Log(1 + (x + \theta)^2) $$
+* 2) get its derivative \\
+$$ \dot{\ell}_x(\theta) = \frac{2(x - \theta)}{1 + (x + \theta)^2} $$
+* 3) get the 2nd derivative \\
+$$ \ddot{\ell}_x(\theta) = \frac{-2(1 + (x - \theta)^2) + 4(x - \theta)^2}{(1 + (x - \theta)^2)^2} $$
+* 4) get the observed fisher information \\
+$$ I_{(x)} = -\ddot{\ell_x}(\hat{\theta}^{MLE}) $$
+* 5) get the variance of the estimate, even if the distribution does not have a defined variance or expected value \\
+- for 10000 samples of size $n$ with $\theta = 0$, compute $1/I_{(x)}$ and $\hat{\theta}^{MLE}$ \\
+- group the 10000 $\hat{\theta}^{MLE}$ values according to quantiles of $1/I_{(x)}$ and calculate the empirical variance for each sample.
+
+\medskip
+* for all samples, the unconditional variance $1/n I_0$ is the same because all the samples are of the same size. \\
+* on the other hand, $I_{(x)}$ will vary from sample to sample ($\hat{\theta}^{MLE}$ is different for each sample).
+* $I_{(x)}$ is related to the variance.
+
+% -----------------------------------------------------------------------
+\subsubsection{Permutation and Randomization}
+
+* when performing a t-test, it's assumed that the data samples come from a normal distribution.
+
+* small samples may follow a different distribution. Randomization removes the normality assumption
+
+* Randomization is: taking random groups from the data that are of the same size as the tested groups.
+
+\medskip
+* 1) compute the t-statistic for each randomly sampled pair of groups \\
+* 2) get the t-statistic histogram
+
+Utilizing random generated groups, it's expected the t-values not to be very high $\rightarrow$ construct an empirical distribution of t-values
+
+% -----------------------------------------------------------------------
+\subsection{Parametric Models and Exponential Families} % ---------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Univariate Families}
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Normal & $\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{1}{2} \frac{(x - \mu)^2}{\sigma^2}}$ & $\mathbb{R}^{(1)}$ & $\mu \epsilon \mathbb{R}^{(1)}$ & $\mu$ \\
+$N(\mu,\sigma^2)$ &  &  & $\sigma^2 \epsilon \mathbb{R}^{+}$ & $\sigma^2$ \\
+\hline
+\end{tabular}
+\end{center}
+* has two parameters, but they are very specific. $\mu$ is the location parameter, and $\sigma^2$ is the wide/narrow parameter \\
+* model quatities that take positive and/or negative continuous values, if the distribution is symetric and if there are no too many extreme values
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Poisson & $\frac{e^{-\lambda}\lambda^x}{x!}$ & $\mathbb{N}_{0}$ & $\lambda \epsilon \mathbb{R}^{+}$ & $\lambda$ \\
+$Poi(\lambda)$ &  &  &  & $\lambda$ \\
+\hline
+\end{tabular}
+\end{center}
+* if the mean grows/shrinks the variance also grows/shrinks proportionally \\
+* $\lambda$ must stay positive and is the interval of time of an exponential distribution, which is continuous $\rightarrow$ the expected number of successes can have decimals \\
+* model a quantity that is discrete, it's the number of counts of something \\
+* It's not very flexible as only has one parameter to tweak
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Binomial & $\left(\text{}_x^n\right) \theta^n (1 - \theta)^{n - x}$ & $\{0,...$ & $0 \leq$ & $n \theta$ \\
+$Bi(n, \theta)$ &  & $,n\}$ & $\theta \leq 1$ & $n \theta (1 - \theta)$ \\
+\hline
+\end{tabular}
+\end{center}
+* model the count of successes as Poisson, but we know the number of trials $n$
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Gamma & $\frac{x^{\nu - 1} e^{-\frac{x}{\sigma}}}{\sigma^\nu \Gamma(\nu)}$ & $\mathbb{R}^{+}$ & $\nu > 0$ & $\sigma \nu$ \\
+$Ga(\nu,\sigma)$ &  &  & $\sigma > 0$ & $\sigma^2 \nu$ \\
+\hline
+\end{tabular}
+\end{center}
+* the Gamma is used to model positive quantities. its common to use the inverse Gamma to model variances.
+
+\begin{center}
+\begin{tabular}{ |ccccc| }
+\hline
+Name & Density & X & $\Omega$ & E \\
+Notation &  &  &  & Var \\
+\hline
+Beta & $\frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha,\beta)}$ & $0 \leq x \leq 1$ & $\alpha > 0$ & $\frac{\alpha}{\alpha + \beta}$ \\
+$Be(\alpha,\beta)$ &  &  & $\beta > 0$ & $var$ \\
+\hline
+\end{tabular}
+\end{center}
+$var = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}$ \\
+* as x goes from 0 to 1, it's mostly used to talk about probabilities (aka. probability distribution)
+
+\medskip
+* both the Gamma and Beta have two parameters that convey some degree of flexibility \\
+* Gamma is flexible but not as flexible as Beta \\
+* The Binomial can approximate a Poisson with a large $n$ and small probability. \\
+
+% -----------------------------------------------------------------------
+\subsubsection{Multinomial Distribution (a.k.a. multidimensional binomial)}
+
+Used when observations take take a finite number of possible outcome values $L$.
+
+\medskip
+* let $\underbar{x} = (x_1, \hdots , x_L)$ be the vector of counts given the possible outcomes, where $x_l$ is de number of cases/counts having outcome $l$. \emph{e.g.} $\underbar{x} = (150, 300, 1000, 50)$, where outcome $l = 1$ happened $150$ times, and outcome $l = 4$ happened $50$ times \\
+* code the outcomes in terms of unit vectors of length $L$. \emph{e.g.} $e_l = {(0, \hdots, 0, 1, 0, \hdots, 0)}^T$, where the $1$ is in the $l^{th}$ place. \\
+* encode the outcomes as unit vectors with assigned probabilities in $\pi_l$, a vector of probabilities. $$ \pi_l = P\{e_l\}, l = 1, 2, 3, \hdots, L $$
+
+\medskip
+$\underbar{x}$ follows a multinomial distribution $f_{\pi}$ $$ f_{\pi}(\underbar{x}) = \underbar{x} \sim Mult_L(n, \pi) = \frac{n!}{x_1! x_2! \hdots x_L!} \cdot \prod_{l = 1}^{L} {\pi_l}^{x_l} $$
+where $L$ is the no. of outcomes, $n$ the no. of observations, and $\pi$ is the prob. vector. \\
+
+* The multinomial distribution assumes the probabilities are constant.
+
+\medskip
+The parameter space $\Omega$ of $\pi$ is $S_L$; a set of probability vectors $\pi$ such that the components of $\pi$ are positive quantities for all $l's$
+$$ S_L = \{\pi : \pi_l \geq 0 \forall l \text{ and } \sum_{l = 1}^{L} \pi_l = 1 \} $$
+
+\medskip
+The sample space $X$ for \underbar{x} is a subset of $n S_L$ with integer components. \emph{e.g.} for $L = 2$ (a Binomial dist.), $(\pi_1, \pi_2) = (\pi, 1 - \pi)$; $(x_1, x_2) = (x, n - x)$
+
+\medskip
+The mean vector $E(x) = n \pi$
+
+\medskip
+The covariance matrix $\Sigma$ is given by: $$ \Sigma = n \cdot \left(
+\begin{bmatrix}
+ \pi_1 &  &  & \text{zeros} \\
+   & \pi_2 &  &  \\
+   &  & \ddots &  \\
+ \text{zeros} &  &  & \pi_L \\
+\end{bmatrix}
+- \pi \cdot \pi^T \right) $$
+
+\medskip
+The variance of $x_l$ is:
+$$ V(x_l) = n \cdot \pi_l \cdot (1 - \pi_l) $$
+
+\medskip
+The covariance of $x_l$ is:
+$$ Cov(x_l, x_j) = - n \pi_l \cdot \pi_j $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Multinomial-Poisson relationship}
+
+IF \{ \\
+$S_1, S_2, \hdots, S_L$ are independent Poisson distributions/counts; meaning that the counts of each category follow the distribution: $S_l \stackrel{ind}{\sim} Poi(\mu_l), l = 1, 2, \hdots, L $.
+
+Each Poisson has a different $\mu_l$ parameter, which is a vector of mean/rate parameters. \\
+\} \\
+THEN \{ \\
+the vector of successes is given by: $$ \underbar{S} | \sum_{l = 1}^{L} S_l \sim Mult_L \left( \sum_{l = 1}^{L} S_L, \frac{\underline{\mu}}{\sum_{l = 1}^{L} \mu_l} \right) $$ \\
+\}
+
+\medskip
+IF \{ \\
+the number of trials $N$ is distributed Poisson with parameter $n$ $$ N \sim Poi(n) $$ \\
+\} \\
+THEN \{ \\
+$$ Mult_L(N, \underline{\pi}) \sim Poi(n \cdot \underline{\pi}) $$ \\
+\} \\
+where $\underline{\pi}$ is the probability vector, and $n \cdot \underline{\pi}$ is a vector of expected values (means).
+
+\medskip
+For a large $n$, the approximation $$ \underline{x} \stackrel{a}{\sim} Poi(n \cdot \underline{\pi}) $$ removes the need to compute multinomial correlations
+
+\medskip
+* the multinomial distribution contains all distributions on sample space $X$ composed of $\underline{L}$ discrete categories $\rightarrow$ the multinomial dist. can model any distribution
+
+% -----------------------------------------------------------------------
+\subsubsection{Exponential Families - Poisson Dist.}
+
+$$ f_{\mu} (x) = \frac{\mu^x e^{- \mu}}{x!} $$
+
+From the ratio of two Poissons $\frac{f_{\mu} (x)}{f_{\mu_o} (x)}$,
+
+$$ f_{\mu} (x) = e^{-(\mu - \mu_o)} \cdot \left(\frac{\mu}{\mu_o}\right)^x \cdot f_{\mu_o} (x) $$
+
+given: $\alpha = log(\frac{\mu}{\mu_o})$, then: $\left(\frac{\mu}{\mu_o}\right)^x = e^{\alpha x}$ and $\mu = e^{\alpha} \mu_o$
+
+therefore:
+
+$$ f_{\mu} (x) = e^{\alpha x} - \Psi(\alpha) \cdot f_{\mu_o} (x) $$
+$$ \Psi(\alpha) = \mu_o (e^{\alpha - 1}) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Exponential Families - Gamma Dist.}
+
+$$ f_{\underline{\alpha}} (x) = \frac{x^{\nu - 1} \cdot e^{-\frac{x}{\sigma}}}{\sigma^{\nu} \Gamma(\nu)} $$
+
+$\underline{\alpha} = (\alpha_1, \alpha_2) = \left(-\frac{1}{\sigma}, \nu\right) \epsilon A	\subseteq \{\alpha_1 < 0; \alpha_2 > 0\}$ \\
+$\underline{y} = (y_1, y_2) = (\gamma, log(x))$ \\
+$\Psi (\underline{\alpha}) = \alpha_2 log(-\alpha_1) + log(\Gamma(\alpha_2))$ \\
+
+\medskip
+IF \{ \\
+$\underline{x} = (x_1, \hdots, x_n)$ is $iid$ from $f_{\mu} (x) = e^{\underline{\alpha}^T \underline{y} - \Psi (\underline{\alpha})} \cdot f_{\mu_o} (x)$ and $y_i = t (x_i)$ \\
+\} \\
+THEN \{ \\
+$$ f_{\underline{\alpha}} (\underline{x}) = e^{n(\underline{\alpha}^T \bar{y} - \Psi (\underline{\alpha})) \cdot f_o (\underline{x})} $$
+
+with: $\bar{y} = \sum_{i = 1}^{n} \frac{y_i}{n}$ \\
+\} \\
+
+\medskip
+$\Psi (\alpha)$ can be computed numerically by doing:
+$$ \Psi (\alpha) = log \int_{\text{sample space } X} e^{\underline{\alpha} y} f_o (x) dx $$
+
+where $f_o (x)$ is the \emph{pdf} in question
+
+% -----------------------------------------------------------------------
+\section{Part II: Early Computer-Age Methods} % -------------------------
+% -----------------------------------------------------------------------
+
+
+% -----------------------------------------------------------------------
+\subsection{James-Stein Estimator vs Bayes vs MLE} % --------------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Estimate $\mu$ from $x$ if $\mu \sim N(m, A)$}
+
+$$ \hat{\underline{\mu}}^{Bayes} = \underline{M} + B(\underline{x} - \underline{M}) $$
+where $m = \text{prior parameter}$, $B = \frac{A}{A + 1} = \frac{\text{prior variance}}{\text{total variance}}$, $\underline{M} = [m, m, \hdots, m]$
+
+$$ \hat{\underline{\mu}}^{MLE} = \underline{x} $$
+
+$$ \hat{\underline{\mu}}^{JS} = \hat{\underline{M}} + \hat{B} (\underline{x} - \hat{M}) $$
+where $\hat{M} = \bar{x}$, $\hat{\underline{M}} = [\hat{M}, \hat{M}, \hdots, \hat{M}]$, $\hat{B} = \frac{1 - N - 3}{\sum_{i = 1}^{N} (x_i - \bar{x})^2}$ \\
+(for $N$ points)
+
+% -----------------------------------------------------------------------
+\subsubsection{Expected Squared Error}
+
+$$ E \{\parallel \hat{\underline{\mu}}^{Bayes} - \underline{\mu} \parallel^2\} = NB $$
+
+$$ E \{\parallel \hat{\underline{\mu}}^{MLE} - \underline{\mu} \parallel^2\} = N $$
+
+$$ E \{\parallel \hat{\underline{\mu}}^{JS} - \underline{\mu} \parallel^2\} = NB + 3(1 - B) $$
+
+\medskip
+$\hat{\underline{\mu}}^{JS}$ has a bigger ESE than $\hat{\underline{\mu}}^{Bayes}$ as $\underline{M}$ and $B$ are estimated, but still better than $\hat{\underline{\mu}}^{MLE}$ if $N \leq 4$ observations.
+
+% -----------------------------------------------------------------------
+\subsubsection{James-Stein Theorem}
+
+IF $x_i|\mu_i \sim N(\mu_i, 1)$ for $i = 1, 2, \hdots, N$ with $N \geq 4$; THEN $$ E \{\parallel\hat{\underline{\mu}}^{JS} - \underline{\mu}\parallel^2\} < E \{\parallel \hat{\underline{\mu}}^{MLE} - \underline{\mu} \parallel^2\} $$ for all choices of $\underline{\mu} \epsilon \mathbb{R}^N$ (not Bayesian reasoning any more)
+
+\medskip
+* JS gets observations from Normal distributions which have different means for each observation (estimate different means for each observation).
+* JS is a shrinks the effects of individual observations towards the common mean
+* extreme shrinkage is to say each observation is the average of all observations
+* void shrinkage is to say each observation is its own average (as in MLE)
+* JS is in between.
+
+% -----------------------------------------------------------------------
+\subsection{Ridge Regression vs Linear Regression} % --------------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Linear Regression}
+
+based on MLE, it assumes a n-dimensional vector $\underline{y} = (y_1, \hdots, y_n)^T$ from a linear model $\underline{y} = x \beta + \underline{\epsilon}$ \\
+where: \\
+$\beta$ a unknown p-dimensional parameter vector \\
+$\underline{\epsilon}$ uncertain values (aka. independent random variables or independent draws from a dist.) \\
+$x$ known data points \\
+$\underline{y}$ outcomes taken from the linear model \\
+
+\medskip
+Thus: $\epsilon \sim (0, \sigma^2 I_n)$
+where: \\
+$mean = 0$ \\
+the variance $I_n$ is the identity matrix of size $n$ \\
+
+\medskip
+$\hat{\beta} = \stackrel{argmin}{\beta} \{\parallel\epsilon\parallel^2\} = \stackrel{argmin}{\beta} \{\parallel \underline{y} - x \beta \parallel^2\}$
+
+\medskip
+differentiating:
+$$ \hat{\beta}^{OLS} = S^{-1} \cdot x^T y $$
+where: $S = x^T x$
+
+\medskip
+standard error:
+$$ \hat{\beta}^{OLS} \sim (\beta, \sigma^2 \cdot S^{-1}) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{Ridge Regression}
+
+$\hat{\beta} = \stackrel{argmin}{\beta} \{\parallel y - x \cdot \beta \parallel^2 + \lambda \cdot \parallel \beta \parallel^2\}$ \\
+where: $\parallel \beta \parallel^2 = {\beta_1}^2 + {\beta_2}^2 + \hdots + {\beta_p}^2$
+
+\medskip
+if $\beta$ coefficients are small, the better the results $\rightarrow$ as the variance decreases by introducing some bias. $\lambda$ is how much the sum of squares is penalized.
+
+\medskip
+differentiating:
+$$ \hat{\beta}^{Ridge} = (S + \lambda \cdot I_n)^{-1} \cdot x^T y $$
+
+\medskip
+standard error:
+$$ \hat{\beta}^{Ridge} \sim ((S + \lambda \cdot I_n)^{-1} \cdot S \cdot \beta, \sigma^2 \cdot (S + \lambda \cdot I_n)^{-1} \cdot S \cdot (S + \lambda \cdot I_n)^{-1}) $$
+
+\medskip
+Ridge is a regularized regression, meaning that the variables need to be rescaled as the coefficients have to be on the same scale.
+
+\medskip
+OLS is a special case of Rigde where $\lambda = 0$
+
+% -----------------------------------------------------------------------
+\subsubsection{Logistic Regression}
+
+In OLS $y$ can take values in $\mathbb{R}$, or $y \epsilon \mathbb{R}$. However, to predict proportions then $y = p$ should $y_i = p_i \epsilon \{0,1\} \forall i$
+
+\medskip
+for each observation the odds ratio is: $\lambda_i = log \left(\frac{p_i}{1 - p_i}\right)$
+
+\medskip
+for the 1-dimension case, $\lambda_i = log \left(\frac{p_i}{1 - p_i}\right) = \beta_0 + \beta_1 \cdot x_i + \epsilon_i$ \\
+using MLE, estimate $\beta_0$, $\beta_1$ and therefore $\lambda_i$ \\
+$\hat{\lambda} (x) = \hat{\beta_0} + \hat{\beta_1} \cdot x_i $
+
+$$ \hat{\lambda_i} = log \left(\frac{\hat{p_i}}{1 - \hat{p_i}}\right) $$
+$$ \hat{p_i} = (1 + e^{-(\hat{\beta_0} + \hat{\beta_1} \cdot x_i)})^{-1} $$ This transformation does not work well when $x = 0$ or $x = 1$ as the OLS loss function $\stackrel{min}{\beta} \parallel \lambda - x \beta \parallel^2$ increases with the right prediction and decreases with a wrong prediction.
+
+\medskip
+The Deviance Function has the opposite behaviour...
+$$ D = p_i \cdot log \left( \frac{p_i}{\hat{p_i}} \right) + (1 - p_i) \cdot log \left( \frac{1 - p_i}{1 - \hat{p_i}} \right) $$
+
+\medskip
+multiply assuming independent sampling to get the loss function:
+$$ D(\hat{p_i}|p_i) = 2n_i \left[ p_i \cdot log \left( \frac{p_i}{\hat{p_i}} \right) + (1 - p_i) \cdot log \left( \frac{1 - p_i}{1 - \hat{p_i}} \right) \right] $$ Then minimize the loss function to estimate $(\hat{\beta_0}, \hat{\beta_1})$
+
+% -----------------------------------------------------------------------
+\subsection{Generalized Linear Models - GLMs} % -------------------------
+
+GLMs extend linear regression to Binomial, Poisson, Gamma or any exponential distribution.
+
+* GLMs transform an estimation problem in to a regression problem where the regression parameters are to be estimated.
+
+% -----------------------------------------------------------------------
+\subsubsection{GLM - exponential family}
+
+start with 1-parameter exponential family: $$ f_{\lambda} (y) = e^{\lambda y - \gamma(\lambda)} \cdot f_o (y) $$
+
+where: the observed data $\underline{y} = (y_1, y_2, \hdots, y_N)^T$ is assumed to come from $y_i \stackrel{ind}{\sim} f_{\lambda_i} (\cdot)$ for $i = 1, \hdots, N$
+
+\medskip
+write $\underline{\lambda}$ as a regression equation to avoid $N$ estimations (one for each $\lambda_i$) $$ \underline{\lambda} = \underline{x} \cdot \underline{\alpha} $$
+where: \\
+$\alpha$ is a coefficients vector to assess the importance of each $x$ \\
+$x$ the covariance matrix from the data
+
+\medskip
+the likelihood of $\underline{y}$ for an exponential family is:
+$$ f_{\underline{\lambda}} (\underline{y}) = e^{\underline{\lambda} \cdot \underline{y} - \gamma(\underline{\lambda})} \cdot f_o (\underline{y}) $$
+
+\medskip
+let $\underline{\lambda} = \underline{x} \cdot \underline{\alpha}$, $\underline{z} = \underline{x}^T y$, $\Psi (\alpha) = \sum_{i = 1}^{N} \gamma({x_i}^T \cdot \alpha)$ such that $$ f_{\underline{\alpha}} (\underline{y}) = e^{\underline{\alpha}^T \underline{z} - \Psi (\alpha)} \cdot f_o (\underline{y}) $$
+
+% -----------------------------------------------------------------------
+\subsubsection{GLM - Binomial Distribution}
+
+\begin{multicols}{2}
+$$ \lambda = log \left( \frac{\pi}{1 + \pi} \right) $$
+\pagebreak
+$$ \gamma (\lambda) = n log (1 + e^{\lambda}) $$
+\end{multicols}
+
+% -----------------------------------------------------------------------
+\subsubsection{GLM - Poisson Distribution}
+
+\begin{multicols}{2}
+$$ \lambda = log (\mu) $$
+\pagebreak
+$$ \gamma (\lambda) = e^{\lambda} $$
+\end{multicols}
+
+% -----------------------------------------------------------------------
+\subsubsection{GLM - Parameter Estimation}
+
+$(\mu \lambda, {\sigma_\lambda}^2)$ denotes the expectation and variance of a univariate density $f_\lambda (y)$ in terms of the exponential family properties $$ y \sim (\mu \lambda, {\sigma_\lambda}^2) $$
+
+\medskip
+a N-dimensional vector $y$ from $f_{\underline{\alpha}} (y)$ has mean and covariance matrix: $$ y \sim (\underline{\mu} (\underline{\alpha}), \Sigma (\underline{\alpha})) $$
+
+where:
+$$ \underline{\mu} (\underline{\alpha}) = [\mu_{\lambda_1}, \mu_{\lambda_2}, \hdots, \mu_{\lambda_N}] $$
+$$ \Sigma (\underline{\alpha}) = \begin{bmatrix}
+ {\sigma_{\lambda_1}}^2 &  &  & \text{zeros} \\
+   & {\sigma_{\lambda_2}}^2 &  &  \\
+   &  & \ddots &  \\
+ \text{zeros} &  &  & {\sigma_{\lambda_N}}^2 \\
+\end{bmatrix} $$
+
+\medskip
+* MLE estimate of $\alpha$ is to satisfy: $x^T [y - \mu (\alpha)] = 0$ \\
+where: \\
+$y$ is the data \\
+$\mu (\alpha)$ is the means vector (adjust $\alpha$ to better describe $y$) \\
+For the Normal distribution, ${\hat{\alpha}}^{MLE} = (x^T x)^{-1} \cdot x^T y$ \\
+For other family distributions $\hat{\alpha}$ is to be solved numerically.
+
+\medskip
+* ${\hat{\alpha}}^{MLE} \stackrel{a}{\sim} (\alpha, (x^T \cdot \Sigma (\alpha) \cdot x)^{-1})$ \\
+where $(x^T \cdot \Sigma (\alpha) \cdot x)^{-1} $ is the variance of ${\hat{\alpha}}^{MLE}$
+
+\medskip
+The DEVIANCE FUNCTION D() can be used to get MLE estimates of $\alpha$. The D() between two densities $f_1$ and $f_2$ is: $$ D(f_1, f_2) = 2 \cdot \int_{sampleSpace\mathtt{y}} f_1 (y) \cdot log \left( \frac{f_1 (y)}{f_2 (y)} \right) d\mathtt{y} $$
+
+\medskip
+Deviance for: \\
+Normal (known $\sigma^2$) $$ \left( \frac{\mu_1 - \mu_2}{\sigma} \right)^2 $$
+Binomial $$ 2 n \left[ \pi_1 \cdot log \left( \frac{\pi_1}{\pi_2} \right) + (1 - \pi_1) \cdot log \left( \frac{1 - \pi_1}{1 - \pi_2} \right) \right] $$
+Poisson $$ 2 \cdot \mu_1 \left[ \left(\frac{\mu_2}{\mu_1} - 1\right) \cdot log \left(\frac{\mu_2}{\mu_1}\right) \right] $$
+
+\medskip
+Hoeffding's Lemma $\rightarrow$ the MLE $\hat{\alpha}$ ia the choice of $\alpha$ that minimizes the total deviance. (as OLS minimizes the sum of squares)
+
+% -----------------------------------------------------------------------
+\subsection{Regression Trees} % -----------------------------------------
+
+(aka. fancy averaging) - a technique to estimate regression surfaces using adapting partitioning.
+
+\medskip
+At a given step $k$, of the partitioning algorithm,
+the mean of group $k$ is $$ m_k = \sum_{i \epsilon \text{ group k}} \frac{y_i}{N_k} $$ and the sum of squares of group $k$ is $$ {S_k}^2 = \sum_{i \epsilon \text{ group k}} (y_i - m_k)^2 $$
+
+The total ${S_k}^2$ is given by: $$ {S_k}^2 = {S_{k_{left}}}^2 + {S_{k_{right}}}^2 + \frac{{N_{k_{left}}}^2 {N_{k_{right}}}^2}{N_k} (m_{k_{left}} - m_{k_{right}}) $$ the purpose is to maximize the 3rd term (aka. the information gain) in order to get a smaller ${S_k}^2$
+
+% -----------------------------------------------------------------------
+\subsubsection{Impurity}
+
+The impurity of a node measures the deviation from the predicted behaviour of the node. $\rightarrow$ it's the probability that the prediction is incorrect usually measured by the Gini impurity or the mse (sum of squares error)
+
+\medskip
+The Gini impurity is as follows: $$ \sum_{\text{group i}} p(i) \cdot (1 - p(i)) $$ where $p(i)$ is the probability of success of the node. \emph{e.g.} $\sum_{\text{group i}} p(i) \cdot (1 - p(i)) = \frac{5}{95 + 5} \left(\frac{95}{95 + 5}\right) + \frac{10}{150 + 10} \left(\frac{150}{150 + 10}\right)$, where 5 points where wrong about outcome A, 95 right about outcome A, 10 wrong about outcome B and 150 right about outcome B.
+
+% -----------------------------------------------------------------------
+\subsection{Life Tables \& Hazard Rates} % ------------------------------
+
+What is the probability of dying/failing at time $i$?
+
+% -----------------------------------------------------------------------
+\subsubsection{Discrete time}
+
+$$ S_i = \sum_{j \geq i} f_j = P_r(x \geq i) $$ is the probability of surviving past time $i - 1$, where \\
+$S_i$ is the marginal survival rate ($S_{0, i - 1} = S_{i, j}$) \\
+$f_j$ probability of dying at time $j$ \\
+$x$ length of a lifetime
+
+$$ h_i = \frac{f_i}{S_i} = P_r(x = i | x \geq i) $$ is the probability of dying exactly at time $i$ given survival past time $i - 1$
+
+$$ S_{i, j} = \prod_{k = i}^{j} (1 - h_k) = P(x > j | x \geq i) $$ is the conditional surviving rate past age $j$ given survived time $i - 1$
+
+\medskip
+parameter estimates: \\
+$\hat{h_i} = \frac{y_i}{n_i}$ death rate at time $i$ \\
+$\hat{S_{t_0, j}} = \prod_{k 0 = t_0}^{j} (1 - \hat{h_k})$
+
+\medskip
+It can be used to learn the probability of a $t_0$ old to survive past time $t_n$
+
+% -----------------------------------------------------------------------
+\subsubsection{Continuous time}
+
+$$ S(t) = \int_t^\infty f(x) dx = P(T \geq t) $$ is the survival function, where $f(x) is a density function (pdf)$. $S(t) = 1 - F(t)$ as it's the reverse cdf (cumulative distribution function)
+
+$$ h(t) = \frac{f(t)}{S(t)} $$ is the hazard rate density function
+
+$$ S(t) = e^{- \int_0^t h(x) dx} $$ is the continuous survival function in terms of the hazard function
+
+% -----------------------------------------------------------------------
+\subsubsection{Censored Data}
+
+Censored data includes information in which the number of subjects can change due to a death but also due to a loss of tracking.
+
+\medskip
+If $n$ is the no. of subjects at risk, $y$ the no. of deaths, $l$ the no. of lost subjects, $h$ the hazard rate $\frac{y}{n}$, then: The Kaplan-Meier Estimate $$ \hat{S_j} = \prod_{k \leq j} \left( \frac{n - k}{n - k + 1} \right)^{d_{(k)}} $$ can be used as the survival function for censored data. $d_{(k)} = l_k$ and $k = month no.$
+
+$$ sd(\hat{S_j}) = \hat{S_j} \left[\sum_{k \leq j} \frac{y_k}{n_k (n_k - y_k)}\right]^{\frac{1}{2}} $$ is the standard error of Kaplan-Meier Estimate
+
+% -----------------------------------------------------------------------
+\subsubsection{Log-Rank Test}
+
+When working with "regular data", \emph{t-test} can be implemented to compare survival times of two treatments.
+
+\medskip
+However, when dealing with "censored data", \emph{log-rank test} is to be used.
+
+* Say the Null Hyp as the hazard rate for time i is the same for treatment A and in treatment B $Ho(i) : h_{A,i} = h_{B,i}$
+
+* Ask "If $n_d$ patients are randomly drawn from $n$, what is the probability distribution for the number of drawn patients to be in treatment A?" \\
+$n_d$ the total no. of deaths, $n_s$ the total no. survivals, $n_A$ the total no. of subjects in treatment A, and $n_B$ the total no. of subjects in treatment B.
+
+\medskip
+If $Ho(t)$ is TRUE, then:
+
+$$ E(y) = \frac{n_A \cdot n_d}{n} $$ is the mean of the hyper-geometric distribution
+
+$$ V(y) = \frac{n_A n_B n_d n_s}{n^2 (n - 1)} $$ the variance of $E(y)$
+
+\medskip
+If $Ho(t)$ is FALSE, then: it's more probable to draw a subject from treatment B, which has a higher hazard rate.
+
+* For all point in time, calculate $y_i$, $E_i$, $V_i$ and compute the log-rank statistic $z$
+
+$$ z = \frac{\sum_{i = 1}^{N} (y_i - E_i)}{\left(\sum_{i = 1}^{N} V_i\right)^{\frac{1}{2}}} $$ the numerator is close to zero if $Ho$ is TRUE
+
+* Finally, compare $z$ to normal critical values.
+
+% -----------------------------------------------------------------------
+\subsection{Jackknife} % ------------------------------------------------
+
+Used to assign a standard error to a $\hat{\theta}$
+
+\medskip
+* given a \emph{iid} sample $\underline{x} = (x_1, \hdots, x_n)$ from an unknown probability distribution F on some sample space $X$
+
+* some algorithm S() can be applied to compute $\hat{\theta} = S(x)$
+
+* let $x_{-i} = (x_1, x_2, \hdots, x_{i - 1}, x_{i + 1}, \hdots, x_n)$ (remove $x_i$)
+
+* so, $\hat{\theta}_{-i} = S(x_{-i})$
+
+$$ \hat{se}_{Jack} = \left[\frac{n - 1}{n} \cdot \sum_{i = 1}^{n} (\hat{\theta}_{-i} - \hat{\theta}(\cdot))^2 \right]^{\frac{1}{2}} $$ where: $\hat{\theta}(\cdot) = \sum_{i = 1}^{n} \frac{\hat{\theta}_{-i}}{n}$
+
+\medskip
+i) get each one of the $\hat{\theta}_{-i}$ \\
+ii) numerically compute $\hat{\theta}(\cdot)$ \\
+iii) do $\hat{\theta}_{-i} - \hat{\theta}(\cdot)$ \\
+iv) apply JK equation
+
+\medskip
+* works for any distribution
+* it depends on local derivatives - non-smooth statistics can result in erradic behaviour
+
+% -----------------------------------------------------------------------
+\subsection{Non-parametric Bootstrap} % ---------------------------------
+
+* replaces an unknown distribution $F$ with an estimate $\hat{F} = \underline{x}$
+
+* each bootstrap sample provides a bootstrap replication of $\hat{\theta}^{*,b} = S(\underline{x}^{*,b})$ for $b = 1, 2, \hdots, B$
+
+$$ \hat{se}_{boot} = \left[ \frac{\sum_{b = 1}^B (\hat{\theta}^{*,b} - \hat{\theta}^{*,\cdot})^2}{n - 1} \right] = se(\hat{F}) $$ where $\hat{\theta}^{*,\cdot} = \frac{\sum_{b = 1}^B \hat{\theta}^{*,b}}{B}$
+
+\medskip
+* "moves" the data much more than Jackknife \\
+* does not depend on local derivatives \\
+* can estimate any other measure of variability \\
+* more computational intensive than Jackknife
+
+% -----------------------------------------------------------------------
+\subsection{Re-sampling Plans} % ----------------------------------------
+
+Say $\underline{P} = (P_1, \hdots, P_n)^T$ is a vector of weights with $\sum_{i = 1}^{n} P_i = 1$ and $P_i \geq 0 \forall i$
+
+\medskip
+$\hat{\theta}^* = S(\underline{P})$ denotes $\hat{\theta}$ under a particular resampling vector $\underline{P}$. ($\underline{x}$ is fixed)
+
+\medskip
+For the sample mean,
+$$ S(\underline{x}) = \sum_{i = 1}^{n} \frac{x_i}{n} $$
+$$ \hat{\theta}^* = S(\underline{P}) = \sum_{i = 1}^{n} P_i \cdot x_i $$
+
+\medskip
+For the sample variance,
+$$ S(\underline{x}) = \frac{\sum_{i = 1}^{n} (x_i - \bar{x})}{n - 1} $$
+$$ \hat{\theta}^* = \frac{n}{n - 1} \left[\sum_{i = 1}^n P_i {x_i}^2 - \left( \sum_{i = 1}^n P_i x_i \right)^2\right] $$
+
+\medskip
+The original estimate is $\hat{\theta} = S(\underline{P_o})$, where: $$ \underline{P_o} = \frac{1}{n} \cdot [1, 1, 1, \hdots, 1] \text{ (of n components)}$$ which is the initial/original vector of weights.
+
+\medskip
+The $i^{th}$ iteration of the Jackknife estimate is: $$ \hat{\theta}_{-i} = S(P_{-i}) $$, where $P_{-1} = \frac{1}{n - 1} [1, 1, 1, \hdots, 1]$ where the $0$ is located in the $i^{th}$ element being removed.
+
+\medskip
+A Bootstrap sample has weight vector $$ \underline{P_b} = \frac{(k_1, k_2, \hdots, k_n)^T}{n} $$ with $k_b$ being the no. of times each observation is chosen from the finite bootstrap sample in iteration $b$
+
+$$ k_b \sim Mult_L(n, \underline{P_o}) $$ where $L$ is the no. of categories/outcomes, and $n$ is the no. of samples/draws.
+
+$$ f (k_b) = \frac{n!}{k_1! k_2! \hdots k_n!} \cdot \prod_{l = 1}^{L = n} {P_{k_l}}^{k_l} = \frac{n!}{k_1! k_2! \hdots k_n!} \cdot \frac{1}{n^n} $$ is the multinomial pdf of $k_b$
+
+% -----------------------------------------------------------------------
+\subsubsection{Infinitesimal Jackknife}
+
+let's use the "convex combination" of vectors $\underline{P_o}$ and $\underline{P_{-i}}$
+
+$$ \underline{P_i} = \underline{P_o} + \varepsilon (\underline{P_{-1}} - \underline{P_o}) $$
+
+$$ D_i = \lim_{e \rightarrow 0} \frac{S(\underline{P_i} (\varepsilon)) - S(\underline{P_o})}{\varepsilon \parallel \underline{P_i} - \underline{P_o} \parallel} $$
+
+$$ \hat{se}_{IJ} = \left(\frac{{D_i}^2}{n^2}\right)^{\frac{1}{2}} $$ computationally, shall be done with a small $\varepsilon$
+
+% -----------------------------------------------------------------------
+\subsubsection{Moving Blocks Bootstrap}
+
+Used in time series data, where $x$ occurs in a meaningful order.
+
+\medskip
+Let $B_m$ be the set of continuous blocks of length $m$. \emph{e.g.} $B_3 = \{(x_1, x_2, x_3), (x_2, x_3, x_4), \hdots, (x_{n-2}, x_{n-1}, x_n)\}$
+
+\medskip
+Choose a m big enough such that the correlation between the $x's$ is negligible
+
+\medskip
+Then use regular 1-sample bootstrap to randomly draw $n/m$ block numbers
+
+$$ \hat{se}_{bootB} = \left[\sum_{b = 1}^B \frac{\hat{\theta}^{*,b} - \hat{\theta}^{*,\cdot}}{B - 1} \right]^{\frac{1}{2}} $$ where $\hat{\theta}^{*,\cdot} = \sum_{b = 1}^B \frac{\hat{\theta}^{*,b}}{B}$
+
+% -----------------------------------------------------------------------
+\subsubsection{Multisample Bootstrap}
+
+Used when subjects in data are classified in 2 or more groups; and want to compute an estimator (e.g. median) for each group and then compare between them.
+
+\medskip
+Do not sample from the $n_total$ observations, instead re-sample with replacement $n_1$ samples of group 1 and $n_2$ samples of group 2 separately.
+
+\medskip
+Then perform t-student for the means of the estimator. (as each bootstap sample provides a bootstrap replication of S())
+
+% -----------------------------------------------------------------------
+\subsubsection{Parametric Bootstrap}
+
+In regular bootstrap sample $\underline{x}$ is used as $\hat{F}$; where every outcome/category has the same probability ($1/n$), by keeping the y-axis at a fixed width histogram-wise.
+
+\medskip
+Parametric Bootstrap is about keeping categories in the x-axis at a fixed width histogram-wise.
+
+* it uses $f_{\hat{\theta}} (x)$ as $\hat{F}$, therefore the vector of weights $P$ is given by $f_{\hat{\theta}} (x)$
+
+% -----------------------------------------------------------------------
+\section{} % ------------------------------------------------------------
+\hrule
+Osamu Katagiri - A01212611, \href{https://www.katagiri-mx.com/}{https://www.katagiri-mx.com/}
+\end{multicols}
+
+\end{document}
