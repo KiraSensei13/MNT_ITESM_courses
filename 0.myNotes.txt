@@ -1391,4 +1391,19 @@ MN996532  RaTG13   53877    28717/29905(96%)  52/29905(0%)    Plus/Plus
 
 A Review of characterizaion techniques of nanomaterials:
 
+/******************************************************************************/
+
+1st question
+is the current sequence already reported?
+from parents to sons/daughters 30 mutations per 3.3GB
+sequence alignment - add "spaces" to maximize similarities between sequences
+
+/******************************************************************************/
+
+PNGQNI
+179
+991
+
+/******************************************************************************/
+
 
