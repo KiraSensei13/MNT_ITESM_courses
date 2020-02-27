@@ -88,6 +88,53 @@ f_score <- function(seqX, seqY, score_match, score_mismatch, score_global_prev, 
 }
 ```
 
+### Let's write a function to print the alignment
+```{r}
+f_alignment <- function(seqx, seqy, score, score_match, score_mismatch, weights)
+{
+  ## Traceback
+  i <- length(seqx)
+  j <- length(seqy)
+  ax <- character()
+  ay <- character()
+  
+  while (i > 1 && j >1){
+    ## case 1: best was seq.x[i] aligned to seq.y[j]
+    sc <- score[i-1,j-1]
+    sc <- f0(seqx[i], seqy[j], score_match, score_mismatch, sc)
+    
+    if (sc == score[i,j]) {
+      ax <- c(seqx[i], ax)
+      ay <- c(seqy[j], ay)
+      i <- i-1
+      j <- j-1
+      next
+    }
+    
+    ## case 2: best was seq.x[i] aligned to -
+    if ((score[i-1,j] + weights) == score[i,j]) {
+      ax <- c(seqx[i], ax)
+      ay <- c("-", ay)
+      i <- i-1
+      next
+    }
+    
+    ## case 3: best was seq.y[j] aligned to -
+    if ((score[i,j-1] + weights) == score[i,j]) {
+      ax <- c("-", ax)
+      ay <- c(seqy[j], ay)
+      j <- j-1
+      next
+    }
+  }
+  
+  cat(paste(ax, collapse=''), "\n")
+  cat(paste(ay, collapse=''), "\n")
+  return (c(ax, ay))
+}
+```
+
+
 ### Let's write a function f_global_score to calculate the global score using the DPM algorithm
 ```{r}
 f_global_score <- function(Y, X, score_match, score_mismatch, weights, printTable)
@@ -136,6 +183,8 @@ f_global_score <- function(Y, X, score_match, score_mismatch, weights, printTabl
   {
     print(tbl_score)
     cat("Global Score = ", globalScore, '\n')
+    
+    f_alignment(seq.x, seq.y, tbl_score, score_match, score_mismatch, weights)
   }
   
   return(globalScore)
