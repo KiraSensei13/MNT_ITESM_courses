@@ -271,3 +271,8 @@ text(score_mean, -0.002, round(score_mean,2), cex = 0.7)
 text(sc_best, -0.002, round(sc_best,2), cex = 0.7)
 ```
 
+### Calculating a Single p Value From a Normal Distribution
+```{r}
+t.test(shuffled_scores)
+```
+
