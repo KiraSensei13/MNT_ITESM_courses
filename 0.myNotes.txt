@@ -415,13 +415,13 @@ SU-8 turned out to be a really bad photoresist for integrated circuits, but real
 
 UAM
 Master in Molecular Nanoscience and Nanotechnology       ; http://www.icmol.es/master/nano/content.php?menu=content
-                                                         ; http://www.uam.es/Ciencias/M%C3%A1ster-en-Materiales-Avanzados/1446759227148.htm?language=es&pid=1242650400756&title=Asignaturas%20Materiales%20Avanzados,%20Nanotecnolog?a%20y%20Fot?nica%202018-19
-                                                         ; file:///C:/Users/oskat/Downloads/32303_simulacion_ymetodos_numericos_en_materiales_y_nanoestruct_18_19.pdf
-                                                         ; file:///C:/Users/oskat/Downloads/32298_nanocaracterizacion_materiales_por_tec_microscopicas_18_19.pdf
+               ; http://www.uam.es/Ciencias/M%C3%A1ster-en-Materiales-Avanzados/1446759227148.htm?language=es&pid=1242650400756&title=Asignaturas%20Materiales%20Avanzados,%20Nanotecnolog?a%20y%20Fot?nica%202018-19
+               ; file:///C:/Users/oskat/Downloads/32303_simulacion_ymetodos_numericos_en_materiales_y_nanoestruct_18_19.pdf
+               ; file:///C:/Users/oskat/Downloads/32298_nanocaracterizacion_materiales_por_tec_microscopicas_18_19.pdf
 Máster Universitario en Electroquímica                   ; https://web.ua.es/es/ecyt/estructura-y-contenido.html
 Máster en Materiales Avanzados Nanotecnología y Fotónica ; http://matavanz-uam.000webhostapp.com/info_ac_horarios.html
 Convocatoria de becas UAM – Banco Santander              ; https://tec.mx/es/internacionalizacion/uam-banco-santander
-                                                         ; http://sitios.itesm.mx/vi/convocatorias/BecaUAM2019.pdf
+               ; http://sitios.itesm.mx/vi/convocatorias/BecaUAM2019.pdf
 < https://modelo-carta.com/declaracion/ >
 
 /******************************************************************************/
@@ -980,7 +980,7 @@ https://cran.r-project.org/web/checks/check_summary_by_maintainer.html#summary_b
 Research Group Nanotec
 
 Dora Iliana Medina Medina        <dora.medina@tec.mx>;
-                                 <hcruzm@cinvestav.mx>;
+            <hcruzm@cinvestav.mx>;
 Laura Catalina Duque Ossa        <A01747663@itesm.mx>;
 María Montserrat Segura López    <msegura@tec.mx>;
 Claudia Noemi Vargas Hernández   <claudianvh@tec.mx>;
