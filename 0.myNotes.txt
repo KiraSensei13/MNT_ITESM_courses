@@ -1417,5 +1417,10 @@ PNGQNI
 /******************************************************************************/
 
 https://www.ebi.ac.uk/goldman-srv/cgi-bin/results.cgi?jobid=prank-S20200303-235433-0524-3744813-p2m&title=SARS_COV_2_ORF1AB_raw.fasta
+https://www.ebi.ac.uk/goldman-srv/cgi-bin/results.cgi?jobid=prank-S20200304-043445-0904-99664307-p1m&title=SARS_COV_2_ORF1AB_raw.fasta
 
-https://www.ebi.ac.uk/goldman-srv/cgi-bin/results.cgi?jobid=prank-S20200304-002830-0697-33419172-p1m&title=SARS_COV_2_S_raw.fasta
+https://desmid.github.io/mview/manual/manual.html#ref-cov-pid
+
+/******************************************************************************/
+
+
