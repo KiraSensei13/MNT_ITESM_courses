@@ -1423,9 +1423,9 @@ https://desmid.github.io/mview/manual/manual.html#ref-cov-pid
 
 /******************************************************************************/
 
-BBVA 894
+BBVA 754
 +  2851
--  1598
+-  1738
 -   359
 
 SNTDR 9054
