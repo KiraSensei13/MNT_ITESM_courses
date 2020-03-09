@@ -1,0 +1,178 @@
+---
+title Sequence Alignment - Dynamic Programming Method
+output html_document
+---
+
+### [Antonio Osamu Katagiri Tanaka](httpswww.katagiri-mx.comabout-me) - MNT16 - A01212611
+
+#### Burrows, M., & Wheeler, D. J. (1994). A Block-Sorting Lossless Data Compression Algorithm. Digital Equipment Corporation (Vol. 28). Palo Alto, California. Retrieved from httpswww.hpl.hp.comtechreportsCompaq-DECSRC-RR-124.pdf
+
+```{r}
+# Clear all objects (from the workspace)
+rm(list = ls())
+```
+
+# Burrows-Wheeler Transform
+
+```{r}
+bwt = function(x, printTables = FALSE, eof = '!') {
+  
+  # Let's use !, as $ is used in RegEx patterns
+  if (grepl(eof, "[[:cntrl:]]")) stop("eof can't be a RegEx control character")
+  # Make sure the input doesnt contain !
+  if (grepl(eof, x)) stop("x can't contain eof character")
+  
+  # concatenate the eof char to the input string
+  x = paste0(x, eof)
+  # get the number of characters in x
+  n = nchar(x)
+  
+  # function to take first character and add to the end
+  rotate = function(x) {
+    paste0(substring(x, 2), substring(x, 1, 1))
+  }
+  
+  # Create table of all possible rotations
+  tbl = c(x, vector("character", n - 1))
+  for(i in 2:n) {
+    tbl[i] = rotate(tbl[i - 1])
+  }
+  
+  # Sort rows alphabetically
+  tbl = sort(tbl)
+  
+  # Return last column of the table
+  out = sapply(tbl, substring, first = n, USE.NAMES = FALSE)
+  # concatenate all letters
+  out = paste(out, collapse = '')
+  
+  # Get SA and Suffixes
+  noWords      = length(tbl)
+  tbl_sa       = c()
+  tbl_suffixes = c()
+  for (i in 1:noWords)
+  { 
+    suffix                = strsplit(tbl[i], '!')
+    tbl_suffixes          = c(tbl_suffixes, paste0(suffix[[1]][1], eof))
+    tbl_sa                = c(tbl_sa, nchar(suffix[[1]][2]))
+    tbl_sa[is.na(tbl_sa)] = 0 # replacing NA's with 0's
+  }
+  
+  # print tables (FOR DEBUGGING PURPOSES) - This paragraph could (and shall) be removed
+  if (printTables)
+  {
+    tbl_p          = c("BWT:",tbl)
+    tbl_sa_p       = c("SA:",tbl_sa)
+    tbl_suffixes_p = c("Suffix:",tbl_suffixes)
+    for (i in 1:length(tbl_p))
+    {
+      print(c(tbl_p[i],tbl_sa_p[i],tbl_suffixes_p[i]))
+    }
+  }
+  
+  # return BWT
+  out_lst = list(out, tbl_sa) # bwt, suffixArray
+  return(out_lst)
+}
+```
+
+## A BWT example
+
+```{r}
+printTables = TRUE
+bwt("banana", printTables)[[1]][1]
+```
+
+## Another Example
+
+```{r}
+printTables = TRUE
+bwt("appellee", printTables)[[1]][1]
+```
+
+
+# Inverse BWT
+
+```{r}
+ibwt = function(x, printTables = FALSE, eof = '!') {
+  if (!grepl(eof, x)) stop("x doesn't contain eof character")
+  
+  tbl = x = strsplit(x, '')[[1]]
+
+  while (nchar(tbl[1]) < length(x)) {
+    sorted = sort(tbl)
+    tbl    = apply(cbind(x, sorted), 1, paste, collapse = '')
+  }
+  
+  # print tables (FOR DEBUGGING PURPOSES) - This paragraph could (and shall) be removed
+  if (printTables)
+  {
+    noWords = length(tbl)
+    for (i in 1:noWords){ print(tbl[i]) }
+  }
+  
+  # Choose the word that ends with the eof character
+  out = sub(eof, '', tbl[grepl(paste0(eof, '$'), tbl)])
+  
+  # return iBWT
+  out_lst = list(out)
+  return(out_lst)
+}
+```
+
+## Recovering the string
+
+```{r}
+printTables = TRUE
+ibwt("annb!aa",   printTables)
+ibwt("e!elplepa", printTables)
+```
+
+## Another BWT Example
+
+```{r}
+printTables = TRUE
+ibwt(bwt("dogwood")[[1]][1], printTables)
+```
+
+# Searching with BWT LF Mapping
+
+```{r}
+rankbwt = function(x, eof = '!') {
+  if (!grepl(eof, x)) stop("x doesn't contain eof character")
+  
+  bwt_char = strsplit(x, '')[[1]]
+  
+  tots  = c()
+  ranks = c()
+  for (c in bwt_char) {
+    inIntots = tryCatch(
+                           { expr },
+      warning = function(w){ warning-handler-code },
+      error   = function(e){ error-handler-code },
+      finally =            { cleanup-code }
+    )
+      
+      tryCatch(!is.null(tots[[c]]),FALSE)
+    if (inIntots) {
+      tots[c] = 0
+    }
+    ranks   = c(ranks, tots[c])
+    tots[c] = tots[c] + 1
+  }
+  
+  # return iBWT
+  out_lst = list(ranks, tots)
+  return(out_lst)
+}
+
+rankbwt("abba!aa")
+```
+
+
+```{r}
+str_F = abaaba
+L_str = bwt(abaaba)[[1]][1]
+
+```
+
