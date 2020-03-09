@@ -80,14 +80,14 @@ bwt = function(x, printTables = FALSE, eof = '!') {
 
 ```{r}
 printTables = TRUE
-bwt("banana", printTables)[[1]][1]
+bwt("banana", printTables)[[1]]
 ```
 
 ## Another Example
 
 ```{r}
 printTables = TRUE
-bwt("appellee", printTables)[[1]][1]
+bwt("appellee", printTables)[[1]]
 ```
 
 
@@ -132,7 +132,7 @@ ibwt("e!elplepa", printTables)
 
 ```{r}
 printTables = TRUE
-ibwt(bwt("dogwood")[[1]][1], printTables)
+ibwt(bwt("dogwood")[[1]], printTables)
 ```
 
 # Searching with BWT LF Mapping
@@ -146,19 +146,26 @@ rankbwt = function(x, eof = '!') {
   tots  = c()
   ranks = c()
   for (c in bwt_char) {
-    inIntots = tryCatch(
-                           { expr },
-      warning = function(w){ warning-handler-code },
-      error   = function(e){ error-handler-code },
-      finally =            { cleanup-code }
-    )
+    # result = tryCatch(
+    #                        { is.null(tots[c]) },
+    #   warning = function(w){ isInIntots = FALSE },
+    #   error   = function(e){ isInIntots = FALSE },
+    #   finally =            { isInIntots = is.null(tots[c]) }
+    # )
       
-      tryCatch(!is.null(tots[[c]]),FALSE)
-    if (inIntots) {
+      #tryCatch(!is.null(tots[[c]]),FALSE)
+    if (!c %in% tots) {
+      print(">>> START")
+      print(c)
+      print(tots)
       tots[c] = 0
+      print("<<< END")
     }
+    #print(tots)
+    #print("---")
+    #tots[is.na(tots)] = 0 # replacing NA's with 0's
     ranks   = c(ranks, tots[c])
-    tots[c] = tots[c] + 1
+    tots[c] =+ 1
   }
   
   # return iBWT
@@ -171,8 +178,13 @@ rankbwt("abba!aa")
 
 
 ```{r}
-str_F = abaaba
-L_str = bwt(abaaba)[[1]][1]
+str_F = "abaaba"
+L_str = bwt(str_F)[[1]]
 
+print(str_F)
+print(L_str)
 ```
 
+https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/
+https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf
+http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf
