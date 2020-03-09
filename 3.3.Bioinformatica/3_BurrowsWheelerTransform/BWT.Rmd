@@ -144,11 +144,15 @@ rankbwt = function(x, eof = '!') {
   
   tots  = list()
   ranks = c()
-  cnt   = 1
   for (c in bwt_char) {
-    if (!c $in$ tots) {
-      x[[c]] = 0
+    
+    charExists = (c %in% names(tots))
+    if (!charExists) {
+      tots[[c]] = 0
     }
+    
+    ranks = c(ranks, tots[[c]])
+    tots[[c]] = tots[[c]] + 1
   }
   
   # return iBWT
@@ -156,25 +160,12 @@ rankbwt = function(x, eof = '!') {
   return(out_lst)
 }
 
+
 r = rankbwt("abba!aa")[[1]]
-print("---")
+t = rankbwt("abba!aa")[[2]]
 print(r)
+print(t)
 ```
-
-```{python}
-def rankBwt(bw):
-  tots = dict()
-  ranks = []
-  for c in bw:
-    if c not in tots:
-      tots[c] = 0
-    ranks.append(tots[c])
-    tots[c] += 1
-  return ranks, tots
-
-print(rankBwt("abba!aa"))
-```
-
 
 ```{r}
 str_F = "abaaba"

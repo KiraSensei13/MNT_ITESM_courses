@@ -377,7 +377,229 @@ $(document).ready(function () {
 </div>
 
 
+<div id="antonio-osamu-katagiri-tanaka---mnt16---a01212611" class="section level3">
+<h3><a href="httpswww.katagiri-mx.comabout-me">Antonio Osamu Katagiri Tanaka</a> - MNT16 - A01212611</h3>
+<div id="burrows-m.-wheeler-d.-j.-1994.-a-block-sorting-lossless-data-compression-algorithm.-digital-equipment-corporation-vol.-28.-palo-alto-california.-retrieved-from-httpswww.hpl.hp.comtechreportscompaq-decsrc-rr-124.pdf" class="section level4">
+<h4>Burrows, M., &amp; Wheeler, D. J. (1994). A Block-Sorting Lossless Data Compression Algorithm. Digital Equipment Corporation (Vol. 28). Palo Alto, California. Retrieved from httpswww.hpl.hp.comtechreportsCompaq-DECSRC-RR-124.pdf</h4>
+<pre class="r"><code># Clear all objects (from the workspace)
+rm(list = ls())</code></pre>
+</div>
+</div>
+<div id="burrows-wheeler-transform" class="section level1">
+<h1>Burrows-Wheeler Transform</h1>
+<pre class="r"><code>bwt = function(x, printTables = FALSE, eof = '!') {
+  
+  # Let's use !, as $ is used in RegEx patterns
+  if (grepl(eof, &quot;[[:cntrl:]]&quot;)) stop(&quot;eof can't be a RegEx control character&quot;)
+  # Make sure the input doesnt contain !
+  if (grepl(eof, x)) stop(&quot;x can't contain eof character&quot;)
+  
+  # concatenate the eof char to the input string
+  x = paste0(x, eof)
+  # get the number of characters in x
+  n = nchar(x)
+  
+  # function to take first character and add to the end
+  rotate = function(x) {
+    paste0(substring(x, 2), substring(x, 1, 1))
+  }
+  
+  # Create table of all possible rotations
+  tbl = c(x, vector(&quot;character&quot;, n - 1))
+  for(i in 2:n) {
+    tbl[i] = rotate(tbl[i - 1])
+  }
+  
+  # Sort rows alphabetically
+  tbl = sort(tbl)
+  
+  # Return last column of the table
+  out = sapply(tbl, substring, first = n, USE.NAMES = FALSE)
+  # concatenate all letters
+  out = paste(out, collapse = '')
+  
+  # Get SA and Suffixes
+  noWords      = length(tbl)
+  tbl_sa       = c()
+  tbl_suffixes = c()
+  for (i in 1:noWords)
+  { 
+    suffix                = strsplit(tbl[i], '!')
+    tbl_suffixes          = c(tbl_suffixes, paste0(suffix[[1]][1], eof))
+    tbl_sa                = c(tbl_sa, nchar(suffix[[1]][2]))
+    tbl_sa[is.na(tbl_sa)] = 0 # replacing NA's with 0's
+  }
+  
+  # print tables (FOR DEBUGGING PURPOSES) - This paragraph could (and shall) be removed
+  if (printTables)
+  {
+    tbl_p          = c(&quot;BWT:&quot;,tbl)
+    tbl_sa_p       = c(&quot;SA:&quot;,tbl_sa)
+    tbl_suffixes_p = c(&quot;Suffix:&quot;,tbl_suffixes)
+    for (i in 1:length(tbl_p))
+    {
+      print(c(tbl_p[i],tbl_sa_p[i],tbl_suffixes_p[i]))
+    }
+  }
+  
+  # return BWT
+  out_lst = list(out, tbl_sa) # bwt, suffixArray
+  return(out_lst)
+}</code></pre>
+<div id="a-bwt-example" class="section level2">
+<h2>A BWT example</h2>
+<pre class="r"><code>printTables = TRUE
+bwt(&quot;banana&quot;, printTables)[[1]]</code></pre>
+<pre><code>## [1] &quot;BWT:&quot;    &quot;SA:&quot;     &quot;Suffix:&quot;
+## [1] &quot;!banana&quot; &quot;6&quot;       &quot;!&quot;      
+## [1] &quot;a!banan&quot; &quot;5&quot;       &quot;a!&quot;     
+## [1] &quot;ana!ban&quot; &quot;3&quot;       &quot;ana!&quot;   
+## [1] &quot;anana!b&quot; &quot;1&quot;       &quot;anana!&quot; 
+## [1] &quot;banana!&quot; &quot;0&quot;       &quot;banana!&quot;
+## [1] &quot;na!bana&quot; &quot;4&quot;       &quot;na!&quot;    
+## [1] &quot;nana!ba&quot; &quot;2&quot;       &quot;nana!&quot;</code></pre>
+<pre><code>## [1] &quot;annb!aa&quot;</code></pre>
+</div>
+<div id="another-example" class="section level2">
+<h2>Another Example</h2>
+<pre class="r"><code>printTables = TRUE
+bwt(&quot;appellee&quot;, printTables)[[1]]</code></pre>
+<pre><code>## [1] &quot;BWT:&quot;    &quot;SA:&quot;     &quot;Suffix:&quot;
+## [1] &quot;!appellee&quot; &quot;8&quot;         &quot;!&quot;        
+## [1] &quot;appellee!&quot; &quot;0&quot;         &quot;appellee!&quot;
+## [1] &quot;e!appelle&quot; &quot;7&quot;         &quot;e!&quot;       
+## [1] &quot;ee!appell&quot; &quot;6&quot;         &quot;ee!&quot;      
+## [1] &quot;ellee!app&quot; &quot;3&quot;         &quot;ellee!&quot;   
+## [1] &quot;lee!appel&quot; &quot;5&quot;         &quot;lee!&quot;     
+## [1] &quot;llee!appe&quot; &quot;4&quot;         &quot;llee!&quot;    
+## [1] &quot;pellee!ap&quot; &quot;2&quot;         &quot;pellee!&quot;  
+## [1] &quot;ppellee!a&quot; &quot;1&quot;         &quot;ppellee!&quot;</code></pre>
+<pre><code>## [1] &quot;e!elplepa&quot;</code></pre>
+</div>
+</div>
+<div id="inverse-bwt" class="section level1">
+<h1>Inverse BWT</h1>
+<pre class="r"><code>ibwt = function(x, printTables = FALSE, eof = '!') {
+  if (!grepl(eof, x)) stop(&quot;x doesn't contain eof character&quot;)
+  
+  tbl = x = strsplit(x, '')[[1]]
 
+  while (nchar(tbl[1]) &lt; length(x)) {
+    sorted = sort(tbl)
+    tbl    = apply(cbind(x, sorted), 1, paste, collapse = '')
+  }
+  
+  # print tables (FOR DEBUGGING PURPOSES) - This paragraph could (and shall) be removed
+  if (printTables)
+  {
+    noWords = length(tbl)
+    for (i in 1:noWords){ print(tbl[i]) }
+  }
+  
+  # Choose the word that ends with the eof character
+  out = sub(eof, '', tbl[grepl(paste0(eof, '$'), tbl)])
+  
+  # return iBWT
+  out_lst = list(out)
+  return(out_lst)
+}</code></pre>
+<div id="recovering-the-string" class="section level2">
+<h2>Recovering the string</h2>
+<pre class="r"><code>printTables = TRUE
+ibwt(&quot;annb!aa&quot;,   printTables)</code></pre>
+<pre><code>## [1] &quot;a!banan&quot;
+## [1] &quot;na!bana&quot;
+## [1] &quot;nana!ba&quot;
+## [1] &quot;banana!&quot;
+## [1] &quot;!banana&quot;
+## [1] &quot;ana!ban&quot;
+## [1] &quot;anana!b&quot;</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;banana&quot;</code></pre>
+<pre class="r"><code>ibwt(&quot;e!elplepa&quot;, printTables)</code></pre>
+<pre><code>## [1] &quot;e!appelle&quot;
+## [1] &quot;!appellee&quot;
+## [1] &quot;ee!appell&quot;
+## [1] &quot;lee!appel&quot;
+## [1] &quot;pellee!ap&quot;
+## [1] &quot;llee!appe&quot;
+## [1] &quot;ellee!app&quot;
+## [1] &quot;ppellee!a&quot;
+## [1] &quot;appellee!&quot;</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;appellee&quot;</code></pre>
+</div>
+<div id="another-bwt-example" class="section level2">
+<h2>Another BWT Example</h2>
+<pre class="r"><code>printTables = TRUE
+ibwt(bwt(&quot;dogwood&quot;)[[1]], printTables)</code></pre>
+<pre><code>## [1] &quot;d!dogwoo&quot;
+## [1] &quot;od!dogwo&quot;
+## [1] &quot;!dogwood&quot;
+## [1] &quot;ogwood!d&quot;
+## [1] &quot;ood!dogw&quot;
+## [1] &quot;dogwood!&quot;
+## [1] &quot;wood!dog&quot;
+## [1] &quot;gwood!do&quot;</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;dogwood&quot;</code></pre>
+</div>
+</div>
+<div id="searching-with-bwt-lf-mapping" class="section level1">
+<h1>Searching with BWT LF Mapping</h1>
+<pre class="r"><code>rankbwt = function(x, eof = '!') {
+  if (!grepl(eof, x)) stop(&quot;x doesn't contain eof character&quot;)
+  bwt_char = strsplit(x, '')[[1]]
+  
+  tots  = list()
+  ranks = c()
+  for (c in bwt_char) {
+    
+    charExists = (c %in% names(tots))
+    if (!charExists) {
+      tots[[c]] = 0
+    }
+    
+    ranks = c(ranks, tots[[c]])
+    tots[[c]] = tots[[c]] + 1
+  }
+  
+  # return iBWT
+  out_lst = list(ranks, tots)
+  return(out_lst)
+}
+
+
+r = rankbwt(&quot;abba!aa&quot;)[[1]]
+t = rankbwt(&quot;abba!aa&quot;)[[2]]
+print(r)</code></pre>
+<pre><code>## [1] 0 0 1 1 0 2 3</code></pre>
+<pre class="r"><code>print(t)</code></pre>
+<pre><code>## $a
+## [1] 4
+## 
+## $b
+## [1] 2
+## 
+## $`!`
+## [1] 1</code></pre>
+<pre class="r"><code>str_F = &quot;abaaba&quot;
+printTables = TRUE
+L_str = bwt(str_F, printTables)[[1]]</code></pre>
+<pre><code>## [1] &quot;BWT:&quot;    &quot;SA:&quot;     &quot;Suffix:&quot;
+## [1] &quot;!abaaba&quot; &quot;6&quot;       &quot;!&quot;      
+## [1] &quot;a!abaab&quot; &quot;5&quot;       &quot;a!&quot;     
+## [1] &quot;aaba!ab&quot; &quot;2&quot;       &quot;aaba!&quot;  
+## [1] &quot;aba!aba&quot; &quot;3&quot;       &quot;aba!&quot;   
+## [1] &quot;abaaba!&quot; &quot;0&quot;       &quot;abaaba!&quot;
+## [1] &quot;ba!abaa&quot; &quot;4&quot;       &quot;ba!&quot;    
+## [1] &quot;baaba!a&quot; &quot;1&quot;       &quot;baaba!&quot;</code></pre>
+<pre class="r"><code>print(str_F)</code></pre>
+<pre><code>## [1] &quot;abaaba&quot;</code></pre>
+<pre class="r"><code>print(L_str)</code></pre>
+<pre><code>## [1] &quot;abba!aa&quot;</code></pre>
+<p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/" class="uri">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/</a> <a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf" class="uri">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf</a> <a href="http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf" class="uri">http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf</a></p>
+</div>
 
 
 
