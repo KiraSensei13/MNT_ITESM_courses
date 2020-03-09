@@ -140,32 +140,15 @@ ibwt(bwt("dogwood")[[1]], printTables)
 ```{r}
 rankbwt = function(x, eof = '!') {
   if (!grepl(eof, x)) stop("x doesn't contain eof character")
-  
   bwt_char = strsplit(x, '')[[1]]
   
-  tots  = c()
+  tots  = list()
   ranks = c()
+  cnt   = 1
   for (c in bwt_char) {
-    # result = tryCatch(
-    #                        { is.null(tots[c]) },
-    #   warning = function(w){ isInIntots = FALSE },
-    #   error   = function(e){ isInIntots = FALSE },
-    #   finally =            { isInIntots = is.null(tots[c]) }
-    # )
-      
-      #tryCatch(!is.null(tots[[c]]),FALSE)
-    if (!c %in% tots) {
-      print(">>> START")
-      print(c)
-      print(tots)
-      tots[c] = 0
-      print("<<< END")
+    if (!c $in$ tots) {
+      x[[c]] = 0
     }
-    #print(tots)
-    #print("---")
-    #tots[is.na(tots)] = 0 # replacing NA's with 0's
-    ranks   = c(ranks, tots[c])
-    tots[c] =+ 1
   }
   
   # return iBWT
@@ -173,13 +156,30 @@ rankbwt = function(x, eof = '!') {
   return(out_lst)
 }
 
-rankbwt("abba!aa")
+r = rankbwt("abba!aa")[[1]]
+print("---")
+print(r)
+```
+
+```{python}
+def rankBwt(bw):
+  tots = dict()
+  ranks = []
+  for c in bw:
+    if c not in tots:
+      tots[c] = 0
+    ranks.append(tots[c])
+    tots[c] += 1
+  return ranks, tots
+
+print(rankBwt("abba!aa"))
 ```
 
 
 ```{r}
 str_F = "abaaba"
-L_str = bwt(str_F)[[1]]
+printTables = TRUE
+L_str = bwt(str_F, printTables)[[1]]
 
 print(str_F)
 print(L_str)
