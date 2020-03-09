@@ -71,19 +71,19 @@ bwt = function(x, printTables = FALSE, eof = '!') {
   }
   
   # return BWT
-  out_lst = list(out, tbl_sa) # bwt, suffixArray
+  out_lst = list(out) # bwt, suffixArray
   return(out_lst)
 }
 ```
 
-## A BWT example
+A BWT example
 
 ```{r}
 printTables = TRUE
 bwt("banana", printTables)[[1]]
 ```
 
-## Another Example
+Another Example
 
 ```{r}
 printTables = TRUE
@@ -120,7 +120,7 @@ ibwt = function(x, printTables = FALSE, eof = '!') {
 }
 ```
 
-## Recovering the string
+Recovering the string
 
 ```{r}
 printTables = TRUE
@@ -128,14 +128,17 @@ ibwt("annb!aa",   printTables)
 ibwt("e!elplepa", printTables)
 ```
 
-## Another BWT Example
+Another BWT Example
 
 ```{r}
 printTables = TRUE
-ibwt(bwt("dogwood")[[1]], printTables)
+ibwt(bwt("Tomorrow and tomorrow and tomorrow")[[1]])
 ```
 
 # Searching with BWT LF Mapping
+
+## B-ranking
+Given BWT string bw, returns a parallel list of B-ranks. Also returns tots, a mapping from characters to # times the character appears in BWT.
 
 ```{r}
 rankbwt = function(x, eof = '!') {
@@ -155,27 +158,57 @@ rankbwt = function(x, eof = '!') {
     tots[[c]] = tots[[c]] + 1
   }
   
+  ranks = paste(ranks, collapse='')
+  
   # return iBWT
   out_lst = list(ranks, tots)
   return(out_lst)
 }
-
-
-r = rankbwt("abba!aa")[[1]]
-t = rankbwt("abba!aa")[[2]]
-print(r)
-print(t)
 ```
 
-```{r}
-str_F = "abaaba"
-printTables = TRUE
-L_str = bwt(str_F, printTables)[[1]]
+Return a map from characters to the range of cells in the first column containing the character.
 
-print(str_F)
+```{r}
+firstCol = function(tots) {
+  first = c()
+  for (ele in names(tots)) {
+    char = names(tots[ele]) 
+    count = tots[[ele]]
+    
+    for (c in 1:count) {
+      first = c(first, char)
+    }
+  }
+  
+  first = paste(sort(first), collapse='')
+  
+  # return iBWT
+  out_lst = list(first)
+  return(out_lst)
+}
+```
+
+An example:
+
+```{r}
+T_str = "abaaba"
+printTables = TRUE
+L_str = bwt(T_str, printTables)[[1]]
+
+r        = rankbwt(L_str)
+rank     = r[[1]]
+rankTots = r[[2]]
+F_str    = firstCol(rankTots)[[1]]
+
+
+print(T_str)
+print(F_str)
 print(L_str)
+print(rank)
 ```
 
 https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/
+
 https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf
+
 http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf

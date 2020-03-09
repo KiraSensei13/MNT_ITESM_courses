@@ -443,11 +443,10 @@ rm(list = ls())</code></pre>
   }
   
   # return BWT
-  out_lst = list(out, tbl_sa) # bwt, suffixArray
+  out_lst = list(out) # bwt, suffixArray
   return(out_lst)
 }</code></pre>
-<div id="a-bwt-example" class="section level2">
-<h2>A BWT example</h2>
+<p>A BWT example</p>
 <pre class="r"><code>printTables = TRUE
 bwt(&quot;banana&quot;, printTables)[[1]]</code></pre>
 <pre><code>## [1] &quot;BWT:&quot;    &quot;SA:&quot;     &quot;Suffix:&quot;
@@ -459,9 +458,7 @@ bwt(&quot;banana&quot;, printTables)[[1]]</code></pre>
 ## [1] &quot;na!bana&quot; &quot;4&quot;       &quot;na!&quot;    
 ## [1] &quot;nana!ba&quot; &quot;2&quot;       &quot;nana!&quot;</code></pre>
 <pre><code>## [1] &quot;annb!aa&quot;</code></pre>
-</div>
-<div id="another-example" class="section level2">
-<h2>Another Example</h2>
+<p>Another Example</p>
 <pre class="r"><code>printTables = TRUE
 bwt(&quot;appellee&quot;, printTables)[[1]]</code></pre>
 <pre><code>## [1] &quot;BWT:&quot;    &quot;SA:&quot;     &quot;Suffix:&quot;
@@ -475,7 +472,6 @@ bwt(&quot;appellee&quot;, printTables)[[1]]</code></pre>
 ## [1] &quot;pellee!ap&quot; &quot;2&quot;         &quot;pellee!&quot;  
 ## [1] &quot;ppellee!a&quot; &quot;1&quot;         &quot;ppellee!&quot;</code></pre>
 <pre><code>## [1] &quot;e!elplepa&quot;</code></pre>
-</div>
 </div>
 <div id="inverse-bwt" class="section level1">
 <h1>Inverse BWT</h1>
@@ -503,8 +499,7 @@ bwt(&quot;appellee&quot;, printTables)[[1]]</code></pre>
   out_lst = list(out)
   return(out_lst)
 }</code></pre>
-<div id="recovering-the-string" class="section level2">
-<h2>Recovering the string</h2>
+<p>Recovering the string</p>
 <pre class="r"><code>printTables = TRUE
 ibwt(&quot;annb!aa&quot;,   printTables)</code></pre>
 <pre><code>## [1] &quot;a!banan&quot;
@@ -528,25 +523,17 @@ ibwt(&quot;annb!aa&quot;,   printTables)</code></pre>
 ## [1] &quot;appellee!&quot;</code></pre>
 <pre><code>## [[1]]
 ## [1] &quot;appellee&quot;</code></pre>
-</div>
-<div id="another-bwt-example" class="section level2">
-<h2>Another BWT Example</h2>
+<p>Another BWT Example</p>
 <pre class="r"><code>printTables = TRUE
-ibwt(bwt(&quot;dogwood&quot;)[[1]], printTables)</code></pre>
-<pre><code>## [1] &quot;d!dogwoo&quot;
-## [1] &quot;od!dogwo&quot;
-## [1] &quot;!dogwood&quot;
-## [1] &quot;ogwood!d&quot;
-## [1] &quot;ood!dogw&quot;
-## [1] &quot;dogwood!&quot;
-## [1] &quot;wood!dog&quot;
-## [1] &quot;gwood!do&quot;</code></pre>
+ibwt(bwt(&quot;dogwood&quot;)[[1]])</code></pre>
 <pre><code>## [[1]]
 ## [1] &quot;dogwood&quot;</code></pre>
 </div>
-</div>
 <div id="searching-with-bwt-lf-mapping" class="section level1">
 <h1>Searching with BWT LF Mapping</h1>
+<div id="b-ranking" class="section level2">
+<h2>B-ranking</h2>
+<p>Given BWT string bw, returns a parallel list of B-ranks. Also returns tots, a mapping from characters to # times the character appears in BWT.</p>
 <pre class="r"><code>rankbwt = function(x, eof = '!') {
   if (!grepl(eof, x)) stop(&quot;x doesn't contain eof character&quot;)
   bwt_char = strsplit(x, '')[[1]]
@@ -564,17 +551,28 @@ ibwt(bwt(&quot;dogwood&quot;)[[1]], printTables)</code></pre>
     tots[[c]] = tots[[c]] + 1
   }
   
+  ranks = paste(ranks, collapse='')
+  
   # return iBWT
   out_lst = list(ranks, tots)
   return(out_lst)
-}
+}</code></pre>
+<p>Return a map from characters to the range of cells in the first column containing the character.</p>
+<pre class="r"><code>F_str = &quot;abaaba&quot;
+printTables = FALSE
+L_str = bwt(F_str, printTables)[[1]]
 
+r        = rankbwt(L_str)
+rank     = r[[1]]
+rankTots = r[[2]]
 
-r = rankbwt(&quot;abba!aa&quot;)[[1]]
-t = rankbwt(&quot;abba!aa&quot;)[[2]]
-print(r)</code></pre>
-<pre><code>## [1] 0 0 1 1 0 2 3</code></pre>
-<pre class="r"><code>print(t)</code></pre>
+print(F_str)</code></pre>
+<pre><code>## [1] &quot;abaaba&quot;</code></pre>
+<pre class="r"><code>print(L_str)</code></pre>
+<pre><code>## [1] &quot;abba!aa&quot;</code></pre>
+<pre class="r"><code>print(rank)</code></pre>
+<pre><code>## [1] &quot;0011023&quot;</code></pre>
+<pre class="r"><code>print(rankTots)</code></pre>
 <pre><code>## $a
 ## [1] 4
 ## 
@@ -583,22 +581,10 @@ print(r)</code></pre>
 ## 
 ## $`!`
 ## [1] 1</code></pre>
-<pre class="r"><code>str_F = &quot;abaaba&quot;
-printTables = TRUE
-L_str = bwt(str_F, printTables)[[1]]</code></pre>
-<pre><code>## [1] &quot;BWT:&quot;    &quot;SA:&quot;     &quot;Suffix:&quot;
-## [1] &quot;!abaaba&quot; &quot;6&quot;       &quot;!&quot;      
-## [1] &quot;a!abaab&quot; &quot;5&quot;       &quot;a!&quot;     
-## [1] &quot;aaba!ab&quot; &quot;2&quot;       &quot;aaba!&quot;  
-## [1] &quot;aba!aba&quot; &quot;3&quot;       &quot;aba!&quot;   
-## [1] &quot;abaaba!&quot; &quot;0&quot;       &quot;abaaba!&quot;
-## [1] &quot;ba!abaa&quot; &quot;4&quot;       &quot;ba!&quot;    
-## [1] &quot;baaba!a&quot; &quot;1&quot;       &quot;baaba!&quot;</code></pre>
-<pre class="r"><code>print(str_F)</code></pre>
-<pre><code>## [1] &quot;abaaba&quot;</code></pre>
-<pre class="r"><code>print(L_str)</code></pre>
-<pre><code>## [1] &quot;abba!aa&quot;</code></pre>
-<p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/" class="uri">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/</a> <a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf" class="uri">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf</a> <a href="http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf" class="uri">http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf</a></p>
+<p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/" class="uri">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/</a></p>
+<p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf" class="uri">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf</a></p>
+<p><a href="http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf" class="uri">http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf</a></p>
+</div>
 </div>
 
 
