@@ -192,7 +192,7 @@ An example:
 
 ```{r}
 T_str = "abaaba"
-printTables = TRUE
+printTables = FALSE
 L_str = bwt(T_str, printTables)[[1]]
 
 r        = rankbwt(L_str)
@@ -206,6 +206,80 @@ print(F_str)
 print(L_str)
 print(rank)
 ```
+
+# Searching occurrences
+Given BWT(T) and a pattern string p, return the number of times p occurs in T.
+
+```{r}
+countMatches = function(L_str, p_str) {
+  r        = rankbwt(L_str)
+  rank     = r[[1]]
+  rankTots = r[[2]]
+  F_str    = firstCol(rankTots)[[1]]
+  
+  print(F_str[p_str[-1]])
+  print(length(p_str)-2)
+}
+
+T_str = "Tomorrow_and_tomorrow_and_tomorrow"
+L_str = bwt(T_str, printTables)[[1]]
+countMatches(L_str, "omorrow")
+```
+
+```{python}
+def rankBwt(bw):
+  """ Given BWT string bw, returns a parallel list of B-ranks. Also
+    returns tots, a mapping from characters to # times the
+    character appears in BWT. """
+  tots = dict()
+  ranks = []
+  for c in bw:
+    if c not in tots:
+      tots[c] = 0
+    ranks.append(tots[c])
+    tots[c] += 1
+  return ranks, tots
+  
+def firstCol(tots):
+  """ Return a map from characters to the range of cells in the first
+    column containing the character. """
+  first = {}
+  totc = 0
+  for c, count in sorted(tots.items()):
+    first[c] = (totc, totc + count)
+    totc += count
+  return first
+
+def countMatches(bw, p):
+  """ Given BWT(T) and a pattern string p, return the number of times
+    p occurs in T. """
+  ranks, tots = rankBwt(bw)
+  first = firstCol(tots)
+  l, r = first[p[-1]]
+  i = len(p)-2
+  while i >= 0 and r > l:
+    c = p[i]
+    # scan from left, looking for occurrences of c
+    j = l
+    while j < r:
+      if bw[j] == c:
+        l = first[c][0] + ranks[j]
+        break
+      j += 1
+    if j == r:
+      l = r
+      break # no occurrences -> no match
+    r -= 1
+    while bw[r] != c:
+      r -= 1
+    r = first[c][0] + ranks[r] + 1
+    i -= 1
+  return r - l
+  
+res = countMatches("w!wwdd__nnoooaattTmmmrrrrrrooo__ooo", "r")
+print(res)
+```
+
 
 https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/
 
