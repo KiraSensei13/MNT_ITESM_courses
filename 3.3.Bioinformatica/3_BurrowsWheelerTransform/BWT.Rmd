@@ -159,6 +159,7 @@ rankbwt = function(x, eof = '!') {
   }
   
   ranks = paste(ranks, collapse='')
+  tots  = tots[order(names(tots),decreasing=FALSE)]
   
   # return iBWT
   out_lst = list(ranks, tots)
@@ -170,10 +171,16 @@ Return a map from characters to the range of cells in the first column containin
 
 ```{r}
 firstCol = function(tots) {
-  first = c()
+  
+  range  = list()
+  first  = c()
+  pointer = 0
   for (ele in names(tots)) {
-    char = names(tots[ele]) 
+    char  = names(tots[ele]) 
     count = tots[[ele]]
+    
+    range[[char]] = c(pointer, pointer+count)
+    pointer = pointer+count
     
     for (c in 1:count) {
       first = c(first, char)
@@ -183,7 +190,7 @@ firstCol = function(tots) {
   first = paste(sort(first), collapse='')
   
   # return iBWT
-  out_lst = list(first)
+  out_lst = list(first, range)
   return(out_lst)
 }
 ```
@@ -191,7 +198,7 @@ firstCol = function(tots) {
 An example:
 
 ```{r}
-T_str = "abaaba"
+T_str = "Tomorrow_and_tomorrow_and_tomorrow" #"abaaba"
 printTables = FALSE
 L_str = bwt(T_str, printTables)[[1]]
 
@@ -202,9 +209,9 @@ F_str    = firstCol(rankTots)[[1]]
 
 
 print(T_str)
-print(F_str)
 print(L_str)
 print(rank)
+print(F_str)
 ```
 
 # Searching occurrences
@@ -215,10 +222,41 @@ countMatches = function(L_str, p_str) {
   r        = rankbwt(L_str)
   rank     = r[[1]]
   rankTots = r[[2]]
-  F_str    = firstCol(rankTots)[[1]]
+  F_str    = firstCol(rankTots)[[2]]
   
-  print(F_str[p_str[-1]])
-  print(length(p_str)-2)
+  # Extract last (one) character
+  n_last = 1
+  p_str_lst = substr(p_str, nchar(p_str) - n_last + 1, nchar(p_str))
+  l = F_str[[p_str_lst]][1]
+  r = F_str[[p_str_lst]][2]
+  
+  i = nchar(p_str)-1
+  while (i > 0) {
+    # Get ith character of p_str
+    c = substring(p_str, i, i)
+    print(c)
+    # # scan from left, looking for occurrences of c
+    # j = l
+    # while (j < r) {
+    #   if (substring(L_str, j, j) == c) {
+    #     l = F_str[[c]][1] + as.numeric(substring(rank, j, j))
+    #     break
+    #   }
+    #   j = j + 1
+    # }
+    # if (j == r) {
+    #   l = r
+    #   # no occurrences -> no match
+    #   break
+    # }
+    # r = r - 1
+    # while (substring(L_str, r, r) != c) {
+    #   r = r - 1
+    # }
+    # r = F_str[[c]][1] + as.numeric(substring(rank, j, j)) + 1
+    i = i - 1
+  }
+  return(r - l)
 }
 
 T_str = "Tomorrow_and_tomorrow_and_tomorrow"
@@ -259,6 +297,7 @@ def countMatches(bw, p):
   i = len(p)-2
   while i >= 0 and r > l:
     c = p[i]
+    print(c)
     # scan from left, looking for occurrences of c
     j = l
     while j < r:
@@ -276,9 +315,15 @@ def countMatches(bw, p):
     i -= 1
   return r - l
   
-res = countMatches("w!wwdd__nnoooaattTmmmrrrrrrooo__ooo", "r")
+res = countMatches("w!wwdd__nnoooaattTmmmrrrrrrooo__ooo", "omorrow")
+print("---")
 print(res)
 ```
+
+```{r}
+
+```
+
 
 
 https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/
