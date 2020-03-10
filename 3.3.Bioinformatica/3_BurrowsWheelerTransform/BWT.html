@@ -525,9 +525,9 @@ ibwt(&quot;annb!aa&quot;,   printTables)</code></pre>
 ## [1] &quot;appellee&quot;</code></pre>
 <p>Another BWT Example</p>
 <pre class="r"><code>printTables = TRUE
-ibwt(bwt(&quot;dogwood&quot;)[[1]])</code></pre>
+ibwt(bwt(&quot;Tomorrow and tomorrow and tomorrow&quot;)[[1]])</code></pre>
 <pre><code>## [[1]]
-## [1] &quot;dogwood&quot;</code></pre>
+## [1] &quot;Tomorrow and tomorrow and tomorrow&quot;</code></pre>
 </div>
 <div id="searching-with-bwt-lf-mapping" class="section level1">
 <h1>Searching with BWT LF Mapping</h1>
@@ -552,39 +552,126 @@ ibwt(bwt(&quot;dogwood&quot;)[[1]])</code></pre>
   }
   
   ranks = paste(ranks, collapse='')
+  tots  = tots[order(names(tots),decreasing=FALSE)]
   
   # return iBWT
   out_lst = list(ranks, tots)
   return(out_lst)
 }</code></pre>
 <p>Return a map from characters to the range of cells in the first column containing the character.</p>
-<pre class="r"><code>F_str = &quot;abaaba&quot;
+<pre class="r"><code>firstCol = function(tots) {
+  
+  range  = list()
+  first  = c()
+  pointer = 0
+  for (ele in names(tots)) {
+    char  = names(tots[ele]) 
+    count = tots[[ele]]
+    
+    range[[char]] = c(pointer, pointer+count)
+    pointer = pointer+count
+    
+    for (c in 1:count) {
+      first = c(first, char)
+    }
+  }
+  
+  first = paste(sort(first), collapse='')
+  
+  # return iBWT
+  out_lst = list(first, range)
+  return(out_lst)
+}</code></pre>
+<p>An example:</p>
+<pre class="r"><code>T_str = &quot;Tomorrow_and_tomorrow_and_tomorrow&quot; #&quot;abaaba&quot;
 printTables = FALSE
-L_str = bwt(F_str, printTables)[[1]]
+L_str = bwt(T_str, printTables)[[1]]
 
 r        = rankbwt(L_str)
 rank     = r[[1]]
 rankTots = r[[2]]
+F_str    = firstCol(rankTots)[[1]]
 
-print(F_str)</code></pre>
-<pre><code>## [1] &quot;abaaba&quot;</code></pre>
+
+print(T_str)</code></pre>
+<pre><code>## [1] &quot;Tomorrow_and_tomorrow_and_tomorrow&quot;</code></pre>
 <pre class="r"><code>print(L_str)</code></pre>
-<pre><code>## [1] &quot;abba!aa&quot;</code></pre>
+<pre><code>## [1] &quot;wwwdd__nnoooaattTmmmrrrrrrooo__!ooo&quot;</code></pre>
 <pre class="r"><code>print(rank)</code></pre>
-<pre><code>## [1] &quot;0011023&quot;</code></pre>
-<pre class="r"><code>print(rankTots)</code></pre>
-<pre><code>## $a
-## [1] 4
-## 
-## $b
-## [1] 2
-## 
-## $`!`
-## [1] 1</code></pre>
+<pre><code>## [1] &quot;01201010101201010012012345345230678&quot;</code></pre>
+<pre class="r"><code>print(F_str)</code></pre>
+<pre><code>## [1] &quot;!____aaddmmmnnooooooooorrrrrrttTwww&quot;</code></pre>
+</div>
+</div>
+<div id="searching-occurrences" class="section level1">
+<h1>Searching occurrences</h1>
+<p>Given BWT(T) and a pattern string p, return the number of times p occurs in T.</p>
+<pre class="r"><code>countMatches = function(L_str, p_str) {
+  r        = rankbwt(L_str)
+  rank     = r[[1]]
+  rankTots = r[[2]]
+  F_str    = firstCol(rankTots)[[2]]
+  z = nchar(rank)
+  
+  print(z)
+  print(rank)
+  
+  # Extract last (one) character
+  n_last = 1
+  p_str_lst = substr(p_str, nchar(p_str) - n_last + 1, nchar(p_str))
+  l = F_str[[p_str_lst]][1]
+  r = F_str[[p_str_lst]][2]
+  
+  i = nchar(p_str)-1
+  while (i &gt; 0 &amp; r &gt; l) {
+    # Get ith character of p_str
+    c = substring(p_str, i, i)
+    # scan from left, looking for occurrences of c
+    j = l
+    print(&quot;&gt;&gt;&gt;&quot;)
+    print(j)
+    print(as.numeric(substring(rank, j, j)))
+    while (j &lt; r) {
+      if (substring(L_str, j, j) == c) {
+        l = F_str[[c]][1] + as.numeric(substring(rank, j, j))
+        break
+      }
+      j = j + 1
+    }
+    if (j == r) {
+      l = r
+      # no occurrences -&gt; no match
+      break
+    }
+    r = r - 1
+    while (substring(L_str, r, r) != c) {
+      r = r - 1
+    }
+    r = F_str[[c]][1] + as.numeric(substring(rank, j, j)) + 1
+    i = i - 1
+  }
+  return(r - l)
+}
+
+T_str = &quot;Tomorrow_and_tomorrow_and_tomorrow&quot;
+L_str = bwt(T_str, printTables)[[1]]
+countMatches(L_str, &quot;omorrow&quot;)</code></pre>
+<pre><code>## [1] 35
+## [1] &quot;01201010101201010012012345345230678&quot;
+## [1] &quot;&gt;&gt;&gt;&quot;
+## [1] 32
+## [1] 0
+## [1] &quot;&gt;&gt;&gt;&quot;
+## [1] 20
+## [1] 2</code></pre>
+<pre><code>## [1] 0</code></pre>
+<p>def rankBwt(bw): &quot;&quot;&quot; Given BWT string bw, returns a parallel list of B-ranks. Also returns tots, a mapping from characters to # times the character appears in BWT. &quot;&quot;&quot; tots = dict() ranks = [] for c in bw: if c not in tots: tots[c] = 0 ranks.append(tots[c]) tots[c] += 1 return ranks, tots</p>
+<p>def firstCol(tots): &quot;&quot;&quot; Return a map from characters to the range of cells in the first column containing the character. &quot;&quot;&quot; first = {} totc = 0 for c, count in sorted(tots.items()): first[c] = (totc, totc + count) totc += count return first</p>
+<p>def countMatches(bw, p): &quot;&quot;&quot; Given BWT(T) and a pattern string p, return the number of times p occurs in T. &quot;&quot;&quot; ranks, tots = rankBwt(bw) print(ranks) first = firstCol(tots) l, r = first[p[-1]] i = len(p)-2 while i &gt;= 0 and r &gt; l: c = p[i] # scan from left, looking for occurrences of c j = l print(“&gt;&gt;&gt;”) print(j) print(ranks[j]) while j &lt; r: if bw[j] == c: l = first[c][0] + ranks[j] break j += 1 if j == r: l = r break # no occurrences -&gt; no match r -= 1 while bw[r] != c: r -= 1 r = first[c][0] + ranks[r] + 1 i -= 1 return r - l</p>
+<p>res = countMatches(&quot;w!wwdd__nnoooaattTmmmrrrrrrooo__ooo“,”omorrow“) print(”—&quot;) print(res)</p>
 <p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/" class="uri">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/</a></p>
 <p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf" class="uri">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf</a></p>
 <p><a href="http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf" class="uri">http://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf</a></p>
-</div>
 </div>
 
 
