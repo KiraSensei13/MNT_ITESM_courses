@@ -15,15 +15,15 @@ rm(list = ls())
 # Burrows-Wheeler Transform
 
 ```{r}
-bwt2 = function(x, printTables = FALSE, eof = '!') {
-  
-}
-
-
-printTables = TRUE
-bwt("banana", printTables)[[1]]
-bwt("appellee", printTables)[[1]]
-bwt("Tomorrow and tomorrow and tomorrow")[[1]]
+# bwt2 = function(x, printTables = FALSE, eof = '!') {
+#   
+# }
+# 
+# 
+# printTables = TRUE
+# bwt("banana", printTables)[[1]]
+# bwt("appellee", printTables)[[1]]
+# bwt("Tomorrow and tomorrow and tomorrow")[[1]]
 ```
 
 
@@ -211,7 +211,7 @@ firstCol = function(tots) {
 An example:
 
 ```{r}
-T_str = "Tomorrow_and_tomorrow_and_tomorrow" #"abaaba"
+T_str = "banana" #"abaaba"
 printTables = FALSE
 L_str = bwt(T_str, printTables)[[1]]
 
@@ -278,9 +278,9 @@ countMatches = function(L_str, p_str) {
   return(r - l)
 }
 
-T_str = "Tomorrow_and_tomorrow_and_tomorrow"
+T_str = "banana"
 L_str = bwt(T_str, printTables)[[1]]
-countMatches(L_str, "omorrow")
+countMatches(L_str, "ana")
 ```
 
 
