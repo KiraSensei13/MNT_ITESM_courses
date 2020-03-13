@@ -53,7 +53,7 @@ def make_cnt(s, printTbl, alphabet=None):
         total += c[letter];
         
     # Print the result
-    if printTbl: print("Character score:\n", result, "\n");
+    if printTbl: print("Score:\n", ''.join(sorted(s)), '->', result, "\n");
     return result;
 
 
@@ -169,7 +169,7 @@ def make_all(sequence, printTbl, suffixArray=None, eos=EOS):
         v.extend([v[-1], 0]);
     
     # Print/Return all tables
-    if printTbl: print("alphabet:\n", alphabet, "\n");
+    if printTbl: print("Alphabet:\n", alphabet, "\n");
     return alphabet, bwt, occ, cnt, suffixArray;
 ```
 
@@ -269,11 +269,26 @@ def find(query, sequence, printTbl=False, mismatches=0, bwt_data=None, suffixArr
     # Sort the match locations
     res = sorted(set(results));
     
-    # Print and Return the result
-    print("subSequence appears at possitions:\n", res);
+    # Print the result
+    print("Query appears at possitions:\n", res);
     print('', sequence);
-    for i in res: print(' '*i,query_str);
+    for i in res:
+        # Print bars to locate character matches
+        query_chunck = '';
+        sequence_chunck = '';
+        bar = ' '*i + ' ';
+        for n in range(len(query_str)):
+            query_chunck    = query_chunck + query_str[n];
+            sequence_chunck = sequence_chunck + sequence[i + n];
+            if query_chunck[n] == sequence_chunck[n]: bar = bar + '|';
+            else:                                     bar = bar + ' ';
+        print(bar)
+    
+        # Print the query at the match location
+        print(' '*i, query_str);
     print();
+    
+    # Return the result
     return res;
 ```
 
@@ -283,17 +298,18 @@ def find(query, sequence, printTbl=False, mismatches=0, bwt_data=None, suffixArr
 find('ana', 'banana', printTbl=True);
 ```
 
-#### Now an example with the SARS nucleotide (NC_004718.3 SARS coronavirus, partial genome)
+#### Now an example with the SARS nucleotide (NC_004718.3 SARS coronavirus)
 
 ```{python}
 find(
-    'GATCTCTTA',
-    'ATATTAGGTTTTTACCTACCCAGGAAAAGCCAACCAACCTCGATCTCTTGTAGATCTGTTCTCTAAGATCTCTTACGAACTTTA',
-    mismatches=1
+    'GATCTCTTAC',
+    'ATATTAGGTTTTTACCTACCCAGGAAAAGCCAACCAACCTCGATCTCTTGCAGATCTGTTCTCTAAGATCTCTTACGAACTTTA',
+    mismatches=3
 );
 ```
 
 ```{r}
+# Enable Warning messages
 options(warn = 0)
 ```
 
