@@ -39,11 +39,12 @@ The GSE1739 was selected for the Bioinformatics class assignments and activities
 ---
 
 ```{r}
-# # Install packages from Bioconductor as they're not available in CRAN
+# Install packages from Bioconductor as they're not available in CRAN
 # if (!requireNamespace("BiocManager", quietly=TRUE))
 #     install.packages("BiocManager")
 # BiocManager::install("GEOquery")
 # BiocManager::install("Biobase")
+# BiocManager::install("affy")
 ```
 
 #### Load the Bioconductor libraries:
@@ -54,4 +55,9 @@ library(limma)
 library(affy)
 ```
 
+#### Command getGEO() and R lists
+The command ´rgetGEO()´ is a function from the packages GEOquery (S. Davis and Meltzer 2007) that can download data directly from the [GEO database](http://www.ncbi.nlm.nih.gov/geo/).
 
+The help command ?getGEO provides a description that stating that It directs the download (if no filename is specified) and parsing of a GEO SOFT format file into an R data structure[..]
+
+However, the default command as specified in the Usage section is:
