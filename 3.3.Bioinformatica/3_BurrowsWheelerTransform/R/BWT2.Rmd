@@ -303,8 +303,10 @@ find('ana', 'banana', printTbl=True);
 ```{python}
 find(
     'GATCTCTTAC',
+# in
     'ATATTAGGTTTTTACCTACCCAGGAAAAGCCAACCAACCTCGATCTCTTGCAGATCTGTTCTCTAAGATCTCTTACGAACTTTA',
-    mismatches=3
+# with at most 'mismatches' mismatches
+    mismatches=1
 );
 ```
 
