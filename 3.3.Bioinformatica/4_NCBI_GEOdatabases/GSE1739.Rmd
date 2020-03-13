@@ -46,4 +46,12 @@ The GSE1739 was selected for the Bioinformatics class assignments and activities
 # BiocManager::install("Biobase")
 ```
 
+#### Load the Bioconductor libraries:
+```{r}
+library(GEOquery)
+library(Biobase)
+library(limma)
+library(affy)
+```
+
 
