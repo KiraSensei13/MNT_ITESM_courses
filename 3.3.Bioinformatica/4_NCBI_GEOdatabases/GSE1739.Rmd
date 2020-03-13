@@ -1,0 +1,49 @@
+---
+title: "GSE1739 Dataset"
+author: "Antonio Osamu Katagiri Tanaka - A01212611@itesm.mx"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+---
+
+### Dataset details
+
+**Title:**	Severe acute respiratory syndrome expression profile
+
+**Summary:**	Expression profiling of peripheral blood mononuclear cells (PBMC) from 10 adult patients with severe acute respiratory syndrome (SARS). Results provide insight into the host immune response to the SARS coronavirus.
+
+**Organism:**	Homo sapiens
+
+**Platform:	GPL201:** [HG-Focus] Affymetrix Human HG-Focus Target Array
+
+**Citation:**	
+Reghunathan R, Jayapal M, Hsu LY, Chng HH et al. *Expression profile of immune response genes in patients with Severe Acute Respiratory Syndrome.* BMC Immunol 2005 Jan 18;6:2. PMID: [15655079](https://www.ncbi.nlm.nih.gov/pubmed/15655079)
+
+**Reference Series:**	GSE1739
+
+**Sample count:**	14
+
+**Value type:**	count
+
+**Series published:**	2005/01/18
+
+**Dataset taken from:** [GDSbrowser](https://www.ncbi.nlm.nih.gov/sites/GDSbrowser), [GSE1739 query](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE1739), and [GSE1739 geo2r](https://www.ncbi.nlm.nih.gov/geo/geo2r/?acc=GSE1739)
+
+---
+
+The GSE1739 was selected for the Bioinformatics class assignments and activities. The reason behind this decision is the similarities that SARS shares with the novel coronavirus COVID-19. The purpose id to work with up-to-date data that is relecant to the current crisis.
+
+---
+
+```{r}
+# # Install packages from Bioconductor as they're not available in CRAN
+# if (!requireNamespace("BiocManager", quietly=TRUE))
+#     install.packages("BiocManager")
+# BiocManager::install("GEOquery")
+# BiocManager::install("Biobase")
+```
+
+
