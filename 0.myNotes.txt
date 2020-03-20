@@ -1437,9 +1437,14 @@ BNMX
 
 /******************************************************************************/
 
-https://static-bcrf.biochem.wisc.edu/tutorials/r/r_bioconductor/gse46268_vitamin_d/gse46268_vitd.html#4_the_geo_database
+https://www.sciencedirect.com/journal/progress-in-polymer-science
 
-
-https://www.ncbi.nlm.nih.gov/sites/GDSbrowser
-https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE1739
-https://www.ncbi.nlm.nih.gov/geo/geo2r/?acc=GSE1739
+https://www.sciencedirect.com/science/article/pii/S0079670017300138
+https://www.sciencedirect.com/science/article/pii/S007967000700007X
+https://www.sciencedirect.com/science/article/pii/S0079670012000147
+https://www.sciencedirect.com/science/article/pii/S0079670012000391
+https://www.sciencedirect.com/science/article/pii/S007967001830368X
+https://www.sciencedirect.com/science/article/pii/S0079670018303976
+https://www.sciencedirect.com/science/article/pii/S0079670018301205
+https://www.sciencedirect.com/science/article/pii/S0079670016000022
+https://www.sciencedirect.com/science/article/pii/S0079670013000087
