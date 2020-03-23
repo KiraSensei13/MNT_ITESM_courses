@@ -210,6 +210,8 @@ Push your commits to GitHub:
 $ git push
 # Push our rewritten, smaller commit
 
+$ Do not forget to ignore the big file
+
 /******************************************************************************/
 
 Dora Iliana Medina Medina <dora.medina@tec.mx>
