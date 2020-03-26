@@ -24,6 +24,7 @@ library(GEOquery)
 library(Biobase)
 library(limma)
 library(affy)
+library(siggenes)
 source("./statistical_tests_lib.R")
 ```
 
@@ -228,30 +229,101 @@ data.matrix[1:5,]
 ```
 
 ```{r}
-plot.densities(data.matrix)
+# #Correr SAM
+# data.matrix_sam <- sam(
+#     data.matrix,
+#     c(rep(1,dim(data.matrix)[2])),
+#     method = "d.stat",
+#     gene.names = colnames(data.matrix)
+# )
+# sam_pval = data.matrix_sam@p.value
+# length(sam_pval)
+# 
+# #Mostrar resultados de SAM con cierto valor de delta
+# data.matrix_sam_sum <- summary(data.matrix_sam, 1.9)
+# 
+# #Acceder a matrix de Genes significativos
+# dim(data.matrix_sam_sum@mat.sig)
+```
+
+```{r}
+plot.densities(data.matrix, main="BEFORE quantile.normalization()")
+```
+
+There is small-to-large variability within groups and small variability across groups, so, let's use quantile normalization
+
+```{r}
 data.matrix_qn <- quantile.normalization(data.matrix)
-plot.densities(data.matrix_qn)
+plot.densities(data.matrix_qn, main="AFTER quantile.normalization()")
 
 pval = de.test(
     x=data.matrix,
     classes=c(rep(1,5),rep(0,5)),
     test=c("ttest", "kolmogorov", "wilcoxon")
 )
+data.matrix_sam <- sam(
+    data.matrix,
+    c(rep(1,dim(data.matrix)[2])),
+    method = "d.stat",
+    gene.names = colnames(data.matrix)
+)
 
+sam_pval   = data.matrix_sam@p.value
 ttest_pval = pval$ttest
 wtest_pval = pval$kolmogorov
 ktest_pval = pval$wilcoxon
 
-pval_qn = de.test(
-    x=data.matrix_qn,
-    classes=c(rep(1,5),rep(0,5)),
-    test=c("ttest", "kolmogorov", "wilcoxon")
+ns = 1:length(sam_pval)
+plot(
+    ns, sam_pval,
+    main="runif",
+    xlab="",
+    ylab="p.value",
+    log="y",
+    col="blue",
+    type="p"
 )
 
-ttest_pval_qn = pval_qn$ttest
-wtest_pval_qn = pval_qn$kolmogorov
-ktest_pval_qn = pval_qn$wilcoxon
+lines(
+    ns, ttest_pval,
+    col="red",
+    type="p"
+)
 
+lines(
+    ns, wtest_pval,
+    col="green",
+    type="p"
+)
+
+lines(
+    ns, ktest_pval,
+    col="magenta",
+    type="p"
+)
+
+legend(
+    "topright",
+    c("sam","t.test","wilcox.test","ks.test"),
+    fill=c("blue","red","green","magenta")
+)
+
+# pval_qn = de.test(
+#     x=data.matrix_qn,
+#     classes=c(rep(1,5),rep(0,5)),
+#     test=c("ttest", "kolmogorov", "wilcoxon")
+# )
+# data.matrix_qn_sam <- sam(
+#     data.matrix_qn,
+#     c(rep(1,dim(data.matrix_qn)[2])),
+#     method = "d.stat",
+#     gene.names = colnames(data.matrix_qn)
+# )
+# 
+# sam_pval_qn   = data.matrix_qn_sam@p.value
+# ttest_pval_qn = pval_qn$ttest
+# wtest_pval_qn = pval_qn$kolmogorov
+# ktest_pval_qn = pval_qn$wilcoxon
 ```
 
 
