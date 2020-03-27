@@ -207,7 +207,20 @@ Table(gsmlist[[1]])[1:5,]
 
 ```{r}
 # and get the column descriptions
-Columns(gsmlist[[1]])[1:5,]
+Columns(gsmlist[[1]])#[1:5,]
+```
+
+```{r}
+# go through the necessary steps to make a compliant ExpressionSet
+# rownames(data.matrix) <- probesets
+# colnames(data.matrix) <- names(gsmlist)
+# pdata <- data.frame(samples=names(gsmlist))
+# rownames(pdata) <- names(gsmlist)
+# pheno <- as(pdata,"AnnotatedDataFrame")
+# eset2 <- new('ExpressionSet',exprs=data.matrix,phenoData=pheno)
+# eset2
+gset = getGEO("GSE1739",GSEMatrix=TRUE,destdir="./NCBI_GEO")
+gset
 ```
 
 ```{r}
@@ -255,7 +268,11 @@ There is small-to-large variability within groups and small variability across g
 ```{r}
 data.matrix_qn <- quantile.normalization(data.matrix)
 plot.densities(data.matrix_qn, main="AFTER quantile.normalization()")
+```
 
+### Compute the p-values for t-test, Wilcoxon, Kolmogorov & SAM
+
+```{r}
 pval = de.test(
     x=data.matrix,
     classes=c(rep(1,5),rep(0,5)),
@@ -324,18 +341,6 @@ legend(
 # ttest_pval_qn = pval_qn$ttest
 # wtest_pval_qn = pval_qn$kolmogorov
 # ktest_pval_qn = pval_qn$wilcoxon
-```
-
-
-```{r}
-# go through the necessary steps to make a compliant ExpressionSet
-rownames(data.matrix) <- probesets
-colnames(data.matrix) <- names(gsmlist)
-pdata <- data.frame(samples=names(gsmlist))
-rownames(pdata) <- names(gsmlist)
-pheno <- as(pdata,"AnnotatedDataFrame")
-eset2 <- new('ExpressionSet',exprs=data.matrix,phenoData=pheno)
-eset2
 ```
 
 
