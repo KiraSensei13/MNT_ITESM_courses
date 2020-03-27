@@ -7,6 +7,7 @@ output:
   html_notebook: default
 classoption: a4paper
 geometry: margin=1.75cm
+always_allow_html: true
 ---
 
 ```{r}
@@ -20,11 +21,16 @@ options(warn = -1)
 # options(scipen=999)
 
 # Load Libs
+library(DT)
+library(samr)
+library(affy)
 library(GEOquery)
+library(biomaRt)
 library(Biobase)
 library(limma)
 library(affy)
 library(siggenes)
+library(PerformanceAnalytics)
 source("./statistical_tests_lib.R")
 ```
 
@@ -118,6 +124,45 @@ getPvalues("runif")
 
 # 2) Obtener p-values con un t-test, Wilcoxon, Kolmogorov y SAM para una base de datos GEO de su elección.
 
+```{r}
+calPvalues <- function(data.matrix, lvls) {
+  pval = de.test(
+    x = data.matrix,
+    classes = lvls,
+    test = c("ttest", "kolmogorov", "wilcoxon")
+  )
+  data.matrix_sam <- sam(data.matrix,
+                         c(rep(1, dim(data.matrix)[2])),
+                         method = "d.stat",
+                         gene.names = colnames(data.matrix))
+  
+  return(
+    list(
+      "ttest_pval" = pval$ttest,
+      "wtest_pval" = pval$kolmogorov,
+      "ktest_pval" = pval$wilcoxon,
+      "sam_pval"   = unname(data.matrix_sam@p.value)
+    )
+  )
+}
+
+plt_pval <- function(pval) {
+  for (i in 1:length(pval)) {
+    ns = 1:length(pval[[i]])
+    plot(
+      ns,
+      pval[[i]],
+      main = "runif",
+      xlab = "",
+      ylab = "p.value",
+      #log = "y",
+      col = "blue",
+      type = "p"
+    )
+  }
+}
+```
+
 ---
 
 ### Dataset details
@@ -149,243 +194,255 @@ The GSE1739 was selected for the Bioinformatics class assignments and activities
 
 ---
 
-### Let's download .soft.gz from GEO and take a look to the data
+Let’s compare lung cells related gene expressions due to different bacterial strains. (from GSE1739)
 
 ```{r}
-databaseID = "GSE1739"
-gse <- getGEO(databaseID, GSEMatrix = FALSE, destdir = "./NCBI_GEO")
+# Download GDS file, put it in the current directory, and load it
+gds5159 <- getGEO('GDS5159', destdir='./NCBI_GEO')
+eset <- GDS2eSet(gds5159, do.log2 = TRUE)  # Convert the data to ESET object
 ```
 
 ```{r}
-# names of all the GSM objects contained in the GSE
-lst_gsm = GSMList(gse)
-names(lst_gsm)
+pData(eset)$infection         # Let's check at the infections
+table(pData(eset)$infection)  # No. of samples in each infection
 ```
 
+Filter columns associated with 'highly virulent influenza A' and 'mock' values.
+
 ```{r}
-# and get the 1st GSM object on the list
-lst_gsm[[1]]
+selected <- grep("mock|highly virulent influenza A", pData(eset)$infection) # Select indexes
+pData(eset)$infection[selected] # Check selection
 ```
 
-```{r}
-# and the names of the GPLs represented
-lst_gpl = GPLList(gse)
-names(lst_gpl)
-```
-
-### Let's prepare the data for further analysis
-
-First, we need to make sure that all of the GSMs are from the same platform:
+'highly virulent influenza A' as '1's and 'mock' '2's
 
 ```{r}
-gsmplatforms <- lapply(lst_gsm, function(x) {
-  Meta(x)$platform_id
-})
-length(gsmplatforms)
-
-# If there are more GPLs, we can filter the original GSMList to include only those GSMs within
-# a specific platform and use this list for further processing
-gsmlist = Filter(function(gsm) {
-  Meta(gsm)$platform_id == 'GPL201'
-},
-GSMList(gse))
-length(gsmlist)
-```
-
-So, now we would like to know what column represents the data that we would like to extract. Looking at the first few rows of the Table of a single GSM will likely give us an idea (and by the way, GEO uses a convention that the column that contains the single measurement for each array is called the VALUE column, which we could use if we don’t know what other column is most relevant).
-
-```{r}
-Table(gsmlist[[1]])[1:5, ]
-```
-
-go through the necessary steps to make a compliant ExpressionSet
-
-```{r}
-gset = getGEO(databaseID, GSEMatrix = TRUE, destdir = "./NCBI_GEO")[[1]][1]
-```
-
-```{r}
-pD_gset = pData(phenoData(gset))
-pD_gset[,c(1,12)]
-```
-
-
-```{r}
-#We will indeed use the VALUE column. We then want to make a matrix of these values like so:
-
-# get the probeset ordering
-probesets <- Table(GPLList(gse)[[1]])$ID
-# make the data matrix from the VALUE columns from each GSM
-# being careful to match the order of the probesets in the platform
-# with those in the GSMs
-data.matrix <- do.call('cbind', lapply(gsmlist, function(x)
-{
-  tab <- Table(x)
-  mymatch <-
-    match(probesets, tab$ID_REF)
-  return(tab$VALUE[mymatch])
-}))
-data.matrix <-
-  apply(data.matrix, 2, function(x) {
-    as.numeric(as.character(x))
-  })
+y <- c(rep(1, 6), rep(2, 6))  # Vector of levels ID
+y
 ```
 
 ## A) Verifique si necesita normalizar los datos con quantile normalization. Obtenga p-values antes y después de normalizar.
 
-```{r}
-dm_all <- log2(data.matrix)
+Filter the expression matrix according to selected, then quantile normalize
 
-# Normal (control) samples
-dm_norm = dm_all[1:5,1:4]
-dm_norm
-# SARS samples
-dm_sars = dm_all[1:5,5:14]
-dm_sars
-
-plot.densities(dm_all,  main = "BEFORE quantile.normalization()")
-```
-
-There is small-to-large variability within groups and small variability across groups, so, let's use quantile normalization
+[There is small-to-large variability within groups and small variability across groups, so, let's use quantile normalization]
 
 ```{r}
-dm_all_qn <- quantile.normalization(dm_all)
+# Get a subset of expression values of the selected samples
+exprs.selected <- exprs(eset)[, selected]
+plot.densities(exprs.selected, main = "BEFORE quantile.normalization", legend.pos="topright")
+# p values before quantile normalize
+pval = calPvalues(exprs.selected,y)
 
-# Normal (control) samples
-dm_norm_qn = dm_all_qn[1:5,1:4]
-dm_norm_qn
-# SARS samples
-dm_sars_qn = dm_all_qn[1:5,5:14]
-dm_sars_qn
-
-plot.densities(dm_all_qn, main = "AFTER quantile.normalization()")
-```
-
-### Compute the p-values for t-test, Wilcoxon, Kolmogorov & SAM
-
-```{r}
-compare_groups = c(rep("control", 4), rep("sars", 10))
-ex = exprs(gset)
-ex_log2 = log2(ex + 1)
-cbind(compare_groups, ex_log2[,])
-print("")
-
-# # Perform the stat tests
-# vd_ctrl_ttest = apply(ex_log2,1,function(x){
-#   aux = t.test(x[which(compare_groups == "control")],x[which(compare_groups == "sars")])
-#   aux$p.value
-# })
-# vd_ctrl_ttest
-# vd_ctrl_wtest = apply(ex_log2,1,function(x){
-#   aux = wilcox.test(x[which(compare_groups == "control")],x[which(compare_groups == "sars")])
-#   aux$p.value
-# })
-# vd_ctrl_wtest
-# vd_ctrl_ktest = apply(ex_log2,1,function(x){
-#   aux = ks.test(x[which(compare_groups == "control")],x[which(compare_groups == "sars")])
-#   aux$p.value
-# })
-# vd_ctrl_ktest
-
-# # Perform the stat tests
-# t.test(ex_log2[,which(compare_groups == "control")],ex_log2[,which(compare_groups == "sars")])
-# wilcox.test(ex_log2[,which(compare_groups == "control")],ex_log2[,which(compare_groups == "sars")])
-# ks.test(ex_log2[,which(compare_groups == "control")],ex_log2[,which(compare_groups == "sars")])
-# dm_all_sam = sam(dm_all, c(rep(1, 4), rep(0, 10)), method = "d.stat")
-```
-
-```{r}
-calPvalues <- function(data.matrix) {
-  pval = de.test(
-    x = data.matrix,
-    classes = c(rep(1, 4), rep(0, 10)),
-    test = c("ttest", "kolmogorov", "wilcoxon")
-  )
-  data.matrix_sam <- sam(data.matrix,
-                         c(rep(1, dim(data.matrix)[2])),
-                         method = "d.stat",
-                         gene.names = colnames(data.matrix))
-  
-  return(
-    list(
-      "ttest_pval" = pval$ttest,
-      "wtest_pval" = pval$kolmogorov,
-      "ktest_pval" = pval$wilcoxon,
-      "sam_pval"   = unname(data.matrix_sam@p.value)
-    )
-  )
-  
-  # #Mostrar resultados de SAM con cierto valor de delta
-  # data.matrix_sam_sum <- summary(data.matrix_sam, 1.9)
-  #
-  # #Acceder a matrix de Genes significativos
-  # dim(data.matrix_sam_sum@mat.sig)
-}
-
-# [TODO: make correlation matrix plot w/individual plots for each]
-plt_pval <- function(pval) {
-  for (i in 1:length(pval)) {
-    ns = 1:length(pval[[i]])
-    plot(
-      ns,
-      pval[[i]],
-      main = "runif",
-      xlab = "",
-      ylab = "p.value",
-      #log = "y",
-      col = "blue",
-      type = "p"
-    )
-  }
-}
-
-# lines(ns, ttest_pval,
-#       col = "red",
-#       type = "p")
-# 
-# lines(ns, wtest_pval,
-#       col = "green",
-#       type = "p")
-# 
-# lines(ns, ktest_pval,
-#       col = "magenta",
-#       type = "p")
-# 
-# legend(
-#   "topright",
-#   c("sam", "t.test", "wilcox.test", "ks.test"),
-#   fill = c("blue", "red", "green", "magenta")
-# )
-```
-
-### p-values BEFORE quantile.normalization()
-
-```{r}
-pval = calPvalues(dm_all)
-```
-
-### p-values AFTER quantile.normalization()
-
-```{r}
-pval_qn = calPvalues(dm_all_qn)
+exprs.selected.q <- normalizeQuantiles(exprs.selected)  # Quantile normalize the data
+plot.densities(exprs.selected.q, main = "AFTER quantile.normalization", legend.pos="topright")
+# p values after quantile normalize
+pval.q = calPvalues(exprs.selected.q,y)
 ```
 
 ## B) Compare los p-values y grafique. Comente sobre la correlación entre las distintas pruebas estadísticas y la cantidad de genes significativos.
 
 ```{r}
-plot(cars)
+chart.Correlation(
+  cbind(
+    ttest = pval.q$ttest_pval,
+    wtest = pval.q$wtest_pval,
+    ktest = pval.q$ktest_pval,
+    sam   = pval.q$sam_pval
+  ),
+  histogram = TRUE
+)
 ```
 
-## C) Usando el GPL de los datos de GEO, dar una significancia biológica de los genes significativos.
+Let's prepare the data that required to run **samr()**
 
 ```{r}
-plot(cars)
+# Get row names = gene names or IDs
+genenames <- rownames(exprs(eset))
+data <- list(
+  x = exprs.selected.q,
+  y = y,
+  geneid = genenames,
+  genenames = genenames,
+  logged2 = TRUE
+)
 ```
+
+Refer to help(samr) for more info.
+
+```{r}
+# Get object names from samr.obj
+samr.obj <-
+  samr(data, resp.type = "Two class unpaired", nperms = 100)
+
+names(samr.obj)
+```
+
+Compute thresholds for different deltas
+
+```{r}
+delta <- 1.2 # define the delta
+delta.table <- samr.compute.delta.table(samr.obj, min.foldchange = delta)
+```
+
+```{r}
+# Look at the whole delta table
+datatable(delta.table)
+```
+
+Let’s select delta with median FDR <10%.
+
+```{r}
+# Check delta related to median FDR of 0.1
+delta.table[delta.table[, "median FDR"] < 0.1,][1,]
+```
+
+```{r}
+samr.plot(samr.obj, delta)  # Check SAM plot
+```
+
+## B) Comente sobre la cantidad de genes significativos.
+
+### Get significant genes
+
+```{r}
+siggenes.table <- samr.compute.siggenes.table(samr.obj,
+                                              delta,
+                                              data,
+                                              delta.table,
+                                              min.foldchange = delta)
+
+datatable(siggenes.table$genes.lo)  # Check how table with the results look like
+datatable(siggenes.table$genes.up)  # Check how table with the results look like
+```
+
+---
+
+---
 
 # 3) Repetir el ejercicio (2) pero con una base de datos de GEO con menos o más muestras, según sea el caso.
 
+Let's compare lung cells related gene expressions due to different bacterial strains. (from GDS858=
+
 ```{r}
-plot(cars)
+# Download GDS file, put it in the current directory, and load it
+gds858 <- getGEO('GDS858', destdir='./NCBI_GEO')
+eset <- GDS2eSet(gds858, do.log2 = TRUE)  # Convert the data to ESET object
+```
+
+```{r}
+pData(eset)$infection         # Let's check at the infections
+table(pData(eset)$infection)  # No. of samples in each infection
+```
+
+Filter columns associated with 'uninfected' and 'FRD440' values.
+
+```{r}
+selected <- grep("uninfected|FRD440", pData(eset)$infection) # Select indexes
+pData(eset)$infection[selected]                              # Check selection
+```
+
+'Uninfected' as '1's and 'FRD440' '2's
+
+```{r}
+y <- c(rep(1, 4), rep(2, 4))  # Vector of levels ID
+y
+```
+
+## A) Verifique si necesita normalizar los datos con quantile normalization. Obtenga p-values antes y después de normalizar.
+
+Filter the expression matrix according to selected, then quantile normalize
+
+[There is small-to-large variability within groups and small variability across groups, so, let's use quantile normalization]
+
+```{r}
+# Get a subset of expression values of the selected samples
+exprs.selected <- exprs(eset)[, selected]
+plot.densities(exprs.selected, main = "BEFORE quantile.normalization")
+# p values before quantile normalize
+pval = calPvalues(exprs.selected,y)
+
+exprs.selected.q <- normalizeQuantiles(exprs.selected)  # Quantile normalize the data
+plot.densities(exprs.selected.q, main = "AFTER quantile.normalization")
+# p values after quantile normalize
+pval.q = calPvalues(exprs.selected.q,y)
+```
+
+## B) Compare los p-values y grafique. Comente sobre la correlación entre las distintas pruebas estadísticas y la cantidad de genes significativos.
+
+```{r}
+chart.Correlation(
+  cbind(
+    ttest = pval.q$ttest_pval,
+    wtest = pval.q$wtest_pval,
+    ktest = pval.q$ktest_pval,
+    sam   = pval.q$sam_pval
+  ),
+  histogram = TRUE
+)
+```
+
+Let's prepare the data that required to run **samr()**
+
+```{r}
+# Get row names = gene names or IDs
+genenames <- rownames(exprs(eset))
+data <- list(
+  x = exprs.selected.q,
+  y = y,
+  geneid = genenames,
+  genenames = genenames,
+  logged2 = TRUE
+)
+```
+
+Refer to help(samr) for more info.
+
+```{r}
+# Get object names from samr.obj
+samr.obj <-
+  samr(data, resp.type = "Two class unpaired", nperms = 100)
+
+names(samr.obj)
+```
+
+Compute thresholds for different deltas
+
+```{r}
+delta <- 1.9 # define the delta
+delta.table <- samr.compute.delta.table(samr.obj, min.foldchange = delta)
+```
+
+```{r}
+# Look at the whole delta table
+datatable(delta.table)
+```
+
+Let’s select delta with median FDR <10%.
+
+```{r}
+# Check delta related to median FDR of 0.1
+delta.table[delta.table[, "median FDR"] < 0.1,][1,]
+```
+
+```{r}
+samr.plot(samr.obj, delta)  # Check SAM plot
+```
+
+## B) Comente sobre la cantidad de genes significativos.
+
+### Get significant genes
+
+```{r}
+# Summarize
+siggenes.table <- samr.compute.siggenes.table(samr.obj,
+                                              delta,
+                                              data,
+                                              delta.table,
+                                              min.foldchange = delta)
+
+datatable(siggenes.table$genes.lo)  # Check how table with the results look like
+datatable(siggenes.table$genes.up)  # Check how table with the results look like
 ```
 
 ```{r}
