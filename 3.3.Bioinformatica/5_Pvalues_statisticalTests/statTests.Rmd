@@ -38,73 +38,69 @@ source("./statistical_tests_lib.R")
 
 ```{r}
 getPvalues <- function(dist) {
-    ns = 2:200
-    ttest_pval = c()
-    wtest_pval = c()
-    ktest_pval = c()
-    
-    for (n in ns) {
-        if (dist == "rnorm") {
-            vectorA = rnorm(n=n, mean=1, sd=1)
-            vectorB = rnorm(n=n, mean=2, sd=1)
-        } else {
-            vectorA = runif(n, -1, 1)
-            vectorB = runif(n, -1, 1)
-        }
-        
-        if (n == max(ns)) {
-            plot.densities(vectorA, vectorB, main=paste0("n = ", n))
-        }
-    
-        ttest = t.test(vectorA, vectorB)
-        ttest_pval = c(ttest_pval, ttest$p.value)
-        #print(ttest$p.value)
-    
-        wtest = wilcox.test(vectorA, vectorB)
-        wtest_pval = c(wtest_pval, wtest$p.value)
-        #print(wtest$p.value)
-    
-        ktest = ks.test(vectorA, vectorB)
-        ktest_pval = c(ktest_pval, ktest$p.value)
-        #print(ktest$p.value)
-    }
-    
+  ns = 2:200
+  ttest_pval = c()
+  wtest_pval = c()
+  ktest_pval = c()
+  
+  for (n in ns) {
     if (dist == "rnorm") {
-        plot(
-            ns, ttest_pval,
-            main="rnorm",
-            xlab="n",
-            ylab="p.value",
-            type="l",
-            col="blue",
-            log="x"
-        )
+      vectorA = rnorm(n = n, mean = 1, sd = 1)
+      vectorB = rnorm(n = n, mean = 2, sd = 1)
     } else {
-        plot(
-            ns, ttest_pval,
-            main="runif",
-            xlab="n",
-            ylab="p.value",
-            type="l",
-            col="blue"
-        )
+      vectorA = runif(n, -1, 1)
+      vectorB = runif(n, -1, 1)
     }
     
-    lines(
-        ns, wtest_pval,
-        col="red"
-    )
+    if (n == max(ns)) {
+      plot.densities(vectorA, vectorB, main = paste0("n = ", n))
+    }
     
-    lines(
-        ns, ktest_pval,
-        col="green"
-    )
+    ttest = t.test(vectorA, vectorB)
+    ttest_pval = c(ttest_pval, ttest$p.value)
+    #print(ttest$p.value)
     
-    legend(
-        "topright",
-        c("t.test","wilcox.test","ks.test"),
-        fill=c("blue","red","green")
+    wtest = wilcox.test(vectorA, vectorB)
+    wtest_pval = c(wtest_pval, wtest$p.value)
+    #print(wtest$p.value)
+    
+    ktest = ks.test(vectorA, vectorB)
+    ktest_pval = c(ktest_pval, ktest$p.value)
+    #print(ktest$p.value)
+  }
+  
+  if (dist == "rnorm") {
+    plot(
+      ns,
+      ttest_pval,
+      main = "rnorm",
+      xlab = "n",
+      ylab = "p.value",
+      type = "l",
+      col = "blue",
+      log = "x"
     )
+  } else {
+    plot(
+      ns,
+      ttest_pval,
+      main = "runif",
+      xlab = "n",
+      ylab = "p.value",
+      type = "l",
+      col = "blue"
+    )
+  }
+  
+  lines(ns, wtest_pval,
+        col = "red")
+  
+  lines(ns, ktest_pval,
+        col = "green")
+  
+  legend("topright",
+         c("t.test", "wilcox.test", "ks.test"),
+         fill = c("blue", "red", "green"))
 }
 
 getPvalues("rnorm")
@@ -156,72 +152,63 @@ The GSE1739 was selected for the Bioinformatics class assignments and activities
 ### Let's download .soft.gz from GEO and take a look to the data
 
 ```{r}
-# If you have network access, the more typical way to do this
-# would be to use this:
-gse <- getGEO("GSE1739",GSEMatrix=FALSE)
-# gse <- getGEO(filename=system.file("extdata/GSE781_family.soft.gz",package="GEOquery"))
-
-# Look at gse metadata:
-head(Meta(gse))
+databaseID = "GSE1739"
+gse <- getGEO(databaseID, GSEMatrix = FALSE, destdir = "./NCBI_GEO")
 ```
 
 ```{r}
 # names of all the GSM objects contained in the GSE
-names(GSMList(gse))
+lst_gsm = GSMList(gse)
+names(lst_gsm)
 ```
 
 ```{r}
-# and get the first GSM object on the list
-GSMList(gse)[[1]]
+# and get the 1st GSM object on the list
+lst_gsm[[1]]
 ```
 
 ```{r}
 # and the names of the GPLs represented
-names(GPLList(gse))
+lst_gpl = GPLList(gse)
+names(lst_gpl)
 ```
 
 ### Let's prepare the data for further analysis
 
-```{r}
-# First, we need to make sure that all of the GSMs are from the same platform:
-gsmplatforms <- lapply(GSMList(gse),function(x) {Meta(x)$platform_id})
-head(gsmplatforms)
-```
+First, we need to make sure that all of the GSMs are from the same platform:
 
 ```{r}
+gsmplatforms <- lapply(lst_gsm, function(x) {
+  Meta(x)$platform_id
+})
+length(gsmplatforms)
+
 # If there are more GPLs, we can filter the original GSMList to include only those GSMs within
 # a specific platform and use this list for further processing
-gsmlist = Filter(function(gsm) {Meta(gsm)$platform_id=='GPL201'},GSMList(gse))
+gsmlist = Filter(function(gsm) {
+  Meta(gsm)$platform_id == 'GPL201'
+},
+GSMList(gse))
 length(gsmlist)
 ```
 
-```{r}
-# So, now we would like to know what column represents the data that we would like to extract.
-# Looking at the first few rows of the Table of a single GSM will likely give us an idea (and
-# by the way, GEO uses a convention that the column that contains the single measurement for
-# each array is called the VALUE column, which we could use if we don’t know what other column
-# is most relevant).
+So, now we would like to know what column represents the data that we would like to extract. Looking at the first few rows of the Table of a single GSM will likely give us an idea (and by the way, GEO uses a convention that the column that contains the single measurement for each array is called the VALUE column, which we could use if we don’t know what other column is most relevant).
 
-Table(gsmlist[[1]])[1:5,]
+```{r}
+Table(gsmlist[[1]])[1:5, ]
+```
+
+go through the necessary steps to make a compliant ExpressionSet
+
+```{r}
+gset = getGEO(databaseID, GSEMatrix = TRUE, destdir = "./NCBI_GEO")[[1]][1]
 ```
 
 ```{r}
-# and get the column descriptions
-Columns(gsmlist[[1]])#[1:5,]
+pD_gset = pData(phenoData(gset))
+pD_gset[,c(1,12)]
 ```
 
-```{r}
-# go through the necessary steps to make a compliant ExpressionSet
-# rownames(data.matrix) <- probesets
-# colnames(data.matrix) <- names(gsmlist)
-# pdata <- data.frame(samples=names(gsmlist))
-# rownames(pdata) <- names(gsmlist)
-# pheno <- as(pdata,"AnnotatedDataFrame")
-# eset2 <- new('ExpressionSet',exprs=data.matrix,phenoData=pheno)
-# eset2
-gset = getGEO("GSE1739",GSEMatrix=TRUE,destdir="./NCBI_GEO")
-gset
-```
 
 ```{r}
 #We will indeed use the VALUE column. We then want to make a matrix of these values like so:
@@ -231,123 +218,156 @@ probesets <- Table(GPLList(gse)[[1]])$ID
 # make the data matrix from the VALUE columns from each GSM
 # being careful to match the order of the probesets in the platform
 # with those in the GSMs
-data.matrix <- do.call('cbind',lapply(gsmlist,function(x) 
-                                      {tab <- Table(x)
-                                       mymatch <- match(probesets,tab$ID_REF)
-                                       return(tab$VALUE[mymatch])
-                                     }))
-data.matrix <- apply(data.matrix,2,function(x) {as.numeric(as.character(x))})
-data.matrix <- log2(data.matrix)
-data.matrix[1:5,]
+data.matrix <- do.call('cbind', lapply(gsmlist, function(x)
+{
+  tab <- Table(x)
+  mymatch <-
+    match(probesets, tab$ID_REF)
+  return(tab$VALUE[mymatch])
+}))
+data.matrix <-
+  apply(data.matrix, 2, function(x) {
+    as.numeric(as.character(x))
+  })
 ```
 
-```{r}
-# #Correr SAM
-# data.matrix_sam <- sam(
-#     data.matrix,
-#     c(rep(1,dim(data.matrix)[2])),
-#     method = "d.stat",
-#     gene.names = colnames(data.matrix)
-# )
-# sam_pval = data.matrix_sam@p.value
-# length(sam_pval)
-# 
-# #Mostrar resultados de SAM con cierto valor de delta
-# data.matrix_sam_sum <- summary(data.matrix_sam, 1.9)
-# 
-# #Acceder a matrix de Genes significativos
-# dim(data.matrix_sam_sum@mat.sig)
-```
+## A) Verifique si necesita normalizar los datos con quantile normalization. Obtenga p-values antes y después de normalizar.
 
 ```{r}
-plot.densities(data.matrix, main="BEFORE quantile.normalization()")
+dm_all <- log2(data.matrix)
+
+# Normal (control) samples
+dm_norm = dm_all[1:5,1:4]
+dm_norm
+# SARS samples
+dm_sars = dm_all[1:5,5:14]
+dm_sars
+
+plot.densities(dm_all,  main = "BEFORE quantile.normalization()")
 ```
 
 There is small-to-large variability within groups and small variability across groups, so, let's use quantile normalization
 
 ```{r}
-data.matrix_qn <- quantile.normalization(data.matrix)
-plot.densities(data.matrix_qn, main="AFTER quantile.normalization()")
+dm_all_qn <- quantile.normalization(dm_all)
+
+# Normal (control) samples
+dm_norm_qn = dm_all_qn[1:5,1:4]
+dm_norm_qn
+# SARS samples
+dm_sars_qn = dm_all_qn[1:5,5:14]
+dm_sars_qn
+
+plot.densities(dm_all_qn, main = "AFTER quantile.normalization()")
 ```
 
 ### Compute the p-values for t-test, Wilcoxon, Kolmogorov & SAM
 
 ```{r}
-pval = de.test(
-    x=data.matrix,
-    classes=c(rep(1,5),rep(0,5)),
-    test=c("ttest", "kolmogorov", "wilcoxon")
-)
-data.matrix_sam <- sam(
-    data.matrix,
-    c(rep(1,dim(data.matrix)[2])),
-    method = "d.stat",
-    gene.names = colnames(data.matrix)
-)
+compare_groups = c(rep("control", 4), rep("sars", 10))
+ex = exprs(gset)
+ex_log2 = log2(ex + 1)
+cbind(compare_groups, ex_log2[,])
+print("")
 
-sam_pval   = data.matrix_sam@p.value
-ttest_pval = pval$ttest
-wtest_pval = pval$kolmogorov
-ktest_pval = pval$wilcoxon
+# # Perform the stat tests
+# vd_ctrl_ttest = apply(ex_log2,1,function(x){
+#   aux = t.test(x[which(compare_groups == "control")],x[which(compare_groups == "sars")])
+#   aux$p.value
+# })
+# vd_ctrl_ttest
+# vd_ctrl_wtest = apply(ex_log2,1,function(x){
+#   aux = wilcox.test(x[which(compare_groups == "control")],x[which(compare_groups == "sars")])
+#   aux$p.value
+# })
+# vd_ctrl_wtest
+# vd_ctrl_ktest = apply(ex_log2,1,function(x){
+#   aux = ks.test(x[which(compare_groups == "control")],x[which(compare_groups == "sars")])
+#   aux$p.value
+# })
+# vd_ctrl_ktest
 
-ns = 1:length(sam_pval)
-plot(
-    ns, sam_pval,
-    main="runif",
-    xlab="",
-    ylab="p.value",
-    log="y",
-    col="blue",
-    type="p"
-)
-
-lines(
-    ns, ttest_pval,
-    col="red",
-    type="p"
-)
-
-lines(
-    ns, wtest_pval,
-    col="green",
-    type="p"
-)
-
-lines(
-    ns, ktest_pval,
-    col="magenta",
-    type="p"
-)
-
-legend(
-    "topright",
-    c("sam","t.test","wilcox.test","ks.test"),
-    fill=c("blue","red","green","magenta")
-)
-
-# pval_qn = de.test(
-#     x=data.matrix_qn,
-#     classes=c(rep(1,5),rep(0,5)),
-#     test=c("ttest", "kolmogorov", "wilcoxon")
-# )
-# data.matrix_qn_sam <- sam(
-#     data.matrix_qn,
-#     c(rep(1,dim(data.matrix_qn)[2])),
-#     method = "d.stat",
-#     gene.names = colnames(data.matrix_qn)
-# )
-# 
-# sam_pval_qn   = data.matrix_qn_sam@p.value
-# ttest_pval_qn = pval_qn$ttest
-# wtest_pval_qn = pval_qn$kolmogorov
-# ktest_pval_qn = pval_qn$wilcoxon
+# # Perform the stat tests
+# t.test(ex_log2[,which(compare_groups == "control")],ex_log2[,which(compare_groups == "sars")])
+# wilcox.test(ex_log2[,which(compare_groups == "control")],ex_log2[,which(compare_groups == "sars")])
+# ks.test(ex_log2[,which(compare_groups == "control")],ex_log2[,which(compare_groups == "sars")])
+# dm_all_sam = sam(dm_all, c(rep(1, 4), rep(0, 10)), method = "d.stat")
 ```
 
+```{r}
+calPvalues <- function(data.matrix) {
+  pval = de.test(
+    x = data.matrix,
+    classes = c(rep(1, 4), rep(0, 10)),
+    test = c("ttest", "kolmogorov", "wilcoxon")
+  )
+  data.matrix_sam <- sam(data.matrix,
+                         c(rep(1, dim(data.matrix)[2])),
+                         method = "d.stat",
+                         gene.names = colnames(data.matrix))
+  
+  return(
+    list(
+      "ttest_pval" = pval$ttest,
+      "wtest_pval" = pval$kolmogorov,
+      "ktest_pval" = pval$wilcoxon,
+      "sam_pval"   = unname(data.matrix_sam@p.value)
+    )
+  )
+  
+  # #Mostrar resultados de SAM con cierto valor de delta
+  # data.matrix_sam_sum <- summary(data.matrix_sam, 1.9)
+  #
+  # #Acceder a matrix de Genes significativos
+  # dim(data.matrix_sam_sum@mat.sig)
+}
 
-## A) Verifique si necesita normalizar los datos con quantile normalization. Obtenga p-values antes y después de normalizar.
+# [TODO: make correlation matrix plot w/individual plots for each]
+plt_pval <- function(pval) {
+  for (i in 1:length(pval)) {
+    ns = 1:length(pval[[i]])
+    plot(
+      ns,
+      pval[[i]],
+      main = "runif",
+      xlab = "",
+      ylab = "p.value",
+      #log = "y",
+      col = "blue",
+      type = "p"
+    )
+  }
+}
+
+# lines(ns, ttest_pval,
+#       col = "red",
+#       type = "p")
+# 
+# lines(ns, wtest_pval,
+#       col = "green",
+#       type = "p")
+# 
+# lines(ns, ktest_pval,
+#       col = "magenta",
+#       type = "p")
+# 
+# legend(
+#   "topright",
+#   c("sam", "t.test", "wilcox.test", "ks.test"),
+#   fill = c("blue", "red", "green", "magenta")
+# )
+```
+
+### p-values BEFORE quantile.normalization()
 
 ```{r}
-plot(cars)
+pval = calPvalues(dm_all)
+```
+
+### p-values AFTER quantile.normalization()
+
+```{r}
+pval_qn = calPvalues(dm_all_qn)
 ```
 
 ## B) Compare los p-values y grafique. Comente sobre la correlación entre las distintas pruebas estadísticas y la cantidad de genes significativos.
@@ -359,13 +379,13 @@ plot(cars)
 ## C) Usando el GPL de los datos de GEO, dar una significancia biológica de los genes significativos.
 
 ```{r}
-
+plot(cars)
 ```
 
 # 3) Repetir el ejercicio (2) pero con una base de datos de GEO con menos o más muestras, según sea el caso.
 
 ```{r}
-
+plot(cars)
 ```
 
 ```{r}

@@ -16,15 +16,17 @@ de.test(x=mat_example_qn, classes=c(rep(1,5),rep(0,5)), test=c("ttest", "kolmogo
 #Liga al tutorial
 #https://bioconductor.org/packages/release/bioc/vignettes/siggenes/inst/doc/siggenes.pdf
 
-#Instalar el paquete
-source("http://bioconductor.org/biocLite.R")
-biocLite("siggenes")
+# #Instalar el paquete
+# source("http://bioconductor.org/biocLite.R")
+# biocLite("siggenes")
 
 #Ejemplo
 library(siggenes)
 data(golub)
 
 #Correr SAM
+print(golub)
+print(golub.cl)
 golub_sam <- sam(golub, golub.cl, method = "d.stat", gene.names = golub.gnames[,2])
 
 #Vector con p-values
