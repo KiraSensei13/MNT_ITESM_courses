@@ -5,6 +5,7 @@ date: "April 03, 2020"
 output:
   pdf_document: default
   html_notebook: default
+  word_document: default
   html_document:
     df_print: paged
 geometry: margin=1.75cm
@@ -41,6 +42,8 @@ library(limma)
 source("./script_ejercicios.R")
 ```
 
+## LOAD data/matrixes
+
 ```{r}
 # LOAD data/matrixes
 count_mat = read.table("./count_mat.txt", header = TRUE, sep = "\t")
@@ -61,14 +64,12 @@ drops <- c("rowNames", "type", "specific_type")
 count_mat = count_mat[, !(names(count_mat) %in% drops)]
 FPKM_mat = FPKM_mat[, !(names(FPKM_mat) %in% drops)]
 
-#count_mat["geneId"]
-# gsub(” “, “_”,(trimws(gsub(“\\_+”, ” “, stringVec3))))
-# row.names(count_mat) <- count_mat[]
-
 # Let's take a LOOK
 count_mat[10000:10010, ]
 FPKM_mat[10000:10010, ]
 ```
+
+## Filtrar genes con baja expresión y con bajos conteos
 
 ```{r}
 # FILTRAR genes - conteos
@@ -90,7 +91,7 @@ count_mat[10000:10010, ]
 ```{r}
 # FILTRAR genes - FPKM
 
-# DO log base 2
+# Transformar FPKM a log2
 FPKM_mat <- glog(FPKM_mat)
 
 #Para cada gen, contar el número de muestras con expresión mayor a 2
@@ -121,12 +122,12 @@ aux_classes[grep(pattern = "d28_", x = colnames(count_mat_28v0))] = 1
 aux_classes
 colnames(count_mat_28v0)
 
-count_results = DESeq_func(matrix_c = count_mat_28v0, classes_c = aux_classes)
-count_results = count_results[order(count_results$pvalue),]
-count_results
+count_results_28v0 = DESeq_func(matrix_c = count_mat_28v0, classes_c = aux_classes)
+count_results_28v0 = count_results_28v0[order(count_results_28v0$pvalue),]
+summary(count_results_28v0)
 
 # HISTOGRAM
-pvals = count_results["pvalue"]
+pvals = count_results_28v0["pvalue"]
 hist(
     pvals[, 1],
     prob = TRUE,
@@ -162,12 +163,12 @@ aux_classes[grep(pattern = "d14_", x = colnames(count_mat_14v0))] = 1
 aux_classes
 colnames(count_mat_14v0)
 
-count_results = DESeq_func(matrix_c = count_mat_14v0, classes_c = aux_classes)
-count_results = count_results[order(count_results$pvalue),]
-count_results
+count_results_14v0 = DESeq_func(matrix_c = count_mat_14v0, classes_c = aux_classes)
+count_results_14v0 = count_results_14v0[order(count_results_14v0$pvalue),]
+summary(count_results_14v0)
 
 # HISTOGRAM
-pvals = count_results["pvalue"]
+pvals = count_results_14v0["pvalue"]
 hist(
     pvals[, 1],
     prob = TRUE,
@@ -203,17 +204,17 @@ aux_classes[grep(pattern = "d28_", x = colnames(FPKM_mat_28v0))] = 1
 aux_classes
 colnames(FPKM_mat_28v0)
 
-fpkm_results =
+fpkm_results_28v0 =
     limma4DS_fdr(
         matrix_e = FPKM_mat_28v0,
         classes_e = aux_classes,
         classes_names = c("d0_", "d28_")
     )
-fpkm_results = fpkm_results[order(fpkm_results$p.value),]
-fpkm_results
+fpkm_results_28v0 = fpkm_results_28v0[order(fpkm_results_28v0$p.value),]
+summary(fpkm_results_28v0)
 
 # HISTOGRAM
-pvals = fpkm_results["p.value"]
+pvals = fpkm_results_28v0["p.value"]
 hist(
     pvals[, 1],
     prob = TRUE,
@@ -249,17 +250,17 @@ aux_classes[grep(pattern = "d14_", x = colnames(FPKM_mat_14v0))] = 1
 aux_classes
 colnames(FPKM_mat_14v0)
 
-fpkm_results =
+fpkm_results_14v0 =
     limma4DS_fdr(
         matrix_e = FPKM_mat_14v0,
         classes_e = aux_classes,
         classes_names = c("d0_", "d14_")
     )
-fpkm_results = fpkm_results[order(fpkm_results$p.value),]
-fpkm_results
+fpkm_results_14v0 = fpkm_results_14v0[order(fpkm_results_14v0$p.value),]
+summary(fpkm_results_14v0)
 
 # HISTOGRAM
-pvals = fpkm_results["p.value"]
+pvals = fpkm_results_14v0["p.value"]
 hist(
     pvals[, 1],
     prob = TRUE,
@@ -282,6 +283,43 @@ curve(
 # Let's take a look to some genes
 FPKM_mat_14v0["ENSG00000265992.1_ESRG",]
 FPKM_mat_14v0["ENSG00000185559.14_DLK1",]
+```
+
+## Comparar si obtiene los mismos genes diferencialmente expresados.
+
+```{r}
+# Filtrar genes con pvalue menor a 0.05 (the most significat)
+pv = 0.05
+
+# For COUNTS
+count_results_28v0_de = count_results_28v0[which(count_results_28v0$pvalue <= pv),]
+fpkm_results_28v0_de = fpkm_results_28v0[which(fpkm_results_28v0$p.value <= pv),]
+
+# For FPKM
+count_results_14v0_de = count_results_14v0[which(count_results_14v0$pvalue <= pv),]
+fpkm_results_14v0_de = fpkm_results_14v0[which(fpkm_results_14v0$p.value <= pv),]
+```
+
+```{r}
+# No. of differential expressed genes by DeSeq2 (28 vs 0 días)
+length(rownames(count_results_28v0_de))
+
+# No. of differential expressed genes by LIMMA (28 vs 0 días)
+length(rownames(fpkm_results_28v0_de))
+
+# No. of differential expressed genes by DeSeq2 and LIMMA (28 vs 0 días)
+length(intersect(rownames(count_results_28v0_de),rownames(fpkm_results_28v0_de)))
+```
+
+```{r}
+# No. of differential expressed genes by DeSeq2 (28 vs 0 días)
+length(rownames(count_results_14v0_de))
+
+# No. of differential expressed genes by LIMMA (28 vs 0 días)
+length(rownames(fpkm_results_14v0_de))
+
+# No. of differential expressed genes by DeSeq2 and LIMMA (28 vs 0 días)
+length(intersect(rownames(count_results_14v0_de),rownames(fpkm_results_14v0_de)))
 ```
 
 ```{r}

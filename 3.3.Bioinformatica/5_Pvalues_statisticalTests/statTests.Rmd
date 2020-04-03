@@ -20,10 +20,14 @@ options(warn = -1)
 # Turn off scientific notation like 1e+06
 # options(scipen=999)
 
+# # INSTALL packages
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#   install.packages("BiocManager")
+# BiocManager::install("impute")
+
 # Load Libs
 library(DT)
 library(samr)
-library(affy)
 library(GEOquery)
 library(biomaRt)
 library(Biobase)
