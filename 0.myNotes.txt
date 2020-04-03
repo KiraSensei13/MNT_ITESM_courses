@@ -1457,3 +1457,15 @@ https://medium.com/@Farah_36879/nano-sensors-and-nano-fabrication-a-world-so-sma
 
 Polymers for Near-Field Electrospinning with Spatial Control: A Review
 "near" AND "field" AND "electrospinning" AND ("deposition" OR "conductivity" OR "control" OR "pattern" OR "spatial" OR "aligned")
+
+/******************************************************************************/
+
+Update R:
+
+install.packages("installr")
+library(installr)
+updateR()
+
+/******************************************************************************/
+
+

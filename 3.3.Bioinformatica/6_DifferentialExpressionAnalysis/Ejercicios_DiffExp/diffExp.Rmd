@@ -1,0 +1,39 @@
+---
+title: "Differential Expression"
+author: "Antonio Osamu Katagiri Tanaka - A01212611@itesm.mx"
+date: April 03, 2020
+output:
+  pdf_document: default
+  html_notebook: default
+classoption: a4paper
+geometry: margin=1.75cm
+always_allow_html: true
+---
+
+```{r}
+
+```
+
+
+```{r}
+# Clear all objects (from the workspace)
+rm(list = ls())
+
+# Suppress Warning messages
+options(warn = -1)
+
+# Turn off scientific notation like 1e+06
+# options(scipen=999)
+
+options(stringsAsFactors = F)
+
+# Load Libs
+
+# # INSTALL with:
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+# BiocManager::install("DESeq2")
+
+library(DESeq2)
+library(limma)
+```
