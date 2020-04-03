@@ -1468,4 +1468,10 @@ updateR()
 
 /******************************************************************************/
 
+Nanostructures and Nanomaterials: Synthesis, Properties, and Applications Second Edition
+Guozhong CaoYing Wang3 de enero de 2011
+World Scientific Publishing Company
+
+/******************************************************************************/
+
 
