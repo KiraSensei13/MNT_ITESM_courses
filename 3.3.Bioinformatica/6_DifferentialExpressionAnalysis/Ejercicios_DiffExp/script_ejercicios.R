@@ -45,29 +45,29 @@ DESeq_func <- function(matrix_c, classes_c, classes_names=NA){
 	aux_results
 }
 
-setwd("/Users/emartinez/Research/TecAgo2018/Clases/Bioinformatica/Differential_Exp/")
-load("Data_ejercicios_ejemplo.RData")
+# setwd("/Users/emartinez/Research/TecAgo2018/Clases/Bioinformatica/Differential_Exp/")
+# load("Data_ejercicios_ejemplo.RData")
 
-#Filtrar genes
-#Conteos
-#Para cada gen, contar el número de muestras con mayor a 5 conteos
-count_mat_filter <- apply(count_mat, 1, function(x) length(which(x >= 5)))
-#Filtrar genes con menor a 2 muestras con más de 5 conteos
-count_mat <- count_mat[which(count_mat_filter >= 2),]
+# #Filtrar genes
+# #Conteos
+# #Para cada gen, contar el número de muestras con mayor a 5 conteos
+# count_mat_filter <- apply(count_mat, 1, function(x) length(which(x >= 5)))
+# #Filtrar genes con menor a 2 muestras con más de 5 conteos
+# count_mat <- count_mat[which(count_mat_filter >= 2),]
 
-#FPKM
-fpkm_mat <- glog(fpkm_mat)
-#Para cada gen, contar el número de muestras con expresión mayor a 2
-fpkm_mat_filter <- apply(fpkm_mat, 1, function(x) length(which(x >= 2)))
-#Filtrar genes con menor a 2 muestras con expresión mayor a 2
-fpkm_mat <- fpkm_mat[which(fpkm_mat_filter >= 2),]
+# #FPKM
+# fpkm_mat <- glog(fpkm_mat)
+# #Para cada gen, contar el número de muestras con expresión mayor a 2
+# fpkm_mat_filter <- apply(fpkm_mat, 1, function(x) length(which(x >= 2)))
+# #Filtrar genes con menor a 2 muestras con expresión mayor a 2
+# fpkm_mat <- fpkm_mat[which(fpkm_mat_filter >= 2),]
 
-#Conteos
-aux_classes <- rep(1, times=ncol(count_mat))
-aux_classes[grep(pattern="Control", x=colnames(count_mat))] <- 0
-count_results <- DESeq_func(matrix_c=count_mat, classes_c=aux_classes)
+# #Conteos
+# aux_classes <- rep(1, times=ncol(count_mat))
+# aux_classes[grep(pattern="Control", x=colnames(count_mat))] <- 0
+# count_results <- DESeq_func(matrix_c=count_mat, classes_c=aux_classes)
 
-#FPKM
-aux_classes <- rep(1, times=ncol(fpkm_mat))
-aux_classes[grep(pattern="Control", x=colnames(fpkm_mat))] <- 0
-fpkm_results <- limma4DS_fdr(matrix_e=fpkm_mat, classes_e=aux_classes, classes_names=c("Treatment", "Control"))
+# #FPKM
+# aux_classes <- rep(1, times=ncol(fpkm_mat))
+# aux_classes[grep(pattern="Control", x=colnames(fpkm_mat))] <- 0
+# fpkm_results <- limma4DS_fdr(matrix_e=fpkm_mat, classes_e=aux_classes, classes_names=c("Treatment", "Control"))

@@ -1,19 +1,16 @@
 ---
 title: "Differential Expression"
 author: "Antonio Osamu Katagiri Tanaka - A01212611@itesm.mx"
-date: April 03, 2020
+date: "April 03, 2020"
 output:
   pdf_document: default
   html_notebook: default
-classoption: a4paper
+  html_document:
+    df_print: paged
 geometry: margin=1.75cm
-always_allow_html: true
+classoption: a4paper
+always_allow_html: yes
 ---
-
-```{r}
-
-```
-
 
 ```{r}
 # Clear all objects (from the workspace)
@@ -34,6 +31,260 @@ options(stringsAsFactors = F)
 #     install.packages("BiocManager")
 # BiocManager::install("DESeq2")
 
+library(tidyr)
 library(DESeq2)
 library(limma)
+```
+
+```{r}
+# LOAD provided functions
+source("./script_ejercicios.R")
+```
+
+```{r}
+# LOAD data/matrixes
+count_mat = read.table("./count_mat.txt", header = TRUE, sep = "\t")
+FPKM_mat = read.table("./FPKM_mat.txt", header = TRUE, sep = "\t")
+
+# Let's take a LOOK
+count_mat[10000:10010, ]
+FPKM_mat[10000:10010, ]
+
+# FORMAT row names
+count_mat = count_mat %>% unite("rowNames", geneId:geneName, remove = TRUE)
+FPKM_mat = FPKM_mat %>% unite("rowNames", geneId:geneName, remove = TRUE)
+row.names(count_mat) = count_mat[, 1]
+row.names(FPKM_mat) = FPKM_mat[, 1]
+
+# DROP extra data
+drops <- c("rowNames", "type", "specific_type")
+count_mat = count_mat[, !(names(count_mat) %in% drops)]
+FPKM_mat = FPKM_mat[, !(names(FPKM_mat) %in% drops)]
+
+#count_mat["geneId"]
+# gsub(” “, “_”,(trimws(gsub(“\\_+”, ” “, stringVec3))))
+# row.names(count_mat) <- count_mat[]
+
+# Let's take a LOOK
+count_mat[10000:10010, ]
+FPKM_mat[10000:10010, ]
+```
+
+```{r}
+# FILTRAR genes - conteos
+
+# Para cada gen, contar el número de muestras con mayor a 5 conteos
+count_mat_filter <-
+    apply(count_mat, 1, function(x)
+        length(which(x >= 5)))
+table(count_mat_filter)
+
+# Filtrar genes con menor a 2 muestras con más de 5 conteos
+count_mat <- count_mat[which(count_mat_filter >= 2),]
+
+# Let's take a LOOK
+dim(count_mat)
+count_mat[10000:10010, ]
+```
+
+```{r}
+# FILTRAR genes - FPKM
+
+# DO log base 2
+FPKM_mat <- glog(FPKM_mat)
+
+#Para cada gen, contar el número de muestras con expresión mayor a 2
+FPKM_mat_filter <-
+    apply(FPKM_mat, 1, function(x)
+        length(which(x >= 2)))
+#Filtrar genes con menor a 2 muestras con expresión mayor a 2
+FPKM_mat <- FPKM_mat[which(FPKM_mat_filter >= 2), ]
+
+# Let's take a LOOK
+dim(FPKM_mat)
+FPKM_mat[10000:10010, ]
+```
+
+```{r}
+# Let's see what genes share count_mat and FPKM_mat
+length(intersect(rownames(count_mat),rownames(FPKM_mat)))
+```
+
+# Conteos [28 vs 0 días]
+
+```{r}
+count_mat_28v0 = count_mat[,-grep('d14_', colnames(count_mat))]
+
+# Conteos
+aux_classes = rep(0, times = ncol(count_mat_28v0)) # CLASSIFY "d0_" as 0s
+aux_classes[grep(pattern = "d28_", x = colnames(count_mat_28v0))] = 1
+aux_classes
+colnames(count_mat_28v0)
+
+count_results = DESeq_func(matrix_c = count_mat_28v0, classes_c = aux_classes)
+count_results = count_results[order(count_results$pvalue),]
+count_results
+
+# HISTOGRAM
+pvals = count_results["pvalue"]
+hist(
+    pvals[, 1],
+    prob = TRUE,
+    col = "black",
+    border = "white",
+    xlab = "scores",
+    breaks = 100
+)
+box(bty = "l")
+# Draw density function (assuming normal dist)
+score_mean = mean(pvals[, 1])
+score_sd   = sd(pvals[, 1])
+curve(
+    dnorm(x, mean = score_mean, sd = score_sd),
+    add = TRUE,
+    col = "red",
+    lwd = 2
+)
+
+# Let's take a look to some genes
+count_mat_28v0["ENSG00000128567.16_PODXL",]
+count_mat_28v0["ENSG00000185559.14_DLK1",]
+```
+
+# Conteos [14 vs 0 días]
+
+```{r}
+count_mat_14v0 = count_mat[,-grep('d28_', colnames(count_mat))]
+
+# Conteos
+aux_classes = rep(0, times = ncol(count_mat_14v0)) # CLASSIFY "d0_" as 0s
+aux_classes[grep(pattern = "d14_", x = colnames(count_mat_14v0))] = 1
+aux_classes
+colnames(count_mat_14v0)
+
+count_results = DESeq_func(matrix_c = count_mat_14v0, classes_c = aux_classes)
+count_results = count_results[order(count_results$pvalue),]
+count_results
+
+# HISTOGRAM
+pvals = count_results["pvalue"]
+hist(
+    pvals[, 1],
+    prob = TRUE,
+    col = "black",
+    border = "white",
+    xlab = "scores",
+    breaks = 100
+)
+box(bty = "l")
+# Draw density function (assuming normal dist)
+score_mean = mean(pvals[, 1])
+score_sd   = sd(pvals[, 1])
+curve(
+    dnorm(x, mean = score_mean, sd = score_sd),
+    add = TRUE,
+    col = "red",
+    lwd = 2
+)
+
+# Let's take a look to some genes
+count_mat_14v0["ENSG00000265992.1_ESRG",]
+count_mat_14v0["ENSG00000185559.14_DLK1",]
+```
+
+# FPKM [28 vs 0 días]
+
+```{r}
+FPKM_mat_28v0 = FPKM_mat[,-grep('d14_', colnames(FPKM_mat))]
+
+# FPKM
+aux_classes = rep(0, times = ncol(FPKM_mat_28v0)) # CLASSIFY "d0_" as 0s
+aux_classes[grep(pattern = "d28_", x = colnames(FPKM_mat_28v0))] = 1
+aux_classes
+colnames(FPKM_mat_28v0)
+
+fpkm_results =
+    limma4DS_fdr(
+        matrix_e = FPKM_mat_28v0,
+        classes_e = aux_classes,
+        classes_names = c("d0_", "d28_")
+    )
+fpkm_results = fpkm_results[order(fpkm_results$p.value),]
+fpkm_results
+
+# HISTOGRAM
+pvals = fpkm_results["p.value"]
+hist(
+    pvals[, 1],
+    prob = TRUE,
+    col = "black",
+    border = "white",
+    xlab = "scores",
+    breaks = 100
+)
+box(bty = "l")
+# Draw density function (assuming normal dist)
+score_mean = mean(pvals[, 1])
+score_sd   = sd(pvals[, 1])
+curve(
+    dnorm(x, mean = score_mean, sd = score_sd),
+    add = TRUE,
+    col = "red",
+    lwd = 2
+)
+
+# Let's take a look to some genes
+FPKM_mat_28v0["ENSG00000128567.16_PODXL",]
+FPKM_mat_28v0["ENSG00000185559.14_DLK1",]
+```
+
+# FPKM [14 vs 0 días]
+
+```{r}
+FPKM_mat_14v0 = FPKM_mat[,-grep('d28_', colnames(FPKM_mat))]
+
+# FPKM
+aux_classes = rep(0, times = ncol(FPKM_mat_14v0)) # CLASSIFY "d0_" as 0s
+aux_classes[grep(pattern = "d14_", x = colnames(FPKM_mat_14v0))] = 1
+aux_classes
+colnames(FPKM_mat_14v0)
+
+fpkm_results =
+    limma4DS_fdr(
+        matrix_e = FPKM_mat_14v0,
+        classes_e = aux_classes,
+        classes_names = c("d0_", "d14_")
+    )
+fpkm_results = fpkm_results[order(fpkm_results$p.value),]
+fpkm_results
+
+# HISTOGRAM
+pvals = fpkm_results["p.value"]
+hist(
+    pvals[, 1],
+    prob = TRUE,
+    col = "black",
+    border = "white",
+    xlab = "scores",
+    breaks = 100
+)
+box(bty = "l")
+# Draw density function (assuming normal dist)
+score_mean = mean(pvals[, 1])
+score_sd   = sd(pvals[, 1])
+curve(
+    dnorm(x, mean = score_mean, sd = score_sd),
+    add = TRUE,
+    col = "red",
+    lwd = 2
+)
+
+# Let's take a look to some genes
+FPKM_mat_14v0["ENSG00000265992.1_ESRG",]
+FPKM_mat_14v0["ENSG00000185559.14_DLK1",]
+```
+
+```{r}
+# Enable Warning messages
+options(warn = 0)
 ```
