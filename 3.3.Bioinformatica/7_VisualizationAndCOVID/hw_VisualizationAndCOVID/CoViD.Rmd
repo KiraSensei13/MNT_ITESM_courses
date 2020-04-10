@@ -13,16 +13,170 @@ classoption: a4paper
 always_allow_html: yes
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+D. Blanco-Melo, B. Nilsson-Payant, W.-C. Liu, R. Moeller, M. Panis, D. Sachs, R. Albrecht, B.R. TenOever, SARS-CoV-2 launches a unique transcriptional signature from in vitro, ex vivo, and in vivo systems, BioRxiv. (2020) 2020.03.24.004655. [https://doi.org/10.1101/2020.03.24.004655](https://doi.org/10.1101/2020.03.24.004655).
 
 ```{r}
-plot(cars)
+# Clear all objects (from the workspace)
+rm(list = ls())
+
+# Suppress Warning messages
+options(warn = -1)
+
+# Turn off scientific notation like 1e+06
+options(stringsAsFactors = F)
+
+# INSTALL with:
+
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+# BiocManager::install("GEOquery")
+# BiocManager::install("DESeq2")
+# BiocManager::install("limma")
+
+# library(devtools)
+# install_github("tpq/exprso")
+
+# LOAD Libs
+library(dplyr)
+library(tidyverse)
+library(DESeq2)
+library(limma)
+
+# LOAD provided functions
+source("./script_ejercicios.R")
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+```{r}
+datos <- load("./GSE147507_datos_covid.Rdata")
+# head(datos_covid)
+names(datos_covid)
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+dim(datos_covid)
+names(datos_covid)
+# head(datos_covid)
+```
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+## Download GDS file, put it in the current directory, and load it
+
+```{r}
+# https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE147507
+
+download.file(url = 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE147nnn/GSE147507/suppl/GSE147507_RawReadCounts_Human.tsv.gz',
+              destfile = './NCBI_GEO/GSE147507_RawReadCounts_Human.tsv.gz')
+
+gse147507 <-
+  read.table(
+    './NCBI_GEO/GSE147507_RawReadCounts_Human.tsv.gz',
+    header = T,
+    stringsAsFactors = F
+  )
+# names(gse147507)
+```
+
+Cell Culture:
+* Normal human bronchial epithelial (NHBE)
+* Human adenocarcinomic alveolar basal epithelial (A549) cells
+
+Viruses:
+* SARS-related coronavirus 2 (SARS.CoV.2)
+* influenza A/Puerto Rico/8/1934 (H1N1) virus (IAV)
+* human respiratory syncytial virus (RSV)
+
+```{r}
+# DROP extra data
+gse147507 <-
+  gse147507 %>% select(-contains(c(
+    "ACE2", "Calu3", "HPIV3", "NS1", "IFNB", "Lung"
+  )))
+
+dim(gse147507)
+names(gse147507)
+# head(gse147507)
+```
+
+## Filtrar genes con baja expresión y con bajos conteos
+
+```{r}
+# FILTRAR genes - conteos
+
+# Para cada gen, contar el número de muestras con mayor a 5 conteos
+gse147507_filter <-
+    apply(gse147507, 1, function(x)
+        length(which(x >= 5)))
+table(gse147507_filter)
+
+# Filtrar genes con menor a 2 muestras con más de 5 conteos
+gse147507 <- gse147507[which(gse147507_filter >= 2),]
+
+# Let's take a LOOK
+dim(gse147507)
+# names(gse147507)
+# head(gse147507)
+```
+
+## Classify samples
+
+_NHBE_Mock_
+_NHBE_SARS.CoV.2_
+_NHBE_IAV_
+_A549_Mock_
+_A549_SARS.CoV.2_
+_A549_RSV_
+_A549_IAV_
+
+```{r}
+NHBE_Mock       = gse147507[,grep('_NHBE_Mock_', colnames(gse147507))]
+NHBE_SARS.CoV.2 = gse147507[,grep('_NHBE_SARS.CoV.2_', colnames(gse147507))]
+NHBE_IAV        = gse147507[,grep('_NHBE_IAV_', colnames(gse147507))]
+A549_Mock       = gse147507[,grep('_A549_Mock_', colnames(gse147507))]
+A549_SARS.CoV.2 = gse147507[,grep('_A549_SARS.CoV.2_', colnames(gse147507))]
+A549_RSV        = gse147507[,grep('_A549_RSV_', colnames(gse147507))]
+A549_IAV        = gse147507[,grep('_A549_IAV_', colnames(gse147507))]
+```
+
+# Apply DESeq2
+
+```{r}
+# [TODO: adjust the example inputs to fit the actual data]
+
+tbl_merge = merge(NHBE_Mock, NHBE_SARS.CoV.2, by="row.names", all=TRUE)
+tbl_merge
+
+# [NOTE: tbl_merge is count_mat_28v0]
+# count_mat_28v0 = count_mat[,-grep('d14_', colnames(count_mat))]
+# 
+# # Conteos
+# aux_classes = rep(0, times = ncol(count_mat_28v0)) # CLASSIFY "d0_" as 0s
+# aux_classes[grep(pattern = "d28_", x = colnames(count_mat_28v0))] = 1
+# aux_classes
+# colnames(count_mat_28v0)
+# 
+# count_results_28v0 = DESeq_func(matrix_c = count_mat_28v0, classes_c = aux_classes)
+# count_results_28v0 = count_results_28v0[order(count_results_28v0$pvalue),]
+# summary(count_results_28v0)
+# 
+# # HISTOGRAM
+# pvals = count_results_28v0["pvalue"]
+# hist(
+#     pvals[, 1],
+#     prob = TRUE,
+#     col = "black",
+#     border = "white",
+#     xlab = "scores",
+#     breaks = 100
+# )
+# box(bty = "l")
+# # Draw density function (assuming normal dist)
+# score_mean = mean(pvals[, 1])
+# score_sd   = sd(pvals[, 1])
+# curve(
+#     dnorm(x, mean = score_mean, sd = score_sd),
+#     add = TRUE,
+#     col = "red",
+#     lwd = 2
+# )
+# 
+# # Let's take a look to some genes
+# count_mat_28v0["ENSG00000128567.16_PODXL",]
+# count_mat_28v0["ENSG00000185559.14_DLK1",]
+```
