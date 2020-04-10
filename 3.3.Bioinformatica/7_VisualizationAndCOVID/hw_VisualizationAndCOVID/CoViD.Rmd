@@ -142,7 +142,7 @@ A549_IAV        = gse147507[,grep('_A549_IAV_', colnames(gse147507))]
 tbl_merge = merge(NHBE_Mock, NHBE_SARS.CoV.2, by="row.names", all=TRUE)
 tbl_merge
 
-# [NOTE: tbl_merge is count_mat_28v0]
+# [NOTE: tbl_merge is count_mat_28v0] [TRY: DESeq_func with several classes (>2)]
 # count_mat_28v0 = count_mat[,-grep('d14_', colnames(count_mat))]
 # 
 # # Conteos
