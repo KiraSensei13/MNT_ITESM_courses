@@ -1566,10 +1566,28 @@ World Scientific Publishing Company
 
 A00825034@itesm.mx
 
+/******************************************************************************/
+
 arXiv
 
+/******************************************************************************/
 
 lista de polymers
 add missing review papers
 finish jornal form
+
+/******************************************************************************/
+
+error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools": https://visualstudio.microsoft.com/downloads/
+
+ERROR: Could not install packages due to an EnvironmentError: [WinError 5] Access is denied: 'c:\\users\\oskat\\anaconda3\\lib\\site-packages\\matplotlib\\backends\\_backend_agg.cp37-win_amd64.pyd'
+Consider using the `--user` option or check the permissions.
+
+/******************************************************************************/
+
+pip list --outdated
+pip freeze | %{$_.split('==')[0]} | %{pip install --user --upgrade $_}
+
+/******************************************************************************/
+
 
