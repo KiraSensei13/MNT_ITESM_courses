@@ -1590,4 +1590,30 @@ pip freeze | %{$_.split('==')[0]} | %{pip install --user --upgrade $_}
 
 /******************************************************************************/
 
+osamu.katagiri.mx@tutanota.com
+e554e1c341c4962c9b4020ebbb982c93085312f4a6033d340f6fd94b47681783
+
+/******************************************************************************/
+
+Osamu (•̀ᴗ•́)و ̑̑
+
+/******************************************************************************/
+
+Hola, buen día. Por este medio solicito el cambio de mi correo electrónico en mi cuenta Cinépolis.
+
+Nombre: Antonio Katagiri Tanaka
+Correo a reemplazar (viejo): oskatagiri@gmail.com
+Correo actualizado (nuevo): osamu.katagiri.serv@tutanota.com
+
+/******************************************************************************/
+
+TEAMVIEWER:
+
+You need to store the recovery code in a safe place before activating two factor authentication for your account.
+If you lose access to your device you can deactivate two factor authentication using the following recovery code:
+
+QV4G CV58 F72K J3K6
+
+/******************************************************************************/
+
 
