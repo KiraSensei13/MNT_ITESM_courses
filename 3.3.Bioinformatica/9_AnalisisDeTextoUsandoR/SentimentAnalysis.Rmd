@@ -171,4 +171,4 @@ word_df[index_genes, c("PID","Word")]
 
 # Part 2: COVID-19 Public Sentiment Analysis
 
-https://www.sciencedirect.com/science/article/abs/pii/S2468696417301088
+Text sentiment analyses can be implemented in the identification of misinformation on social media during the coronavirus pandemic. It could be possible to analyse an extensive number of tweets to determine how false information about the coronavirus spreads on social media. Concerns include statements from about hot water eliminating the virus to deceits about past quarantines. While we are trying to contain the virus' spread, misinformation could drain critical resources and set potentially dangerous distractions. Social media has a strong impact in communication during global crisis. Exposing false, misleading and clickbait content can provide a means to explain whether social media can provide insights into social behaviours in real time.
