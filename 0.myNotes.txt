@@ -1616,4 +1616,12 @@ QV4G CV58 F72K J3K6
 
 /******************************************************************************/
 
+ALL USERS
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+
+CURRENT USER
+C:\Users\oskat\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+/******************************************************************************/
+
 
