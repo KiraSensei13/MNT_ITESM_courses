@@ -1629,3 +1629,15 @@ req 1: buscar artículos en páginas
 /******************************************************************************/
 
 https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EeLth2LJ-J9GpwLhkyBScIEBvUrzX3ETl_0z-Ob0YokKeg?e=erK7Yb
+
+Campus Portal Address
+CEM vpncem.tec.mx
+CSF vpncsf.tec.mx
+GDA vpngda.tec.mx
+PUE vpnpue.tec.mx
+QRO vpnqro.tec.mx
+MTY vpnmty.tec.mx
+
+/******************************************************************************/
+
+
