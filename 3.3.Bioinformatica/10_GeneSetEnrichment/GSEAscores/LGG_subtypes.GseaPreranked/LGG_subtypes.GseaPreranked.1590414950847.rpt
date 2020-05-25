@@ -1,0 +1,22 @@
+producer_class	xtools.gsea.GseaPreranked
+producer_timestamp	1590414950847
+param	collapse	false
+param	plot_top_x	30
+param	rnk	C:\Users\oskat\OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey\Documents\MNT_ITESM_courses\3.3.Bioinformatica\10_GeneSetEnrichment\LGG_subtypes.rnk
+param	norm	meandiv
+param	scoring_scheme	weighted
+param	make_sets	true
+param	mode	Max_probe
+param	gmx	./c6.all.v7.1.symbols.gmt
+param	gui	false
+param	rpt_label	LGG_subtypes
+param	help	false
+param	out	C:\Users\oskat\OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey\Documents\MNT_ITESM_courses\3.3.Bioinformatica\10_GeneSetEnrichment\.\GSEAscores
+param	include_only_symbols	true
+param	set_min	5
+param	nperm	1000
+param	rnd_seed	timestamp
+param	zip_report	false
+param	set_max	500
+
+file	.\GSEAscores\LGG_subtypes.GseaPreranked.1590414950847\index.html
