@@ -1675,4 +1675,15 @@ https://tecmx-my.sharepoint.com/:f:/g/personal/a01212611_itesm_mx/EtoyOF3V42xIjx
 
 /******************************************************************************/
 
+Disable hardware acceleration in both
+
+Discord's settings - appearance
+
+Skype:
+To successfully capture the new Skype for Desktop version, you need to launch it with --disable-gpu --disable-gpu-compositing added to the shortcut. To do this, right click the shortcut, select properties, and add the lines at the end of the Target field (after the " if there is one). Please be aware that this may impact performance
+
+You CANNOT under any circumstances window capture the windows store version of skype, as microsoft actively blocks it.
+
+/******************************************************************************/
+
 
