@@ -1686,4 +1686,70 @@ You CANNOT under any circumstances window capture the windows store version of s
 
 /******************************************************************************/
 
+Location Breakdown:
+00:00 - Iceland (Waterfall)
+01:36 - New Jersey, USA (Tulip Fields)
+02:12 - Spain (El Campello)
+03:18 - Iceland (Seljalandfoss)
+04:16 - New Hampshire (Autumn)
+05:45 - New Jersey (Beach)
+07:35 - Dubai (Desert)
+08:11 - Switzerland (Cabin)
+08:51 - Alicante, Spain
+09:30 - Switzerland
+10:16 - Dubai
+10:55 - Alicante, Spain
+12:21 - Switzerland
+17:47 - New Hampshire, USA
+18:07 - Dubai
+18:43 - Spain
+19:38 - Alicante, Spain
+20:04 - Almeria, Spain
+21:04 - Iceland
+21:55 - Spain
+22:14 - Valensole, France
+22:33 - France
+22:47 - Iceland
+23:17 - France
+23:43 - South France
+24:47 - Boccadasse, Italy
+25:33 - Genova, Italy
+26:38 - Torrevieja, Spain
+28:07 - New Jersey, USA
+28:49 - Pisa, Italy
+29:15 - Seljalandfoss, Iceland
+29:38 - New Jersey, USA
+30:21 - Iceland
+31:17 - New Hampshire
+32:17 - New Jersey
+33:25 - South France
+34:00 - New Hampshire, USA
+34:22 - Iceland
+39:58 - Argentina
+40:38 - Iceland
+41:20 - New Jersey (Beach)
+43:00 - New Hampshire (Foggy Trees)
+43:40 - Iceland (Driving)
+44:43 - Iceland (Seljalandfoss)
+45:47 - Segovia, Spain
+46:12 - Bariloche, Argentina
+46:28 - New Jersey (Beach)
+47:01 - Bariloche, Argentina
+47:58 - Spain (Navacerrada)
+49:01 - Segovia, Spain
+50:08 - Spain (Navacerrada)
+50:41 - Iceland
+51:34 - South Korea (Gangneung)
+53:35 - New Hampshire, USA
+54:21 - New York, New York
+55:25 - New Jersey
+57:05 - New Hampshire
+57:44 - Buenos Aires, Argentina 
+
+/******************************************************************************/
+
+https://www.allaboutcircuits.com/textbook/direct-current/chpt-8/kelvin-resistance-measurement/
+
+/******************************************************************************/
+
 
