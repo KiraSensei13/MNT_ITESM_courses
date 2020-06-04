@@ -1686,6 +1686,8 @@ You CANNOT under any circumstances window capture the windows store version of s
 
 /******************************************************************************/
 
+TRAVELWITHDRONE.mp4
+
 Location Breakdown:
 00:00 - Iceland (Waterfall)
 01:36 - New Jersey, USA (Tulip Fields)
@@ -1749,7 +1751,8 @@ Location Breakdown:
 /******************************************************************************/
 
 https://www.allaboutcircuits.com/textbook/direct-current/chpt-8/kelvin-resistance-measurement/
+https://www.electronics-tutorials.ws/resistor/resistivity.html
 
 /******************************************************************************/
 
-
+The following shows the overall process for the fabrication of carbon nanowires. The fisrt step is to design a polymer solution with the right rheological properties such that the electrospinning process can be successfully performed. The electrospinning will be implemented to tranform the solution into polymeric fibers and then into carbon nanowires with a pyrolysis process. Microscopy analyses will be perfomed before and after pyrolysis to capture any changes in morphology. To the final product will undergo Raman and electrical conductivity measurements to determin if the proposed polymer solution improves the carbon structure properties of thinner diameter and increased conductivity.
