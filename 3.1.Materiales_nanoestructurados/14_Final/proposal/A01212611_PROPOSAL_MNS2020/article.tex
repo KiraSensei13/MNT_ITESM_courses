@@ -1,0 +1,365 @@
+\documentclass[11pt]{article}
+\makeatletter\if@twocolumn\PassOptionsToPackage{switch}{lineno}\else\fi\makeatother
+
+\makeatletter
+\let\small\undefined\let\footnotesize\undefined\let\scriptsize\undefined\let\large\undefined\let\Large\undefined\let\LARGE\undefined\let\Huge\undefined\let\huge\undefined\let\tiny\undefined
+\input{size12-Edited.clo}%customising fontsize
+\def\bibfont{\small}
+\makeatother
+
+      \makeatletter
+\usepackage{wrapfig}
+\newcounter{aubio}
+
+\long\def\bioItem{%
+\@ifnextchar[{\@bioItem}{\@@bioItem}}
+
+\long\def\@bioItem[#1]#2#3{
+ \stepcounter{aubio}
+ \expandafter\gdef\csname authorImage\theaubio\endcsname{#1}
+ \expandafter\gdef\csname authorName\theaubio\endcsname{#2}
+ \expandafter\gdef\csname authorDetails\theaubio\endcsname{#3}
+}
+
+\long\def\@@bioItem#1#2{
+ \stepcounter{aubio}
+ \expandafter\gdef\csname authorName\theaubio\endcsname{#1}
+ \expandafter\gdef\csname authorDetails\theaubio\endcsname{#2}
+}
+
+\newcommand{\checkheight}[1]{%
+  \par \penalty-100\begingroup%
+  \setbox8=\hbox{#1}%
+  \setlength{\dimen@}{\ht8}%
+  \dimen@ii\pagegoal \advance\dimen@ii-\pagetotal
+  \ifdim \dimen@>\dimen@ii
+    \break
+  \fi\endgroup}
+
+\def\printBio{%
+  \@tempcnta=0
+   \loop
+     \advance \@tempcnta by 1
+     \def\aubioCnt{\the\@tempcnta}
+     \setlength{\intextsep}{0pt}%
+     \setlength{\columnsep}{10pt}%
+     \newbox\boxa%
+     \setbox\boxa\vbox{\csname authorDetails\aubioCnt\endcsname}
+     \expandafter\ifx\csname authorImage\aubioCnt\endcsname\relax%
+      \else%
+       \checkheight{\includegraphics[height=1.25in,width=1in,keepaspectratio]{\csname authorImage\aubioCnt\endcsname}}
+        \begin{wrapfigure}{l}{25mm}
+         \includegraphics[height=1.25in,width=1in,keepaspectratio]{\csname authorImage\aubioCnt\endcsname}%height=145pt
+        \end{wrapfigure}\par
+      \fi
+     {\parindent0pt\textbf{\csname authorName\aubioCnt\endcsname}\csname authorDetails\aubioCnt\endcsname \par\bigskip%
+     \expandafter\ifx\csname authorImage\aubioCnt\endcsname\relax\else%
+      \ifdim\the\ht\boxa < 90pt\vskip\dimexpr(90pt -\the\ht\boxa-1pc)\fi%
+     \fi}%for adding additional vskip for avoiding image overlap.
+      \ifnum\@tempcnta < \theaubio
+   \repeat
+   }
+
+\makeatother
+
+      
+
+
+
+\usepackage{amsfonts,amssymb,amsbsy,latexsym,amsmath,tabulary,graphicx,times,xcolor}
+\usepackage[utf8x]{inputenc}
+\usepackage{fancyhdr}
+\def\NormalBaseline{\def\baselinestretch{1.1}}
+\makeatletter
+\def\hlinewd#1{%
+  \noalign{\ifnum0=`}\fi\hrule \@height #1%
+  \futurelet\reserved@a\@xhline}
+\def\tbltoprule{\hlinewd{.8pt}}%\\[-10pt]}
+\def\tblbottomrule{\hlinewd{.8pt}}
+\def\tblmidrule{\hline\noalign{\vspace*{2pt}}}
+
+\def\@shorttitle{\@empty}
+\def\shorttitle#1{\gdef\@shorttitle{#1}}
+
+\fancypagestyle{custom}{
+\fancyhf{}
+\fancyhead[C]{\@shorttitle}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0pt}
+}
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand\headrulewidth{0.4pt}
+}
+
+
+\makeatother
+
+\usepackage{times}
+
+\usepackage[a4paper,margin=2.5cm,headsep=.7cm,headheight=18pt,top=3cm,footnotesep=1.5\baselineskip]{geometry}
+\usepackage{caption}
+\captionsetup[figure]{labelfont=bf,labelsep=newline,justification=centerlast,labelfont={small,sc,bf},font=small,aboveskip=.3\baselineskip}
+
+\captionsetup[table]{labelfont=bf,labelsep=newline,justification=centerlast,labelfont={small,sc,bf},font=small,aboveskip=.3\baselineskip}
+\linespread{1.5}
+
+\setcounter{totalnumber}{4}
+\def\topfraction{0.9}
+\def\bottomfraction{0.4}
+\def\floatpagefraction{0.8}
+\def\textfraction{0.1}
+\widowpenalty 10000
+\clubpenalty 10000
+\makeatletter
+\setlength\intextsep   {1.5\baselineskip \@plus 2\p@ \@minus 2\p@}
+\makeatother
+
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Following additional macros are required to function some 
+% functions which are not available in the class used.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{url,multirow,morefloats,floatflt,cancel,tfrupee}
+\makeatletter
+
+
+\AtBeginDocument{\@ifpackageloaded{textcomp}{}{\usepackage{textcomp}}}
+\makeatother
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage[nointegrals]{wasysym}
+\urlstyle{rm}
+\makeatletter
+
+%%%For Table column width calculation.
+\def\mcWidth#1{\csname TY@F#1\endcsname+\tabcolsep}
+
+%%Hacking center and right align for table
+\def\cAlignHack{\rightskip\@flushglue\leftskip\@flushglue\parindent\z@\parfillskip\z@skip}
+\def\rAlignHack{\rightskip\z@skip\leftskip\@flushglue \parindent\z@\parfillskip\z@skip}
+
+%Etal definition in references
+\@ifundefined{etal}{\def\etal{\textit{et~al}}}{}
+
+
+%\if@twocolumn\usepackage{dblfloatfix}\fi
+\usepackage{ifxetex}
+\ifxetex\else\if@twocolumn\@ifpackageloaded{stfloats}{}{\usepackage{dblfloatfix}}\fi\fi
+
+\AtBeginDocument{
+\expandafter\ifx\csname eqalign\endcsname\relax
+\def\eqalign#1{\null\vcenter{\def\\{\cr}\openup\jot\m@th
+  \ialign{\strut$\displaystyle{##}$\hfil&$\displaystyle{{}##}$\hfil
+      \crcr#1\crcr}}\,}
+\fi
+}
+
+%For fixing hardfail when unicode letters appear inside table with endfloat
+\AtBeginDocument{%
+  \@ifpackageloaded{endfloat}%
+   {\renewcommand\efloat@iwrite[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}}{\newif\ifefloat@tables}%
+}%
+
+\def\BreakURLText#1{\@tfor\brk@tempa:=#1\do{\brk@tempa\hskip0pt}}
+\let\lt=<
+\let\gt=>
+\def\processVert{\ifmmode|\else\textbar\fi}
+\let\processvert\processVert
+
+\@ifundefined{subparagraph}{
+\def\subparagraph{\@startsection{paragraph}{5}{2\parindent}{0ex plus 0.1ex minus 0.1ex}%
+{0ex}{\normalfont\small\itshape}}%
+}{}
+
+% These are now gobbled, so won't appear in the PDF.
+\newcommand\role[1]{\unskip}
+\newcommand\aucollab[1]{\unskip}
+  
+\@ifundefined{tsGraphicsScaleX}{\gdef\tsGraphicsScaleX{1}}{}
+\@ifundefined{tsGraphicsScaleY}{\gdef\tsGraphicsScaleY{.9}}{}
+% To automatically resize figures to fit inside the text area
+\def\checkGraphicsWidth{\ifdim\Gin@nat@width>\linewidth
+	\tsGraphicsScaleX\linewidth\else\Gin@nat@width\fi}
+
+\def\checkGraphicsHeight{\ifdim\Gin@nat@height>.9\textheight
+	\tsGraphicsScaleY\textheight\else\Gin@nat@height\fi}
+
+\def\fixFloatSize#1{}%\@ifundefined{processdelayedfloats}{\setbox0=\hbox{\includegraphics{#1}}\ifnum\wd0<\columnwidth\relax\renewenvironment{figure*}{\begin{figure}}{\end{figure}}\fi}{}}
+\let\ts@includegraphics\includegraphics
+
+\def\inlinegraphic[#1]#2{{\edef\@tempa{#1}\edef\baseline@shift{\ifx\@tempa\@empty0\else#1\fi}\edef\tempZ{\the\numexpr(\numexpr(\baseline@shift*\f@size/100))}\protect\raisebox{\tempZ pt}{\ts@includegraphics{#2}}}}
+
+%\renewcommand{\includegraphics}[1]{\ts@includegraphics[width=\checkGraphicsWidth]{#1}}
+\AtBeginDocument{\def\includegraphics{\@ifnextchar[{\ts@includegraphics}{\ts@includegraphics[width=\checkGraphicsWidth,height=\checkGraphicsHeight,keepaspectratio]}}}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\def\URL#1#2{\@ifundefined{href}{#2}{\href{#1}{#2}}}
+
+%%For url break
+\def\UrlOrds{\do\*\do\-\do\~\do\'\do\"\do\-}%
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+
+
+
+\edef\fntEncoding{\f@encoding}
+\def\EUoneEnc{EU1}
+\makeatother
+\def\floatpagefraction{0.8} 
+\def\dblfloatpagefraction{0.8}
+\def\style#1#2{#2}
+\def\xxxguillemotleft{\fontencoding{T1}\selectfont\guillemotleft}
+\def\xxxguillemotright{\fontencoding{T1}\selectfont\guillemotright}
+
+\newif\ifmultipleabstract\multipleabstractfalse%
+\newenvironment{typesetAbstractGroup}{}{}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{natbib}
+
+
+
+
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\setcounter{secnumdepth}{5}
+ 
+\titleformat{\section}[hang]{\NormalBaseline\filright\large\bfseries}
+{\large\thesection}
+{10pt}
+{}
+[]
+\titleformat{\subsection}[hang]{\NormalBaseline\filright\bfseries}
+{\thesubsection}
+{10pt}
+{}
+[]
+\titleformat{\subsubsection}[hang]{\NormalBaseline\filright\bfseries\itshape}
+{\upshape\thesubsubsection}
+{10pt}
+{}
+[]
+\titleformat{\paragraph}[runin]{\NormalBaseline\filright\bfseries}
+{\theparagraph}
+{10pt}
+{}
+[]
+\titleformat{\subparagraph}[runin]{\NormalBaseline\filright\bfseries\itshape}
+{\thesubparagraph}
+{10pt}
+{}
+[]
+
+\titlespacing{\section}{0pt}{1.5\baselineskip}{.2\baselineskip}  
+\titlespacing{\subsection}{0pt}{1.5\baselineskip}{.2\baselineskip}  
+\titlespacing{\subsubsection}{0pt}{1.5\baselineskip}{.2\baselineskip}  
+\titlespacing{\paragraph}{0pt}{.5\baselineskip}{10pt}  
+\titlespacing{\subparagraph}{0pt}{.5\baselineskip}{10pt}  
+  
+
+  
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Feature enabled:
+%linespacing: 1.5
+%font-size: 12
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\linespread{1.5}
+
+\usepackage{float}
+
+\begin{document}
+
+
+
+\renewcommand*\rmdefault{bch}\normalfont\upshape
+
+\shorttitle{PROPOSAL - Nanostructured Materials}
+
+\date{}  
+
+  
+\title{\NormalBaseline\raggedright\bfseries Implementation Proposal Based on the Theoretical Knowledge from the Course of Nanostructured Materials}
+  
+      	\def\AuAffLabelStyle#1{\textsuperscript{\upshape#1}}
+        \def\AuFont{\bfseries\large}
+        \def\AuSep{, }
+        \def\AffSep{\\}
+        \let\origthanks\thanks
+\renewcommand\thanks[1]{\begingroup\let\rlap\relax\origthanks{#1}\endgroup}
+\author{\hskip2pc\parbox{.95\linewidth}{\AuFont Antonio Osamu Katagiri Tanaka\AuAffLabelStyle{1}\thanks{E-mail: A01212611@itesm.mx}
+      \\[3pt] 
+    % Address
+    \normalfont\itshape\NormalBaseline \AuAffLabelStyle{1} 
+    School of Engineering and Sciences\unskip, 
+    Tecnologico de Monterrey\unskip, \normalfont\itshape\NormalBaseline Av. Eugenio Garza Sada 2501 Sur\unskip, N.L.\unskip, Monterrey\unskip, Mexico}}
+    
+    
+\maketitle 
+\pagestyle{custom}
+[Jan-Jun 2020] The Nanostructured Materials course taught by Jaime Bonilla R\'{\i}os\footnote{Jaime Bonilla R\'{\i}os : Associate Dean of Continuing Education, R. Tec. Mty. (E:jbonilla@tec.mx T:83 284 175)}, an elective class for MNT (\textit{Maestr\'{\i}a en Nanotecnolog\'{\i}a} or Master of Science in Nanotechnology) students, is a transformative experience. The class teaches MNT students the basics of nanotechnology, various manufacturing techniques, and tools used for the fabrication and characterization of nanomaterials, including nanostructured surfaces, nanoparticles, nanofibers, among others. Despite last-minute challenges (creating a course for teaching in a full online distance-learning environment and working with students remotely), the course goals were met as students learned to manipulate materials at the nanoscale. The following describes how the content of the Nanostructured Materials course apply to the thesis entitled "Fabrication of Graphitic-Carbon Suspended Nanowires Through Mechano-Near-Field Electrospinning of Photocrosslinkable Polymers".
+
+
+\bgroup
+\fixFloatSize{images/dcfb6327-c04e-4015-93c2-25b5927efae4-uthesisoverview.png}
+\begin{figure*}[!htbp]
+\centering \makeatletter\IfFileExists{images/dcfb6327-c04e-4015-93c2-25b5927efae4-uthesisoverview.png}{\includegraphics{images/dcfb6327-c04e-4015-93c2-25b5927efae4-uthesisoverview.png}}{}
+\makeatother 
+\caption{{Fabrication process of conductive carbon nanowires. SEM images adapted from\unskip~\protect\cite{691550:18849442}.}}
+\label{f-499db77d60db}
+\end{figure*}
+\egroup
+Carbon nanowires are versatile materials composed of carbon chains with a wide range of applications due to their high conductivity\unskip~\cite{691550:18849395} as carbon structures allow the propagation of slowly decaying surface plasmon waves\unskip~\cite{691550:18856327}. Regardless of the high interest in the implementation of carbon nanowires in several applications and devices, no feasible processes have been developed to fabricate carbon nanowires with spatial control at a reasonable cost and manufacturing speed. Carbon nanowires have been fabricated with the use of a photoresist such as SU-8\unskip~\cite{691550:18849438,691550:18849439,691550:18849440,691550:18849441,691550:18849442,691550:18849443}, but there is a lack in research about polymers that can produce more conductive carbon nanowires after pyrolysis. Various polymer solutions have been tested in near field electrospinning (NFES) and photopolymerization separately, however, few have been tested for nanowire fabrication purposes through pyrolysis. The intention behind the thesis ("Fabrication of Graphitic-Carbon Suspended Nanowires Through Mechano-Near-Field Electrospinning of Photocrosslinkable Polymers") is to implement rheology analyses of different polymer solutions to determine if they can be easily electrospun and then fabricate carbon nanowires with them. Figure~\ref{f-499db77d60db} shows the intended fabrication and characterization processes of this dissertation. The thesis work arises from the need to test a greater variety of polymers with the goal to select a polymer solution to fabricate carbon nanowires with better conductivity than the current SU-8 polymeric nanofibers. The research process includes the selection of polymer solutions that can be electrospun, photopolymerized, and then pyrolyzed into conducting carbon nanowires. In other words, the intention is to discover a polymer solution to achieve mass scale manufacturing of conductive carbon nanowires in an inexpensive, continuous, simple and reproducible manner.
+
+Since graphitic materials often have a distribution of crystalline domains, their electrochemical behavior considerably depends on the microstructure. Recently, different chemical and physical methods have been applied to increase the graphitization and enhance the electrochemical properties\unskip~\cite{691550:18849438,691550:18851417,691550:18851482}. In this regard, physical-stress treatment has been considered as a simple method to increase the electrical conductivity of carbon structures. Cardenas-Benitez et al.\unskip~\cite{691550:18851643}  studied the pyrolysis-induced shrinkage of photocured SU-8 structures arisen from the volatilized material/degassing and surface area of the microstructures, where the structures shrank about 70\% of their original size. The shrinkage and elongation of suspended SU-8 fibers during pyrolysis influences the resulting electrical properties\unskip~\cite{691550:18849438}. Canton et al.\unskip~\cite{691550:18849438} deposited SU-8 fibers in supporting SU-8 walls, as the walls shrink during pyrolysis strain forces elongate the fibers. Evidence states that the electrical conductivity increases when fibers are elongated/stretched with a decrease of their diameter.
+
+
+\bgroup
+\fixFloatSize{images/6635ca7d-3b68-4728-94a9-cf82a38021eb-uunwindnorient.png}
+\begin{figure*}[!htbp]
+\centering \makeatletter\IfFileExists{images/6635ca7d-3b68-4728-94a9-cf82a38021eb-uunwindnorient.png}{\includegraphics{images/6635ca7d-3b68-4728-94a9-cf82a38021eb-uunwindnorient.png}}{}
+\makeatother 
+\caption{{Unwinding polymer chains during CNT electrospinning process. $F_{ES} $ is the external electrostatic force pulling the polymer jet to the receiving plate and $F_{D} $ is the molecular drag force resisting the $F_{ES} $. Figure adapted from\unskip~\protect\cite{691550:18851819}.}}
+\label{f-e917dfd69b1a}
+\end{figure*}
+\egroup
+Furthermore, Ghazinejad et al.\unskip~\cite{691550:18851819}  investigated the effect of electro-mechanical aspects on increasing the graphitization and molecular alignment in a polymer precursor. In this regard, they unwound and orient the molecular polymer chains with the help of carbon nanotubes and after stabilization they pyrolyzed the samples. The results showed a significant enhancement in structure and properties of pyrolytic carbons as depicted in Figure~\ref{f-e917dfd69b1a}. From the course Nanostructured Materials, carbon nanotubes can be fabricated through \textit{Lawn} techniques from metal nanodots. Besides the molecular alignment, Carbon nanotubes (CNTs) chirality can also influence the carbon fiber electrical conductivity. Further, as depicted in Salazar et al.'s work\unskip~\cite{691550:18855236}, the molecular alignment of the polymer chains have an effect on the carbon structure after pyrolysis. Figure~\ref{f-db248f05c2b3} shows evidence that winded polymer chain results in fullerenic structures when pyrolyzed at high temperatures for relatively a short time. Unwound polymer chains preserve the molecular alignment, which result in graphitic structures after pyrolysis with small temperature ramps.
+
+
+\bgroup
+\fixFloatSize{images/2a93083c-6cef-4179-919f-050d684ff601-ufullerenengraphene.png}
+\begin{figure*}[!htbp]
+\centering \makeatletter\IfFileExists{images/2a93083c-6cef-4179-919f-050d684ff601-ufullerenengraphene.png}{\includegraphics[width=.79\linewidth]{images/2a93083c-6cef-4179-919f-050d684ff601-ufullerenengraphene.png}}{}
+\makeatother 
+\caption{Pyrolysis of winded polymer chain results in fullerenic structures. Electrospun fibers (unwound polymer chain) during the stabilization preserves the molecular alignment, which results in graphitic structures after pyrolysis. Figure adapted from\unskip~\protect\cite{691550:18855236}}
+\label{f-db248f05c2b3}
+\end{figure*}
+\egroup
+From the previous statements and results from scientific literature, the implementation proposal based on the Nanostructured Materials course is as follows: Implement near-field electrospinning to fabricate conductive suspended nanowires with spatial control and at a faster rate than other techniques such as vapor-liquid-solid growth. Increase the fiber electrical conductivity and thus the graphitic carbon yield by the introduction of CNT to the NFES polymer ink. Further, the fabrication process could ensure conductive chirality of the added carbon nanotubes to promote electrical conductivity in the final carbon product. Multi-wall carbon nanotubes (MTCNTs) can be used in this exercise as they are cheaper to produce than single-wall carbon nanotubes (SWCNTs) even though in general MTCNT are less conductive than SWCNT\unskip~\cite{691550:18856327}  since the main contributor to the electrical conductivity is given by the pyrolyzed polymer chains. On the other hand, the unwound polymer chains can be also achieved by the near-field electrospinning of liquid crystal polymers as they are not prone to curl due to their ordered and oriented molecular phase nature between an isotropic liquid phase and a crystalline solid.
+
+~ \clearpage 
+    
+
+\bibliographystyle{blank}
+
+\bibliography{\jobname}
+
+\section*{Author biography}
+
+\bioItem[images/bf0f1284-fa36-4678-a9e7-05671376e50c-umeitesm]{Antonio Osamu Katagiri Tanaka}{ .
+
+MNT16
+
+A01212611}
+\printBio 
+
+\end{document}
