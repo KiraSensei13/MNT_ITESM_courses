@@ -1755,4 +1755,52 @@ https://www.electronics-tutorials.ws/resistor/resistivity.html
 
 /******************************************************************************/
 
+Paper overall structure
+	[1] Kenry, C.T. Lim, Nanofiber technology: current status and emerging developments, Prog. Polym. Sci. 70 (2017) 1–17. https://doi.org/10.1016/j.progpolymsci.2017.03.002.
+	[1] D. Sun, C. Chang, S. Li, L. Lin, Near-Field Electrospinning, Nano Lett. 6 (2006) 839–842. https://doi.org/10.1021/nl0602701.
+	[1] X.-X. He, J. Zheng, G.-F. Yu, M.-H. You, M. Yu, X. Ning, Y.-Z. Long, Near-Field Electrospinning: Progress and Applications, J. Phys. Chem. C. 121 (2017) 8663–8678. https://doi.org/10.1021/acs.jpcc.6b12783.
 
+Different Fabrication Techniques
+	[1] Y.-Z. Long, M.-M. Li, C. Gu, M. Wan, J.-L. Duvail, Z. Liu, Z. Fan, Recent advances in synthesis, physical properties and applications of conducting polymer nanotubes and nanofibers, Prog. Polym. Sci. 36 (2011) 1415–1442. https://doi.org/10.1016/j.progpolymsci.2011.04.001.
+	[1] J. Sharma, M. Lizu, M. Stewart, K. Zygula, Y. Lu, R. Chauhan, X. Yan, Z. Guo, E. Wujcik, S. Wei, J. Sharma, M. Lizu, M. Stewart, K. Zygula, Y. Lu, R. Chauhan, X. Yan, Z. Guo, E.K. Wujcik, S. Wei, Multifunctional Nanofibers towards Active Biomedical Therapeutics, Polymers (Basel). 7 (2015) 186–219. https://doi.org/10.3390/polym7020186.
+	(electrospun vs self-assembled) [1] B. Sun, Y.Z. Long, H.D. Zhang, M.M. Li, J.L. Duvail, X.Y. Jiang, H.L. Yin, Advances in three-dimensional nanofibrous macrostructures via electrospinning, Prog. Polym. Sci. 39 (2014) 862–890. https://doi.org/10.1016/j.progpolymsci.2013.06.002.
+	[1] L. Persano, A. Camposeo, D. Pisignano, Active polymer nanofibers for photonics, electronics, energy generation and micromechanics, Prog. Polym. Sci. 43 (2015) 48–95. https://doi.org/10.1016/j.progpolymsci.2014.10.001.
+	[1] T.D. Brown, P.D. Dalton, D.W. Hutmacher, Melt electrospinning today: An opportune time for an emerging polymer process, Prog. Polym. Sci. 56 (2016) 116–166. https://doi.org/10.1016/j.progpolymsci.2016.01.001.
+	(NFES vs FFES; single vs multineedle; simple vs coaxial; solid vs liquid collector) [1] J. Xue, T. Wu, Y. Dai, Y. Xia, Electrospinning and Electrospun Nanofibers: Methods, Materials, and Applications, Chem. Rev. 119 (2019) 5298–5415. https://doi.org/10.1021/acs.chemrev.8b00593.
+	(Melt vs Solution Electrospinning) [1] X.-X. He, J. Zheng, G.-F. Yu, M.-H. You, M. Yu, X. Ning, Y.-Z. Long, Near-Field Electrospinning: Progress and Applications, J. Phys. Chem. C. 121 (2017) 8663–8678. https://doi.org/10.1021/acs.jpcc.6b12783.
+	(Electrospinning vs Electrohydrodynamic jet printing) [1] X. Shi, W. Zhou, D. Ma, Q. Ma, D. Bridges, Y. Ma, A. Hu, Electrospinning of Nanofibers and Their Applications for Energy Devices, J. Nanomater. 2015 (2015) 1–20. https://doi.org/10.1155/2015/140716.
+	(other techniques are more expensive (and more time consuming) than electrospinning) [1] S.K. Nataraj, K.S. Yang, T.M. Aminabhavi, Polyacrylonitrile-based nanofibers—A state-of-the-art review, Prog. Polym. Sci. 37 (2012) 487–513. https://doi.org/10.1016/J.PROGPOLYMSCI.2011.07.001.
+
+Electrospinning Process Description
+	[1] J. Xue, T. Wu, Y. Dai, Y. Xia, Electrospinning and Electrospun Nanofibers: Methods, Materials, and Applications, Chem. Rev. 119 (2019) 5298–5415. https://doi.org/10.1021/acs.chemrev.8b00593.
+
+Electrospunable materials
+	[1] J. Xue, T. Wu, Y. Dai, Y. Xia, Electrospinning and Electrospun Nanofibers: Methods, Materials, and Applications, Chem. Rev. 119 (2019) 5298–5415. https://doi.org/10.1021/acs.chemrev.8b00593.
+
+NFES Process Parameters
+	[1] B. Sun, Y.Z. Long, H.D. Zhang, M.M. Li, J.L. Duvail, X.Y. Jiang, H.L. Yin, Advances in three-dimensional nanofibrous macrostructures via electrospinning, Prog. Polym. Sci. 39 (2014) 862–890. https://doi.org/10.1016/j.progpolymsci.2013.06.002.
+	[1] V. Pillay, C. Dott, Y.E. Choonara, C. Tyagi, L. Tomar, P. Kumar, L.C. Du Toit, V.M.K. Ndesendo, A review of the effect of processing variables on the fabrication of electrospun nanofibers for drug delivery applications, J. Nanomater. 2013 (2013). https://doi.org/10.1155/2013/789289.
+	(Jet instabilities)[1] D.H. Reneker, A.L. Yarin, Electrospinning jets and polymer nanofibers, Polymer (Guildf). 49 (2008) 2387–2425. https://doi.org/10.1016/J.POLYMER.2008.02.002.
+	[1] X. Shi, W. Zhou, D. Ma, Q. Ma, D. Bridges, Y. Ma, A. Hu, Electrospinning of Nanofibers and Their Applications for Energy Devices, J. Nanomater. 2015 (2015) 1–20. https://doi.org/10.1155/2015/140716.
+	[1] S. Agarwal, A. Greiner, J.H. Wendorff, Functional materials by electrospinning of polymers, Prog. Polym. Sci. 38 (2013) 963–991. https://doi.org/10.1016/j.progpolymsci.2013.02.001.
+
+Polymer-Solvent Parameters
+	[1] V. Pillay, C. Dott, Y.E. Choonara, C. Tyagi, L. Tomar, P. Kumar, L.C. Du Toit, V.M.K. Ndesendo, A review of the effect of processing variables on the fabrication of electrospun nanofibers for drug delivery applications, J. Nanomater. 2013 (2013). https://doi.org/10.1155/2013/789289.
+	[1] T.D. Brown, P.D. Dalton, D.W. Hutmacher, Melt electrospinning today: An opportune time for an emerging polymer process, Prog. Polym. Sci. 56 (2016) 116–166. https://doi.org/10.1016/j.progpolymsci.2016.01.001.
+	[1] S. Agarwal, A. Greiner, J.H. Wendorff, Functional materials by electrospinning of polymers, Prog. Polym. Sci. 38 (2013) 963–991. https://doi.org/10.1016/j.progpolymsci.2013.02.001.
+
+Types of Electrospun Fibers / Morphology (image analysis)
+	[1] G. Yang, X. Li, Y. He, J. Ma, G. Ni, S. Zhou, From nano to micro to macro: Electrospun hierarchically structured polymeric fibers for biomedical applications, Prog. Polym. Sci. 81 (2018) 80–113. https://doi.org/10.1016/j.progpolymsci.2017.12.003.
+	[1] J. Han, L. Xiong, X. Jiang, X. Yuan, Y. Zhao, D. Yang, Bio-functional electrospun nanomaterials: From topology design to biological applications, Prog. Polym. Sci. 91 (2019) 1–28. https://doi.org/10.1016/j.progpolymsci.2019.02.006.
+	(nanomaterials from fibers; morphology, alignment & pattern) [1] J. Xue, T. Wu, Y. Dai, Y. Xia, Electrospinning and Electrospun Nanofibers: Methods, Materials, and Applications, Chem. Rev. 119 (2019) 5298–5415. https://doi.org/10.1021/acs.chemrev.8b00593.
+
+Applications
+	[1] X.-X. He, J. Zheng, G.-F. Yu, M.-H. You, M. Yu, X. Ning, Y.-Z. Long, Near-Field Electrospinning: Progress and Applications, J. Phys. Chem. C. 121 (2017) 8663–8678. https://doi.org/10.1021/acs.jpcc.6b12783.
+	[1] Y.-Z. Long, M.-M. Li, C. Gu, M. Wan, J.-L. Duvail, Z. Liu, Z. Fan, Recent advances in synthesis, physical properties and applications of conducting polymer nanotubes and nanofibers, Prog. Polym. Sci. 36 (2011) 1415–1442. https://doi.org/10.1016/j.progpolymsci.2011.04.001.
+	[1] J. Sharma, M. Lizu, M. Stewart, K. Zygula, Y. Lu, R. Chauhan, X. Yan, Z. Guo, E. Wujcik, S. Wei, J. Sharma, M. Lizu, M. Stewart, K. Zygula, Y. Lu, R. Chauhan, X. Yan, Z. Guo, E.K. Wujcik, S. Wei, Multifunctional Nanofibers towards Active Biomedical Therapeutics, Polymers (Basel). 7 (2015) 186–219. https://doi.org/10.3390/polym7020186.
+	[1] B. Sun, Y.Z. Long, H.D. Zhang, M.M. Li, J.L. Duvail, X.Y. Jiang, H.L. Yin, Advances in three-dimensional nanofibrous macrostructures via electrospinning, Prog. Polym. Sci. 39 (2014) 862–890. https://doi.org/10.1016/j.progpolymsci.2013.06.002.
+	[1] L. Persano, A. Camposeo, D. Pisignano, Active polymer nanofibers for photonics, electronics, energy generation and micromechanics, Prog. Polym. Sci. 43 (2015) 48–95. https://doi.org/10.1016/j.progpolymsci.2014.10.001.
+	[1] J. Xue, T. Wu, Y. Dai, Y. Xia, Electrospinning and Electrospun Nanofibers: Methods, Materials, and Applications, Chem. Rev. 119 (2019) 5298–5415. https://doi.org/10.1021/acs.chemrev.8b00593.
+
+Conclusions
+	(advantages and disadvanteages of electrospinning) [1] X. Shi, W. Zhou, D. Ma, Q. Ma, D. Bridges, Y. Ma, A. Hu, Electrospinning of Nanofibers and Their Applications for Energy Devices, J. Nanomater. 2015 (2015) 1–20. https://doi.org/10.1155/2015/140716.
