@@ -1783,11 +1783,15 @@ NFES Process Parameters
 	(Jet instabilities)[1] D.H. Reneker, A.L. Yarin, Electrospinning jets and polymer nanofibers, Polymer (Guildf). 49 (2008) 2387–2425. https://doi.org/10.1016/J.POLYMER.2008.02.002.
 	[1] X. Shi, W. Zhou, D. Ma, Q. Ma, D. Bridges, Y. Ma, A. Hu, Electrospinning of Nanofibers and Their Applications for Energy Devices, J. Nanomater. 2015 (2015) 1–20. https://doi.org/10.1155/2015/140716.
 	[1] S. Agarwal, A. Greiner, J.H. Wendorff, Functional materials by electrospinning of polymers, Prog. Polym. Sci. 38 (2013) 963–991. https://doi.org/10.1016/j.progpolymsci.2013.02.001.
+	[1] S. Chakraborty, I.-C. Liao, A. Adler, K.W. Leong, Electrohydrodynamics: A facile technique to fabricate drug delivery systems, Adv. Drug Deliv. Rev. 61 (2009) 1043–1054. https://doi.org/10.1016/j.addr.2009.07.013.
+	(2.4.1 Jet initiation & 2.5.2 Processing parameters) [1] G.R. Williams, B.T. Raimi-Abraham, C.J. Luo, Electrospinning fundamentals, Nanofibres Drug Deliv. (2018) 24–59. https://doi.org/10.2307/j.ctv550dd1.6.
 
 Polymer-Solvent Parameters
 	[1] V. Pillay, C. Dott, Y.E. Choonara, C. Tyagi, L. Tomar, P. Kumar, L.C. Du Toit, V.M.K. Ndesendo, A review of the effect of processing variables on the fabrication of electrospun nanofibers for drug delivery applications, J. Nanomater. 2013 (2013). https://doi.org/10.1155/2013/789289.
 	[1] T.D. Brown, P.D. Dalton, D.W. Hutmacher, Melt electrospinning today: An opportune time for an emerging polymer process, Prog. Polym. Sci. 56 (2016) 116–166. https://doi.org/10.1016/j.progpolymsci.2016.01.001.
 	[1] S. Agarwal, A. Greiner, J.H. Wendorff, Functional materials by electrospinning of polymers, Prog. Polym. Sci. 38 (2013) 963–991. https://doi.org/10.1016/j.progpolymsci.2013.02.001.
+	[1] S. Chakraborty, I.-C. Liao, A. Adler, K.W. Leong, Electrohydrodynamics: A facile technique to fabricate drug delivery systems, Adv. Drug Deliv. Rev. 61 (2009) 1043–1054. https://doi.org/10.1016/j.addr.2009.07.013.
+	(2.5.1 solution parameters) [1] G.R. Williams, B.T. Raimi-Abraham, C.J. Luo, Electrospinning fundamentals, Nanofibres Drug Deliv. (2018) 24–59. https://doi.org/10.2307/j.ctv550dd1.6.
 
 Types of Electrospun Fibers / Morphology (image analysis)
 	[1] G. Yang, X. Li, Y. He, J. Ma, G. Ni, S. Zhou, From nano to micro to macro: Electrospun hierarchically structured polymeric fibers for biomedical applications, Prog. Polym. Sci. 81 (2018) 80–113. https://doi.org/10.1016/j.progpolymsci.2017.12.003.
@@ -1801,6 +1805,7 @@ Applications
 	[1] B. Sun, Y.Z. Long, H.D. Zhang, M.M. Li, J.L. Duvail, X.Y. Jiang, H.L. Yin, Advances in three-dimensional nanofibrous macrostructures via electrospinning, Prog. Polym. Sci. 39 (2014) 862–890. https://doi.org/10.1016/j.progpolymsci.2013.06.002.
 	[1] L. Persano, A. Camposeo, D. Pisignano, Active polymer nanofibers for photonics, electronics, energy generation and micromechanics, Prog. Polym. Sci. 43 (2015) 48–95. https://doi.org/10.1016/j.progpolymsci.2014.10.001.
 	[1] J. Xue, T. Wu, Y. Dai, Y. Xia, Electrospinning and Electrospun Nanofibers: Methods, Materials, and Applications, Chem. Rev. 119 (2019) 5298–5415. https://doi.org/10.1021/acs.chemrev.8b00593.
+	[1] S. Chakraborty, I.-C. Liao, A. Adler, K.W. Leong, Electrohydrodynamics: A facile technique to fabricate drug delivery systems, Adv. Drug Deliv. Rev. 61 (2009) 1043–1054. https://doi.org/10.1016/j.addr.2009.07.013.
 
 Conclusions
 	(advantages and disadvanteages of electrospinning) [1] X. Shi, W. Zhou, D. Ma, Q. Ma, D. Bridges, Y. Ma, A. Hu, Electrospinning of Nanofibers and Their Applications for Energy Devices, J. Nanomater. 2015 (2015) 1–20. https://doi.org/10.1155/2015/140716.
@@ -1831,6 +1836,18 @@ He estado intentando hacer un pago pero la plataforma no acepta el pago. Lo inte
 Microfluidics Lab [CETEC torre Sur]
 NFES Lab [A7]
 Macromolecular photosciences lab (CETEC LM-121)
+
+/******************************************************************************/
+
+DOLCE gusto.com
+
+FWFAPM964HKC
+ATKFTHFMG3KC
+
+/******************************************************************************/
+
+Axtel Extremo-E1A4
+0369E1A4
 
 /******************************************************************************/
 
