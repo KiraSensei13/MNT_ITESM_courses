@@ -1884,4 +1884,37 @@ Legal Notice - Privacy Statement - Terms and Conditions
 
 /******************************************************************************/
 
+ZNID24xxA-Router
+User Name: user
+Password: user007
+
+Summary of System Information
+
+System Name:	ZNID24xxA-Router
+System Location:	www.zhone.com
+System Contact:	Zhone Global Support
+System Date and Time:	Tue Jul 7 16:42:19 2020
+System Uptime:	7 minutes, 53 seconds
+Model Number:	ZNID-GPON-2426A-0AX
+Serial Number:	306939044
+Registration ID:	0000000000
+FSAN:	ZNTS0369E1A4
+Bootloader Version:	1.0.38-114.101 (3.0.709)
+Firmware Version:	S3.0.709
+Alternate Firmware Version:	S3.0.709
+Fiber WAN (eth0):	00:02:71:69:e1:a4
+GE1 - GigE (eth1):	42:02:71:69:e1:a5
+GE2 - GigE (eth2):	42:02:71:69:e1:a6
+GE3 - GigE (eth3):	42:02:71:69:e1:a7
+GE4 - GigE (eth4):	42:02:71:69:e1:a8
+SSID 0 (wl0):	62:02:71:69:e1:a5
+SSID 1 (wl0_1):	62:02:71:69:e1:a6
+SSID 2 (wl0_2):	62:02:71:69:e1:a7
+SSID 3 (wl0_3):	62:02:71:69:e1:a8
+No System Alarms:	System Status OK
+
+WPA/WAPI passphrase : AX0369E1A4
+
+/******************************************************************************/
+
 
