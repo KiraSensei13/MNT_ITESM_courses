@@ -1917,4 +1917,12 @@ WPA/WAPI passphrase : AX0369E1A4
 
 /******************************************************************************/
 
+3_Questionnaire-Capillary Rheometry
+https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EWuaJmbqq_xItUE9Vev5ig0Bt9RSml4Fvzr6KSa7q8K6zg?e=96PcVx
+
+3_Questionnaire-Shear Viscosity
+https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EcHHF3tCa0FCvBHH1IGOsV8BwgLo8rcZjF2K7r62EPW5GQ?e=fSKQpc
+
+/******************************************************************************/
+
 
