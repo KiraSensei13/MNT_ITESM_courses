@@ -1917,12 +1917,30 @@ WPA/WAPI passphrase : AX0369E1A4
 
 /******************************************************************************/
 
+Angel Manuel Villalba-Rodríguez <A00828035@itesm.mx>
+Constanza Alvarez-Lopez <A00829469@itesm.mx>
+Juan Jesús Rocha-Cuervo <A01752555@itesm.mx>
+Osamu Katagiri-Tanaka <A01212611@itesm.mx>
+
 3_Questionnaire-Capillary Rheometry
 https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EWuaJmbqq_xItUE9Vev5ig0Bt9RSml4Fvzr6KSa7q8K6zg?e=96PcVx
 
 3_Questionnaire-Shear Viscosity
 https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EcHHF3tCa0FCvBHH1IGOsV8BwgLo8rcZjF2K7r62EPW5GQ?e=fSKQpc
 
+4_Questionnaire-Oscillatory Rheometry
+https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/Ec2ydbEAr4lBhaTff-0Zt1QBAKjKSwzCLhfa9ZzMJjuqug?e=8JUEtB
+
+4_Questionnaire-Parallel Plate Rheometry
+https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/Ec4vyZEzH1pAmE0a9jC1zbEBsG5O04sXqPaGQGJh99d3LQ?e=dFQFoo
+
+NOTES:
+https://1drv.ms/w/s!AtJuISR9MFZzkjulcL4PJEqyGfNH?e=ftkk7z
+
 /******************************************************************************/
 
+5.3.3 FILLING A SIMPLE MOLD: GLOBAL ANALYSIS
+14 Runner balancing.
 
+6.2.3 PRESSURE FLOW IN A TUBE
+6 Pressure driven flow of a power law fluid
