@@ -1937,6 +1937,9 @@ https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/Ec4vyZEzH1pAmE
 NOTES:
 https://1drv.ms/w/s!AtJuISR9MFZzkjulcL4PJEqyGfNH?e=ftkk7z
 
+Midterm_part2
+https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EYk-ZqfUFwZNrodKTiulhFcB0V9t5K6YIPFU-Z9CMTV3Qw?e=odBZ5p
+
 /******************************************************************************/
 
 5.3.3 FILLING A SIMPLE MOLD: GLOBAL ANALYSIS
@@ -1944,3 +1947,7 @@ https://1drv.ms/w/s!AtJuISR9MFZzkjulcL4PJEqyGfNH?e=ftkk7z
 
 6.2.3 PRESSURE FLOW IN A TUBE
 6 Pressure driven flow of a power law fluid
+
+/******************************************************************************/
+
+
