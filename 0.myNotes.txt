@@ -1950,4 +1950,6 @@ https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EYk-ZqfUFwZNro
 
 /******************************************************************************/
 
-
+MFI is just a point
+calculate Q from density
+elongational rate is dv_z/dz (elongational viscosity is in function of the elongational rate)
