@@ -1965,3 +1965,16 @@ https://www.amazon.com/Micro-Nanoscale-Fluid-Mechanics-Brian/dp/1107617200/ref=s
 https://www.amazon.com/Micro-Nanoscale-Fluid-Mechanics-Brian/dp/1107617200/ref=sr_1_1?dchild=1&keywords=kirby+microfluidics&qid=1594828559&s=books&sr=1-1
 https://www.amazon.com/Electromechanics-Particles-Jones/dp/0521019109
 https://www.amazon.com/Theoretical-Microfluidics-Oxford-Master-Physics/dp/0199235090
+
+/******************************************************************************/
+
+Convocatoria Becas Nacional (Tradicional) 2019 - 1
+Área: INGENIERÍA Y TECNOLOGÍA
+Institución: INSTITUTO TECNOLÓGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY
+Clave: 2019-000002-01NACF
+
+/******************************************************************************/
+
+"model" AND "PP" AND "extruded" AND "MFI" AND "peroxide" AND "MFI" and "MWD" AND "Creep" AND "Recovery" AND "compliance"
+"Bonilla" AND "Peroxide" AND "Molecular Weight" AND "Rheological" AND "Polypropylene" AND "Resins
+Bonilla  J., Effects of  Peroxide  on  Molecular  Weight  and  Rheological  Properties  of Polypropylene Resins, Dissertation Volume I & II, Texas A&M University, 1996.
