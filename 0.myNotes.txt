@@ -1978,3 +1978,7 @@ Clave: 2019-000002-01NACF
 "model" AND "PP" AND "extruded" AND "MFI" AND "peroxide" AND "MFI" and "MWD" AND "Creep" AND "Recovery" AND "compliance"
 "Bonilla" AND "Peroxide" AND "Molecular Weight" AND "Rheological" AND "Polypropylene" AND "Resins
 Bonilla  J., Effects of  Peroxide  on  Molecular  Weight  and  Rheological  Properties  of Polypropylene Resins, Dissertation Volume I & II, Texas A&M University, 1996.
+
+/******************************************************************************/
+
+
