@@ -1981,4 +1981,12 @@ Bonilla  J., Effects of  Peroxide  on  Molecular  Weight  and  Rheological  Prop
 
 /******************************************************************************/
 
+Fizz Buzz
+print numbers from 1 to 100, except
+if it's a multiple of 3 you print Fizz instead of the number,
+every time it's a mulpitle of 5, you print Buzz, when
+it's a multiple of both, you print FizzBuzz
+
+/******************************************************************************/
+
 
