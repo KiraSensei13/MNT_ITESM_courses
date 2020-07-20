@@ -1989,6 +1989,18 @@ it's a multiple of both, you print FizzBuzz
 
 /******************************************************************************/
 
-259
-382
-511
+Navier Stokes Equation
+* describes the flow of incompressible fluids in a channel
+* some limitations arraize when turbulent and chaotic flows incorporated as they are complex to describe by this means
+
+1) Continuity Equation : mass balance
+* how much material enters/leaves/accumulates in the system
+* "the mass is moving through a surface" -> mass flux is kilograms per sec^2; whereas flow rate is Kg/s
+
+2) Momentun Equation : force balance
+
+How can we include the effect due to viscosity? as it will change how the material enters/leaves/accumulates in the system
+
+/******************************************************************************/
+
+
