@@ -1956,15 +1956,31 @@ elongational rate is dv_z/dz (elongational viscosity is in function of the elong
 
 /******************************************************************************/
 
+2017_Book_FluidMechanicsFundamentalsAndApplications
 https://www.amazon.com.mx/Fluid-Mechanics-Fundamentals-Applications-English-ebook/dp/B01MTFIIL0/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=fluid+mechanics+cengel&qid=1594828256&sr=8-1
+
+2003_Book_FluidMechanics
 https://www.amazon.com.mx/Fluid-Mechanics-Frank-M-White/dp/0073398276/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=fluid+mechanics+white&qid=1594828293&sr=8-1
+
+2000_Book_EngineeringElectromagnetics
 https://www.amazon.com.mx/Engineering-Electromagnetics-William-Hart-Hayt/dp/0072304243/ref=sr_1_5?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hayt+engineering+electromagnetics&qid=1594828353&sr=8-5
+
+2011_ManufacturingTechniquesForMicrofabricationAndNanotechnology
 https://www.amazon.com.mx/Fundamentals-Microfabrication-Nanotechnology-Three-Set/dp/0849331803/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=fundamentals+of+microfabrication&qid=1594828450&sr=8-1
+
+2003_Book_ACElectrokineticsColloidsAndNanoparticles
 https://www.amazon.com/AC-Electrokinetic-Nanoparticles-Microtechnologies-Microsystems/dp/0863802559
+
+2010_Book_MicroAndNanoscaleFluidMechanicsTransportInMicrofluidicDevices
 https://www.amazon.com/Micro-Nanoscale-Fluid-Mechanics-Brian/dp/1107617200/ref=sr_1_1?dchild=1&keywords=kirby+microfluidics&qid=1594828559&s=books&sr=1-1
-https://www.amazon.com/Micro-Nanoscale-Fluid-Mechanics-Brian/dp/1107617200/ref=sr_1_1?dchild=1&keywords=kirby+microfluidics&qid=1594828559&s=books&sr=1-1
+
+
 https://www.amazon.com/Electromechanics-Particles-Jones/dp/0521019109
+
+
 https://www.amazon.com/Theoretical-Microfluidics-Oxford-Master-Physics/dp/0199235090
+
+
 
 /******************************************************************************/
 
@@ -2000,6 +2016,11 @@ Navier Stokes Equation
 2) Momentun Equation : force balance
 
 How can we include the effect due to viscosity? as it will change how the material enters/leaves/accumulates in the system
+
+/******************************************************************************/
+
+Four Point Probes
+http://four-point-probes.com/technical-information-guide/
 
 /******************************************************************************/
 
