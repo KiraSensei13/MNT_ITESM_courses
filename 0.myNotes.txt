@@ -1974,7 +1974,7 @@ https://www.amazon.com/AC-Electrokinetic-Nanoparticles-Microtechnologies-Microsy
 2010_Book_MicroAndNanoscaleFluidMechanicsTransportInMicrofluidicDevices
 https://www.amazon.com/Micro-Nanoscale-Fluid-Mechanics-Brian/dp/1107617200/ref=sr_1_1?dchild=1&keywords=kirby+microfluidics&qid=1594828559&s=books&sr=1-1
 
-
+2005_Book_ElectromechanicsOfParticles
 https://www.amazon.com/Electromechanics-Particles-Jones/dp/0521019109
 
 
@@ -2023,5 +2023,4 @@ Four Point Probes
 http://four-point-probes.com/technical-information-guide/
 
 /******************************************************************************/
-
 
