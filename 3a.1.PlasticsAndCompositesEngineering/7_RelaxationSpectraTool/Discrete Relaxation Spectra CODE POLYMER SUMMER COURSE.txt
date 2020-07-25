@@ -1,0 +1,411 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+#define maxN 8		  	/* Maximum Maxwell elements */
+#define decade 10.0		/* Consecutive lamdas ratio */
+#define h 0.00000001	/* Defining small increment */
+#define maxn 30			/* Defining maximum experimental points */
+#define maxit 50000		/* Maximum iterations */
+#define weight 1.0		/* Weight number between 0 and 2 */
+#define EPS 0.00001;	/* Maximum stopping criteria */												  /*10*/
+#define CONST 0.5		/* constant for minimum lamda (<1.0) */
+
+double stop[maxN];          /* Variable stopping criteria vector */
+
+int N;						/* Desired Maxwell Elements */
+char resinname[20];
+/*int g was supressed, no. of experimental points is counted automatically*/
+/* array w is read automatically*/
+/* array lossG is read automatically*/
+double lamda[maxN] = { 0 }; 	/* Relaxation times */
+double eta[maxN];         	/* Relaxation Spectrum Parameters */
+
+/* names of files to be loaded */
+//char frec[] = "frec.txt";
+//char gbiprime[] = "gbiprime.txt";
+											
+/* names of files where results will be saved */
+//char rlambdas[] = "lambdas.txt";
+//char retas[] = "etas.txt";
+
+void nonlinear(double xdata[], double ydata[], double p[], int psize, int points, char fname3, char fname4);
+double lossmodulus(const double x, const double p[]);
+double r(int k);
+int Ndata(char fname1[], char fname2[]);
+
+main() {
+	int i, k;
+
+	/* User input */
+	printf("\nInput name of file (resin) that you want to analyze: ");
+	scanf("%s", &resinname);
+	printf("\nNumber of maxwell elements?:  ");
+	scanf("%d", &N);
+
+	/* Names of files for input and output*/
+	char ifrec[] = "frec.txt";
+	char igbiprime[] = "gbiprime.txt";
+	char ilambdas[] = "lambdas.txt";
+	char ietas[] = "etas.txt";
+
+	/* Specifying location of previous files*/
+
+	char frec[25]; //   /resinname/frec.txt
+	char gbiprime[25];
+	char rlambdas[25];
+	char retas[25];
+	// puts resin name into address
+	
+	printf("Specifying location of previous files\n"); ////
+
+	/* Opcion 1 */
+	sprintf(frec, "./%s/frec.txt", resinname); 
+	sprintf(gbiprime, "./%s/gbiprime.txt", resinname);
+	sprintf(rlambdas, "./%s/lambdas.txt", resinname);
+	sprintf(retas, "./%s/etas.txt", resinname);
+	printf("%s\n", frec); //example
+
+	getchar();
+
+	int ndata = Ndata(frec, gbiprime);	/* Amount of experimental points*/
+
+	printf("\nThe number of maxwell elements is limited by the frequency range");
+	printf("\nand by the quality of the experimental data.");
+
+	printf("\n\nExperimental points will be loaded automatically from ");
+	printf("\nfiles 'freq.txt' and 'gbiprime.txt' under %s file.   Number of data: %d", resinname, ndata);
+
+	/* Creation of w and lossG as variable arrays*/
+	double *w, *lossG;
+	double bufferw, bufferG;
+	w = (double*)calloc(ndata, sizeof(double));
+	lossG = (double*)calloc(ndata, sizeof(double));
+	
+	/* Opening files */
+	FILE *f1;
+	f1 = fopen(frec, "r");
+
+	FILE *f2;
+	f2 = fopen(gbiprime, "r");
+	
+	if (f1 == NULL) {
+		perror("\n\nFrecuencies file could not be opened. Press any key to exit.");
+		getchar();
+
+		exit(EXIT_FAILURE);
+	}
+	else printf("\nFrecuencies file accessed\n");
+
+	if (f2 == NULL) {
+		perror("\nG biprime file could not be opened. Press any key to exit.");
+		getchar();
+
+		exit(EXIT_FAILURE);
+	}
+	else printf("\nG biprime file accessed\n");
+	
+	/* Loading Data */
+	printf("\nLoading data... Press any key.\n");
+
+	for (k = 0; k < ndata; k++) {
+		fscanf(f1, "%lf", &bufferw);
+		w[k] = bufferw;
+	}
+
+	printf("\nThe frecuencies loaded are:\n");
+	for (i = 0; i < ndata; i++)	{
+		printf("%lf \n", w[i]);
+	}
+	
+	for (k = 0; k < ndata; k++) {
+		fscanf(f2, "%lf", &bufferG);
+		lossG[k] = bufferG;
+	}
+
+	printf("\nThe G biprimes loaded are:\n");
+	for (i = 0; i < ndata; i++)	{
+		printf("%lf \n", lossG[i]);
+	}
+
+	/* Closing files */
+	fclose(f1);
+	fclose(f2);
+	
+	printf("\nPress any key to proceed.\n");
+	getchar();
+	
+	stop[0] = EPS;  	  /* Stopping criteria determination for each parameter */
+	for (i = 1; i <= N - 1; i++) {
+		stop[i] = stop[i - 1] * 10.0;
+		if (i == N - 2)
+			stop[i] = stop[i - 1];
+	}
+
+	lamda[0] = CONST / w[ndata - 1];    		/* Relaxation times determination */
+	for (k = 1; k <= N - 1; k++)
+		lamda[k] = lamda[k - 1] * decade;
+
+	eta[0] = lamda[N - 1];                  	/* Initial Guesses */
+	for (k = 1; k <= N - 1; k++)
+		eta[k] = (eta[k - 1]) * (r(k) + 0.5);
+
+	nonlinear(w, lossG, eta, N, ndata, rlambdas, retas);		/* Call main function */
+	return 0;
+}    /* Main end */
+
+
+/* FUNCTIONS DEFINITIOS */
+double lossmodulus(const double x, const double p[maxN])
+
+{
+	int k;
+	double loss = 0;
+
+	for (k = 0; k <= N - 1; k++)
+		loss += (p[k] * x) / (1.0 + pow(lamda[k] * x, 2.0));
+	return loss;
+}
+
+double r(int k)
+
+{
+	static int z[maxN];
+	int a = 0;
+	int b = 3011;  /* A large prime number (2^31-1) 	*/
+	int c = 13;    /* An integer between 2,3,..,b-1 (7^5) */
+	double result;
+
+	/* Ri = x + (float)(rand()/RAND_MAX)*(y-x)  	*/
+	/* Generates random numbers between x and y 	*/
+	/*      with gaps of 0.1 between them 	*/
+
+	srand(time(NULL));
+	/* Seed can be any number between 1, 2,..,b-1 */
+	z[0] = 1 + (rand()) % (b - 1);
+
+	z[k] = (a + c*z[k - 1]) % b;
+	result = ((double)(z[k])) / ((double)(b));
+	return result;	/* random number between 0 and 1 */
+}
+
+void nonlinear(double xdata[maxn], double ydata[maxn], double p[maxN], int psize, int points, char fname3[12], char fname4[9])
+{
+	double J[maxn][maxN];              /* Jacobian Matrix */
+	double Jt[maxN][maxn];             /* Transpose Jacobian Matrix */
+	double JtJ[maxN][maxN];
+	double E[maxn];                    /* Difference vector    */
+	double JtE[maxN];
+	double A[maxN]; 				   /* Approximation vector */
+	int i, j, k, l;
+	int iter, iter2;
+	double temp = 0;
+	double eval1, eval2;
+	double errorJ = 0;
+	double errorN = 0;
+	double sum = 0;
+	double dummy, old, pnew;
+	double sentinel, sentinel2;
+	double a, b;
+	char key;
+	double SSmean, SS, spread, rr, residual[maxn];
+
+	for (i = 0; i <= psize - 1; i++)
+		A[i] = p[i];                /* first approximation */
+
+	sentinel = 0;
+	iter = 0;
+	while ((iter < maxit) && (sentinel == 0))  {
+		sentinel = 1;
+		iter += 1;
+
+		/* Fill Jacobian Matrix */
+		for (i = 0; i <= points - 1; i++)
+			for (k = 0; k <= psize - 1; k++) {
+				temp = p[k];
+				p[k] += h;
+				eval1 = lossmodulus(xdata[i], p);
+				p[k] = temp;
+				eval2 = lossmodulus(xdata[i], p);
+				J[i][k] = (eval1 - eval2) / h;
+			}
+
+		/* Fill Difference Matrix */
+		for (i = 0; i <= points - 1; i++)
+			E[i] = ydata[i] - lossmodulus(xdata[i], p);
+
+		/* Fill tranposed Jacobian Matriz */
+		for (i = 0; i <= psize - 1; i++)
+			for (k = 0; k <= points - 1; k++)
+				Jt[i][k] = J[k][i];
+
+		for (i = 0; i <= psize - 1; i++)
+			for (k = 0; k <= psize - 1; k++) {
+				for (l = 0; l <= points - 1; l++)
+					sum += Jt[i][l] * J[l][k];
+				JtJ[i][k] = sum;
+				sum = 0;
+			}
+
+		for (i = 0; i <= psize - 1; i++) {
+			for (l = 0; l <= points - 1; l++)
+				sum += Jt[i][l] * E[l];
+			JtE[i] = sum;
+			sum = 0;
+		}
+
+		/* Gauss-Seidel Method for solving matrix system */
+		sentinel2 = 0;
+		iter2 = 0;
+		while ((iter2 < maxit) && (sentinel2 == 0)) {
+			sentinel2 = 1;
+			iter2 += 1;
+			for (i = 0; i <= psize - 1; i++) {
+				old = A[i];
+				sum = JtE[i];
+				for (j = 0; j <= psize - 1; j++)
+					if (i != j)
+						sum = (sum)-(JtJ[i][j] * A[j]);
+				sum = sum / JtJ[i][i];
+				A[i] = weight * sum + (1 - weight) * old;
+				if ((sentinel2 == 1) && (A[i] != 0.0)) {
+					errorJ = fabs((A[i] - old) / (A[i]));
+					if (errorJ > stop[i])
+						sentinel2 = 0;
+				}
+			}
+			printf("\n%d-%d", iter, iter2);
+		} /* while #2 end */
+
+		for (k = 0; k <= psize - 1; k++) {
+			pnew = p[k] + A[k];                    /* New Approximation */
+			if ((sentinel == 1) && (pnew != 0.0)) {
+				errorN = fabs((pnew - p[k]) / (pnew));
+				if (errorN > stop[k])
+					sentinel = 0;
+			}
+			p[k] = pnew;
+		}
+	} /* while #1 end */
+
+	/* eta[N] correction */
+	b = (log(eta[N - 3] / lamda[N - 3]) - log(eta[N - 2] / lamda[N - 2])) /
+		(log(lamda[N - 3]) - log(lamda[N - 2]));
+	a = exp(log(eta[N - 2] / lamda[N - 2]) - b*log(lamda[N - 2]));
+	eta[N - 1] = lamda[N - 1] * (a*pow(lamda[N - 1], b));
+
+	/* Opening files for saving results */
+	FILE *f3;
+	f3 = fopen(fname3, "w");
+
+	FILE *f4;
+	f4 = fopen(fname4, "w");
+
+	if (f3 == NULL) {
+		perror("\n\nFile for saving lambdas could not be opened");
+		getchar();
+		exit(EXIT_FAILURE);
+	}
+	else printf("\nFile for saving lambdas accessed %s:\n", fname3);
+
+	if (f4 == NULL) {
+		perror("\nFile for saving etas could not be opened");
+		getchar();
+		exit(EXIT_FAILURE);
+	}
+	else printf("\nFile for saving etas accessed %s:\n", fname4);
+
+	/* print and save results */
+	printf("\n\nThe Discrete Relaxation Spectrum \n");
+	for (k = 0; k <= N - 1; k++) {
+		if (p[k] > 0.0) {
+			printf("\n lamda #%d = %f   eta #%d = %f ", k, lamda[k], k, p[k]);
+			fprintf(f3, "%lf\n", lamda[k]);
+			fprintf(f4, "%lf\n", p[k]);
+		}
+		else {
+			printf("\n Warning! Ill-posed problem!");
+			printf("\n The frequency range is not enough to specify %d relaxation points.", N);
+			printf("\n It is recommended to start again the program and specify a smaller N.");
+		}
+	}
+
+	/* Closing save files*/
+	fclose(f3);
+	fclose(f4);
+
+	printf("\n Press any key to see statistical results:");
+	scanf("%c", &key);
+	printf("\n");
+	sum = 0;
+	for (i = 0; i <= points - 1; i++)
+		sum += ydata[i];
+	SSmean = 0;
+	SS = 0;
+	for (i = 0; i <= points - 1; i++) {
+		SSmean += pow((ydata[i] - sum / ((double)(points))), 2.0);
+		SS += pow((ydata[i] - lossmodulus(xdata[i], p)), 2.0);
+		residual[i] = fabs((ydata[i] - lossmodulus(xdata[i], p)) / ydata[i] * 100.0);
+	}
+	spread = pow((SS / ((double)(points - N))), 1.0 / 2.0);
+	rr = (SSmean - SS) / SSmean;
+	for (i = 0; i <= points - 1; i++)
+		printf("\n Residual %d = %f", i, residual[i]);
+	printf("\n SS = %f \n SSmean = %f \n Spread = %f \n R^2 = %f \n", SS, SSmean, spread, rr);
+	printf("\nPress any key to continue");
+	scanf("%c", &key);
+
+} /* Nonlinear Function End */
+
+int Ndata(char fname1[9], char fname2[13] ) {
+	int i = 0, j = 0;
+	double buffer, buffer2;
+
+	FILE *f1;
+	f1 = fopen(fname1, "r");
+
+	FILE *f2;
+	f2 = fopen(fname2, "r");
+
+	if (f1 == NULL) {
+		perror("\nFrecuencies file could not be opened");
+		getchar();
+		exit(EXIT_FAILURE);
+	}
+	else printf("\nFrecuencies file accessed\n");
+
+	//Contador de datos en el archivo
+	while (fscanf(f1, "%lf", &buffer) != EOF) {
+		i++;
+	}
+	printf("\nNumber of frecuencies to process %d\n", i);
+
+	if (f2 == NULL) {
+		perror("\nG biprime file could not be opened");
+		getchar();
+		exit(EXIT_FAILURE);
+	}
+	else printf("\nG biprime file accessed\n");
+	
+
+	//Contador de datos en el archivo
+	while (fscanf(f2, "%lf", &buffer2) != EOF) {
+		j++;
+	}
+	printf("\nNumber of Gbiprimes to process %d\n", j);
+
+	if (j == i) {
+		printf("\nNumber of frecuencies is equal to number of G's. OK.\n");
+		fclose(f1);
+		fclose(f2);
+		return i;
+	}
+	else {
+		perror("\nNumber of frecuencies and G's do not match. Aborting.");
+		getchar();
+		exit(EXIT_FAILURE);
+	}
+}
+
+
