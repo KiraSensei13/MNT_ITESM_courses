@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  27 JUL 2020 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  27 JUL 2020 23:38
 entering extended mode
 **./equation.tex
 (equation.tex
@@ -482,21 +482,25 @@ G,.JBIG2,.JB2,.eps]
 {C:/Users/oskat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (equation.aux) ) 
 Here is how much of TeX's memory you used:
- 11827 strings out of 492946
- 213894 string characters out of 3126267
- 242175 words of memory out of 3000000
- 15699 multiletter control sequences out of 15000+200000
+ 11829 strings out of 492946
+ 213904 string characters out of 3126267
+ 243175 words of memory out of 3000000
+ 15701 multiletter control sequences out of 15000+200000
  533138 words of font info for 27 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,4n,63p,277b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,6n,63p,288b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmex10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oskat/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on equation.pdf (1 page, 36788 bytes).
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/oskat/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/osk
+at/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmti10.pfb>
+Output written on equation.pdf (1 page, 61279 bytes).
 PDF statistics:
- 22 PDF objects out of 1000 (max. 8388607)
+ 34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
