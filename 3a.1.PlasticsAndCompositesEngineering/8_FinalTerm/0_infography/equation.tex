@@ -10,8 +10,30 @@
 
 \begin{document}
 
-\begin{dmath}
-\textit{complex modulus } G^*(\dot{\gamma}) = \left[ \left( \textit{storage/elastic modulus } G^{\prime}(\dot{\gamma}) \textit{ } [Pa] \right)^2 + \left( \textit{loss/viscous modulus } G^{\prime\prime}(\dot{\gamma}) \textit{ } [Pa] \right)^2 \right]^{0.5}
-\end{dmath}
+%\begin{dmath}
+%\textit{complex modulus } G^*(\dot{\gamma}) = \left[ \left( \textit{storage/elastic modulus } G^{\prime}(\dot{\gamma}) \textit{ } [Pa] \right)^2 + \left( \textit{loss/viscous modulus } G^{\prime\prime}(\dot{\gamma}) \textit{ } [Pa] \right)^2 \right]^{0.5}
+%\end{dmath}
+
+$$ t = \infty $$
+
+$$ \eta (t = \infty, \dot{\gamma}_o) = f_1 \sum_{1=1}^{n} \frac{a_i}{{\alpha_i}^2} + f_2 \sum_{1=1}^{n} \frac{a_i}{{\beta_i}^2} $$
+
+$$ f_2 = 1 - f_1 $$
+
+$$ \alpha_i = \frac{1 + n_1 \lambda_i \dot{\gamma}_o}{\lambda_i} $$
+
+$$ \beta_i  = \frac{1 + n_2 \lambda_i \dot{\gamma}_o}{\lambda_i} $$
+
+$\eta (t, \dot{\gamma}_o) =$ shear viscosity
+
+$t =$ time
+
+$\dot{\gamma}_o =$ shear rate
+
+$a_i =$ the $i^{th}$ elastic value of the Maxwell element
+
+$\lambda_i =$ the $i^{th}$ characteristic time of the Maxwell element
+
+$f_1, f_2, n_1, n_2$ are fitting parameters
 
 \end{document}
