@@ -350,7 +350,7 @@ def plot_steadyStateN1(parameters):
     # Plot fit
     gamma = np.logspace(-2, 3, 100)
     N1 = _N1(gamma, *parameters)
-    plt.plot(gamma, N1, linewidth=3, label = 
+    plt.plot(gamma, N1, linestyle='--', linewidth=3, label = 
              r'$a_1 = $' + format_e(a_[0]) + ", " +
              r'$a_2 = $' + format_e(a_[1]) + ", " +
              r'$a_3 = $' + format_e(a_[2]) + ",\n" +
