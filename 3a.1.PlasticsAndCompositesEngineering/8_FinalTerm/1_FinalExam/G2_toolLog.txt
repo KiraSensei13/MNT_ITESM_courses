@@ -1,0 +1,29 @@
+3-26
+
+The Discrete Relaxation Spectrum
+
+ lamda #0 = 0.010357   eta #0 = 165.786734
+ lamda #1 = 0.165265   eta #1 = 9761.608180
+ lamda #2 = 0.183612   eta #2 = 248532.480687
+ lamda #3 = 6.212577   eta #3 = 1182801.688356
+ lamda #4 = 81.691297   eta #4 = 259334433.275553
+Press any key to see statistical results
+
+Residual 0 = 32.469355
+Residual 1 = 9.489482
+Residual 2 = 2.660423
+Residual 3 = 0.952538
+Residual 4 = 2.854023
+Residual 5 = 5.416978
+Residual 6 = 6.935212
+Residual 7 = 3.794354
+Residual 8 = 1.743035
+Residual 9 = 5.034154
+Residual 10 = 4.879913
+Residual 11 = 1.604921
+SS = 147071899.164380
+SSmean = 47908632912.130287
+Spread = 4583.696250
+R^2 = 0.996930
+
+Press any key to continue

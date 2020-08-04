@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 
 from sklearn.linear_model import LinearRegression
-from scipy import special, optimize
+from scipy import special, optimize, signal
+from scipy.signal import lfilter
 
 #####   #####   #####   #####   #####
 
@@ -71,6 +72,7 @@ def calculate_shiftedCurves(dataframe=pd.DataFrame(), aT=[], bT=[]):
             dataframe["$a_T \omega_" + sample_id] = dataframe["$\omega_" + sample_id] * aT[temperature_cnt]
             dataframe["$b_T {G^{*}(\omega)}_" + sample_id] = dataframe["${G^{*}(\omega)}_" + sample_id] * bT[temperature_cnt]
             dataframe["$b_T {G^{\prime\prime}(\omega)}_" + sample_id] = dataframe["${G^{\prime\prime}(\omega)}_" + sample_id] * bT[temperature_cnt]
+            dataframe["$b_T {G^{\prime}(\omega)}_" + sample_id] = dataframe["${G^{\prime}(\omega)}_" + sample_id] * bT[temperature_cnt]
 
             temperature_cnt = temperature_cnt + 1
 
@@ -190,8 +192,13 @@ def get_masterCurveData(df=pd.DataFrame(), tempStr=210, a=1, b=1):
     master_G2 = master_G2.append(df["$b_T {G^{\prime\prime}(\omega)}_{190°C}$"] * b)
     master_G2 = master_G2.append(df["$b_T {G^{\prime\prime}(\omega)}_{210°C}$"] * b)
     master_G2 = master_G2.append(df["$b_T {G^{\prime\prime}(\omega)}_{230°C}$"] * b)
+    
+    master_G1 = df["$b_T {G^{\prime}(\omega)}_{170°C}$"] * b
+    master_G1 = master_G1.append(df["$b_T {G^{\prime}(\omega)}_{190°C}$"] * b)
+    master_G1 = master_G1.append(df["$b_T {G^{\prime}(\omega)}_{210°C}$"] * b)
+    master_G1 = master_G1.append(df["$b_T {G^{\prime}(\omega)}_{230°C}$"] * b)
 
-    return master_omega_eta, master_eta, master_omega_G2, master_G2
+    return master_omega_eta, master_eta, master_omega_G2, master_G2, master_G1
 
 #####   #####   #####   #####   #####
 
@@ -241,7 +248,7 @@ def Wagner_fit_eta(t, eta):
     p = ai + lambdai + f1 + n1 + n2
     
     # Fit the model
-    upbound    = [np.inf]*10 + [1] + [np.inf]*2  
+    upbound    = [np.inf]*10 + [1] + [np.inf]*2
     model      = optimize.curve_fit(Wagner_eta_infty, t, eta, p) #, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
     parameters = model[0]
 
@@ -252,14 +259,192 @@ def Wagner_fit_eta(t, eta):
 
 #####   #####   #####   #####   #####
 
-def plot_Wagner_fit(df_master=pd.DataFrame(), x_str="", y_str=""):
+def Maxwell_storageModuli(omega_, *p):
+    eta_    = p[0            :int(len(p)/2)]
+    lambda_ = p[int(len(p)/2):len(p)       ]
+    
+    #print(p)
+    #print("eta", eta_)
+    #print("lambda", lambda_)
+    
+    sum_ = 0
+    for i in range(len(eta_)):
+        nume = eta_[i] * lambda_[i] * omega_**2
+        deno = 1 + omega_**2 + lambda_[i]**2
+        res  = nume/deno
+        sum_ = sum_ + res
+    
+    return sum_
+
+def Maxwell_lossModuli(omega_, *p):
+    eta_    = p[0            :int(len(p)/2)]
+    lambda_ = p[int(len(p)/2):len(p)       ]
+    
+    #print(p)
+    #print("eta", eta_)
+    #print("lambda", lambda_)
+    
+    sum_ = 0
+    for i in range(len(eta_)):
+        nume = eta_[i] * omega_
+        deno = 1 + omega_**2 + lambda_[i]**2
+        res  = nume/deno
+        sum_ = sum_ + res
+    
+    return sum_
+
+#####   #####   #####   #####   #####
+
+def Maxwell_fit_lossModulus(freq, G2, *guess):    
+    # Initial guess
+    ai      = guess[0:int((len(guess))/2)]          #[35000, 11000, 4000, 1000, 20]
+    lambdai = guess[int((len(guess))/2):len(guess)] #[0.00005, 0.005, 0.05, 0.5, 5]
+    #f1 = guess[-3]
+    #n1 = guess[-2]
+    #n2 = guess[-1]
+    p = ai + lambdai # + (f1, n1, n2)
+    
+    # Fit the model
+    #upbound    = [np.inf]*10 + [1] + [np.inf]*2
+    model      = optimize.curve_fit(Maxwell_lossModuli, freq, G2, p) #, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
+    parameters = model[0]
+
+    # Show the fitting parameters
+    print(parameters)
+    
+    return parameters
+
+def Maxwell_fit_storageModulus(freq, G2, *guess):    
+    # Initial guess
+    ai      = guess[0:int((len(guess))/2)]          #[35000, 11000, 4000, 1000, 20]
+    lambdai = guess[int((len(guess))/2):len(guess)] #[0.00005, 0.005, 0.05, 0.5, 5]
+    #f1 = guess[-3]
+    #n1 = guess[-2]
+    #n2 = guess[-1]
+    p = ai + lambdai # + (f1, n1, n2)
+    
+    # Fit the model
+    #upbound    = [np.inf]*10 + [1] + [np.inf]*2
+    model      = optimize.curve_fit(Maxwell_storageModuli, freq, G2, p) #, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
+    parameters = model[0]
+
+    # Show the fitting parameters
+    print(parameters)
+    
+    return parameters
+
+def plot_Maxwell_fit_lossModulus(df_master=pd.DataFrame(), x_str="", y_str="", guess=[]):
+    
+    #parameters = guess;
+    
+    parameters = Maxwell_fit_lossModulus(
+        pd.Series(df_master[x_str]).dropna(),
+        pd.Series(df_master[y_str]).dropna(),
+        *guess)
+    
+    # Set plot size and axis labels' font size
+    pltname = 'Maxwell fit - loss modulus';
+    scale   = 6;
+    fig     = plt.figure(figsize=(3*scale, 2*scale));
+    plt.rc('xtick', labelsize=15);
+    plt.rc('ytick', labelsize=15);
+    plt.tight_layout();
+    ax0 = plt.gca();
+    
+    # Stablish the plot area
+    ax0 = plt.gca()
+
+    # plot dataset
+    t  = pd.Series(df_master[x_str]).dropna()
+    G2 = pd.Series(df_master[y_str]).dropna()
+    plt.scatter(t, G2, label='experimental')
+    plt.plot(t, G2, linewidth=1, linestyle=':')
+    
+    # Plot fit
+    t = np.logspace(-2, 3, 100)
+    eta_fit = Maxwell_lossModuli(t, *parameters)
+    plt.plot(t, eta_fit, color='green', linewidth=2, linestyle='--', label = "'Relaxation Spectra.exe' fit");
+    
+    # Format and Display plots
+    ax0.tick_params(which='both', direction='in', width=2, bottom=True, top=True, left=True, right=True);
+    plt.yscale('log');
+    plt.xscale('log');
+
+    # Show the plot lengend to link colors and polymer names
+    handles, labels = ax0.get_legend_handles_labels();
+    lgd = dict(zip(labels, handles));
+    
+    plt.xlabel(r'$\gamma$' + '    ' + r'$1/s$', fontsize=24);
+    plt.ylabel(r'$G^{\prime\prime}$' + '    ' + r'$Pa$', fontsize=24);
+    plt.legend(lgd.values(), lgd.keys(), prop={'size': 22}, loc="best");
+    plt.title(pltname, size=24);
+    plt.savefig(pltname + '.png', dpi=200, bbox_inches='tight');
+    plt.show();
+    mpl.rcParams.update(mpl.rcParamsDefault); # Recover matplotlib defaults
+    
+    return parameters
+    
+    
+def plot_Maxwell_storageModulus(df_master=pd.DataFrame(), x_str="", y_str="", guess=[]):
+    
+    parameters = Maxwell_fit_storageModulus(
+        pd.Series(df_master[x_str]).dropna(),
+        pd.Series(df_master[y_str]).dropna(),
+        *guess)
+    
+    # Set plot size and axis labels' font size
+    pltname = 'Maxwell fit - storage modulus';
+    scale   = 6;
+    fig     = plt.figure(figsize=(3*scale, 2*scale));
+    plt.rc('xtick', labelsize=15);
+    plt.rc('ytick', labelsize=15);
+    plt.tight_layout();
+    ax0 = plt.gca();
+    
+    # Stablish the plot area
+    ax0 = plt.gca()
+
+    # plot dataset
+    t  = pd.Series(df_master[x_str]).dropna()
+    G2 = pd.Series(df_master[y_str]).dropna()
+    plt.scatter(t, G2, label='experimental')
+    plt.plot(t, G2, linewidth=1, linestyle=':')
+    
+    # Plot fit
+    t = np.logspace(-2, 3, 100)
+    eta_fit = Maxwell_storageModuli(t, *parameters)
+    plt.plot(t, eta_fit, color='green', linewidth=2, linestyle='--', label = "'Relaxation Spectra.exe' fit");
+    
+    # Format and Display plots
+    ax0.tick_params(which='both', direction='in', width=2, bottom=True, top=True, left=True, right=True);
+    plt.yscale('log');
+    plt.xscale('log');
+
+    # Show the plot lengend to link colors and polymer names
+    handles, labels = ax0.get_legend_handles_labels();
+    lgd = dict(zip(labels, handles));
+    
+    plt.xlabel(r'$\gamma$' + '    ' + r'$1/s$', fontsize=24);
+    plt.ylabel(r'$G^{\prime}$' + '    ' + r'$Pa$', fontsize=24);
+    plt.legend(lgd.values(), lgd.keys(), prop={'size': 22}, loc="best");
+    plt.title(pltname, size=24);
+    plt.savefig(pltname + '.png', dpi=200, bbox_inches='tight');
+    plt.show();
+    mpl.rcParams.update(mpl.rcParamsDefault); # Recover matplotlib defaults
+    
+#####   #####   #####   #####   #####
+    
+def plot_Wagner_fit_viscosity(df_master=pd.DataFrame(), x_str="", y_str=""):
 
     parameters = Wagner_fit_eta(
         pd.Series(df_master[x_str]).dropna(),
         pd.Series(df_master[y_str]).dropna())
     
+    #parameters = [210.42, 957.75, 4243.12, 11511.83, 31232.21,
+    #     0.000526, 0.005263, 0.052632, 0.52631, 5.263158]
+    
     # Set plot size and axis labels' font size
-    pltname = 'Wagner fit';
+    pltname = 'Wagner fit - viscosity';
     scale   = 6;
     fig     = plt.figure(figsize=(3*scale, 2*scale));
     plt.rc('xtick', labelsize=15);
@@ -277,14 +462,18 @@ def plot_Wagner_fit(df_master=pd.DataFrame(), x_str="", y_str=""):
     plt.plot(t, eta, linewidth=1, linestyle=':')
 
     # Plot fit
-    n_1 = parameters[11]
-    n_2 = parameters[12]
     t = np.logspace(-2, 4, 100)
     eta_fit = Wagner_eta_infty(t, *parameters)
-    plt.plot(t, eta_fit, linewidth=3, label = r'$f_1 = $' + str(round(parameters[10],2)) + ', ' +
-             r'$n_1 = $' + str(round(n_1, 2)) + ', ' +
-             r'$n_2 = $' + str(round(n_2, 2)));
+    plt.plot(t, eta_fit, linewidth=3, label = "Scipy fit: " + r'$f_1 = $' + str(round(parameters[10],2)) + ', ' +
+             r'$n_1 = $' + str(round(parameters[11], 2)) + ', ' +
+             r'$n_2 = $' + str(round(parameters[12], 2)));
 
+    #JBRtoolParameters = parameters.copy()
+    #JBRtoolParameters[0:5]  = [ 2.59334433e+08, 1.18280168e+06, 2.48532480e+05, 9.76160818e+03, 1.65786734e+02]
+    #JBRtoolParameters[5:10] = [10.35724846e-03, 1.65264506e-01, 1.83612459e-01, 6.21257664e+00, 8.16912971e+01]
+    #JBReta_fit = Wagner_eta_infty(t, *JBRtoolParameters)
+    #plt.plot(t, JBReta_fit, linewidth=2, linestyle='--', label = "'Relaxation Spectra.exe' fit");
+    
     # Format and Display plots
     ax0.tick_params(which='both', direction='in', width=2, bottom=True, top=True, left=True, right=True);
     plt.yscale('log');
@@ -294,8 +483,8 @@ def plot_Wagner_fit(df_master=pd.DataFrame(), x_str="", y_str=""):
     handles, labels = ax0.get_legend_handles_labels();
     lgd = dict(zip(labels, handles));
     
-    plt.xlabel(r'$1/s$', fontsize=24);
-    plt.ylabel(r'$Pa \cdot s$', fontsize=24);
+    plt.xlabel(r'$\gamma$' + '    ' + r'$1/s$', fontsize=24);
+    plt.ylabel(r'$\eta$' + '    ' + r'$Pa \cdot s$', fontsize=24);
     plt.legend(lgd.values(), lgd.keys(), prop={'size': 22}, loc="best");
     plt.title(pltname, size=24);
     plt.savefig(pltname + '.png', dpi=200, bbox_inches='tight');
@@ -331,6 +520,9 @@ def _N1(dot_gamma, *p):
     return res/10
 
 def plot_steadyStateN1(parameters):
+    
+    print(parameters)
+    
     # Draw plot canvas
     plotname = 'Steady State 1st Normal Stress Difference';
     scale   = 6;
@@ -375,8 +567,8 @@ def plot_steadyStateN1(parameters):
     ax0.tick_params(which='both', direction='in', width=2, bottom=True, top=True, left=True, right=True);
     plt.yscale('log');
     plt.xscale('log');
-    plt.xlabel(r'$1/s$', fontsize=24);
-    plt.ylabel(r'$Pa$', fontsize=24);
+    plt.xlabel(r'$\gamma$' + '    ' + r'$1/s$', fontsize=24);
+    plt.ylabel(r'$N1$' + '    ' + r'$Pa$', fontsize=24);
     plt.title(plotname, size=24);
     plt.legend(prop={'size': 22});
     plt.savefig('plt_' + plotname + '.png', dpi=200, bbox_inches='tight');
@@ -414,8 +606,14 @@ def plot(dataframe=pd.DataFrame(), pltname="plotTitle", x_str=[], x_units='', y_
     lgd = dict(zip(labels, handles));
 
     # fig.autofmt_xdate();
-    ax0.set_xlabel(str(x_units), fontsize=24);
-    ax0.set_ylabel(str(y_units), fontsize=24);
+    if len(y_str) > 1:
+        x_strlabel = '_'.join(x_str[0].split('_')[0:-1])
+        y_strlabel = '_'.join(y_str[0].split('_')[0:-1])
+    else:
+        x_strlabel = x_str
+        y_strlabel = y_str
+    ax0.set_xlabel(str(x_strlabel) + '$    ' + str(x_units), fontsize=24);
+    ax0.set_ylabel(str(y_strlabel) + '$    ' + str(y_units), fontsize=24);
 
     for tick in ax0.xaxis.get_major_ticks(): tick.label.set_fontsize(18);
     for tick in ax0.yaxis.get_major_ticks(): tick.label.set_fontsize(18);
