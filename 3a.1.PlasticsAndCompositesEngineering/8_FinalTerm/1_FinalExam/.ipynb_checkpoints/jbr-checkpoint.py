@@ -215,21 +215,49 @@ def _beta(n_2, lambda_, dot_gamma_o):
     return res
 
 def Wagner_eta_infty(dot_gamma, *p):
-    a_          = p[0:5]
-    lambda_     = p[5:10]
-    f_1         = p[10]
+    a_          = p[0:6]
+    lambda_     = p[6:12]
+    f_1         = p[12]
     f_2         = 1 - f_1
-    n_1         = p[11]
-    n_2         = p[12]
+    n_1         = p[13]
+    n_2         = p[14]
     
     sum_1 = 0
-    for i in range(0, 5, 1):
+    for i in range(0, 6, 1):
         alpha = _alpha(n_1, lambda_[i], dot_gamma)
         res_1 = a_[i] / alpha**2
         sum_1 = sum_1 + res_1
         
     sum_2 = 0
-    for i in range(0, 5, 1):
+    for i in range(0, 6, 1):
+        beta  = _beta(n_2, lambda_[i], dot_gamma)
+        res_2 = a_[i] / beta**2
+        sum_2 = sum_2 + res_2
+    
+    res = (f_1 * sum_1) + (f_2 * sum_2)
+    
+    return res/10
+
+def Wagner_eta_infty_fixedLambdas(dot_gamma, *p):
+    a_          = p[0:6]
+    
+    lambdai = [1.03433371e-03, 5.44291104e-03, 2.36590484e-02,
+               1.16952241e-01, 7.57828387e-01, 1.00393240e+01]
+    lambda_     = lambdai
+    
+    f_1         = p[6]
+    f_2         = 1 - f_1
+    n_1         = p[7]
+    n_2         = p[8]
+    
+    sum_1 = 0
+    for i in range(0, 6, 1):
+        alpha = _alpha(n_1, lambda_[i], dot_gamma)
+        res_1 = a_[i] / alpha**2
+        sum_1 = sum_1 + res_1
+        
+    sum_2 = 0
+    for i in range(0, 6, 1):
         beta  = _beta(n_2, lambda_[i], dot_gamma)
         res_2 = a_[i] / beta**2
         sum_2 = sum_2 + res_2
@@ -240,16 +268,34 @@ def Wagner_eta_infty(dot_gamma, *p):
 
 def Wagner_fit_eta(t, eta):    
     # Initial guess
-    ai      = [35000, 11000, 4000, 1000, 20]
-    lambdai = [0.00005, 0.005, 0.05, 0.5, 5]
+    ai      = [86153.108, 31294.348, 11367.393, 4241.173, 937.796, 211.184]
+    lambdai = [0.000526, 0.005263, 0.052632, 0.526316, 5.263158, 52.63158]
     f1 = [0.5]
     n1 = [2.8]
     n2 = [0.07]
     p = ai + lambdai + f1 + n1 + n2
     
     # Fit the model
-    upbound    = [np.inf]*10 + [1] + [np.inf]*2
-    model      = optimize.curve_fit(Wagner_eta_infty, t, eta, p) #, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
+    upbound    = [np.inf]*len(p)
+    model      = optimize.curve_fit(Wagner_eta_infty, t, eta, p)#, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
+    parameters = model[0]
+
+    # Show the fitting parameters
+    print(parameters)
+    
+    return parameters
+
+def Wagner_fit_eta_withFixedLambdas(t, eta, lambdai):    
+    # Initial guess
+    ai      = [86153.108, 31294.348, 11367.393, 4241.173, 937.796, 211.184]
+    f1 = [0.5]
+    n1 = [2.8]
+    n2 = [0.07]
+    p = ai + f1 + n1 + n2
+    
+    # Fit the model
+    upbound    = [np.inf]*len(p)
+    model      = optimize.curve_fit(Wagner_eta_infty_fixedLambdas, t, eta, p, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
     parameters = model[0]
 
     # Show the fitting parameters
@@ -263,14 +309,10 @@ def Maxwell_storageModuli(omega_, *p):
     eta_    = p[0            :int(len(p)/2)]
     lambda_ = p[int(len(p)/2):len(p)       ]
     
-    #print(p)
-    #print("eta", eta_)
-    #print("lambda", lambda_)
-    
     sum_ = 0
     for i in range(len(eta_)):
         nume = eta_[i] * lambda_[i] * omega_**2
-        deno = 1 + omega_**2 + lambda_[i]**2
+        deno = 1 + omega_**2 * lambda_[i]**2
         res  = nume/deno
         sum_ = sum_ + res
     
@@ -280,14 +322,10 @@ def Maxwell_lossModuli(omega_, *p):
     eta_    = p[0            :int(len(p)/2)]
     lambda_ = p[int(len(p)/2):len(p)       ]
     
-    #print(p)
-    #print("eta", eta_)
-    #print("lambda", lambda_)
-    
     sum_ = 0
     for i in range(len(eta_)):
         nume = eta_[i] * omega_
-        deno = 1 + omega_**2 + lambda_[i]**2
+        deno = 1 + omega_**2 * lambda_[i]**2
         res  = nume/deno
         sum_ = sum_ + res
     
@@ -305,8 +343,8 @@ def Maxwell_fit_lossModulus(freq, G2, *guess):
     p = ai + lambdai # + (f1, n1, n2)
     
     # Fit the model
-    #upbound    = [np.inf]*10 + [1] + [np.inf]*2
-    model      = optimize.curve_fit(Maxwell_lossModuli, freq, G2, p) #, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
+    upbound = [np.inf]*len(p)
+    model   = optimize.curve_fit(Maxwell_lossModuli, freq, G2, p, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
     parameters = model[0]
 
     # Show the fitting parameters
@@ -324,14 +362,14 @@ def Maxwell_fit_storageModulus(freq, G2, *guess):
     p = ai + lambdai # + (f1, n1, n2)
     
     # Fit the model
-    #upbound    = [np.inf]*10 + [1] + [np.inf]*2
-    model      = optimize.curve_fit(Maxwell_storageModuli, freq, G2, p) #, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
+    upbound    = [np.inf]*len(p)
+    model      = optimize.curve_fit(Maxwell_storageModuli, freq, G2, p, bounds=(0, upbound)); #bounds=(0, [3., 1., 0.5])
     parameters = model[0]
 
     # Show the fitting parameters
     print(parameters)
     
-    return parameters
+    return guess #parameters
 
 def plot_Maxwell_fit_lossModulus(df_master=pd.DataFrame(), x_str="", y_str="", guess=[]):
     
@@ -440,6 +478,13 @@ def plot_Wagner_fit_viscosity(df_master=pd.DataFrame(), x_str="", y_str=""):
         pd.Series(df_master[x_str]).dropna(),
         pd.Series(df_master[y_str]).dropna())
     
+    lambdai = [1.03433371e-03, 5.44291104e-03, 2.36590484e-02,
+               1.16952241e-01, 7.57828387e-01, 1.00393240e+01]
+    parameters_fixedLambdas = Wagner_fit_eta_withFixedLambdas(
+        pd.Series(df_master[x_str]).dropna(),
+        pd.Series(df_master[y_str]).dropna(),
+        lambdai)
+    
     #parameters = [210.42, 957.75, 4243.12, 11511.83, 31232.21,
     #     0.000526, 0.005263, 0.052632, 0.52631, 5.263158]
     
@@ -464,15 +509,18 @@ def plot_Wagner_fit_viscosity(df_master=pd.DataFrame(), x_str="", y_str=""):
     # Plot fit
     t = np.logspace(-2, 4, 100)
     eta_fit = Wagner_eta_infty(t, *parameters)
-    plt.plot(t, eta_fit, linewidth=3, label = "Scipy fit: " + r'$f_1 = $' + str(round(parameters[10],2)) + ', ' +
-             r'$n_1 = $' + str(round(parameters[11], 2)) + ', ' +
-             r'$n_2 = $' + str(round(parameters[12], 2)));
+    plt.plot(t, eta_fit, linewidth=3,
+             label = "Scipy fit: " + r'$f_1 = $' + str(round(parameters[-3],2)) + ', ' +
+             r'$n_1 = $' + str(round(parameters[-2], 2)) + ', ' +
+             r'$n_2 = $' + str(round(parameters[-1], 2)));
 
-    #JBRtoolParameters = parameters.copy()
-    #JBRtoolParameters[0:5]  = [ 2.59334433e+08, 1.18280168e+06, 2.48532480e+05, 9.76160818e+03, 1.65786734e+02]
-    #JBRtoolParameters[5:10] = [10.35724846e-03, 1.65264506e-01, 1.83612459e-01, 6.21257664e+00, 8.16912971e+01]
-    #JBReta_fit = Wagner_eta_infty(t, *JBRtoolParameters)
-    #plt.plot(t, JBReta_fit, linewidth=2, linestyle='--', label = "'Relaxation Spectra.exe' fit");
+    #JBRtoolParameters = parameters_fixedLambdas[0:6] + lambdai + parameters_fixedLambdas[6:9]
+    JBRtoolParameters = np.insert(parameters_fixedLambdas, 6, lambdai)
+    JBReta_fit = Wagner_eta_infty(t, *JBRtoolParameters)
+    plt.plot(t, JBReta_fit, linewidth=2, linestyle='--',
+             label = "'Relaxation Spectra.exe' fit: " + r'$f_1 = $' + str(round(JBRtoolParameters[-3],2)) + ', ' +
+             r'$n_1 = $' + str(round(JBRtoolParameters[-2], 2)) + ', ' +
+             r'$n_2 = $' + str(round(JBRtoolParameters[-1], 2)));
     
     # Format and Display plots
     ax0.tick_params(which='both', direction='in', width=2, bottom=True, top=True, left=True, right=True);
@@ -491,7 +539,7 @@ def plot_Wagner_fit_viscosity(df_master=pd.DataFrame(), x_str="", y_str=""):
     plt.show();
     mpl.rcParams.update(mpl.rcParamsDefault); # Recover matplotlib defaults
     
-    return parameters
+    return parameters, JBRtoolParameters
 
 #####   #####   #####   #####   #####
 
@@ -532,36 +580,38 @@ def plot_steadyStateN1(parameters):
     plt.tight_layout();
     ax0 = plt.gca();
 
-    a_          = parameters[0:5]
-    lambda_     = parameters[5:10]
-    f_1         = parameters[10]
-    f_2         = 1 - f_1
-    n_1         = parameters[11]
-    n_2         = parameters[12]
+    labels = ["with Scipy fitting parameters", "with Relaxation Spectra.exe tool fitting parameters"]
+    for params, curvelabel in zip(parameters, labels):
+        a_          = params[0:5]
+        lambda_     = params[5:10]
+        f_1         = params[10]
+        f_2         = 1 - f_1
+        n_1         = params[11]
+        n_2         = params[12]
 
-    # Plot fit
-    gamma = np.logspace(-2, 3, 100)
-    N1 = _N1(gamma, *parameters)
-    plt.plot(gamma, N1, linestyle='--', linewidth=3, label = 
-             r'$a_1 = $' + format_e(a_[0]) + ", " +
-             r'$a_2 = $' + format_e(a_[1]) + ", " +
-             r'$a_3 = $' + format_e(a_[2]) + ",\n" +
-             r'$a_4 = $' + format_e(a_[3]) + ", " +
-             r'$a_5 = $' + format_e(a_[4]) + ",\n" +
-             r'$\lambda_1 = $' + format_e(lambda_[0]) + ", " +
-             r'$\lambda_2 = $' + format_e(lambda_[1]) + ", " +
-             r'$\lambda_3 = $' + format_e(lambda_[2]) + ",\n" +
-             r'$\lambda_4 = $' + format_e(lambda_[3]) + ", " +
-             r'$\lambda_5 = $' + format_e(lambda_[4]) + ",\n" +
-             r'$f_1 = $' + format_e(f_1) + ", " +
-             r'$f_2 = $' + format_e(f_2) + ",\n" +
-             r'$n_1 = $' + format_e(n_1) + ", " +
-             r'$n_2 = $' + format_e(n_2));
-    
-    gammas = [0.1, 1, 10, 100]
-    for g in gammas:
-        N1 = _N1(g, *parameters)
-        plt.scatter(g, N1, s=90, label=r'$N1(' + str(g) + ') = ' + format_e(N1) + '$')
+        # Plot fit
+        gamma = np.logspace(-2, 3, 100)
+        N1 = _N1(gamma, *params)
+        plt.plot(gamma, N1, linestyle='--', linewidth=3, label = curvelabel)
+                 #r'$a_1 = $' + format_e(a_[0]) + ", " +
+                 #r'$a_2 = $' + format_e(a_[1]) + ", " +
+                 #r'$a_3 = $' + format_e(a_[2]) + ",\n" +
+                 #r'$a_4 = $' + format_e(a_[3]) + ", " +
+                 #r'$a_5 = $' + format_e(a_[4]) + ",\n" +
+                 #r'$\lambda_1 = $' + format_e(lambda_[0]) + ", " +
+                 #r'$\lambda_2 = $' + format_e(lambda_[1]) + ", " +
+                 #r'$\lambda_3 = $' + format_e(lambda_[2]) + ",\n" +
+                 #r'$\lambda_4 = $' + format_e(lambda_[3]) + ", " +
+                 #r'$\lambda_5 = $' + format_e(lambda_[4]) + ",\n" +
+                 #r'$f_1 = $' + format_e(f_1) + ", " +
+                 #r'$f_2 = $' + format_e(f_2) + ",\n" +
+                 #r'$n_1 = $' + format_e(n_1) + ", " +
+                 #r'$n_2 = $' + format_e(n_2));
+
+        gammas = [0.1, 1, 10, 100]
+        for g in gammas:
+            N1 = _N1(g, *params)
+            plt.scatter(g, N1, s=90, label=r'$N1(' + str(g) + ') = ' + format_e(N1) + '$')
 
     # Format and Display plots
     ax0.tick_params(which='both', direction='in', width=2, bottom=True, top=True, left=True, right=True);
@@ -570,7 +620,7 @@ def plot_steadyStateN1(parameters):
     plt.xlabel(r'$\gamma$' + '    ' + r'$1/s$', fontsize=24);
     plt.ylabel(r'$N1$' + '    ' + r'$Pa$', fontsize=24);
     plt.title(plotname, size=24);
-    plt.legend(prop={'size': 22});
+    plt.legend(prop={'size': 20});
     plt.savefig('plt_' + plotname + '.png', dpi=200, bbox_inches='tight');
     plt.show();
     mpl.rcParams.update(mpl.rcParamsDefault); # Recover matplotlib defaults
