@@ -1,18 +1,10 @@
-%matplotlib inline
 import okt
-import sys
 
-df             = okt.readCSVfile()
-sys.exit()
-x, y           = okt.getXYdata(df)
-figure         = okt.initializePlotAndSetPlotSize()
-ax0            = okt.getCurrentAxesInstance(figure)
-xModel, yModel = okt.fitdata(x, y)
-okt.scatterExperimentalData(x, y)
-okt.plotFittedCurve(xModel, yModel)
-okt.namePlotAxes(ax0)
-okt.formatTicksAndLabelFontSizes(ax0)
-okt.setLogScale()
-okt.showPlotLegend(ax0)
-okt.saveAndShowPlot()
-okt.recoverMatplotlibDefaults()
+okt.setupTkinterWindow()
+df   = okt.readCSVfile()
+x, y = okt.getXYdata(df)
+    
+while(1):
+    model = okt.fitdata(x, y)
+    okt.generatePlot(x, y, model[0], model[1], model[2])
+    print()

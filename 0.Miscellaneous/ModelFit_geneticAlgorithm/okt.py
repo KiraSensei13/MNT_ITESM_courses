@@ -1,37 +1,61 @@
-from pandas import read_csv
-import numpy as np
-#import matplotlib.pyplot as plt
-#import matplotlib as mpl
-from warnings import filterwarnings
-from sys import exit as sysexit
+from numpy                import array, sum, inf, square, mean, sqrt, var, logspace
+from tkinter              import Tk
+from matplotlib.pyplot    import figure, tight_layout, legend, yscale, xscale, savefig, scatter, plot, title
+from matplotlib           import rcParams, rcParamsDefault
+from pandas               import read_csv
+from tkinter              import filedialog
+from tkinter.simpledialog import askinteger
+from warnings             import filterwarnings
+from sys                  import exit as sysexit
+from scipy                import optimize
+from scipy.optimize       import differential_evolution
 
-from scipy import optimize
-from scipy.optimize import differential_evolution
+def endProgram():
+    sysexit()
 
-def askForCSVfile(filename):
+def setupTkinterWindow():
+    root = Tk()
+    root.withdraw()
+
+def askForCVSfile():
+    filename = filedialog.askopenfilename(filetypes=[("CSV files", ".csv")])
+    return filename
+
+def askForNumberOfMaxwellElements():
+    numberOfMaxwellElements = askinteger(
+        'Enter the number of Maxwell elements',
+        'Enter the number of Maxwell elements.\nEntering a negative value OR canceling will end the program.')
+    return numberOfMaxwellElements
+
+def getDFfromCSV():
+    filename = askForCVSfile()
     df = read_csv(filename, delimiter=",")
     return df
 
-def readCSVfile(filename):
+def readCSVfile():
     try:
-        return askForCSVfile(filename)
+        return getDFfromCSV()
     except:
-        sysexit("File search was canceled OR Selected file is not a CSV")
+        input("File search was canceled OR the selected file is not a CSV.\nPress ENTER to close.")
+        endProgram()
 
 def initializePlotAndSetPlotSize():
     scale  = 6
-    figure = plt.figure(figsize=(3*scale, 2*scale))
-    plt.tight_layout()
-    return figure
+    plotFigure = figure(figsize=(3*scale, 2*scale))
+    tight_layout()
+    return plotFigure
 
-def getCurrentAxesInstance(figure):
-    return figure.gca()
+def getCurrentAxesInstance(plotFigure):
+    return plotFigure.gca()
 
 def showPlotLegend(ax):
     handles, labels = ax.get_legend_handles_labels();
     lgd = dict(zip(labels, handles))
-    plt.legend(lgd.values(), lgd.keys(), prop={'size': 22}, loc="best")
+    legend(lgd.values(), lgd.keys(), prop={'size': 22}, loc="best")
     
+def setPlotTitle(numberOfMaxwellElements):
+    title(str(numberOfMaxwellElements) + " Maxwell Elements", size=24);
+
 def namePlotAxes(ax):
     ax.set_xlabel("$\omega$", fontsize=24)
     ax.set_ylabel("${G^{\prime\prime}(\omega)}$", fontsize=24)
@@ -42,15 +66,17 @@ def formatTicksAndLabelFontSizes(ax):
     ax.tick_params(which='both', direction='in', length=5, width=2, bottom=True, top=True, left=True, right=True)
     
 def setLogScale():
-    plt.yscale('log')
-    plt.xscale('log')
+    yscale('log')
+    xscale('log')
     
-def saveAndShowPlot():
-    plt.savefig('DiscreteRelaxationSpectra.png', dpi=200, bbox_inches='tight')
-    plt.show()
+def savePlot(numberOfMaxwellElements):
+    savefig(
+        str(numberOfMaxwellElements) + 'elements_DiscreteRelaxationSpectra.png',
+        dpi=200,
+        bbox_inches='tight')
     
 def recoverMatplotlibDefaults():
-    mpl.rcParams.update(mpl.rcParamsDefault)
+    rcParams.update(rcParamsDefault)
 
 def getColumnNames(df):
     x_str = df.columns[0]
@@ -63,14 +89,15 @@ def removeNANsFromData(df, x_str, y_str):
     
 def getXYdata(df):
     x_str, y_str = getColumnNames(df)
-    df = removeNANsFromData(df, x_str, y_str)
-    x = df[x_str];
-    y = df[y_str];
+    df           = removeNANsFromData(df, x_str, y_str)
+    x            = df[x_str];
+    y            = df[y_str];
+    x, y         = pandasSeries2numpyArray(x, y)
     return x, y
 
 def scatterExperimentalData(x, y):
-    plt.scatter(x, y, s=45, marker='o', label="data")
-    plt.plot(x, y, linewidth=1, linestyle='-.')
+    scatter(x, y, s=45, marker='o', label="data")
+    plot(x, y, linewidth=1, linestyle='-.')
 
 def Maxwell_lossModuli(omega_, *p):
     eta_    = p[0            :int(len(p)/2)]
@@ -85,59 +112,85 @@ def Maxwell_lossModuli(omega_, *p):
     
     return sum_
 
-def fitdata(x, y, numberOfMaxwellElements):
-    if numberOfMaxwellElements < 1:
-        sysexit("The number of Maxwell elements shall be greater than zero.")
+def generatePlot(x, y, xModel, yModel, numberOfMaxwellElements):
+    plotFigure = initializePlotAndSetPlotSize()
+    ax0        = getCurrentAxesInstance(plotFigure)
+    scatterExperimentalData(x, y)
+    plotFittedCurve(xModel, yModel)
+    namePlotAxes(ax0)
+    formatTicksAndLabelFontSizes(ax0)
+    setLogScale()
+    showPlotLegend(ax0)
+    setPlotTitle(numberOfMaxwellElements)
+    savePlot(numberOfMaxwellElements)
+    recoverMatplotlibDefaults()
+
+def evaluateNumberOfMaxwellElements(numberOfMaxwellElements):
+    if str(type(numberOfMaxwellElements)) == "<class 'NoneType'>":
+        endProgram()
+    elif numberOfMaxwellElements < 1:
+        print("The number of Maxwell elements shall be greater than zero.")
+        endProgram()
+        
+def pandasSeries2numpyArray(x, y):
+    x = array(x)
+    y = array(y)
+    return x, y
+
+def getMaxValue(x, y):
+    maxX  = max(x)
+    maxY  = max(y)
+    maxXY = max(maxX, maxY)
+    return maxXY
+
+def generate_Initial_Parameters(x, y, numberOfMaxwellElements):
+    # min and max used for bounds
+    maxX  = max(x)
+    maxY  = max(y)
+    maxXY = max(maxX, maxY)
     
-    x = np.array(x)
-    y = np.array(y)
+    parameterBounds = []
+    for i in range(numberOfMaxwellElements*2):
+        parameterBounds.append([0, maxXY])
     
     # function for genetic algorithm to minimize (sum of squared error)
     def sumOfSquaredError(parameterTuple):
         filterwarnings("ignore") # do not print warnings by genetic algorithm
         val = Maxwell_lossModuli(x, *parameterTuple)
-        return np.sum((y - val) ** 2.0)
+        return sum((y - val) ** 2.0)
+    # "seed" the numpy random number generator for repeatable results
+    result = differential_evolution(sumOfSquaredError, parameterBounds, seed=3)
+    return result.x
     
-    def generate_Initial_Parameters(numberOfMaxwellElements):
-        # min and max used for bounds
-        maxX = max(x)
-        maxY = max(y)
-        maxXY = max(maxX, maxY)
+def fitdata(x, y):
+    numberOfMaxwellElements = askForNumberOfMaxwellElements()
+    evaluateNumberOfMaxwellElements(numberOfMaxwellElements)
+    geneticParameters = generate_Initial_Parameters(x, y, numberOfMaxwellElements)
 
-        parameterBounds = []
-        
-        for i in range(numberOfMaxwellElements*2):
-            parameterBounds.append([0, maxXY])
-        
-        # "seed" the numpy random number generator for repeatable results
-        result = differential_evolution(sumOfSquaredError, parameterBounds, seed=3)
-        return result.x
-
-    # generate initial parameter values
-    geneticParameters = generate_Initial_Parameters(numberOfMaxwellElements)
-
-    #print('geneticParameters', geneticParameters)
-    
     # curve fit the test data
     numberOfParameters = len(geneticParameters)
-    upbound = [np.inf]*numberOfParameters
+    upbound = [inf]*numberOfParameters
     
     try:
         fittedParameters, pcov = optimize.curve_fit(Maxwell_lossModuli, x, y, geneticParameters, bounds=(0, upbound));
     except:
-        sysexit("Optimal parameters not found: The maximum number of function evaluations is exceeded.\nTry a different number of Maxwell elements")
+        print("Optimal parameters not found: The maximum number of function evaluations is exceeded.\nTry a different number of Maxwell elements (or add more data points).")
+        return 0, 0, numberOfMaxwellElements
 
     modelPredictions = Maxwell_lossModuli(x, *fittedParameters) 
 
     absError = modelPredictions - y
 
-    SE = np.square(absError) # squared errors
-    MSE = np.mean(SE) # mean squared errors
-    RMSE = np.sqrt(MSE) # Root Mean Squared Error, RMSE
-    Rsquared = 1.0 - (np.var(absError) / np.var(y))
+    SE = square(absError) # squared errors
+    MSE = mean(SE) # mean squared errors
+    RMSE = sqrt(MSE) # Root Mean Squared Error, RMSE
+    Rsquared = 1.0 - (var(absError) / var(y))
     
-    if Rsquared < 0:
-        sysexit("Range is not enough to specify " + str(int(numberOfParameters/2)) + " relaxation points \nTry a different number of Maxwell elements (or add more data points)")
+    if Rsquared < 0.85:
+        print("Frequency range is not enough to specify " + str(numberOfMaxwellElements) + " relaxation points \nTry a different number of Maxwell elements (or add more data points).")
+        return 0, 0, numberOfMaxwellElements
+    
+    print(">>> " + str(numberOfMaxwellElements) + " Maxwell Elements")
     
     print("        n                       ")
     print("      =====                     ")
@@ -154,14 +207,11 @@ def fitdata(x, y, numberOfMaxwellElements):
     print('lambda_i:             \n', fittedParameters[int(numberOfParameters/2):numberOfParameters       ])
     print('Root Mean Squared Error:', RMSE)
     print('R-squared:              ', Rsquared)
-
-    #print()
     
-    #xModel = np.logspace(min(x), max(x), 100)
-    xModel = np.logspace(-2, 3)
+    xModel = logspace(-2, 3)
     yModel = Maxwell_lossModuli(xModel, *fittedParameters)
     
-    return xModel, yModel
+    return xModel, yModel, numberOfMaxwellElements
 
 def plotFittedCurve(xModel, yModel):
-    plt.plot(xModel, yModel, linestyle='-', linewidth=3, label="fit")
+    plot(xModel, yModel, linestyle='-', linewidth=3, label="fit")

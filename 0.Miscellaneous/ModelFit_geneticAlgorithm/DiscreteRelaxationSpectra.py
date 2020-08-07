@@ -1,8 +1,10 @@
 import okt
 
-filename = "./df_masterCurve_G2.csv"
-numberOfMaxwellElements = 5
-
-df             = okt.readCSVfile(filename)
-x, y           = okt.getXYdata(df)
-xModel, yModel = okt.fitdata(x, y, numberOfMaxwellElements)
+okt.setupTkinterWindow()
+df   = okt.readCSVfile()
+x, y = okt.getXYdata(df)
+    
+while(1):
+    model = okt.fitdata(x, y)
+    okt.generatePlot(x, y, model[0], model[1], model[2])
+    print()
