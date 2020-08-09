@@ -1,4 +1,4 @@
-from numpy                import array, sum, inf, square, mean, sqrt, var, logspace
+from numpy                import array, sum, inf, square, mean, sqrt, var, logspace, log10
 from tkinter              import Tk
 from matplotlib.pyplot    import figure, tight_layout, legend, yscale, xscale, savefig, scatter, plot, title
 from matplotlib           import rcParams, rcParamsDefault
@@ -207,8 +207,10 @@ def fitdata(x, y):
     print('lambda_i:             \n', fittedParameters[int(numberOfParameters/2):numberOfParameters       ])
     print('Root Mean Squared Error:', RMSE)
     print('R-squared:              ', Rsquared)
-    
-    xModel = logspace(-2, 3)
+
+    minxMagnitude = log10(min(x))
+    maxxMagnitude = log10(max(x))
+    xModel = logspace(minxMagnitude, maxxMagnitude)
     yModel = Maxwell_lossModuli(xModel, *fittedParameters)
     
     return xModel, yModel, numberOfMaxwellElements
