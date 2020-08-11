@@ -1948,13 +1948,13 @@ https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EYk-ZqfUFwZNro
 6.2.3 PRESSURE FLOW IN A TUBE
 6 Pressure driven flow of a power law fluid
 
-/******************************************************************************/
+/*****************************************************************************/
 
 MFI is just a point
 calculate Q from density
 elongational rate is dv_z/dz (elongational viscosity is in function of the elongational rate)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 2017_Book_FluidMechanicsFundamentalsAndApplications
 https://www.amazon.com.mx/Fluid-Mechanics-Fundamentals-Applications-English-ebook/dp/B01MTFIIL0/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=fluid+mechanics+cengel&qid=1594828256&sr=8-1
@@ -1982,20 +1982,20 @@ https://www.amazon.com/Theoretical-Microfluidics-Oxford-Master-Physics/dp/019923
 
 
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Convocatoria Becas Nacional (Tradicional) 2019 - 1
 Área: INGENIERÍA Y TECNOLOGÍA
 Institución: INSTITUTO TECNOLÓGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY
 Clave: 2019-000002-01NACF
 
-/******************************************************************************/
+/*****************************************************************************/
 
 "model" AND "PP" AND "extruded" AND "MFI" AND "peroxide" AND "MFI" and "MWD" AND "Creep" AND "Recovery" AND "compliance"
 "Bonilla" AND "Peroxide" AND "Molecular Weight" AND "Rheological" AND "Polypropylene" AND "Resins
 Bonilla  J., Effects of  Peroxide  on  Molecular  Weight  and  Rheological  Properties  of Polypropylene Resins, Dissertation Volume I & II, Texas A&M University, 1996.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Fizz Buzz
 print numbers from 1 to 100, except
@@ -2003,7 +2003,7 @@ if it's a multiple of 3 you print Fizz instead of the number,
 every time it's a mulpitle of 5, you print Buzz, when
 it's a multiple of both, you print FizzBuzz
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Navier Stokes Equation
 * describes the flow of incompressible fluids in a channel
@@ -2017,26 +2017,26 @@ Navier Stokes Equation
 
 How can we include the effect due to viscosity? as it will change how the material enters/leaves/accumulates in the system
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Four Point Probes
 http://four-point-probes.com/technical-information-guide/
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://tecmx-my.sharepoint.com/:x:/g/personal/a01212611_itesm_mx/EYm1w70Vk4JGsnL6-FrbaswB7dM3ysUronFlSyy572AhHg?e=F7pYgE
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Inagaki Michio
 
 ahora que estás preparando todo para tu tesis y defensa y demás, tenemos que asegurarnos de que estás familiarizado con algunos conceptos como los que hemos platicado: tipos de carbono, características, propriedades, etc. Dado que el tema de tu tesis tiene que ver con polymer-derived carbon materials, de los cuáles principalmente se obtiene glassy carbon es importante que conozcas la historia detrás de estos materials. Esta historia inicia con la compañía japonesa Tokai. 
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://www.tokaicarbon.co.jp/en/products/fine_carbon/
 
-/******************************************************************************/
+/*****************************************************************************/
 
 CEM (currently at MTY)
 MNT
@@ -2048,7 +2048,7 @@ Héctor Alán Aguirre Soto
 alan.aguirre@tec.mx
 Graduating in Dec2020
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Web:
 Requests: https://pypi.org/project/requests/
@@ -2078,3 +2078,7 @@ Tkinter: https://wiki.python.org/moin/TkInter
 
 Bonus:
 Pygame: https://www.pygame.org/docs/
+
+/*****************************************************************************/
+
+
