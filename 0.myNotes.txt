@@ -2081,4 +2081,16 @@ Pygame: https://www.pygame.org/docs/
 
 /*****************************************************************************/
 
+PNFPLVNFES.pdf
+
+/*****************************************************************************/
+
+Reset One Drive service
+
+Open a Run dialog by pressing Windows key  Press the Windows key  and R.
+Copy this and paste it into the dialog window then press OK
+%localappdata%\Microsoft\OneDrive\onedrive.exe /reset
+
+/*****************************************************************************/
+
 
