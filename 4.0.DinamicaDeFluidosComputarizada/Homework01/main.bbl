@@ -1,0 +1,58 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{White2011}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0de5dcae73c13670304419d4aea65932}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={M.\bibnamedelimi Frank},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Series in Mechanical Engineering}%
+      }
+      \strng{namehash}{0de5dcae73c13670304419d4aea65932}
+      \strng{fullhash}{0de5dcae73c13670304419d4aea65932}
+      \strng{bibnamehash}{0de5dcae73c13670304419d4aea65932}
+      \strng{authorbibnamehash}{0de5dcae73c13670304419d4aea65932}
+      \strng{authornamehash}{0de5dcae73c13670304419d4aea65932}
+      \strng{authorfullhash}{0de5dcae73c13670304419d4aea65932}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7th}
+      \field{isbn}{978-0-07-352934-9}
+      \field{month}{10}
+      \field{title}{{Fluid Mechanics}}
+      \field{year}{2011}
+      \field{pages}{885}
+      \range{pages}{1}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/2011{\_}Book{\_}FluidMechanics.pdf:pdf;:C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/2003{\_}Book{\_}FluidMechanics.pdf:pdf
+      \endverb
+      \keyw{microfluidics}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
