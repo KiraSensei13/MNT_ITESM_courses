@@ -5,6 +5,7 @@
 \author{Osamu Katagiri-Tanaka : A01212611}
 \date{\today}
 
+\usepackage{amsmath, esint}
 \usepackage{enumitem}
 \usepackage{geometry}
 \geometry{
@@ -26,6 +27,9 @@
 ]{biblatex}
 
 \addbibresource{references.bib}
+
+% Note that ‘d’ in the differential is conventionally set in roman.
+\newcommand{\ud}{\,\mathrm{d}}
 
 \begin{document}
 
@@ -66,11 +70,10 @@ The Bernoulli equation is valid in inviscid regions of flow where net viscous fo
 This equation describes a balance between pressure (flow energy) $\displaystyle \frac{P}{\rho}$, velocity (kinetic energy) $\displaystyle \frac{V^2}{2}$, and position (potential energy) $\textsl{g} z$ of fluid particles relative to the gravity vector (potential energy) in regions of a fluid flow where frictional force on fluid particles is negligible compared to pressure force in that region of the flow (see inviscid flow). There are multiple forms of the Bernoulli equation for incompressible vs. compressible, steady vs. nonsteady, and derivations through Newton’s law vs. the first law of thermodynamics. The most commonly used forms are for steady incompressible fluid flow derived through conservation of momentum.
 
 
-
 \subsubsection*{Conservation of Energy : 1st Law of Thermodynamics}
 
 \begin{equation}
-\frac{d E}{d t} = \frac{d}{d t} \int\limits_{volume} e \rho dV + \int\limits_{surface} e \rho (\vec{v} \cdot \vec{n}) dA
+\frac{\ud E}{\ud t} = \frac{\partial \rho e}{ \partial t} + \vec{\nabla} \cdot (\rho \vec{v} e) = \frac{\ud}{\ud t} \iiint e \rho \ud V + \oiint e \rho (\vec{v} \cdot \vec{n}) \ud A
 \label{eq_conservationOfEnergy}
 \end{equation}
 
@@ -80,7 +83,7 @@ The total energy within a system is affected by work transfer $W$ and heat trans
 
 \textbf{Work Transfer $W$ :} Work is an energy interaction related to a force. A system may involve several forms of work, in such a way that: $\displaystyle W = W_{motor} + W_{pressure} + W_{viscous} + \textrm{work done by other forces} \dots$. $W_{motor}$ is the work done by a rotating shaft,  $W_{pressure}$ is the work transmitted by pressure forces, and $W_{viscous}$ are the normal and shear stress components of viscous forces. $W$ can also be comprised by work done by other forces such as surface tension, magnetic and electric. $W_{viscous}$ is only considered when the moving walls are part of the control surface.
 
-The relationship between conservation of energy for a control volume is obtained by the Reynolds transport theorem, replacing $B$ with the total energy $E$ and $\hat{B}$ with the total energy per unit mass, which is $e = \displaystyle u + \frac{v^2}{2} + \textsl{g} z$. $u$, $\displaystyle \frac{v^2}{2}$, and $\textsl{g} z$ are the internal, kinetic, and potential energies per unit mass respectively. In other words, $\displaystyle \frac{d E}{d t}$ can be described as follows:
+The relationship between conservation of energy for a control volume is obtained by the Reynolds transport theorem, replacing $B$ with the total energy $E$ and $\hat{B}$ with the total energy per unit mass, which is $e = \displaystyle u + \frac{v^2}{2} + \textsl{g} z$. $u$, $\displaystyle \frac{v^2}{2}$, and $\textsl{g} z$ are the internal, kinetic, and potential energies per unit mass respectively. In other words, $\displaystyle \frac{\ud E}{\ud t}$ can be described as follows:
 
 $$ \left(
     \begin{array}{c}
@@ -110,7 +113,7 @@ $$ \left(
 \subsubsection*{Linear Momentun : Navier-Stokes Equation}
 
 \begin{equation}
-\rho \frac{d \vec{v}}{d t} = - \vec{\nabla} P + \rho \vec{\textsl{g}} + \mu \nabla^2 \vec{v}
+\rho \frac{\ud \vec{v}}{\ud t} = - \vec{\nabla} P + \rho \vec{\textsl{g}} + \mu \nabla^2 \vec{v}
 \end{equation}
 
 \subsection*{\emph{Part B}}

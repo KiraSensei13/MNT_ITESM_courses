@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  23 AUG 2020 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  24 AUG 2020 00:07
 entering extended mode
 **./main.tex
 (main.tex
@@ -25,16 +25,83 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 )
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.st
+y"
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.st
+y"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
+"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen103
+))
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
+"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
+"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/esint\esint.sty"
+Package: esint 
+\symlargesymbolsA=\mathgroup4
+)
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.
 sty"
 Package: enumitem 2019/01/14 v3.7 Customized lists
-\enitkv@toks@=\toks16
-\labelindent=\skip43
-\enit@outerparindent=\dimen103
-\enit@toks=\toks17
-\enit@inbox=\box27
-\enit@count@id=\count88
-\enitdp@description=\count89
+\enitkv@toks@=\toks21
+\labelindent=\skip46
+\enit@outerparindent=\dimen112
+\enit@toks=\toks22
+\enit@inbox=\box29
+\enit@count@id=\count100
+\enitdp@description=\count101
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
 sty"
@@ -43,7 +110,7 @@ Package: geometry 2018/04/16 v5.8 Page Geometry
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
 y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
+\KV@toks@=\toks23
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.s
 ty"
@@ -58,18 +125,18 @@ Package ifvtex Info: VTeX not detected.
 sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count90
-\Gm@cntv=\count91
-\c@Gm@tempcnt=\count92
-\Gm@bindingoffset=\dimen104
-\Gm@wd@mp=\dimen105
-\Gm@odd@mp=\dimen106
-\Gm@even@mp=\dimen107
-\Gm@layoutwidth=\dimen108
-\Gm@layoutheight=\dimen109
-\Gm@layouthoffset=\dimen110
-\Gm@layoutvoffset=\dimen111
-\Gm@dimlist=\toks19
+\Gm@cnth=\count102
+\Gm@cntv=\count103
+\c@Gm@tempcnt=\count104
+\Gm@bindingoffset=\dimen113
+\Gm@wd@mp=\dimen114
+\Gm@odd@mp=\dimen115
+\Gm@even@mp=\dimen116
+\Gm@layoutwidth=\dimen117
+\Gm@layoutheight=\dimen118
+\Gm@layouthoffset=\dimen119
+\Gm@layoutvoffset=\dimen120
+\Gm@dimlist=\toks24
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
 cfg"))
@@ -94,8 +161,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 x.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen112
-\Gin@req@width=\dimen113
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.
 sty"
@@ -127,7 +194,7 @@ Package pdftexcmds Info: \pdfdraftmode found.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.
 sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count93
+\etb@tempcnta=\count105
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptions
 .sty"
@@ -143,70 +210,70 @@ Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 )))
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.sty"
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count94
+\lrq@indent=\count106
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.def"
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty
 "
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
-\Urlmuskip=\muskip10
+\Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count95
-\c@listtotal=\count96
-\c@listcount=\count97
-\c@liststart=\count98
-\c@liststop=\count99
-\c@citecount=\count100
-\c@citetotal=\count101
-\c@multicitecount=\count102
-\c@multicitetotal=\count103
-\c@instcount=\count104
-\c@maxnames=\count105
-\c@minnames=\count106
-\c@maxitems=\count107
-\c@minitems=\count108
-\c@citecounter=\count109
-\c@maxcitecounter=\count110
-\c@savedcitecounter=\count111
-\c@uniquelist=\count112
-\c@uniquename=\count113
-\c@refsection=\count114
-\c@refsegment=\count115
-\c@maxextratitle=\count116
-\c@maxextratitleyear=\count117
-\c@maxextraname=\count118
-\c@maxextradate=\count119
-\c@maxextraalpha=\count120
-\c@abbrvpenalty=\count121
-\c@highnamepenalty=\count122
-\c@lownamepenalty=\count123
-\c@maxparens=\count124
-\c@parenlevel=\count125
-\blx@tempcnta=\count126
-\blx@tempcntb=\count127
-\blx@tempcntc=\count128
-\blx@maxsection=\count129
-\blx@maxsegment@0=\count130
-\blx@notetype=\count131
-\blx@parenlevel@text=\count132
-\blx@parenlevel@foot=\count133
-\blx@sectionciteorder@0=\count134
-\blx@entrysetcounter=\count135
-\labelnumberwidth=\skip44
-\labelalphawidth=\skip45
-\biblabelsep=\skip46
-\bibitemsep=\skip47
-\bibnamesep=\skip48
-\bibinitsep=\skip49
-\bibparsep=\skip50
-\bibhang=\skip51
+\c@tabx@nest=\count107
+\c@listtotal=\count108
+\c@listcount=\count109
+\c@liststart=\count110
+\c@liststop=\count111
+\c@citecount=\count112
+\c@citetotal=\count113
+\c@multicitecount=\count114
+\c@multicitetotal=\count115
+\c@instcount=\count116
+\c@maxnames=\count117
+\c@minnames=\count118
+\c@maxitems=\count119
+\c@minitems=\count120
+\c@citecounter=\count121
+\c@maxcitecounter=\count122
+\c@savedcitecounter=\count123
+\c@uniquelist=\count124
+\c@uniquename=\count125
+\c@refsection=\count126
+\c@refsegment=\count127
+\c@maxextratitle=\count128
+\c@maxextratitleyear=\count129
+\c@maxextraname=\count130
+\c@maxextradate=\count131
+\c@maxextraalpha=\count132
+\c@abbrvpenalty=\count133
+\c@highnamepenalty=\count134
+\c@lownamepenalty=\count135
+\c@maxparens=\count136
+\c@parenlevel=\count137
+\blx@tempcnta=\count138
+\blx@tempcntb=\count139
+\blx@tempcntc=\count140
+\blx@maxsection=\count141
+\blx@maxsegment@0=\count142
+\blx@notetype=\count143
+\blx@parenlevel@text=\count144
+\blx@parenlevel@foot=\count145
+\blx@sectionciteorder@0=\count146
+\blx@entrysetcounter=\count147
+\labelnumberwidth=\skip47
+\labelalphawidth=\skip48
+\biblabelsep=\skip49
+\bibitemsep=\skip50
+\bibnamesep=\skip51
+\bibinitsep=\skip52
+\bibparsep=\skip53
+\bibhang=\skip54
 \blx@bcfin=\read1
 \blx@bcfout=\write3
-\c@mincomprange=\count136
-\c@maxcomprange=\count137
-\c@mincompwidth=\count138
+\c@mincomprange=\count148
+\c@maxcomprange=\count149
+\c@mincompwidth=\count150
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -218,88 +285,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count139
-\c@savedafterword=\count140
-\c@annotator=\count141
-\c@savedannotator=\count142
-\c@author=\count143
-\c@savedauthor=\count144
-\c@bookauthor=\count145
-\c@savedbookauthor=\count146
-\c@commentator=\count147
-\c@savedcommentator=\count148
-\c@editor=\count149
-\c@savededitor=\count150
-\c@editora=\count151
-\c@savededitora=\count152
-\c@editorb=\count153
-\c@savededitorb=\count154
-\c@editorc=\count155
-\c@savededitorc=\count156
-\c@foreword=\count157
-\c@savedforeword=\count158
-\c@holder=\count159
-\c@savedholder=\count160
-\c@introduction=\count161
-\c@savedintroduction=\count162
-\c@namea=\count163
-\c@savednamea=\count164
-\c@nameb=\count165
-\c@savednameb=\count166
-\c@namec=\count167
-\c@savednamec=\count168
-\c@translator=\count169
-\c@savedtranslator=\count170
-\c@shortauthor=\count171
-\c@savedshortauthor=\count172
-\c@shorteditor=\count173
-\c@savedshorteditor=\count174
-\c@labelname=\count175
-\c@savedlabelname=\count176
-\c@institution=\count177
-\c@savedinstitution=\count178
-\c@lista=\count179
-\c@savedlista=\count180
-\c@listb=\count181
-\c@savedlistb=\count182
-\c@listc=\count183
-\c@savedlistc=\count184
-\c@listd=\count185
-\c@savedlistd=\count186
-\c@liste=\count187
-\c@savedliste=\count188
-\c@listf=\count189
-\c@savedlistf=\count190
-\c@location=\count191
-\c@savedlocation=\count192
-\c@organization=\count193
-\c@savedorganization=\count194
-\c@origlocation=\count195
-\c@savedoriglocation=\count196
-\c@origpublisher=\count197
-\c@savedorigpublisher=\count198
-\c@publisher=\count199
-\c@savedpublisher=\count266
-\c@language=\count267
-\c@savedlanguage=\count268
-\c@origlanguage=\count269
-\c@savedoriglanguage=\count270
-\c@pageref=\count271
-\c@savedpageref=\count272
-\shorthandwidth=\skip52
-\shortjournalwidth=\skip53
-\shortserieswidth=\skip54
-\shorttitlewidth=\skip55
-\shortauthorwidth=\skip56
-\shorteditorwidth=\skip57
-\locallabelnumberwidth=\skip58
-\locallabelalphawidth=\skip59
-\localshorthandwidth=\skip60
-\localshortjournalwidth=\skip61
-\localshortserieswidth=\skip62
-\localshorttitlewidth=\skip63
-\localshortauthorwidth=\skip64
-\localshorteditorwidth=\skip65
+\c@afterword=\count151
+\c@savedafterword=\count152
+\c@annotator=\count153
+\c@savedannotator=\count154
+\c@author=\count155
+\c@savedauthor=\count156
+\c@bookauthor=\count157
+\c@savedbookauthor=\count158
+\c@commentator=\count159
+\c@savedcommentator=\count160
+\c@editor=\count161
+\c@savededitor=\count162
+\c@editora=\count163
+\c@savededitora=\count164
+\c@editorb=\count165
+\c@savededitorb=\count166
+\c@editorc=\count167
+\c@savededitorc=\count168
+\c@foreword=\count169
+\c@savedforeword=\count170
+\c@holder=\count171
+\c@savedholder=\count172
+\c@introduction=\count173
+\c@savedintroduction=\count174
+\c@namea=\count175
+\c@savednamea=\count176
+\c@nameb=\count177
+\c@savednameb=\count178
+\c@namec=\count179
+\c@savednamec=\count180
+\c@translator=\count181
+\c@savedtranslator=\count182
+\c@shortauthor=\count183
+\c@savedshortauthor=\count184
+\c@shorteditor=\count185
+\c@savedshorteditor=\count186
+\c@labelname=\count187
+\c@savedlabelname=\count188
+\c@institution=\count189
+\c@savedinstitution=\count190
+\c@lista=\count191
+\c@savedlista=\count192
+\c@listb=\count193
+\c@savedlistb=\count194
+\c@listc=\count195
+\c@savedlistc=\count196
+\c@listd=\count197
+\c@savedlistd=\count198
+\c@liste=\count199
+\c@savedliste=\count266
+\c@listf=\count267
+\c@savedlistf=\count268
+\c@location=\count269
+\c@savedlocation=\count270
+\c@organization=\count271
+\c@savedorganization=\count272
+\c@origlocation=\count273
+\c@savedoriglocation=\count274
+\c@origpublisher=\count275
+\c@savedorigpublisher=\count276
+\c@publisher=\count277
+\c@savedpublisher=\count278
+\c@language=\count279
+\c@savedlanguage=\count280
+\c@origlanguage=\count281
+\c@savedoriglanguage=\count282
+\c@pageref=\count283
+\c@savedpageref=\count284
+\shorthandwidth=\skip55
+\shortjournalwidth=\skip56
+\shortserieswidth=\skip57
+\shorttitlewidth=\skip58
+\shortauthorwidth=\skip59
+\shorteditorwidth=\skip60
+\locallabelnumberwidth=\skip61
+\locallabelalphawidth=\skip62
+\localshorthandwidth=\skip63
+\localshortjournalwidth=\skip64
+\localshortserieswidth=\skip65
+\localshorttitlewidth=\skip66
+\localshortauthorwidth=\skip67
+\localshorteditorwidth=\skip68
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -313,13 +380,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.
 def"
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
-\c@textcitecount=\count273
-\c@textcitetotal=\count274
-\c@textcitemaxnames=\count275
-\c@biburlnumpenalty=\count276
-\c@biburlucpenalty=\count277
-\c@biburllcpenalty=\count278
-\c@smartand=\count279
+\c@textcitecount=\count285
+\c@textcitetotal=\count286
+\c@textcitemaxnames=\count287
+\c@biburlnumpenalty=\count288
+\c@biburlucpenalty=\count289
+\c@biburllcpenalty=\count290
+\c@smartand=\count291
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -354,8 +421,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\stand
 ard.bbx"
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count280
-\c@bbx:relatedtotal=\count281
+\c@bbx:relatedcount=\count292
+\c@bbx:relatedtotal=\count293
 ))))
 Package biblatex Info: Trying to load citation style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.cbx' found.
@@ -363,8 +430,8 @@ Package biblatex Info: ... file 'numeric-comp.cbx' found.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/cbx\numer
 ic-comp.cbx"
 File: numeric-comp.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
-\c@cbx@tempcnta=\count282
-\c@cbx@tempcntb=\count283
+\c@cbx@tempcnta=\count294
+\c@cbx@tempcntb=\count295
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -391,23 +458,23 @@ Package biblatex Info: ... file 'english.lbx' found.
 sh.lbx"
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
-\@quotelevel=\count284
-\@quotereset=\count285
+\@quotelevel=\count296
+\@quotereset=\count297
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -448,17 +515,17 @@ LaTeX Font Info:    ... okay on input line 30.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count286
-\scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count287
-\nofMParguments=\count288
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count289
-\MPscratchDim=\dimen115
-\MPnumerator=\count290
-\makeMPintoPDFobject=\count291
-\everyMPtoPDFconversion=\toks21
+\scratchcounter=\count298
+\scratchdimen=\dimen123
+\scratchbox=\box30
+\nofMPsegments=\count299
+\nofMParguments=\count300
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count301
+\MPscratchDim=\dimen124
+\MPnumerator=\count302
+\makeMPintoPDFobject=\count303
+\everyMPtoPDFconversion=\toks26
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
 base.sty"
@@ -487,38 +554,34 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 30.
-Package biblatex Info: Reference segment=0 on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 32.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 32.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 32.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 44.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 44.
+Package biblatex Info: Reference section=0 on input line 34.
+Package biblatex Info: Reference segment=0 on input line 34.
+LaTeX Font Info:    Try loading font information for U+esint on input line 36.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/esint\uesint.fd"
+File: uesint.fd 
+)
 <./img/bermoulliInviscidRegions.png, id=1, 475.7775pt x 283.0575pt>
 File: ./img/bermoulliInviscidRegions.png Graphic file (type png)
 <use ./img/bermoulliInviscidRegions.png>
 Package pdftex.def Info: ./img/bermoulliInviscidRegions.png  used on input line
- 61.
+ 65.
 (pdftex.def)             Requested size: 198.45663pt x 118.07133pt.
- [1
+
+[1
 
 {C:/Users/oskat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/bermo
 ulliInviscidRegions.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 167.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 170.
 
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 170.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 170.
 
 [2] [3] (main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -526,33 +589,34 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9046 strings out of 492946
- 163826 string characters out of 3126267
- 596445 words of memory out of 3000000
- 12860 multiletter control sequences out of 15000+200000
- 9613 words of font info for 33 fonts, out of 3000000 for 9000
+ 9709 strings out of 492946
+ 171851 string characters out of 3126267
+ 606980 words of memory out of 3000000
+ 13496 multiletter control sequences out of 15000+200000
+ 11847 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,8n,46p,1220b,1279s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/oskat/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/oskat/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
-/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/oskat/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:
-/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (3 pages, 230742 bytes).
+ 42i,9n,46p,1220b,1284s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\oskat\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/esint/dpi600
+\esint10.pk><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/oskat/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/os
+kat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oskat/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Us
+ers/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl
+10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (3 pages, 231581 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
