@@ -1,17 +1,17 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'main.blg'
 [25] biber-MSWIN64:315> INFO - === 
-[50] Biber.pm:371> INFO - Reading 'main.bcf'
-[124] Biber.pm:889> INFO - Found 1 citekeys in bib section 0
-[135] Biber.pm:4093> INFO - Processing section 0
-[147] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
-[150] bibtex.pm:1523> INFO - LaTeX decoding ...
-[158] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
-[177] Utils.pm:193> WARN - month field 'oct' in entry 'White2011' is not an integer - this will probably not sort properly.
-[191] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[191] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[191] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[191] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[192] bbl.pm:636> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[193] bbl.pm:739> INFO - Output to main.bbl
-[194] Biber.pm:110> INFO - WARNINGS: 1
+[54] Biber.pm:371> INFO - Reading 'main.bcf'
+[128] Biber.pm:889> INFO - Found 2 citekeys in bib section 0
+[140] Biber.pm:4093> INFO - Processing section 0
+[152] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
+[156] bibtex.pm:1523> INFO - LaTeX decoding ...
+[167] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
+[185] Utils.pm:193> WARN - month field 'oct' in entry 'White2011' is not an integer - this will probably not sort properly.
+[204] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[204] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[204] Biber.pm:3921> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[204] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[207] bbl.pm:636> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[208] bbl.pm:739> INFO - Output to main.bbl
+[209] Biber.pm:110> INFO - WARNINGS: 1

@@ -18,7 +18,49 @@
 
 
 \refsection{0}
-  \datalist[entry]{none/global//global/global}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{Moukalled2016}{book}{}
+      \name{author}{3}{}{%
+        {{hash=090a7ac77260a7ca9bc89d916f36f898}{%
+           family={Moukalled},
+           familyi={M\bibinitperiod},
+           given={F},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1ff4954c3e58a8b001eb53e8269c3438}{%
+           family={Mangani},
+           familyi={M\bibinitperiod},
+           given={L},
+           giveni={L\bibinitperiod}}}%
+        {{hash=2ab2b6dd25340d302e0592af4ff96e03}{%
+           family={Darwish},
+           familyi={D\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{a55b728b1f06319cbdf04eae13177c42}
+      \strng{fullhash}{a55b728b1f06319cbdf04eae13177c42}
+      \strng{bibnamehash}{a55b728b1f06319cbdf04eae13177c42}
+      \strng{authorbibnamehash}{a55b728b1f06319cbdf04eae13177c42}
+      \strng{authornamehash}{a55b728b1f06319cbdf04eae13177c42}
+      \strng{authorfullhash}{a55b728b1f06319cbdf04eae13177c42}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An Advanced Introduction with OpenFOAM{®} and Matlab {®} This textbook explores both the theoretical foundation of the Finite Volume Method (FVM) and its applications in Computational Fluid Dynamics (CFD). Readers will discover a thorough explanation of the FVM numerics and algorithms used in the simulation of incompressible and compressible fluid flows, along with a detailed examination of the components needed for the development of a collocated unstructured pressure-based CFD solver. Two particular CFD codes are explored. The first is uFVM, a three-dimensional unstructured pressure-based finite volume academic CFD code, implemented within Matlab{®}. The second is OpenFOAM{®}, an open source framework used in the development of a range of CFD programs for the simulation of industrial scale flow problems. With over 220 figures, numerous examples and more than one hundred exercises on FVM numerics, programming, and applications, this textbook is suitable for use in an introductory course on the FVM, in an advanced course on CFD algorithms, and as a reference for CFD programmers and researchers.}
+      \field{isbn}{978-3-319-16873-9}
+      \field{title}{{The Finite Volume Method in Computational Fluid Dynamics: An Advanced Introduction with OpenFOAM{®} and Matlab{®}}}
+      \field{year}{2016}
+      \field{pages}{816}
+      \range{pages}{1}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/2016{\_}Book{\_}TFVMICFDAAIWOAM.pdf:pdf
+      \endverb
+      \keyw{is{\_}book}
+    \endentry
     \entry{White2011}{book}{}
       \name{author}{1}{}{%
         {{hash=0de5dcae73c13670304419d4aea65932}{%
@@ -36,8 +78,8 @@
       \strng{authorbibnamehash}{0de5dcae73c13670304419d4aea65932}
       \strng{authornamehash}{0de5dcae73c13670304419d4aea65932}
       \strng{authorfullhash}{0de5dcae73c13670304419d4aea65932}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{7th}

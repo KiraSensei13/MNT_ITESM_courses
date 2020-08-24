@@ -17,10 +17,14 @@
 }
 \usepackage{graphicx}
 \usepackage[
-    style   = ieee,
-    backend = biber,
-    natbib  = true
+    style     = ieee,         % references format style
+    backend   = biber,        % choose the processing program
+    natbib    = true,         % enable additional reference formats
+    citestyle = numeric-comp, % enable multiple citations
+    sortcites = true,         % sort references in multiple citations
+    sorting   = nyt           % sort the reference table
 ]{biblatex}
+
 \addbibresource{references.bib}
 
 \begin{document}
@@ -35,12 +39,6 @@ With this homework you will practice the use of the concepts and knowledge acqui
 \subsection*{Part A}
 \textit{Find five differential equations found in fluid mechanics, heat transfer, mass transfer, bioengineering or reaction engineering. Three of them must be PDE (Partial differential equations), and you must explain each term, the physical meaning of each term, and what they represent.}
 
-\subsubsection*{Bernoulli equation}
-
-\begin{equation}
-\frac{P}{\rho} + \frac{v^2}{2} + g z = constant
-\end{equation}
-
 \subsubsection*{Conservation of Mass : Continuity Equation}
 
 \begin{equation}
@@ -49,33 +47,71 @@ With this homework you will practice the use of the concepts and knowledge acqui
 
 The conservation of mass equation
 is obtained by replacing $B$ in the Reynolds transport theorem by mass $m$, and $b$ by 1 ($m$ per unit mass = $1$).
-\cite{White2011}
+
+\subsubsection*{Conservation of Momentum : Bernoulli equation}
+
+\begin{equation}
+\frac{P}{\rho} + \frac{v^2}{2} + \textsl{g} z = constant
+\end{equation}
+
+The Bernoulli equation is valid in inviscid regions of flow where net viscous forces are negligible compared to inertial, gravitational, or pressure forces.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{./img/bermoulliInviscidRegions.png}
+\caption{Adapted from \cite{White2011}}
+\label{fig:universe}
+\end{figure}
+
+This equation describes a balance between pressure (flow energy) $\displaystyle \frac{P}{\rho}$, velocity (kinetic energy) $\displaystyle \frac{V^2}{2}$, and position (potential energy) $\textsl{g} z$ of fluid particles relative to the gravity vector (potential energy) in regions of a fluid flow where frictional force on fluid particles is negligible compared to pressure force in that region of the flow (see inviscid flow). There are multiple forms of the Bernoulli equation for incompressible vs. compressible, steady vs. nonsteady, and derivations through Newton’s law vs. the first law of thermodynamics. The most commonly used forms are for steady incompressible fluid flow derived through conservation of momentum.
+
+
 
 \subsubsection*{Conservation of Energy : 1st Law of Thermodynamics}
 
 \begin{equation}
-\frac{\partial E}{\partial t} + \vec{\nabla} \cdot (E \vec{v}) = \rho u + \rho \frac{v^2}{2} + g z
+\frac{d E}{d t} = \frac{d}{d t} \int\limits_{volume} e \rho dV + \int\limits_{surface} e \rho (\vec{v} \cdot \vec{n}) dA
+\label{eq_conservationOfEnergy}
 \end{equation}
 
-\subsubsection*{Linear Momentum - Cauchy's equation}
+The total energy within a system is affected by work transfer $W$ and heat transfer $Q$. Since energy is conserved, the total energy of the system is $\displaystyle E = Q + W$. \cite{Moukalled2016, White2011}
+
+\textbf{Heat Transfer $Q$ :} The internal energy, heat or thermal energy tends to move from a high temperature body to a low temperature body. The temperature difference dictates the rate of heat transfer. At higher temperature differences, the higher is the rate of heat transfer. Once the temperature is balanced between the two bodies, heat transfer stops.
+
+\textbf{Work Transfer $W$ :} Work is an energy interaction related to a force. A system may involve several forms of work, in such a way that: $\displaystyle W = W_{motor} + W_{pressure} + W_{viscous} + \textrm{work done by other forces} \dots$. $W_{motor}$ is the work done by a rotating shaft,  $W_{pressure}$ is the work transmitted by pressure forces, and $W_{viscous}$ are the normal and shear stress components of viscous forces. $W$ can also be comprised by work done by other forces such as surface tension, magnetic and electric. $W_{viscous}$ is only considered when the moving walls are part of the control surface.
+
+The relationship between conservation of energy for a control volume is obtained by the Reynolds transport theorem, replacing $B$ with the total energy $E$ and $\hat{B}$ with the total energy per unit mass, which is $e = \displaystyle u + \frac{v^2}{2} + \textsl{g} z$. $u$, $\displaystyle \frac{v^2}{2}$, and $\textsl{g} z$ are the internal, kinetic, and potential energies per unit mass respectively. In other words, $\displaystyle \frac{d E}{d t}$ can be described as follows:
+
+$$ \left(
+    \begin{array}{c}
+        \textrm{The rate of} \\
+        \textrm{energy transfer by} \\
+        \textrm{heat and work} \\
+    \end{array}
+\right) = \left(
+    \begin{array}{c}
+        \textrm{The time rate of} \\
+        \textrm{change in energy} \\
+    \end{array}
+\right) + \left(
+    \begin{array}{c}
+        \textrm{The flow rate of} \\
+        \textrm{energy out of} \\
+        \textrm{the surface} \\
+    \end{array}
+\right) $$
+
+\subsubsection*{Linear Momentum : Cauchy's equation}
 
 \begin{equation}
-\frac{\partial}{\partial t} (\rho \vec{v}) + \vec{\nabla} \cdot (\rho \vec{v} \vec{v}) = \rho \vec{g} + \vec{\nabla} \cdot \sigma_{ij}
+\frac{\partial}{\partial t} (\rho \vec{v}) + \vec{\nabla} \cdot (\rho \vec{v} \vec{v}) = \rho \vec{\textsl{g}} + \vec{\nabla} \cdot \sigma_{ij}
 \end{equation}
 
 \subsubsection*{Linear Momentun : Navier-Stokes Equation}
 
 \begin{equation}
-\rho \frac{d \vec{v}}{d t} = - \vec{\nabla} P + \rho \vec{g} + \mu \nabla^2 \vec{v}
+\rho \frac{d \vec{v}}{d t} = - \vec{\nabla} P + \rho \vec{\textsl{g}} + \mu \nabla^2 \vec{v}
 \end{equation}
-
-
-
-
-
-
-
-
 
 \subsection*{\emph{Part B}}
 \textit{Select one problem of any of the fields listed above, and solve it, following the steps given below.}
@@ -130,10 +166,3 @@ is obtained by replacing $B$ in the Reynolds transport theorem by mass $m$, and 
 
 \printbibliography[title={References}]
 \end{document}
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[scale=1.7]{universe}
-%\caption{The Universe}
-%\label{fig:universe}
-%\end{figure}
