@@ -5,8 +5,13 @@
 \author{Osamu Katagiri-Tanaka : A01212611}
 \date{\today}
 
+% import math symbols
 \usepackage{amsmath, esint}
+
+% import continuous lists
 \usepackage{enumitem}
+
+% format margins and paper size
 \usepackage{geometry}
 \geometry{
 	paper         = a4paper, % Change to letterpaper for US letter
@@ -16,7 +21,11 @@
 	top           = 1.5cm,   % Top margin
 	bottom        = 1.5cm    % Bottom margin
 }
+
+% import figure handler
 \usepackage{graphicx}
+
+% import references handler
 \usepackage[
     style     = ieee,         % references format style
     backend   = biber,        % choose the processing program
@@ -25,11 +34,14 @@
     sortcites = true,         % sort references in multiple citations
     sorting   = nyt           % sort the reference table
 ]{biblatex}
-
 \addbibresource{references.bib}
 
 % Note that ‘d’ in the differential is conventionally set in roman.
 \newcommand{\ud}{\,\mathrm{d}}
+
+% Paragraph spacing
+\setlength{\parskip}{0.2cm}           % spacing between paragraphs
+\renewcommand{\baselinestretch}{1.25} % spacing between lines
 
 \begin{document}
 
@@ -46,19 +58,20 @@ With this homework you will practice the use of the concepts and knowledge acqui
 \subsubsection*{Conservation of Mass : Continuity Equation}
 
 \begin{equation}
-\frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot (\rho \vec{v}) = 0
+\frac{\ud}{\ud t} \iiint \rho \ud V + \oiint \vec{n} \cdot (\rho \vec{v}) \ud A = \frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot (\rho \vec{v}) = 0
+\label{eq_continuityEquation}
 \end{equation}
 
-The conservation of mass equation
-is obtained by replacing $B$ in the Reynolds transport theorem by mass $m$, and $b$ by 1 ($m$ per unit mass = $1$).
+For closed systems, the conservation of mass principle is achieved by fixing the mass to a constant; however for control volumes, mass can move through the boundaries. The continuity equation must monitor the amount of mass entering and leaving the control volume. The conservation of mass equation \ref{eq_continuityEquation} is obtained by replacing $B$ in the Reynolds transport theorem by mass $m$, and $\hat{B}$ by 1 ($m$ per unit mass = $1$), and states that the time rate of change of mass plus the mass flow rate in the control volume is equal to zero \cite{White2011, Moukalled2016}.
 
-\subsubsection*{Conservation of Momentum : Bernoulli equation}
+\subsubsection*{Conservation of Mechanical Energy : Bernoulli equation}
 
 \begin{equation}
 \frac{P}{\rho} + \frac{v^2}{2} + \textsl{g} z = constant
+\label{eq_bernoulliSteadyIncompressible}
 \end{equation}
 
-The Bernoulli equation is valid in inviscid regions of flow where net viscous forces are negligible compared to inertial, gravitational, or pressure forces.
+The Bernoulli equation is valid in inviscid regions of a steady incompressible flow where net viscous forces are negligible compared to inertial, gravitational, or pressure forces \cite{White2011}.
 
 \begin{figure}[h!]
 \centering
@@ -67,23 +80,24 @@ The Bernoulli equation is valid in inviscid regions of flow where net viscous fo
 \label{fig:universe}
 \end{figure}
 
-This equation describes a balance between pressure (flow energy) $\displaystyle \frac{P}{\rho}$, velocity (kinetic energy) $\displaystyle \frac{V^2}{2}$, and position (potential energy) $\textsl{g} z$ of fluid particles relative to the gravity vector (potential energy) in regions of a fluid flow where frictional force on fluid particles is negligible compared to pressure force in that region of the flow (see inviscid flow). There are multiple forms of the Bernoulli equation for incompressible vs. compressible, steady vs. nonsteady, and derivations through Newton’s law vs. the first law of thermodynamics. The most commonly used forms are for steady incompressible fluid flow derived through conservation of momentum.
+Equation \ref{eq_bernoulliSteadyIncompressible} is derived from the Bernoulli equation for a steady compressible flow $\displaystyle \int \frac{\ud P}{\rho} + \frac{v^2}{2} + \textsl{g} z = constant$, where $\rho$ is constant. Steady simply means no change in velocity $v$ with time at a specified location, but $v$ can change from one location to another. Equation \ref{eq_bernoulliSteadyIncompressible} describes a balance between pressure (flow energy) $\displaystyle \frac{P}{\rho}$, velocity (kinetic energy) $\displaystyle \frac{v^2}{2}$, and position (potential energy) $\textsl{g} z$ of fluid particles relative to the gravity vector. There are various forms of the Bernoulli equation for incompressible/compressible, steady/nonsteady, and derivations through Newton's second law (linear momentum equation) and the first law of thermodynamics. The most commonly used forms are for steady incompressible fluid flow derived through conservation of momentum, as depicted in Equation \ref{eq_bernoulliSteadyIncompressible} \cite{White2011}.
 
+The flow, kinetic and potential energies are forms of mechanical energy, therefore the Bernoulli equation only works in systems where the mechanical energy and thermal energy are conserved separately. Equation \ref{eq_bernoulliSteadyIncompressible} states that various forms of mechanical energy are converted to each other, but their sum remains constant. There is no dissipation of mechanical energy as there is no friction that converts such mechanical energy to thermal energy. Bernoulli equation is derived from a force balance on a particle moving, hence no shaft work of considered \cite{White2011}.
 
 \subsubsection*{Conservation of Energy : 1st Law of Thermodynamics}
 
 \begin{equation}
-\frac{\ud E}{\ud t} = \frac{\partial \rho e}{ \partial t} + \vec{\nabla} \cdot (\rho \vec{v} e) = \frac{\ud}{\ud t} \iiint e \rho \ud V + \oiint e \rho (\vec{v} \cdot \vec{n}) \ud A
+\frac{\ud E}{\ud t} = \frac{\ud}{\ud t} \iiint e \rho \ud V + \oiint e \rho (\vec{v} \cdot \vec{n}) \ud A = \frac{\partial \rho e}{ \partial t} + \vec{\nabla} \cdot (\rho \vec{v} e)
 \label{eq_conservationOfEnergy}
 \end{equation}
 
-The total energy within a system is affected by work transfer $W$ and heat transfer $Q$. Since energy is conserved, the total energy of the system is $\displaystyle E = Q + W$. \cite{Moukalled2016, White2011}
+The total energy within a system is affected by work transfer $W$ and heat transfer $Q$. Since energy is conserved, the total energy of the system is $\displaystyle E = Q + W$ \cite{Moukalled2016, White2011}. Unlike Bernoulli's equation, Equation \ref{eq_conservationOfEnergy} considers the heat transfer.
 
-\textbf{Heat Transfer $Q$ :} The internal energy, heat or thermal energy tends to move from a high temperature body to a low temperature body. The temperature difference dictates the rate of heat transfer. At higher temperature differences, the higher is the rate of heat transfer. Once the temperature is balanced between the two bodies, heat transfer stops.
+\textbf{Heat Transfer $Q$ :} The internal energy, heat or thermal energy tends to move from a high temperature body to a low temperature body. The temperature difference dictates the rate of heat transfer. At higher temperature differences, the higher is the rate of heat transfer. Once the temperature is balanced between the two bodies, heat transfer stops \cite{White2011}.
 
-\textbf{Work Transfer $W$ :} Work is an energy interaction related to a force. A system may involve several forms of work, in such a way that: $\displaystyle W = W_{motor} + W_{pressure} + W_{viscous} + \textrm{work done by other forces} \dots$. $W_{motor}$ is the work done by a rotating shaft,  $W_{pressure}$ is the work transmitted by pressure forces, and $W_{viscous}$ are the normal and shear stress components of viscous forces. $W$ can also be comprised by work done by other forces such as surface tension, magnetic and electric. $W_{viscous}$ is only considered when the moving walls are part of the control surface.
+\textbf{Work Transfer $W$ :} Work (or mechanical energy) is an energy interaction related to a force. A system may involve several forms of work, in such a way that: $\displaystyle W = W_{motor} + W_{pressure} + W_{viscous} + \textrm{work done by other forces} \dots$. $W_{motor}$ is the work done by a rotating shaft,  $W_{pressure}$ is the work transmitted by pressure forces, and $W_{viscous}$ are the normal and shear stress components of viscous forces. $W$ can also be comprised by work done by other forces such as surface tension, magnetic and electric. $W_{viscous}$ is only considered when the moving walls are part of the control surface \cite{White2011}.
 
-The relationship between conservation of energy for a control volume is obtained by the Reynolds transport theorem, replacing $B$ with the total energy $E$ and $\hat{B}$ with the total energy per unit mass, which is $e = \displaystyle u + \frac{v^2}{2} + \textsl{g} z$. $u$, $\displaystyle \frac{v^2}{2}$, and $\textsl{g} z$ are the internal, kinetic, and potential energies per unit mass respectively. In other words, $\displaystyle \frac{\ud E}{\ud t}$ can be described as follows:
+The relationship between conservation of energy for a control volume is obtained by the Reynolds transport theorem, replacing $B$ with the total energy $E$ and $\hat{B}$ with the total energy per unit mass, which is $e = \displaystyle u + \frac{v^2}{2} + \textsl{g} z = constant$. $u$, $\displaystyle \frac{v^2}{2}$, and $\textsl{g} z$ are the internal, kinetic, and potential energies per unit mass respectively \cite{Moukalled2016, White2011}. In other words, $\displaystyle \frac{\ud E}{\ud t}$ can be described as follows:
 
 $$ \left(
     \begin{array}{c}
