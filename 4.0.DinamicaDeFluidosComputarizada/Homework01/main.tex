@@ -62,7 +62,31 @@ With this homework you will practice the use of the concepts and knowledge acqui
 \label{eq_continuityEquation}
 \end{equation}
 
-For closed systems, the conservation of mass principle is achieved by fixing the mass to a constant; however for control volumes, mass can move through the boundaries. The continuity equation must monitor the amount of mass entering and leaving the control volume. The conservation of mass equation \ref{eq_continuityEquation} is obtained by replacing $B$ in the Reynolds transport theorem by mass $m$, and $\hat{B}$ by 1 ($m$ per unit mass = $1$), and states that the time rate of change of mass plus the mass flow rate in the control volume is equal to zero \cite{White2011, Moukalled2016}.
+For closed systems, the conservation of mass principle is achieved by fixing the mass to a constant; however for control volumes, mass can move through the boundaries. The continuity equation must monitor the amount of mass entering and leaving the control volume, see Equation \ref{fig_changeOfMass}. The conservation of mass equation \ref{eq_continuityEquation} is obtained by replacing $B$ in the Reynolds transport theorem by mass $m$, and $\hat{B}$ by 1 ($m$ per unit mass = $1$), and states that the time rate of change of mass plus the mass flow rate in the control volume is equal to zero \cite{White2011, Moukalled2016}.
+
+\begin{equation}
+\left(
+    \begin{array}{c}
+        \textrm{change of mass} \\
+        \textrm{within the} \\
+        \textrm{control volume} \\
+        \Delta m_{CV}
+    \end{array}
+\right) = \left(
+    \begin{array}{c}
+        \textrm{mass entering} \\
+        m_{in}
+    \end{array}
+\right) - \left(
+    \begin{array}{c}
+        \textrm{mass leaving} \\
+        m_{out}
+    \end{array}
+\right)
+\label{fig_changeOfMass}
+\end{equation}
+
+Where: $\displaystyle m_{CV} = \iiint \rho \ud V$ is the total mass within the control volume $CV$ and $\displaystyle \frac{\ud m_{CV}}{\ud t} = \frac{\ud}{\ud t} \iiint \rho \ud V$ is the rate of change of mass within $CV$. Given the mass flow of $m_{in}$ or $m_{out}$ through a differential area $\ud A$ , the mass flow rate is dependent on the fluid density $\rho$, normal velocity $\vec{v}$, and the flow area $\ud A$. The flow rate out or into $CV$ over the entire control surface is $\displaystyle \dot{m} = \oiint \vec{n} \cdot (\rho \vec{v}) \ud A$ \cite{White2011}. In other words, if $\displaystyle \frac{\ud m_{CV}}{\ud t} < 0$, $m_{in}$ shall increase with the mass flow rate to compensate the lost mass in $m_{CV}$, or increase $m_{out}$ if $\displaystyle \frac{\ud m_{CV}}{\ud t} > 0$; hence the conservation of mass.
 
 \subsubsection*{Conservation of Mechanical Energy : Bernoulli equation}
 
@@ -77,7 +101,7 @@ The Bernoulli equation is valid in inviscid regions of a steady incompressible f
 \centering
 \includegraphics[width=0.45\textwidth]{./img/bermoulliInviscidRegions.png}
 \caption{Adapted from \cite{White2011}}
-\label{fig:universe}
+\label{fig_bermoulliInviscidRegions}
 \end{figure}
 
 Equation \ref{eq_bernoulliSteadyIncompressible} is derived from the Bernoulli equation for a steady compressible flow $\displaystyle \int \frac{\ud P}{\rho} + \frac{v^2}{2} + \textsl{g} z = constant$, where $\rho$ is constant. Steady simply means no change in velocity $v$ with time at a specified location, but $v$ can change from one location to another. Equation \ref{eq_bernoulliSteadyIncompressible} describes a balance between pressure (flow energy) $\displaystyle \frac{P}{\rho}$, velocity (kinetic energy) $\displaystyle \frac{v^2}{2}$, and position (potential energy) $\textsl{g} z$ of fluid particles relative to the gravity vector. There are various forms of the Bernoulli equation for incompressible/compressible, steady/nonsteady, and derivations through Newton's second law (linear momentum equation) and the first law of thermodynamics. The most commonly used forms are for steady incompressible fluid flow derived through conservation of momentum, as depicted in Equation \ref{eq_bernoulliSteadyIncompressible} \cite{White2011}.
