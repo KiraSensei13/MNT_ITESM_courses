@@ -19,6 +19,43 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{Cengel2017}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4bf42db407cafa4dfd3a4cee5762a64b}{%
+           family={Cengel},
+           familyi={C\bibinitperiod},
+           given={Yunus},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=5be18335a4b0703f32d7088fd796ef52}{%
+           family={Cimbala},
+           familyi={C\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Education}%
+      }
+      \strng{namehash}{713dd042ad94846d37577a4e525b3c2a}
+      \strng{fullhash}{713dd042ad94846d37577a4e525b3c2a}
+      \strng{bibnamehash}{713dd042ad94846d37577a4e525b3c2a}
+      \strng{authorbibnamehash}{713dd042ad94846d37577a4e525b3c2a}
+      \strng{authornamehash}{713dd042ad94846d37577a4e525b3c2a}
+      \strng{authorfullhash}{713dd042ad94846d37577a4e525b3c2a}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4th}
+      \field{isbn}{978-1-259-69653-4}
+      \field{title}{{Fluid Mechanics Fundamentals and Applications}}
+      \field{year}{2017}
+      \field{pages}{1051}
+      \range{pages}{1}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/2017{\_}Book{\_}FluidMechanicsFundamentalsAndApplications.pdf:pdf
+      \endverb
+      \keyw{microfluidics}
+    \endentry
     \entry{Moukalled2016}{book}{}
       \name{author}{3}{}{%
         {{hash=090a7ac77260a7ca9bc89d916f36f898}{%

@@ -146,16 +146,78 @@ $$ \left(
 
 \begin{equation}
 \frac{\partial}{\partial t} (\rho \vec{v}) + \vec{\nabla} \cdot (\rho \vec{v} \vec{v}) = \rho \vec{\textsl{g}} + \vec{\nabla} \cdot \sigma_{ij}
+\label{eq_cauchyEquation}
 \end{equation}
+
+Equation \ref{eq_cauchyEquation} is derived from the Reynolds transport theorem for linear momentum in a control volume ($B = m \vec{v}$ and $\hat{B} = \vec{v}$ per unit mass) \cite{White2011}. This equation states that the total force acting on the control volume is equal to the rate at which momentum changes $\displaystyle \left( \sum \vec{F}_{body} = \iiint \frac{\partial}{\partial t} (\rho \vec{v}) \ud V \right)$ plus the rate at which momentum flows out of the control volume minus the rate at which momentum flows into the control volume $\displaystyle \left( \sum_{out} \vec{F}_{surface} - \sum_{into} \vec{F}_{surface} = \oiint \vec{n} (\rho \vec{v} \vec{v}) \ud A \right)$. $\sigma_{ij}$ is the stress tensor.
+
+Equation \ref{eq_cauchyEquation} is valid for compressible and incompressible at any point in the flow domain. However, Cauchy's equation is not able to solve any fluid mechanic problem as the stress tensor $\sigma_{ij}$ needs to be expressed in terms of unknowns such as density, pressure, velocity, viscosity, surface tension, etc \cite{White2011}.
 
 \subsubsection*{Linear Momentun : Navier-Stokes Equation}
 
 \begin{equation}
 \rho \frac{\ud \vec{v}}{\ud t} = - \vec{\nabla} P + \rho \vec{\textsl{g}} + \mu \nabla^2 \vec{v}
+\label{eq_navierStokesEquation}
 \end{equation}
+
+Equation \ref{eq_navierStokesEquation} is the Navier–Stokes equation for an incompressible flow with constant viscosity. Navier-Stokes equation is Newton's second law (conservation of momentum) adapted for a fluid particle with the viscous stress tensor $(\sigma_{ij})$ replaced by the constitutive relationship between stress $(\tau_{ij})$ and strain rate $(\varepsilon_{ij})$ tensors for Newtonian fluids as in Equation \ref{eq_vicousStressTensor} in Cartesian coordinates. In other words, Equation \ref{eq_navierStokesEquation} is the conservation of momentum for Newtonian fluids, which assumes that the viscosity $\mu$ is constant.
+
+\begin{equation}
+\begin{array}{c}
+    \tau_{ij} = 2 \mu \varepsilon_{ij} \\
+    \tau_{ij} = \left( 
+        \begin{matrix}
+            \displaystyle 2 \mu \frac{\partial u}{\partial x} &
+            \displaystyle \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) &
+            \displaystyle \mu \left( \frac{\partial u}{\partial z} + \frac{\partial w}{\partial x} \right) \\
+            
+            \displaystyle \mu \left( \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} \right) &
+            \displaystyle 2 \mu \frac{\partial v}{\partial y} &
+            \displaystyle \mu \left( \frac{\partial v}{\partial z} + \frac{\partial w}{\partial y} \right) \\
+            
+            \displaystyle \mu \left( \frac{\partial w}{\partial x} + \frac{\partial u}{\partial z} \right) &
+            \displaystyle \mu \left( \frac{\partial w}{\partial y} + \frac{\partial v}{\partial z} \right) &
+            \displaystyle 2 \mu \frac{\partial w}{\partial z} \\
+        \end{matrix}
+    \right) \\
+    \sigma_{ij} = \left( 
+        \begin{matrix}
+            -P &  0 &  0 \\
+             0 & -P &  0 \\
+             0 &  0 & -P \\
+        \end{matrix}
+    \right) + \tau_{ij} \\
+\end{array}
+\label{eq_vicousStressTensor}
+\end{equation}
+
+Notice that for a fluid at rest, the viscous stresses are neglected therefore $\tau_{ij}$ is a   `zero matrix'. Table \ref{tb_NewtonNavierStokes} relates Newton's second law $\displaystyle \sum F = m a$ with the Navier-Stokes equation.
+
+\begin{table}[h!]
+\caption{Newton's 2nd law vs. Navier-Stokes equation}
+\begin{center}
+\begin{tabular}{ c | c   c }
+                 & Newton's 2nd law & Navier-Stokes equation \\
+    \hline
+    force        & $\displaystyle \sum F$ & $\displaystyle - \vec{\nabla} P + \rho \vec{\textsl{g}} + \mu \nabla^2 \vec{v}$ \\
+    mass/density & $\displaystyle m$ & $\displaystyle \rho$ \\
+    acceleration & $\displaystyle a$ & $\displaystyle \frac{\ud \vec{v}}{\ud t}$
+\end{tabular}
+\end{center}
+\label{tb_NewtonNavierStokes}
+\end{table}
 
 \subsection*{\emph{Part B}}
 \textit{Select one problem of any of the fields listed above, and solve it, following the steps given below.}
+
+Problem taken from Cengel et al. \cite{Cengel2017}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.60\textwidth]{./img/PROBLEMBernoulliEquation.png}
+\caption{Taken from \cite{Cengel2017}}
+\label{fig_PROBLEMBernoulliEquation}
+\end{figure}
 
 \begin{enumerate}
 \item \textit{Read problem statement, and collect the information that may be needed.}
@@ -167,7 +229,12 @@ $$ \left(
 \item \textit{Make a Sketch (Diagram, process flow chart), indicating mass, linear or angular momentum (i.e. forces and torques) and energy interaction, and label each stream and boundaries as well.}
 \end{enumerate}
 
-
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.25\textwidth]{./img/FIGUREBernoulliEquation.png}
+\caption{Taken from \cite{Cengel2017}}
+\label{fig_FIGUREBernoulliEquation}
+\end{figure}
 
 \begin{enumerate}[resume]
 \item \textit{List Assumptions and Approximations (sometimes they may be inferred by the sketch, but make them explicit) supported by equations if possible (geometric relationships, or fundamental equations).}
