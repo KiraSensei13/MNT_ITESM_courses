@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  24 AUG 2020 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  25 AUG 2020 09:38
 entering extended mode
 **./main.tex
 (main.tex
@@ -582,41 +582,41 @@ Package pdftex.def Info: ./img/bermoulliInviscidRegions.png  used on input line
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3]
-<./img/PROBLEMBernoulliEquation.png, id=28, 452.4403pt x 145.29282pt>
+<./img/PROBLEMBernoulliEquation.png, id=28, 650.43pt x 226.59656pt>
 File: ./img/PROBLEMBernoulliEquation.png Graphic file (type png)
 <use ./img/PROBLEMBernoulliEquation.png>
 Package pdftex.def Info: ./img/PROBLEMBernoulliEquation.png  used on input line
  217.
-(pdftex.def)             Requested size: 264.61333pt x 84.97488pt.
-<./img/FIGUREBernoulliEquation.png, id=29, 189.70876pt x 255.95625pt>
-File: ./img/FIGUREBernoulliEquation.png Graphic file (type png)
-<use ./img/FIGUREBernoulliEquation.png>
-Package pdftex.def Info: ./img/FIGUREBernoulliEquation.png  used on input line 
-234.
-(pdftex.def)             Requested size: 110.25443pt x 148.75935pt.
- [4 <./img/PROBLEMBernoulliEquation.png> <./img/FIGUREBernoulliEquation.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 275.
+(pdftex.def)             Requested size: 264.61333pt x 92.186pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 227.
 
  ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 275.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 275.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 227.
+<./img/FIGUREBernoulliEquation.png, id=29, 369.63094pt x 154.32657pt>
+File: ./img/FIGUREBernoulliEquation.png Graphic file (type png)
+<use ./img/FIGUREBernoulliEquation.png>
+Package pdftex.def Info: ./img/FIGUREBernoulliEquation.png  used on input line 
+246.
+(pdftex.def)             Requested size: 308.71107pt x 128.89165pt.
+ [4 <./img/PROBLEMBernoulliEquation.png> <./img/FIGUREBernoulliEquation.png>]
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 289.
 [5] (main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9730 strings out of 492946
- 172537 string characters out of 3126267
- 609255 words of memory out of 3000000
- 13515 multiletter control sequences out of 15000+200000
+ 9732 strings out of 492946
+ 172574 string characters out of 3126267
+ 609244 words of memory out of 3000000
+ 13517 multiletter control sequences out of 15000+200000
  11847 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,13n,46p,1220b,1282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,13n,46p,1220b,1282s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\oskat\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/esint/dpi600
 \esint10.pk><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/font
@@ -635,7 +635,7 @@ ers/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl
 10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (5 pages, 304222 bytes).
+Output written on main.pdf (5 pages, 339512 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
