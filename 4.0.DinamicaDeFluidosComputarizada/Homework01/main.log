@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  25 AUG 2020 09:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  25 AUG 2020 20:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -91,6 +91,9 @@ LaTeX Info: Redefining \] on input line 2845.
 ) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/esint\esint.sty"
 Package: esint 
 \symlargesymbolsA=\mathgroup4
+)
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cancel\cancel.sty"
+Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.
 sty"
@@ -463,18 +466,18 @@ File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -554,14 +557,14 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 46.
-Package biblatex Info: Reference segment=0 on input line 46.
-LaTeX Font Info:    Try loading font information for U+esint on input line 48.
+Package biblatex Info: Reference section=0 on input line 47.
+Package biblatex Info: Reference segment=0 on input line 47.
+LaTeX Font Info:    Try loading font information for U+esint on input line 49.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/esint\uesint.fd"
 File: uesint.fd 
 )
-Overfull \hbox (4.99738pt too wide) in paragraph at lines 89--90
+Overfull \hbox (4.99738pt too wide) in paragraph at lines 90--91
 []\OT1/cmr/m/n/10 Where: $\OML/cmm/m/it/10 m[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/
 it/10  \OT1/cmr/m/n/10 d\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 is the to-tal mass
  within the con-trol vol-ume $\OML/cmm/m/it/10 CV$ \OT1/cmr/m/n/10 and $[] = []
@@ -575,7 +578,7 @@ it/10  \OT1/cmr/m/n/10 d\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 is the to-tal mass
 File: ./img/bermoulliInviscidRegions.png Graphic file (type png)
 <use ./img/bermoulliInviscidRegions.png>
 Package pdftex.def Info: ./img/bermoulliInviscidRegions.png  used on input line
- 102.
+ 103.
 (pdftex.def)             Requested size: 198.45663pt x 118.07133pt.
  [2 <./img/bermoulliInviscidRegions.png>]
 
@@ -586,35 +589,36 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./img/PROBLEMBernoulliEquation.png Graphic file (type png)
 <use ./img/PROBLEMBernoulliEquation.png>
 Package pdftex.def Info: ./img/PROBLEMBernoulliEquation.png  used on input line
- 217.
+ 218.
 (pdftex.def)             Requested size: 264.61333pt x 92.186pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 227.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 228.
 
  ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 227.
-<./img/FIGUREBernoulliEquation.png, id=29, 369.63094pt x 154.32657pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 228.
+<./img/FIGUREBernoulliEquation.png, id=29, 393.72093pt x 231.11343pt>
 File: ./img/FIGUREBernoulliEquation.png Graphic file (type png)
 <use ./img/FIGUREBernoulliEquation.png>
 Package pdftex.def Info: ./img/FIGUREBernoulliEquation.png  used on input line 
-246.
-(pdftex.def)             Requested size: 308.71107pt x 128.89165pt.
- [4 <./img/PROBLEMBernoulliEquation.png> <./img/FIGUREBernoulliEquation.png>]
+247.
+(pdftex.def)             Requested size: 264.61333pt x 155.3248pt.
+ [4 <./img/PROBLEMBernoulliEquation.png> <./img/FIGUREBernoulliEquation.png>] [
+5] [6]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 289.
-[5] (main.aux)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 363.
+ [7] (main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9732 strings out of 492946
- 172574 string characters out of 3126267
- 609244 words of memory out of 3000000
- 13517 multiletter control sequences out of 15000+200000
- 11847 words of font info for 46 fonts, out of 3000000 for 9000
+ 9762 strings out of 492946
+ 173073 string characters out of 3126267
+ 610079 words of memory out of 3000000
+ 13543 multiletter control sequences out of 15000+200000
+ 12206 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,13n,46p,1220b,1282s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\oskat\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/esint/dpi600
@@ -626,18 +630,21 @@ cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/os
 kat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmmi7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oskat/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Us
-ers/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl
-10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (5 pages, 339512 bytes).
+lic/amsfonts/cm/cmmi5.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/oskat/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oskat/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/oskat/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/U
+sers/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsl10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/oskat/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/oskat/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on main.pdf (7 pages, 371628 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
+ 108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

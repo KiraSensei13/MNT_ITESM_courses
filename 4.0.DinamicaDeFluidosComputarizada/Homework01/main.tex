@@ -7,6 +7,7 @@
 
 % import math symbols
 \usepackage{amsmath, esint}
+\usepackage{cancel}
 
 % import continuous lists
 \usepackage{enumitem}
@@ -220,71 +221,144 @@ Problem taken from Cengel et al. \cite{Cengel2017}.
 \end{figure}
 
 \begin{enumerate}
-\item \textit{Read problem statement, and collect the information that may be needed.}
+\item \textit{Read \textbf{problem statement}, and collect the information that may be needed.}
 \end{enumerate}
 
 \begin{itemize}
 \item Cylindrical swimming pool dimensions:
     \begin{itemize}
-    \item[$\circ$] $diameter = 8 m$,
-    \item[$\circ$] $height = 3 m$
+    \item[$\circ$] $diameter = 8 m$, $height = 3 m$
     \end{itemize}
 \item Drainage pipe dimensions:
     \begin{itemize}
-    \item[$\circ$] $diameter = 3 cm$,
-    \item[$\circ$] $length = 25 m$,
+    \item[$\circ$] $diameter = 3 cm$, $length = 25 m$,
     \item[$\circ$] attached at the bottom of the pool
     \end{itemize}
 \end{itemize}
 
 \begin{enumerate}[resume]
-\item \textit{Make a Sketch (Diagram, process flow chart), indicating mass, linear or angular momentum (i.e. forces and torques) and energy interaction, and label each stream and boundaries as well.}
+\item \textit{Make a \textbf{Sketch} (Diagram, process flow chart), indicating mass, linear or angular momentum (i.e. forces and torques) and energy interaction, and label each stream and boundaries as well.}
 \end{enumerate}
+
+See Figure \ref{fig_FIGUREBernoulliEquation}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.70\textwidth]{./img/FIGUREBernoulliEquation.png}
+\includegraphics[width=0.60\textwidth]{./img/FIGUREBernoulliEquation.png}
 \caption{Sketch}
 \label{fig_FIGUREBernoulliEquation}
 \end{figure}
 
 \begin{enumerate}[resume]
-\item \textit{List Assumptions and Approximations (sometimes they may be inferred by the sketch, but make them explicit) supported by equations if possible (geometric relationships, or fundamental equations).}
+\item \textit{List \textbf{Assumptions and Approximations} (sometimes they may be inferred by the sketch, but make them explicit) supported by equations if possible (geometric relationships, or fundamental equations).}
 \end{enumerate}
 
 \begin{itemize}
-\item 
+\item Bernoulli's equation is applicable:
+    \begin{itemize}
+    \item[$\circ$] the flow is steady and incompressible,
+    \item[$\circ$] friction effects are negligible
+    \end{itemize}
 \end{itemize}
 
 \begin{enumerate}[resume]
-\item \textit{Physical Laws (Fundamental Laws) must be written in full form, and terms can be dropped by the right selection of frame of reference, operating conditions, assumptions, simplifications or constraints.}
+\item \textit{\textbf{Physical Laws} (Fundamental Laws) must be written in full form, and terms can be dropped by the right selection of frame of reference, operating conditions, assumptions, simplifications or constraints.}
 \end{enumerate}
 
+\begin{itemize}
+\item Conservation of Mechanical Energy:
+$$ \frac{P}{\rho} + \frac{v^2}{2} + \textsl{g} z = constant \textrm{, therefore:}$$
+$$ \frac{P_{pool}}{\rho} + \frac{{v_{pool}}^2}{2} + \textsl{g} z_{pool} = \frac{P_{pipe}}{\rho} + \frac{{v_{pipe}}^2}{2} + \textsl{g} z_{pipe} $$
+\end{itemize}
 
+with the following considerations:
+\begin{itemize}
+\item the reference z position is $z_{ref}$ at the base of the pool $z = 0m$,
+\item $P = P_{pool} = P_{pipe}$ as both openings are open to the same atmosphere,
+\item $v_{pool} \simeq 0$, as the water level of the pool decreases at a slow rate
+\item $z_{pipe} = 0m$, as the drainage takes place at the base of the pool (at $z_{ref} = 0m$). One can disregard the length of the pipe.
+\end{itemize}
 
 \begin{enumerate}[resume]
-\item \textit{Physical constants should be obtained from a reliable source (knowing this information by heart is always helpful ), geometric relations and formulae must be included as part of your analysis.}
+\item \textit{\textbf{Physical constants} should be obtained from a reliable source (knowing this information by heart is always helpful ), geometric relations and formulae must be included as part of your analysis.}
 \end{enumerate}
 
-
+\begin{itemize}
+\item Standard acceleration of gravity \cite{Cengel2017}:
+$$ \textsl{g} = 9.80665 \frac{m}{s^2} $$
+\end{itemize}
 
 \begin{enumerate}[resume]
-\item \textit{Physical transport or thermodynamic properties (Thermodynamic relations) should be evaluated, approximated, calculated or obtained from a reliable source.}
+\item \textit{\textbf{Physical transport or thermodynamic properties} (Thermodynamic relations) should be evaluated, approximated, calculated or obtained from a reliable source.}
 \end{enumerate}
 
 Not Applicable
 
 \begin{enumerate}[resume]
-\item \textit{Calculations are done including units. Any algebraic manipulation is recommended in few cases, because limits the step 8, but if needed should be done before using numerical values of constants, properties or variables.}
+\item \textit{\textbf{Calculations} are done including units. Any algebraic manipulation is recommended in few cases, because limits the step 8, but if needed should be done before using numerical values of constants, properties or variables.}
 \end{enumerate}
 
+\begin{itemize}
+\item Substituting the considerations of step 4 into the Bernoulli's equation, we have:
+$$ \cancel{\frac{P_{pool}}{\rho}} + \cancel{\frac{{v_{pool}}^2}{2}} + \textsl{g} z_{pool} = \cancel{\frac{P_{pipe}}{\rho}} + \frac{{v_{pipe}}^2}{2} + \cancel{\textsl{g} z_{pipe}} $$
+\end{itemize}
 
+\begin{itemize}
+\item Solving for $z_{pool}$ and $v_{pipe}$, gives:
+$$ z_{pool} = \frac{{v_{pipe}}^2}{2 \textsl{g}} $$
+$$ v_{pipe} = \sqrt{2 \textsl{g} z_{pool}} $$
+\end{itemize}
+
+$z_{pool}$ is the water level in the pool at time $t$, as $z_{pool}$ will approach zero as the water drains. On the other hand, $v_{pipe}$ is the velocity at which the fluid leaves the pipe.
+
+\begin{itemize}
+\item with a pool diameter $D_{pool} = 8m$ and a pipe diameter $D_{pipe} = 0.03m$, one can calculate the volume flow rate $\dot{V}$ as follows:
+$$ \dot{V} = A_{pipe} v_{pipe} $$
+Where, $\displaystyle A_{pipe} = \pi \left( \frac{D_{pipe}}{2} \right)^2$ is the cross-section area of the pipe.
+\end{itemize}
+
+\begin{itemize}
+\item $\dot{V} \ud t$ is the volume of fluid that leaves the pipe during a small time $\ud t$
+$$ \dot{V} \ud t = \pi \left( \frac{D_{pipe}}{2} \right)^2 \sqrt{2 \textsl{g} z_{pool}} \ud t $$
+\end{itemize}
+
+\begin{itemize}
+\item As mass is conserved in the process, the volume of fluid that leaves the pipe $\dot{V} \ud t$ shall be equal to the decrease of fluid volume in the pool.
+$$ \dot{V} \ud t = - A_{pool} \ud z_{pool} $$
+Where, $\displaystyle A_{pool} = \pi \left( \frac{D_{pool}}{2} \right)^2$ is the cross-section area of the pool. $\ud z_{pool}$ shall be a negative values as the water level is moving down.
+\end{itemize}
+
+\begin{itemize}
+\item The maximum discharge rate $\dot{V}_{max}$ is given by:
+$$ \dot{V}_{max} = \pi \left( \frac{D_{pipe}}{2} \right)^2 \sqrt{2 g z_{pool,max}} $$
+$$ \dot{V}_{max} = \pi \left( \frac{0.03m}{2} \right)^2 \sqrt{2 (9.80665 m/s^2) (3m)} $$
+$$ \dot{V}_{max} = 5.422 \times 10^{-3} \frac{m^3}{s} $$
+\end{itemize}
+
+\begin{itemize}
+\item Let's solve $\ud t$ from the previous two equations to get the time $t_{empty}$ required to empty the pool.
+$$ \pi \left( \frac{D_{pipe}}{2} \right)^2 \sqrt{2 \textsl{g} z_{pool}} \ud t = - \pi \left( \frac{D_{pool}}{2} \right)^2 \ud z $$
+$$ \ud t = - \frac{{D_{pool}}^2}{{D_{pipe}}^2 \sqrt{2 \textsl{g} z_{pool}}} \ud z_{pool} $$
+\end{itemize}
+
+\begin{itemize}
+\item Let's integrate:
+$$ \int_{t_{full} = 0s}^{t_{empty}} \ud t = - \frac{{D_{pool}}^2}{{D_{pipe}}^2 \sqrt{2 \textsl{g}}} \int_{z_{pool} = 3m}^{z_{pool} = 0m} \frac{1}{\sqrt{ z_{pool} }} \ud z_{pool} $$
+$$ t_{empy} - t_{full} = - \frac{{D_{pool}}^2}{{D_{pipe}}^2 \sqrt{2 \textsl{g}}} \left[ 2 \sqrt{z_{pool} } \right]_{z_{pool} = 3m}^{z_{pool} = 0m} $$
+$$ t_{empy} = \frac{2 {D_{pool}}^2 \left( \sqrt{3m} - \sqrt{0m} \right)}{{D_{pipe}}^2 \sqrt{2 \textsl{g}}} + t_{full} $$
+\end{itemize}
+
+\begin{itemize}
+\item Substitute $t_{full} = t_{initial} = 0s$, $D_{pool} = 8m$, $D_{pipe} = 0.03m$, $\displaystyle \textsl{g} = 9.80665 \frac{m}{s^2}$:
+$$ t_{empy} = \frac{2 {(8m)}^2 \left( \sqrt{3m} - \sqrt{0m} \right)}{{(0.03m)}^2 \sqrt{2 (9.80665 m/s^2)}} + 0s $$
+$$ t_{empy} = 55622.79s = 15.45h $$
+\end{itemize}
 
 \begin{enumerate}[resume]
-\item \textit{Reasoning (Sensitivity analysis, what if), Verification (context), and Discussion should always be part of your answer to any problem, regardless the task requested.}
+\item \textit{\textbf{Reasoning} (Sensitivity analysis, what if), Verification (context), and Discussion should always be part of your answer to any problem, regardless the task requested.}
 \end{enumerate}
 
-
+The pool will be drained completely after time $t_{empy} = 15.45h$ if all friction losses are neglected. The actual drainage time will be longer as the actual volume flow rate will be affected by friction. The maximum discharge rate $\dot{V}_{max} = 5.422 \times 10^{-3} m^3/s$ will happen at the beginning of the process when the water level $z_{pool}$ is at its maximum. The flow rate will decrease with time as the water level decreases.
 
 \printbibliography[title={References}]
 \end{document}
