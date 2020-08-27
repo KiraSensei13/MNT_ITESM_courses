@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  25 AUG 2020 21:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  26 AUG 2020 22:20
 entering extended mode
 **./main.tex
 (main.tex
@@ -167,6 +167,25 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
 )
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longtable.st
+y"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+\LTleft=\skip47
+\LTright=\skip48
+\LTpre=\skip49
+\LTpost=\skip50
+\LTchunksize=\count105
+\LTcapwidth=\dimen123
+\LT@head=\box30
+\LT@firsthead=\box31
+\LT@foot=\box32
+\LT@lastfoot=\box33
+\LT@cols=\count106
+\LT@rows=\count107
+\c@LT@tables=\count108
+\c@LT@chunks=\count109
+\LT@p@ftn=\toks25
+)
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.
 sty"
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
@@ -197,7 +216,7 @@ Package pdftexcmds Info: \pdfdraftmode found.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.
 sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count105
+\etb@tempcnta=\count110
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptions
 .sty"
@@ -213,7 +232,7 @@ Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 )))
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.sty"
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count106
+\lrq@indent=\count111
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.def"
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty
@@ -223,60 +242,60 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count107
-\c@listtotal=\count108
-\c@listcount=\count109
-\c@liststart=\count110
-\c@liststop=\count111
-\c@citecount=\count112
-\c@citetotal=\count113
-\c@multicitecount=\count114
-\c@multicitetotal=\count115
-\c@instcount=\count116
-\c@maxnames=\count117
-\c@minnames=\count118
-\c@maxitems=\count119
-\c@minitems=\count120
-\c@citecounter=\count121
-\c@maxcitecounter=\count122
-\c@savedcitecounter=\count123
-\c@uniquelist=\count124
-\c@uniquename=\count125
-\c@refsection=\count126
-\c@refsegment=\count127
-\c@maxextratitle=\count128
-\c@maxextratitleyear=\count129
-\c@maxextraname=\count130
-\c@maxextradate=\count131
-\c@maxextraalpha=\count132
-\c@abbrvpenalty=\count133
-\c@highnamepenalty=\count134
-\c@lownamepenalty=\count135
-\c@maxparens=\count136
-\c@parenlevel=\count137
-\blx@tempcnta=\count138
-\blx@tempcntb=\count139
-\blx@tempcntc=\count140
-\blx@maxsection=\count141
-\blx@maxsegment@0=\count142
-\blx@notetype=\count143
-\blx@parenlevel@text=\count144
-\blx@parenlevel@foot=\count145
-\blx@sectionciteorder@0=\count146
-\blx@entrysetcounter=\count147
-\labelnumberwidth=\skip47
-\labelalphawidth=\skip48
-\biblabelsep=\skip49
-\bibitemsep=\skip50
-\bibnamesep=\skip51
-\bibinitsep=\skip52
-\bibparsep=\skip53
-\bibhang=\skip54
+\c@tabx@nest=\count112
+\c@listtotal=\count113
+\c@listcount=\count114
+\c@liststart=\count115
+\c@liststop=\count116
+\c@citecount=\count117
+\c@citetotal=\count118
+\c@multicitecount=\count119
+\c@multicitetotal=\count120
+\c@instcount=\count121
+\c@maxnames=\count122
+\c@minnames=\count123
+\c@maxitems=\count124
+\c@minitems=\count125
+\c@citecounter=\count126
+\c@maxcitecounter=\count127
+\c@savedcitecounter=\count128
+\c@uniquelist=\count129
+\c@uniquename=\count130
+\c@refsection=\count131
+\c@refsegment=\count132
+\c@maxextratitle=\count133
+\c@maxextratitleyear=\count134
+\c@maxextraname=\count135
+\c@maxextradate=\count136
+\c@maxextraalpha=\count137
+\c@abbrvpenalty=\count138
+\c@highnamepenalty=\count139
+\c@lownamepenalty=\count140
+\c@maxparens=\count141
+\c@parenlevel=\count142
+\blx@tempcnta=\count143
+\blx@tempcntb=\count144
+\blx@tempcntc=\count145
+\blx@maxsection=\count146
+\blx@maxsegment@0=\count147
+\blx@notetype=\count148
+\blx@parenlevel@text=\count149
+\blx@parenlevel@foot=\count150
+\blx@sectionciteorder@0=\count151
+\blx@entrysetcounter=\count152
+\labelnumberwidth=\skip51
+\labelalphawidth=\skip52
+\biblabelsep=\skip53
+\bibitemsep=\skip54
+\bibnamesep=\skip55
+\bibinitsep=\skip56
+\bibparsep=\skip57
+\bibhang=\skip58
 \blx@bcfin=\read1
 \blx@bcfout=\write3
-\c@mincomprange=\count148
-\c@maxcomprange=\count149
-\c@mincompwidth=\count150
+\c@mincomprange=\count153
+\c@maxcomprange=\count154
+\c@mincompwidth=\count155
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -288,88 +307,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count151
-\c@savedafterword=\count152
-\c@annotator=\count153
-\c@savedannotator=\count154
-\c@author=\count155
-\c@savedauthor=\count156
-\c@bookauthor=\count157
-\c@savedbookauthor=\count158
-\c@commentator=\count159
-\c@savedcommentator=\count160
-\c@editor=\count161
-\c@savededitor=\count162
-\c@editora=\count163
-\c@savededitora=\count164
-\c@editorb=\count165
-\c@savededitorb=\count166
-\c@editorc=\count167
-\c@savededitorc=\count168
-\c@foreword=\count169
-\c@savedforeword=\count170
-\c@holder=\count171
-\c@savedholder=\count172
-\c@introduction=\count173
-\c@savedintroduction=\count174
-\c@namea=\count175
-\c@savednamea=\count176
-\c@nameb=\count177
-\c@savednameb=\count178
-\c@namec=\count179
-\c@savednamec=\count180
-\c@translator=\count181
-\c@savedtranslator=\count182
-\c@shortauthor=\count183
-\c@savedshortauthor=\count184
-\c@shorteditor=\count185
-\c@savedshorteditor=\count186
-\c@labelname=\count187
-\c@savedlabelname=\count188
-\c@institution=\count189
-\c@savedinstitution=\count190
-\c@lista=\count191
-\c@savedlista=\count192
-\c@listb=\count193
-\c@savedlistb=\count194
-\c@listc=\count195
-\c@savedlistc=\count196
-\c@listd=\count197
-\c@savedlistd=\count198
-\c@liste=\count199
-\c@savedliste=\count266
-\c@listf=\count267
-\c@savedlistf=\count268
-\c@location=\count269
-\c@savedlocation=\count270
-\c@organization=\count271
-\c@savedorganization=\count272
-\c@origlocation=\count273
-\c@savedoriglocation=\count274
-\c@origpublisher=\count275
-\c@savedorigpublisher=\count276
-\c@publisher=\count277
-\c@savedpublisher=\count278
-\c@language=\count279
-\c@savedlanguage=\count280
-\c@origlanguage=\count281
-\c@savedoriglanguage=\count282
-\c@pageref=\count283
-\c@savedpageref=\count284
-\shorthandwidth=\skip55
-\shortjournalwidth=\skip56
-\shortserieswidth=\skip57
-\shorttitlewidth=\skip58
-\shortauthorwidth=\skip59
-\shorteditorwidth=\skip60
-\locallabelnumberwidth=\skip61
-\locallabelalphawidth=\skip62
-\localshorthandwidth=\skip63
-\localshortjournalwidth=\skip64
-\localshortserieswidth=\skip65
-\localshorttitlewidth=\skip66
-\localshortauthorwidth=\skip67
-\localshorteditorwidth=\skip68
+\c@afterword=\count156
+\c@savedafterword=\count157
+\c@annotator=\count158
+\c@savedannotator=\count159
+\c@author=\count160
+\c@savedauthor=\count161
+\c@bookauthor=\count162
+\c@savedbookauthor=\count163
+\c@commentator=\count164
+\c@savedcommentator=\count165
+\c@editor=\count166
+\c@savededitor=\count167
+\c@editora=\count168
+\c@savededitora=\count169
+\c@editorb=\count170
+\c@savededitorb=\count171
+\c@editorc=\count172
+\c@savededitorc=\count173
+\c@foreword=\count174
+\c@savedforeword=\count175
+\c@holder=\count176
+\c@savedholder=\count177
+\c@introduction=\count178
+\c@savedintroduction=\count179
+\c@namea=\count180
+\c@savednamea=\count181
+\c@nameb=\count182
+\c@savednameb=\count183
+\c@namec=\count184
+\c@savednamec=\count185
+\c@translator=\count186
+\c@savedtranslator=\count187
+\c@shortauthor=\count188
+\c@savedshortauthor=\count189
+\c@shorteditor=\count190
+\c@savedshorteditor=\count191
+\c@labelname=\count192
+\c@savedlabelname=\count193
+\c@institution=\count194
+\c@savedinstitution=\count195
+\c@lista=\count196
+\c@savedlista=\count197
+\c@listb=\count198
+\c@savedlistb=\count199
+\c@listc=\count266
+\c@savedlistc=\count267
+\c@listd=\count268
+\c@savedlistd=\count269
+\c@liste=\count270
+\c@savedliste=\count271
+\c@listf=\count272
+\c@savedlistf=\count273
+\c@location=\count274
+\c@savedlocation=\count275
+\c@organization=\count276
+\c@savedorganization=\count277
+\c@origlocation=\count278
+\c@savedoriglocation=\count279
+\c@origpublisher=\count280
+\c@savedorigpublisher=\count281
+\c@publisher=\count282
+\c@savedpublisher=\count283
+\c@language=\count284
+\c@savedlanguage=\count285
+\c@origlanguage=\count286
+\c@savedoriglanguage=\count287
+\c@pageref=\count288
+\c@savedpageref=\count289
+\shorthandwidth=\skip59
+\shortjournalwidth=\skip60
+\shortserieswidth=\skip61
+\shorttitlewidth=\skip62
+\shortauthorwidth=\skip63
+\shorteditorwidth=\skip64
+\locallabelnumberwidth=\skip65
+\locallabelalphawidth=\skip66
+\localshorthandwidth=\skip67
+\localshortjournalwidth=\skip68
+\localshortserieswidth=\skip69
+\localshorttitlewidth=\skip70
+\localshortauthorwidth=\skip71
+\localshorteditorwidth=\skip72
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -383,13 +402,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.
 def"
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
-\c@textcitecount=\count285
-\c@textcitetotal=\count286
-\c@textcitemaxnames=\count287
-\c@biburlnumpenalty=\count288
-\c@biburlucpenalty=\count289
-\c@biburllcpenalty=\count290
-\c@smartand=\count291
+\c@textcitecount=\count290
+\c@textcitetotal=\count291
+\c@textcitemaxnames=\count292
+\c@biburlnumpenalty=\count293
+\c@biburlucpenalty=\count294
+\c@biburllcpenalty=\count295
+\c@smartand=\count296
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -424,8 +443,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\stand
 ard.bbx"
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count292
-\c@bbx:relatedtotal=\count293
+\c@bbx:relatedcount=\count297
+\c@bbx:relatedtotal=\count298
 ))))
 Package biblatex Info: Trying to load citation style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.cbx' found.
@@ -433,8 +452,8 @@ Package biblatex Info: ... file 'numeric-comp.cbx' found.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/cbx\numer
 ic-comp.cbx"
 File: numeric-comp.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
-\c@cbx@tempcnta=\count294
-\c@cbx@tempcntb=\count295
+\c@cbx@tempcnta=\count299
+\c@cbx@tempcntb=\count300
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -461,23 +480,27 @@ Package biblatex Info: ... file 'english.lbx' found.
 sh.lbx"
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
-\@quotelevel=\count296
-\@quotereset=\count297
- (main.aux)
+\@quotelevel=\count301
+\@quotereset=\count302
+ (main.aux
+
+LaTeX Warning: Label `fig_SKETCH' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -518,17 +541,17 @@ LaTeX Font Info:    ... okay on input line 47.
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count298
-\scratchdimen=\dimen123
-\scratchbox=\box30
-\nofMPsegments=\count299
-\nofMParguments=\count300
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count301
-\MPscratchDim=\dimen124
-\MPnumerator=\count302
-\makeMPintoPDFobject=\count303
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count303
+\scratchdimen=\dimen124
+\scratchbox=\box34
+\nofMPsegments=\count304
+\nofMParguments=\count305
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count306
+\MPscratchDim=\dimen125
+\MPnumerator=\count307
+\makeMPintoPDFobject=\count308
+\everyMPtoPDFconversion=\toks27
 )
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
 base.sty"
@@ -557,9 +580,9 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 47.
-Package biblatex Info: Reference segment=0 on input line 47.
-LaTeX Font Info:    Try loading font information for U+esint on input line 49.
+Package biblatex Info: Reference section=0 on input line 49.
+Package biblatex Info: Reference segment=0 on input line 49.
+LaTeX Font Info:    Try loading font information for U+esint on input line 51.
 
 ("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/esint\uesint.fd"
 File: uesint.fd 
@@ -567,42 +590,145 @@ File: uesint.fd
 <./img/SKETCH.png, id=1, 706.89093pt x 392.96812pt>
 File: ./img/SKETCH.png Graphic file (type png)
 <use ./img/SKETCH.png>
-Package pdftex.def Info: ./img/SKETCH.png  used on input line 70.
+Package pdftex.def Info: ./img/SKETCH.png  used on input line 76.
 (pdftex.def)             Requested size: 330.7633pt x 183.87355pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+
+("C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
 
 [1
 
 {C:/Users/oskat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/SKETC
 H.png>]
+<./img/0_drawing.png, id=14, 721.19438pt x 551.05875pt>
+File: ./img/0_drawing.png Graphic file (type png)
+<use ./img/0_drawing.png>
+Package pdftex.def Info: ./img/0_drawing.png  used on input line 138.
+(pdftex.def)             Requested size: 308.71107pt x 235.88275pt.
 
-LaTeX Warning: Empty bibliography on input line 99.
 
-[2] (main.aux)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./img/1_discretizing.png, id=16, 721.19438pt x 551.05875pt>
+File: ./img/1_discretizing.png Graphic file (type png)
+<use ./img/1_discretizing.png>
+Package pdftex.def Info: ./img/1_discretizing.png  used on input line 148.
+(pdftex.def)             Requested size: 308.71107pt x 235.88275pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./img/2_specifyTheTypeOfProblem.png, id=17, 721.19438pt x 551.05875pt>
+File: ./img/2_specifyTheTypeOfProblem.png Graphic file (type png)
+<use ./img/2_specifyTheTypeOfProblem.png>
+Package pdftex.def Info: ./img/2_specifyTheTypeOfProblem.png  used on input lin
+e 158.
+(pdftex.def)             Requested size: 308.71107pt x 235.88275pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./img/3_specifyBoundaryConditions.png, id=18, 721.19438pt x 551.05875pt>
+File: ./img/3_specifyBoundaryConditions.png Graphic file (type png)
+<use ./img/3_specifyBoundaryConditions.png>
+Package pdftex.def Info: ./img/3_specifyBoundaryConditions.png  used on input l
+ine 168.
+(pdftex.def)             Requested size: 308.71107pt x 235.88275pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./img/4_specifyThePDEtype.png, id=19, 721.19438pt x 551.05875pt>
+File: ./img/4_specifyThePDEtype.png Graphic file (type png)
+<use ./img/4_specifyThePDEtype.png>
+Package pdftex.def Info: ./img/4_specifyThePDEtype.png  used on input line 180.
+
+(pdftex.def)             Requested size: 308.71107pt x 235.88275pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./img/a00.png, id=20, 336.2964pt x 205.2468pt>
+File: ./img/a00.png Graphic file (type png)
+<use ./img/a00.png>
+Package pdftex.def Info: ./img/a00.png  used on input line 202.
+(pdftex.def)             Requested size: 220.50887pt x 134.58325pt.
+<./img/a02.png, id=21, 336.2964pt x 205.2468pt>
+File: ./img/a02.png Graphic file (type png)
+<use ./img/a02.png>
+Package pdftex.def Info: ./img/a02.png  used on input line 203.
+(pdftex.def)             Requested size: 220.50887pt x 134.58325pt.
+<./img/a04.png, id=22, 336.2964pt x 205.2468pt>
+File: ./img/a04.png Graphic file (type png)
+<use ./img/a04.png>
+Package pdftex.def Info: ./img/a04.png  used on input line 204.
+(pdftex.def)             Requested size: 220.50887pt x 134.58325pt.
+<./img/a08.png, id=23, 336.2964pt x 205.2468pt>
+File: ./img/a08.png Graphic file (type png)
+<use ./img/a08.png>
+Package pdftex.def Info: ./img/a08.png  used on input line 205.
+(pdftex.def)             Requested size: 220.50887pt x 134.58325pt.
+<./img/a12.png, id=24, 336.2964pt x 205.2468pt>
+File: ./img/a12.png Graphic file (type png)
+<use ./img/a12.png>
+Package pdftex.def Info: ./img/a12.png  used on input line 206.
+(pdftex.def)             Requested size: 220.50887pt x 134.58325pt.
+<./img/a16.png, id=25, 336.2964pt x 205.2468pt>
+File: ./img/a16.png Graphic file (type png)
+<use ./img/a16.png>
+Package pdftex.def Info: ./img/a16.png  used on input line 207.
+(pdftex.def)             Requested size: 220.50887pt x 134.58325pt.
+<./img/a20.png, id=26, 336.2964pt x 205.2468pt>
+File: ./img/a20.png Graphic file (type png)
+<use ./img/a20.png>
+Package pdftex.def Info: ./img/a20.png  used on input line 208.
+(pdftex.def)             Requested size: 220.50887pt x 134.58325pt.
+<./img/a24.png, id=27, 336.2964pt x 205.2468pt>
+File: ./img/a24.png Graphic file (type png)
+<use ./img/a24.png>
+Package pdftex.def Info: ./img/a24.png  used on input line 209.
+(pdftex.def)             Requested size: 220.50887pt x 134.58325pt.
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 201--212
+ [] [] 
+ []
+
+[2] [3 <./img/0_drawing.png> <./img/1_discretizing.png> <./img/a00.png> <./img/
+a02.png>] [4 <./img/a04.png> <./img/a08.png> <./img/a12.png> <./img/a16.png> <.
+/img/a20.png> <./img/a24.png>] [5 <./img/2_specifyTheTypeOfProblem.png> <./img/
+3_specifyBoundaryConditions.png>] [6 <./img/4_specifyThePDEtype.png>] (main.aux
+)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9506 strings out of 492946
- 167630 string characters out of 3126267
- 600684 words of memory out of 3000000
- 13296 multiletter control sequences out of 15000+200000
+ 9686 strings out of 492946
+ 170650 string characters out of 3126267
+ 607507 words of memory out of 3000000
+ 13456 multiletter control sequences out of 15000+200000
  9874 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,6n,31p,826b,749s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,7n,31p,826b,749s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmbxti10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oskat/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/os
-kat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/oskat/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/os
+kat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
 <C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (2 pages, 230098 bytes).
+m/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/oskat/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (6 pages, 862563 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
