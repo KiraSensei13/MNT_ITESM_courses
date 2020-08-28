@@ -2099,7 +2099,7 @@ Copy this and paste it into the dialog window then press OK
 
 /*****************************************************************************/
 
-Action Items 18Aug2020
+Action Items 25Aug2020
 * Define "Flow Curves"
 * regular viscosity VS. complex viscosity (correct use of terminology)
 * Explain why my methods are correct? (analyze Ricardo's methods)
