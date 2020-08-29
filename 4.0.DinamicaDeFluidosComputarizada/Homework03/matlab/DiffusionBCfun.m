@@ -1,7 +1,7 @@
 function [pl, ql, pr, qr] = DiffusionBCfun(xl, u1, xr, ur, t, P)
     % Boundary conditions for x = 0 and x = L;
-    % pL(xl,t,ul)+qL(xl,t)*f(x,t,u,du/dx)=0
-    % pR(xr,t,ur)+qR(xr,t)*f(x,t,u,du/dx)=0
+    % pL(xl, t, ul) + qL(xl, t) * f(x, t, u, du / dx) = 0 % Left boundary
+    % pR(xr, t, ur) + qR(xr, t) * f(x, t, u, du / dx) = 0 % Right boundary
     
     % Extract parameters
     c0 = P(2);
