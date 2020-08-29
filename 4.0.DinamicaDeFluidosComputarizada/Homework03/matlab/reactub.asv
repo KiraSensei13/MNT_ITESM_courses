@@ -1,0 +1,32 @@
+%% tubular reactor by jose lopez salinas
+function yprime = reactub(t, y, p)
+    c         = y;
+    D         = p(1);
+    k         = p(3);
+    vo        = p(4);
+    N         = p(5);
+    m         = 1;
+    yprime    = zeros(1, N-1);
+    yprime(1) = 0;
+    dx        = 1 / (N - 1);
+    for i = 2 : N - 1
+%                 /C        - 2 . c    + c       \
+%                 | (i + 1)        (i)    (i - 1)|
+%       sum = D . |------------------------------|
+%                 |                2             |
+%                 \              dx              /
+        sum0 = D * (c(i + 1) - 2 * c(i) + c(i - 1)) / (dx^2);
+%                  /C        - C       \
+%                  | (i + 1)    (i - 1)|
+%       sum1 = v . |-------------------|
+%                  \      2 . dx       /
+        sum1 = vo * (c(i + 1) - c(i - 1)) / (2 * dx);
+                    m  
+        sum2 = k . c   
+                    (i)
+        sum2 = k * c(i)^m;
+        yprime(i) = sum0 - sum1 - sum2;
+    end
+    yprime(N)=(4*yprime(N-1)-yprime(N-2))/3;
+    yprime=yprime';
+end
