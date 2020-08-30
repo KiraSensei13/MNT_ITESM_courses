@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Homework No.3}
+\author{Osamu Katagiri-Tanaka : A01212611}
+\date{\today}
+
+% import math symbols
+\usepackage{amsmath, esint}
+\usepackage{cancel}
+
+% import continuous lists
+\usepackage{enumitem}
+
+% format margins and paper size
+\usepackage{geometry}
+\geometry{
+	paper         = a4paper, % Change to letterpaper for US letter
+	inner         = 2.5cm,   % Inner margin
+	outer         = 2.5cm,   % Outer margin
+	bindingoffset = 0.5cm,   % Binding offset
+	top           = 1.5cm,   % Top margin
+	bottom        = 1.5cm    % Bottom margin
+}
+
+% import figure handler
+\usepackage{graphicx}
+
+% import references handler
+\usepackage[
+    style     = ieee,         % references format style
+    backend   = biber,        % choose the processing program
+    natbib    = true,         % enable additional reference formats
+    citestyle = numeric-comp, % enable multiple citations
+    sortcites = true,         % sort references in multiple citations
+    sorting   = nyt           % sort the reference table
+]{biblatex}
+\addbibresource{references.bib}
+
+% Note that ‘d’ in the differential is conventionally set in roman.
+\newcommand{\ud}{\,\mathrm{d}}
+
+% Paragraph spacing
+\setlength{\parskip}{0.2cm}           % spacing between paragraphs
+\renewcommand{\baselinestretch}{1.25} % spacing between lines
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+
+The equation of conservation of chemical species under a chemical reaction of
+decomposition can be represented with the PDE given below.
+
+$$ \frac{\partial C}{\partial t} = \vec{\nabla} \cdot (D \vec{\nabla} C) - \vec{v} \cdot \vec{\nabla} C - k C^n $$
+
+If a tubular catalytic chemical reactor initially filled with an inert solvent $(C = 0)$ is fed by a stream of component ``A" with a concentration of $1 kmol/m^3$ $(C = 1)$ and speed of $1 m/s$ $(v = 1)$, calculate the distribution of ``A" across the reactor and as a function of time $C(x, t)$. The dispersion coefficient of the component ``A" is $0.02 m^2/s$ $(D = 0.01)$, the kinetic decomposition coefficient $0.05 s^{-1}$ $(k = 0.05)$. The chemical decomposition kinetics is first order $(n = 1)$.
+
+\section{Sketch}
+
+\section{Assumptions and Approximations}
+
+% You can assume 1-m long reactor
+
+\section{Physical constants}
+
+\section{Physical Transport or Thermodynamic Properties}
+
+\section{Calculations}
+
+\subsection{PDEPE solver}
+
+The molar balance in axial direction for a 1D flow can be written as:
+
+$$ \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2} - v \frac{\partial C}{\partial x} - k C^n $$
+
+The initial condition $IC$ is:
+
+$$ \left. C \right|_{t = 0} = 0 \textrm{, } 0 \leq x \leq 1 $$
+
+The boundary conditions $BCs$ are:
+
+$$ \left. C \right|_{x = 0} = 1 \textrm{, } t > 0 $$
+$$ \left. \frac{\partial C}{\partial t} \right|_{x = L} = 0 \textrm{, } t \geq 0 $$
+
+\subsection{FEATool solver}
+
+\section{Discussion}
+
+\printbibliography[title={References}]
+\end{document}

@@ -1,6 +1,6 @@
 %% GUI script steps of HW03_FEATool.fes
 % 
-% % INITIALIZATION AND MODEL
+% % INITIALIZATION AND MODEL SELECTION
 % 1. To start a new model click the New Model toolbar button, or select
 % New Model... from the File menu.
 % 2. Select the 1D radio button.
@@ -82,18 +82,17 @@ t_lim = [0 - dlim, 1 + dlim];
 u_lim = [0 - dlim, 1 + dlim];
 
 % 2D line plot
+% from time t = [0.001, 0.140]
 figure
 for n = linspace(1, N, N)
     data = FEATool_exports(:, n*2 - 1:n*2);
     data = sortrows(data,1);
     size(data)
-    x = data(:, 1);
-    u = data(:, 2);
-%     x = FEATool_exports(:, n*2 - 1);
-%     u = FEATool_exports(:, n*2);
+    x = data(:, 1); % distance
+    u = data(:, 2); % species/concentration
     hold all
     plot(x, u)
 end
 xlabel('Distance x')
-ylabel('Species u')
+ylabel('Concentration C')
 axis([x_lim(1) x_lim(2) u_lim(1) u_lim(2)])
