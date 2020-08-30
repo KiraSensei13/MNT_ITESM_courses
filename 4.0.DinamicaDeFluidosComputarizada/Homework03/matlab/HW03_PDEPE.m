@@ -65,9 +65,6 @@ sol = pdepe(          ...
 % ui(t,x) = (tspan(j),xmesh(k)).
 u = sol;
 
-% Import FEATool data plot
-[FEATool_distance, FEATool_species] = HW03_FEAToolExport();
-
 % Plotting
 % plot limits
 dlim = 0.02;
@@ -90,7 +87,6 @@ for n = linspace(1, step, step)
     hold all
     plot(x, u(n, :))
 end
-% plot(FEATool_distance, FEATool_species)
 xlabel('Distance x')
 ylabel('Species u')
 axis([x_lim(1) x_lim(2) u_lim(1) u_lim(2)])
@@ -101,7 +97,6 @@ for n = linspace(1, step, step)
     hold all
     plot(t, u(:, n))
 end
-plot(FEATool_distance, FEATool_species)
 xlabel('Time t')
 ylabel('Species u')
 axis([t_lim(1) t_lim(2) u_lim(1) u_lim(2)])

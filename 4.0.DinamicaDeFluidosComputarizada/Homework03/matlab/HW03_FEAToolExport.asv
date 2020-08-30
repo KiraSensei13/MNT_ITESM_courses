@@ -18,8 +18,7 @@ u_lim = [0 - dlim, 1 + dlim];
 figure
 for n = linspace(1, N, N)
     data = FEATool_exports(:, n*2 - 1:n*2);
-    data = sortrows(data,1);
-    size(data)
+    data = sortrows(data,2);
     x = data(:, 1);
     u = data(:, 2);
 %     x = FEATool_exports(:, n*2 - 1);
