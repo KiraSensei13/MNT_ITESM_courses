@@ -36,16 +36,17 @@ OPTIONS = [];
 % dC/dt=div(D Grad C)-k*C- dot(v,Grad C)
 % dC/dt= D d(dC/dx)/dx- k*C-v*dC/dx
 % in the previous pde, all are partial derivatives
-P(1) = 0.01;                   % Diffusion coefficient D
-P(2) = 1.0;                    % Injection concentration c0
-P(3) = 0.5;                    % First order kinetic coefficient k
-P(4) = 1.0;                    % Velocity of fluid injection vo
-L    = 1;                      % Length of domain
-maxt = 1;                      % Max. simulation time
-m    = 0;                      % Parameter corresponding to the symmetry of
-%                                the problem (see help)
-t    = linspace(0, maxt, 100); % Tspan
-x    = linspace(0, L, 100);    % xmesh
+P(1) = 0.01;                    % Diffusion coefficient D
+P(2) = 1.0;                     % Injection concentration c0
+P(3) = 0.5;                     % First order kinetic coefficient k
+P(4) = 1.0;                     % Velocity of fluid injection vo
+L    = 1;                       % Length of domain
+maxt = 1;                       % Max. simulation time
+m    = 0;                       % Parameter corresponding to the symmetry
+%                                 of the problem (see help)
+step = 32;
+t    = linspace(0, maxt, step); % Tspan
+x    = linspace(0, L, step);    % xmesh
 
 % PDEPE returns the solution as multidimensional array of size
 % xmesh x tspan x (# of variables)
@@ -68,22 +69,39 @@ u = sol;
 [FEATool_distance, FEATool_species] = HW03_FEAToolExport();
 
 % Plotting
+% plot limits
+dlim = 0.02;
+x_lim = [0 - dlim, L + dlim];
+t_lim = [0 - dlim, maxt + dlim];
+u_lim = [0 - dlim, P(2) + dlim];
+
 % 3D surface plot
-% figure
-% surf(x, t, u, 'edgecolor', 'none');
-% xlabel('Distance x')
-% ylabel('Time t')
-% zlabel('Species u')
-% axis([0 L 0 maxt 0 P(2)])
-% set(gcf(), 'Renderer', 'painters')
+figure
+surf(x, t, u, 'edgecolor', 'none');
+xlabel('Distance x')
+ylabel('Time t')
+zlabel('Species u')
+axis([x_lim(1) x_lim(2) t_lim(1) t_lim(2) u_lim(1) u_lim(2)])
+set(gcf(), 'Renderer', 'painters')
 
 % 2D line plot
 figure
-for n = linspace(1, length(t), 10)
+for n = linspace(1, step, step)
     hold all
     plot(x, u(n, :))
 end
-plot(FEATool_distance, FEATool_species)
+% plot(FEATool_distance, FEATool_species)
 xlabel('Distance x')
 ylabel('Species u')
-axis([0 L 0 P(2)])
+axis([x_lim(1) x_lim(2) u_lim(1) u_lim(2)])
+
+% 2D line plot
+figure
+for n = linspace(1, step, step)
+    hold all
+    plot(t, u(:, n))
+end
+plot(FEATool_distance, FEATool_species)
+xlabel('Time t')
+ylabel('Species u')
+axis([t_lim(1) t_lim(2) u_lim(1) u_lim(2)])

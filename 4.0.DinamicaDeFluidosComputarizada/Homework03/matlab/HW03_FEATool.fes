@@ -1,4 +1,4 @@
-{"meta":{"app":"FEATool Multiphysics","author":"","build":"20.08.221","date":"29-Aug-2020","descr":"HW03_FEATool","dim":1,"image":"","keyw":["conv","diff"],"mlver":"9.5.0.944444 (R2018b)","name":"HW03_FEATool","phys":["Convection and Diffusion"],"system":"PCWIN64","time":738032.85619552084,"title":"HW03_FEATool","type":"Convection and Diffusion","user":"","ver":[1,12,4]},
+{"meta":{"app":"FEATool Multiphysics","author":"","build":"20.08.221","date":"30-Aug-2020","descr":"HW03_FEATool","dim":1,"image":"","keyw":["conv","diff"],"mlver":"9.5.0.944444 (R2018b)","name":"HW03_FEATool","phys":["Convection and Diffusion"],"system":"PCWIN64","time":738033.60121716431,"title":"HW03_FEATool","type":"Convection and Diffusion","user":"","ver":[1,12,4]},
 "fields":["type","id","ui_arg","fcn_type","fcn_oarg"],
 "data":[
 ["uipushtool","Standard.NewFigure",[],"ClickedCallback",[]],
@@ -11,7 +11,7 @@
 ["uicontrol","grid_hmax","0.01","Callback",[]],
 ["uicontrol","button_equation_mode",1,"Callback",[]],
 ["uicontrol","dts_cd","0.1","Callback",[]],
-["uicontrol","d_cd","0.02","Callback",[]],
+["uicontrol","d_cd","0.01","Callback",[]],
 ["uicontrol","u_cd","1","Callback",[]],
 ["uicontrol","r_cd","0.0","Callback",[]],
 ["uicontrol","button_dlgeqn_apply",[],"Callback",[]],
@@ -22,6 +22,14 @@
 ["uicontrol","list_seldom",["2"],"Callback",[]],
 ["uicontrol","button_dlgbdr_apply",[],"Callback",[]],
 ["uicontrol","button_dlgbdr_ok",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","solver",[" Time-Dependent"],"Callback",[]],
+["uicontrol","maxnit","30","Callback",[]],
+["uicontrol","tstep","0.01","Callback",[]],
+["uicontrol","tmax","0.1","Callback",[]],
+
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
 ["uicontrol","button_solve_mode",1,"Callback",[]],
 ["uicontrol","button_solve",[],"Callback",[]]
 ]}
