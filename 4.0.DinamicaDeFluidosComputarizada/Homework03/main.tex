@@ -9,6 +9,33 @@
 \usepackage{amsmath, esint}
 \usepackage{cancel}
 
+% import code snippets
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.99,0.99,0.96}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
 % import continuous lists
 \usepackage{enumitem}
 
@@ -69,20 +96,74 @@ If a tubular catalytic chemical reactor initially filled with an inert solvent $
 
 \section{Calculations}
 
-\subsection{PDEPE solver}
-
 The molar balance in axial direction for a 1D flow can be written as:
 
 $$ \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2} - v \frac{\partial C}{\partial x} - k C^n $$
 
 The initial condition $IC$ is:
-
 $$ \left. C \right|_{t = 0} = 0 \textrm{, } 0 \leq x \leq 1 $$
 
 The boundary conditions $BCs$ are:
-
 $$ \left. C \right|_{x = 0} = 1 \textrm{, } t > 0 $$
 $$ \left. \frac{\partial C}{\partial t} \right|_{x = L} = 0 \textrm{, } t \geq 0 $$
+
+\subsection{PDEPE solver}
+
+The built in function PDEPE, solves a general problem of a 1-D (parabolic or elliptic) partial differential equation, for a Cartesian, cylindrical or spherical coordinates of the from:
+
+$$ c \left( x, t, u, \frac{\partial u}{\partial x} \right) \frac{\partial u}{\partial t} = \frac{1}{x^m} \frac{\partial}{\partial x} \left( x^m f \left( x, t, u, \frac{\partial u}{\partial x} \right) \right) + s \left( x, t, u, \frac{\partial u}{\partial x} \right) $$
+
+Where, \\
+$\displaystyle m = 0$ represents the symmetry of the problem (0 for slab, 1 for cylindrical, or 2 for spherical) \\
+$\displaystyle c = 1$ is a diagonal matrix \\
+$\displaystyle f = D \frac{\partial u}{\partial x}$ is the flux term\\
+$\displaystyle s = - v \frac{\partial u}{\partial x} - k u^n$ is the source term \\
+$c$, $f$, and $s$ correspond to coefficients in the standard PDE equation form expected by pdepe. These coefficients are coded in terms of the input variables $x$, $t$, $u$, and $dudx$. Listing \ref{DiffusionPDEfun} implements a function that calculates the values of the coefficients $c$, $f$, and $s$.
+
+\begin{lstlisting}[language=Matlab, caption=PDE function for equations, label=DiffusionPDEfun]
+function [c, f, s] = DiffusionPDEfun(x, t, u, dudx, P)
+    % Parameters
+    D  = P(1);
+    k  = P(3);
+    vo = P(4);
+    
+    % PDE
+    c = 1;
+    f = D .* dudx;
+    s = - k * u - vo * dudx;
+end
+\end{lstlisting}
+
+PDEPE requires an `initial condition function', which is defined as a function that defines the initial condition. For $t = t_o = 0$ and all $x$, the solution satisfies the initial condition of the form:
+
+$$ u(x, t_o) = u_o(x) $$
+
+PDEPE calls the initial condition function with an argument $x$, which evaluates the initial values for the solution at $x$ in vector $u_o$. The number of elements in $u_o$ is equal to the number of equations. Listing \ref{DiffusionICfun} implements the constant initial condition.
+
+\begin{lstlisting}[language=Matlab, caption=Initial condition function, label=DiffusionICfun]
+function u0 = DiffusionICfun(x, P)
+    % u0 = u0(x)
+    u0 = 0;
+end
+\end{lstlisting}
+
+The third function required by the PDEPE solver is the `boundary condition function'. The boundary condition function spefifies the boundary conditions for all $t$, the solution satisfy the boundary condition of the form:
+
+$$ p(x, t, u) + q(x, t) f \left( x, t, u, \frac{\partial u}{\partial x} \right) = 0 $$
+
+Listing \ref{DiffusionBCfun} implements a function that defines the terms $p$ and $q$ of the boundary conditions. $u1$ is the approximate solution of the left boundary, $ur$ is the approximate solution of the right boundary, $pl$ and $ql$ are vectors corresponding to $p$ and $q$ evaluated at $xl$, and $pr$ and $qr$ are vectors corresponding to $p$ and $q$ evaluated at $xr$.
+
+\begin{lstlisting}[language=Matlab, caption=Boundary condition function, label=DiffusionBCfun]
+function [pl, ql, pr, qr] = DiffusionBCfun(xl, u1, xr, ur, t, P)
+    % BCs: No flux boundary at the right boundary and constant
+    % concentration on the left boundary
+    c0 = P(2);
+    pl = u1 - c0;
+    ql = 0;
+    pr = 0;
+    qr = 1;
+end
+\end{lstlisting}
 
 \subsection{FEATool solver}
 

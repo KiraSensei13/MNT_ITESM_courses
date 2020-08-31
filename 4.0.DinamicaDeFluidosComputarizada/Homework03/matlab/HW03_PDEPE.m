@@ -43,7 +43,8 @@ P(4) = 1.0;                     % Velocity of fluid injection vo
 L    = 1;                       % Length of domain
 maxt = 1;                       % Max. simulation time
 m    = 0;                       % Parameter corresponding to the symmetry
-%                                 of the problem (see help)
+%                                 of the problem (0 for slab, 1 for
+%                                 cylinder, or 2 for sphere)
 step = 32;
 t    = linspace(0, maxt, step); % Tspan
 x    = linspace(0, L, step);    % xmesh
@@ -55,8 +56,8 @@ sol = pdepe(          ...
     @DiffusionPDEfun, ... % Function containing the PDEs
     @DiffusionICfun,  ... % Function containing the ICs for t=0 at all x
     @DiffusionBCfun,  ... % Function containing the BCs for x=0 and x=L
-    x,                ...
-    t,                ...
+    x,                ... % Spatial mesh
+    t,                ... % Time span of integration
     [],               ... % Options
     P                 ... % Parameters
 );
