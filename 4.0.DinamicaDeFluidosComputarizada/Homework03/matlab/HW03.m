@@ -1,4 +1,5 @@
-%% Setup
+%% TUBULAR REACTOR adapted from (jose lopez salinas)'s solution 
+% Setup
 clear;
 close all;
 
