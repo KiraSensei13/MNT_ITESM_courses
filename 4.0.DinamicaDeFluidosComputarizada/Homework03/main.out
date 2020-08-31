@@ -1,0 +1,9 @@
+\BOOKMARK [1][-]{section.1}{Problem Statement}{}% 1
+\BOOKMARK [1][-]{section.2}{Sketch}{}% 2
+\BOOKMARK [1][-]{section.3}{Assumptions and Approximations}{}% 3
+\BOOKMARK [1][-]{section.4}{Physical constants}{}% 4
+\BOOKMARK [1][-]{section.5}{Physical Transport or Thermodynamic Properties}{}% 5
+\BOOKMARK [1][-]{section.6}{Calculations}{}% 6
+\BOOKMARK [2][-]{subsection.6.1}{PDEPE solver}{section.6}% 7
+\BOOKMARK [2][-]{subsection.6.2}{FEATool solver}{section.6}% 8
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 9

@@ -104,6 +104,7 @@ ylabel('Species u')
 axis([t_lim(1) t_lim(2) u_lim(1) u_lim(2)])
 
 %% GUI script steps of HW03_FEATool.fes
+clear;
 % 
 % % INITIALIZATION AND MODEL SELECTION
 % 1. To start a new model click the New Model toolbar button, or select

@@ -36,6 +36,15 @@
 }
 \lstset{style=mystyle}
 
+% import hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan
+}
+
 % import continuous lists
 \usepackage{enumitem}
 
@@ -92,11 +101,21 @@ If a tubular catalytic chemical reactor initially filled with an inert solvent $
 
 \section{Assumptions and Approximations}
 
-% You can assume 1-m long reactor
+\begin{itemize}
+\item The reactor is 1-m long
+\end{itemize}
 
 \section{Physical constants}
 
+Not applicable
+
 \section{Physical Transport or Thermodynamic Properties}
+
+\begin{itemize}
+\item Conservation of chemical species under a chemical reaction
+\item Molar balance in a 1D flow
+\item 1D convection and diffraction
+\end{itemize}
 
 \section{Calculations}
 
@@ -347,10 +366,142 @@ Problem statement can be also tacked using \emph{FEATool}. The following steps w
 \centering
 \includegraphics[width=0.75\textwidth]{./img/FEATool_Concentration_vs_Distance.png}
 \caption{FEATool - Concentration vs. Distance for time t = [0.001, 0.140]}
-\label{fig_PDEPE_Species_vs_Distance}
+\label{FEATool_Concentration_vs_Distance}
 \end{figure}
+
+
 
 \section{Discussion}
 
+The transient 1-D tubular reactor problem has been solved by two methods: using Matlab built-in solver PDEPE (Figure \ref{fig_PDEPE_Species_vs_Distance}) and using the FEATool software (Figure \ref{FEATool_Concentration_vs_Distance}). As depicted in the generated plots, the FEATool solution states that eventually the whole geometry will be at concentration $C = 1$. On the other hand, PDEPE solution suggest that steady state, the further the distance from boundary 1 (with constant concentration $C = 1$) the lower the concentration is, being concentration $C = 0.4$ the highest at distance $1$.
+
+Procedure suggests that differences are due to the boundaries being programmed in different ways within the two methods. On one hand, FEATool implements a ``convective flux/outflow" boundary of the form $\displaystyle n \cdot (- D \nabla c) = 0$. On the other hand, PDEPE solver requires a $m$ scalar to indicate the symmetry of the problem. When $m = 1$ parameters $pl$ and $ql$ are ignored by the solver, hence the difference.
+
 \printbibliography[title={References}]
+
+\section*{Appendix: FEATool script}
+\begin{lstlisting}[language=C]
+{"meta":{"app":"FEATool Multiphysics","author":"","build":"20.08.221","date":"30-Aug-2020","descr":"HW03_FEATool","dim":1,"image":"","keyw":["conv","diff"],"mlver":"9.5.0.944444 (R2018b)","name":"HW03_FEATool","phys":["Convection and Diffusion"],"system":"PCWIN64","time":738033.60121716431,"title":"HW03_FEATool","type":"Convection and Diffusion","user":"","ver":[1,12,4]},
+"fields":["type","id","ui_arg","fcn_type","fcn_oarg"],
+"data":[
+["uipushtool","Standard.NewFigure",[],"ClickedCallback",[]],
+["uicontrol","radio_1d",1,"Callback",[]],
+["uicontrol","popup_physsel",["Convection and Diffusion"],"Callback",[]],
+["uicontrol","button_dlgnew_ok",[],"Callback",[]],
+["uicontrol","button_line",[],"Callback",[]],
+["uicontrol","button_linegeom_ok",[],"Callback",[]],
+["uicontrol","button_grid_mode",1,"Callback",[]],
+["uicontrol","grid_hmax","0.01","Callback",[]],
+["uicontrol","button_equation_mode",1,"Callback",[]],
+["uicontrol","dts_cd","0.1","Callback",[]],
+["uicontrol","d_cd","0.01","Callback",[]],
+["uicontrol","u_cd","1","Callback",[]],
+["uicontrol","r_cd","0.0","Callback",[]],
+["uicontrol","button_dlgeqn_apply",[],"Callback",[]],
+["uicontrol","button_dlgeqn_ok",[],"Callback",[]],
+["uicontrol","button_boundary_mode",1,"Callback",[]],
+["uicontrol","popup_selbc_cd",["Concentration"],"Callback",[]],
+["uicontrol","edit_bccoef1_cd","1","Callback",[]],
+["uicontrol","list_seldom",["2"],"Callback",[]],
+["uicontrol","button_dlgbdr_apply",[],"Callback",[]],
+["uicontrol","button_dlgbdr_ok",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","solver",[" Time-Dependent"],"Callback",[]],
+["uicontrol","maxnit","30","Callback",[]],
+["uicontrol","tstep","0.001","Callback",[]],
+["uicontrol","tmax","0.001","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.010","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.020","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.030","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.040","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.050","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.060","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.070","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.080","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.090","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.100","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.110","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.120","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.130","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]],
+["uicontrol","button_solve_mode",1,"Callback",[]],
+["uicontrol","button_solver_settings",[],"Callback",[]],
+["uicontrol","tmax","0.140","Callback",[]],
+["uicontrol","button_dlgsolversettings_solve",[],"Callback",[]]
+]}
+\end{lstlisting}
+
+\section*{Appendix: FEATool data extraction}
+
+Since the FEATool trial version was used in this activity, the solution data could not be extracted directly from FEATool. Data was extracted with \href{https://automeris.io/WebPlotDigitizer/}{WebPlotDigitizer}. Data is available in the CSV file (FEATool.csv) attached to this activity. Listing \ref{PDEPE_speciesTimePlotCode} was used to create Figure \ref{FEATool_Concentration_vs_Distance}.
+
+\begin{lstlisting}[language=Matlab, caption=PDEPE Time vs. Species plot code, label=PDEPE_speciesTimePlotCode]
+% Import data
+FEATool_exports = csvread('./FEATool.csv');
+
+% Plotting
+N = size(FEATool_exports, 2)/2; % number of curves
+
+% plot limits
+dlim = 0.02;
+x_lim = [0 - dlim, 1 + dlim];
+t_lim = [0 - dlim, 1 + dlim];
+u_lim = [0 - dlim, 1 + dlim];
+
+% 2D line plot
+% for time t = [0.001, 0.140]
+figure
+for n = linspace(1, N, N)
+    data = FEATool_exports(:, n*2 - 1:n*2);
+    data = sortrows(data,1);
+    x = data(:, 1); % distance
+    u = data(:, 2); % species/concentration
+    hold all
+    plot(x, u)
+end
+xlabel('Distance x')
+ylabel('Concentration C')
+axis([x_lim(1) x_lim(2) u_lim(1) u_lim(2)])
+\end{lstlisting}
+
 \end{document}
