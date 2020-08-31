@@ -86,6 +86,10 @@ If a tubular catalytic chemical reactor initially filled with an inert solvent $
 
 \section{Sketch}
 
+\begin{center}
+\includegraphics[width=\textwidth]{./img/Sketch.png}
+\end{center}
+
 \section{Assumptions and Approximations}
 
 % You can assume 1-m long reactor
@@ -106,6 +110,15 @@ $$ \left. C \right|_{t = 0} = 0 \textrm{, } 0 \leq x \leq 1 $$
 The boundary conditions $BCs$ are:
 $$ \left. C \right|_{x = 0} = 1 \textrm{, } t > 0 $$
 $$ \left. \frac{\partial C}{\partial t} \right|_{x = L} = 0 \textrm{, } t \geq 0 $$
+
+Where, \\
+$D$ is the diffusion coefficient \\
+$C$ is the injection concentration \\
+$v$ is the velocity of fluid injection \\
+$k$ is the first order kinetic coefficient \\
+$L$ is the length of domain \\
+$t$ is the simulation time \\
+$x$ is the distance mesh
 
 \subsection{PDEPE solver}
 
@@ -165,7 +178,177 @@ function [pl, ql, pr, qr] = DiffusionBCfun(xl, u1, xr, ur, t, P)
 end
 \end{lstlisting}
 
+Listing \ref{PDEPE_solver} calls the PDEPE solver with the parameters $P$ specified in the `Problem Statement' section. The PDE function of equations, initial condition function, and boundary condition function are passed to the \emph{pdepe()} function. Matlab's \emph{pdepe()} solves a system of PDEs with one spatial variable and time. The equations being solved are specified in Listing \ref{DiffusionPDEfun}, the initial value is coded in Listing \ref{DiffusionICfun}, and the boundary conditions are defined in Listing \ref{DiffusionBCfun}. The ODEs resulting from the discretization in space are integrated at the time values $t$. \emph{pdepe()} returns values of the solution on a mesh provided in $x$. 
+
+\begin{lstlisting}[language=Matlab, caption=PDEPE solver, label=PDEPE_solver]
+% Parameters
+P(1) = 0.01;                    % Diffusion coefficient D
+P(2) = 1.0;                     % Injection concentration c0
+P(3) = 0.5;                     % First order kinetic coefficient k
+P(4) = 1.0;                     % Velocity of fluid injection vo
+L    = 1;                       % Length of domain
+maxt = 1;                       % Max. simulation time
+m    = 0;                       % Parameter corresponding to the symmetry
+%                                 of the problem (0 for slab, 1 for
+%                                 cylinder, or 2 for sphere)
+step = 32;
+t    = linspace(0, maxt, step); % Tspan
+x    = linspace(0, L, step);    % xmesh
+
+sol = pdepe(          ...
+    m,                ...
+    @DiffusionPDEfun, ... % Function containing the PDEs
+    @DiffusionICfun,  ... % Function containing the ICs for t=0 at all x
+    @DiffusionBCfun,  ... % Function containing the BCs for x=0 and x=L
+    x,                ... % Spatial mesh
+    t,                ... % Time span of integration
+    [],               ... % Options
+    P                 ... % Parameters
+);
+
+% ui(t,x) = (tspan(j),xmesh(k)).
+u = sol;
+\end{lstlisting}
+
+Listings \ref{PDEPE_speciesDistancePlot} and \ref{PDEPE_speciesTimePlot} visualize \emph{pdepe()} return values. Figures \ref{fig_PDEPE_Species_vs_Distance} and \ref{PDEPE_Species_vs_Time} are the generated plots with the PDEPE results.
+
+\begin{lstlisting}[language=Matlab, caption=PDEPE Distance vs. Species plot, label=PDEPE_speciesDistancePlot]
+% plot limits
+dlim = 0.02;
+x_lim = [0 - dlim, L + dlim];
+t_lim = [0 - dlim, maxt + dlim];
+u_lim = [0 - dlim, P(2) + dlim];
+
+figure
+for n = linspace(1, step, step)
+    hold all
+    plot(x, u(n, :))
+end
+xlabel('Distance x')
+ylabel('Species u')
+axis([x_lim(1) x_lim(2) u_lim(1) u_lim(2)])
+\end{lstlisting}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{./img/PDEPE_Species_vs_Distance.png}
+\caption{PDEPE - Species vs. Distance}
+\label{fig_PDEPE_Species_vs_Distance}
+\end{figure}
+
+\begin{lstlisting}[language=Matlab, caption=PDEPE Time vs. Species plot, label=PDEPE_speciesTimePlot]
+figure
+for n = linspace(1, step, step)
+    hold all
+    plot(t, u(:, n))
+end
+xlabel('Time t')
+ylabel('Species u')
+axis([t_lim(1) t_lim(2) u_lim(1) u_lim(2)])
+\end{lstlisting}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{./img/PDEPE_Species_vs_Time.png}
+\caption{PDEPE - Species vs. Time}
+\label{PDEPE_Species_vs_Time}
+\end{figure}
+
 \subsection{FEATool solver}
+
+Problem statement can be also tacked using \emph{FEATool}. The following steps were taken to solve the ``tubular water treatment uv-light reactor
+
+\textbf{Initialization and model selection:}
+\begin{enumerate}
+\item To start a new model click the New Model toolbar button, or select New Model... from the File menu.
+\item Select the 1D radio button.
+\item Select the Convection and Diffusion physics mode from the Select Physics drop-down menu.
+\item Press OK to finish the physics mode selection.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.60]{./matlab/FEATool_steps/initializationAndModelSelection.png}
+\end{center}
+
+\textbf{Geometry definition:}
+\begin{enumerate}[resume]
+\item Press the Create line Toolbar button.
+\item Press OK to finish and close the dialog box.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.60]{./matlab/FEATool_steps/geometryDefinition.png}
+\end{center}
+
+\textbf{Grid specification:}
+\begin{enumerate}[resume]
+\item Switch to Grid mode by clicking on the corresponding Mode Toolbar button.
+\item Enter  0.01  into the Grid Size edit field.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.60]{./matlab/FEATool_steps/gridSpecification.png}
+\end{center}
+
+\textbf{PDE parameters and initial condition:}
+\begin{enumerate}[resume]
+\item Switch to Equation mode by clicking on the corresponding Mode Toolbar button.
+\item Enter  0.1  into the Time scaling coefficient edit field.
+\item Enter  0.01  into the Diffusion coefficient edit field.
+\item Enter  1  into the Convection velocity in x-direction edit field.
+\item Enter  0.0  into the Reaction rate edit field.
+\item Press the Apply button.
+\item Press OK to finish the equation and subdomain settings specification.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.60]{./matlab/FEATool_steps/PDEparametersAndInitialCondition.png}
+\end{center}
+
+\textbf{Boundary conditions:}
+\begin{enumerate}[resume]
+\item Switch to Boundary mode by clicking on the corresponding Mode Toolbar button.
+\item Select Concentration from the Convection and Diffusion drop-down menu.
+\item Enter  1  into the Concentration edit field.
+\item Select 2 in the Boundaries list box.
+\item Press the Apply button.
+\item Press OK to finish the boundary condition specification.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.60]{./matlab/FEATool_steps/boundaryConditions.png}
+\end{center}
+
+\textbf{Solver settings:}
+\begin{enumerate}[resume]
+\item Switch to Solve mode by clicking on the corresponding Mode Toolbar button.
+\item Press the Settings Toolbar button.
+\item Select Time-Dependent from the Solution and solver type drop-down menu.
+\item Enter  30  into the Maximum number of non-linear iterations edit field.
+\item Enter  0.001  into the Time step size edit field.
+\item Enter  0.001  into the Duration of time-dependent simulation (maximum time) edit field.
+\item Press the Solve button.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.60]{./matlab/FEATool_steps/solverSettings.png}
+\end{center}
+
+\textbf{Solve for different time values:}
+\begin{enumerate}[resume]
+\item \label{itm_first} Switch to Solve mode by clicking on the corresponding Mode Toolbar button.
+\item Press the Settings Toolbar button.
+\item Enter  0.010  into the Duration of time-dependent simulation (maximum time) edit field.
+\item \label{itm_last} Press the Solve button.
+\item[] Repeat steps \ref{itm_first} through \ref{itm_last} for different values of "Duration of time-dependent simulation (maximum time)" from 0.020 to 0.140 with 0.010 increments
+\end{enumerate}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{./img/FEATool_Concentration_vs_Distance.png}
+\caption{FEATool - Concentration vs. Distance for time t = [0.001, 0.140]}
+\label{fig_PDEPE_Species_vs_Distance}
+\end{figure}
 
 \section{Discussion}
 
