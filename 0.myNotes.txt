@@ -2107,4 +2107,113 @@ Action Items 25Aug2020
 
 /*****************************************************************************/
 
+LATEX preamble:
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Homework No.3 - courses.ansys.com Model Wing Simulation Example}
+\author{Osamu Katagiri-Tanaka : A01212611}
+\date{\today}
+
+% import math symbols
+\usepackage{amsmath, esint}
+\usepackage{cancel}
+
+% import code snippets
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.99,0.99,0.96}
+\lstdefinestyle{mystyle}{
+  backgroundcolor   = \color{backcolour},
+  commentstyle      = \color{codegreen},
+  keywordstyle      = \color{magenta},
+  numberstyle       = \tiny\color{codegray},
+  stringstyle       = \color{codepurple},
+  basicstyle        = \ttfamily\small,
+  breakatwhitespace = false,
+  breaklines        = true,
+  captionpos        = b,
+  keepspaces        = true,
+  numbers           = left,
+  numbersep         = 5pt,
+  showspaces        = false,
+  showstringspaces  = false,
+  showtabs          = false,
+  tabsize           = 2
+}
+\lstset{style=mystyle}
+
+% import hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = red,
+  filecolor  = red,
+  citecolor  = red,
+  urlcolor   = red
+}
+
+% import continuous lists
+\usepackage{enumitem}
+
+% format margins and paper size
+\usepackage{geometry}
+\geometry{
+  paper         = a4paper, % Change to letterpaper for US letter
+  inner         = 2.5cm,   % Inner margin
+  outer         = 2.5cm,   % Outer margin
+  bindingoffset = 0.5cm,   % Binding offset
+  top           = 1.5cm,   % Top margin
+  bottom        = 1.5cm    % Bottom margin
+}
+
+% import figure handler
+\usepackage{graphicx}
+
+% import references handler
+\usepackage[
+  style     = ieee,         % references format style
+  backend   = biber,        % choose the processing program
+  natbib    = true,         % enable additional reference formats
+  citestyle = numeric-comp, % enable multiple citations
+  sortcites = true,         % sort references in multiple citations
+  sorting   = nyt           % sort the reference table
+]{biblatex}
+\addbibresource{references.bib}
+
+% Note that ‘d’ in the differential is conventionally set in roman.
+\newcommand{\ud}{\,\mathrm{d}}
+
+% Paragraph spacing
+\setlength{\parskip}{0.2cm}           % spacing between paragraphs
+\renewcommand{\baselinestretch}{1.25} % spacing between lines
+
+/*****************************************************************************/
+
+LATEX Figure and Listing
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{./img/PDEPE_Species_vs_Distance.png}
+\caption{PDEPE - Species vs. Distance}
+\label{fig_PDEPE_Species_vs_Distance}
+\end{figure}
+
+\begin{lstlisting}[float, language=Matlab, caption=PDEPE Time vs. Species plot, label=PDEPE_speciesTimePlot]
+figure
+for n = linspace(1, step, step)
+    hold all
+    plot(t, u(:, n))
+end
+xlabel('Time t')
+ylabel('Species u')
+axis([t_lim(1) t_lim(2) u_lim(1) u_lim(2)])
+\end{lstlisting}
+
+/*****************************************************************************/
+
 
