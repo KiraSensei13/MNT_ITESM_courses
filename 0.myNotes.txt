@@ -1,4 +1,4 @@
-/******************************************************************************/
+/*****************************************************************************/
 
                                             |
                                       --====|====--
@@ -89,7 +89,7 @@ __/_______\________\__\_/________\__/_/____/_____________/_______\____/____
                                 ''.__  __.._   __\
                                      ''     './  `
 
-/******************************************************************************/
+/*****************************************************************************/
 
 CLAUSTRO DE PROFESORES: Micro y Nanosistemas
 
@@ -104,7 +104,7 @@ Víctor Hugo Pérez González    <vhpg@tec.mx>;           C. Monterrey
 
 https://www.forbes.com/sites/worldeconomicforum/2019/01/16/how-davos-talk-brings-action-to-mobility-and-transportation-issues/#423852004e29
 
-/******************************************************************************/
+/*****************************************************************************/
 
 ScienceDirect
 IEEE (Innovation Plus)
@@ -121,7 +121,7 @@ Programming:
 Safary O Reilly
 Netlibrary Ebsco eBooks collection 
 
-/******************************************************************************/
+/*****************************************************************************/
 
 MNT - EDMEX
 Antonio Osamu Katagiri Tanaka    <A01212611@itesm.mx>;
@@ -134,7 +134,7 @@ Katya Michelle Aguilar Pérez     <A01750272@itesm.mx>; +52 1 55 2023 3561
 Bruno Gonzalez Soria             <A01169284@itesm.mx>; +52 1 55 1296 3247
 Diego López Bernal               <A01332642@itesm.mx>; +52 1 55 4188 2263
 
-/******************************************************************************/
+/*****************************************************************************/
 
 MATH team
 Bruno Gonzalez Soria            (A01169284)
@@ -143,20 +143,20 @@ Jose Ivan Aviles Castrillo      (A01749804)
 Jesus Alberto Martınez Espinosa (A01750270)
 Katya Michelle Aguilar Perez    (A01750272)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 APPLIED COMP team
 Bruno Gonzalez Soria          (A01169284)
 Antonio Osamu Katagiri Tanaka (A01212611)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 SUSTAINABILITY team
 Bruno Gonzalez Soria          (A01169284)
 Antonio Osamu Katagiri Tanaka (A01212611)
 Carlos Cardoso Isidoro        (A01750267)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 DIY/HOME gardening
 
@@ -174,7 +174,7 @@ Easily see how many crops can fit into an area without overcrowding, plus view w
 
 Over 500,000 active members across the most popular social media channels. Browse plans from gardeners in your area and exchange advice
 
-/******************************************************************************/
+/*****************************************************************************/
 
 (*
 Import@"https://raw.githubusercontent.com/jkuczm/\
@@ -189,7 +189,7 @@ testCell = Cell[BoxData[MakeBoxes[
      ]], "Input"];
 CellToTeX[testCell]
 
-/******************************************************************************/
+/*****************************************************************************/
 
 get 1st page & request header
 https://trefle.io/api/plants/?token=SWVENEduMFMxellqNHFIM3RmL0c4Zz09
@@ -200,12 +200,12 @@ https://trefle.io/api/plants/?page=4906&token=SWVENEduMFMxellqNHFIM3RmL0c4Zz09
 browse a specific plant
 http://trefle.io/api/plants/138738/?token=SWVENEduMFMxellqNHFIM3RmL0c4Zz09
 
-/******************************************************************************/
+/*****************************************************************************/
 
 LaTeX packages directory:
 C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 
-/******************************************************************************/
+/*****************************************************************************/
 
 # #Data normalization
 # # variables that have larger values, they contribute more, and the entire clustering will be dominated by them. So to avoid that, what we do is we normalize all the variables so that the average is 0 and standard deviation is 1, so let's do that
@@ -223,7 +223,7 @@ C:\Users\oskat\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 # 
 # summary(mydata)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 PDF as image
 
@@ -236,7 +236,7 @@ PDF as image
 \label{fig:Test}
 \end{figure}
 
-/******************************************************************************/
+/*****************************************************************************/
 
 personal information:
 graduate program:
@@ -250,7 +250,7 @@ objectives:
 hypothesis:
 research questions:
 
-/******************************************************************************/
+/*****************************************************************************/
 
 [brief bio - Osamu Katagiri]
 
@@ -265,7 +265,7 @@ late2015-late2018 : Trabajé en desarrollo y verificación de software para dos 
 
 2019-present : Estoy cursando la maestría en nanotecnología en el campus EdMex. Mi investigación se va a centrar en soluciones poliméricas para la síntesis de nano-cables de carbono mediante NFES (Near-Field Electrospinning).
 
-/******************************************************************************/
+/*****************************************************************************/
 
 
 Osamu Katagiri Tanaka
@@ -275,7 +275,7 @@ A01212611@itesm
 
 My research is focused on the development of rheology analises of different polymer solutions to determine if they can be easily electrospun at low voltages with the purpose to synthesize nanowires.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 //-- Removing a file added in the most recent unpushed commit --//
 
@@ -304,12 +304,12 @@ $ git push
 
 $ Do not forget to ignore the big file
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Dora Iliana Medina Medina <dora.medina@tec.mx>
 Héctor Alán Aguirre Soto <alan.aguirre@tec.mx>
 
-/******************************************************************************/
+/*****************************************************************************/
 
 THESIS MESSAGE
 
@@ -397,7 +397,7 @@ film. Optik, 127(4), 1651–1655.
 https://doi.org/10.1016/j.ijleo.2015.11.057
 
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Vector Differential Calculus - VIDEO
 
@@ -408,16 +408,16 @@ https://www.dropbox.com/s/7uruqmv9v2a0r4k/Notes_VectorDiffCalculus_.pdf?dl=0
 video:
 https://youtu.be/xdl2BX5FLZg
 
-/******************************************************************************/
+/*****************************************************************************/
 
 a01166117
 Gustavo Ruíz Pulido
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Part1 : https://youtu.be/YUr3wdoM1iw
 Part2 : 
@@ -425,7 +425,7 @@ Part3 :
 
 Paper Trail : https://bit.ly/2DBFVuE
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0141813019309274
 
@@ -439,7 +439,7 @@ https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S00323861
 
 https://docs.google.com/viewerng/viewer?url=https://vdocuments.site/google-reader?url%3Df37a91119b04edbb0694cb3c9512522168007afb4f2d735429962a5a5f5bbc35b9840c3df0760450b4f62bebee7c37c7dda749fe709e1639711131ab8ec41792zcE51hl0m9l2mVbGrlhUfcnKM9vC522+IS46Scta8M4djPxCvCA3wzmQMPFqH25IjYcROkikyN+leLYueUGyEseqhQdV5yn/oLSdrKsUnJOVwnRaxPh8CCFA4Z55/gB8tIHC67ElgZE6Lm3ONH3DY33JQKjFaLDeS2FY5FTbnAY%3D
 
-/******************************************************************************/
+/*****************************************************************************/
 
 polyacrylonitrile copolymers -> 3-ammoniumcarboxylate-3-butenoic acid methyl ester
 https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S0032386114009276
@@ -453,13 +453,13 @@ https://0-www-sciencedirect-com.millenium.itesm.mx/science/article/pii/S01418130
 A review on polymer nanofibers by electrospinning and their applications in nanocomposites
 https://www.sciencedirect.com/science/article/pii/S0266353803001787
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://github.com/googlesamples/android-sunflower
 
 https://onedrive.live.com/?authkey=%21AJRazHi1NSdjMSY&id=B97411139F1D3D85%213962&cid=B97411139F1D3D85
 
-/******************************************************************************/
+/*****************************************************************************/
 
 0001  0.1822
 0010  0.0142
@@ -476,24 +476,24 @@ https://onedrive.live.com/?authkey=%21AJRazHi1NSdjMSY&id=B97411139F1D3D85%213962
 0100 -0.0142
 1000 -0.0029
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://www.youtube.com/watch?v=XJ7HLz9VYz0&list=PLRqwX-V7Uu6Y7MdSCaIfsxc561QI0U0Tb&index=1
 
-/******************************************************************************/
+/*****************************************************************************/
 
 [A01169284] Bruno González Soria \\
 [A01212611] Antonio Osamu Katagiri Tanaka \\
 [A01750267] Carlos Cardoso Isidoro
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Dr. Héctor Alán Aguirre Soto
 Fabrication of graphitic-carbon suspended nanowires through mechanoelectrospinning of photocrosslinkable polymers
 
 998 zwx
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Do we want something similar to PEO or something more similar to Bis-phenol A novolac epoxy?
 
@@ -501,11 +501,11 @@ Yes, because with these (lithography) you can get to micron scale or maybe less 
 
 SU-8 turned out to be a really bad photoresist for integrated circuits, but really good to make Carbon-MicroElectroMechanical Systems because it yields conductive carbon structures with high aspect ratios, but people don't know why. 
 
-/******************************************************************************/
+/*****************************************************************************/
 
 207520
 
-/******************************************************************************/
+/*****************************************************************************/
 
 UAM
 Master in Molecular Nanoscience and Nanotechnology       ; http://www.icmol.es/master/nano/content.php?menu=content
@@ -518,7 +518,7 @@ Convocatoria de becas UAM – Banco Santander              ; https://tec.mx/es/i
                ; http://sitios.itesm.mx/vi/convocatorias/BecaUAM2019.pdf
 < https://modelo-carta.com/declaracion/ >
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Braulio overview
 
@@ -528,7 +528,7 @@ https://www.nanoscience.com/techniques/scanning-electron-microscopy/
 thermogravimetric analysis
 C/MEMS
 
-/******************************************************************************/
+/*****************************************************************************/
 
 From literature
 
@@ -553,7 +553,7 @@ From literature
 [Trieste   ] Maurizio Prato
 [Niigata   ] G. M. Aminur Rahman
 
-/******************************************************************************/
+/*****************************************************************************/
 
 From UAM courses
 
@@ -567,7 +567,7 @@ Dr. Leonardo Soriano de Arpe : l.soriano@uam.es          :
 https://tec.mx/en/internationalization/uam-banco-santander-scholarship
 http://sitios.itesm.mx/vi/uam.html
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Near Field Electrospinning REVIEW
 
@@ -577,7 +577,7 @@ https://www.mdpi.com/2073-4360/7/2/186/htm
 Fabrication of Patterned Nanofibrous Mats Using Direct-Write Electrospinning
 https://pubs.acs.org/doi/full/10.1021/la3009249?src=recsys
 
-/******************************************************************************/
+/*****************************************************************************/
 
 LANDSCAPE LaTeX TABLE
 
@@ -620,7 +620,7 @@ incididunt & ut    & labore & et  & dolore  & magna       \\
 \pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 0}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Other NFES techniques to be considered:
 
@@ -630,19 +630,19 @@ helix direct-writing (HDW)
 
 pyro-electrodynamic printing
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Macromolecules 
 
 Journal: Progress in polymer science
 Title: polymers for spunable fibers with spacial control
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://photos.app.goo.gl/CxSCtFV6HW5wGAff8
 https://photos.app.goo.gl/po7a7uyB7h5wJFoLA
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://community.blackboard.com/thread/5863-saml-authentication-request-has-expired-error
 
@@ -650,11 +650,11 @@ https://blackboard.secure.force.com/publickbarticleview?id=kAC39000000CadX
 
 Parece ser un error en la configuracón de SAML - ya intenté eliminar las cookies pero sigo con el mismo problema.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 This book is a collection of the physical properties of most commonly used solvents along with information on their behaviour in the environment during and after use and their health and fire hazards.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 The name “bootstrapping” comes from the phrase, “To lift himself up by his bootstraps.” This refers to something that is preposterous and impossible. Try as hard as you can, you cannot lift yourself into the air by tugging at pieces of leather on your boots.
 
@@ -665,23 +665,23 @@ There is some mathematical theory that justifies bootstrapping techniques. Howev
 [1] https://www.phrases.org.uk/meanings/pull-yourself-up-by-your-bootstraps.html
 [2] https://www.sciencedirect.com/science/article/pii/S0304407619301472?dgcid=rss_sd_all
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Fit a cubic regression, as a function of age, to the kidney data of Figures 1.1
 
 O365GRP-macrophotosci
 
-/******************************************************************************/
+/*****************************************************************************/
 
 A solar collector is used as a heat source for a Carnot engine with a heat sink at 300 K. The efficiency of the solar collector " is defined as the fraction of the energy reaching the collector that is actually absorbed. It is related to the temperature of the collector as follows:
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Fong H, Reneker DH. Elastomeric nanofibers of styrene butadienee styrene triblock copolymer. Journal of Polymer Science, Part B: Polymer Physics 2000;37:3488e93.
 
 S. Megelski,J.S.Stephens, D. BruceChase,and J. F. Rabolt, “Micro- and nanostructured surface morphology on electro- spun polymer fibers,” Macromolecules,vol.35, no.22, pp.8456– 8466, 2002.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 import pyromat as pm 
 import matplotlib.pyplot as plt
@@ -709,7 +709,7 @@ plt.title("Figure 1: P vs. V", size=24)
 plt.legend(prop={'size': 18})
 display(plt);
 
-/******************************************************************************/
+/*****************************************************************************/
 
 1. Luo, C. J.; Stoyanov, S. D.; Stride, E.; Pelan, E.; Edirisinghe, M.
 ‘Electrospinning versus fibre production methods: From specifics to technological convergence.’ Chem. Soc. Rev. 41 (2012): 4708–4735.
@@ -931,13 +931,13 @@ Gonzalez, G. M.; Phillips, M. D.; Parker, K. K. ‘Design and fabrication of
 fibrous nanomaterials using pull spinning.’ Macromol. Mater. Eng. 302a:(Geoffrey Ingram Taylor)
 (2017): 1600404
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://books.google.com.mx/books/about/Fundamentals_of_Fibre_Formation.html?id=eUGncGZ-QVwC&redir_esc=y
 
 https://royalsocietypublishing.org/doi/10.1098/rspa.1964.0151
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Experimental study on jet impact speed in near-field electrospinning for precise patterning of nanofiber
 
@@ -971,11 +971,11 @@ A direct 3D suspension near-field electrospinning technique for the fabrication 
 
 High-throughput and high-yield fabrication of uniaxially-aligned chitosan-based nanofibers by centrifugal electrospinning
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://app.knovel.com/web/toc.v/cid:kpYHTPPCC4/viewerType:toc//root_slug:yaws-handbook-thermodynamic/url_slug:yaws-handbook-thermodynamic?b-q=Yaws%27%20Handbook%20of%20Thermodynamic&sort_on=default&b-subscription=true&b-group-by=true&b-sort-on=default&b-
 
-/******************************************************************************/
+/*****************************************************************************/
 
     scale = 6;
     fig, axs = plt.subplots(1,3,figsize=(3*scale, 2*scale/3));
@@ -1000,7 +1000,7 @@ plt.annotate('gas', xy=(240,0.5e6), xycoords='data', fontsize=20, **pfont)
 plt.xlim(900, 1400)
 plt.ylim(-1e9, 0.125e9)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Stolen, S., Grande, T., & Neil L., A. (2004). Chemical Thermodynamics of Materials - Macroscopic and Microscopic Aspects. (J. W. & S. Inc., Ed.). John Wiley & Sons Ltd.
 
@@ -1008,7 +1008,7 @@ R. Gaskell, D., & E. Laughlin, D. (2018). Introcuction to the Thermodynamics of 
 
 Mortimer G., R. (2013). Mathematics for Physical Chemistry. (A. P. of Elsevier, Ed.) (14th ed.). Amsterdam: British Library Cataloguing in Plublication Data.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 # A Rpy2 Example
 
@@ -1055,7 +1055,7 @@ pp.plot()
 #display(Image(data=img.getvalue(), format='png', embed=True))
 '''
 
-/******************************************************************************/
+/*****************************************************************************/
 
 sd_lines = LineCollection([
     [[t, exp - sd], [t, exp + sd]]
@@ -1065,11 +1065,11 @@ sd_lines = LineCollection([
 plt.plot(t, par_vals, ':', linewidth=3, label='gamma model');
 plt.plot(t, nonpar_vals, '-', linewidth=3, label='Nonparametric fit ' + r'$\pm$' + ' 1 sd');
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://cran.r-project.org/web/checks/check_summary_by_maintainer.html#summary_by_maintainer
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Research Group Nanotec
 
@@ -1089,13 +1089,13 @@ Lindsay Sidney Hernández Muñoz   <lindsay.hdz@tec.mx>;
 Olimpia Basurto Vázquez          <A01099673@itesm.mx>;
 Gustavo Ruíz Pulido              <A01166117@itesm.mx>;
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Av Lago de Guadalupe KM 3.5, Margarita Maza de Juárez, 52926 Cd López Mateos, Méx.
 
 Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 listado de contactos de pares académicos:::
 
@@ -1144,16 +1144,16 @@ identificar si es un contacto potencial para invitarlo a contestar la encuesta d
 compartir recomendaciones para abordar al investigador e impresiones: 
 rol del investigador en el congreso: Lecturer
 
-/******************************************************************************/
+/*****************************************************************************/
 
 807796-100ML - CYRENE™ BIORENEWABLE
 GF31259527-1 - POLYBENZIMIDAZOLE, (PBI), ROD, DIAMETER&
 
-/******************************************************************************/
+/*****************************************************************************/
 
 http://llc.stat.purdue.edu/2018/41600/
 
-/******************************************************************************/
+/*****************************************************************************/
 
 # plot the ith posterior estimates
 r.assign("r_tg", tg);
@@ -1185,7 +1185,7 @@ plt.title('Figure 6.4', size=24);
 #plt.ylim(0,0.02);
 display(plt);
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Lecture 19:
 In short (as seen in class), the poisson regression adopts the characteristics of other regression models, however the difference relays in the dependent variable. The dependent variable now follows a poisson distribution, meaning that the possible values are the positive integers only. As in logistic regression, poisson regression has a discrete response variable but its not limited to specific values.
@@ -1193,12 +1193,12 @@ In short (as seen in class), the poisson regression adopts the characteristics o
 Lecture 20:
 As discussed during class, a regression tree is generated in an iterative process where the data is splitted (by thresholds t's) into two groups and then continues spliting each group into smaller groups. The purpose is to select the appropiate t that minimizes the variability of the data within aech new group.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Dortmund Data Bank
 http://www.ddbst.com/sitesearch.html
 
-/******************************************************************************/
+/*****************************************************************************/
 
 def cubicRegression(x_str, x_units, y_str, y_units, df, fig_name):
     # PLOT FIG
@@ -1268,7 +1268,7 @@ def cubicRegression(x_str, x_units, y_str, y_units, df, fig_name):
     plt.ticklabel_format(axis='both', style='sci', scilimits=(-2,2))
     display(plt);
 
-/******************************************************************************/
+/*****************************************************************************/
 
 # PLOT FIG
 fig_name = 'Figure 1';
@@ -1338,23 +1338,23 @@ plt.show()
 
 cubicRegression(x_str, x_units, y_str, y_units, df, 'original: ' + fig_name)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Done!
 Thank you for confirming your email address!
 
 Your source code and 17-page Computer Vision and Deep Learning Resource Guide PDF has been emailed to you and should land in your inbox within a few minutes.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 CHEMICAL COMPANY
 https://www.angus.com/
 
-/******************************************************************************/
+/*****************************************************************************/
 
 A,}JXJJHYy*pVeM6
 
-/******************************************************************************/
+/*****************************************************************************/
 
 When studing the interactions of several factors, the complexity of the experiemnts relays on the problem that the number of posible factor combinations can grow very fast with the increase of levels and factors. For example, if we consider 10 factors with 2 levels each, the number of posible experiments is 2^10 or 1024.
 
@@ -1362,7 +1362,7 @@ In practice it is difficult (and often expensive) to perform all experiments wit
 
 So, the purpose of 2^p factorial experiments is to find which factors have a significant impact on the outcome. And by doing this we reduce the amount of experimental work by grouping such experiemnts in small blocks.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Solve[(8000 - 10 T + 8.3144` T (-Log[1 - s] + Log[s]))*(0 - 
       s) + ((10*T - 8000)*(1 - s) + 
@@ -1372,11 +1372,11 @@ Solve[(8000 - 10 T + 8.3144` T (-Log[1 - s] + Log[s]))*(0 -
      8.3144*T*((1 - l)*Log[1 - l] + l*Log[l]) - 20000*l*(1 - l)), {s, 
   l}]
 
-/******************************************************************************/
+/*****************************************************************************/
 
 442 658 4907
 
-/******************************************************************************/
+/*****************************************************************************/
 
 *CHOPO*
 Sucursal: 5 DE FEBRERO
@@ -1394,7 +1394,7 @@ Dirección: Blvd. Bernardo Quintana Arrioja 4060, San Pablo, 76125 Santiago de Q
 Horario: abierto todo el día
 Teléfono: 442 427 8000
 
-/******************************************************************************/
+/*****************************************************************************/
 
 \begin{multicols}{2}
 
@@ -1403,7 +1403,7 @@ Teléfono: 442 427 8000
 
 \end{multicols}
 
-/******************************************************************************/
+/*****************************************************************************/
 
 plotName  = "PS wt% in THF";
 fileNames = [
@@ -1425,7 +1425,7 @@ compareData_(plotName, fileNames, headDrops, tailDrops, fileDescription)
 for i in range(len(fileNames)):
     fit_GNF_(fileNames[i], headDrops[i], tailDrops[i], fileDescription[i] + " - " + fileNames[i],  a[i])
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Invitacion_Misa_Susumu_y_Tomiko.pdf:
 https://www.dropbox.com/s/2aoey0k5v4wivrf/Invitacion_Misa_Susumu_y_Tomiko.pdf?dl=0
@@ -1436,7 +1436,7 @@ https://goo.gl/maps/a2wsnEvuBHhwBHdQA
 Fonda El Morral:
 https://goo.gl/maps/U4wPvVRpNbQEHJKCA
 
-/******************************************************************************/
+/*****************************************************************************/
 
 14-823-434
 https://www.fishersci.com/us/en/catalog/search/products?keyword=14-823-434
@@ -1444,7 +1444,7 @@ https://www.fishersci.com/us/en/catalog/search/products?keyword=14-823-434
 14-820-16
 https://www.fishersci.com/us/en/catalog/search/products?keyword=BD+Reusable+Yale%E2%84%A2+Tuberculin+Syringes
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Remitente
 Nombre: Antonio Osamu Katagiri Tanaka <A01212611@itesm.mx>
@@ -1457,7 +1457,7 @@ Dirección: Tec de Monterrey Campus Estado de México.
 Av Lago de Guadalupe KM 3.5, Margarita Maza de Juárez, 52926 Cd López Mateos, Méx.
 Edificio: Departamento de Matemáticas - Aulas 1 - planta baja
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Remitente
 Nombre: Antonio Osamu Katagiri Tanaka <A01212611@itesm.mx>
@@ -1470,7 +1470,7 @@ Dirección: Tec de Monterrey Campus Monterrey.
 Av. Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, N.L.
 Edificio: A4 - 222D
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Query ID:          NW Score Identities        Gaps            Strand
 NC_045512 COVID-19 59806    29903/29903(100%) 0/29903(0%)     Plus/Plus
@@ -1481,41 +1481,41 @@ KF514433  229E     -12678   16938/31140(54%)  5212/31140(16%) Plus/Plus
 KT225476  MERS     -8741    18173/31984(57%)  4256/31984(13%) Plus/Plus
 MN996532  RaTG13   53877    28717/29905(96%)  52/29905(0%)    Plus/Plus
 
-/******************************************************************************/
+/*****************************************************************************/
 
 A Review of characterizaion techniques of nanomaterials:
 
-/******************************************************************************/
+/*****************************************************************************/
 
 1st question
 is the current sequence already reported?
 from parents to sons/daughters 30 mutations per 3.3GB
 sequence alignment - add "spaces" to maximize similarities between sequences
 
-/******************************************************************************/
+/*****************************************************************************/
 
 PNGQNI
 179
 991
 
-/******************************************************************************/
+/*****************************************************************************/
 
 "When I was writting papers in the early days I adopted the strategy of picking someone who I thought will hate this paper the most, and then write the paper with that person in mind as the reader." (Richard Thaler - 29Jan2020)
 
 "My research advice is write about the world, not about the literature. Many people spend too much time reading and too little time thinking. The result of that can be that they end up doing research that is in small incremental steps based on what we now know. So, there's a paper that has done A, B, and C; but there's no one that has done A, B, C and D ... so, ok there's an oportunity. I think that's a SAVE research path, but it's more fun to think on a topic that nobody has written about." (Richard Thaler - 29Jan2020)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 ... —as well as with an in-house written Python script. ...
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://www.ebi.ac.uk/goldman-srv/cgi-bin/results.cgi?jobid=prank-S20200303-235433-0524-3744813-p2m&title=SARS_COV_2_ORF1AB_raw.fasta
 https://www.ebi.ac.uk/goldman-srv/cgi-bin/results.cgi?jobid=prank-S20200304-043445-0904-99664307-p1m&title=SARS_COV_2_ORF1AB_raw.fasta
 
 https://desmid.github.io/mview/manual/manual.html#ref-cov-pid
 
-/******************************************************************************/
+/*****************************************************************************/
 
 BBVA
 +2319 - 1934 - 359
@@ -1529,7 +1529,7 @@ BNMX
 +533 - 1033
 -500
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://www.sciencedirect.com/journal/progress-in-polymer-science
 
@@ -1543,14 +1543,14 @@ https://www.sciencedirect.com/science/article/pii/S0079670018301205
 https://www.sciencedirect.com/science/article/pii/S0079670016000022
 https://www.sciencedirect.com/science/article/pii/S0079670013000087
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://medium.com/@Farah_36879/nano-sensors-and-nano-fabrication-a-world-so-small-made-big-9a44c32321c0
 
 Polymers for Near-Field Electrospinning with Spatial Control: A Review
 "near" AND "field" AND "electrospinning" AND ("deposition" OR "conductivity" OR "control" OR "pattern" OR "spatial" OR "aligned")
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Update R:
 
@@ -1558,48 +1558,48 @@ install.packages("installr")
 library(installr)
 updateR()
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Nanostructures and Nanomaterials: Synthesis, Properties, and Applications Second Edition
 Guozhong CaoYing Wang3 de enero de 2011
 World Scientific Publishing Company
 
-/******************************************************************************/
+/*****************************************************************************/
 
 A00825034@itesm.mx
 
-/******************************************************************************/
+/*****************************************************************************/
 
 arXiv
 
-/******************************************************************************/
+/*****************************************************************************/
 
 lista de polymers
 add missing review papers
 finish jornal form
 
-/******************************************************************************/
+/*****************************************************************************/
 
 error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools": https://visualstudio.microsoft.com/downloads/
 
 ERROR: Could not install packages due to an EnvironmentError: [WinError 5] Access is denied: 'c:\\users\\oskat\\anaconda3\\lib\\site-packages\\matplotlib\\backends\\_backend_agg.cp37-win_amd64.pyd'
 Consider using the `--user` option or check the permissions.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 pip list --outdated
 pip freeze | %{$_.split('==')[0]} | %{pip install --user --upgrade $_}
 
-/******************************************************************************/
+/*****************************************************************************/
 
 osamu.katagiri.mx@tutanota.com
 e554e1c341c4962c9b4020ebbb982c93085312f4a6033d340f6fd94b47681783
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Osamu (•̀ᴗ•́)و ̑̑
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Hola, buen día. Por este medio solicito el cambio de mi correo electrónico en mi cuenta Cinépolis.
 
@@ -1607,7 +1607,7 @@ Nombre: Antonio Katagiri Tanaka
 Correo a reemplazar (viejo): oskatagiri@gmail.com
 Correo actualizado (nuevo): osamu.katagiri.serv@tutanota.com
 
-/******************************************************************************/
+/*****************************************************************************/
 
 TEAMVIEWER:
 
@@ -1616,7 +1616,7 @@ If you lose access to your device you can deactivate two factor authentication u
 
 QV4G CV58 F72K J3K6
 
-/******************************************************************************/
+/*****************************************************************************/
 
 ALL USERS
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
@@ -1624,11 +1624,11 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 CURRENT USER
 C:\Users\oskat\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 
-/******************************************************************************/
+/*****************************************************************************/
 
 req 1: buscar artículos en páginas
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EeLth2LJ-J9GpwLhkyBScIEBvUrzX3ETl_0z-Ob0YokKeg?e=erK7Yb
 
@@ -1640,24 +1640,24 @@ PUE vpnpue.tec.mx
 QRO vpnqro.tec.mx
 MTY vpnmty.tec.mx
 
-/******************************************************************************/
+/*****************************************************************************/
 
 SEM discussion questions
 https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EfXmEU828ORKkUv4cgBbxMABMEF2sOAc1H23u1W1z7zcRA?e=rVNIZO
 
-/******************************************************************************/
+/*****************************************************************************/
 
 SARS-COV-2
 https://www.medrxiv.org/content/10.1101/2020.03.02.20030189v1
 https://www.medrxiv.org/content/10.1101/2020.04.30.20085613v1
 https://www.biorxiv.org/content/10.1101/2020.04.29.069054v1.full
 
-/******************************************************************************/
+/*****************************************************************************/
 
 CHARACTERIZATION FINAL PROJECT:
 https://tecmx-my.sharepoint.com/:f:/g/personal/a01212611_itesm_mx/EtoyOF3V42xIjx-W6q0fzmQB0AB_TCpEmZYteHoFEEw9mg?e=IaNKlX
 
-/******************************************************************************/
+/*****************************************************************************/
 
 00_IntroductionToNanomaterials
 01_SurfaceEnergy
@@ -1673,7 +1673,7 @@ https://tecmx-my.sharepoint.com/:f:/g/personal/a01212611_itesm_mx/EtoyOF3V42xIjx
 11_CarbonNanoStructures
 12_Photons_Brillouin_WignerSeitz
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Disable hardware acceleration in both
 
@@ -1684,7 +1684,7 @@ To successfully capture the new Skype for Desktop version, you need to launch it
 
 You CANNOT under any circumstances window capture the windows store version of skype, as microsoft actively blocks it.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 TRAVELWITHDRONE.mp4
 
@@ -1748,12 +1748,12 @@ Location Breakdown:
 57:05 - New Hampshire
 57:44 - Buenos Aires, Argentina 
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://www.allaboutcircuits.com/textbook/direct-current/chpt-8/kelvin-resistance-measurement/
 https://www.electronics-tutorials.ws/resistor/resistivity.html
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Paper overall structure
 	[1] Kenry, C.T. Lim, Nanofiber technology: current status and emerging developments, Prog. Polym. Sci. 70 (2017) 1–17. https://doi.org/10.1016/j.progpolymsci.2017.03.002.
@@ -1810,50 +1810,50 @@ Applications
 Conclusions
 	(advantages and disadvanteages of electrospinning) [1] X. Shi, W. Zhou, D. Ma, Q. Ma, D. Bridges, Y. Ma, A. Hu, Electrospinning of Nanofibers and Their Applications for Energy Devices, J. Nanomater. 2015 (2015) 1–20. https://doi.org/10.1155/2015/140716.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 10.3390/polym5010019
 
-/******************************************************************************/
+/*****************************************************************************/
 
 himari-no 100nichi omedeto
 
 kondo covid19 owattara mexiconi asobini kinasai
 
-/******************************************************************************/
+/*****************************************************************************/
 
 straight
 meander
 coil
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Hola - buen día
 He estado intentando hacer un pago pero la plataforma no acepta el pago. Lo intenté por varios medios (tarjeta de crédito, banca electrónica y PayPal con Santander y BBVA). Ya me comuniqué con los bancos y dicen que por su lado no hay ningún problema. Me podría ayudar con este problema?
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Microfluidics Lab [CETEC torre Sur]
 NFES Lab [A7]
 Macromolecular photosciences lab (CETEC LM-121)
 
-/******************************************************************************/
+/*****************************************************************************/
 
 DOLCE gusto.com
 
 FWFAPM964HKC
 ATKFTHFMG3KC
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Axtel Extremo-E1A4
 0369E1A4
 
-/******************************************************************************/
+/*****************************************************************************/
 
 https://tecmx-my.sharepoint.com/personal/a01750271_itesm_mx/Documents/Plásticos
 
-/******************************************************************************/
+/*****************************************************************************/
 
 NETLIMITER
 
@@ -1882,7 +1882,7 @@ Legal Notice - Privacy Statement - Terms and Conditions
 
 © 2020 Digital River GmbH All rights reserved.
 
-/******************************************************************************/
+/*****************************************************************************/
 
 ZNID24xxA-Router
 User Name: user
@@ -1915,7 +1915,7 @@ No System Alarms:	System Status OK
 
 WPA/WAPI passphrase : AX0369E1A4
 
-/******************************************************************************/
+/*****************************************************************************/
 
 Angel Manuel Villalba-Rodríguez <A00828035@itesm.mx>
 Constanza Alvarez-Lopez <A00829469@itesm.mx>
@@ -1940,7 +1940,7 @@ https://1drv.ms/w/s!AtJuISR9MFZzkjulcL4PJEqyGfNH?e=ftkk7z
 Midterm_part2
 https://tecmx-my.sharepoint.com/:w:/g/personal/a01212611_itesm_mx/EYk-ZqfUFwZNrodKTiulhFcB0V9t5K6YIPFU-Z9CMTV3Qw?e=odBZ5p
 
-/******************************************************************************/
+/*****************************************************************************/
 
 5.3.3 FILLING A SIMPLE MOLD: GLOBAL ANALYSIS
 14 Runner balancing.
@@ -1979,8 +1979,6 @@ https://www.amazon.com/Electromechanics-Particles-Jones/dp/0521019109
 
 
 https://www.amazon.com/Theoretical-Microfluidics-Oxford-Master-Physics/dp/0199235090
-
-
 
 /*****************************************************************************/
 
@@ -2213,6 +2211,14 @@ xlabel('Time t')
 ylabel('Species u')
 axis([t_lim(1) t_lim(2) u_lim(1) u_lim(2)])
 \end{lstlisting}
+
+/*****************************************************************************/
+
+4152 3132 6730 0809
+
+/*****************************************************************************/
+
+09021085745 yunko tanaka
 
 /*****************************************************************************/
 
