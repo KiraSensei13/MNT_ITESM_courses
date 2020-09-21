@@ -1,0 +1,55 @@
+%% TUBULAR REACTOR adapted from (jose lopez salinas)'s solution 
+% Setup
+clear;
+close all;
+
+%% Runge-Kutta
+% Use any integration technique (Runge-Kutta type scheme) to solve in time,
+% and finite differences to integrate in axial domain.
+
+p(1)  = 0.01; % Diffusion coefficient D
+p(2)  = 1.0;    % Injection concentration c0
+p(3)  = 1.5;    % First order kinetic coefficient k
+p(4)  = 1.0;    % Velocity of fluid injection vo
+M     = 2*640;  % Number of nodes
+p(5)  = M;
+Tspan = [0 1];  % Domain of time
+% tspan = linspace(0, 1, 20);
+xi    = linspace(0, 1, M);
+
+% Initial conditions of the resulting set of ODEs
+Y0    = zeros(M, 1);
+Y0(1) = 1.0;
+
+% Solve differential equation (medium order method)
+OPTIONS   = [];
+[time, Y] = ode45(@reactub2, Tspan, Y0, OPTIONS, p);
+Yprime    = Y';
+
+% Display
+totalNoOf_curves  = size(Y, 2);
+noOf_curvesToPlot = 10;
+noOf_curves       = fix(totalNoOf_curves/noOf_curvesToPlot);
+figure;
+for n = linspace(1, totalNoOf_curves, totalNoOf_curves)
+    hold all
+    if mod(n, noOf_curves) == 0
+        plot(time, Y(:, n))
+    end
+end
+xlabel('\tau');
+ylabel('Concentration mol/dm^3');
+
+% Display
+totalNoOf_curves  = size(Y, 2);
+noOf_curvesToPlot = 10;
+noOf_curves       = fix(totalNoOf_curves/noOf_curvesToPlot);
+figure;
+for n = linspace(1, noOf_curves, noOf_curves)
+    hold all
+    if mod(n, noOf_curvesToSkip) == 0
+        plot(xi, Yprime(:, n))
+    end
+end
+xlabel('distance x/L');
+ylabel('Concentration mol/dm^3');
