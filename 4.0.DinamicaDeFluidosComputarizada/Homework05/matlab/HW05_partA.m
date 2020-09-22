@@ -26,3 +26,9 @@ hold off;
 xlabel('x-axis');
 ylabel('y-axis');
 title('Velocity Field, and Pressure Lines');
+
+% Export Graphics
+fig = gcf;
+fig.PaperUnits = 'inches';
+fig.PaperPosition = [0 0 9 6];
+print('vectorField', '-dpng', '-r0')
