@@ -22,6 +22,9 @@ Y0    = zeros(M, 1);
 Y0(1) = 1.0;
 
 % Solve differential equation (medium order method)
+% use @reactub_2 for O(h^2) truncation error
+% use @reactub_3 for O(h^3) truncation error
+% use @reactub_4 for O(h^4) truncation error
 OPTIONS   = [];
 [time, Y] = ode45(@reactub_3, Tspan, Y0, OPTIONS, p);
 Yprime    = Y';
