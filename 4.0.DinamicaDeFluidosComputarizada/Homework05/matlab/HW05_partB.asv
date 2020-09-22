@@ -1,4 +1,4 @@
-%% HW05_p
+%% HW05 part B
 %% TUBULAR REACTOR adapted from (jose lopez salinas)'s solution 
 % Setup
 clear;
@@ -23,7 +23,7 @@ Y0(1) = 1.0;
 
 % Solve differential equation (medium order method)
 OPTIONS   = [];
-[time, Y] = ode45(@reactub2, Tspan, Y0, OPTIONS, p);
+[time, Y] = ode45(@reactub_2, Tspan, Y0, OPTIONS, p);
 Yprime    = Y';
 
 % plot limits
@@ -36,11 +36,11 @@ Yprime_lim        = [min(min(Yprime)) - dlim, max(max(Yprime)) + dlim];
 
 % Display
 totalNoOf_curves  = size(Y, 2);
-noOf_curves       = fix(totalNoOf_curves/noOf_curvesToPlot);
+noOf_curvesToPlot       = fix(totalNoOf_curves/noOf_curvesToPlot);
 figure;
 for n = linspace(1, totalNoOf_curves, totalNoOf_curves)
     hold all
-    if mod(n, noOf_curves) == 0
+    if mod(n, noOf_curvesToPlot) == 0
         plot(time, Y(:, n))
     end
 end
@@ -50,11 +50,11 @@ axis([time_lim(1) time_lim(2) Y_lim(1) Y_lim(2)])
 
 % Display
 totalNoOf_curves  = size(Yprime, 2);
-noOf_curves       = fix(totalNoOf_curves/noOf_curvesToPlot);
+noOf_curvesToPlot       = fix(totalNoOf_curves/noOf_curvesToPlot);
 figure;
 for n = linspace(1, totalNoOf_curves, totalNoOf_curves)
     hold all
-    if mod(n, noOf_curves) == 0
+    if mod(n, noOf_curvesToPlot) == 0
         plot(xi, Yprime(:, n))
     end
 end

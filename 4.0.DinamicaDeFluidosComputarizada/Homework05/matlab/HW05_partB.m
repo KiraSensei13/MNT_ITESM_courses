@@ -23,11 +23,11 @@ Y0(1) = 1.0;
 
 % Solve differential equation (medium order method)
 OPTIONS   = [];
-[time, Y] = ode45(@reactub2, Tspan, Y0, OPTIONS, p);
+[time, Y] = ode45(@reactub_3, Tspan, Y0, OPTIONS, p);
 Yprime    = Y';
 
 % plot limits
-noOf_curvesToPlot = 30;
+noOf_curvesToPlot = 25;
 dlim              = 0.02;
 time_lim          = [min(time)        - dlim, max(time)        + dlim];
 Y_lim             = [min(min(Y))      - dlim, max(max(Y))      + dlim];
@@ -36,11 +36,11 @@ Yprime_lim        = [min(min(Yprime)) - dlim, max(max(Yprime)) + dlim];
 
 % Display
 totalNoOf_curves  = size(Y, 2);
-noOf_curves       = fix(totalNoOf_curves/noOf_curvesToPlot);
+noOf_curvesToSkip = fix(totalNoOf_curves/noOf_curvesToPlot);
 figure;
 for n = linspace(1, totalNoOf_curves, totalNoOf_curves)
     hold all
-    if mod(n, noOf_curves) == 0
+    if mod(n, noOf_curvesToSkip) == 0
         plot(time, Y(:, n))
     end
 end
@@ -50,11 +50,11 @@ axis([time_lim(1) time_lim(2) Y_lim(1) Y_lim(2)])
 
 % Display
 totalNoOf_curves  = size(Yprime, 2);
-noOf_curves       = fix(totalNoOf_curves/noOf_curvesToPlot);
+noOf_curvesToSkip = fix(totalNoOf_curves/noOf_curvesToPlot);
 figure;
 for n = linspace(1, totalNoOf_curves, totalNoOf_curves)
     hold all
-    if mod(n, noOf_curves) == 0
+    if mod(n, noOf_curvesToSkip) == 0
         plot(xi, Yprime(:, n))
     end
 end

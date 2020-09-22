@@ -1,5 +1,5 @@
 %% TUBULAR REACTOR adapted from (jose lopez salinas)'s solution
-function yprime = reactub2(t, y, p)
+function yprime = reactub_4(t, y, p)
     c  = y;           % Concentration in kmol/m3 of 'A'
     D  = p(1);        % Diffusion coefficient D
     k  = p(3);        % First order kinetic coefficient
@@ -20,12 +20,12 @@ function yprime = reactub2(t, y, p)
 %       sum = D . |------------------------------|
 %                 |                2             |
 %                 \              dx              /
-        sum0 = D * (c(i + 1) - 2 * c(i) + c(i - 1)) / (dx^2);
+        sum0 = D * (c(i + 1) - 2*c(i) + c(i - 1)) / (dx^2);
 %                  /C        - C       \
 %                  | (i + 1)    (i - 1)|
 %       sum1 = v . |-------------------|
 %                  \      2 . dx       /
-        sum1 = vo * (c(i + 1) - c(i - 1)) / (2 * dx);
+        sum1 = vo * (c(i + 1) - c(i - 1)) / (2*dx);
 %                   m
 %       sum2 = k . c
 %                   (i)
@@ -37,10 +37,12 @@ function yprime = reactub2(t, y, p)
         yprime(i) = sum0 - sum1 - sum2;
     end
     
-%   d . C          /    d . C          d . C       \
-%        (N)   1   |         (N - 1)        (N - 2)|
-%   -------- = - . |4 . ------------ - ------------|
-%     d . t    3   \          d . t        d . t   /
-    yprime(N) = (4 * yprime(N - 1) - yprime(N - 2)) / 3;
+%   d . C      -3 . C        + 14 . C        - 24 . C        + 18 . C       
+%        (N)         (N - 4)         (N - 3)         (N - 2)         (N - 1)
+%   -------- = -------------------------------------------------------------
+%     d . t                                  2                              
+    for i = N : -1 : 4
+        yprime(N) = (-3*yprime(N - 4) + 14*yprime(N - 3) - 24*yprime(N - 2) + 18*yprime(N - 1)) / 5;
+    end
     yprime = yprime';
 end
