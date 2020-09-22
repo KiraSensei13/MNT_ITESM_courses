@@ -8,7 +8,7 @@ close all;
 % Use any integration technique (Runge-Kutta type scheme) to solve in time,
 % and finite differences to integrate in axial domain.
 
-p(1)  = 0.0001; % Diffusion coefficient D
+p(1)  = 0.001; % Diffusion coefficient D
 p(2)  = 1.0;    % Injection concentration c0
 p(3)  = 1.5;    % First order kinetic coefficient k
 p(4)  = 1.0;    % Velocity of fluid injection vo
@@ -26,7 +26,7 @@ Y0(1) = 1.0;
 % use @reactub_3 for O(h^3) truncation error
 % use @reactub_4 for O(h^4) truncation error
 OPTIONS   = [];
-[time, Y] = ode45(@reactub_3, Tspan, Y0, OPTIONS, p);
+[time, Y] = ode45(@reactub_2, Tspan, Y0, OPTIONS, p);
 Yprime    = Y';
 
 % plot limits
