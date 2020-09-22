@@ -9,12 +9,12 @@ close all;
 % and finite differences to integrate in axial domain.
 
 p(1)  = 0.001; % Diffusion coefficient D
-p(2)  = 1.0;    % Injection concentration c0
-p(3)  = 1.5;    % First order kinetic coefficient k
-p(4)  = 1.0;    % Velocity of fluid injection vo
-M     = 2*640;  % Number of nodes
+p(2)  = 1.0;   % Injection concentration c0
+p(3)  = 1.5;   % First order kinetic coefficient k
+p(4)  = 1.0;   % Velocity of fluid injection vo
+M     = 2*640; % Number of nodes
 p(5)  = M;
-Tspan = [0 1];  % Domain of time
+Tspan = [0 1]; % Domain of time
 xi    = linspace(0, 1, M);
 
 % Initial conditions of the resulting set of ODEs
