@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  22 SEP 2020 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.1)  22 SEP 2020 22:17
 entering extended mode
 **./main.tex
 (main.tex
@@ -703,7 +703,7 @@ File: uesint.fd
 sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
-<./matlab/vectorField.png, id=25, 650.43pt x 433.62pt>
+<./matlab/vectorField.png, id=21, 650.43pt x 433.62pt>
 File: ./matlab/vectorField.png Graphic file (type png)
 <use ./matlab/vectorField.png>
 Package pdftex.def Info: ./matlab/vectorField.png  used on input line 129.
@@ -716,117 +716,128 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 {C:/Users/oskat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <./matla
 b/vectorField.png (PNG copy)>] [3]
-<./matlab/Oh2_truncationError.png, id=125, 867.24pt x 433.62pt>
+<./matlab/Oh2_truncationError.png, id=121, 867.24pt x 433.62pt>
 File: ./matlab/Oh2_truncationError.png Graphic file (type png)
 <use ./matlab/Oh2_truncationError.png>
 Package pdftex.def Info: ./matlab/Oh2_truncationError.png  used on input line 2
-46.
+72.
 (pdftex.def)             Requested size: 396.91327pt x 198.45529pt.
-<./matlab/Oh3_truncationError.png, id=126, 867.24pt x 433.62pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./matlab/Oh3_truncationError.png, id=122, 867.24pt x 433.62pt>
 File: ./matlab/Oh3_truncationError.png Graphic file (type png)
 <use ./matlab/Oh3_truncationError.png>
 Package pdftex.def Info: ./matlab/Oh3_truncationError.png  used on input line 2
-53.
+79.
 (pdftex.def)             Requested size: 396.91327pt x 198.45529pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./matlab/Oh4_truncationError.png, id=127, 867.24pt x 433.62pt>
+<./matlab/Oh4_truncationError.png, id=123, 867.24pt x 433.62pt>
 File: ./matlab/Oh4_truncationError.png Graphic file (type png)
 <use ./matlab/Oh4_truncationError.png>
 Package pdftex.def Info: ./matlab/Oh4_truncationError.png  used on input line 2
-60.
+86.
 (pdftex.def)             Requested size: 396.91327pt x 198.45529pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <./matlab/Oh2_truncationError.png (PNG copy)>] [5 <./matlab/Oh3_truncationEr
+[4] [5 <./matlab/Oh2_truncationError.png (PNG copy)> <./matlab/Oh3_truncationEr
 ror.png (PNG copy)> <./matlab/Oh4_truncationError.png (PNG copy)>] [6]
-<./matlab/growingBubbles_MoleculeShapeSize.png, id=235, 650.43pt x 578.16pt>
+<./matlab/growingBubbles_MoleculeShapeSize.png, id=217, 650.43pt x 529.98pt>
 File: ./matlab/growingBubbles_MoleculeShapeSize.png Graphic file (type png)
 <use ./matlab/growingBubbles_MoleculeShapeSize.png>
 Package pdftex.def Info: ./matlab/growingBubbles_MoleculeShapeSize.png  used on
- input line 354.
-(pdftex.def)             Requested size: 396.91327pt x 352.81824pt.
-<./matlab/growingBubbles_SurfaceTension.png, id=236, 650.43pt x 578.16pt>
+ input line 403.
+(pdftex.def)             Requested size: 396.91327pt x 323.4167pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./matlab/growingBubbles_SurfaceTension.png, id=219, 650.43pt x 529.22719pt>
 File: ./matlab/growingBubbles_SurfaceTension.png Graphic file (type png)
 <use ./matlab/growingBubbles_SurfaceTension.png>
 Package pdftex.def Info: ./matlab/growingBubbles_SurfaceTension.png  used on in
-put line 361.
-(pdftex.def)             Requested size: 396.91327pt x 352.81824pt.
-
+put line 410.
+(pdftex.def)             Requested size: 396.91327pt x 322.95732pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./matlab/growingBubbles_Viscosity.png, id=237, 650.43pt x 578.16pt>
+<./matlab/growingBubbles_Viscosity.png, id=220, 650.43pt x 529.22719pt>
 File: ./matlab/growingBubbles_Viscosity.png Graphic file (type png)
 <use ./matlab/growingBubbles_Viscosity.png>
 Package pdftex.def Info: ./matlab/growingBubbles_Viscosity.png  used on input l
-ine 368.
-(pdftex.def)             Requested size: 396.91327pt x 352.81824pt.
+ine 417.
+(pdftex.def)             Requested size: 396.91327pt x 322.95732pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./matlab/growingBubbles_MoleculeShapeSize.png (PNG copy)>]
-<./matlab/drainingTank_Height.png, id=265, 650.43pt x 433.62pt>
+<./img/drainingTank.png, id=221, 267.24844pt x 130.23656pt>
+File: ./img/drainingTank.png Graphic file (type png)
+<use ./img/drainingTank.png>
+Package pdftex.def Info: ./img/drainingTank.png  used on input line 427.
+(pdftex.def)             Requested size: 176.4044pt x 85.97029pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7] [8 <./matlab/growingBubbles_MoleculeShapeSize.png> <./matlab/growingBubbles
+_SurfaceTension.png>] [9 <./matlab/growingBubbles_Viscosity.png> <./img/drainin
+gTank.png>] [10]
+<./matlab/drainingTank_Height.png, id=311, 650.43pt x 433.62pt>
 File: ./matlab/drainingTank_Height.png Graphic file (type png)
 <use ./matlab/drainingTank_Height.png>
-Package pdftex.def Info: ./matlab/drainingTank_Height.png  used on input line 4
-12.
+Package pdftex.def Info: ./matlab/drainingTank_Height.png  used on input line 5
+03.
 (pdftex.def)             Requested size: 396.91327pt x 264.61368pt.
+ [11 <./matlab/drainingTank_Height.png (PNG copy)>] [12]
+[13]
 
+LaTeX Warning: Empty bibliography on input line 636.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\cite' on input line 418.
-
-[8 <./matlab/growingBubbles_SurfaceTension.png (PNG copy)>] [9 <./matlab/growin
-gBubbles_Viscosity.png (PNG copy)> <./matlab/drainingTank_Height.png (PNG copy)
->]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 637.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 637.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 423.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 637.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 637.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 190C8A2CB3AD4A347B4C389E7F79CF4A;361.
+(rerunfilecheck)             Checksum: 76142C20C303D070C6A188F6C0F60191;252.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 637.
  ) 
 Here is how much of TeX's memory you used:
- 16141 strings out of 492946
- 263086 string characters out of 3126267
- 901588 words of memory out of 3000000
- 19659 multiletter control sequences out of 15000+200000
+ 16099 strings out of 492946
+ 261306 string characters out of 3126267
+ 976408 words of memory out of 3000000
+ 19497 multiletter control sequences out of 15000+200000
  9790 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,47p,942b,1873s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmex10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/oskat/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/oska
-t/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
-:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr5.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr7.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/oskat/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/oskat/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users
-/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.
-pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmtt9.pfb>
-Output written on main.pdf (10 pages, 622748 bytes).
+ 37i,9n,42p,942b,1873s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\oskat\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/esint/dpi600
+\esint10.pk><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/oskat/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/oskat/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/oskat/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/
+Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr12.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/oskat/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/oskat/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/os
+kat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+<C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmti10.pfb><C:/Users/oskat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmtt9.pfb>
+Output written on main.pdf (14 pages, 624806 bytes).
 PDF statistics:
- 405 PDF objects out of 1000 (max. 8388607)
- 233 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 578 PDF objects out of 1000 (max. 8388607)
+ 351 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

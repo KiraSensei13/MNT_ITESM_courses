@@ -161,16 +161,37 @@ $L$ is the length of domain \\
 $t$ is the simulation time \\
 $x$ is the distance mesh
 
-The PDE shall be transformed into a set of ordinary differential equations ODEs using central finite differences in space, as depicted in Equations \ref{eq:reactorODEform} and.
+The PDE shall be transformed into a set of ordinary differential equations ODEs using central finite differences in space, as depicted in the central differences discretization Equation \ref{eq:reactorODEform}.
 
 \begin{equation}
 \frac{\ud C_i}{\ud t} = D \frac{C_{i+1} - 2 C_i + C_{i-1}}{\left( \Delta x \right)^2} - v \frac{C_{i+1} - C_{i-1}}{2 \Delta x} - k {C_i}^n
 \label{eq:reactorODEform}
 \end{equation}
 
-\begin{equation}
+Equations \ref{eq:reactorAEform_Oh2}, \ref{eq:reactorAEform_Oh3} and \ref{eq:reactorAEform_Oh4} are the backward differences discretization for $O(h^2)$, $O(h^3)$ and $O(h^4)$, respectively. Listing \ref{lis:reactorRungeKuttaODEsolver} solves the ODEs with truncation errors of $O(h^2)$, $O(h^3)$ and $O(h^4)$. \emph{ode45} results are displayed in Figures \ref{img:Oh2TruncationError}, \ref{img:Oh3TruncationError} and \ref{img:Oh4TruncationError} for which no noticeable differences can be depicted. The results from the three truncation errors as similar, as the difference between each one is around 2 percent. See Listings \ref{lis:reactorComputePercentError} and \ref{lis:reactorPercentErrorsForEachTruncation}.
 
+\begin{equation}
+\begin{aligned}
+\frac{\ud C_N}{\ud x} = \frac{C_{N-2} - 4 C_{N-1} + 3 C_N}{2 \Delta x} = 0 \\
+C_N = \frac{4 C_{N-1} - C_{N-2}}{3}
+\end{aligned}
 \label{eq:reactorAEform_Oh2}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\frac{\ud^2 C_N}{\ud x^2} = \frac{- C_{N-3} + 4 C_{N-2} - 5 C_{N-1} + 2 C_N}{\left( \Delta x \right)^2} = 0 \\
+C_N = \frac{C_{N-3} - 4 C_{N-2} + 5 C_{N-1}}{2}
+\end{aligned}
+\label{eq:reactorAEform_Oh3}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\frac{\ud^3 C_N}{\ud x^3} = \frac{3 C_{N-4} - 14 C_{N-3} + 24 C_{N-2} - 18 C_{N-1} + 5 C_N}{2 \left( \Delta x \right)^3} = 0 \\
+C_N = \frac{- 3 C_{N-4} + 14 C_{N-3} - 24 C_{N-2} + 18 C_{N-1}}{5}
+\end{aligned}
+\label{eq:reactorAEform_Oh4}
 \end{equation}
 
 \begin{lstlisting}[language=Matlab, caption=Reactor : Runge-Kutta ODE solver, label=lis:reactorRungeKuttaODEsolver]
@@ -295,6 +316,29 @@ ans =
 
 \section{Part C : Growing Bubbles}
 
+The growth and collapse of bubbles is given by Equations \ref{eq:bubbleRadius}.
+
+\begin{equation}
+\begin{aligned}
+\ddot{y} y + \frac{3}{2} \left( \dot{y} \right)^2 = -B(\tau) + \frac{1}{y^{3 k}}\\
+\ddot{y} = \frac{\ud^2 y}{\ud \tau^2}\\
+\dot{y} = \frac{\ud y}{\ud \tau}
+\end{aligned}
+\label{eq:bubbleRadius}
+\end{equation}
+
+Where $y$ is the ratio of the actual radius and the initial radius of the bubble. $\tau$ is the dimensionless time: $\displaystyle y = \frac{R}{R_0} $ $\displaystyle \tau = \frac{t}{R_0 \sqrt{\frac{\rho}{p_0}}}$. The initial conditions are: $\displaystyle y \rvert_{\tau = 0} = 1$ and $\displaystyle \dot{y} \rvert_{\tau = 0} = 0$
+
+Listing \ref{lis:growingBubblesSolveAndPlot} solves the ODEs to describe the evolution of the air bubbles in time given a pressure perturbation $B(\tau)$
+
+$$
+B(\tau) =
+    \begin{cases}
+      \frac{1 + cos\left( \pi \frac{\tau}{5} \right)}{5} & 0 \leq \tau \leq 10\\
+      1 & \text{otherwise}
+    \end{cases}
+$$
+
 \begin{lstlisting}[language=Matlab, caption=Growing Bubbles : Solve and Plot, label=lis:growingBubblesSolveAndPlot]
 % Runge-Kutta
 % k = 1.4 adiabatic process, k = 1 isothermic
@@ -378,11 +422,53 @@ end
 
 \section{Part C : Draining Tank}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.40\textwidth]{./img/drainingTank.png}
+	\caption{Effect of the viscosity}
+	\label{img:drainingTank}
+\end{figure}
+
+For a tank (as in Figure \ref{img:drainingTank}), filled with an invisid fluid (no ciscous effect), the fluid height $z$ can be tracked with two equations: conservation of mass $\displaystyle - \dot{m}$ and conservation of energy $\displaystyle \frac{\ud (k + \Phi)}{\ud t}$.
+
+$$ \frac{\ud m}{\ud t} = - \dot{m} = \frac{\ud}{\ud t} \left( \rho A z \right) $$
+$$ - \dot{m} = \rho A \frac{\ud z}{\ud t} $$
+
+$$ \frac{\ud (k + \Phi)}{\ud t} = - \dot{m} \left( \frac{1}{2} v^2 + g z \frac{p_0}{p} \right) $$
+$$ \frac{\ud}{\ud t} \int \left[ \frac{1}{2} \rho A v^2 \ud z + \frac{1}{2} \rho A_0 {v_0}^2 \ud L + \rho A g z \ud z \right] = - \dot{m} \left( \frac{1}{2} {v_0}^2 \right) $$
+$$ \frac{1}{2} \rho A v^2 \frac{\ud z}{\ud t} + \frac{1}{2} \rho z A \frac{\ud v^2}{\ud t} + \frac{1}{2} \rho A_0 L \frac{\ud {v_0}^2}{\ud t} + \rho A g z \frac{\ud z}{\ud t} = - \dot{m} \left( \frac{1}{2} {v_0}^2  \right) $$
+$$ \rho A \frac{\ud z}{\ud t} \left[ \frac{1}{2} v^2 + g z + z v \frac{\ud v}{\ud z} + L \frac{A_0}{A} v_0 \frac{\ud v_0}{\ud z} \right] = - \dot{m} \left( \frac{1}{2} {v_0}^2  \right) $$
+$$ \rho A \frac{\ud z}{\ud t} = - \rho v_0 A_0 $$
+$$ A \frac{\ud z}{\ud t} = - v A $$
+$$ \frac{\ud z}{\ud t} = - v $$
+$$ \frac{1}{2} v^2 + g z + z v \frac{\ud v}{\ud z} + L \frac{A_0}{A} v_0 \frac{\ud v_0}{\ud z} = - \frac{1}{2} {v_0}^2 $$
+
+Therefore the equation to solve is:
+
+$$ \frac{\ud^2 z}{\ud t^2} = \frac{- g z + \left( \frac{\ud z}{\ud t} \right)^2 \frac{\lambda^4 - 1}{2}}{L \lambda^2 + z} $$
+$$ \lambda = \frac{D}{D_0} $$
+$$ \lambda^2 = \frac{A}{A_0} $$
+
+where,
+
+$$ y_1 = z $$
+$$ y_2 = \frac{\ud z}{\ud t} = \frac{\ud y_1}{\ud t} $$
+
+The ODEs to solve are:
+$$ \frac{\ud y_2}{\ud t} = \frac{- g y_1 + {y_2}^2 \frac{\lambda^4 - 1}{2}}{L \lambda^2 + y_1} $$
+$$ \frac{\ud y_1}{\ud t} = y_2 $$
+
+with the following initial conditions:
+$$ y_1 \rvert_{t = 0} = 1 \textrm{m} $$
+$$ y_2 \rvert_{t = 0} = 1 \textrm{m/s} $$
+
+Listing \ref{lis:drainingTankSolveAndPlot} solves and plot the previous ODEs.
+
 \begin{lstlisting}[language=Matlab, caption=Draining Tank : Solve and Plot, label=lis:drainingTankSolveAndPlot]
 % Runge-Kutta
 g      = 9.81; % gravity
-lambda = 10; % Area/Area0
-L      = 2;   % length of the pipe
+lambda = 10;   % Area/Area0
+L      = 2;    % length of the pipe
 
 % Plot
 figure;
@@ -419,10 +505,133 @@ end
 	\label{img:drainingTankHeight}
 \end{figure}
 
+As depicted in Figure \ref{img:drainingTankHeight}, the tank shall be emptied by time $\tau = 45$.
 
-\section{Part D : Introduction to Fluid Kinematics (ANSYS-Fluent) \cite{ANSYSmodelWing}}
+%\section{Part D : Introduction to Fluid Kinematics (ANSYS-Fluent) \cite{ANSYSmodelWing}}
 
+\pagebreak 
+\section*{Appendix}
 
+\begin{lstlisting}[language=Matlab, caption=drainingTank]
+function[ydot] = drainingTank(x, y, par)
+    g      = par(1);
+    lambda = par(2);
+    L      = par(3);
+    
+    ydot(1) = y(2);
+    ydot(2) = (-g*y(1) + ((y(2))^2*(lambda^4 - 1))/2) / (L*lambda^2  + y(1));
+    ydot    = ydot';
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=Matlab, caption=growingBubbles]
+function[ydot] = growingBubbles(x, y, par)
+    k   = par(1);
+    a1  = par(2);
+    b1  = par(3);
+    tau = x;
+    B   = (1+cos(pi*tau/5))/2;
+    if tau > 10
+        B = 1;
+    end
+    
+    ydot(1) = y(2);
+    ydot(2) = (-B+1/(y(1))^(3*k)-(3/2)*y(2)^2-a1*y(2)/y(1)-b1/y(1))/y(1);
+    ydot    = ydot';
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=Matlab, caption=reactub2]
+%% TUBULAR REACTOR adapted from (jose lopez salinas)'s solution
+function yprime = reactub_2(t, y, p)
+    c  = y;           % Concentration in kmol/m3 of 'A'
+    D  = p(1);        % Diffusion coefficient D
+    k  = p(3);        % First order kinetic coefficient
+    vo = p(4);        % Velocity of fluid injection
+    N  = p(5);        % Number of nodes
+    m  = 1;           % Chemical decomposition kinetics is first order
+    dx = 1 / (N - 1); % Step size
+    
+    % Initially filled with an inert solvent
+    yprime    = zeros(1, N-1);
+    yprime(1) = 0;
+    
+    % centered differences with truncation error proportional to the step
+    % size to the power 2
+    for i = 2 : N - 1
+        sum0 = D * (c(i + 1) - 2 * c(i) + c(i - 1)) / (dx^2);
+        sum1 = vo * (c(i + 1) - c(i - 1)) / (2 * dx);
+        sum2 = k * c(i)^m;
+        yprime(i) = sum0 - sum1 - sum2;
+    end
+    for i = N : -1 : 2
+        yprime(N) = (4 * yprime(N - 1) - yprime(N - 2)) / 3;
+    end
+    yprime = yprime';
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=Matlab, caption=reactub3]
+%% TUBULAR REACTOR adapted from (jose lopez salinas)'s solution
+function yprime = reactub_3(t, y, p)
+    c  = y;           % Concentration in kmol/m3 of 'A'
+    D  = p(1);        % Diffusion coefficient D
+    k  = p(3);        % First order kinetic coefficient
+    vo = p(4);        % Velocity of fluid injection
+    N  = p(5);        % Number of nodes
+    m  = 1;           % Chemical decomposition kinetics is first order
+    dx = 1 / (N - 1); % Step size
+    
+    % Initially filled with an inert solvent
+    yprime    = zeros(1, N-1);
+    yprime(1) = 0;
+    
+    % centered differences with truncation error proportional to the step
+    % size to the power 2
+    for i = 2 : N - 1
+        sum0 = D * (c(i + 1) - 2*c(i) + c(i - 1)) / (dx^2);
+        sum1 = vo * (c(i + 1) - c(i - 1)) / (2*dx);
+        sum2 = k * c(i)^m;
+        yprime(i) = sum0 - sum1 - sum2;
+    end
+    
+    for i = N : -1 : 3
+        yprime(N) = (yprime(N - 3) - 4*yprime(N - 2) + 5*yprime(N - 1)) / 2;
+    end
+    yprime = yprime';
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=Matlab, caption=reactub4]
+%% TUBULAR REACTOR adapted from (jose lopez salinas)'s solution
+function yprime = reactub_4(t, y, p)
+    c  = y;           % Concentration in kmol/m3 of 'A'
+    D  = p(1);        % Diffusion coefficient D
+    k  = p(3);        % First order kinetic coefficient
+    vo = p(4);        % Velocity of fluid injection
+    N  = p(5);        % Number of nodes
+    m  = 1;           % Chemical decomposition kinetics is first order
+    dx = 1 / (N - 1); % Step size
+    
+    % Initially filled with an inert solvent
+    yprime    = zeros(1, N-1);
+    yprime(1) = 0;
+    
+    % centered differences with truncation error proportional to the step
+    % size to the power 2
+    for i = 2 : N - 1
+        sum0 = D * (c(i + 1) - 2*c(i) + c(i - 1)) / (dx^2);
+        sum1 = vo * (c(i + 1) - c(i - 1)) / (2*dx);
+        sum2 = k * c(i)^m;
+        yprime(i) = sum0 - sum1 - sum2;
+    end
+    
+    for i = N : -1 : 4
+        yprime(N) = (-3*yprime(N - 4) + 14*yprime(N - 3) - 24*yprime(N - 2) + 18*yprime(N - 1)) / 5;
+    end
+    yprime = yprime';
+end
+\end{lstlisting}
 
 \printbibliography[title={References}]
 \end{document}

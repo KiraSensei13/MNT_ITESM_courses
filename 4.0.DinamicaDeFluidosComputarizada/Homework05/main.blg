@@ -1,15 +1,9 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'main.blg'
 [27] biber-MSWIN64:315> INFO - === 
-[57] Biber.pm:371> INFO - Reading 'main.bcf'
-[136] Biber.pm:889> INFO - Found 1 citekeys in bib section 0
-[147] Biber.pm:4093> INFO - Processing section 0
-[159] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
-[168] bibtex.pm:1523> INFO - LaTeX decoding ...
-[192] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
-[208] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[208] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[208] Biber.pm:3921> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[208] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[214] bbl.pm:636> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[215] bbl.pm:739> INFO - Output to main.bbl
+[53] Biber.pm:371> INFO - Reading 'main.bcf'
+[130] Biber.pm:889> INFO - Found 0 citekeys in bib section 0
+[137] Utils.pm:193> WARN - The file 'main.bcf' does not contain any citations!
+[149] bbl.pm:636> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[149] bbl.pm:739> INFO - Output to main.bbl
+[153] Biber.pm:110> INFO - WARNINGS: 1

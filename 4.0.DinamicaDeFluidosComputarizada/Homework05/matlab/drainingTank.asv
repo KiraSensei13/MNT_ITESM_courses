@@ -1,8 +1,0 @@
-function[ydot] = drainingTank(x, y, par)
-    g      = par(1);
-    lambda = par(2);
-    
-    ydot(1) = y(2);
-    ydot(2) = () / ();
-    ydot    = ydot';
-end
