@@ -12,8 +12,8 @@ xyStep = xyLim/10;
 VectorX = cos(y); % vector in the x direction
 VectorY = sin(x); % vector in the y direction
 
-V = sqrt(VectorX.^2 + VectorY.^2);
-PHI = 6 + x.^3 / 3 - y.^2 .* x - y;
+V        = sqrt(VectorX.^2 + VectorY.^2);
+PHI      = 6 + x.^3 / 3 - y.^2 .* x - y;
 [Dx, Dy] = gradient(V, 0.2, 0.2);
 
 % Display
