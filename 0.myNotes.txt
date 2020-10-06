@@ -2038,7 +2038,7 @@ https://www.tokaicarbon.co.jp/en/products/fine_carbon/
 
 CEM (currently at MTY)
 MNT
-Microfluidics Lab [CETEC torre Sur] / NFES Lab [A7] / Macromolecular photosciences lab (CETEC LM-121)
+Microfluidics Lab [CETEC torre Sur] / NFES Lab [A7 LD-106, Centro de Estudios de Energía] / Macromolecular photosciences lab (CETEC LM-121, PB Torre Sur)
 A01212611
 Osamu Katagiri Tanaka
 A01212611@itesm.mx
@@ -2242,6 +2242,25 @@ $ 14160.00
 $ 18720.00
 + apostilla de titulo y certificado
 + autenticación de título y certificado
+
+/*****************************************************************************/
+
+\includegraphics[width=1.0\textwidth]{./Figures/CBNfingerprint.png}
+
+/*****************************************************************************/
+
+OCTOBER 2020
+
+agua      208.00
+luz      1805.00 P
+gas       322.00 P
+
+internet  220.00
+renta    7500.00
+
+debts    4166.47 P
+
+total  ~15000.00
 
 /*****************************************************************************/
 
