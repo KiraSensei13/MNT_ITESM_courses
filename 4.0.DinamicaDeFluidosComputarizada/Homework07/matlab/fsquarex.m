@@ -36,5 +36,5 @@ function[x, y] = fsquarex(p3)
         end
     end
     
-    plot(x, y, 'ro-')
+    % plot(x, y, 'ro-')
 end

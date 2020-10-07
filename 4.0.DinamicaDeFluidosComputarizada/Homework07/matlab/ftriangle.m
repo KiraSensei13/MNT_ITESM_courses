@@ -5,7 +5,7 @@ function[x, y] = ftriangle(p3)
 % send parameters xo, yo and a
     x0 = p3(1);
     y0 = p3(2);
-    a  = p3(3);
+    a  = p3(3)*2;
     n  = round(a * 100); % points per side
     
     top_vertex_x = x0;
@@ -51,5 +51,5 @@ function[x, y] = ftriangle(p3)
         count = count + 1;
     end
 
-    plot(x, y, 'ro-')
+    % plot(x, y, 'ro-')
 end
