@@ -9,8 +9,8 @@ function[zprime] = Vfield(t, z, p)
     end
     
     for i = 1 : n / 2
-        Vx(i) = 2 * x(i) * y(i);
-        Vy(i) = - y(i) ^ 2;
+        Vx(i) = 2 * x(i) * y(i)^(1/2);
+        Vy(i) = - y(i) ^ (1/2);
     end
     
     for i = 1 : n / 2
