@@ -2255,13 +2255,201 @@ agua      208.00
 luz      1805.00 P
 gas       322.00 P
 
-internet  220.00
-renta    7500.00
+internet  220.00 P
+renta    7500.00 P
 
 debts    4166.47 P
 
-total  ~15000.00
+total  ~15000.00 P
+
+/*****************************************************************************/
+
+* pedir asesoría - CFD
+* pagar paquete de graduación
+preparar muestras con más sal
+* fabricar muestras
+* CFD NFES simulación
+escribir
+
+/*****************************************************************************/
+
+inlet_velocity
+2*0.00103[s^-1]*(1[m]-(x^2/1[m]))*((1/2)+(1/PI)*atan((Time-0.00[s])/0.01[s]))*(1-((1/2)+(1/PI)*atan((Time-0.152[s])/0.01[s])))
+
+https://www.wolframalpha.com/input/?i=8.333e-11+%2F+%28PI*%28160e-6%29%5E2%29
+https://www.wolframalpha.com/input/?i=5+uL%2Fmin+to+m%5E3%2Fs
+
+down_force
+IF(Time>0.22[s],-1e3[m s^-2]*4*((1/2)+(1/PI)*atan((x+1e-9[m])/0.0000001[m]))*(1-((1/2)+(1/PI)*atan((x-1e-9[m])/0.0000001[m]))),-g)
+
+/*****************************************************************************/
+
+Fluid Mechanics for Chemical Engineers: With Microfluidics, Cfd, and Comsol Multiphysics 5 
+
+Chapter 12
+
+/*****************************************************************************/
+
+candy making is a lot like bread making. bread is a just a lot of combinations of some flour, and some water, and some yeast, and some salt. and through some suttle differences and the type of ingredients, and the proportions, and on the process you get a world, a whole universe of breads. is kind of the same thing with candy. suttle variations of protein, sugar, water and air give you a whole universe of nougats for you to try.
+
+/*****************************************************************************/
+
+knovel
+
+coarser nozzles
+
+posit
+
+/*****************************************************************************/
+
+aligned
+aligned discontinous
+cross aligned
+mesh
+randomly distributed
+single
+
+coiled
+curved
+meander
+straight
+NA
+
+/*****************************************************************************/
+
+* Critical voltage law
+[1] A. Cisquella-Serra, M. Magnani, Á. Gual-Mosegui, S. Holmberg, M. Madou, M. Gamero-Castaño, Study of the electrostatic jet initiation in near-field electrospinning, J. Colloid Interface Sci. 543 (2019) 106–113. https://doi.org/10.1016/J.JCIS.2019.02.041.
+
+* Design of experiments
+[1] W. E. King, Y. Gillespie, K. Gilbert, G. L. Bowlin, Characterization of Polydioxanone in Near-Field Electrospinning, Polymers (Basel). 12 (2019) 1. https://doi.org/10.3390/polym12010001.
+
+* Critical concentration
+[1] D. Han, A.J. Steckl, Coaxial Electrospinning Formation of Complex Polymer Fibers and their Applications, Chempluschem. 84 (2019) 1453–1497. https://doi.org/10.1002/cplu.201900281.
+
+* Effect of concentration
+[1] O. Husain, W. Lau, M. Edirisinghe, M. Parhizkar, Investigating the particle to fibre transition threshold during electrohydrodynamic atomization of a polymer solution, Mater. Sci. Eng. C. 65 (2016) 240–250. https://doi.org/10.1016/j.msec.2016.03.076.
+
+* Parameters classified based on influencing level on fibre diameter
+[1] D. Parajuli, P. Koomsap, A.A. Parkhi, P. Supaphol, Experimental investigation on process parameters of near-field deposition of electrospinning-based rapid prototyping, Virtual Phys. Prototyp. 11 (2016) 193–207. https://doi.org/10.1080/17452759.2016.1210314.
+
+* Indeed the ability to truly control the deposition pattern of nanofibers in the electrospinning process depends mainly on the characteristic of solution. The right balance between the solution viscosity and evaporation rate of solvent is necessary to allow the deposition of a stable jet of polymer on substrate. It turns out that the NFES conditions are much more critical than those for the classical electrospinning due to short time of flight and the required higher stability of solution on the tip. Therefore, in NFES deposition it is necessary optimize operating parameters like the voltage applied, polymer feed rate, concentration, polymer molecular weight of the solution, operating temperature, relative humidity, collector type, diameter of the needle and offset distance between the needle tip and collector [34–36].
+[1] F. Ruggieri, D. Di Camillo, L. Lozzi, S. Santucci, A. De Marcellis, G. Ferri, L. Giancaterini, C. Cantalini, Preparation of nitrogen doped TiO2 nanofibers by near field electrospinning (NFES) technique for NO2 sensing, Sensors Actuators B Chem. 179 (2013) 107–113. https://doi.org/10.1016/j.snb.2012.10.094.
+
+* intro to electrospinning
+[1] G.R. Williams, B.T. Raimi-Abraham, C.J. Luo, Electrospinning fundamentals, Nanofibres Drug Deliv. (2018) 24–59. https://doi.org/10.2307/j.ctv550dd1.6.
+
+* influence of process parameters
+[1] J. Zheng, Y.Z. Long, B. Sun, Z.H. Zhang, F. Shao, H. Di Zhang, Z.M. Zhang, J.Y. Huang, Polymer nanofibers prepared by low-voltage near-field electrospinning, Chinese Phys. B. 21 (2012) 1–6. https://doi.org/10.1088/1674-1056/21/4/048102.
+
+/*****************************************************************************/
+
+COSTCO - cubiertos
+VA1424298 - varios modelos - 8 personas - 1400.00
+
+900023390458
+
+800 801 1111
+
+/*****************************************************************************/
+
+Inicio de estudios:
+14/ene/2019
+Término de estudios:
+14/ene/2021
+Solicitud:
+2019-000002-01NACF-09732
+Inicio de beca:
+01/feb/2019
+Término de beca:
+31/ene/2021
+Institución/sede:
+INSTITUTO TECNOLÓGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY / CAMPUS CIUDAD DE MEXICO, INSTITUTO TECNOLOGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY
+Entidad:
+CIUDAD DE MÉXICO
+Programa:
+MAESTRÍA EN NANOTECNOLOGÍA
+Grado:
+MAESTRIA
+Área:
+INGENIERÍA Y TECNOLOGÍA
+Campo:
+INGENIERÍA Y TECNOLOGÍA
+Disciplina:
+NANOCIENCIAS Y NANOTECNOLOGÍAS
+
+/*****************************************************************************/
+
+0.022 0.0082875 25  1115.90625
+0.032 0.008795  25  1149.1125
+0.044 0.0093025 25  1182.31875
+0.056 0.00981 25  1215.525
+0.068 0.0103175 25  1241.350893
+0.08  0.010825  25  1267.176786
+0.14  0.0113325 25  1293.002679
+0.2 0.01184 25  1318.828571
+0.032 0.0088  25  1149.1
+0.056 0.00981 25  1215.525
+0.08  0.010825  25  1267.176786
+0.2 0.01184 25  1318.828571
 
 /*****************************************************************************/
 
 
+@inproceedings{Belenkov2003,
+address = {Chelyabinsk, Russia},
+author = {Belenkov, Е. А.},
+booktitle = {Carbon Nanotubes and Graphene},
+file = {:C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/COCS.pdf:pdf},
+keywords = {carbonIntro},
+mendeley-tags = {carbonIntro},
+pages = {5},
+publisher = {Chelyabinsk State University},
+title = {{Classification of carbon structures}},
+year = {2003}
+}
+@incollection{Fedel2013,
+abstract = {Diamond-like carbon (DLC) films offer numerous functional characteristics that make them particularly attractive as potential wear resistant coatings for biomedical applications. This chapter first discusses the blood compatibility of various forms of plain and doped DLCs, and evaluates possible correlations with film structure and surface properties. The chapter then considers the application of DLC coatings to different typologies of implants and medical devices, with special regard to cardiovascular prostheses. {\textcopyright} 2013 Woodhead Publishing Limited. All rights reserved.},
+author = {Fedel, M.},
+booktitle = {Diamond-Based Materials for Biomedical Applications},
+doi = {10.1533/9780857093516.1.71},
+file = {:C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}Thesis/0{\_}References/BCODLCDCLC.pdf:pdf},
+isbn = {9780857093400},
+keywords = {Blood compatibility,Cardiovascular applications,Coatings,Diamond-like carbon,carbonIntro},
+mendeley-tags = {carbonIntro},
+number = {Dlc},
+pages = {71--102},
+publisher = {Elsevier},
+title = {{Blood compatibility of diamond-like carbon (DLC) coatings}},
+url = {http://dx.doi.org/10.1533/9780857093516.1.71 https://linkinghub.elsevier.com/retrieve/pii/B9780857093400500047},
+year = {2013}
+}
+@book{Razeghi2019,
+abstract = {The fourth edition of this class-tested, multi-disciplinary introduction to solid state engineering adds dozens of revised and updated sections and problems, as well as three new chapters on solar energy harvesting, thermal and photothermal energy harvesting, and photo-thermovoltaics. Combining concepts from physics, chemistry, electrical engineering, materials science, and mechanical engineering, Professor Razeghi describes electron-electron and electron-phonon interactions, the Kane effective mass method, the carbon atom, thermal properties of crystals, the harmonic oscillator, the hydrogen atom, the quantum mechanical description of angular momentum, and the origin of spin in a chapter devoted to quantum mechanics. This textbook features an improved transport theory description that goes beyond Drude theory, discussing the Boltzmann approach. Introducing students to the rigorous quantum mechanical way of thinking about and formulating transport processes, this fourth edition presents the basic physics concepts and thorough treatment of semiconductor characterization technology, designed for solid state engineers.},
+address = {Cham},
+author = {Razeghi, Manijeh},
+booktitle = {Fundamentals of Solid State Engineering},
+doi = {10.1007/978-3-319-75708-7},
+file = {:C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/2019{\_}Book{\_}FundamentalsOfSolidStateEngine.pdf:pdf},
+isbn = {978-3-319-75707-0},
+keywords = {carbonIntro,is{\_}book},
+mendeley-tags = {carbonIntro,is{\_}book},
+pages = {1--689},
+publisher = {Springer International Publishing},
+title = {{Fundamentals of Solid State Engineering}},
+url = {http://link.springer.com/10.1007/978-3-319-75708-7},
+year = {2019}
+}
+@book{AlstrupJensen2015,
+author = {{Alstrup Jensen}, Keld and Bogelund, Jesper and Jackson, Petra and {Raun Jacobsen}, Nicklas and Birkedal, Renie and {Axel Clausen}, Per and {Thoustrup Saber}, Anne and Wallin, H{\aa}kan and {Birgitte Vogel}, Ulla},
+file = {:C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/CNTPMAPAOTARTMATE.pdf:pdf},
+isbn = {978-87-93352-98-8},
+keywords = {carbonIntro,structuralTypesOfCarbon},
+mendeley-tags = {carbonIntro,structuralTypesOfCarbon},
+number = {1805},
+pages = {49--82},
+publisher = {The Danish Environmental Protection Agency},
+title = {{Carbon nanotubes - Types, products, market, and provisional assessment of the associated risks to man and the environment}},
+year = {2015}
+}
+
+\cite{Heersche2007, Heimann1997, Belenkov2003, Fedel2013, Razeghi2019, AlstrupJensen2015}
