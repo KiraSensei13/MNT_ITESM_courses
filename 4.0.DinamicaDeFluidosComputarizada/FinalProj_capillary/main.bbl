@@ -1,0 +1,168 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{Fisher1980}{article}{}
+      \name{author}{2}{}{%
+        {{hash=14c0f6c5654547dd13f1b7f4822c70ba}{%
+           family={Fisher},
+           familyi={F\bibinitperiod},
+           given={Leonard\bibnamedelima R.},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=408caaae637fab184d17d8735fd2c731}{%
+           family={Lark},
+           familyi={L\bibinitperiod},
+           given={Prosper\bibnamedelima D.},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7d64de57e0e46dcaa73f8121b4806b3}
+      \strng{fullhash}{f7d64de57e0e46dcaa73f8121b4806b3}
+      \strng{bibnamehash}{f7d64de57e0e46dcaa73f8121b4806b3}
+      \strng{authorbibnamehash}{f7d64de57e0e46dcaa73f8121b4806b3}
+      \strng{authornamehash}{f7d64de57e0e46dcaa73f8121b4806b3}
+      \strng{authorfullhash}{f7d64de57e0e46dcaa73f8121b4806b3}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00219797}
+      \field{journaltitle}{Journal of Colloid and Interface Science}
+      \field{month}{7}
+      \field{number}{1}
+      \field{title}{{The effect of adsorbed water vapor on liquid water flow in pyrex glass capillary tubes}}
+      \field{volume}{76}
+      \field{year}{1980}
+      \field{pages}{251\bibrangedash 253}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1016/0021-9797(80)90291-X
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/TEOAWVOLWFIPGCT.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/002197978090291X
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/002197978090291X
+      \endverb
+    \endentry
+    \entry{Oliva1975}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5990a3720daf0abd67a00f6bfab657bd}{%
+           family={Oliva},
+           familyi={O\bibinitperiod},
+           given={M.A},
+           giveni={M\bibinitperiod}}}%
+        {{hash=87cc37a4a0f5586aa785454536fd02ea}{%
+           family={Joye},
+           familyi={J\bibinitperiod},
+           given={D.D},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{43909390c38db64b4c2f1dff43042cae}
+      \strng{fullhash}{43909390c38db64b4c2f1dff43042cae}
+      \strng{bibnamehash}{43909390c38db64b4c2f1dff43042cae}
+      \strng{authorbibnamehash}{43909390c38db64b4c2f1dff43042cae}
+      \strng{authornamehash}{43909390c38db64b4c2f1dff43042cae}
+      \strng{authorfullhash}{43909390c38db64b4c2f1dff43042cae}
+      \field{sortinit}{O}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The viscosities of some Newtonian liquids were measured using a simple apparatus, whose construction is based on the principles of capillarity and flow between two parallel flat plates. The Navier-Stokes equations, with simplifying assumptions, were used to derive a relationship between fluid velocity and its viscosity and surface tension for the given geometry. Viscosity was the "unknown" variable in the experiments reported in this work. Motor oils and other liquids used in the experiments yielded viscosities ranging from 20 cp to 12,000 cp. Deviations from true viscosity, as determined by a Haake Rotovisco instrument, were within 5{\%} for most cases. {©} 1975.}
+      \field{issn}{00219797}
+      \field{journaltitle}{Journal of Colloid and Interface Science}
+      \field{month}{6}
+      \field{number}{3}
+      \field{title}{{Determination of viscosity of Newtonian liquids in a capillary flow between horizontal, parallel flat plates}}
+      \field{volume}{51}
+      \field{year}{1975}
+      \field{pages}{509\bibrangedash 515}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/0021-9797(75)90147-2
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/DOVONLIACFBHPFP.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0021979775901472
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0021979775901472
+      \endverb
+    \endentry
+    \entry{Zhmud2000}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6aa08b1416b9057e4cacbdacc8e729a2}{%
+           family={Zhmud},
+           familyi={Z\bibinitperiod},
+           given={B.V.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7c992a7d16b71f10fab78705face1fba}{%
+           family={Tiberg},
+           familyi={T\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=9c9061e7a3c721f3b5c0b642ae9806bb}{%
+           family={Hallstensson},
+           familyi={H\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8e45eedf8adcac3ff5c468f59a070fc}
+      \strng{fullhash}{b8e45eedf8adcac3ff5c468f59a070fc}
+      \strng{bibnamehash}{b8e45eedf8adcac3ff5c468f59a070fc}
+      \strng{authorbibnamehash}{b8e45eedf8adcac3ff5c468f59a070fc}
+      \strng{authornamehash}{b8e45eedf8adcac3ff5c468f59a070fc}
+      \strng{authorfullhash}{b8e45eedf8adcac3ff5c468f59a070fc}
+      \field{sortinit}{Z}
+      \field{sortinithash}{156173bd08b075d7295bc3e0f4735a04}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An overview and detailed analysis of the classical theory of capillarity is presented. A number of known equations of capillary rise dynamics are shown to be different limiting cases of one rather general equation. Some internal inconsistencies of the classical equations are pointed out. The role of nonlinear dissipation and flow pattern effects in the front zone of the liquid column and near the capillary entrance is discussed. Numerical simulations and experimental data demonstrating some characteristic types of dynamic behavior predicted by the theory are reported. Special attention is paid to the capillary rise of surfactant solutions. As applied to this special case, the existing theory is substantially elaborated by setting up a closed system of equations describing the surfactant transport and relaxation processes in the adsorption layer. A simplified relation for the capillary rise dynamics in the case of strong depletion of the interfacial region is obtained, which is in qualitative agreement with the experimental behavior. (C) 2000 Academic Press.}
+      \field{issn}{00219797}
+      \field{journaltitle}{Journal of Colloid and Interface Science}
+      \field{month}{8}
+      \field{number}{2}
+      \field{title}{{Dynamics of Capillary Rise}}
+      \field{volume}{228}
+      \field{year}{2000}
+      \field{pages}{263\bibrangedash 269}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1006/jcis.2000.6951
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/DOCR.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0021979700969510
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0021979700969510
+      \endverb
+      \keyw{Capillarity,Lucas-Washburn equation,Surfactants}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

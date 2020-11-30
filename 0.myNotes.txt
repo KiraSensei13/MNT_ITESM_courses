@@ -2394,19 +2394,6 @@ NANOCIENCIAS Y NANOTECNOLOGÍAS
 
 /*****************************************************************************/
 
-
-@inproceedings{Belenkov2003,
-address = {Chelyabinsk, Russia},
-author = {Belenkov, Е. А.},
-booktitle = {Carbon Nanotubes and Graphene},
-file = {:C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}courses/0.References/COCS.pdf:pdf},
-keywords = {carbonIntro},
-mendeley-tags = {carbonIntro},
-pages = {5},
-publisher = {Chelyabinsk State University},
-title = {{Classification of carbon structures}},
-year = {2003}
-}
 @incollection{Fedel2013,
 abstract = {Diamond-like carbon (DLC) films offer numerous functional characteristics that make them particularly attractive as potential wear resistant coatings for biomedical applications. This chapter first discusses the blood compatibility of various forms of plain and doped DLCs, and evaluates possible correlations with film structure and surface properties. The chapter then considers the application of DLC coatings to different typologies of implants and medical devices, with special regard to cardiovascular prostheses. {\textcopyright} 2013 Woodhead Publishing Limited. All rights reserved.},
 author = {Fedel, M.},
@@ -2453,3 +2440,136 @@ year = {2015}
 }
 
 \cite{Heersche2007, Heimann1997, Belenkov2003, Fedel2013, Razeghi2019, AlstrupJensen2015}
+
+/*****************************************************************************/
+
+https://itesm.zoom.us/j/3095105170
+
+##### to remove ...
+def gamma(eta_0, Oh, rho, R_jet):
+    nume = (eta_0 / Oh)**2;
+    deno = rho * R_jet
+    res = nume / deno;
+    return res;
+
+def K(Phi_0, Pi_1, eta_0, L):
+    bar_epsilon = 8.85e-12;
+    nume = 2 * (bar_epsilon**2) * (Phi_0**2);
+    deno = Pi_1 * eta_0 * (L**2);
+    res = nume / deno;
+    return res;
+
+df["K [S/m]"] = K(
+    df["\Phi_0 [V]"],
+    df["\Pi_1"],
+    df["\eta_0 [Pa s]"],
+    df["L [m]"]
+);
+
+df["\gamma [N/m]"] = gamma(
+    df["\eta_0 [Pa s]"],
+    df["Oh"],
+    df["rho [Kg/m^3]"],
+    df["R_{jet}"]
+);
+##### to remove ...
+
+/*****************************************************************************/
+
+NFES Figures
+10.1115/1.4036348
+
+image analysis
+10.1016/C2013-0-04111-4
+
+/*****************************************************************************/
+
+%Poly(Ethylene Oxide) (PEO) and SU-8 2002
+& Cyclopentanone ()                                       \\ YES
+
+%Polystyrene (PS)
+& Tetrahydrofuran (THF)                                 \\ YES
+
+%Poly(Styrene-co-Butadiene) (PSB)
+& 1-Methyl-2-Pyrrolidinone (NMP)                        \\ *NO shell
+
+%Poly(Styrene-co-Butadiene) (PSB)
+& Tetrahydrofuran (THF) and N,N-Dimethylformamide (DMF) \\ YES
+
+%Poly(Styrene-co-alpha-Methylstyrene) (PSMS)
+& N,N-Dimethylformamide (DMF)                           \\ *NO no-cone
+
+%Poly(9-Vinylcarbazole) (PVK)
+& Chloroform (CHL)                                      \\ YES
+
+%Poly(9-Vinylcarbazole) (PVK) and SU-8 2002
+& Cyclopentanone                                        \\ YES
+
+/*****************************************************************************/
+
+data_a = [
+    df['PEOinSU8_00_dia'].dropna().to_numpy(),
+    df['PSinTHF_07_dia'].dropna().to_numpy(),
+    df['PSBinTHFDMF_06_dia'].dropna().to_numpy(),
+    df['PVKinCHL_07_dia'].dropna().to_numpy(),
+    df['PVKinSU8_01_dia'].dropna().to_numpy()
+]
+data_b = [
+    df['PEOinSU8_05_dia'].dropna().to_numpy(),
+    df['PSinTHF_05_dia'].dropna().to_numpy(),
+    df['PSBinTHFDMF_00_dia'].dropna().to_numpy(),
+    df['PVKinCHL_05_dia'].dropna().to_numpy(),
+    df['PVKinSU8_02_dia'].dropna().to_numpy()
+]
+data_c = [
+    df['PEOinSU8_04_dia'].dropna().to_numpy(),
+    df['PSinTHF_06_dia'].dropna().to_numpy(),
+    df['PSBinTHFDMF_02_dia'].dropna().to_numpy(),
+    df['PVKinCHL_02_dia'].dropna().to_numpy(),
+    df['PVKinSU8_06_dia'].dropna().to_numpy()
+]
+data_d = [
+    df['PEOinSU8_02_dia'].dropna().to_numpy(),
+    df['PSinTHF_03_dia'].dropna().to_numpy(),
+    df['PSBinTHFDMF_03_dia'].dropna().to_numpy(),
+    df['PVKinCHL_06_dia'].dropna().to_numpy(),
+    df['PVKinSU8_05_dia'].dropna().to_numpy()
+]
+data_e = [
+    df['PEOinSU8_06_dia'].dropna().to_numpy(),
+    df['PSinTHF_04_dia'].dropna().to_numpy(),
+    df['PSBinTHFDMF_04_dia'].dropna().to_numpy(),
+    df['PVKinCHL_03_dia'].dropna().to_numpy(),
+    df['PVKinSU8_04_dia'].dropna().to_numpy()
+]
+
+/*****************************************************************************/
+
+@article{Pipe2008,
+author = {Pipe, Christopher J and Majmudar, Trushant S and McKinley, Gareth H.},
+doi = {10.1007/s00397-008-0268-1},
+file = {:C$\backslash$:/Users/oskat/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/Documents/MNT{\_}ITESM{\_}Thesis/0{\_}References/HSRV.pdf:pdf},
+issn = {0035-4511},
+journal = {Rheologica Acta},
+month = {jul},
+number = {5-6},
+pages = {621--642},
+title = {{High shear rate viscometry}},
+url = {http://link.springer.com/10.1007/s00397-008-0268-1},
+volume = {47},
+year = {2008}
+}
+
+/*****************************************************************************/
+
+C:\Users\oskat\OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey\Documents\MNT_ITESM_Thesis\01_Slides\10_A01212611_ThesisPre.pdf
+
+/*****************************************************************************/
+
+FluidMechanics101
+curso de aerodynamics and building aerodynamics(coursera)
+all about CFD
+
+/*****************************************************************************/
+
+HW08 video : 2020-10-28_15-34-04.flv
